@@ -1,0 +1,59 @@
+---
+/**
+ * Route dynamique /[lang]/[slug] : articles ET pages statiques, avec slugs traduits.
+ * ex : /en/best-sim-card-esim-morocco  ·  /fr/carte-sim-esim-maroc
+ */
+import { render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+import AffiliateLink from '../../components/AffiliateLink.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import Callout from '../../components/Callout.astro';
+import BudgetCalculator from '../../components/BudgetCalculator.astro';
+import ToolGrid from '../../components/ToolGrid.astro';
+import PropertyFees from '../../components/calc/PropertyFees.astro';
+import MortgageCalc from '../../components/calc/MortgageCalc.astro';
+import TransferCalc from '../../components/calc/TransferCalc.astro';
+import SummerBudget from '../../components/calc/SummerBudget.astro';
+import CarDaysCounter from '../../components/calc/CarDaysCounter.astro';
+import { assertUniqueSlugs, getArticles, getEntryAlternates, getPages, type Entry } from '../../utils/i18n';
+import { readingTime } from '../../utils/date';
+
+export async function getStaticPaths() {
+  const entries: Entry[] = [...(await getArticles()), ...(await getPages())];
+  assertUniqueSlugs(entries);
+  return entries.map((entry) => ({
+    params: { lang: entry.data.lang, slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: Entry };
+const { Content, headings } = await render(entry);
+const alternates = await getEntryAlternates(entry);
+
+/** Composants disponibles dans tous les fichiers MDX SANS import. */
+const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, CarDaysCounter };
+
+let related: Awaited<ReturnType<typeof getArticles>> = [];
+if (entry.collection === 'articles') {
+  const pool = (await getArticles(entry.data.lang)).filter((a) => a.id !== entry.id);
+  // Même catégorie d'abord, puis les plus récents : maillage interne pertinent.
+  related = [
+    ...pool.filter((a) => a.data.category === entry.data.category),
+    ...pool.filter((a) => a.data.category !== entry.data.category),
+  ].slice(0, 3);
+}
+---
+
+{
+  entry.collection === 'articles' ? (
+    <ArticleLayout entry={entry} alternates={alternates} headings={headings} minutes={readingTime(entry.body)} related={related}>
+      <Content components={components} />
+    </ArticleLayout>
+  ) : (
+    <PageLayout entry={entry} alternates={alternates}>
+      <Content components={components} />
+    </PageLayout>
+  )
+}

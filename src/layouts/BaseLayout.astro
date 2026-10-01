@@ -1,0 +1,108 @@
+---
+/**
+ * BaseLayout — squelette de toutes les pages.
+ * Performance (objectif Lighthouse > 90 sur les 4 axes) :
+ * - Polices système (0 requête), CSS Tailwind purgé et inliné si petit.
+ * - JS total < 2 Ko : thème (inline, anti-flash), toggle, chargeur AdSense différé, tracker de clics.
+ * - AdSense chargé seulement après interaction ou 3,5 s => n'impacte ni LCP ni TBT.
+ */
+import '@fontsource-variable/readex-pro';
+import '@fontsource-variable/marhey';
+import '../styles/global.css';
+// Préchargement des polices principales (évite le décalage de mise en page au chargement)
+import marheyLatin from '@fontsource-variable/marhey/files/marhey-latin-wght-normal.woff2?url';
+import marheyArabic from '@fontsource-variable/marhey/files/marhey-arabic-wght-normal.woff2?url';
+import readexLatin from '@fontsource-variable/readex-pro/files/readex-pro-latin-wght-normal.woff2?url';
+import readexArabic from '@fontsource-variable/readex-pro/files/readex-pro-arabic-wght-normal.woff2?url';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { LOCALE_META, isIndexable, useTranslations, type Locale } from '../i18n';
+import { rssPath, type Alternates } from '../utils/i18n';
+import { ADSENSE_CLIENT, UMAMI_WEBSITE_ID } from '../config/site';
+
+interface Props {
+  lang: Locale;
+  title?: string;
+  description?: string;
+  alternates: Alternates;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  jsonLd?: object[];
+}
+
+const { lang, alternates, ...seo } = Astro.props;
+// Langue pas encore lancée => noindex automatique (voir site.config.mjs)
+const noindex = seo.noindex || !isIndexable(lang);
+const t = useTranslations(lang);
+const meta = LOCALE_META[lang];
+const description = seo.description ?? t('site.description');
+---
+
+<!doctype html>
+<html lang={meta.hreflang} dir={meta.dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1e3abf" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={t('rss.title')} href={rssPath(lang)} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {(meta.dir === 'rtl' ? [marheyArabic, readexArabic] : [marheyLatin, readexLatin]).map((href) => (
+      <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />
+    ))}
+    {ADSENSE_CLIENT && <meta name="google-adsense-account" content={ADSENSE_CLIENT} />}
+
+    <SEO lang={lang} alternates={alternates} description={description} {...seo} noindex={noindex} />
+
+    <!-- Thème appliqué avant le premier rendu (évite le flash) -->
+    <script is:inline>
+      (function () {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (e) {}
+        if (s === 'dark' || (!s && matchMedia('(prefers-color-scheme: dark)').matches))
+          document.documentElement.classList.add('dark');
+      })();
+    </script>
+
+    {UMAMI_WEBSITE_ID && <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={UMAMI_WEBSITE_ID}></script>}
+  </head>
+  <body class="min-h-screen bg-sand-50 font-sans text-ink-900 antialiased dark:bg-night-900 dark:text-sand-100">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:p-2">Skip</a>
+    <Header lang={lang} alternates={alternates} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+
+    <!-- Chargeur AdSense différé + suivi des clics affiliés -->
+    <script is:inline define:vars={{ client: ADSENSE_CLIENT ?? '' }}>
+      (function () {
+        var slots = document.querySelectorAll('ins.adsbygoogle');
+        if (client && slots.length) {
+          var loaded = false;
+          var load = function () {
+            if (loaded) return;
+            loaded = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;
+            document.head.appendChild(s);
+            slots.forEach(function () { (window.adsbygoogle = window.adsbygoogle || []).push({}); });
+          };
+          ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
+            addEventListener(e, load, { once: true, passive: true });
+          });
+          setTimeout(load, 3500);
+        }
+        // Événement "affiliate_click" (Umami) => savoir quel article/fournisseur rapporte.
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a[data-affiliate]');
+          if (a && window.umami) window.umami.track('affiliate_click', { provider: a.dataset.affiliate, page: location.pathname });
+        });
+      })();
+    </script>
+  </body>
+</html>

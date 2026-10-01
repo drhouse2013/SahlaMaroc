@@ -1,0 +1,21 @@
+---
+/** Gabarit simple pour pages statiques (à propos, confidentialité, outils). */
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import type { Alternates } from '../utils/i18n';
+
+interface Props { entry: CollectionEntry<'pages'>; alternates: Alternates }
+const { entry, alternates } = Astro.props;
+const d = entry.data;
+---
+
+<BaseLayout lang={d.lang} title={d.title} description={d.description} alternates={alternates} noindex={d.noindex || d.machineTranslated}>
+  <div class="zellige-soft border-b border-ink-900/5 dark:border-white/5">
+    <h1 class="mx-auto max-w-3xl px-4 pt-14 pb-10 text-4xl font-bold sm:text-5xl">{d.title}</h1>
+  </div>
+  <div class="mx-auto max-w-3xl px-4 pt-6">
+    <div class="prose prose-lg mt-8 max-w-none dark:prose-invert prose-a:text-majorelle-600 dark:prose-a:text-majorelle-100">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

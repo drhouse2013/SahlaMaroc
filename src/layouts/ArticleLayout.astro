@@ -1,0 +1,144 @@
+---
+/**
+ * ArticleLayout — gabarit des guides.
+ * En-tête large avec illustration en arc, colonne de lecture (~68 caractères),
+ * barre latérale collante (sommaire + essentiels affiliés) sur grand écran.
+ */
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Disclosure from '../components/Disclosure.astro';
+import AdSlot from '../components/AdSlot.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import AffiliateLink from '../components/AffiliateLink.astro';
+import { useTranslations } from '../i18n';
+import { CATEGORIES } from '../i18n/categories';
+import { L } from '../data/home';
+import { formatDate } from '../utils/date';
+import { categoryPath, getPageUrl, homePath, type Alternates } from '../utils/i18n';
+import { illustration } from '../utils/illustrations';
+import { absoluteUrl, articleJsonLd, breadcrumbJsonLd } from '../utils/seo';
+
+interface Props {
+  entry: CollectionEntry<'articles'>;
+  alternates: Alternates;
+  headings: MarkdownHeading[];
+  minutes: number;
+  related: CollectionEntry<'articles'>[];
+}
+
+const { entry, alternates, headings, minutes, related } = Astro.props;
+const d = entry.data;
+const lang = d.lang;
+const t = useTranslations(lang);
+const cat = CATEGORIES[d.category];
+const url = absoluteUrl(Astro.url.pathname, Astro.site);
+const cover = d.heroImage ?? illustration(d.illustration);
+const imageUrl = d.heroImage ? absoluteUrl(d.heroImage.src, Astro.site) : undefined;
+const toc = headings.filter((h) => h.depth === 2);
+const toolUrl = await getPageUrl(lang, 'calculators');
+
+const crumbs = [
+  { name: t('breadcrumb.home'), href: homePath(lang) },
+  { name: cat.label[lang], href: categoryPath(lang, d.category) },
+  { name: d.title },
+];
+
+const jsonLd = [
+  articleJsonLd({
+    url, title: d.title, description: d.description, lang, image: imageUrl,
+    datePublished: d.pubDate, dateModified: d.updatedDate, author: d.author, site: Astro.site, section: cat.label[lang],
+  }),
+  breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: absoluteUrl(c.href ?? Astro.url.pathname, Astro.site) }))),
+];
+
+const essentials = {
+  en: ['Morocco eSIM', 'Hotels & riads', 'Tours with free cancellation', 'Nomad insurance'],
+  fr: ['eSIM Maroc', 'Hôtels et riads', 'Excursions annulables', 'Assurance nomade'],
+}[lang === 'fr' ? 'fr' : 'en'];
+---
+
+<BaseLayout lang={lang} title={d.title} description={d.description} alternates={alternates} image={d.heroImage?.src} type="article" noindex={d.machineTranslated} jsonLd={jsonLd}>
+  <header class="zellige-soft border-b border-ink-900/5 dark:border-white/5">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-8 pb-12 md:grid-cols-[1.3fr_0.7fr]">
+      <div>
+        <Breadcrumbs items={crumbs} />
+        <a href={categoryPath(lang, d.category)} class="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-moroccan-100 px-3 py-1 text-sm font-semibold text-emerald-moroccan-600 dark:bg-emerald-moroccan-600/25 dark:text-emerald-moroccan-100">
+          {cat.icon} {cat.label[lang]}
+        </a>
+        <h1 class="mt-4 text-4xl leading-[1.1] font-bold sm:text-5xl">{d.title}</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink-900/75 dark:text-sand-100/80">{d.description}</p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-900/75 dark:text-sand-100/75">
+          <span class="flex items-center gap-2">
+            <span class="grid size-8 place-items-center rounded-full bg-majorelle-600 font-bold text-white">{d.author.charAt(0)}</span>
+            <strong>{d.author}</strong>
+          </span>
+          <time datetime={(d.updatedDate ?? d.pubDate).toISOString()}>
+            {d.updatedDate ? t('article.updated') : t('article.published')} {formatDate(d.updatedDate ?? d.pubDate, lang)}
+          </time>
+          <span>· {t('article.readingTime', { n: minutes })}</span>
+          {d.checkedDate && <span class="font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100">✓ {t('article.checked')} {formatDate(d.checkedDate, lang)}</span>}
+        </div>
+      </div>
+      <div class="arch mx-auto aspect-[4/5] w-full max-w-xs border-8 border-white shadow-xl dark:border-night-800">
+        <Image src={cover} alt={d.heroAlt ?? ''} width={600} loading="eager" fetchpriority="high" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </header>
+
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 pt-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+    <article class="min-w-0">
+      <Disclosure lang={lang} />
+
+      {toc.length >= 3 && (
+        <nav class="card mt-6 p-5 text-sm lg:hidden" aria-label={L.onThisPage[lang]}>
+          <p class="eyebrow text-ink-900/65 dark:text-sand-100/65">{L.onThisPage[lang]}</p>
+          <ol class="mt-3 list-decimal space-y-1.5 ps-5">{toc.map((h) => <li><a href={`#${h.slug}`} class="hover:underline">{h.text}</a></li>)}</ol>
+        </nav>
+      )}
+
+      <div class="prose prose-lg mt-8 max-w-[68ch] dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-a:text-majorelle-600 prose-strong:text-ink-900 prose-th:text-start dark:prose-a:text-majorelle-100 dark:prose-strong:text-white">
+        <slot />
+      </div>
+
+      <AuthorBox lang={lang} name={d.author} />
+      <AdSlot type="banner" lang={lang} />
+    </article>
+
+    <aside class="hidden lg:block">
+      <div class="sticky top-24 grid gap-6">
+        {toc.length >= 3 && (
+          <nav class="text-sm" aria-label={L.onThisPage[lang]}>
+            <p class="eyebrow text-ink-900/65 dark:text-sand-100/65">{L.onThisPage[lang]}</p>
+            <ol class="mt-3 grid gap-2 border-s-2 border-sand-200 dark:border-white/10">
+              {toc.map((h) => <li><a href={`#${h.slug}`} class="-ms-0.5 block border-s-2 border-transparent ps-4 text-ink-900/75 hover:border-terracotta-500 hover:text-ink-900 dark:text-sand-100/75 dark:hover:text-white">{h.text}</a></li>)}
+            </ol>
+          </nav>
+        )}
+        <div class="rounded-3xl bg-majorelle-600 p-5 text-white">
+          <p class="font-display text-lg font-bold">{L.essentials[lang]}</p>
+          <ul class="mt-3 grid gap-2 text-sm">
+            <li><AffiliateLink provider="airalo" class="!text-white !decoration-saffron-400">📶 {essentials[0]}</AffiliateLink></li>
+            <li><AffiliateLink provider="booking" query="Marrakech" class="!text-white !decoration-saffron-400">🏡 {essentials[1]}</AffiliateLink></li>
+            <li><AffiliateLink provider="getyourguide" query="Morocco" class="!text-white !decoration-saffron-400">🐪 {essentials[2]}</AffiliateLink></li>
+            <li><AffiliateLink provider="safetywing" class="!text-white !decoration-saffron-400">🩺 {essentials[3]}</AffiliateLink></li>
+          </ul>
+          {toolUrl && <a href={toolUrl} class="btn mt-5 w-full justify-center bg-white !py-2.5 text-sm text-majorelle-700 hover:bg-sand-100">🧮 {t('nav.tools')}</a>}
+        </div>
+        <AdSlot type="sidebar" lang={lang} />
+      </div>
+    </aside>
+  </div>
+
+  {
+    related.length > 0 && (
+      <section class="mx-auto mt-20 max-w-6xl px-4">
+        <h2 class="text-3xl font-bold">{t('article.related')}</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{related.map((a) => <ArticleCard article={a} />)}</div>
+      </section>
+    )
+  }
+</BaseLayout>
