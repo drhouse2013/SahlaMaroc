@@ -1,6 +1,6 @@
 ---
 title: "Politique de confidentialité"
-description: "Quelles données SahlaMaroc collecte, comment Google AdSense et nos partenaires affiliés utilisent les cookies, et comment gérer vos choix."
+description: "Quelles données Sahla Maroc collecte, comment Google AdSense et nos partenaires affiliés utilisent les cookies, et comment gérer vos choix."
 slug: "confidentialite"
 translationKey: "privacy"
 lang: "fr"

@@ -1,12 +1,12 @@
 ---
-title: "À propos de SahlaMaroc"
-description: "Qui écrit SahlaMaroc et comment nous préparons nos guides et calculateurs pour les Marocains du monde (MRE) et les visiteurs du Maroc."
+title: "À propos de Sahla Maroc"
+description: "Qui écrit Sahla Maroc et comment nous préparons nos guides et calculateurs pour les Marocains du monde (MRE) et les visiteurs du Maroc."
 slug: "a-propos"
 translationKey: "about"
 lang: "fr"
 ---
 
-SahlaMaroc est écrit par **Yassine**, installé près de Casablanca. Je parle arabe (darija), français et anglais. *Sahla* veut dire « facile » : notre mission est de rendre le Maroc simple et pratique, pour les MRE qui rentrent, investissent ou envoient de l'argent, et pour les visiteurs qui découvrent le pays.
+Sahla Maroc est écrit par **Yassine**, installé près de Casablanca. Je parle arabe (darija), français et anglais. *Sahla* veut dire « facile » : notre mission est de rendre le Maroc simple et pratique, pour les MRE qui rentrent, investissent ou envoient de l'argent, et pour les visiteurs qui découvrent le pays.
 
 ## Notre méthode
 
