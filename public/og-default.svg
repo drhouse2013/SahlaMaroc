@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#121427"/>
+  <rect y="600" width="1200" height="30" fill="#1e3abf"/>
+  <g transform="translate(110 175)">
+    <path d="M0 280V120a140 140 0 1 1 280 0v160z" fill="#1e3abf"/>
+    <path d="M46 280V128a94 94 0 1 1 188 0v152z" fill="#f4c35a"/>
+    <path d="M140 70l26 62 62 26-62 26-26 62-26-62-62-26 62-26z" fill="#c8553d"/>
+  </g>
+  <text x="460" y="330" font-family="DejaVu Sans, Arial, sans-serif" font-size="104" font-weight="700" fill="#fbf8f3">Sahla<tspan fill="#ec9f80">Maroc</tspan></text>
+  <text x="464" y="410" font-family="DejaVu Sans, Arial, sans-serif" font-size="40" fill="#d9e0ff">Le Maroc, simple et pratique</text>
+  <text x="464" y="465" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" fill="#8fa2f5">Guides &amp; calculateurs · MRE &amp; visiteurs</text>
+</svg>
