@@ -1,0 +1,35 @@
+---
+/** Excursions phares : illustration + lien affilié (GetYourGuide) + guide interne si disponible. */
+import { Image } from 'astro:assets';
+import AffiliateLink from '../AffiliateLink.astro';
+import type { Locale } from '../../i18n';
+import { L, TOURS, pick } from '../../data/home';
+import { illustration } from '../../utils/illustrations';
+import { entryPath, getArticleByKey } from '../../utils/i18n';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const tours = await Promise.all(
+  TOURS.map(async (tour) => ({ ...tour, guide: tour.guideKey ? await getArticleByKey(lang, tour.guideKey) : null })),
+);
+---
+
+<section class="mx-auto max-w-6xl px-4 pt-24">
+  <h2 class="text-3xl font-bold sm:text-4xl">{L.toursTitle[lang]}</h2>
+  <p class="mt-2 max-w-2xl text-ink-900/75 dark:text-sand-100/75">{L.toursSub[lang]}</p>
+  <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {tours.map((tour) => (
+      <article class="relative overflow-hidden rounded-3xl text-white">
+        <Image src={illustration(tour.scene)} alt="" width={520} loading="lazy" class="aspect-[3/4] w-full object-cover" />
+        <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-night-900/90 via-night-900/30 to-transparent p-5">
+          <p class="text-xs font-medium text-white/80">{pick(tour.meta, lang)}</p>
+          <h3 class="mt-1 text-xl font-bold">{pick(tour.title, lang)}</h3>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <AffiliateLink provider="getyourguide" query={tour.query} variant="button" class="!px-4 !py-2 !text-sm">{L.seeTours[lang]}</AffiliateLink>
+            {tour.guide && <a href={entryPath(lang, tour.guide.data.slug)} class="text-sm font-semibold underline underline-offset-4">{L.readGuide[lang]}</a>}
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
