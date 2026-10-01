@@ -1,12 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#121427"/>
-  <rect y="600" width="1200" height="30" fill="#1e3abf"/>
-  <g transform="translate(110 175)">
-    <path d="M0 280V120a140 140 0 1 1 280 0v160z" fill="#1e3abf"/>
-    <path d="M46 280V128a94 94 0 1 1 188 0v152z" fill="#f4c35a"/>
-    <path d="M140 70l26 62 62 26-62 26-26 62-26-62-62-26 62-26z" fill="#c8553d"/>
-  </g>
-  <text x="460" y="330" font-family="DejaVu Sans, Arial, sans-serif" font-size="104" font-weight="700" fill="#fbf8f3">Sahla<tspan fill="#ec9f80">Maroc</tspan></text>
-  <text x="464" y="410" font-family="DejaVu Sans, Arial, sans-serif" font-size="40" fill="#d9e0ff">Le Maroc, simple et pratique</text>
-  <text x="464" y="465" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" fill="#8fa2f5">Guides &amp; calculateurs · MRE &amp; visiteurs</text>
+  <rect width="1200" height="630" fill="#f6f3ec"/>
+  <rect y="606" width="1200" height="24" fill="#163a63"/><rect y="600" width="1200" height="6" fill="#c9a24a"/>
+  <g transform="translate(110 95) scale(1.9)"><circle cx="100" cy="66" r="25" fill="#d6a23e"/><polygon points="34,132 62,100 76,116 104,60 132,108 144,98 166,132" fill="#163a63"/><polygon points="62,100 40,132 72,132 64,118 68,110" fill="#ffffff"/><polygon points="104,60 80,112 92,104 98,116 108,84" fill="#ffffff"/><path d="M38,134 L162,134 Q160,172 100,198 Q40,172 38,134 Z" fill="#163a63" stroke="#c9a24a" stroke-width="4"/><clipPath id="c"><path d="M38,134 L162,134 Q160,172 100,198 Q40,172 38,134 Z"/></clipPath><g clip-path="url(#c)"><g fill="none" stroke="#c9a24a" stroke-width="1.6"><polygon points="52,136 61,141 61,151 52,156 43,151 43,141"/><polygon points="70,136 79,141 79,151 70,156 61,151 61,141"/><polygon points="88,136 97,141 97,151 88,156 79,151 79,141"/><polygon points="112,136 121,141 121,151 112,156 103,151 103,141"/><polygon points="130,136 139,141 139,151 130,156 121,151 121,141"/><polygon points="148,136 157,141 157,151 148,156 139,151 139,141"/><polygon points="61,151 70,156 70,166 61,171 52,166 52,156"/><polygon points="79,151 88,156 88,166 79,171 70,166 70,156"/><polygon points="121,151 130,156 130,166 121,171 112,166 112,156"/><polygon points="139,151 148,156 148,166 139,171 130,166 130,156"/><polygon points="70,166 79,171 79,181 70,186 61,181 61,171"/><polygon points="88,166 97,171 97,181 88,186 79,181 79,171"/><polygon points="112,166 121,171 121,181 112,186 103,181 103,171"/><polygon points="130,166 139,171 139,181 130,186 121,181 121,171"/><line x1="100" y1="134" x2="100" y2="196"/></g></g><path d="M54,24 L30,30 L30,120 Q30,170 100,206 Q170,170 170,120 L170,30 L146,24" fill="none" stroke="#163a63" stroke-width="12" stroke-linejoin="round"/><path d="M64,21 L100,8 L136,21" fill="none" stroke="#163a63" stroke-width="12" stroke-linejoin="round"/></g>
+  <text x="540" y="300" font-family="DejaVu Sans, Arial, sans-serif" font-size="80" font-weight="700" fill="#163a63">Sahla Maroc</text>
+  <text x="544" y="370" font-family="DejaVu Sans, Arial, sans-serif" font-size="40" fill="#9a6f1e">Sahla Morocco</text>
+  <text x="544" y="440" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" fill="#3b3a40">Le Maroc, simple et pratique</text>
+  <text x="544" y="488" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" fill="#3b3a40">Morocco, simple and practical</text>
 </svg>

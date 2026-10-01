@@ -1,5 +1,6 @@
 ---
 import Logo from './Logo.astro';
+import { brandName } from '../utils/seo';
 import { useTranslations, type Locale } from '../i18n';
 import { CATEGORIES } from '../i18n/categories';
 import { L } from '../data/home';
@@ -8,6 +9,7 @@ import { categoryPath, getActiveCategories, getPageUrl, rssPath } from '../utils
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const brand = brandName(lang);
 const links = [
   { key: 'calculators', label: t('nav.tools') },
   { key: 'about', label: t('footer.about') },
@@ -23,8 +25,8 @@ const active = await getActiveCategories(lang);
   <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
     <div class="lg:col-span-2">
       <a href={`/${lang}`} class="flex items-center gap-2.5">
-        <Logo class="size-10" />
-        <span class="font-display text-2xl font-bold">Sahla<span class="text-terracotta-300">Maroc</span></span>
+        <Logo class="h-11 w-10" variant="dark" />
+        <span class="font-display text-2xl font-bold">Sahla <span class="text-saffron-400">{brand.split(' ')[1]}</span></span>
       </a>
       <p class="mt-4 max-w-sm text-sand-100/75">{t('site.description')}</p>
     </div>
@@ -35,12 +37,12 @@ const active = await getActiveCategories(lang);
       </ul>
     </div>
     <div>
-      <p class="eyebrow text-saffron-400">SahlaMaroc</p>
+      <p class="eyebrow text-saffron-400">{brand}</p>
       <ul class="mt-4 space-y-2.5">
         {resolved.map((l) => l.href && <li><a class="text-sand-100/85 hover:text-white hover:underline" href={l.href}>{l.label}</a></li>)}
         <li><a class="text-sand-100/85 hover:text-white hover:underline" href={rssPath(lang)}>{t('footer.rss')}</a></li>
       </ul>
     </div>
   </div>
-  <p class="border-t border-white/10 py-6 text-center text-xs text-sand-100/60">© {new Date().getFullYear()} SahlaMaroc · {t('footer.rights')}</p>
+  <p class="border-t border-white/10 py-6 text-center text-xs text-sand-100/60">© {new Date().getFullYear()} {brand} · {t('footer.rights')}</p>
 </footer>

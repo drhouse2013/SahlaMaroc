@@ -4,7 +4,7 @@
  * Open Graph, Twitter Card, JSON-LD.
  */
 import { LOCALE_META, DEFAULT_LOCALE, type Locale } from '../i18n';
-import { absoluteUrl, buildTitle, SITE_NAME } from '../utils/seo';
+import { absoluteUrl, buildTitle, brandName } from '../utils/seo';
 import type { Alternates } from '../utils/i18n';
 
 interface Props {
@@ -25,7 +25,7 @@ const ogImage = absoluteUrl(image ?? '/og-default.png', site);
 const xDefault = alternates[DEFAULT_LOCALE] ?? alternates[lang];
 ---
 
-<title>{buildTitle(title)}</title>
+<title>{buildTitle(title, lang)}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 {noindex && <meta name="robots" content="noindex, follow" />}
@@ -38,9 +38,9 @@ const xDefault = alternates[DEFAULT_LOCALE] ?? alternates[lang];
 }
 {xDefault && <link rel="alternate" hreflang="x-default" href={absoluteUrl(xDefault, site)} />}
 
-<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:site_name" content={brandName(lang)} />
 <meta property="og:type" content={type} />
-<meta property="og:title" content={title ?? SITE_NAME} />
+<meta property="og:title" content={title ?? brandName(lang)} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImage} />

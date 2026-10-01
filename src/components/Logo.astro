@@ -1,9 +1,10 @@
 ---
-/** Logo SahlaMaroc : arc outrepassé + étoile zellige. */
-interface Props { class?: string }
+/** Logo Sahla Maroc / Sahla Morocco : bouclier Atlas (soleil, montagnes, motif doré).
+ * variant "auto" : version claire, version contour doré en mode sombre ; "dark" : toujours la version fond sombre. */
+interface Props { class?: string; variant?: 'auto' | 'dark' }
+const { class: cls = 'h-9 w-8', variant = 'auto' } = Astro.props;
 ---
-<svg viewBox="0 0 40 40" class={Astro.props.class ?? 'size-8'} aria-hidden="true">
-  <path d="M8 38V20a12 12 0 1 1 24 0v18z" fill="#1e3abf"></path>
-  <path d="M12 38V21a8 8 0 1 1 16 0v17z" fill="#f4c35a"></path>
-  <path d="M20 13l2.2 5.3L27.5 20l-5.3 2.2L20 27.5l-2.2-5.3L12.5 20l5.3-2.2z" fill="#c8553d"></path>
-</svg>
+{variant === 'auto' && (
+  <svg viewBox="0 0 200 220" class={`${cls} dark:hidden`} aria-hidden="true"><Fragment set:html={`<circle cx="100" cy="66" r="25" fill="#d6a23e"/><polygon points="34,132 62,100 76,116 104,60 132,108 144,98 166,132" fill="#163a63"/><polygon points="62,100 40,132 72,132 64,118 68,110" fill="#ffffff"/><polygon points="104,60 80,112 92,104 98,116 108,84" fill="#ffffff"/><path d="M38,134 L162,134 Q160,172 100,198 Q40,172 38,134 Z" fill="#163a63" stroke="#c9a24a" stroke-width="4"/><path d="M54,24 L30,30 L30,120 Q30,170 100,206 Q170,170 170,120 L170,30 L146,24" fill="none" stroke="#163a63" stroke-width="12" stroke-linejoin="round"/><path d="M64,21 L100,8 L136,21" fill="none" stroke="#163a63" stroke-width="12" stroke-linejoin="round"/>`} /></svg>
+)}
+<svg viewBox="0 0 200 220" class={variant === 'auto' ? `${cls} hidden dark:block` : cls} aria-hidden="true"><Fragment set:html={`<path d="M30,30 L100,8 L170,30 L170,120 Q170,170 100,206 Q30,170 30,120 Z" fill="#f6f3ec"/><circle cx="100" cy="66" r="25" fill="#d6a23e"/><polygon points="34,132 62,100 76,116 104,60 132,108 144,98 166,132" fill="#163a63"/><polygon points="104,60 80,112 92,104 98,116 108,84" fill="#ffffff"/><path d="M38,134 L162,134 Q160,172 100,198 Q40,172 38,134 Z" fill="#163a63" stroke="#c9a24a" stroke-width="4"/><path d="M54,24 L30,30 L30,120 Q30,170 100,206 Q170,170 170,120 L170,30 L146,24" fill="none" stroke="#c9a24a" stroke-width="12" stroke-linejoin="round"/><path d="M64,21 L100,8 L136,21" fill="none" stroke="#c9a24a" stroke-width="12" stroke-linejoin="round"/>`} /></svg>

@@ -4,12 +4,15 @@
  */
 import { LOCALE_META, type Locale } from '../i18n/config';
 
-export const SITE_NAME = 'SahlaMaroc';
+export const SITE_NAME = 'Sahla Maroc';
+/** Nom de marque par langue : « Sahla Maroc » en français, « Sahla Morocco » ailleurs. */
+export const brandName = (lang: Locale) => (lang === 'fr' ? 'Sahla Maroc' : 'Sahla Morocco');
 /** Logo utilisé dans le JSON-LD Organization (public/logo.png, 512x512 recommandé) */
 export const LOGO_PATH = '/logo.png';
 
-export function buildTitle(title?: string): string {
-  return title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+export function buildTitle(title: string | undefined, lang: Locale): string {
+  const name = brandName(lang);
+  return title ? `${title} | ${name}` : name;
 }
 
 export function absoluteUrl(path: string, site: URL | undefined): string {
@@ -51,6 +54,7 @@ export function organizationRef(site: URL | undefined) {
   return {
     '@type': 'Organization',
     name: SITE_NAME,
+    alternateName: 'Sahla Morocco',
     url: absoluteUrl('/', site),
     logo: { '@type': 'ImageObject', url: absoluteUrl(LOGO_PATH, site) },
   };
@@ -61,7 +65,7 @@ export function websiteJsonLd(lang: Locale, site: URL | undefined, description: 
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: SITE_NAME,
+    name: brandName(lang),
     url: absoluteUrl(`/${lang}`, site),
     inLanguage: LOCALE_META[lang].hreflang,
     description,
