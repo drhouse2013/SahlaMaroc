@@ -1,0 +1,47 @@
+---
+/** Grille des villes : illustration, ambiance, budget relatif (en MAD : ● = abordable). */
+import { Image } from 'astro:assets';
+import type { Locale } from '../../i18n';
+import { CITIES, L, cityName, pick } from '../../data/home';
+import { illustration } from '../../utils/illustrations';
+import { entryPath, getArticleByKey } from '../../utils/i18n';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const guide = await getArticleByKey(lang, 'nomad-cities');
+const href = guide ? entryPath(lang, guide.data.slug) : undefined;
+---
+
+<section id="cities" class="mx-auto max-w-6xl scroll-mt-24 px-4 pt-24">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <h2 class="text-3xl font-bold sm:text-4xl">{L.citiesTitle[lang]}</h2>
+      <p class="mt-2 text-ink-900/75 dark:text-sand-100/75">{L.citiesSub[lang]}</p>
+    </div>
+    {href && <a href={href} class="btn btn-ghost">{L.readGuide[lang]}</a>}
+  </div>
+  <ul class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {CITIES.map((c) => (
+      <li class="group card relative flex flex-col overflow-hidden">
+        {c.host2030 && <span class="absolute end-3 top-3 z-10 rounded-full bg-saffron-400 px-2.5 py-1 text-xs font-bold text-ink-900 shadow">⚽ {L.hostCity[lang]}</span>}
+        <div class="arch mx-4 mt-4 aspect-[4/3] overflow-hidden">
+          <Image src={illustration(c.id)} alt="" width={480} loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        </div>
+        <div class="flex flex-1 flex-col p-5 pt-4">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="text-xl font-bold">
+              {href ? <a href={`${href}#${c.id}`} class="after:absolute after:inset-0">{cityName(c, lang)}</a> : cityName(c, lang)}
+            </h3>
+            <span class="flex items-center gap-1" role="img" aria-label={`${c.budget}/3`} title={`${c.budget}/3`}>
+              {[1, 2, 3].map((n) => <span class:list={['h-3 w-1.5 rounded-full', n <= c.budget ? 'bg-terracotta-500' : 'bg-ink-900/15 dark:bg-white/15']}></span>)}
+            </span>
+          </div>
+          <p class="mt-2 text-sm text-ink-900/75 dark:text-sand-100/75">{pick(c.vibe, lang)}</p>
+          <ul class="mt-auto flex flex-wrap gap-1.5 pt-4">
+            {pick(c.tags, lang).map((tag) => <li class="rounded-full bg-sand-100 px-2.5 py-1 text-xs font-medium dark:bg-white/10">{tag}</li>)}
+          </ul>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,22 @@
+---
+/** Bandeau Majorelle "Le Maroc en 8 chiffres" — infos pratiques vérifiées. */
+import type { Locale } from '../../i18n';
+import { FACTS, L, pick } from '../../data/home';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+---
+
+<section class="mt-24 bg-majorelle-600 text-white dark:bg-majorelle-900">
+  <div class="zellige h-4 opacity-90" aria-hidden="true"></div>
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-3xl font-bold sm:text-4xl">{L.factsTitle[lang]}</h2>
+    <dl class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+      {pick(FACTS, lang).map((f) => (
+        <div class="border-s-2 border-saffron-400 ps-4">
+          <dt class="font-display text-2xl font-bold tabular-nums sm:text-3xl"><bdi dir="ltr">{f.value}</bdi></dt>
+          <dd class="mt-1 text-sm text-white/80">{f.label}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

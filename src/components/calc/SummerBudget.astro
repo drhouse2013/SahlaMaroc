@@ -1,0 +1,60 @@
+---
+/** Budget "été au bled" pour une famille MRE (en euros, avec équivalent en dirhams). */
+import CalcShell from './CalcShell.astro';
+import { EUR_TO_MAD } from '../../config/site';
+const lang = Astro.currentLocale === 'fr' ? 'fr' : 'en';
+const T = {
+  fr: { mode: 'Mode de voyage', car: 'Voiture + ferry', plane: 'Avion', adults: 'Adultes', kids: 'Enfants', days: 'Jours au Maroc', ferry: 'Ferry aller-retour, voiture + famille (€)', fuel: 'Carburant + péages en Europe (€)', flight: 'Billet d’avion A/R par personne (€)', rental: 'Location de voiture au Maroc (€ / jour)', daily: 'Dépenses sur place (€ / jour, famille)', gifts: 'Cadeaux, fêtes, imprévus (€)', total: 'Budget total estimé', perDay: '€ / jour', lTravel: 'Voyage', lCar: 'Voiture sur place', lStay: 'Dépenses sur place', lGifts: 'Cadeaux & imprévus', note: 'Valeurs d’exemple à remplacer par vos devis réels. Réservez le ferry tôt (avril-mai) : les prix grimpent en juillet-août.' },
+  en: { mode: 'How you travel', car: 'Car + ferry', plane: 'Plane', adults: 'Adults', kids: 'Children', days: 'Days in Morocco', ferry: 'Return ferry, car + family (€)', fuel: 'Fuel + tolls in Europe (€)', flight: 'Return flight per person (€)', rental: 'Car rental in Morocco (€ / day)', daily: 'Spending in Morocco (€ / day, family)', gifts: 'Gifts, celebrations, extras (€)', total: 'Estimated total budget', perDay: '€ / day', lTravel: 'Travel', lCar: 'Car in Morocco', lStay: 'Spending in Morocco', lGifts: 'Gifts & extras', note: 'Example values: replace them with your real quotes. Book the ferry early (April–May): prices rise in July–August.' },
+}[lang];
+const cfg = JSON.stringify({ rate: EUR_TO_MAD, locale: lang === 'fr' ? 'fr-FR' : 'en-GB' });
+---
+<CalcShell id="summer" note={T.note}>
+  <Fragment slot="form">
+    <label class="full">{T.mode}<select name="mode"><option value="car">{T.car}</option><option value="plane">{T.plane}</option></select></label>
+    <label>{T.adults}<input name="adults" type="number" min="1" value="2" /></label>
+    <label>{T.kids}<input name="kids" type="number" min="0" value="2" /></label>
+    <label>{T.days}<input name="days" type="number" min="1" value="21" /></label>
+    <label data-car>{T.ferry}<input name="ferry" type="number" step="10" value="600" /></label>
+    <label data-car>{T.fuel}<input name="fuel" type="number" step="10" value="450" /></label>
+    <label data-plane hidden>{T.flight}<input name="flight" type="number" step="10" value="250" /></label>
+    <label data-plane hidden>{T.rental}<input name="rental" type="number" step="1" value="35" /></label>
+    <label>{T.daily}<input name="daily" type="number" step="5" value="60" /></label>
+    <label>{T.gifts}<input name="gifts" type="number" step="50" value="500" /></label>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{T.total}</p>
+    <p class="big"><span data-out="eur">—</span> €</p>
+    <p class="text-sm text-white/85">≈ <span data-out="mad">—</span> DH · <span data-out="pd">—</span> {T.perDay}</p>
+    <dl>
+      <div><dt>{T.lTravel}</dt><dd data-out="travel">—</dd></div>
+      <div><dt>{T.lCar}</dt><dd data-out="car">—</dd></div>
+      <div><dt>{T.lStay}</dt><dd data-out="stay">—</dd></div>
+      <div><dt>{T.lGifts}</dt><dd data-out="gifts">—</dd></div>
+    </dl>
+  </Fragment>
+</CalcShell>
+<script define:vars={{ cfg }} is:inline>
+  (function () {
+    var c = JSON.parse(cfg);
+    document.querySelectorAll('[data-calc="summer"]').forEach(function (root) {
+      var form = root.querySelector('form');
+      var fmt = function (n) { return new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 }).format(n); };
+      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) ? x : 0; };
+      var out = function (k, t) { root.querySelector('[data-out="' + k + '"]').textContent = t; };
+      function run() {
+        var plane = form.elements.mode.value === 'plane';
+        root.querySelectorAll('[data-car]').forEach(function (el) { el.hidden = plane; });
+        root.querySelectorAll('[data-plane]').forEach(function (el) { el.hidden = !plane; });
+        var people = v('adults') + v('kids'), days = Math.max(1, v('days'));
+        var travel = plane ? v('flight') * people : v('ferry') + v('fuel');
+        var car = plane ? v('rental') * days : 0;
+        var stay = v('daily') * days, gifts = v('gifts');
+        var tot = travel + car + stay + gifts;
+        out('eur', fmt(tot)); out('mad', fmt(tot * c.rate)); out('pd', fmt(tot / days));
+        out('travel', fmt(travel) + ' €'); out('car', fmt(car) + ' €'); out('stay', fmt(stay) + ' €'); out('gifts', fmt(gifts) + ' €');
+      }
+      form.addEventListener('input', run); form.addEventListener('change', run); run();
+    });
+  })();
+</script>

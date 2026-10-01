@@ -1,0 +1,53 @@
+---
+/** Comparateur du coût réel d'un transfert d'argent vers le Maroc (frais + marge sur le taux). */
+import CalcShell from './CalcShell.astro';
+import AffiliateLink from '../AffiliateLink.astro';
+import { EUR_TO_MAD } from '../../config/site';
+const lang = Astro.currentLocale === 'fr' ? 'fr' : 'en';
+const T = {
+  fr: { amount: 'Montant envoyé (€)', fee: 'Frais affichés (€)', rate: 'Taux proposé (1 € = … DH)', ref: 'Taux de référence du jour (1 € = … DH)', received: 'Votre famille reçoit', hidden: 'Coût caché dans le taux', fees: 'Frais affichés', totalCost: 'Coût total du transfert', ideal: 'Montant au taux de référence, sans frais', cta: 'Comparer avec Wise', note: 'Entrez le taux exact proposé par votre banque ou service de transfert, et le taux du jour (Google, XE…). Le coût caché vient de l’écart entre les deux.' },
+  en: { amount: 'Amount sent (€)', fee: 'Displayed fee (€)', rate: 'Offered rate (1 € = … MAD)', ref: 'Today’s reference rate (1 € = … MAD)', received: 'Your family receives', hidden: 'Hidden cost in the rate', fees: 'Displayed fee', totalCost: 'Total cost of the transfer', ideal: 'Amount at reference rate, no fee', cta: 'Compare with Wise', note: 'Enter the exact rate offered by your bank or transfer service and today’s rate (Google, XE…). The hidden cost is the gap between the two.' },
+}[lang];
+const locale = lang === 'fr' ? 'fr-FR' : 'en-GB';
+---
+<CalcShell id="transfer" note={T.note}>
+  <Fragment slot="form">
+    <label>{T.amount}<input name="amount" type="number" step="50" value="500" /></label>
+    <label>{T.fee}<input name="fee" type="number" step="0.5" value="5" /></label>
+    <label>{T.rate}<input name="rate" type="number" step="0.01" value={(EUR_TO_MAD * 0.97).toFixed(2)} /></label>
+    <label>{T.ref}<input name="ref" type="number" step="0.01" value={EUR_TO_MAD.toFixed(2)} /></label>
+    <div class="full pt-2"><AffiliateLink provider="wise" variant="button">{T.cta}</AffiliateLink></div>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{T.received}</p>
+    <p class="big"><span data-out="rec">—</span> DH</p>
+    <dl>
+      <div><dt>{T.ideal}</dt><dd data-out="ideal">—</dd></div>
+      <div><dt>{T.hidden}</dt><dd data-out="hid">—</dd></div>
+      <div><dt>{T.fees}</dt><dd data-out="fee">—</dd></div>
+      <div class="!border-0 text-base"><dt class="font-semibold">{T.totalCost}</dt><dd data-out="tot">—</dd></div>
+    </dl>
+  </Fragment>
+</CalcShell>
+<script define:vars={{ locale }} is:inline>
+  (function () {
+    document.querySelectorAll('[data-calc="transfer"]').forEach(function (root) {
+      var form = root.querySelector('form');
+      var fmt = function (n, d) { return new Intl.NumberFormat(locale, { maximumFractionDigits: d || 0, minimumFractionDigits: d || 0 }).format(n); };
+      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) ? x : 0; };
+      var out = function (k, t) { root.querySelector('[data-out="' + k + '"]').textContent = t; };
+      function run() {
+        var a = v('amount'), fee = v('fee'), rate = v('rate'), ref = v('ref') || rate;
+        var rec = Math.max(0, a * rate);            // la plupart des services prélèvent les frais en plus
+        var ideal = a * ref;
+        var hiddenMad = Math.max(0, ideal - rec);
+        var hiddenEur = ref ? hiddenMad / ref : 0;
+        var totalEur = hiddenEur + fee;
+        out('rec', fmt(rec)); out('ideal', fmt(ideal) + ' DH');
+        out('hid', fmt(hiddenEur, 2) + ' €'); out('fee', fmt(fee, 2) + ' €');
+        out('tot', fmt(totalEur, 2) + ' € (' + (a ? (totalEur / (a + fee) * 100).toFixed(1) : '0') + ' %)');
+      }
+      form.addEventListener('input', run); run();
+    });
+  })();
+</script>

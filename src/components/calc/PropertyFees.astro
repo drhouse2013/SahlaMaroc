@@ -1,0 +1,72 @@
+---
+/**
+ * Calculateur des frais d'achat immobilier au Maroc (+ aide Daam Sakane).
+ * Taux par défaut : src/config/mre.ts (indicatifs, modifiables par l'utilisateur).
+ */
+import CalcShell from './CalcShell.astro';
+import { PROPERTY_FEES as F, DAAM_SAKANE, MRE_LAST_CHECKED } from '../../config/mre';
+const lang = Astro.currentLocale === 'fr' ? 'fr' : 'en';
+const T = {
+  fr: { price: 'Prix du bien (DH)', type: 'Type de bien', housing: 'Logement (appartement, maison)', land: 'Terrain nu / local commercial', reg: 'Droits d’enregistrement (%)', cf: 'Conservation foncière (%)', notary: 'Honoraires notaire (%)', vat: 'TVA sur honoraires (%)', misc: 'Débours divers (DH)', aid: 'Logement neuf, 1ʳᵉ acquisition : appliquer l’aide Daam Sakane', total: 'Frais d’achat estimés', ofPrice: 'du prix', lReg: 'Enregistrement', lCf: 'Conservation foncière', lNot: 'Notaire (TTC)', lMisc: 'Débours', lAid: 'Aide Daam Sakane', lPay: 'Total à prévoir', note: `Estimation indicative (taux usuels vérifiés le ${MRE_LAST_CHECKED}). Seul votre notaire peut établir le montant exact. Aide Daam Sakane : logement neuf, première acquisition, conditions sur daamsakane.ma.` },
+  en: { price: 'Property price (MAD)', type: 'Property type', housing: 'Home (flat, house)', land: 'Bare land / commercial', reg: 'Registration duty (%)', cf: 'Land registry (%)', notary: 'Notary fees (%)', vat: 'VAT on notary fees (%)', misc: 'Other costs (MAD)', aid: 'New home, first purchase: apply Daam Sakane housing aid', total: 'Estimated buying costs', ofPrice: 'of the price', lReg: 'Registration', lCf: 'Land registry', lNot: 'Notary (incl. VAT)', lMisc: 'Other costs', lAid: 'Daam Sakane aid', lPay: 'Total to budget', note: `Indicative estimate (usual rates checked on ${MRE_LAST_CHECKED}). Only your notary can give the exact amount. Daam Sakane aid: new home, first purchase, conditions on daamsakane.ma.` },
+}[lang];
+const cfg = JSON.stringify({ F, DAAM_SAKANE, locale: lang === 'fr' ? 'fr-FR' : 'en-GB' });
+---
+<CalcShell id="property-fees" note={T.note}>
+  <Fragment slot="form">
+    <label class="full">{T.price}<input name="price" type="number" inputmode="numeric" min="0" step="10000" value="900000" /></label>
+    <label class="full">{T.type}
+      <select name="type"><option value="housing">{T.housing}</option><option value="land">{T.land}</option></select>
+    </label>
+    <label>{T.reg}<input name="reg" type="number" step="0.1" value={F.registrationHousing} /></label>
+    <label>{T.cf}<input name="cf" type="number" step="0.1" value={F.landRegistry} /></label>
+    <label>{T.notary}<input name="notary" type="number" step="0.1" value={F.notary} /></label>
+    <label>{T.vat}<input name="vat" type="number" step="1" value={F.notaryVat} /></label>
+    <label>{T.misc}<input name="misc" type="number" step="100" value={F.misc} /></label>
+    <label class="full flex !grid-cols-none items-center !flex-row gap-2"><input name="aid" type="checkbox" class="!w-auto size-4 accent-terracotta-500" /> {T.aid}</label>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{T.total}</p>
+    <p class="big"><span data-out="fees">—</span> DH</p>
+    <p class="text-sm text-white/85"><span data-out="pct">—</span> % {T.ofPrice}</p>
+    <dl>
+      <div><dt>{T.lReg}</dt><dd data-out="reg">—</dd></div>
+      <div><dt>{T.lCf}</dt><dd data-out="cf">—</dd></div>
+      <div><dt>{T.lNot}</dt><dd data-out="not">—</dd></div>
+      <div><dt>{T.lMisc}</dt><dd data-out="misc">—</dd></div>
+      <div><dt>{T.lAid}</dt><dd data-out="aid">—</dd></div>
+      <div class="!border-0 text-base"><dt class="font-semibold">{T.lPay}</dt><dd data-out="pay">—</dd></div>
+    </dl>
+  </Fragment>
+</CalcShell>
+<script define:vars={{ cfg }} is:inline>
+  (function () {
+    var c = JSON.parse(cfg);
+    document.querySelectorAll('[data-calc="property-fees"]').forEach(function (root) {
+      var form = root.querySelector('form');
+      var fmt = function (n) { return new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 }).format(n); };
+      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) ? x : 0; };
+      var out = function (k, t) { root.querySelector('[data-out="' + k + '"]').textContent = t; };
+      form.elements.type.addEventListener('change', function () {
+        form.elements.reg.value = form.elements.type.value === 'land' ? c.F.registrationLand : c.F.registrationHousing;
+      });
+      function run() {
+        var p = v('price');
+        var reg = p * v('reg') / 100;
+        var cf = p * v('cf') / 100 + (p > 0 ? c.F.landRegistryFixed : 0);
+        var notHT = Math.max(p * v('notary') / 100, p > 0 ? c.F.notaryMin : 0);
+        var not = notHT * (1 + v('vat') / 100);
+        var misc = v('misc');
+        var fees = reg + cf + not + misc;
+        var aid = 0;
+        if (form.elements.aid.checked && form.elements.type.value === 'housing') {
+          for (var i = 0; i < c.DAAM_SAKANE.length; i++) { if (p <= c.DAAM_SAKANE[i].maxPrice) { aid = c.DAAM_SAKANE[i].aid; break; } }
+        }
+        out('fees', fmt(fees)); out('pct', p ? (fees / p * 100).toFixed(1) : '0');
+        out('reg', fmt(reg)); out('cf', fmt(cf)); out('not', fmt(not)); out('misc', fmt(misc));
+        out('aid', aid ? '− ' + fmt(aid) : '—'); out('pay', fmt(p + fees - aid) + ' DH');
+      }
+      form.addEventListener('input', run); form.addEventListener('change', run); run();
+    });
+  })();
+</script>
