@@ -1,0 +1,19 @@
+---
+/** Fil d'Ariane visible (le JSON-LD BreadcrumbList est généré par le layout). */
+interface Crumb { name: string; href?: string }
+interface Props { items: Crumb[] }
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="text-sm text-ink-900/75 dark:text-sand-100/75">
+  <ol class="flex flex-wrap items-center gap-1.5">
+    {
+      items.map((c, i) => (
+        <li class="flex items-center gap-1.5">
+          {i > 0 && <span aria-hidden="true" class="rtl:-scale-x-100">›</span>}
+          {c.href ? <a href={c.href} class="hover:underline">{c.name}</a> : <span aria-current="page">{c.name}</span>}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

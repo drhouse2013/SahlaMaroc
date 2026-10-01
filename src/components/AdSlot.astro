@@ -1,0 +1,56 @@
+---
+/**
+ * <AdSlot type="banner|in-article|sidebar" />
+ *
+ * Prêt pour Google AdSense, optimisé Core Web Vitals :
+ * - Hauteur minimale réservée => aucun décalage de mise en page (CLS ≈ 0).
+ * - Le script AdSense n'est PAS chargé ici : BaseLayout l'injecte une seule fois, en différé
+ *   (première interaction ou 3,5 s), => LCP / TBT intacts pour Lighthouse.
+ * - Sans PUBLIC_ADSENSE_CLIENT (dev / avant validation), affiche un placeholder discret en dev,
+ *   et rien du tout en production.
+ */
+import { ADSENSE_CLIENT, ADSENSE_SLOTS } from '../config/site';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  type?: 'banner' | 'in-article' | 'sidebar';
+  lang?: Locale;
+}
+
+const { type = 'banner' } = Astro.props;
+const lang = (Astro.props.lang ?? Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(lang);
+const slot = ADSENSE_SLOTS[type];
+const enabled = Boolean(ADSENSE_CLIENT && slot);
+
+// Hauteurs réservées (px) — alignées sur les formats responsive AdSense les plus servis.
+const minHeight = { banner: 100, 'in-article': 280, sidebar: 600 }[type];
+---
+
+{
+  enabled ? (
+    <aside class="not-prose my-8 text-center" aria-label={t('ads.label')} data-ad-type={type}>
+      <span class="mb-1 block text-[10px] tracking-widest text-ink-900/65 uppercase dark:text-sand-100/65">
+        {t('ads.label')}
+      </span>
+      <ins
+        class="adsbygoogle block"
+        style={`display:block;min-height:${minHeight}px`}
+        data-ad-client={ADSENSE_CLIENT}
+        data-ad-slot={slot}
+        {...(type === 'in-article'
+          ? { 'data-ad-format': 'fluid', 'data-ad-layout': 'in-article' }
+          : { 'data-ad-format': 'auto', 'data-full-width-responsive': 'true' })}
+      />
+    </aside>
+  ) : (
+    import.meta.env.DEV && (
+      <div
+        class="not-prose my-8 grid place-items-center rounded-xl border-2 border-dashed border-ink-900/15 text-xs text-ink-900/40 dark:border-sand-100/15 dark:text-sand-100/40"
+        style={`min-height:${minHeight}px`}
+      >
+        AdSlot · {type} (configurer PUBLIC_ADSENSE_CLIENT)
+      </div>
+    )
+  )
+}

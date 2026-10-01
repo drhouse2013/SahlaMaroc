@@ -1,0 +1,112 @@
+---
+/**
+ * <BudgetCalculator /> — outil interactif (aimant à trafic + backlinks + clics affiliés).
+ * HTML rendu au build ; un petit script (~1,5 Ko) recalcule en direct, sans framework.
+ * Données : src/config/costs.ts (à calibrer sur le terrain).
+ */
+import AffiliateLink from './AffiliateLink.astro';
+import { type Locale } from '../i18n';
+import { BASE, CITIES, CITY_FACTOR, CITY_LABEL, COSTS_LAST_UPDATED } from '../config/costs';
+import { EUR_TO_MAD } from '../config/site';
+
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+
+const L = {
+  en: { city: 'City', mode: 'Type of stay', trip: 'Trip (days)', month: 'Monthly (long stay)', days: 'Number of days', style: 'Lifestyle', budget: 'Budget', mid: 'Comfortable', comfort: 'Premium', people: 'People', cowork: 'Coworking', total: 'Estimated total', perDay: 'per day', housing: 'Housing', food: 'Food', transport: 'Transport', fun: 'Leisure', other: 'SIM & coworking', note: 'Estimate based on our field notes, updated', book: 'Find a place to stay', esim: 'Get a Morocco eSIM', wise: 'Pay like a local with Wise' },
+  fr: { city: 'Ville', mode: 'Type de séjour', trip: 'Voyage (jours)', month: 'Mensuel (long séjour)', days: 'Nombre de jours', style: 'Style de vie', budget: 'Économique', mid: 'Confortable', comfort: 'Premium', people: 'Personnes', cowork: 'Coworking', total: 'Total estimé', perDay: 'par jour', housing: 'Logement', food: 'Nourriture', transport: 'Transport', fun: 'Loisirs', other: 'SIM & coworking', note: 'Estimation basée sur nos relevés terrain, mise à jour le', book: 'Trouver un logement', esim: 'Prendre une eSIM Maroc', wise: 'Payer comme un local avec Wise' },
+  es: { city: 'Ciudad', mode: 'Tipo de estancia', trip: 'Viaje (días)', month: 'Mensual (larga estancia)', days: 'Número de días', style: 'Estilo de vida', budget: 'Económico', mid: 'Cómodo', comfort: 'Premium', people: 'Personas', cowork: 'Coworking', total: 'Total estimado', perDay: 'por día', housing: 'Alojamiento', food: 'Comida', transport: 'Transporte', fun: 'Ocio', other: 'SIM y coworking', note: 'Estimación basada en nuestras notas de campo, actualizada el', book: 'Buscar alojamiento', esim: 'eSIM para Marruecos', wise: 'Paga como un local con Wise' },
+  de: { city: 'Stadt', mode: 'Art des Aufenthalts', trip: 'Reise (Tage)', month: 'Monatlich (Langzeit)', days: 'Anzahl Tage', style: 'Lebensstil', budget: 'Sparsam', mid: 'Komfortabel', comfort: 'Premium', people: 'Personen', cowork: 'Coworking', total: 'Geschätzte Summe', perDay: 'pro Tag', housing: 'Unterkunft', food: 'Essen', transport: 'Transport', fun: 'Freizeit', other: 'SIM & Coworking', note: 'Schätzung auf Basis unserer Notizen vor Ort, aktualisiert am', book: 'Unterkunft finden', esim: 'Marokko-eSIM holen', wise: 'Wie ein Local zahlen mit Wise' },
+  ar: { city: 'المدينة', mode: 'نوع الإقامة', trip: 'رحلة (أيام)', month: 'شهري (إقامة طويلة)', days: 'عدد الأيام', style: 'نمط العيش', budget: 'اقتصادي', mid: 'مريح', comfort: 'فاخر', people: 'الأشخاص', cowork: 'مساحة عمل مشتركة', total: 'المجموع التقديري', perDay: 'في اليوم', housing: 'السكن', food: 'الأكل', transport: 'النقل', fun: 'الترفيه', other: 'الشريحة والعمل المشترك', note: 'تقدير مبني على ملاحظاتنا الميدانية، آخر تحديث', book: 'ابحث عن سكن', esim: 'احصل على eSIM للمغرب', wise: 'ادفع كالمحليين مع Wise' },
+}[lang];
+
+const config = JSON.stringify({ BASE, CITY_FACTOR, EUR_TO_MAD, intl: lang === 'ar' ? 'ar-MA-u-nu-latn' : lang });
+const field = 'mt-1 w-full rounded-lg border border-ink-900/15 bg-white px-3 py-2 dark:border-white/15 dark:bg-ink-900';
+---
+
+<div class="not-prose my-8 rounded-2xl border border-ink-900/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5" data-budget-calc data-config={config}>
+  <form class="grid gap-4 sm:grid-cols-2" onsubmit="return false">
+    <label class="text-sm font-medium">{L.city}
+      <select name="city" class={field}>{CITIES.map((c) => <option value={c}>{CITY_LABEL[c]}</option>)}</select>
+    </label>
+    <label class="text-sm font-medium">{L.mode}
+      <select name="mode" class={field}><option value="month">{L.month}</option><option value="trip">{L.trip}</option></select>
+    </label>
+    <label class="text-sm font-medium" data-days>{L.days}
+      <input name="days" type="number" min="1" max="90" value="10" class={field} />
+    </label>
+    <label class="text-sm font-medium">{L.style}
+      <select name="style" class={field}><option value="budget">{L.budget}</option><option value="mid" selected>{L.mid}</option><option value="comfort">{L.comfort}</option></select>
+    </label>
+    <label class="text-sm font-medium">{L.people}
+      <input name="people" type="number" min="1" max="6" value="1" class={field} />
+    </label>
+    <label class="flex items-center gap-2 self-end text-sm font-medium">
+      <input name="cowork" type="checkbox" class="size-4 accent-terracotta-500" /> {L.cowork}
+    </label>
+  </form>
+
+  <div class="mt-6 rounded-xl bg-sand-100 p-5 dark:bg-black/30" aria-live="polite">
+    <p class="text-sm text-ink-900/75 dark:text-sand-100/75">{L.total}</p>
+    <p class="text-3xl font-extrabold text-terracotta-600 dark:text-terracotta-100"><span data-out="mad">—</span> MAD</p>
+    <p class="text-sm">≈ <span data-out="eur">—</span> € · <span data-out="day">—</span> MAD {L.perDay}</p>
+    <dl class="mt-4 grid grid-cols-2 gap-2 text-sm sm:grid-cols-5">
+      {(['housing', 'food', 'transport', 'fun', 'other'] as const).map((k) => (
+        <div><dt class="text-ink-900/75 dark:text-sand-100/75">{L[k]}</dt><dd class="font-semibold" data-out={k}>—</dd></div>
+      ))}
+    </dl>
+  </div>
+
+  <div class="mt-5 flex flex-wrap gap-3">
+    <AffiliateLink provider="booking" query="Marrakech" variant="button" class="js-booking">{L.book}</AffiliateLink>
+    <AffiliateLink provider="airalo" variant="button">{L.esim}</AffiliateLink>
+    <AffiliateLink provider="wise" variant="button">{L.wise}</AffiliateLink>
+  </div>
+  <p class="mt-4 text-xs text-ink-900/65 dark:text-sand-100/65">{L.note} {COSTS_LAST_UPDATED}. 1 € ≈ {EUR_TO_MAD} MAD.</p>
+</div>
+
+<script>
+  type Style = 'budget' | 'mid' | 'comfort';
+  document.querySelectorAll<HTMLElement>('[data-budget-calc]').forEach((root) => {
+    const cfg = JSON.parse(root.dataset.config!);
+    const form = root.querySelector('form')!;
+    const fmt = new Intl.NumberFormat(cfg.intl, { maximumFractionDigits: 0 });
+    const out = (k: string, v: number) => {
+      const el = root.querySelector(`[data-out="${k}"]`);
+      if (el) el.textContent = fmt.format(Math.round(v / 10) * 10);
+    };
+    const booking = root.querySelector<HTMLAnchorElement>('.js-booking');
+
+    function compute() {
+      const f = new FormData(form);
+      const city = String(f.get('city'));
+      const style = String(f.get('style')) as Style;
+      const monthly = f.get('mode') === 'month';
+      const days = monthly ? 30 : Math.min(90, Math.max(1, Number(f.get('days')) || 1));
+      const people = Math.min(6, Math.max(1, Number(f.get('people')) || 1));
+      const k = cfg.CITY_FACTOR[city] ?? 1;
+      const B = cfg.BASE;
+      // Logement partagé : +35 % par personne supplémentaire (chambre en plus), pas x2.
+      const roomFactor = 1 + 0.35 * (people - 1);
+      const housing = (monthly ? B.rentMonth[style] : B.nightStay[style] * days) * k * roomFactor;
+      const food = B.foodDay[style] * days * people * k;
+      const transport = B.transportDay[style] * days * Math.ceil(people / 2) * k;
+      const fun = B.funDay[style] * days * people * k;
+      const cowork = f.get('cowork') ? (monthly ? B.coworkingMonth : B.coworkingDay * Math.ceil(days * 0.7)) * people : 0;
+      const sim = B.simMonth * people * (monthly ? 1 : Math.min(1, days / 30 + 0.3));
+      const total = housing + food + transport + fun + cowork + sim;
+
+      root.querySelector<HTMLElement>('[data-days]')!.hidden = monthly;
+      out('mad', total); out('eur', total / cfg.EUR_TO_MAD); out('day', total / days);
+      out('housing', housing); out('food', food); out('transport', transport); out('fun', fun); out('other', cowork + sim);
+
+      // Le lien Booking suit la ville choisie => clic plus pertinent = meilleure conversion.
+      if (booking) {
+        const u = new URL(booking.href);
+        u.searchParams.set('ss', city.charAt(0).toUpperCase() + city.slice(1));
+        booking.href = u.toString();
+      }
+    }
+    form.addEventListener('input', compute);
+    compute();
+  });
+</script>

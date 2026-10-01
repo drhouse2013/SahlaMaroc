@@ -1,0 +1,49 @@
+---
+/**
+ * <AffiliateLink provider="booking|airalo|wise|getyourguide|viator|safetywing|discovercars">
+ *
+ * - URL trackée construite depuis src/config/affiliates.ts (IDs en variables d'env).
+ * - subId automatique = chemin de la page => reporting par article dans chaque réseau.
+ * - rel="sponsored" : obligatoire pour Google sur les liens rémunérés.
+ * - Nouvel onglet + noopener (sécurité, et l'utilisateur garde votre page ouverte).
+ * - data-affiliate : capté par le tracker de clics (BaseLayout) pour Umami.
+ *
+ * Exemples MDX :
+ *   <AffiliateLink provider="airalo">Get a Morocco eSIM</AffiliateLink>
+ *   <AffiliateLink provider="getyourguide" query="Merzouga desert tour" variant="button">See tours</AffiliateLink>
+ *   <AffiliateLink provider="booking" href="https://www.booking.com/hotel/ma/xyz.html">Riad Xyz</AffiliateLink>
+ */
+import { affiliateUrl, PROVIDERS, type ProviderId } from '../config/affiliates';
+
+interface Props {
+  provider: ProviderId;
+  /** Destination / recherche (ex : "Marrakech") */
+  query?: string;
+  /** Lien profond déjà tracké (prioritaire sur la construction automatique) */
+  href?: string;
+  variant?: 'link' | 'button';
+  class?: string;
+}
+
+const { provider, query, href, variant = 'link', class: className = '' } = Astro.props;
+const subId = Astro.url.pathname.replace(/^\/+|\/+$/g, '') || 'home';
+const url = href ?? affiliateUrl(provider, { query, subId });
+
+const styles = {
+  link: 'font-semibold text-majorelle-600 underline decoration-2 underline-offset-4 hover:text-terracotta-600 dark:text-majorelle-100 dark:hover:text-terracotta-100',
+  button:
+    'not-prose inline-flex items-center gap-2 rounded-full text-base bg-terracotta-600 px-5 py-2.5 font-semibold text-white no-underline shadow-sm transition hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-majorelle-500',
+};
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="sponsored noopener noreferrer"
+  data-affiliate={provider}
+  class:list={[styles[variant], className]}
+  title={PROVIDERS[provider].name}
+>
+  <slot>{PROVIDERS[provider].name}</slot>
+  {variant === 'button' && <span aria-hidden="true" class="rtl:-scale-x-100">→</span>}
+</a>

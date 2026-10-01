@@ -1,0 +1,14 @@
+---
+/** Mention d'affiliation en haut des articles monétisés (exigée par la FTC / l'ARPP et les programmes d'affiliation). */
+import { useTranslations, type Locale } from '../i18n';
+import { getPageUrl } from '../utils/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const href = await getPageUrl(lang, 'disclosure');
+---
+
+<p class="not-prose rounded-xl bg-majorelle-50 px-4 py-3 text-xs text-ink-900/70 dark:bg-white/5 dark:text-sand-100/70">
+  ℹ️ {t('disclosure.short')}
+  {href && <a href={href} class="underline">{t('disclosure.link')}</a>}
+</p>
