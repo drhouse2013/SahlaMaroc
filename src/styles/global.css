@@ -1,0 +1,95 @@
+/**
+ * SahlaMaroc — design system (Tailwind CSS 4, configuration "CSS-first").
+ * Direction : affiche de voyage marocaine. Arcs outrepassés, zellige, bleu Majorelle franc,
+ * terracotta, émeraude. Titres en Marhey (latin + arabe), texte en Readex Pro (latin + arabe).
+ * Polices auto-hébergées (@fontsource) : aucune requête vers un domaine tiers.
+ */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-terracotta-50: #fdf3ee;
+  --color-terracotta-100: #f9e0d3;
+  --color-terracotta-300: #ec9f80;
+  --color-terracotta-500: #c8553d;
+  --color-terracotta-600: #a8432f;
+  --color-terracotta-700: #873425;
+
+  --color-majorelle-50: #eef1ff;
+  --color-majorelle-100: #d9e0ff;
+  --color-majorelle-300: #8fa2f5;
+  --color-majorelle-500: #2f4bd8;
+  --color-majorelle-600: #1e3abf;
+  --color-majorelle-700: #172d94;
+  --color-majorelle-900: #0e1a5c;
+
+  --color-emerald-moroccan-100: #d5f0e4;
+  --color-emerald-moroccan-500: #0f8a5f;
+  --color-emerald-moroccan-600: #0b6e4b;
+
+  --color-saffron-400: #f4c35a;
+  --color-saffron-500: #e9b949;
+
+  --color-sand-50: #fbf8f3;
+  --color-sand-100: #f3ece0;
+  --color-sand-200: #e9dcc6;
+  --color-ink-900: #1b1a1f;
+  --color-night-900: #121427;
+  --color-night-800: #1b1e36;
+
+  --font-sans: "Readex Pro Variable", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Marhey Variable", "Readex Pro Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-arch: 999px 999px 1.5rem 1.5rem;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-feature-settings: "ss01"; }
+  h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.01em; }
+  :focus-visible { outline: 2px solid var(--color-majorelle-500); outline-offset: 3px; border-radius: 4px; }
+  .dark { color-scheme: dark; }
+}
+
+@layer components {
+  /* Fenêtre en arc (signature visuelle) */
+  .arch { border-radius: var(--radius-arch); overflow: hidden; }
+
+  /* Bande de zellige : étoiles à 8 branches en SVG data-URI (< 1 Ko) */
+  .zellige {
+    background-color: var(--color-majorelle-600);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 4l4.6 11.4L36 20l-11.4 4.6L20 36l-4.6-11.4L4 20l11.4-4.6z' fill='%23e9b949'/%3E%3Ccircle cx='20' cy='20' r='4' fill='%231e3abf'/%3E%3Cpath d='M0 0l6 6M40 0l-6 6M0 40l6-6M40 40l-6-6' stroke='%23d9e0ff' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: 40px 40px;
+  }
+  .zellige-soft {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23c8553d' stroke-opacity='.10' stroke-width='1.5'/%3E%3C/svg%3E");
+  }
+  .dark .zellige-soft {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23f9e0d3' stroke-opacity='.07' stroke-width='1.5'/%3E%3C/svg%3E");
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px;
+    padding: .8rem 1.4rem; font-weight: 600; line-height: 1.2; transition: transform .15s, background-color .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--color-terracotta-600); color: #fff; box-shadow: 0 6px 18px -8px rgb(168 67 47 / .7); }
+  .btn-primary:hover { background: var(--color-terracotta-700); }
+  .btn-ghost { border: 2px solid currentColor; color: var(--color-majorelle-600); }
+  .dark .btn-ghost { color: var(--color-majorelle-100); }
+
+  .eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  .card { background: #fff; border: 1px solid rgb(27 26 31 / .08); border-radius: 1.25rem; }
+  .dark .card { background: var(--color-night-800); border-color: rgb(255 255 255 / .08); }
+}
+
+/* Contenu des articles */
+.prose table { display: block; overflow-x: auto; }
+.prose h2 { margin-top: 2.2em; }
+.prose :where(h2, h3) { font-family: var(--font-display); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

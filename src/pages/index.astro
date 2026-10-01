@@ -1,0 +1,23 @@
+---
+/**
+ * Racine "/" : redirection vers la langue du navigateur (si supportée), sinon /en.
+ * Script inline minuscule (< 300 octets), fallback <meta refresh> sans JS.
+ */
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=/en" />
+    <link rel="canonical" href={new URL('/en', Astro.site)} />
+    <meta name="robots" content="noindex" />
+    <script is:inline>
+      (function () {
+        var s = ['en', 'fr', 'es', 'de', 'ar'];
+        var l = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        location.replace('/' + (s.indexOf(l) > -1 ? l : 'en'));
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
