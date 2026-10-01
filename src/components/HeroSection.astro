@@ -1,0 +1,61 @@
+---
+/**
+ * <HeroSection /> — accroche en deux colonnes : texte + illustration dans un arc,
+ * avec deux "étiquettes" flottantes d'informations utiles (chiffres réels, pas de décor).
+ * L'illustration est un SVG (~8 Ko) chargé en priorité : LCP rapide.
+ */
+import { Image } from 'astro:assets';
+import { illustration } from '../utils/illustrations';
+import type { Scene } from '../data/home';
+
+interface Cta { href: string; label: string }
+interface Chip { value: string; label: string }
+interface Props {
+  title: string;
+  subtitle?: string;
+  eyebrow?: string;
+  primary?: Cta;
+  secondary?: Cta;
+  scene?: Scene;
+  chips?: Chip[];
+  stats?: string[];
+}
+const { title, subtitle, eyebrow, primary, secondary, scene = 'marrakech', chips = [], stats = [] } = Astro.props;
+---
+
+<section class="zellige-soft relative overflow-hidden">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-10 pb-16 md:grid-cols-[1.1fr_0.9fr] md:pt-16 md:pb-24">
+    <div>
+      {eyebrow && <p class="eyebrow text-emerald-moroccan-600 dark:text-emerald-moroccan-100">{eyebrow}</p>}
+      <h1 class="mt-4 text-[2.5rem] leading-[1.08] font-bold sm:text-6xl">{title}</h1>
+      {subtitle && <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-900/75 dark:text-sand-100/80">{subtitle}</p>}
+      <div class="mt-8 flex flex-wrap gap-3">
+        {primary && <a href={primary.href} class="btn btn-primary">{primary.label} <span aria-hidden="true" class="rtl:-scale-x-100">→</span></a>}
+        {secondary && <a href={secondary.href} class="btn btn-ghost">{secondary.label}</a>}
+      </div>
+      {stats.length > 0 && (
+        <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-2 text-sm text-ink-900/75 dark:text-sand-100/75">
+          {stats.map((s) => <li class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-terracotta-500"></span>{s}</li>)}
+        </ul>
+      )}
+    </div>
+
+    <div class="relative mx-auto w-full max-w-md">
+      <div class="arch aspect-[4/5] border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
+        <Image src={illustration(scene)} alt="" class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
+      </div>
+      {chips[0] && (
+        <div class="card absolute -start-4 bottom-16 px-4 py-3 shadow-xl sm:-start-10">
+          <p class="font-display text-xl font-bold text-majorelle-600 dark:text-majorelle-100" dir="ltr">{chips[0].value}</p>
+          <p class="text-xs text-ink-900/70 dark:text-sand-100/70">{chips[0].label}</p>
+        </div>
+      )}
+      {chips[1] && (
+        <div class="card absolute -end-3 top-16 px-4 py-3 shadow-xl sm:-end-8">
+          <p class="font-display text-xl font-bold text-terracotta-600 dark:text-terracotta-300" dir="ltr">{chips[1].value}</p>
+          <p class="text-xs text-ink-900/70 dark:text-sand-100/70">{chips[1].label}</p>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

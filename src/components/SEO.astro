@@ -1,0 +1,50 @@
+---
+/**
+ * Balises <head> SEO : title, description, canonical, hreflang (+ x-default),
+ * Open Graph, Twitter Card, JSON-LD.
+ */
+import { LOCALE_META, DEFAULT_LOCALE, type Locale } from '../i18n';
+import { absoluteUrl, buildTitle, SITE_NAME } from '../utils/seo';
+import type { Alternates } from '../utils/i18n';
+
+interface Props {
+  lang: Locale;
+  title?: string;
+  description: string;
+  alternates: Alternates;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  jsonLd?: object[];
+}
+
+const { lang, title, description, alternates, image, type = 'website', noindex = false, jsonLd = [] } = Astro.props;
+const site = Astro.site;
+const canonical = absoluteUrl(Astro.url.pathname, site);
+const ogImage = absoluteUrl(image ?? '/og-default.png', site);
+const xDefault = alternates[DEFAULT_LOCALE] ?? alternates[lang];
+---
+
+<title>{buildTitle(title)}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+{/* hreflang : uniquement les traductions réelles (pas de duplication) */}
+{
+  Object.entries(alternates).map(([code, path]) => (
+    <link rel="alternate" hreflang={LOCALE_META[code as Locale].hreflang} href={absoluteUrl(path!, site)} />
+  ))
+}
+{xDefault && <link rel="alternate" hreflang="x-default" href={absoluteUrl(xDefault, site)} />}
+
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title ?? SITE_NAME} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content={LOCALE_META[lang].og} />
+<meta name="twitter:card" content="summary_large_image" />
+
+{jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}

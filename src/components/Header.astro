@@ -1,0 +1,71 @@
+---
+/**
+ * En-tête : logo, navigation (menu Guides déroulant), langue, thème.
+ * Mobile : menu <details> sans JavaScript.
+ */
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import Logo from './Logo.astro';
+import { useTranslations, type Locale } from '../i18n';
+import { CATEGORIES } from '../i18n/categories';
+import { L } from '../data/home';
+import { categoryPath, getActiveCategories, getPageUrl, homePath, type Alternates } from '../utils/i18n';
+
+interface Props { lang: Locale; alternates: Alternates }
+const { lang, alternates } = Astro.props;
+const t = useTranslations(lang);
+const toolUrl = await getPageUrl(lang, 'calculators');
+const aboutUrl = await getPageUrl(lang, 'about');
+const cats = await getActiveCategories(lang);
+const link = 'rounded-full px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10';
+---
+
+<header class="sticky top-0 z-40 border-b border-ink-900/5 bg-sand-50/90 backdrop-blur-md dark:border-white/5 dark:bg-night-900/90">
+  <div class="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
+    <a href={homePath(lang)} class="flex items-center gap-2.5" aria-label="SahlaMaroc">
+      <Logo />
+      <span class="font-display text-xl font-bold tracking-tight">Sahla<span class="text-terracotta-600 dark:text-terracotta-300">Maroc</span></span>
+    </a>
+
+    <nav class="ms-6 hidden items-center gap-1 text-[0.95rem] font-medium md:flex" aria-label="Main">
+      {cats.length > 0 && (
+        <details class="group relative">
+          <summary class:list={[link, 'flex cursor-pointer list-none items-center gap-1 [&::-webkit-details-marker]:hidden']}>
+            {L.guides[lang]}
+            <svg class="size-3 transition group-open:rotate-180" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
+          </summary>
+          <ul class="card absolute start-0 z-50 mt-2 grid w-64 gap-0.5 p-2 shadow-xl">
+            {cats.map((id) => (
+              <li><a href={categoryPath(lang, id)} class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10"><span aria-hidden="true">{CATEGORIES[id].icon}</span>{CATEGORIES[id].label[lang]}</a></li>
+            ))}
+          </ul>
+        </details>
+      )}
+      <a href={`${homePath(lang)}#cities`} class={link}>{L.cities[lang]}</a>
+      {toolUrl && <a href={toolUrl} class={link}>{t('nav.tools')}</a>}
+      {aboutUrl && <a href={aboutUrl} class={link}>{t('nav.about')}</a>}
+    </nav>
+
+    <div class="ms-auto flex items-center gap-1">
+      <LanguageSwitcher lang={lang} alternates={alternates} />
+      <ThemeToggle lang={lang} />
+      <details class="relative md:hidden">
+        <summary class="grid size-10 cursor-pointer list-none place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden" aria-label={L.menu[lang]}>
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </summary>
+        <div class="card absolute end-0 z-50 mt-2 w-72 p-3 shadow-xl">
+          <p class="eyebrow px-3 pb-1 text-ink-900/60 dark:text-sand-100/60">{L.guides[lang]}</p>
+          <ul class="grid gap-0.5">
+            {cats.map((id) => (
+              <li><a href={categoryPath(lang, id)} class="flex gap-3 rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10"><span aria-hidden="true">{CATEGORIES[id].icon}</span>{CATEGORIES[id].label[lang]}</a></li>
+            ))}
+          </ul>
+          <hr class="my-2 border-ink-900/10 dark:border-white/10" />
+          <a href={`${homePath(lang)}#cities`} class="block rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10">{L.cities[lang]}</a>
+          {toolUrl && <a href={toolUrl} class="block rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10">{t('nav.tools')}</a>}
+          {aboutUrl && <a href={aboutUrl} class="block rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10">{t('nav.about')}</a>}
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,30 @@
+---
+/** Cadre visuel commun des calculateurs : formulaire à gauche, résultat à droite. */
+interface Props { id: string; note?: string }
+const { id, note } = Astro.props;
+---
+<div class="calc not-prose my-8 overflow-hidden rounded-3xl border border-ink-900/10 bg-white shadow-sm dark:border-white/10 dark:bg-night-800" data-calc={id}>
+  <div class="grid md:grid-cols-[1.1fr_0.9fr]">
+    <form class="grid content-start gap-4 p-6 sm:grid-cols-2" onsubmit="return false" novalidate>
+      <slot name="form" />
+    </form>
+    <div class="bg-majorelle-600 p-6 text-white dark:bg-majorelle-900" aria-live="polite">
+      <slot name="result" />
+    </div>
+  </div>
+  {note && <p class="border-t border-ink-900/10 px-6 py-3 text-xs text-ink-900/70 dark:border-white/10 dark:text-sand-100/70">{note}</p>}
+</div>
+
+<style is:global>
+  .calc label { display: grid; gap: 0.35rem; font-size: 0.875rem; font-weight: 500; }
+  .calc input, .calc select {
+    width: 100%; border-radius: 0.75rem; border: 1px solid rgb(27 26 31 / 0.15); background: #fff;
+    padding: 0.6rem 0.8rem; font: inherit; font-variant-numeric: tabular-nums;
+  }
+  .dark .calc input, .dark .calc select { background: var(--color-night-900); border-color: rgb(255 255 255 / 0.15); color: inherit; }
+  .calc .full { grid-column: 1 / -1; }
+  .calc .big { font-family: var(--font-display); font-size: 2.2rem; line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .calc dl { display: grid; gap: 0.5rem; margin-top: 1.25rem; font-size: 0.9rem; }
+  .calc dl div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid rgb(255 255 255 / 0.18); padding-bottom: 0.4rem; }
+  .calc dd { font-weight: 600; font-variant-numeric: tabular-nums; }
+</style>

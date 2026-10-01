@@ -1,0 +1,53 @@
+---
+/** Compteur des 180 jours d'admission temporaire d'un véhicule étranger (MRE), par année civile. */
+import CalcShell from './CalcShell.astro';
+import { CAR_DAYS_PER_YEAR } from '../../config/mre';
+const lang = Astro.currentLocale === 'fr' ? 'fr' : 'en';
+const T = {
+  fr: { stay: 'Séjour', inD: 'Entrée', outD: 'Sortie (vide = encore au Maroc)', used: 'Jours utilisés cette année', left: 'jours restants', deadline: 'Date limite de sortie (séjour en cours)', none: '—', note: `Règle générale : ${CAR_DAYS_PER_YEAR} jours par année civile, en une ou plusieurs fois, sans prolongation (sauf dispositions de fin d’année). Vérifiez votre situation auprès de la douane (ADII).` },
+  en: { stay: 'Stay', inD: 'Entry', outD: 'Exit (empty = still in Morocco)', used: 'Days used this year', left: 'days left', deadline: 'Exit deadline (current stay)', none: '—', note: `General rule: ${CAR_DAYS_PER_YEAR} days per calendar year, in one or several stays, no extension (except year-end provisions). Check your case with Moroccan customs (ADII).` },
+}[lang];
+const locale = lang === 'fr' ? 'fr-FR' : 'en-GB';
+const year = new Date().getFullYear();
+---
+<CalcShell id="car-days" note={T.note}>
+  <Fragment slot="form">
+    {[1, 2, 3].map((i) => (
+      <>
+        <label>{T.stay} {i} · {T.inD}<input name={`in${i}`} type="date" value={i === 1 ? `${year}-07-01` : ''} /></label>
+        <label>{T.stay} {i} · {T.outD}<input name={`out${i}`} type="date" value={i === 1 ? `${year}-08-20` : ''} /></label>
+      </>
+    ))}
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{T.used}</p>
+    <p class="big"><span data-out="used">—</span> / {CAR_DAYS_PER_YEAR}</p>
+    <p class="text-sm text-white/85"><span data-out="left">—</span> {T.left}</p>
+    <dl><div class="!border-0"><dt>{T.deadline}</dt><dd data-out="dl">—</dd></div></dl>
+  </Fragment>
+</CalcShell>
+<script define:vars={{ locale, max: CAR_DAYS_PER_YEAR }} is:inline>
+  (function () {
+    var DAY = 86400000;
+    document.querySelectorAll('[data-calc="car-days"]').forEach(function (root) {
+      var form = root.querySelector('form');
+      var out = function (k, t) { root.querySelector('[data-out="' + k + '"]').textContent = t; };
+      function d(name) { var s = form.elements[name].value; return s ? new Date(s + 'T00:00:00') : null; }
+      function run() {
+        var today = new Date(); today.setHours(0, 0, 0, 0);
+        var y = today.getFullYear(), start = new Date(y, 0, 1), end = new Date(y, 11, 31);
+        var used = 0, open = null;
+        for (var i = 1; i <= 3; i++) {
+          var a = d('in' + i); if (!a) continue;
+          var b = d('out' + i); if (!b) { b = today; open = a; }
+          var s = a < start ? start : a, e = b > end ? end : b;
+          if (e >= s) used += Math.round((e - s) / DAY) + 1;
+        }
+        var left = Math.max(0, max - used);
+        out('used', used); out('left', left);
+        out('dl', open ? new Date(today.getTime() + left * DAY).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }) : '—');
+      }
+      form.addEventListener('input', run); run();
+    });
+  })();
+</script>

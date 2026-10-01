@@ -1,0 +1,26 @@
+---
+/** Grille des calculateurs (accueil + page hub). */
+import { TOOLS } from '../data/tools';
+import { pick } from '../data/home';
+import type { Locale } from '../i18n';
+import { getPageUrl } from '../utils/i18n';
+
+interface Props { lang?: Locale; audience?: 'mre' | 'visitors' }
+const lang = (Astro.props.lang ?? Astro.currentLocale ?? 'en') as Locale;
+const list = await Promise.all(
+  TOOLS.filter((t) => !Astro.props.audience || t.audience === Astro.props.audience).map(async (t) => ({ ...t, href: await getPageUrl(lang, t.key) })),
+);
+---
+<ul class="not-prose grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  {list.filter((t) => t.href).map((t) => (
+    <li>
+      <a href={t.href} class="group card flex h-full gap-4 p-5 transition hover:-translate-y-0.5 hover:border-terracotta-500 hover:shadow-lg">
+        <span class="grid size-12 shrink-0 place-items-center rounded-2xl bg-sand-100 text-2xl dark:bg-white/10" aria-hidden="true">{t.icon}</span>
+        <span>
+          <span class="block font-display text-lg leading-snug font-bold group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{pick(t.title, lang)}</span>
+          <span class="mt-1 block text-sm text-ink-900/75 dark:text-sand-100/75">{pick(t.text, lang)}</span>
+        </span>
+      </a>
+    </li>
+  ))}
+</ul>
