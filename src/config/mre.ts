@@ -3,7 +3,7 @@
  * ⚠️ À revérifier chaque trimestre (loi de finances, barèmes ANCFCC, notaires).
  * Toutes les valeurs restent modifiables par l'utilisateur dans les calculateurs.
  */
-export const MRE_LAST_CHECKED = '2026-10-01';
+export const MRE_LAST_CHECKED = '2026-10-02';
 
 /** Frais d'acquisition immobilière (taux usuels constatés en 2026) */
 export const PROPERTY_FEES = {

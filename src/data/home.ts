@@ -81,7 +81,7 @@ export const FACTS: Partial2<{ value: string; label: string }[]> = {
     { value: '180 days', label: 'Per year for a foreign-plated car' },
     { value: '100,000 MAD', label: 'Max Daam Sakane housing aid' },
     { value: '90 days', label: 'Visa-free stay for EU, UK, US, Canada…' },
-    { value: '2 h 10', label: 'Tangier → Casablanca by Al Boraq' },
+    { value: 'GMT', label: 'Morocco’s time zone all year since 20 Sept 2026' },
     { value: '2030', label: 'World Cup co-hosted with Spain & Portugal' },
   ],
   fr: [
@@ -91,7 +91,7 @@ export const FACTS: Partial2<{ value: string; label: string }[]> = {
     { value: '180 jours', label: 'Par an pour une voiture immatriculée à l’étranger' },
     { value: '100 000 DH', label: 'Aide Daam Sakane maximale' },
     { value: '90 jours', label: 'Sans visa pour UE, Royaume-Uni, USA, Canada…' },
-    { value: '2 h 10', label: 'Tanger → Casablanca en Al Boraq' },
+    { value: 'GMT', label: 'Fuseau horaire du Maroc toute l’année depuis le 20 sept. 2026' },
     { value: '2030', label: 'Coupe du monde co-organisée avec l’Espagne et le Portugal' },
   ],
 };
@@ -141,7 +141,7 @@ Object.assign(FACTS, {
     { value: '180 días', label: 'Al año para un coche con matrícula extranjera' },
     { value: '100.000 MAD', label: 'Ayuda Daam Sakane máxima' },
     { value: '90 días', label: 'Sin visado para UE, Reino Unido, EE. UU.…' },
-    { value: '2 h 10', label: 'Tánger → Casablanca en Al Boraq' },
+    { value: 'GMT', label: 'Hora de Marruecos todo el año desde el 20 sept. 2026' },
     { value: '2030', label: 'Mundial coorganizado con España y Portugal' },
   ],
   de: [
@@ -151,7 +151,7 @@ Object.assign(FACTS, {
     { value: '180 Tage', label: 'Pro Jahr für ein Auto mit ausländischem Kennzeichen' },
     { value: '100.000 MAD', label: 'Maximale Daam-Sakane-Hilfe' },
     { value: '90 Tage', label: 'Visumfrei für EU, UK, USA…' },
-    { value: '2 h 10', label: 'Tanger → Casablanca mit Al Boraq' },
+    { value: 'GMT', label: 'Marokkos Zeitzone ganzjährig seit 20. Sept. 2026' },
     { value: '2030', label: 'WM mit Spanien und Portugal' },
   ],
   ar: [
@@ -161,7 +161,7 @@ Object.assign(FACTS, {
     { value: '180', label: 'يوماً في السنة للسيارة ذات الترقيم الأجنبي' },
     { value: '100 000 MAD', label: 'أقصى دعم مباشر للسكن' },
     { value: '90', label: 'يوماً بدون تأشيرة لمواطني الاتحاد الأوروبي وغيرهم' },
-    { value: '2h10', label: 'طنجة ← الدار البيضاء بالبراق' },
+    { value: 'GMT', label: 'توقيت المغرب طوال السنة منذ 20 سبتمبر 2026' },
     { value: '2030', label: 'كأس العالم مع إسبانيا والبرتغال' },
   ],
 });
