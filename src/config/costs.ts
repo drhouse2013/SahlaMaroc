@@ -43,8 +43,8 @@ export const BASE = {
   transportDay: { budget: 20, mid: 50, comfort: 120 },
   /** Loisirs, sorties, visites par jour */
   funDay: { budget: 30, mid: 80, comfort: 200 },
-  /** Forfait mobile 30 jours (~50 Go chez les opérateurs locaux) */
-  simMonth: 200,
+  /** Forfait mobile 30 jours (~10-20 Go chez les opérateurs locaux, 100-130 MAD) */
+  simMonth: 130,
   /** Coworking : abonnement mensuel / journée */
   coworkingMonth: 1500,
   coworkingDay: 120,
