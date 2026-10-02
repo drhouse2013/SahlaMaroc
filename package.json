@@ -14,7 +14,8 @@
     "check": "astro check",
     "translate": "node src/i18n/translate.mjs",
     "prebuild": "node tools/raster.mjs",
-    "predev": "node tools/raster.mjs"
+    "predev": "node tools/raster.mjs",
+    "check:content": "node tools/check-content.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",
