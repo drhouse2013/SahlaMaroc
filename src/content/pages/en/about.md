@@ -10,6 +10,6 @@ Sahla Morocco is written by **Yassine**, based near Casablanca, Morocco. I speak
 
 ## How we work
 
-- **Checked on the ground.** Prices, procedures and shops are verified in person; each guide shows when it was last checked.
+- **Sourced and dated.** Prices, procedures and rates come from official sources and the press, and each guide shows when it was last updated. Where a figure may change or sources differ, we say so and point you to the competent authority. The "Verified on the ground" badge appears only when we really checked on site.
 - **Independent.** Some links are affiliate links (see our [disclosure](/en/affiliate-disclosure)). We only recommend what we would use ourselves, and partners never review our content.
 - **Corrections welcome.** Something changed? Email **contact@sahlamaroc.com** and we'll update the guide.
