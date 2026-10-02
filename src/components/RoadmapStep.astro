@@ -1,0 +1,11 @@
+---
+/** Une étape du <Roadmap> : échéance (when), titre, contenu markdown en slot. */
+interface Props { when: string; title: string }
+const { when, title } = Astro.props;
+---
+
+<li>
+  <span class="rm-when">{when}</span>
+  <h3 class="rm-title">{title}</h3>
+  <div class="rm-body"><slot /></div>
+</li>
