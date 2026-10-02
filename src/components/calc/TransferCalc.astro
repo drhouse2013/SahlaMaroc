@@ -1,14 +1,18 @@
 ---
 /** Comparateur du coût réel d'un transfert d'argent vers le Maroc (frais + marge sur le taux). */
+import { type Locale, LOCALE_META } from '../../i18n';
 import CalcShell from './CalcShell.astro';
 import AffiliateLink from '../AffiliateLink.astro';
 import { EUR_TO_MAD } from '../../config/site';
-const lang = Astro.currentLocale === 'fr' ? 'fr' : 'en';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
 const T = {
   fr: { amount: 'Montant envoyé (€)', fee: 'Frais affichés (€)', rate: 'Taux proposé (1 € = … DH)', ref: 'Taux de référence du jour (1 € = … DH)', received: 'Votre famille reçoit', hidden: 'Coût caché dans le taux', fees: 'Frais affichés', totalCost: 'Coût total du transfert', ideal: 'Montant au taux de référence, sans frais', cta: 'Comparer avec Wise', note: 'Entrez le taux exact proposé par votre banque ou service de transfert, et le taux du jour (Google, XE…). Le coût caché vient de l’écart entre les deux.' },
   en: { amount: 'Amount sent (€)', fee: 'Displayed fee (€)', rate: 'Offered rate (1 € = … MAD)', ref: 'Today’s reference rate (1 € = … MAD)', received: 'Your family receives', hidden: 'Hidden cost in the rate', fees: 'Displayed fee', totalCost: 'Total cost of the transfer', ideal: 'Amount at reference rate, no fee', cta: 'Compare with Wise', note: 'Enter the exact rate offered by your bank or transfer service and today’s rate (Google, XE…). The hidden cost is the gap between the two.' },
+  es: { amount: 'Importe enviado (€)', fee: 'Comisión mostrada (€)', rate: 'Tipo ofrecido (1 € = … MAD)', ref: 'Tipo de referencia de hoy (1 € = … MAD)', received: 'Tu familia recibe', hidden: 'Coste oculto en el tipo', fees: 'Comisión mostrada', totalCost: 'Coste total de la transferencia', ideal: 'Importe al tipo de referencia, sin comisión', cta: 'Comparar con Wise', note: 'Introduce el tipo exacto que te ofrece tu banco o servicio de transferencia y el tipo del día (Google, XE…). El coste oculto es la diferencia entre ambos.' },
+  de: { amount: 'Gesendeter Betrag (€)', fee: 'Angezeigte Gebühr (€)', rate: 'Angebotener Kurs (1 € = … MAD)', ref: 'Referenzkurs von heute (1 € = … MAD)', received: 'Deine Familie erhält', hidden: 'Versteckte Kosten im Kurs', fees: 'Angezeigte Gebühr', totalCost: 'Gesamtkosten der Überweisung', ideal: 'Betrag zum Referenzkurs, ohne Gebühr', cta: 'Mit Wise vergleichen', note: 'Gib den genauen Kurs deiner Bank oder deines Überweisungsdienstes und den Tageskurs (Google, XE …) ein. Die versteckten Kosten sind die Differenz zwischen beiden.' },
+  ar: { amount: 'المبلغ المرسل (€)', fee: 'الرسوم المعروضة (€)', rate: 'السعر المعروض (1 € = … درهم)', ref: 'سعر الصرف المرجعي اليوم (1 € = … درهم)', received: 'ما تتلقاه عائلتك', hidden: 'التكلفة الخفية في سعر الصرف', fees: 'الرسوم المعروضة', totalCost: 'التكلفة الإجمالية للتحويل', ideal: 'المبلغ بسعر الصرف المرجعي، بدون رسوم', cta: 'قارن مع Wise', note: 'أدخل السعر الدقيق الذي يقترحه بنكك أو خدمة التحويل وسعر اليوم (Google، XE…). التكلفة الخفية هي الفرق بين السعرين.' },
 }[lang];
-const locale = lang === 'fr' ? 'fr-FR' : 'en-GB';
+const locale = LOCALE_META[lang].intl;
 ---
 <CalcShell id="transfer" note={T.note}>
   <Fragment slot="form">

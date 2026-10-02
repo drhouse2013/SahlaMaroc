@@ -1,13 +1,17 @@
 ---
 /** Compteur des 180 jours d'admission temporaire d'un véhicule étranger (MRE), par année civile. */
+import { type Locale, LOCALE_META } from '../../i18n';
 import CalcShell from './CalcShell.astro';
 import { CAR_DAYS_PER_YEAR } from '../../config/mre';
-const lang = Astro.currentLocale === 'fr' ? 'fr' : 'en';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
 const T = {
   fr: { stay: 'Séjour', inD: 'Entrée', outD: 'Sortie (vide = encore au Maroc)', used: 'Jours utilisés cette année', left: 'jours restants', deadline: 'Date limite de sortie (séjour en cours)', none: '—', note: `Règle générale : ${CAR_DAYS_PER_YEAR} jours par année civile, en une ou plusieurs fois, sans prolongation (sauf dispositions de fin d’année). Vérifiez votre situation auprès de la douane (ADII).` },
   en: { stay: 'Stay', inD: 'Entry', outD: 'Exit (empty = still in Morocco)', used: 'Days used this year', left: 'days left', deadline: 'Exit deadline (current stay)', none: '—', note: `General rule: ${CAR_DAYS_PER_YEAR} days per calendar year, in one or several stays, no extension (except year-end provisions). Check your case with Moroccan customs (ADII).` },
+  es: { stay: 'Estancia', inD: 'Entrada', outD: 'Salida (vacío = aún en Marruecos)', used: 'Días usados este año', left: 'días restantes', deadline: 'Fecha límite de salida (estancia en curso)', none: '—', note: `Regla general: ${CAR_DAYS_PER_YEAR} días por año natural, en una o varias estancias, sin prórroga (salvo disposiciones de fin de año). Consulta tu caso con la aduana marroquí (ADII).` },
+  de: { stay: 'Aufenthalt', inD: 'Einreise', outD: 'Ausreise (leer = noch in Marokko)', used: 'In diesem Jahr genutzte Tage', left: 'Tage übrig', deadline: 'Ausreisefrist (laufender Aufenthalt)', none: '—', note: `Grundregel: ${CAR_DAYS_PER_YEAR} Tage pro Kalenderjahr, in einem oder mehreren Aufenthalten, keine Verlängerung (außer Jahresendregelungen). Prüfe deinen Fall beim marokkanischen Zoll (ADII).` },
+  ar: { stay: 'إقامة', inD: 'الدخول', outD: 'الخروج (فارغ = ما زلت بالمغرب)', used: 'الأيام المستعملة هذه السنة', left: 'يوماً متبقياً', deadline: 'آخر أجل للخروج (الإقامة الحالية)', none: '—', note: `القاعدة العامة: ${CAR_DAYS_PER_YEAR} يوماً في السنة الميلادية، في إقامة أو عدة إقامات، دون تمديد (باستثناء أحكام نهاية السنة). تحقق من وضعيتك لدى الجمارك المغربية (ADII).` },
 }[lang];
-const locale = lang === 'fr' ? 'fr-FR' : 'en-GB';
+const locale = LOCALE_META[lang].intl;
 const year = new Date().getFullYear();
 ---
 <CalcShell id="car-days" note={T.note}>

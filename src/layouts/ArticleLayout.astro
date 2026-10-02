@@ -58,7 +58,10 @@ const jsonLd = [
 const essentials = {
   en: ['Morocco eSIM', 'Hotels & riads', 'Tours with free cancellation', 'Nomad insurance'],
   fr: ['eSIM Maroc', 'Hôtels et riads', 'Excursions annulables', 'Assurance nomade'],
-}[lang === 'fr' ? 'fr' : 'en'];
+  es: ['eSIM para Marruecos', 'Hoteles y riads', 'Excursiones con cancelación gratuita', 'Seguro para nómadas'],
+  de: ['eSIM für Marokko', 'Hotels & Riads', 'Touren mit kostenloser Stornierung', 'Nomaden-Versicherung'],
+  ar: ['شريحة eSIM للمغرب', 'فنادق ورياض', 'رحلات بإلغاء مجاني', 'تأمين للرحّالة الرقميين'],
+}[lang];
 ---
 
 <BaseLayout lang={lang} title={d.title} description={d.description} alternates={alternates} image={d.heroImage?.src} type="article" noindex={d.machineTranslated} jsonLd={jsonLd}>

@@ -17,7 +17,9 @@ import matter from 'gray-matter';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const LANGS = ['en', 'fr', 'es', 'de', 'ar'];
-const PLACEHOLDER = /\b(TODO|FIXME|TBD|lorem ipsum|à compléter|a completar|coming soon)\b|XXXX|\[\.\.\.\]/i;
+// TODO/FIXME/TBD : sensibles à la casse (« todo » existe en espagnol) ; les autres marqueurs ne le sont pas.
+const PLACEHOLDER = /\b(TODO|FIXME|TBD)\b|\b(lorem ipsum|à compléter|a completar|coming soon)\b|XXXX|\[\.\.\.\]/;
+const PLACEHOLDER_CI = /\b(lorem ipsum|à compléter|coming soon)\b/i;
 
 const entries = [];
 for (const collection of ['articles', 'pages']) {
@@ -49,7 +51,7 @@ for (const e of entries) {
   const key = `${e.lang}/${slug}`;
   if (slugsByLang.has(key)) err(e, `slug en double avec ${slugsByLang.get(key)}`);
   slugsByLang.set(key, e.file);
-  if (PLACEHOLDER.test(e.raw)) err(e, 'marqueur de placeholder détecté');
+  if (PLACEHOLDER.test(e.raw) || PLACEHOLDER_CI.test(e.raw)) err(e, 'marqueur de placeholder détecté');
 }
 
 // Appariement des traductions fr/en (les autres langues sont facultatives pour l'instant)
