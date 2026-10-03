@@ -76,8 +76,8 @@ export const CITIES: City[] = [
 export const FACTS: Partial2<{ value: string; label: string }[]> = {
   en: [
     { value: '1 € ≈ 11 MAD', label: 'Moroccan dirham (Oct 2026)' },
-    { value: '122 bn MAD', label: 'Sent home by MREs in 2025' },
-    { value: '4 M+', label: 'MREs welcomed by Operation Marhaba 2025' },
+    { value: '89.2 bn MAD', label: 'Sent home by MREs, Jan–Aug 2026 (+9 %)' },
+    { value: '4.1 M+', label: 'MREs welcomed by Operation Marhaba 2026' },
     { value: '180 days', label: 'Per year for a foreign-plated car' },
     { value: '100,000 MAD', label: 'Max Daam Sakane housing aid' },
     { value: '90 days', label: 'Visa-free stay for EU, UK, US, Canada…' },
@@ -86,8 +86,8 @@ export const FACTS: Partial2<{ value: string; label: string }[]> = {
   ],
   fr: [
     { value: '1 € ≈ 11 MAD', label: 'Dirham marocain (oct. 2026)' },
-    { value: '122 Mds DH', label: 'Transférés par les MRE en 2025' },
-    { value: '4 M+', label: 'MRE accueillis par Marhaba 2025' },
+    { value: '89,2 Mds DH', label: 'Transférés par les MRE, janv.–août 2026 (+9 %)' },
+    { value: '4,1 M+', label: 'MRE accueillis par Marhaba 2026' },
     { value: '180 jours', label: 'Par an pour une voiture immatriculée à l’étranger' },
     { value: '100 000 DH', label: 'Aide Daam Sakane maximale' },
     { value: '90 jours', label: 'Sans visa pour UE, Royaume-Uni, USA, Canada…' },
@@ -136,8 +136,8 @@ export const FAQ: Partial2<{ q: string; a: string }[]> = {
 Object.assign(FACTS, {
   es: [
     { value: '1 € ≈ 11 MAD', label: 'Dírham marroquí (oct. 2026)' },
-    { value: '122.000 M MAD', label: 'Enviados por la diáspora en 2025' },
-    { value: '4 M+', label: 'Recibidos por la Operación Marhaba 2025' },
+    { value: '89.200 M MAD', label: 'Enviados por la diáspora, ene.–ago. 2026 (+9 %)' },
+    { value: '4,1 M+', label: 'Recibidos por la Operación Marhaba 2026' },
     { value: '180 días', label: 'Al año para un coche con matrícula extranjera' },
     { value: '100.000 MAD', label: 'Ayuda Daam Sakane máxima' },
     { value: '90 días', label: 'Sin visado para UE, Reino Unido, EE. UU.…' },
@@ -146,8 +146,8 @@ Object.assign(FACTS, {
   ],
   de: [
     { value: '1 € ≈ 11 MAD', label: 'Marokkanischer Dirham (Okt. 2026)' },
-    { value: '122 Mrd. MAD', label: 'Von der Diaspora 2025 überwiesen' },
-    { value: '4 Mio.+', label: 'Empfangen von Operation Marhaba 2025' },
+    { value: '89,2 Mrd. MAD', label: 'Von der Diaspora überwiesen, Jan.–Aug. 2026 (+9 %)' },
+    { value: '4,1 Mio.+', label: 'Empfangen von Operation Marhaba 2026' },
     { value: '180 Tage', label: 'Pro Jahr für ein Auto mit ausländischem Kennzeichen' },
     { value: '100.000 MAD', label: 'Maximale Daam-Sakane-Hilfe' },
     { value: '90 Tage', label: 'Visumfrei für EU, UK, USA…' },
@@ -156,8 +156,8 @@ Object.assign(FACTS, {
   ],
   ar: [
     { value: '1 € ≈ 11 MAD', label: 'الدرهم المغربي (أكتوبر 2026)' },
-    { value: '122', label: 'مليار درهم حوّلها مغاربة العالم في 2025' },
-    { value: '4M+', label: 'مغاربة العالم الذين استقبلتهم عملية مرحبا 2025' },
+    { value: '89,2', label: 'مليار درهم حوّلها مغاربة العالم من يناير إلى غشت 2026 (+9 %)' },
+    { value: '4,1M+', label: 'مغاربة العالم الذين استقبلتهم عملية مرحبا 2026' },
     { value: '180', label: 'يوماً في السنة للسيارة ذات الترقيم الأجنبي' },
     { value: '100 000 MAD', label: 'أقصى دعم مباشر للسكن' },
     { value: '90', label: 'يوماً بدون تأشيرة لمواطني الاتحاد الأوروبي وغيرهم' },
