@@ -1,0 +1,40 @@
+---
+/**
+ * Rétroplanning vertical pour MDX.
+ *   <Roadmap>
+ *     <RoadmapStep when="J-3 mois" title="Réserver">…markdown…</RoadmapStep>
+ *   </Roadmap>
+ * Sans JS, compatible RTL (propriétés logiques), thème clair/sombre.
+ */
+---
+
+<ol class="roadmap not-prose my-8 grid gap-0">
+  <slot />
+</ol>
+
+<style is:global>
+  .roadmap { position: relative; counter-reset: step; }
+  .roadmap > li { position: relative; display: grid; gap: .25rem; padding-inline-start: 3.25rem; padding-block-end: 1.5rem; counter-increment: step; }
+  .roadmap > li:last-child { padding-block-end: 0; }
+  /* Fil conducteur */
+  .roadmap > li::before {
+    content: ""; position: absolute; inset-inline-start: 1.05rem; top: 2.2rem; bottom: -.2rem; width: 2px;
+    background: repeating-linear-gradient(to bottom, var(--color-majorelle-300) 0 6px, transparent 6px 11px);
+  }
+  .roadmap > li:last-child::before { display: none; }
+  /* Pastille numérotée */
+  .roadmap > li::after {
+    content: counter(step); position: absolute; inset-inline-start: 0; top: 0; display: grid; place-items: center;
+    width: 2.2rem; height: 2.2rem; border-radius: 999px; font-weight: 700; font-size: .9rem; color: #fff;
+    background: var(--color-majorelle-600); box-shadow: 0 0 0 4px var(--color-sand-50);
+  }
+  .dark .roadmap > li::after { box-shadow: 0 0 0 4px var(--color-night-900); background: var(--color-majorelle-500); }
+  .roadmap .rm-when { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--color-terracotta-600); }
+  .dark .roadmap .rm-when { color: var(--color-terracotta-300); }
+  .roadmap .rm-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+  .roadmap .rm-body { margin-top: .35rem; border-radius: 1rem; border: 1px solid rgb(27 26 31 / .08); background: #fff; padding: .9rem 1.1rem; font-size: .95rem; line-height: 1.6; }
+  .dark .roadmap .rm-body { background: var(--color-night-800); border-color: rgb(255 255 255 / .08); }
+  .roadmap .rm-body ul { list-style: disc; padding-inline-start: 1.2rem; display: grid; gap: .35rem; }
+  .roadmap .rm-body p + ul, .roadmap .rm-body ul + p { margin-top: .5rem; }
+  .roadmap .rm-body a { text-decoration: underline; }
+</style>

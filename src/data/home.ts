@@ -81,7 +81,7 @@ export const FACTS: Partial2<{ value: string; label: string }[]> = {
     { value: '180 days', label: 'Per year for a foreign-plated car' },
     { value: '100,000 MAD', label: 'Max Daam Sakane housing aid' },
     { value: '90 days', label: 'Visa-free stay for EU, UK, US, Canada…' },
-    { value: '2 h 10', label: 'Tangier → Casablanca by Al Boraq' },
+    { value: 'GMT', label: 'Morocco’s time zone all year since 20 Sept 2026' },
     { value: '2030', label: 'World Cup co-hosted with Spain & Portugal' },
   ],
   fr: [
@@ -91,7 +91,7 @@ export const FACTS: Partial2<{ value: string; label: string }[]> = {
     { value: '180 jours', label: 'Par an pour une voiture immatriculée à l’étranger' },
     { value: '100 000 DH', label: 'Aide Daam Sakane maximale' },
     { value: '90 jours', label: 'Sans visa pour UE, Royaume-Uni, USA, Canada…' },
-    { value: '2 h 10', label: 'Tanger → Casablanca en Al Boraq' },
+    { value: 'GMT', label: 'Fuseau horaire du Maroc toute l’année depuis le 20 sept. 2026' },
     { value: '2030', label: 'Coupe du monde co-organisée avec l’Espagne et le Portugal' },
   ],
 };
@@ -141,7 +141,7 @@ Object.assign(FACTS, {
     { value: '180 días', label: 'Al año para un coche con matrícula extranjera' },
     { value: '100.000 MAD', label: 'Ayuda Daam Sakane máxima' },
     { value: '90 días', label: 'Sin visado para UE, Reino Unido, EE. UU.…' },
-    { value: '2 h 10', label: 'Tánger → Casablanca en Al Boraq' },
+    { value: 'GMT', label: 'Hora de Marruecos todo el año desde el 20 sept. 2026' },
     { value: '2030', label: 'Mundial coorganizado con España y Portugal' },
   ],
   de: [
@@ -151,7 +151,7 @@ Object.assign(FACTS, {
     { value: '180 Tage', label: 'Pro Jahr für ein Auto mit ausländischem Kennzeichen' },
     { value: '100.000 MAD', label: 'Maximale Daam-Sakane-Hilfe' },
     { value: '90 Tage', label: 'Visumfrei für EU, UK, USA…' },
-    { value: '2 h 10', label: 'Tanger → Casablanca mit Al Boraq' },
+    { value: 'GMT', label: 'Marokkos Zeitzone ganzjährig seit 20. Sept. 2026' },
     { value: '2030', label: 'WM mit Spanien und Portugal' },
   ],
   ar: [
@@ -161,7 +161,7 @@ Object.assign(FACTS, {
     { value: '180', label: 'يوماً في السنة للسيارة ذات الترقيم الأجنبي' },
     { value: '100 000 MAD', label: 'أقصى دعم مباشر للسكن' },
     { value: '90', label: 'يوماً بدون تأشيرة لمواطني الاتحاد الأوروبي وغيرهم' },
-    { value: '2h10', label: 'طنجة ← الدار البيضاء بالبراق' },
+    { value: 'GMT', label: 'توقيت المغرب طوال السنة منذ 20 سبتمبر 2026' },
     { value: '2030', label: 'كأس العالم مع إسبانيا والبرتغال' },
   ],
 });
@@ -218,3 +218,48 @@ const DARIJA_I18N: Record<'es' | 'de' | 'ar', string>[] = [
 ];
 DARIJA.forEach((d, i) => Object.assign(d.meaning, DARIJA_I18N[i]));
 
+
+/* ---------------------------------------------------------------- profils & FAQ : ES / DE / AR */
+Object.assign(PERSONAS, {
+  es: [
+    { icon: '⛴️', title: 'Vuelvo a casa este verano', text: 'Marhaba, ferris, tu coche y el presupuesto familiar, sin estrés.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
+    { icon: '🏠', title: 'Quiero invertir en Marruecos', text: 'Compra segura a distancia, ayuda a la vivienda y envíos de dinero más baratos.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
+    { icon: '🧳', title: 'Visito Marruecos', text: 'Llegada, dinero, excursiones que merecen la pena y dónde alojarse.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
+  ],
+  de: [
+    { icon: '⛴️', title: 'Ich fahre diesen Sommer nach Hause', text: 'Marhaba, Fähren, dein Auto und das Familienbudget, ohne Stress.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
+    { icon: '🏠', title: 'Ich möchte in Marokko investieren', text: 'Sicher aus der Ferne kaufen, Wohnbauhilfe nutzen und günstiger Geld senden.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
+    { icon: '🧳', title: 'Ich besuche Marokko', text: 'Ankunft, Geld, lohnende Ausflüge und wo man übernachtet.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
+  ],
+  ar: [
+    { icon: '⛴️', title: 'أعود إلى البلاد هذا الصيف', text: 'مرحبا، العبّارات، سيارتك وميزانية العائلة، بدون توتر.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
+    { icon: '🏠', title: 'أريد الاستثمار في المغرب', text: 'اشترِ بأمان عن بُعد، استفد من دعم السكن وحوّل الأموال بتكلفة أقل.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
+    { icon: '🧳', title: 'أزور المغرب', text: 'الوصول، المال، الرحلات التي تستحق، وأين تقيم.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
+  ],
+});
+
+FAQ.en.push({ q: 'What time is it in Morocco?', a: 'Morocco has been on GMT all year since 20 September 2026: 1 hour behind France and Spain in winter, 2 hours behind in summer.' });
+FAQ.fr.push({ q: 'Quelle heure est-il au Maroc ?', a: 'Le Maroc est à l’heure GMT toute l’année depuis le 20 septembre 2026 : 1 h de moins qu’en France et en Espagne en hiver, 2 h en été.' });
+Object.assign(FAQ, {
+  es: [
+    { q: '¿Cuánto tiempo puede estar mi coche con matrícula europea en Marruecos?', a: '180 días en total por año natural, en una o varias estancias, sin prórroga salvo disposiciones de fin de año. Controla tus días con nuestro contador gratuito.' },
+    { q: '¿Cuánto cuesta comprar un piso en Marruecos?', a: 'Además del precio, calcula entre un 6 y un 8 % para el impuesto de registro, el registro de la propiedad y el notario. Nuestra calculadora te da el detalle en segundos.' },
+    { q: '¿Pueden los MRE obtener la ayuda Daam Sakane?', a: 'Sí. Los marroquíes residentes en el extranjero son elegibles: 100.000 MAD para una vivienda nueva de hasta 300.000 MAD y 70.000 MAD hasta 700.000 MAD, con condiciones (primera vivienda, ocupación durante 5 años).' },
+    { q: '¿Cuál es la forma más barata de enviar dinero a Marruecos?', a: 'Compara el importe que tu familia recibe realmente en dirhams, no la comisión mostrada: el margen del tipo de cambio suele ser el mayor coste.' },
+    { q: '¿Qué hora es en Marruecos?', a: 'Marruecos usa la hora GMT todo el año desde el 20 de septiembre de 2026: una hora menos que España en invierno y dos en verano.' },
+  ],
+  de: [
+    { q: 'Wie lange darf mein Auto mit europäischem Kennzeichen in Marokko bleiben?', a: '180 Tage insgesamt pro Kalenderjahr, in einem oder mehreren Aufenthalten, ohne Verlängerung außer Jahresendregelungen. Verfolge deine Tage mit unserem kostenlosen Zähler.' },
+    { q: 'Was kostet der Kauf einer Wohnung in Marokko?', a: 'Zum Kaufpreis kommen etwa 6–8 % für Registrierungsgebühr, Grundbuchamt und Notar. Unser Rechner zeigt dir die Details in Sekunden.' },
+    { q: 'Können Auslandsmarokkaner (MRE) die Wohnbauhilfe Daam Sakane erhalten?', a: 'Ja. Im Ausland lebende Marokkaner sind berechtigt: 100.000 MAD für eine Neubauwohnung bis 300.000 MAD, 70.000 MAD bis 700.000 MAD, unter Bedingungen (Ersterwerb, 5 Jahre Selbstnutzung).' },
+    { q: 'Wie überweise ich am günstigsten Geld nach Marokko?', a: 'Vergleiche den Betrag, der bei deiner Familie in Dirham wirklich ankommt, nicht die angezeigte Gebühr: Die Marge im Wechselkurs ist oft der größte Kostenpunkt.' },
+    { q: 'Welche Uhrzeit gilt in Marokko?', a: 'Seit dem 20. September 2026 gilt in Marokko ganzjährig GMT: im Winter eine Stunde, im Sommer zwei Stunden hinter Deutschland.' },
+  ],
+  ar: [
+    { q: 'كم من الوقت يمكن لسيارتي ذات الترقيم الأوروبي أن تبقى في المغرب؟', a: '180 يوماً في المجموع خلال السنة الميلادية، في إقامة واحدة أو عدة إقامات، دون تمديد باستثناء أحكام نهاية السنة. تتبّع أيامك بعدّادنا المجاني.' },
+    { q: 'كم تكلفة شراء شقة في المغرب؟', a: 'بالإضافة إلى الثمن، احسب حوالي 6 إلى 8 % لرسوم التسجيل والمحافظة العقارية والموثق. تعطيك حاسبتنا التفاصيل في ثوانٍ.' },
+    { q: 'هل يستفيد مغاربة العالم من دعم «دعم سكن»؟', a: 'نعم. مغاربة العالم مؤهلون: 100 000 درهم لسكن جديد حتى 300 000 درهم، و70 000 درهم حتى 700 000 درهم، وفق شروط (أول سكن، الإقامة لمدة 5 سنوات).' },
+    { q: 'ما أرخص طريقة لإرسال المال إلى المغرب؟', a: 'قارن المبلغ الذي تتلقاه عائلتك فعلياً بالدرهم، وليس الرسوم المعروضة: هامش سعر الصرف غالباً هو أكبر تكلفة.' },
+    { q: 'ما هو التوقيت المعتمد في المغرب؟', a: 'يعتمد المغرب توقيت غرينيتش (GMT) طوال السنة منذ 20 شتنبر 2026: ساعة أقل من إسبانيا وفرنسا شتاءً وساعتان صيفاً.' },
+  ],
+});

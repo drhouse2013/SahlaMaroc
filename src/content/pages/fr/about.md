@@ -10,6 +10,6 @@ Sahla Maroc est écrit par **Yassine**, installé près de Casablanca. Je parle 
 
 ## Notre méthode
 
-- **Vérifié sur le terrain.** Prix, démarches et boutiques sont vérifiés en personne ; chaque guide indique sa date de dernière vérification.
+- **Sourcé et daté.** Les prix, démarches et taux proviennent de sources officielles et de la presse ; chaque guide indique sa date de mise à jour. Quand un chiffre peut changer ou que les sources divergent, nous le disons et renvoyons vers l'administration compétente. Le badge « Vérifié sur le terrain » n'apparaît que lorsque la vérification a réellement été faite sur place.
 - **Indépendant.** Certains liens sont affiliés (voir notre [mention d'affiliation](/fr/liens-affilies)). Nous ne recommandons que ce que nous utiliserions nous-mêmes, et aucun partenaire ne relit nos contenus.
 - **Corrections bienvenues.** Quelque chose a changé ? Écrivez à **contact@sahlamaroc.com**.

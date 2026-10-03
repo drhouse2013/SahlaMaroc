@@ -16,6 +16,9 @@ import MortgageCalc from '../../components/calc/MortgageCalc.astro';
 import TransferCalc from '../../components/calc/TransferCalc.astro';
 import SummerBudget from '../../components/calc/SummerBudget.astro';
 import CarDaysCounter from '../../components/calc/CarDaysCounter.astro';
+import Roadmap from '../../components/Roadmap.astro';
+import RoadmapStep from '../../components/RoadmapStep.astro';
+import Checklist from '../../components/Checklist.astro';
 import { assertUniqueSlugs, getArticles, getEntryAlternates, getPages, type Entry } from '../../utils/i18n';
 import { readingTime } from '../../utils/date';
 
@@ -33,7 +36,7 @@ const { Content, headings } = await render(entry);
 const alternates = await getEntryAlternates(entry);
 
 /** Composants disponibles dans tous les fichiers MDX SANS import. */
-const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, CarDaysCounter };
+const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, CarDaysCounter, Roadmap, RoadmapStep, Checklist };
 
 let related: Awaited<ReturnType<typeof getArticles>> = [];
 if (entry.collection === 'articles') {

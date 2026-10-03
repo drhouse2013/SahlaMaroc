@@ -1,0 +1,112 @@
+---
+/**
+ * Check-list interactive pour MDX : une simple liste markdown devient cochable.
+ *   <Checklist id="retour-ete" lang="fr" title="Ma check-list">
+ *   - Passeport valide
+ *   - Assurance auto vérifiée
+ *   </Checklist>
+ * - Sans JS : liste normale (amélioration progressive).
+ * - État mémorisé dans localStorage (par appareil, aucune donnée envoyée).
+ * - Barre de progression, bouton Réinitialiser, bouton Imprimer / PDF.
+ */
+import type { Locale } from '../i18n';
+interface Props { id: string; title?: string; lang?: Locale }
+const { id, title, lang = 'fr' } = Astro.props;
+
+const T = {
+  fr: { of: 'sur', done: 'faits', reset: 'Réinitialiser', print: 'Imprimer / PDF', saved: 'Votre progression est enregistrée sur cet appareil.', complete: 'Tout est prêt !' },
+  en: { of: 'of', done: 'done', reset: 'Reset', print: 'Print / PDF', saved: 'Your progress is saved on this device.', complete: 'All set!' },
+  es: { of: 'de', done: 'hechos', reset: 'Reiniciar', print: 'Imprimir / PDF', saved: 'Tu progreso se guarda en este dispositivo.', complete: '¡Todo listo!' },
+  de: { of: 'von', done: 'erledigt', reset: 'Zurücksetzen', print: 'Drucken / PDF', saved: 'Ihr Fortschritt wird auf diesem Gerät gespeichert.', complete: 'Alles bereit!' },
+  ar: { of: 'من', done: 'منجز', reset: 'إعادة التعيين', print: 'طباعة / PDF', saved: 'يتم حفظ تقدمك على هذا الجهاز.', complete: 'كل شيء جاهز!' },
+}[lang];
+---
+
+<section
+  class="checklist not-prose my-8 overflow-hidden rounded-3xl border border-ink-900/10 bg-white shadow-sm dark:border-white/10 dark:bg-night-800"
+  data-checklist={id}
+  data-of={T.of}
+  data-done={T.done}
+  data-complete={T.complete}
+>
+  <header class="bg-majorelle-600 px-5 py-4 text-white dark:bg-majorelle-900">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <h3 class="text-lg font-bold">✅ {title}</h3>
+      <p class="cl-count text-sm font-semibold tabular-nums" aria-live="polite"></p>
+    </div>
+    <div class="mt-3 h-2 overflow-hidden rounded-full bg-white/25" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="cl-bar h-full w-0 rounded-full bg-saffron-400 transition-[width] duration-300"></div>
+    </div>
+  </header>
+  <div class="cl-body px-5 py-4"><slot /></div>
+  <footer class="no-print flex flex-wrap items-center justify-between gap-3 border-t border-ink-900/10 px-5 py-3 text-xs dark:border-white/10">
+    <span class="text-ink-900/70 dark:text-sand-100/70">{T.saved}</span>
+    <span class="flex gap-2">
+      <button type="button" class="cl-reset rounded-full border border-current px-3 py-1.5 font-semibold text-majorelle-600 dark:text-majorelle-100">{T.reset}</button>
+      <button type="button" class="cl-print rounded-full bg-terracotta-600 px-3 py-1.5 font-semibold text-white">{T.print}</button>
+    </span>
+  </footer>
+</section>
+
+<style is:global>
+  .checklist .cl-body ul { display: grid; gap: .15rem; list-style: none; padding: 0; margin: 0; }
+  .checklist .cl-body li { margin: 0; padding: 0; }
+  .checklist .cl-body label { display: flex; gap: .75rem; align-items: flex-start; padding: .5rem .35rem; border-radius: .75rem; cursor: pointer; line-height: 1.5; }
+  .checklist .cl-body label:hover { background: var(--color-sand-100); }
+  .dark .checklist .cl-body label:hover { background: rgb(255 255 255 / .06); }
+  .checklist .cl-body input[type="checkbox"] { margin-top: .3rem; width: 1.15rem; height: 1.15rem; flex: none; accent-color: var(--color-emerald-moroccan-500); }
+  .checklist .cl-body input:checked + span { opacity: .55; text-decoration: line-through; }
+  .checklist .cl-body a { text-decoration: underline; }
+  @media print {
+    header[role="banner"], body > header, body > footer, aside, nav, ins, .no-print { display: none !important; }
+    .checklist { box-shadow: none; break-inside: avoid; }
+  }
+</style>
+
+<script>
+  const KEY = (id: string) => `sm-checklist:${id}`;
+  const read = (id: string): number[] => {
+    try { return JSON.parse(localStorage.getItem(KEY(id)) || '[]'); } catch { return []; }
+  };
+  const write = (id: string, v: number[]) => {
+    try { localStorage.setItem(KEY(id), JSON.stringify(v)); } catch { /* stockage indisponible : on continue sans */ }
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-checklist]').forEach((root) => {
+    const id = root.dataset.checklist!;
+    const items = Array.from(root.querySelectorAll<HTMLLIElement>('.cl-body li'));
+    const bar = root.querySelector<HTMLElement>('.cl-bar')!;
+    const count = root.querySelector<HTMLElement>('.cl-count')!;
+    const progress = root.querySelector<HTMLElement>('[role="progressbar"]')!;
+    const saved = new Set(read(id));
+    const boxes: HTMLInputElement[] = [];
+
+    items.forEach((li, i) => {
+      const label = document.createElement('label');
+      const box = document.createElement('input');
+      box.type = 'checkbox';
+      box.checked = saved.has(i);
+      const text = document.createElement('span');
+      while (li.firstChild) text.appendChild(li.firstChild);
+      label.append(box, text);
+      li.appendChild(label);
+      boxes.push(box);
+      box.addEventListener('change', update);
+    });
+
+    function update() {
+      const done = boxes.filter((b) => b.checked).length;
+      const pct = boxes.length ? Math.round((done / boxes.length) * 100) : 0;
+      bar.style.width = pct + '%';
+      progress.setAttribute('aria-valuenow', String(pct));
+      count.textContent = done === boxes.length && done > 0
+        ? '🎉 ' + root.dataset.complete
+        : `${done} ${root.dataset.of} ${boxes.length} ${root.dataset.done}`;
+      write(id, boxes.flatMap((b, i) => (b.checked ? [i] : [])));
+    }
+
+    root.querySelector('.cl-reset')?.addEventListener('click', () => { boxes.forEach((b) => (b.checked = false)); update(); });
+    root.querySelector('.cl-print')?.addEventListener('click', () => window.print());
+    update();
+  });
+</script>

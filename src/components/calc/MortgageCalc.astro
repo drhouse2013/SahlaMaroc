@@ -1,12 +1,16 @@
 ---
 /** Simulateur de crédit immobilier (mensualité constante). Taux saisi par l'utilisateur. */
+import { type Locale, LOCALE_META } from '../../i18n';
 import CalcShell from './CalcShell.astro';
-const lang = Astro.currentLocale === 'fr' ? 'fr' : 'en';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
 const T = {
   fr: { price: 'Prix du bien (DH)', down: 'Apport personnel (DH)', rate: 'Taux annuel (%)', years: 'Durée (années)', income: 'Revenus nets mensuels (DH, optionnel)', monthly: 'Mensualité estimée', perMonth: 'DH / mois', loan: 'Montant emprunté', interest: 'Coût des intérêts', total: 'Total remboursé', ratio: 'Part de vos revenus', note: 'Simulation hors assurance emprunteur et frais de dossier. Les banques marocaines proposent des offres dédiées aux MRE : comparez plusieurs propositions écrites.' },
   en: { price: 'Property price (MAD)', down: 'Down payment (MAD)', rate: 'Annual rate (%)', years: 'Term (years)', income: 'Net monthly income (MAD, optional)', monthly: 'Estimated monthly payment', perMonth: 'MAD / month', loan: 'Loan amount', interest: 'Total interest', total: 'Total repaid', ratio: 'Share of your income', note: 'Excludes borrower insurance and arrangement fees. Moroccan banks offer dedicated MRE mortgages: compare several written offers.' },
+  es: { price: 'Precio del inmueble (MAD)', down: 'Aportación propia (MAD)', rate: 'Tipo anual (%)', years: 'Plazo (años)', income: 'Ingresos netos mensuales (MAD, opcional)', monthly: 'Cuota mensual estimada', perMonth: 'MAD / mes', loan: 'Importe del préstamo', interest: 'Total de intereses', total: 'Total devuelto', ratio: 'Parte de tus ingresos', note: 'No incluye seguro del prestatario ni gastos de apertura. Los bancos marroquíes ofrecen hipotecas específicas para MRE: compara varias ofertas por escrito.' },
+  de: { price: 'Kaufpreis (MAD)', down: 'Eigenkapital (MAD)', rate: 'Jahreszins (%)', years: 'Laufzeit (Jahre)', income: 'Monatliches Nettoeinkommen (MAD, optional)', monthly: 'Geschätzte Monatsrate', perMonth: 'MAD / Monat', loan: 'Darlehensbetrag', interest: 'Zinskosten gesamt', total: 'Insgesamt zurückgezahlt', ratio: 'Anteil an deinem Einkommen', note: 'Ohne Restschuldversicherung und Bearbeitungsgebühren. Marokkanische Banken bieten spezielle Kredite für Auslandsmarokkaner (MRE) an: vergleiche mehrere schriftliche Angebote.' },
+  ar: { price: 'سعر العقار (درهم)', down: 'المساهمة الشخصية (درهم)', rate: 'السعر السنوي (%)', years: 'المدة (سنوات)', income: 'الدخل الشهري الصافي (درهم، اختياري)', monthly: 'القسط الشهري التقديري', perMonth: 'درهم / شهر', loan: 'مبلغ القرض', interest: 'مجموع الفوائد', total: 'مجموع المبلغ المسدد', ratio: 'نسبة من دخلك', note: 'لا يشمل تأمين المقترض ورسوم الملف. تقدم الأبناك المغربية عروضاً خاصة بمغاربة العالم: قارن عدة عروض مكتوبة.' },
 }[lang];
-const locale = lang === 'fr' ? 'fr-FR' : 'en-GB';
+const locale = LOCALE_META[lang].intl;
 ---
 <CalcShell id="mortgage" note={T.note}>
   <Fragment slot="form">
