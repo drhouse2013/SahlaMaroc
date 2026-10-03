@@ -23,10 +23,10 @@ const link = 'rounded-full px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10';
 ---
 
 <header class="sticky top-0 z-40 border-b border-ink-900/5 bg-sand-50/90 backdrop-blur-md dark:border-white/5 dark:bg-night-900/90">
-  <div class="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
-    <a href={homePath(lang)} class="flex items-center gap-2.5" aria-label={brand}>
+  <div class="mx-auto flex h-16 max-w-6xl items-center gap-2 px-3 sm:gap-3 sm:px-4">
+    <a href={homePath(lang)} class="flex min-w-0 shrink items-center gap-2 sm:gap-2.5" aria-label={brand}>
       <Logo />
-      <span class="font-display text-xl font-bold tracking-tight text-[#163a63] dark:text-sand-50">Sahla <span class="text-[#9a6f1e] dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
+      <span class="truncate font-display text-lg font-bold tracking-tight sm:text-xl text-[#163a63] dark:text-sand-50">Sahla <span class="text-[#9a6f1e] dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
     </a>
 
     <nav class="ms-6 hidden items-center gap-1 text-[0.95rem] font-medium md:flex" aria-label="Main">

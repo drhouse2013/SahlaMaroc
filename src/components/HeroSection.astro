@@ -45,13 +45,13 @@ const { title, subtitle, eyebrow, primary, secondary, scene = 'marrakech', chips
         <Image src={illustration(scene)} alt="" class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
       </div>
       {chips[0] && (
-        <div class="card absolute -start-4 bottom-16 px-4 py-3 shadow-xl sm:-start-10">
+        <div class="card absolute -start-3 bottom-16 max-w-[15rem] px-4 py-3 shadow-xl lg:-start-10">
           <p class="font-display text-xl font-bold text-majorelle-600 dark:text-majorelle-100" dir="ltr">{chips[0].value}</p>
           <p class="text-xs text-ink-900/70 dark:text-sand-100/70">{chips[0].label}</p>
         </div>
       )}
       {chips[1] && (
-        <div class="card absolute -end-3 top-16 px-4 py-3 shadow-xl sm:-end-8">
+        <div class="card absolute -end-3 top-16 max-w-[15rem] px-4 py-3 shadow-xl lg:-end-8">
           <p class="font-display text-xl font-bold text-terracotta-600 dark:text-terracotta-300" dir="ltr">{chips[1].value}</p>
           <p class="text-xs text-ink-900/70 dark:text-sand-100/70">{chips[1].label}</p>
         </div>

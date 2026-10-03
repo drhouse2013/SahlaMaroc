@@ -48,6 +48,8 @@
 @layer base {
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body { font-feature-settings: "ss01"; }
+  html { overflow-wrap: break-word; }
+  h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
   h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.01em; }
   :focus-visible { outline: 2px solid var(--color-majorelle-500); outline-offset: 3px; border-radius: 4px; }
   .dark { color-scheme: dark; }
