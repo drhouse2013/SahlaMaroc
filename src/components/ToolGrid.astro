@@ -1,25 +1,34 @@
 ---
-/** Grille des calculateurs (accueil + page hub). */
+/** Grille des calculateurs (accueil, page hub, pages piliers). */
+import Icon from './Icon.astro';
 import { TOOLS } from '../data/tools';
-import { pick } from '../data/home';
-import type { Locale } from '../i18n';
+import { useTranslations, type Locale } from '../i18n';
 import { getPageUrl } from '../utils/i18n';
 
-interface Props { lang?: Locale; audience?: 'mre' | 'visitors' }
+interface Props { lang?: Locale; audience?: 'mre' | 'visitors'; keys?: string[]; exclude?: string; compact?: boolean }
 const lang = (Astro.props.lang ?? Astro.currentLocale ?? 'en') as Locale;
+const { audience, keys, exclude, compact = false } = Astro.props;
+const t = useTranslations(lang);
 const list = await Promise.all(
-  TOOLS.filter((t) => !Astro.props.audience || t.audience === Astro.props.audience).map(async (t) => ({ ...t, href: await getPageUrl(lang, t.key) })),
+  TOOLS.filter((x) => (!audience || x.audience === audience) && (!keys || keys.includes(x.key)) && x.key !== exclude).map(async (x) => ({ ...x, href: await getPageUrl(lang, x.key) })),
 );
 ---
-<ul class="not-prose grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-  {list.filter((t) => t.href).map((t) => (
-    <li>
-      <a href={t.href} class="group card flex h-full gap-4 p-5 transition hover:-translate-y-0.5 hover:border-terracotta-500 hover:shadow-lg">
-        <span class="grid size-12 shrink-0 place-items-center rounded-2xl bg-sand-100 text-2xl dark:bg-white/10" aria-hidden="true">{t.icon}</span>
-        <span>
-          <span class="block font-display text-lg leading-snug font-bold group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{pick(t.title, lang)}</span>
-          <span class="mt-1 block text-sm text-ink-900/75 dark:text-sand-100/75">{pick(t.text, lang)}</span>
+<ul class:list={['not-prose grid gap-4', compact ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3']}>
+  {list.filter((x) => x.href).map((x) => (
+    <li class="min-w-0">
+      <a href={x.href} class="group card card-hover flex h-full flex-col gap-4 p-5" data-track="tool_click" data-track-label={x.key}>
+        <span class="flex items-start gap-4">
+          <span class="icon-tile"><Icon name={x.icon} class="size-[1.35rem]" /></span>
+          <span class="min-w-0">
+            <span class="block text-[1.05rem] leading-snug font-semibold [overflow-wrap:anywhere] group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{x.title[lang]}</span>
+            <span class="mt-1 block text-sm muted">{x.text[lang]}</span>
+          </span>
         </span>
+        {!compact && (
+          <span class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--link)]">
+            {t('common.calculate')}<Icon name="arrowRight" class="size-4 transition group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
+          </span>
+        )}
       </a>
     </li>
   ))}

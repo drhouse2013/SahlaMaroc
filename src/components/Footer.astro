@@ -1,48 +1,80 @@
 ---
 import Logo from './Logo.astro';
 import { brandName } from '../utils/seo';
-import { useTranslations, type Locale } from '../i18n';
+import { LOCALES, LOCALE_META, useTranslations, type Locale } from '../i18n';
 import { CATEGORIES } from '../i18n/categories';
-import { L } from '../data/home';
-import { categoryPath, getActiveCategories, getPageUrl, rssPath } from '../utils/i18n';
+import { categoryPath, getActiveCategories, getPageUrl, homePath, hubPath, rssPath } from '../utils/i18n';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const brand = brandName(lang);
-const links = [
-  { key: 'calculators', label: t('nav.tools') },
-  { key: 'about', label: t('footer.about') },
-  { key: 'disclosure', label: t('footer.disclosure') },
-  { key: 'privacy', label: t('footer.privacy') },
-] as const;
-const resolved = await Promise.all(links.map(async (l) => ({ ...l, href: await getPageUrl(lang, l.key) })));
+const page = async (key: string) => getPageUrl(lang, key);
 const active = await getActiveCategories(lang);
+
+const explore = [
+  { href: hubPath(lang, 'mre'), label: t('nav.mre') },
+  { href: hubPath(lang, 'visit'), label: t('nav.visit') },
+  { href: hubPath(lang, 'cities'), label: t('nav.cities') },
+  { href: await page('calculators'), label: t('nav.tools') },
+  { href: hubPath(lang, 'checklists'), label: t('nav.checklists') },
+  { href: hubPath(lang, 'search'), label: t('nav.search') },
+];
+const trust = [
+  { href: await page('about'), label: t('footer.about') },
+  { href: await page('methodology'), label: t('footer.methodology') },
+  { href: await page('editorial-policy'), label: t('footer.editorial') },
+  { href: await page('corrections'), label: t('footer.corrections') },
+  { href: await page('contact'), label: t('footer.contact') },
+];
+const legal = [
+  { href: await page('disclosure'), label: t('footer.disclosure') },
+  { href: await page('privacy'), label: t('footer.privacy') },
+  { href: await page('terms'), label: t('footer.terms') },
+  { href: rssPath(lang), label: t('footer.rss') },
+];
+const col = 'text-sand-100/80 hover:text-white hover:underline underline-offset-4';
 ---
 
-<footer class="mt-28 bg-night-900 text-sand-100">
-  <div class="zellige h-5" aria-hidden="true"></div>
-  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
-    <div class="lg:col-span-2">
-      <a href={`/${lang}`} class="flex items-center gap-2.5">
+<footer class="mt-24 bg-navy-900 text-sand-100 sm:mt-28">
+  <div class="zellige h-3 opacity-90" aria-hidden="true"></div>
+  <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+    <div class="sm:col-span-2 lg:col-span-1">
+      <a href={homePath(lang)} class="inline-flex items-center gap-2.5 rounded-lg">
         <Logo class="h-11 w-10" variant="dark" />
-        <span class="font-display text-2xl font-bold">Sahla <span class="text-saffron-400">{brand.split(' ')[1]}</span></span>
+        <span class="font-brand text-2xl font-bold" dir="ltr">Sahla <span class="text-gold-300">{brand.split(' ')[1]}</span></span>
       </a>
-      <p class="mt-4 max-w-sm text-sand-100/75">{t('site.description')}</p>
-    </div>
-    <div>
-      <p class="eyebrow text-saffron-400">{L.guides[lang]}</p>
-      <ul class="mt-4 space-y-2.5">
-        {active.map((id) => <li><a class="text-sand-100/85 hover:text-white hover:underline" href={categoryPath(lang, id)}>{CATEGORIES[id].label[lang]}</a></li>)}
+      <p class="mt-4 max-w-xs text-sm text-sand-100/75">{t('footer.tagline')}</p>
+      <p class="eyebrow mt-8 text-gold-300">{t('footer.languages')}</p>
+      <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+        {LOCALES.map((code) => (
+          <li><a href={`/${code}`} hreflang={LOCALE_META[code].hreflang} lang={LOCALE_META[code].hreflang} class:list={[col, code === lang && '!text-white font-semibold']} aria-current={code === lang ? 'true' : undefined}>{LOCALE_META[code].label}</a></li>
+        ))}
       </ul>
     </div>
-    <div>
-      <p class="eyebrow text-saffron-400">{brand}</p>
-      <ul class="mt-4 space-y-2.5">
-        {resolved.map((l) => l.href && <li><a class="text-sand-100/85 hover:text-white hover:underline" href={l.href}>{l.label}</a></li>)}
-        <li><a class="text-sand-100/85 hover:text-white hover:underline" href={rssPath(lang)}>{t('footer.rss')}</a></li>
+    <nav aria-label={t('footer.guides')}>
+      <p class="eyebrow text-gold-300">{t('footer.guides')}</p>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        {active.map((id) => <li><a class={col} href={categoryPath(lang, id)}>{CATEGORIES[id].label[lang]}</a></li>)}
       </ul>
+    </nav>
+    <nav aria-label={t('footer.explore')}>
+      <p class="eyebrow text-gold-300">{t('footer.explore')}</p>
+      <ul class="mt-4 space-y-2.5 text-sm">{explore.map((l) => l.href && <li><a class={col} href={l.href}>{l.label}</a></li>)}</ul>
+    </nav>
+    <nav aria-label={t('footer.trust')}>
+      <p class="eyebrow text-gold-300">{t('footer.trust')}</p>
+      <ul class="mt-4 space-y-2.5 text-sm">{trust.map((l) => l.href && <li><a class={col} href={l.href}>{l.label}</a></li>)}</ul>
+    </nav>
+    <nav aria-label={t('footer.legal')}>
+      <p class="eyebrow text-gold-300">{t('footer.legal')}</p>
+      <ul class="mt-4 space-y-2.5 text-sm">{legal.map((l) => l.href && <li><a class={col} href={l.href}>{l.label}</a></li>)}</ul>
+    </nav>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="container-page flex flex-col gap-2 py-6 text-xs text-sand-100/65 sm:flex-row sm:items-center sm:justify-between">
+      <p>{t('footer.notice')}</p>
+      <p class="shrink-0">© {new Date().getFullYear()} {brand} · {t('footer.rights')}</p>
     </div>
   </div>
-  <p class="border-t border-white/10 py-6 text-center text-xs text-sand-100/60">© {new Date().getFullYear()} {brand} · {t('footer.rights')}</p>
 </footer>

@@ -10,6 +10,7 @@
  * - Barre de progression, bouton Réinitialiser, bouton Imprimer / PDF.
  */
 import type { Locale } from '../i18n';
+import Icon from './Icon.astro';
 interface Props { id: string; title?: string; lang?: Locale }
 const { id, title, lang = 'fr' } = Astro.props;
 
@@ -23,15 +24,16 @@ const T = {
 ---
 
 <section
-  class="checklist not-prose my-8 overflow-hidden rounded-3xl border border-ink-900/10 bg-white shadow-sm dark:border-white/10 dark:bg-night-800"
+  id={`checklist-${id}`}
+  class="checklist not-prose my-8 scroll-mt-24 overflow-hidden rounded-3xl border border-ink-900/10 bg-white shadow-sm dark:border-white/10 dark:bg-night-800"
   data-checklist={id}
   data-of={T.of}
   data-done={T.done}
   data-complete={T.complete}
 >
-  <header class="bg-majorelle-600 px-5 py-4 text-white dark:bg-majorelle-900">
+  <header class="bg-navy-700 px-5 py-4 text-white dark:bg-navy-800">
     <div class="flex flex-wrap items-center justify-between gap-2">
-      <h3 class="text-lg font-bold">✅ {title}</h3>
+      <h3 class="flex items-center gap-2 text-lg font-semibold"><Icon name="listChecks" class="size-5 shrink-0" />{title}</h3>
       <p class="cl-count text-sm font-semibold tabular-nums" aria-live="polite"></p>
     </div>
     <div class="mt-3 h-2 overflow-hidden rounded-full bg-white/25" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -42,8 +44,8 @@ const T = {
   <footer class="no-print flex flex-wrap items-center justify-between gap-3 border-t border-ink-900/10 px-5 py-3 text-xs dark:border-white/10">
     <span class="text-ink-900/70 dark:text-sand-100/70">{T.saved}</span>
     <span class="flex gap-2">
-      <button type="button" class="cl-reset rounded-full border border-current px-3 py-1.5 font-semibold text-majorelle-600 dark:text-majorelle-100">{T.reset}</button>
-      <button type="button" class="cl-print rounded-full bg-terracotta-600 px-3 py-1.5 font-semibold text-white">{T.print}</button>
+      <button type="button" class="cl-reset btn btn-ghost btn-sm">{T.reset}</button>
+      <button type="button" class="cl-print btn btn-primary btn-sm">{T.print}</button>
     </span>
   </footer>
 </section>

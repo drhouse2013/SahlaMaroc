@@ -4,14 +4,15 @@
  * dans <head> (BaseLayout) => pas de flash blanc. Préférence mémorisée (localStorage).
  */
 import { useTranslations, type Locale } from '../i18n';
-interface Props { lang: Locale }
-const t = useTranslations(Astro.props.lang);
+interface Props { lang: Locale; class?: string; row?: boolean }
+const { lang, class: cls = '', row = false } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <button
   type="button"
   data-theme-toggle
-  class="grid size-9 place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10"
+  class:list={[row ? 'flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-start hover:bg-sand-100 dark:hover:bg-white/10' : 'size-10 place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10', !row && !/(^|\s)(hidden|flex)\b/.test(cls) && 'grid', cls]}
   aria-label={t('theme.toggle')}
   title={t('theme.toggle')}
 >
@@ -24,6 +25,7 @@ const t = useTranslations(Astro.props.lang);
     ><circle cx="12" cy="12" r="4"></circle><path
       d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg
   >
+  {row && <span>{t('theme.toggle')}</span>}
 </button>
 
 <script>

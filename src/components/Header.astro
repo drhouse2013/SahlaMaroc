@@ -1,73 +1,117 @@
 ---
 /**
- * En-tête : logo, navigation (menu Guides déroulant), langue, thème.
- * Mobile : menu <details> sans JavaScript.
+ * En-tête : logo, navigation principale, recherche, langue, thème.
+ * - Desktop (≥ lg) : Guides (menu par profil + par thème), Villes, Calculateurs, Checklists, MRE.
+ * - Mobile : recherche + menu plein écran (<details>, fonctionne sans JavaScript).
+ * - La recherche est un lien vers /<lang>/recherche, transformé en fenêtre instantanée par SearchDialog.
  */
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import Logo from './Logo.astro';
+import Icon from './Icon.astro';
 import { brandName } from '../utils/seo';
 import { useTranslations, type Locale } from '../i18n';
-import { CATEGORIES } from '../i18n/categories';
-import { L } from '../data/home';
-import { categoryPath, getActiveCategories, getPageUrl, homePath, type Alternates } from '../utils/i18n';
+import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
+import { categoryPath, getActiveCategories, getPageUrl, homePath, hubPath, type Alternates } from '../utils/i18n';
 
-interface Props { lang: Locale; alternates: Alternates }
-const { lang, alternates } = Astro.props;
+interface Props { lang: Locale; switchTargets: Alternates }
+const { lang, switchTargets } = Astro.props;
 const t = useTranslations(lang);
 const brand = brandName(lang);
-const toolUrl = await getPageUrl(lang, 'calculators');
-const aboutUrl = await getPageUrl(lang, 'about');
+const toolUrl = (await getPageUrl(lang, 'calculators')) ?? homePath(lang);
 const cats = await getActiveCategories(lang);
-const link = 'rounded-full px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10';
+const path = Astro.url.pathname;
+const nav = [
+  { href: hubPath(lang, 'cities'), label: t('nav.cities') },
+  { href: toolUrl, label: t('nav.tools') },
+  { href: hubPath(lang, 'checklists'), label: t('nav.checklists') },
+  { href: hubPath(lang, 'mre'), label: t('nav.mre') },
+];
+const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
+const searchHref = hubPath(lang, 'search');
 ---
 
-<header class="sticky top-0 z-40 border-b border-ink-900/5 bg-sand-50/90 backdrop-blur-md dark:border-white/5 dark:bg-night-900/90">
-  <div class="mx-auto flex h-16 max-w-6xl items-center gap-2 px-3 sm:gap-3 sm:px-4">
-    <a href={homePath(lang)} class="flex min-w-0 shrink items-center gap-2 sm:gap-2.5" aria-label={brand}>
+<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-sand-50/90 backdrop-blur-md supports-[backdrop-filter]:bg-sand-50/80 dark:bg-night-900/90">
+  <div class="container-page flex h-16 items-center gap-2 sm:gap-3">
+    <a href={homePath(lang)} class="flex min-w-0 shrink items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
       <Logo />
-      <span class="truncate font-display text-lg font-bold tracking-tight sm:text-xl text-[#163a63] dark:text-sand-50">Sahla <span class="text-[#9a6f1e] dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
+      <span class="truncate font-brand text-lg font-bold tracking-tight text-navy-700 sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-gold-600 dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
     </a>
 
-    <nav class="ms-6 hidden items-center gap-1 text-[0.95rem] font-medium md:flex" aria-label="Main">
-      {cats.length > 0 && (
-        <details class="group relative">
-          <summary class:list={[link, 'flex cursor-pointer list-none items-center gap-1 [&::-webkit-details-marker]:hidden']}>
-            {L.guides[lang]}
-            <svg class="size-3 transition group-open:rotate-180" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
-          </summary>
-          <ul class="card absolute start-0 z-50 mt-2 grid w-64 gap-0.5 p-2 shadow-xl">
-            {cats.map((id) => (
-              <li><a href={categoryPath(lang, id)} class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10"><span aria-hidden="true">{CATEGORIES[id].icon}</span>{CATEGORIES[id].label[lang]}</a></li>
-            ))}
-          </ul>
-        </details>
-      )}
-      <a href={`${homePath(lang)}#cities`} class={link}>{L.cities[lang]}</a>
-      {toolUrl && <a href={toolUrl} class={link}>{t('nav.tools')}</a>}
-      {aboutUrl && <a href={aboutUrl} class={link}>{t('nav.about')}</a>}
+    <nav class="ms-4 hidden items-center gap-0.5 text-[0.94rem] font-medium lg:flex" aria-label={t('nav.main')}>
+      <details class="group relative" data-nav-menu>
+        <summary class="flex min-h-10 cursor-pointer list-none items-center gap-1 rounded-full px-3 hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden">
+          {t('nav.guides')}
+          <Icon name="chevronDown" class="size-4 transition group-open:rotate-180" />
+        </summary>
+        <div class="card absolute start-0 z-50 mt-2 grid w-[34rem] grid-cols-[1fr_1.3fr] gap-2 p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in">
+          <div class="rounded-2xl bg-sand-50 p-2 dark:bg-white/5">
+            <p class="eyebrow px-2 pt-1 pb-2 muted">{t('nav.byAudience')}</p>
+            <a href={hubPath(lang, 'mre')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
+              <span class="icon-tile size-9"><Icon name="ship" /></span>
+              <span><span class="block font-semibold">{t('home.path.mre')}</span><span class="block text-xs muted">{t('home.path.mreText')}</span></span>
+            </a>
+            <a href={hubPath(lang, 'visit')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
+              <span class="icon-tile size-9"><Icon name="compass" /></span>
+              <span><span class="block font-semibold">{t('home.path.visit')}</span><span class="block text-xs muted">{t('home.path.visitText')}</span></span>
+            </a>
+          </div>
+          <div>
+            <p class="eyebrow px-2 pt-1 pb-2 muted">{t('nav.byTopic')}</p>
+            <ul class="grid gap-0.5">
+              {cats.map((id) => (
+                <li><a href={categoryPath(lang, id)} class="flex items-center gap-2.5 rounded-xl px-2 py-1.5 hover:bg-sand-100 dark:hover:bg-white/10"><Icon name={CATEGORY_ICON[id]} class="size-4 text-navy-600 dark:text-navy-300" />{CATEGORIES[id].label[lang]}</a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </details>
+      {nav.map((n) => (
+        <a href={n.href} class="flex min-h-10 items-center rounded-full px-3 hover:bg-sand-100 aria-[current=page]:text-terracotta-600 dark:hover:bg-white/10 dark:aria-[current=page]:text-terracotta-300" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>
+      ))}
     </nav>
 
-    <div class="ms-auto flex items-center gap-1">
-      <LanguageSwitcher lang={lang} alternates={alternates} />
-      <ThemeToggle lang={lang} />
-      <details class="relative md:hidden">
-        <summary class="grid size-10 cursor-pointer list-none place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden" aria-label={L.menu[lang]}>
-          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    <div class="ms-auto flex items-center gap-0.5 sm:gap-1">
+      <a href={searchHref} data-search-open class="flex min-h-10 items-center gap-2 rounded-full px-2.5 text-sm hover:bg-sand-100 sm:border sm:border-[var(--line-strong)] sm:px-3 dark:hover:bg-white/10" aria-label={t('nav.search')}>
+        <Icon name="search" class="size-5 sm:size-4" />
+        <span class="hidden sm:inline muted">{t('nav.search')}</span>
+        <kbd class="kbd hidden xl:inline-grid" aria-hidden="true">/</kbd>
+      </a>
+      <LanguageSwitcher lang={lang} targets={switchTargets} />
+      <ThemeToggle lang={lang} class="hidden sm:grid" />
+      <details class="relative lg:hidden" data-nav-menu>
+        <summary class="grid size-10 cursor-pointer list-none place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden" aria-label={t('nav.menu')}>
+          <Icon name="menu" class="size-6" />
         </summary>
-        <div class="card absolute end-0 z-50 mt-2 w-72 p-3 shadow-xl">
-          <p class="eyebrow px-3 pb-1 text-ink-900/60 dark:text-sand-100/60">{L.guides[lang]}</p>
-          <ul class="grid gap-0.5">
-            {cats.map((id) => (
-              <li><a href={categoryPath(lang, id)} class="flex gap-3 rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10"><span aria-hidden="true">{CATEGORIES[id].icon}</span>{CATEGORIES[id].label[lang]}</a></li>
-            ))}
-          </ul>
-          <hr class="my-2 border-ink-900/10 dark:border-white/10" />
-          <a href={`${homePath(lang)}#cities`} class="block rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10">{L.cities[lang]}</a>
-          {toolUrl && <a href={toolUrl} class="block rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10">{t('nav.tools')}</a>}
-          {aboutUrl && <a href={aboutUrl} class="block rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10">{t('nav.about')}</a>}
+        <div class="card fixed inset-x-3 top-[4.25rem] z-50 max-h-[calc(100dvh-5.5rem)] overflow-y-auto p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in sm:absolute sm:inset-x-auto sm:end-0 sm:top-auto sm:mt-2 sm:w-80">
+          <nav aria-label={t('nav.main')}>
+            <a href={hubPath(lang, 'mre')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="ship" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.mre')}</a>
+            <a href={hubPath(lang, 'visit')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="compass" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.visit')}</a>
+            <hr class="my-2 border-[var(--line)]" />
+            {nav.map((n) => <a href={n.href} class="block rounded-xl px-3 py-2.5 hover:bg-sand-100 dark:hover:bg-white/10" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>)}
+            <hr class="my-2 border-[var(--line)]" />
+            <p class="eyebrow px-3 pt-1 pb-1 muted">{t('nav.byTopic')}</p>
+            <ul class="grid gap-0.5">
+              {cats.map((id) => (
+                <li><a href={categoryPath(lang, id)} class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10"><Icon name={CATEGORY_ICON[id]} class="size-4 text-navy-600 dark:text-navy-300" />{CATEGORIES[id].label[lang]}</a></li>
+              ))}
+            </ul>
+            <hr class="my-2 border-[var(--line)] sm:hidden" />
+            <div class="sm:hidden"><ThemeToggle lang={lang} row /></div>
+          </nav>
         </div>
       </details>
     </div>
   </div>
 </header>
+
+<script>
+  // Menus <details> : fermeture au clic extérieur, à la touche Échap et à l'ouverture d'un autre menu.
+  const menus = Array.from(document.querySelectorAll<HTMLDetailsElement>('details[data-nav-menu], details[data-lang-switcher]'));
+  menus.forEach((m) => m.addEventListener('toggle', () => { if (m.open) menus.forEach((o) => o !== m && (o.open = false)); }));
+  document.addEventListener('click', (e) => menus.forEach((m) => { if (m.open && !m.contains(e.target as Node)) m.open = false; }));
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    menus.forEach((m) => { if (m.open) { m.open = false; m.querySelector('summary')?.focus(); } });
+  });
+</script>

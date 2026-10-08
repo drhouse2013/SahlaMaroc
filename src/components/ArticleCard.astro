@@ -1,37 +1,54 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { CATEGORIES } from '../i18n/categories';
+import Icon from './Icon.astro';
+import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { useTranslations } from '../i18n';
-import { readingTime } from '../utils/date';
+import { readingTime, formatDate } from '../utils/date';
 import { entryPath } from '../utils/i18n';
 import { illustration } from '../utils/illustrations';
 
-interface Props { article: CollectionEntry<'articles'>; size?: 'md' | 'lg' }
-const { article, size = 'md' } = Astro.props;
+interface Props { article: CollectionEntry<'articles'>; size?: 'sm' | 'md' | 'lg'; headingLevel?: 'h2' | 'h3' }
+const { article, size = 'md', headingLevel = 'h3' } = Astro.props;
 const d = article.data;
 const t = useTranslations(d.lang);
 const lg = size === 'lg';
+const H = headingLevel;
+const updated = d.updatedDate ?? d.pubDate;
 ---
 
-<article class:list={['group card relative flex overflow-hidden transition hover:-translate-y-1 hover:shadow-xl', lg ? 'flex-col md:flex-row' : 'flex-col']}>
-  <div class:list={['overflow-hidden', lg ? 'aspect-[16/10] md:aspect-auto md:w-1/2' : 'aspect-[16/10]']}>
-    <Image
-      src={d.heroImage ?? illustration(d.illustration)}
-      alt={d.heroAlt ?? ''}
-      width={lg ? 900 : 640}
-      loading="lazy"
-      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-    />
-  </div>
-  <div class:list={['flex flex-1 flex-col', lg ? 'p-7 md:p-10' : 'p-5']}>
-    <p class="text-xs font-semibold text-emerald-moroccan-600 dark:text-emerald-moroccan-100">
-      {CATEGORIES[d.category].icon} {CATEGORIES[d.category].label[d.lang]}
-    </p>
-    <h3 class:list={['mt-2 leading-snug font-bold', lg ? 'text-2xl md:text-3xl' : 'text-lg']}>
-      <a href={entryPath(d.lang, d.slug)} class="after:absolute after:inset-0 group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{d.title}</a>
-    </h3>
-    <p class:list={['mt-2 text-ink-900/75 dark:text-sand-100/75', lg ? 'text-base' : 'line-clamp-2 text-sm']}>{d.description}</p>
-    <p class="mt-auto pt-4 text-xs text-ink-900/65 dark:text-sand-100/65">{t('article.readingTime', { n: readingTime(article.body) })}</p>
-  </div>
-</article>
+{size === 'sm' ? (
+  <article class="group relative flex gap-3 rounded-2xl p-3 transition hover:bg-[var(--surface-3)]">
+    <span class="icon-tile size-10"><Icon name={CATEGORY_ICON[d.category]} /></span>
+    <div class="min-w-0">
+      <H class="text-[0.98rem] leading-snug font-semibold"><a href={entryPath(d.lang, d.slug)} class="after:absolute after:inset-0 group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{d.title}</a></H>
+      <p class="mt-0.5 text-xs muted">{CATEGORIES[d.category].label[d.lang]} · {t('article.readingTime', { n: readingTime(article.body) })}</p>
+    </div>
+  </article>
+) : (
+  <article class:list={['group card card-hover relative flex h-full overflow-hidden', lg ? 'flex-col md:flex-row' : 'flex-col']}>
+    <div class:list={['overflow-hidden bg-sand-100 dark:bg-night-700', lg ? 'aspect-[16/10] md:aspect-auto md:w-1/2' : 'aspect-[16/9]']}>
+      <Image
+        src={d.heroImage ?? illustration(d.illustration)}
+        alt={d.heroAlt ?? ''}
+        width={lg ? 900 : 640}
+        loading="lazy"
+        decoding="async"
+        class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+      />
+    </div>
+    <div class:list={['flex flex-1 flex-col', lg ? 'p-6 md:p-9' : 'p-5']}>
+      <p class="flex items-center gap-1.5 text-xs font-semibold text-emerald-moroccan-600 dark:text-emerald-moroccan-100">
+        <Icon name={CATEGORY_ICON[d.category]} class="size-3.5" />{CATEGORIES[d.category].label[d.lang]}
+      </p>
+      <H class:list={['mt-2 leading-snug font-semibold', lg ? 'text-2xl md:text-3xl' : 'text-lg']}>
+        <a href={entryPath(d.lang, d.slug)} class="after:absolute after:inset-0 group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{d.title}</a>
+      </H>
+      <p class:list={['mt-2 muted', lg ? 'text-base' : 'line-clamp-2 text-sm']}>{d.description}</p>
+      <p class="mt-auto flex flex-wrap gap-x-3 pt-4 text-xs muted">
+        <span>{t('article.readingTime', { n: readingTime(article.body) })}</span>
+        <time datetime={updated.toISOString()}>{t('common.updatedOn', { date: formatDate(updated, d.lang, 'short') })}</time>
+      </p>
+    </div>
+  </article>
+)}

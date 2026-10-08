@@ -1,7 +1,9 @@
 ---
 /**
  * Balises <head> SEO : title, description, canonical, hreflang (+ x-default),
- * Open Graph, Twitter Card, JSON-LD.
+ * Open Graph, Twitter/X Card, JSON-LD.
+ * - canonical = URL propre de la page (sans paramètres de requête).
+ * - hreflang = uniquement les traductions indexables (pas de duplication).
  */
 import { LOCALE_META, DEFAULT_LOCALE, type Locale } from '../i18n';
 import { absoluteUrl, buildTitle, brandName } from '../utils/seo';
@@ -13,38 +15,50 @@ interface Props {
   description: string;
   alternates: Alternates;
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
   jsonLd?: object[];
+  publishedTime?: Date;
+  modifiedTime?: Date;
 }
 
-const { lang, title, description, alternates, image, type = 'website', noindex = false, jsonLd = [] } = Astro.props;
+const { lang, title, description, alternates, image, imageAlt, type = 'website', noindex = false, jsonLd = [], publishedTime, modifiedTime } = Astro.props;
 const site = Astro.site;
 const canonical = absoluteUrl(Astro.url.pathname, site);
 const ogImage = absoluteUrl(image ?? '/og-default.png', site);
+const fullTitle = buildTitle(title, lang);
+const ogTitle = title ?? brandName(lang);
 const xDefault = alternates[DEFAULT_LOCALE] ?? alternates[lang];
+const hasAlternates = Object.keys(alternates).length > 1;
 ---
 
-<title>{buildTitle(title, lang)}</title>
+<title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, follow" />}
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
 
-{/* hreflang : uniquement les traductions réelles (pas de duplication) */}
-{
-  Object.entries(alternates).map(([code, path]) => (
-    <link rel="alternate" hreflang={LOCALE_META[code as Locale].hreflang} href={absoluteUrl(path!, site)} />
-  ))
-}
-{xDefault && <link rel="alternate" hreflang="x-default" href={absoluteUrl(xDefault, site)} />}
+{!noindex && hasAlternates && Object.entries(alternates).map(([code, path]) => (
+  <link rel="alternate" hreflang={LOCALE_META[code as Locale].hreflang} href={absoluteUrl(path!, site)} />
+))}
+{!noindex && hasAlternates && xDefault && <link rel="alternate" hreflang="x-default" href={absoluteUrl(xDefault, site)} />}
 
 <meta property="og:site_name" content={brandName(lang)} />
 <meta property="og:type" content={type} />
-<meta property="og:title" content={title ?? brandName(lang)} />
+<meta property="og:title" content={ogTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImage} />
+{!image && <meta property="og:image:width" content="1200" />}
+{!image && <meta property="og:image:height" content="630" />}
+<meta property="og:image:alt" content={imageAlt ?? brandName(lang)} />
 <meta property="og:locale" content={LOCALE_META[lang].og} />
+{Object.keys(alternates).filter((c) => c !== lang).map((c) => <meta property="og:locale:alternate" content={LOCALE_META[c as Locale].og} />)}
+{type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+{type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={ogTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
 
 {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}

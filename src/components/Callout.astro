@@ -1,16 +1,22 @@
 ---
 /** Encadré pour MDX : <Callout type="tip|warning|info">…</Callout> */
+import Icon from './Icon.astro';
+import type { IconName } from '../data/icons';
 interface Props { type?: 'tip' | 'warning' | 'info'; title?: string }
 const { type = 'tip', title } = Astro.props;
-const style = {
-  tip: 'border-emerald-moroccan-500 bg-emerald-moroccan-500/5',
-  warning: 'border-terracotta-500 bg-terracotta-50 dark:bg-terracotta-600/10',
-  info: 'border-majorelle-500 bg-majorelle-50 dark:bg-majorelle-500/10',
+const style = { tip: 'alert-ok', warning: 'alert-warn', info: 'alert-info' }[type];
+const icon: IconName = { tip: 'lightbulb', warning: 'alert', info: 'info' }[type] as IconName;
+const tone = {
+  tip: 'text-emerald-moroccan-600 dark:text-emerald-moroccan-100',
+  warning: 'text-terracotta-600 dark:text-terracotta-300',
+  info: 'text-navy-700 dark:text-navy-100',
 }[type];
-const icon = { tip: '💡', warning: '⚠️', info: 'ℹ️' }[type];
 ---
 
-<div class:list={['not-prose my-6 rounded-xl border-s-4 px-5 py-4', style]}>
-  {title && <p class="mb-1 font-bold">{icon} {title}</p>}
-  <div class="text-[0.95rem] leading-relaxed [&_a]:underline [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:ps-5"><slot /></div>
+<div class:list={['alert not-prose my-6', style]}>
+  <Icon name={icon} class:list={['mt-0.5 size-5 shrink-0', tone]} />
+  <div class="min-w-0 flex-1">
+    {title && <p class="mb-1 font-semibold">{title}</p>}
+    <div class="text-[0.95rem] leading-relaxed [&_a]:underline [&_a]:underline-offset-2 [&_li]:mt-1 [&_ol]:list-decimal [&_ol]:ps-5 [&_ul]:list-disc [&_ul]:ps-5"><slot /></div>
+  </div>
 </div>
