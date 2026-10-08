@@ -1,0 +1,156 @@
+---
+/** Page ville : /<lang>/villes/<ville>. Textes issus de src/data/cities.ts, budget issu du calculateur (estimation datée). */
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import ArticleCard from '../ArticleCard.astro';
+import AffiliateLink from '../AffiliateLink.astro';
+import AdSlot from '../AdSlot.astro';
+import Icon from '../Icon.astro';
+import CityGrid from '../home/CityGrid.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { BASE, CITY_FACTOR, COSTS_LAST_UPDATED } from '../../config/costs';
+import { LOCALES, isIndexable } from '../../i18n/config';
+import { allLocalesTargets, cityPath, getArticleByKey, getPageUrl, homePath, hubPath, type Alternates } from '../../utils/i18n';
+import { formatDate } from '../../utils/date';
+import { illustration } from '../../utils/illustrations';
+import { absoluteUrl, breadcrumbJsonLd, faqJsonLd } from '../../utils/seo';
+
+interface Props { lang: Locale; id: string }
+const { lang, id } = Astro.props;
+const t = useTranslations(lang);
+const city = CITY_PAGES.find((c) => c.id === id)!;
+const text = city.text[lang];
+const name = cityLabel(id, lang);
+const url = absoluteUrl(cityPath(lang, city.slug[lang]), Astro.site);
+
+const alternates: Alternates = {};
+for (const l of LOCALES) if (isIndexable(l)) alternates[l] = cityPath(l, city.slug[l]);
+alternates[lang] = cityPath(lang, city.slug[lang]);
+
+const lookup = async (keys: string[]) => (await Promise.all(keys.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
+const [access, stay, trips, more] = await Promise.all([lookup(city.accessKeys), lookup([city.stayKey]), lookup(city.tripKeys), lookup(city.moreKeys)]);
+const guides = [...access, ...stay, ...trips, ...more];
+const stayGuide = stay[0];
+
+// Budget indicatif (1 personne, milieu de gamme) = mêmes formules et mêmes valeurs que le calculateur
+let day = 0, month = 0;
+if (city.costCity) {
+  const k = CITY_FACTOR[city.costCity];
+  day = (BASE.nightStay.mid + BASE.foodDay.mid + BASE.transportDay.mid + BASE.funDay.mid) * k;
+  month = (BASE.rentMonth.mid + (BASE.foodDay.mid + BASE.transportDay.mid + BASE.funDay.mid) * 30) * k + BASE.simMonth;
+}
+const round = (n: number) => Math.round(n / 50) * 50;
+const nf = new Intl.NumberFormat(lang === 'ar' ? 'ar-MA-u-nu-latn' : lang, { maximumFractionDigits: 0 });
+const budgetUrl = await getPageUrl(lang, 'budget-calculator');
+
+const title = t('city.title', { city: name });
+const description = t('city.description', { city: name });
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('nav.cities'), href: hubPath(lang, 'cities') }, { name }];
+const jsonLd = [
+  breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))),
+  ...(text.faq.length ? [faqJsonLd(text.faq)] : []),
+];
+const sections = [
+  { id: 'why', label: t('city.why') }, { id: 'access', label: t('city.access') }, { id: 'areas', label: t('city.areas') },
+  ...(city.costCity ? [{ id: 'budget', label: t('city.budget') }] : []),
+  ...(trips.length ? [{ id: 'trips', label: t('city.trips') }] : []),
+  ...(text.faq.length ? [{ id: 'faq', label: t('city.faq') }] : []),
+];
+---
+<BaseLayout lang={lang} title={title} description={description} alternates={alternates} switchTargets={allLocalesTargets((l) => cityPath(l, city.slug[l]))} jsonLd={jsonLd}>
+  <div class="zellige-soft border-b border-[var(--line)]">
+    <div class="container-page grid items-center gap-8 pt-8 pb-10 md:grid-cols-[1.3fr_0.7fr]">
+      <div>
+        <Breadcrumbs items={crumbs} lang={lang} />
+        <h1 class="mt-8 text-3xl font-semibold sm:text-[2.6rem]">{title}</h1>
+        {city.host2030 && <p class="mt-3"><span class="badge badge-gold">{t('city.host')}</span></p>}
+        <p class="mt-4 max-w-2xl text-lg muted">{text.intro}</p>
+      </div>
+      <div class="arch hidden aspect-[4/3] md:block"><Image src={illustration(city.id)} alt="" width={520} class="h-full w-full object-cover" loading="eager" /></div>
+    </div>
+  </div>
+
+  <div class="container-page grid gap-10 pt-8 lg:grid-cols-[1fr_16rem]">
+    <div class="min-w-0">
+      <section id="why" class="scroll-mt-24" aria-labelledby="h-why">
+        <h2 id="h-why" class="section-title !text-2xl">{t('city.why')}</h2>
+        <ul class="mt-4 grid gap-2">{text.why.map((w) => <li class="flex gap-2"><Icon name="check" class="mt-1 size-4 shrink-0 text-emerald-moroccan-500" />{w}</li>)}</ul>
+        <h3 class="mt-6 text-lg font-semibold">{t('city.when')}</h3>
+        <p class="mt-1.5 muted">{text.when}</p>
+      </section>
+
+      <section id="access" class="section scroll-mt-24 !pt-10" aria-labelledby="h-access">
+        <h2 id="h-access" class="section-title !text-2xl">{t('city.access')}</h2>
+        <p class="mt-3">{text.access}</p>
+        {access.length > 0 && <div class="mt-4 grid gap-1">{access.map((a) => <ArticleCard article={a} size="sm" />)}</div>}
+      </section>
+
+      <section id="areas" class="section scroll-mt-24 !pt-10" aria-labelledby="h-areas">
+        <h2 id="h-areas" class="section-title !text-2xl">{t('city.areas')}</h2>
+        <dl class="mt-4 grid gap-3 sm:grid-cols-2">
+          {text.areas.map((a) => <div class="card p-4"><dt class="font-semibold">{a.name}</dt><dd class="mt-1 text-sm muted">{a.text}</dd></div>)}
+        </dl>
+        <p class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+          {stayGuide && <a href={`/${lang}/${stayGuide.data.slug}`} class="btn btn-secondary btn-sm">{t('city.stayGuide')}</a>}
+          <AffiliateLink provider="booking" query={city.bookingQuery} class="inline-flex items-center gap-1.5">{t('city.book')}<Icon name="external" class="size-3.5" /></AffiliateLink>
+        </p>
+        <p class="mt-2 text-xs muted">{t('disclosure.short')}</p>
+      </section>
+
+      {city.costCity && (
+        <section id="budget" class="section scroll-mt-24 !pt-10" aria-labelledby="h-budget">
+          <h2 id="h-budget" class="section-title !text-2xl">{t('city.budget')}</h2>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="card p-5"><p class="font-display text-3xl font-bold tabular-nums"><bdi dir="ltr">≈ {nf.format(round(day))} MAD</bdi></p><p class="mt-1 text-sm muted">{t('city.budgetDay')}</p></div>
+            <div class="card p-5"><p class="font-display text-3xl font-bold tabular-nums"><bdi dir="ltr">≈ {nf.format(round(month))} MAD</bdi></p><p class="mt-1 text-sm muted">{t('city.budgetMonth')}</p></div>
+          </div>
+          <p class="alert alert-warn mt-4 text-sm"><Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" /><span>{t('city.budgetNote', { date: formatDate(new Date(COSTS_LAST_UPDATED), lang) })}</span></p>
+          {budgetUrl && <a href={budgetUrl} class="btn btn-ghost btn-sm mt-4">{t('city.budgetCta')}</a>}
+        </section>
+      )}
+
+      {trips.length > 0 && (
+        <section id="trips" class="section scroll-mt-24 !pt-10" aria-labelledby="h-trips">
+          <h2 id="h-trips" class="section-title !text-2xl">{t('city.trips')}</h2>
+          <div class="mt-5 grid gap-6 sm:grid-cols-2">{trips.map((a) => <ArticleCard article={a} />)}</div>
+        </section>
+      )}
+
+      {more.length > 0 && (
+        <section class="section !pt-10" aria-labelledby="h-more">
+          <h2 id="h-more" class="section-title !text-2xl">{t('city.guides', { city: name })}</h2>
+          <div class="mt-4 grid gap-1 sm:grid-cols-2">{more.map((a) => <ArticleCard article={a} size="sm" />)}</div>
+        </section>
+      )}
+
+      {text.faq.length > 0 && (
+        <section id="faq" class="section scroll-mt-24 !pt-10" aria-labelledby="h-faq">
+          <h2 id="h-faq" class="section-title !text-2xl">{t('city.faq')}</h2>
+          <div class="mt-4 grid gap-3">
+            {text.faq.map((f) => (
+              <details class="card group p-4">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold">{f.q}<Icon name="chevronDown" class="size-5 shrink-0 transition group-open:rotate-180" /></summary>
+                <p class="mt-3 muted">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+      <AdSlot type="banner" lang={lang} />
+    </div>
+
+    <aside class="hidden lg:block">
+      <nav class="sticky top-24 card p-4" aria-label={t('article.onThisPage')}>
+        <p class="eyebrow muted">{t('article.onThisPage')}</p>
+        <ul class="mt-3 grid gap-2 text-sm">{sections.map((s) => <li><a href={`#${s.id}`} class="hover:underline underline-offset-4">{s.label}</a></li>)}</ul>
+      </nav>
+    </aside>
+  </div>
+
+  <div class="container-page section">
+    <h2 class="section-title !text-2xl">{t('city.others')}</h2>
+    <div class="mt-6"><CityGrid lang={lang} ids={CITY_PAGES.filter((c) => c.id !== id).map((c) => c.id)} limit={4} showHeading={false} /></div>
+  </div>
+</BaseLayout>

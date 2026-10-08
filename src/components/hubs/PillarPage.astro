@@ -1,0 +1,96 @@
+---
+/** Page pilier d'un thème : /<lang>/themes/<thème>. Introduction, départ conseillé, outils, villes, tous les guides, sources officielles. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import ArticleCard from '../ArticleCard.astro';
+import ToolGrid from '../ToolGrid.astro';
+import CityGrid from '../home/CityGrid.astro';
+import AdSlot from '../AdSlot.astro';
+import Icon from '../Icon.astro';
+import { LOCALES, TOPICS_SEGMENT, isIndexable, useTranslations, type Locale } from '../../i18n';
+import { CATEGORIES, CATEGORY_ICON, type CategoryId } from '../../i18n/categories';
+import { PILLARS } from '../../data/pillars';
+import { SOURCES } from '../../data/sources';
+import { allLocalesTargets, categoryPath, getActiveCategories, getArticleByKey, getArticles, homePath, type Alternates } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+
+interface Props { lang: Locale; id: CategoryId }
+const { lang, id } = Astro.props;
+const t = useTranslations(lang);
+const label = CATEGORIES[id].label[lang];
+const pillar = PILLARS[id];
+const articles = (await getArticles(lang)).filter((a) => a.data.category === id);
+const start = (await Promise.all(pillar.start.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
+const startIds = new Set(start.map((a) => a.id));
+const rest = articles.filter((a) => !startIds.has(a.id));
+const others = (await getActiveCategories(lang)).filter((c) => c !== id);
+const sources = pillar.sources.map((s) => SOURCES[s]).filter(Boolean);
+
+const alternates: Alternates = {};
+for (const l of LOCALES) if (isIndexable(l) && (await getActiveCategories(l)).includes(id)) alternates[l] = categoryPath(l, id);
+alternates[lang] = categoryPath(lang, id);
+const switchTargets: Alternates = {};
+for (const l of LOCALES) if ((await getActiveCategories(l)).includes(id)) switchTargets[l] = categoryPath(l, id);
+
+const url = absoluteUrl(categoryPath(lang, id), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: label }];
+const description = pillar.intro[lang].length <= 160 ? pillar.intro[lang] : pillar.intro[lang].slice(0, 157).replace(/\s+\S*$/, '') + '…';
+---
+<BaseLayout lang={lang} title={t('category.title', { topic: label })} description={description} alternates={alternates} switchTargets={switchTargets}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: label, description: pillar.intro[lang], lang, items: articles.map((a) => ({ name: a.data.title, url: absoluteUrl(`/${lang}/${a.data.slug}`, Astro.site) })) })]}>
+  <PageHero lang={lang} crumbs={crumbs} title={label} intro={pillar.intro[lang]} icon={CATEGORY_ICON[id]} meta={t('category.count', { n: articles.length })} />
+
+  <div class="container-page pt-8">
+    {pillar.ymyl && (
+      <div class="alert alert-warn">
+        <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" />
+        <p class="text-sm"><strong>{t('article.ymyl.title')}.</strong> {t('article.ymyl.text')}</p>
+      </div>
+    )}
+
+    {start.length > 0 && (
+      <section class="section !pt-10" aria-labelledby="start">
+        <h2 id="start" class="section-title !text-2xl">{t('pillar.start')}</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{start.map((a) => <ArticleCard article={a} />)}</div>
+      </section>
+    )}
+
+    {pillar.tools.length > 0 && (
+      <section class="section !pt-10" aria-labelledby="tools">
+        <h2 id="tools" class="section-title !text-2xl">{t('pillar.tools')}</h2>
+        <div class="mt-6"><ToolGrid lang={lang} keys={pillar.tools} compact /></div>
+      </section>
+    )}
+
+    {rest.length > 0 && (
+      <section class="section !pt-10" aria-labelledby="all">
+        <h2 id="all" class="section-title !text-2xl">{t('pillar.all')}</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{rest.map((a) => <ArticleCard article={a} />)}</div>
+      </section>
+    )}
+    {articles.length === 0 && <p class="mt-6 muted">{t('category.empty')}</p>}
+
+    {pillar.cities.length > 0 && (
+      <section class="section !pt-10" aria-labelledby="cities">
+        <h2 id="cities" class="section-title !text-2xl">{t('pillar.cities')}</h2>
+        <div class="mt-6"><CityGrid lang={lang} ids={pillar.cities} showHeading={false} /></div>
+      </section>
+    )}
+
+    {sources.length > 0 && (
+      <section class="section !pt-10" aria-labelledby="sources">
+        <h2 id="sources" class="section-title !text-2xl">{t('pillar.sources')}</h2>
+        <p class="section-sub">{t('article.sourcesNote')}</p>
+        <ul class="mt-4 grid gap-2 sm:grid-cols-2">{sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener noreferrer" class="link inline-flex items-center gap-1.5">{s.name[lang] ?? s.name.en}<Icon name="external" class="size-3.5" /></a></li>)}</ul>
+      </section>
+    )}
+
+    {others.length > 0 && (
+      <section class="section !pt-10" aria-labelledby="others">
+        <h2 id="others" class="section-title !text-2xl">{t('pillar.other')}</h2>
+        <ul class="mt-5 flex flex-wrap gap-2">{others.map((o) => <li><a href={categoryPath(lang, o)} class="badge badge-navy min-h-9 px-3 text-sm hover:brightness-95"><Icon name={CATEGORY_ICON[o]} class="size-4" />{CATEGORIES[o].label[lang]}</a></li>)}</ul>
+      </section>
+    )}
+    <AdSlot type="banner" lang={lang} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+/** /<lang>/recherche : page de recherche (noindex ; ?q= prérempli). */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import SearchBox from '../SearchBox.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { allLocalesTargets, homePath, hubPath } from '../../utils/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('search.pageTitle') }];
+---
+<BaseLayout lang={lang} title={t('search.pageTitle')} description={t('search.pageDescription')} alternates={{ [lang]: hubPath(lang, 'search') }} switchTargets={allLocalesTargets((l) => hubPath(l, 'search'))} noindex>
+  <PageHero lang={lang} crumbs={crumbs} title={t('search.title')} icon="search" />
+  <div class="container-page max-w-3xl pt-8"><SearchBox lang={lang} mode="page" autofocus /></div>
+</BaseLayout>

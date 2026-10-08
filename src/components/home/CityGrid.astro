@@ -1,45 +1,39 @@
 ---
-/** Grille des villes : illustration, ambiance, budget relatif (en MAD : ● = abordable). */
+/** Grille des villes : chaque carte mène à la page ville (sans donnée inventée). */
 import { Image } from 'astro:assets';
-import type { Locale } from '../../i18n';
-import { CITIES, L, cityName, pick } from '../../data/home';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { L } from '../../data/home';
+import { cityPath, hubPath } from '../../utils/i18n';
 import { illustration } from '../../utils/illustrations';
-import { entryPath, getArticleByKey } from '../../utils/i18n';
 
-interface Props { lang: Locale }
-const { lang } = Astro.props;
-const guide = await getArticleByKey(lang, 'nomad-cities');
-const href = guide ? entryPath(lang, guide.data.slug) : undefined;
+interface Props { lang: Locale; ids?: string[]; limit?: number; showHeading?: boolean; headingLevel?: 'h2' | 'h3' }
+const { lang, ids, limit, showHeading = true } = Astro.props;
+const t = useTranslations(lang);
+const list = CITY_PAGES.filter((c) => !ids || ids.includes(c.id)).slice(0, limit ?? 99);
 ---
-
-<section id="cities" class="mx-auto max-w-6xl scroll-mt-24 px-4 pt-24">
-  <div class="flex flex-wrap items-end justify-between gap-4">
-    <div>
-      <h2 class="text-3xl font-bold sm:text-4xl">{L.citiesTitle[lang]}</h2>
-      <p class="mt-2 text-ink-900/75 dark:text-sand-100/75">{L.citiesSub[lang]}</p>
+<section class:list={[showHeading && 'container-page section']} aria-labelledby={showHeading ? 'cities-title' : undefined}>
+  {showHeading && (
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 id="cities-title" class="section-title">{t('home.cities.title')}</h2>
+        <p class="section-sub">{t('home.cities.sub')}</p>
+      </div>
+      <a href={hubPath(lang, 'cities')} class="btn btn-ghost btn-sm">{t('common.seeAll')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
     </div>
-    {href && <a href={href} class="btn btn-ghost">{L.readGuide[lang]}</a>}
-  </div>
-  <ul class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-    {CITIES.map((c) => (
-      <li class="group card relative flex flex-col overflow-hidden">
-        {c.host2030 && <span class="absolute end-3 top-3 z-10 rounded-full bg-saffron-400 px-2.5 py-1 text-xs font-bold text-ink-900 shadow">⚽ {L.hostCity[lang]}</span>}
+  )}
+  <ul class:list={['grid gap-5 sm:grid-cols-2 lg:grid-cols-4', showHeading && 'mt-8']}>
+    {list.map((c) => (
+      <li class="group card card-hover relative flex flex-col overflow-hidden">
+        {c.host2030 && <span class="badge badge-gold absolute end-3 top-3 z-10">{L.hostCity[lang]}</span>}
         <div class="arch mx-4 mt-4 aspect-[4/3] overflow-hidden">
           <Image src={illustration(c.id)} alt="" width={480} loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         </div>
         <div class="flex flex-1 flex-col p-5 pt-4">
-          <div class="flex items-baseline justify-between gap-2">
-            <h3 class="text-xl font-bold">
-              {href ? <a href={`${href}#${c.id}`} class="after:absolute after:inset-0">{cityName(c, lang)}</a> : cityName(c, lang)}
-            </h3>
-            <span class="flex items-center gap-1" role="img" aria-label={`${c.budget}/3`} title={`${c.budget}/3`}>
-              {[1, 2, 3].map((n) => <span class:list={['h-3 w-1.5 rounded-full', n <= c.budget ? 'bg-terracotta-500' : 'bg-ink-900/15 dark:bg-white/15']}></span>)}
-            </span>
-          </div>
-          <p class="mt-2 text-sm text-ink-900/75 dark:text-sand-100/75">{pick(c.vibe, lang)}</p>
-          <ul class="mt-auto flex flex-wrap gap-1.5 pt-4">
-            {pick(c.tags, lang).map((tag) => <li class="rounded-full bg-sand-100 px-2.5 py-1 text-xs font-medium dark:bg-white/10">{tag}</li>)}
-          </ul>
+          <h3 class="text-xl font-semibold"><a href={cityPath(lang, c.slug[lang])} class="after:absolute after:inset-0">{cityLabel(c.id, lang)}</a></h3>
+          <p class="mt-2 line-clamp-3 text-sm muted">{c.text[lang].intro}</p>
+          <span class="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-[var(--link)]">{t('city.see')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></span>
         </div>
       </li>
     ))}

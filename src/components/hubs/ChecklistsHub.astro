@@ -1,0 +1,34 @@
+---
+/** /<lang>/checklists : toutes les checklists interactives (extraites des guides). */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { allChecklists } from '../../utils/content';
+import { allLocalesAlternates, allLocalesTargets, homePath, hubPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const list = await allChecklists(lang);
+const self = (l: Locale) => hubPath(l, 'checklists');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('checklists.title') }];
+---
+<BaseLayout lang={lang} title={t('checklists.title')} description={t('checklists.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('checklists.title'), description: t('checklists.description'), lang, items: list.map((c) => ({ name: c.title, url: absoluteUrl(`/${lang}/${c.article.data.slug}#checklist-${c.id}`, Astro.site) })) })]}>
+  <PageHero lang={lang} crumbs={crumbs} title={t('checklists.title')} intro={t('checklists.intro')} icon="listChecks" meta={t('checklists.privacy')} />
+  <div class="container-page pt-8">
+    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {list.map((c) => (
+        <li class="group card card-hover relative flex flex-col gap-3 p-5">
+          <span class="icon-tile"><Icon name="listChecks" class="size-[1.35rem]" /></span>
+          <h2 class="text-lg font-semibold"><a href={`/${lang}/${c.article.data.slug}#checklist-${c.id}`} class="after:absolute after:inset-0">{c.title}</a></h2>
+          <p class="text-sm muted">{c.article.data.title}</p>
+          <p class="mt-auto flex items-center justify-between pt-2 text-sm"><span class="muted">{t('checklists.items', { n: c.items })}</span><span class="inline-flex items-center gap-1 font-semibold text-[var(--link)]">{t('checklists.open')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></span></p>
+        </li>
+      ))}
+    </ul>
+    {list.length === 0 && <p class="muted">{t('category.empty')}</p>}
+  </div>
+</BaseLayout>

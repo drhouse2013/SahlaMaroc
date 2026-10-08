@@ -1,0 +1,53 @@
+---
+/** Hubs par public : /<lang>/mre et /<lang>/visiter-le-maroc. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import ArticleCard from '../ArticleCard.astro';
+import ToolGrid from '../ToolGrid.astro';
+import CityGrid from '../home/CityGrid.astro';
+import Newsletter from '../Newsletter.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
+import { AUDIENCE_HUBS } from '../../data/pillars';
+import { allLocalesAlternates, allLocalesTargets, categoryPath, getActiveCategories, getArticleByKey, homePath, hubPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+interface Props { lang: Locale; hub: 'mre' | 'visit' }
+const { lang, hub } = Astro.props;
+const t = useTranslations(lang);
+const cfg = AUDIENCE_HUBS[hub];
+const active = await getActiveCategories(lang);
+const cats = cfg.categories.filter((c) => active.includes(c));
+const start = (await Promise.all(cfg.start.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
+const self = (l: Locale) => hubPath(l, hub);
+const url = absoluteUrl(self(lang), Astro.site);
+const title = t(`hub.${hub}.title`);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: title }];
+---
+<BaseLayout lang={lang} title={title} description={t(`hub.${hub}.description`)} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}>
+  <PageHero lang={lang} crumbs={crumbs} title={title} intro={t(`hub.${hub}.intro`)} icon={hub === 'mre' ? 'plane' : 'compass'} />
+  <div class="container-page pt-8">
+    <nav aria-label={t('hub.topics')}>
+      <h2 class="section-title !text-2xl">{t('hub.topics')}</h2>
+      <ul class="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
+        {cats.map((id) => <li><a href={categoryPath(lang, id)} class="card card-hover flex min-h-14 items-center gap-2 px-3 py-3 text-[0.95rem] font-medium sm:gap-3 sm:px-4"><span class="icon-tile size-8 shrink-0 sm:size-10"><Icon name={CATEGORY_ICON[id]} /></span><span class="min-w-0 [overflow-wrap:anywhere]">{CATEGORIES[id].label[lang]}</span></a></li>)}
+      </ul>
+    </nav>
+    {start.length > 0 && (
+      <section class="section !pt-12" aria-labelledby="start">
+        <h2 id="start" class="section-title !text-2xl">{t('hub.startHere')}</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{start.map((a) => <ArticleCard article={a} />)}</div>
+      </section>
+    )}
+    <section class="section !pt-12" aria-labelledby="tools">
+      <h2 id="tools" class="section-title !text-2xl">{t('pillar.tools')}</h2>
+      <div class="mt-6"><ToolGrid lang={lang} keys={[...cfg.tools]} compact /></div>
+    </section>
+    <section class="section !pt-12" aria-labelledby="cities">
+      <h2 id="cities" class="section-title !text-2xl">{t('pillar.cities')}</h2>
+      <div class="mt-6"><CityGrid lang={lang} ids={[...cfg.cities]} showHeading={false} /></div>
+    </section>
+  </div>
+  <Newsletter lang={lang} />
+</BaseLayout>

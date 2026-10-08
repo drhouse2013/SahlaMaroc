@@ -1,22 +1,27 @@
 ---
-/** Bandeau Majorelle "Le Maroc en 8 chiffres" — infos pratiques vérifiées. */
+/** Bandeau « Le Maroc en 8 chiffres » : chaque chiffre est daté et sa source citée. */
 import type { Locale } from '../../i18n';
-import { FACTS, L, pick } from '../../data/home';
+import { useTranslations } from '../../i18n';
+import { FACTS, FACTS_CHECKED, L } from '../../data/home';
+import { formatDate } from '../../utils/date';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
-
-<section class="mt-24 bg-majorelle-600 text-white dark:bg-majorelle-900">
-  <div class="zellige h-4 opacity-90" aria-hidden="true"></div>
-  <div class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-3xl font-bold sm:text-4xl">{L.factsTitle[lang]}</h2>
-    <dl class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
-      {pick(FACTS, lang).map((f) => (
-        <div class="border-s-2 border-saffron-400 ps-4">
-          <dt class="font-display text-2xl font-bold tabular-nums sm:text-3xl"><bdi dir="ltr">{f.value}</bdi></dt>
-          <dd class="mt-1 text-sm text-white/80">{f.label}</dd>
-        </div>
-      ))}
-    </dl>
+<section class="section">
+  <div class="bg-majorelle-600 text-white dark:bg-majorelle-900">
+    <div class="zellige h-4 opacity-90" aria-hidden="true"></div>
+    <div class="container-page py-14">
+      <h2 class="text-3xl font-bold sm:text-4xl">{L.factsTitle[lang]}</h2>
+      <dl class="mt-9 grid grid-cols-2 gap-x-6 gap-y-9 md:grid-cols-4">
+        {FACTS[lang].map((f) => (
+          <div class="border-s-2 border-saffron-400 ps-4">
+            <dt class="font-display text-2xl font-bold tabular-nums sm:text-3xl"><bdi dir="ltr">{f.value}</bdi></dt>
+            <dd class="mt-1 text-sm text-white/85">{f.label}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-9 text-sm text-white/80">{t('home.facts.checked', { date: formatDate(new Date(FACTS_CHECKED), lang) })} {t('home.facts.sourcesLabel')}</p>
+    </div>
   </div>
 </section>

@@ -1,0 +1,21 @@
+---
+/** /<lang>/villes : hub des 8 villes. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import CityGrid from '../home/CityGrid.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { allLocalesAlternates, allLocalesTargets, cityPath, homePath, hubPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const self = (l: Locale) => hubPath(l, 'cities');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('nav.cities') }];
+---
+<BaseLayout lang={lang} title={t('city.hub.title')} description={t('city.hub.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('city.hub.title'), description: t('city.hub.description'), lang, items: CITY_PAGES.map((c) => ({ name: cityLabel(c.id, lang), url: absoluteUrl(cityPath(lang, c.slug[lang]), Astro.site) })) })]}>
+  <PageHero lang={lang} crumbs={crumbs} title={t('city.hub.title')} intro={t('city.hub.intro')} icon="mapPin" />
+  <div class="container-page pt-8"><CityGrid lang={lang} showHeading={false} /></div>
+</BaseLayout>

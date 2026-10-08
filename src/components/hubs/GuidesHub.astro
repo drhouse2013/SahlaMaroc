@@ -1,0 +1,40 @@
+---
+/** /<lang>/guides : tous les guides, regroupés par thème. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import ArticleCard from '../ArticleCard.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
+import { allLocalesAlternates, allLocalesTargets, categoryPath, getActiveCategories, getArticles, homePath, hubPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const articles = await getArticles(lang);
+const cats = await getActiveCategories(lang);
+const self = (l: Locale) => hubPath(l, 'guides');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('guides.title') }];
+---
+<BaseLayout lang={lang} title={t('guides.title')} description={t('guides.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('guides.title'), description: t('guides.description'), lang, items: articles.map((a) => ({ name: a.data.title, url: absoluteUrl(`/${lang}/${a.data.slug}`, Astro.site) })) })]}>
+  <PageHero lang={lang} crumbs={crumbs} title={t('guides.title')} intro={t('guides.intro')} icon="book" meta={t('category.count', { n: articles.length })} />
+  <div class="container-page pt-8">
+    <ul class="flex flex-wrap gap-2" aria-label={t('home.categories')}>
+      {cats.map((id) => <li><a href={categoryPath(lang, id)} class="badge badge-navy min-h-9 px-3 text-sm hover:brightness-95"><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</a></li>)}
+    </ul>
+    {cats.map((id) => {
+      const list = articles.filter((a) => a.data.category === id);
+      return (
+        <section class="section" aria-labelledby={`cat-${id}`}>
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <h2 id={`cat-${id}`} class="section-title !text-2xl">{CATEGORIES[id].label[lang]}</h2>
+            <a href={categoryPath(lang, id)} class="btn btn-tertiary">{t('pillar.all')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+          </div>
+          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{list.map((a) => <ArticleCard article={a} />)}</div>
+        </section>
+      );
+    })}
+  </div>
+</BaseLayout>
