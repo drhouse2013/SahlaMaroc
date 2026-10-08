@@ -19,27 +19,43 @@ import CarDaysCounter from '../../components/calc/CarDaysCounter.astro';
 import Roadmap from '../../components/Roadmap.astro';
 import RoadmapStep from '../../components/RoadmapStep.astro';
 import Checklist from '../../components/Checklist.astro';
-import { assertUniqueSlugs, getArticles, getEntryAlternates, getPages, type Entry } from '../../utils/i18n';
+import ContactForm from '../../components/ContactForm.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import GuidesHub from '../../components/hubs/GuidesHub.astro';
+import CitiesHub from '../../components/hubs/CitiesHub.astro';
+import ChecklistsHub from '../../components/hubs/ChecklistsHub.astro';
+import SearchPage from '../../components/hubs/SearchPage.astro';
+import AudienceHub from '../../components/hubs/AudienceHub.astro';
+import { HUB_SLUGS, LOCALES, type HubId, type Locale } from '../../i18n';
+import { assertUniqueSlugs, getArticles, getEntryAlternates, getEntrySwitchTargets, getPages, type Entry } from '../../utils/i18n';
 import { readingTime } from '../../utils/date';
 
 export async function getStaticPaths() {
   const entries: Entry[] = [...(await getArticles()), ...(await getPages())];
   assertUniqueSlugs(entries);
-  return entries.map((entry) => ({
-    params: { lang: entry.data.lang, slug: entry.data.slug },
-    props: { entry },
+  // Les pages hub (guides, villes, checklists, recherche, MRE, visiter) partagent ce segment d'URL :
+  // un guide ne peut pas porter le même slug qu'un hub.
+  const hubs = LOCALES.flatMap((lang) => (Object.keys(HUB_SLUGS) as HubId[]).map((hub) => {
+    const slug = HUB_SLUGS[hub][lang];
+    if (entries.some((e) => e.data.lang === lang && e.data.slug === slug)) throw new Error(`Slug ${lang}/${slug} déjà utilisé par un contenu : conflit avec la page hub « ${hub} »`);
+    return { params: { lang, slug }, props: { hub } };
   }));
+  return [...entries.map((entry) => ({ params: { lang: entry.data.lang, slug: entry.data.slug }, props: { entry } })), ...hubs];
 }
 
-const { entry } = Astro.props as { entry: Entry };
-const { Content, headings } = await render(entry);
-const alternates = await getEntryAlternates(entry);
+const { entry, hub } = Astro.props as { entry?: Entry; hub?: HubId };
+const lang = Astro.params.lang as Locale;
+const rendered = entry ? await render(entry) : undefined;
+const Content = rendered?.Content;
+const headings = rendered?.headings ?? [];
+const alternates = entry ? await getEntryAlternates(entry) : {};
+const switchTargets = entry ? await getEntrySwitchTargets(entry) : {};
 
 /** Composants disponibles dans tous les fichiers MDX SANS import. */
-const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, CarDaysCounter, Roadmap, RoadmapStep, Checklist };
+const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, CarDaysCounter, Roadmap, RoadmapStep, Checklist, ContactForm, Newsletter };
 
 let related: Awaited<ReturnType<typeof getArticles>> = [];
-if (entry.collection === 'articles') {
+if (entry?.collection === 'articles') {
   const pool = (await getArticles(entry.data.lang)).filter((a) => a.id !== entry.id);
   // Même catégorie d'abord, puis les plus récents : maillage interne pertinent.
   related = [
@@ -50,13 +66,19 @@ if (entry.collection === 'articles') {
 ---
 
 {
-  entry.collection === 'articles' ? (
-    <ArticleLayout entry={entry} alternates={alternates} headings={headings} minutes={readingTime(entry.body)} related={related}>
-      <Content components={components} />
+  !entry ? (
+    hub === 'guides' ? <GuidesHub lang={lang} /> :
+    hub === 'cities' ? <CitiesHub lang={lang} /> :
+    hub === 'checklists' ? <ChecklistsHub lang={lang} /> :
+    hub === 'search' ? <SearchPage lang={lang} /> :
+    <AudienceHub lang={lang} hub={hub as 'mre' | 'visit'} />
+  ) : entry.collection === 'articles' ? (
+    <ArticleLayout entry={entry} alternates={alternates} switchTargets={switchTargets} headings={headings} minutes={readingTime(entry.body)} related={related}>
+      {Content && <Content components={components} />}
     </ArticleLayout>
   ) : (
-    <PageLayout entry={entry} alternates={alternates}>
-      <Content components={components} />
+    <PageLayout entry={entry} alternates={alternates} switchTargets={switchTargets}>
+      {Content && <Content components={components} />}
     </PageLayout>
   )
 }

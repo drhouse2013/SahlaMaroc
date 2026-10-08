@@ -1,16 +1,42 @@
 ---
-/** 404 : servie automatiquement par Vercel/Netlify. Anglais par défaut (langue inconnue). */
+/**
+ * 404 : servie automatiquement par Vercel/Netlify pour toute URL inconnue (langue inconnue => anglais).
+ * Utile : recherche, accès aux langues, guides populaires et thèmes.
+ */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { useTranslations } from '../i18n';
-import { allLocalesAlternates, homePath } from '../utils/i18n';
-const t = useTranslations('en');
+import SearchBox from '../components/SearchBox.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import Icon from '../components/Icon.astro';
+import { LOCALES, LOCALE_META, useTranslations } from '../i18n';
+import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
+import { categoryPath, getActiveCategories, getArticleByKey, homePath } from '../utils/i18n';
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const popular = (await Promise.all(['marhaba-guide', 'car-180-days', 'e-visa'].map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
+const cats = await getActiveCategories(lang);
 ---
-
-<BaseLayout lang="en" title={t('404.title')} alternates={allLocalesAlternates(homePath)} noindex>
-  <div class="mx-auto max-w-xl px-4 py-24 text-center">
-    <p class="text-6xl">🐪</p>
-    <h1 class="mt-4 text-3xl font-extrabold">{t('404.title')}</h1>
-    <p class="mt-3 text-ink-900/70 dark:text-sand-100/70">{t('404.text')}</p>
-    <a href="/en" class="mt-8 inline-block rounded-full bg-terracotta-600 px-6 py-3 font-semibold text-white">{t('404.back')}</a>
+<BaseLayout lang={lang} title={t('404.title')} alternates={{}} noindex>
+  <div class="container-page max-w-3xl py-14 sm:py-20">
+    <p class="eyebrow text-terracotta-600 dark:text-terracotta-300">404</p>
+    <h1 class="mt-3 text-3xl font-semibold sm:text-4xl">{t('404.title')}</h1>
+    <p class="mt-3 text-lg muted">{t('404.text')}</p>
+    <div class="mt-8"><SearchBox lang={lang} mode="page" /></div>
+    <p class="mt-8 flex flex-wrap gap-3">
+      <a href={homePath(lang)} class="btn btn-primary">{t('404.back')}</a>
+    </p>
+    <nav class="mt-10" aria-label="Languages">
+      <ul class="flex flex-wrap gap-2">
+        {LOCALES.map((l) => <li><a href={homePath(l)} hreflang={LOCALE_META[l].hreflang} lang={LOCALE_META[l].hreflang} class="badge badge-navy min-h-9 px-3 text-sm hover:brightness-95">{LOCALE_META[l].label}</a></li>)}
+      </ul>
+    </nav>
+    {cats.length > 0 && (
+      <ul class="mt-6 flex flex-wrap gap-2" aria-label={t('home.categories')}>
+        {cats.map((id) => <li><a href={categoryPath(lang, id)} class="badge badge-gold min-h-9 px-3 text-sm hover:brightness-95"><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</a></li>)}
+      </ul>
+    )}
+    {popular.length > 0 && (
+      <section class="mt-12" aria-labelledby="pop"><h2 id="pop" class="section-title !text-2xl">{t('home.popular')}</h2>
+        <div class="mt-5 grid gap-1">{popular.map((a) => <ArticleCard article={a} size="sm" />)}</div></section>
+    )}
   </div>
 </BaseLayout>

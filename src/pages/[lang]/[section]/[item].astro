@@ -1,0 +1,33 @@
+---
+/**
+ * Pages à deux segments : thèmes (/fr/themes/retour) et villes (/fr/villes/marrakech).
+ * Un seul fichier de route : deux fichiers dynamiques au même niveau entreraient en collision.
+ */
+import PillarPage from '../../../components/hubs/PillarPage.astro';
+import CityPage from '../../../components/hubs/CityPage.astro';
+import { HUB_SLUGS, LOCALES, TOPICS_SEGMENT, type Locale } from '../../../i18n';
+import { CATEGORIES, type CategoryId } from '../../../i18n/categories';
+import { CITY_PAGES } from '../../../data/cities';
+import { getActiveCategories } from '../../../utils/i18n';
+
+type Props = { kind: 'topic'; id: CategoryId } | { kind: 'city'; id: string };
+
+export async function getStaticPaths() {
+  // Seules les catégories avec au moins un guide sont générées (pas de pages vides indexables).
+  const topics = await Promise.all(
+    LOCALES.map(async (lang) => (await getActiveCategories(lang)).map((id) => ({
+      params: { lang, section: TOPICS_SEGMENT[lang], item: CATEGORIES[id].slug[lang] },
+      props: { kind: 'topic' as const, id },
+    }))),
+  );
+  const cities = LOCALES.flatMap((lang) => CITY_PAGES.map((c) => ({
+    params: { lang, section: HUB_SLUGS.cities[lang], item: c.slug[lang] },
+    props: { kind: 'city' as const, id: c.id },
+  })));
+  return [...topics.flat(), ...cities];
+}
+
+const lang = Astro.params.lang as Locale;
+const props = Astro.props as Props;
+---
+{props.kind === 'topic' ? <PillarPage lang={lang} id={props.id} /> : <CityPage lang={lang} id={props.id} />}
