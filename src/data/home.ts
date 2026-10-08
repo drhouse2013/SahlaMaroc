@@ -73,7 +73,8 @@ export const CITIES: City[] = [
 ];
 
 /* ---------------------------------------------------------------- chiffres clés */
-export const FACTS: Partial2<{ value: string; label: string }[]> = {
+export const FACTS_CHECKED = '2026-10-01';
+export const FACTS: Record<Locale, { value: string; label: string }[]> = {
   en: [
     { value: '1 € ≈ 11 MAD', label: 'Moroccan dirham (Oct 2026)' },
     { value: '89.2 bn MAD', label: 'Sent home by MREs, Jan–Aug 2026 (+9 %)' },
@@ -93,6 +94,36 @@ export const FACTS: Partial2<{ value: string; label: string }[]> = {
     { value: '90 jours', label: 'Sans visa pour UE, Royaume-Uni, USA, Canada…' },
     { value: 'GMT', label: 'Fuseau horaire du Maroc toute l’année depuis le 20 sept. 2026' },
     { value: '2030', label: 'Coupe du monde co-organisée avec l’Espagne et le Portugal' },
+  ],
+  es: [
+    { value: '1 € ≈ 11 MAD', label: 'Dírham marroquí (oct. 2026)' },
+    { value: '89,2 mil M MAD', label: 'Enviados por los MRE, ene.–ago. 2026 (+9 %)' },
+    { value: '4,1 M+', label: 'MRE acogidos por la Operación Marhaba 2026' },
+    { value: '180 días', label: 'Al año para un coche con matrícula extranjera' },
+    { value: '100.000 MAD', label: 'Ayuda máxima Daam Sakane' },
+    { value: '90 días', label: 'Sin visado para UE, Reino Unido, EE. UU., Canadá…' },
+    { value: 'GMT', label: 'Huso horario de Marruecos todo el año desde el 20 sept. 2026' },
+    { value: '2030', label: 'Mundial organizado con España y Portugal' },
+  ],
+  de: [
+    { value: '1 € ≈ 11 MAD', label: 'Marokkanischer Dirham (Okt. 2026)' },
+    { value: '89,2 Mrd. MAD', label: 'Von MRE überwiesen, Jan.–Aug. 2026 (+9 %)' },
+    { value: '4,1 Mio.+', label: 'Von der Operation Marhaba 2026 empfangene MRE' },
+    { value: '180 Tage', label: 'Pro Jahr für ein Auto mit ausländischem Kennzeichen' },
+    { value: '100.000 MAD', label: 'Maximale Wohnbeihilfe Daam Sakane' },
+    { value: '90 Tage', label: 'Visumfrei für EU, Großbritannien, USA, Kanada…' },
+    { value: 'GMT', label: 'Zeitzone Marokkos ganzjährig seit 20. Sept. 2026' },
+    { value: '2030', label: 'WM, gemeinsam mit Spanien und Portugal ausgerichtet' },
+  ],
+  ar: [
+    { value: '1 € ≈ 11 درهم', label: 'الدرهم المغربي (أكتوبر 2026)' },
+    { value: '89,2 مليار درهم', label: 'حوّلها مغاربة العالم، يناير–غشت 2026 (+9 %)' },
+    { value: '+4,1 مليون', label: 'مغاربة العالم الذين استقبلتهم عملية مرحبا 2026' },
+    { value: '180 يوماً', label: 'في السنة للسيارة ذات الترقيم الأجنبي' },
+    { value: '100 000 درهم', label: 'الحد الأقصى لدعم «دعم سكن»' },
+    { value: '90 يوماً', label: 'بدون تأشيرة لمواطني الاتحاد الأوروبي وبريطانيا وأمريكا وكندا…' },
+    { value: 'GMT', label: 'توقيت المغرب طوال السنة منذ 20 شتنبر 2026' },
+    { value: '2030', label: 'كأس العالم بتنظيم مشترك مع إسبانيا والبرتغال' },
   ],
 };
 
