@@ -3,7 +3,7 @@
  * Toutes les URLs du site passent par ces fonctions => une seule source de vérité.
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { LOCALES, DEFAULT_LOCALE, TOPICS_SEGMENT, isIndexable, type Locale } from '../i18n/config';
+import { LOCALES, DEFAULT_LOCALE, TOPICS_SEGMENT, HUB_SLUGS, isIndexable, type HubId, type Locale } from '../i18n/config';
 import { CATEGORIES, type CategoryId } from '../i18n/categories';
 
 export type Entry = CollectionEntry<'articles'> | CollectionEntry<'pages'>;
@@ -15,6 +15,9 @@ export const entryPath = (lang: Locale, slug: string) => `/${lang}/${slug}`;
 export const categoryPath = (lang: Locale, id: CategoryId) =>
   `/${lang}/${TOPICS_SEGMENT[lang]}/${CATEGORIES[id].slug[lang]}`;
 export const rssPath = (lang: Locale) => `/${lang}/rss.xml`;
+export const hubPath = (lang: Locale, hub: HubId) => `/${lang}/${HUB_SLUGS[hub][lang]}`;
+export const cityPath = (lang: Locale, citySlug: string) => `/${lang}/${HUB_SLUGS.cities[lang]}/${citySlug}`;
+export const searchIndexPath = (lang: Locale) => `/${lang}/search-index.json`;
 
 /** En prod on masque les brouillons ; en dev on les affiche pour relecture. */
 const isVisible = (e: Entry) => import.meta.env.DEV || !e.data.draft;
@@ -49,6 +52,23 @@ export async function getEntryAlternates(entry: Entry): Promise<Alternates> {
   // La page courante est toujours présente (même si traduite auto).
   alt[entry.data.lang] = entryPath(entry.data.lang, entry.data.slug);
   return alt;
+}
+
+/**
+ * Cibles du sélecteur de langue : TOUTES les traductions existantes (y compris celles en noindex),
+ * pour qu'un lecteur passe d'un guide à sa traduction au lieu d'atterrir sur l'accueil.
+ * (Les balises hreflang, elles, ne listent que les versions indexables : voir getEntryAlternates.)
+ */
+export async function getEntrySwitchTargets(entry: Entry): Promise<Alternates> {
+  const pool: Entry[] = entry.collection === 'articles' ? await getArticles() : await getPages();
+  const alt: Alternates = {};
+  for (const e of pool) if (e.data.translationKey === entry.data.translationKey) alt[e.data.lang] = entryPath(e.data.lang, e.data.slug);
+  return alt;
+}
+
+/** Cibles du sélecteur pour les pages présentes dans toutes les langues (hubs, villes, thèmes). */
+export function allLocalesTargets(build: (lang: Locale) => string): Alternates {
+  return Object.fromEntries(LOCALES.map((l) => [l, build(l)])) as Alternates;
 }
 
 /** Alternates pour les pages qui existent dans toutes les langues (home, catégories). */

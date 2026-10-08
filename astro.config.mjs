@@ -29,7 +29,7 @@ const HREFLANG = {
 };
 
 export default defineConfig({
-  // ⚠️ Remplacer par le domaine final avant le déploiement (requis pour sitemap, RSS, canonical).
+  // Domaine canonique : voir site.config.mjs (variable d'environnement SITE_URL).
   site: SITE_URL,
 
   output: 'static',
@@ -74,12 +74,14 @@ export default defineConfig({
         return (
           path !== '/' && // racine = simple redirection (noindex)
           INDEXABLE_LOCALES.includes(lang) && // langues pas encore lancées => hors sitemap
-          !path.includes('/404')
+          !path.includes('/404') &&
+          // Pages de recherche : contenu dupliqué / sans valeur pour l'index
+          !/^\/[a-z]{2}\/(search|recherche|buscar|suche|bahth)$/.test(path)
         );
       },
+      // Pas de lastmod global : une date de build identique partout est ignorée par Google.
       changefreq: 'weekly',
       priority: 0.7,
-      lastmod: new Date(),
     }),
   ],
 

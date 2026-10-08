@@ -66,3 +66,16 @@ export const CATEGORIES: Record<CategoryId, CategoryInfo> = {
     label: { en: 'Living in Morocco', fr: 'Vivre au Maroc', es: 'Vivir en Marruecos', de: 'Leben in Marokko', ar: 'العيش في المغرب' },
   },
 };
+
+/** Icône SVG de chaque thème (remplace les emojis dans l'interface) */
+import type { IconName } from '../data/icons';
+export const CATEGORY_ICON: Record<CategoryId, IconName> = {
+  retour: 'ship',
+  immobilier: 'home',
+  money: 'wallet',
+  demarches: 'passport',
+  arrival: 'plane',
+  tours: 'compass',
+  stay: 'bed',
+  living: 'landmark',
+};

@@ -49,3 +49,17 @@ export const TOPICS_SEGMENT: Record<Locale, string> = {
   de: 'themen',
   ar: 'mawadi',
 };
+
+/**
+ * Slugs traduits des pages « hub » (générées par src/pages/[lang]/[slug].astro) et du segment
+ * des pages villes (/fr/villes/marrakech). Translittération latine pour l'arabe, comme les articles.
+ */
+export const HUB_SLUGS = {
+  guides: { en: 'guides', fr: 'guides', es: 'guias', de: 'ratgeber', ar: 'adilla' },
+  cities: { en: 'cities', fr: 'villes', es: 'ciudades', de: 'staedte', ar: 'mudun' },
+  checklists: { en: 'checklists', fr: 'checklists', es: 'listas-de-control', de: 'checklisten', ar: 'qawaim-al-tahaqquq' },
+  search: { en: 'search', fr: 'recherche', es: 'buscar', de: 'suche', ar: 'bahth' },
+  mre: { en: 'moroccans-abroad', fr: 'mre', es: 'marroquies-en-el-extranjero', de: 'auslandsmarokkaner', ar: 'maghariba-al-alam' },
+  visit: { en: 'visit-morocco', fr: 'visiter-le-maroc', es: 'visitar-marruecos', de: 'marokko-besuchen', ar: 'ziyarat-al-maghrib' },
+} as const satisfies Record<string, Record<Locale, string>>;
+export type HubId = keyof typeof HUB_SLUGS;

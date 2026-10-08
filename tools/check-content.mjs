@@ -41,6 +41,7 @@ const err = (e, msg) => errors.push(`${e.file}: ${msg}`);
 const warn = (e, msg) => warnings.push(`${e.file}: ${msg}`);
 
 const slugsByLang = new Map();
+const slugsGlobal = new Map();
 for (const e of entries) {
   const { title = '', description = '', slug, translationKey, lang } = e.data;
   if (lang !== e.lang) err(e, `lang "${lang}" ≠ dossier "${e.lang}"`);
@@ -51,6 +52,11 @@ for (const e of entries) {
   const key = `${e.lang}/${slug}`;
   if (slugsByLang.has(key)) err(e, `slug en double avec ${slugsByLang.get(key)}`);
   slugsByLang.set(key, e.file);
+  // Le chargeur de contenu Astro utilise le slug comme identifiant : il doit être unique TOUTES langues confondues
+  // (sinon l'une des deux pages disparaît silencieusement du site).
+  const anyKey = `${e.file.includes('/pages/') ? 'pages' : 'articles'}:${slug}`;
+  if (slugsGlobal.has(anyKey)) err(e, `slug "${slug}" déjà utilisé dans une autre langue (${slugsGlobal.get(anyKey)}) : l'identifiant de contenu doit être unique`);
+  slugsGlobal.set(anyKey, e.file);
   if (PLACEHOLDER.test(e.raw) || PLACEHOLDER_CI.test(e.raw)) err(e, 'marqueur de placeholder détecté');
 }
 
@@ -74,7 +80,7 @@ const known = new Set(entries.map((e) => `/${e.lang}/${e.data.slug}`));
 const staticRoutes = ['/', ...LANGS.flatMap((l) => [`/${l}`])];
 for (const e of entries) {
   for (const m of e.content.matchAll(/\]\((\/[^)\s#]*)/g)) {
-    const url = m[1].replace(/\/$/, '') || '/';
+    const url = m[1].split('?')[0].replace(/\/$/, '') || '/';
     if (staticRoutes.includes(url)) continue;
     if (/^\/(en|fr|es|de|ar)\/(topics|themes|temas|themen|mawadi)\//.test(url)) continue;
     if (!known.has(url)) err(e, `lien interne cassé ${m[1]}`);
