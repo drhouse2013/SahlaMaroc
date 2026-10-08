@@ -1,0 +1,51 @@
+---
+/**
+ * Bloc « Comment ce calcul est-il obtenu ? » sous chaque calculateur :
+ * méthode, hypothèses, date de vérification des valeurs, sources, avertissement et guide lié.
+ */
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { toolByKey } from '../../data/tools';
+import { SOURCES } from '../../data/sources';
+import { formatDate } from '../../utils/date';
+import { entryPath, getArticleByKey } from '../../utils/i18n';
+
+interface Props { lang: Locale; toolKey: string }
+const { lang, toolKey } = Astro.props;
+const t = useTranslations(lang);
+const tool = toolByKey(toolKey);
+const guide = tool ? await getArticleByKey(lang, tool.guideKey) : null;
+const sources = (tool?.sources ?? []).map((id) => SOURCES[id]).filter(Boolean);
+---
+{tool && (
+  <section class="not-prose mt-10 grid gap-6" aria-labelledby="calc-how">
+    <div class="card p-5 sm:p-7">
+      <h2 id="calc-how" class="flex items-center gap-2 text-xl font-semibold"><Icon name="info" class="size-5 text-navy-600 dark:text-navy-300" />{t('calc.how')}</h2>
+      <h3 class="mt-5 text-sm font-semibold uppercase tracking-wide muted">{t('calc.method')}</h3>
+      <p class="mt-1.5">{tool.method[lang]}</p>
+      <h3 class="mt-5 text-sm font-semibold uppercase tracking-wide muted">{t('calc.assumptions')}</h3>
+      <ul class="mt-2 grid gap-1.5">
+        {tool.assumptions[lang].map((a) => <li class="flex gap-2"><Icon name="check" class="mt-1 size-4 shrink-0 text-emerald-moroccan-500" />{a}</li>)}
+      </ul>
+      <p class="mt-5 inline-flex items-center gap-1.5 text-sm muted"><Icon name="calendar" class="size-4" /><time datetime={tool.checked}>{t('calc.checked', { date: formatDate(new Date(tool.checked), lang) })}</time></p>
+      {sources.length > 0 && (
+        <>
+          <h3 class="mt-5 text-sm font-semibold uppercase tracking-wide muted">{t('calc.sources')}</h3>
+          <ul class="mt-2 grid gap-1.5 text-sm">
+            {sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener noreferrer" class="link inline-flex items-center gap-1">{s.name[lang] ?? s.name.en}<Icon name="external" class="size-3.5" /></a></li>)}
+          </ul>
+        </>
+      )}
+    </div>
+    <div class="alert alert-warn">
+      <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" />
+      <p class="text-sm">{t('calc.disclaimer')}</p>
+    </div>
+    {guide && (
+      <a href={entryPath(lang, guide.data.slug)} class="group card card-hover flex items-center justify-between gap-4 p-5">
+        <span><span class="block text-xs font-semibold uppercase tracking-wide muted">{t('calc.guide')}</span><span class="mt-1 block font-semibold group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{guide.data.title}</span></span>
+        <Icon name="arrowRight" class="size-5 shrink-0 rtl:-scale-x-100" />
+      </a>
+    )}
+  </section>
+)}

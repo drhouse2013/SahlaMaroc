@@ -1,30 +1,87 @@
 ---
-/** Cadre visuel commun des calculateurs : formulaire à gauche, résultat à droite. */
+/**
+ * Cadre commun des calculateurs : formulaire à gauche, résultat à droite.
+ * - Badge « Résultat estimatif » sur chaque résultat.
+ * - Validation générique : champs numériques négatifs ou invalides signalés (aria-invalid + message),
+ *   dates de sortie antérieures à l'entrée signalées (calculateur des 180 jours).
+ * - Événements analytics : calculator_start (première saisie), calculator_complete (résultat consulté).
+ */
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
 interface Props { id: string; note?: string }
 const { id, note } = Astro.props;
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(lang);
 ---
-<div class="calc not-prose my-8 overflow-hidden rounded-3xl border border-ink-900/10 bg-white shadow-sm dark:border-white/10 dark:bg-night-800" data-calc={id}>
+<div class="calc not-prose my-8 overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow-md)]" data-calc={id} data-msg-invalid={t('calc.invalid')} data-msg-date={t('calc.invalidDate')}>
   <div class="grid md:grid-cols-[1.1fr_0.9fr]">
-    <form class="grid content-start gap-4 p-6 sm:grid-cols-2" onsubmit="return false" novalidate>
+    <form class="grid content-start gap-4 p-5 sm:grid-cols-2 sm:p-6" onsubmit="return false" novalidate>
       <slot name="form" />
     </form>
-    <div class="bg-majorelle-600 p-6 text-white dark:bg-majorelle-900" aria-live="polite">
+    <div class="calc-result bg-navy-700 p-5 text-white sm:p-6 dark:bg-navy-800" aria-live="polite">
+      <p class="calc-badge mb-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold text-gold-300"><Icon name="info" class="size-3.5" />{t('calc.estimate')}</p>
       <slot name="result" />
     </div>
   </div>
-  {note && <p class="border-t border-ink-900/10 px-6 py-3 text-xs text-ink-900/70 dark:border-white/10 dark:text-sand-100/70">{note}</p>}
+  {note && <p class="flex gap-2 border-t border-[var(--line)] px-5 py-3 text-xs muted sm:px-6"><Icon name="info" class="mt-0.5 size-3.5 shrink-0" />{note}</p>}
 </div>
 
 <style is:global>
-  .calc label { display: grid; gap: 0.35rem; font-size: 0.875rem; font-weight: 500; }
-  .calc input, .calc select {
-    width: 100%; border-radius: 0.75rem; border: 1px solid rgb(27 26 31 / 0.15); background: #fff;
-    padding: 0.6rem 0.8rem; font: inherit; font-variant-numeric: tabular-nums;
+  .calc label { display: grid; gap: 0.35rem; font-size: 0.875rem; font-weight: 500; align-content: start; }
+  .calc input:not([type="checkbox"]), .calc select {
+    width: 100%; min-height: 2.75rem; border-radius: 0.8rem; border: 1px solid var(--line-strong); background: var(--surface);
+    padding: 0.55rem 0.8rem; font: inherit; color: var(--text); font-variant-numeric: tabular-nums;
   }
-  .dark .calc input, .dark .calc select { background: var(--color-night-900); border-color: rgb(255 255 255 / 0.15); color: inherit; }
+  .calc input:focus, .calc select:focus { outline: none; border-color: var(--color-majorelle-500); box-shadow: 0 0 0 3px rgb(47 75 216 / .18); }
+  .calc input[aria-invalid="true"] { border-color: var(--color-terracotta-500); }
+  .calc .calc-err { font-size: .78rem; font-weight: 500; color: var(--color-terracotta-600); }
+  .dark .calc .calc-err { color: var(--color-terracotta-300); }
   .calc .full { grid-column: 1 / -1; }
-  .calc .big { font-family: var(--font-display); font-size: 2.2rem; line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .calc .big { font-size: clamp(1.9rem, 1.5rem + 1.5vw, 2.4rem); line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
   .calc dl { display: grid; gap: 0.5rem; margin-top: 1.25rem; font-size: 0.9rem; }
-  .calc dl div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid rgb(255 255 255 / 0.18); padding-bottom: 0.4rem; }
-  .calc dd { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .calc dl div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid rgb(255 255 255 / 0.16); padding-bottom: 0.4rem; }
+  .calc dt { color: rgb(255 255 255 / .82); }
+  .calc dd { font-weight: 600; font-variant-numeric: tabular-nums; text-align: end; }
+  .calc .calc-badge { background: rgb(255 255 255 / .12); }
 </style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-calc]').forEach((root) => {
+    const form = root.querySelector('form')!;
+    const id = root.dataset.calc;
+    const track = (n: string) => (window as unknown as { sahlaTrack?: (n: string, d?: object) => void }).sahlaTrack?.(n, { calculator: id });
+    let started = false;
+    let completed = false;
+
+    const showErr = (input: HTMLInputElement, text: string) => {
+      const label = input.closest('label') ?? input.parentElement!;
+      let err = label.querySelector<HTMLElement>('.calc-err');
+      if (text) {
+        input.setAttribute('aria-invalid', 'true');
+        if (!err) { err = document.createElement('span'); err.className = 'calc-err'; err.setAttribute('role', 'alert'); label.appendChild(err); }
+        err.textContent = text;
+      } else {
+        input.removeAttribute('aria-invalid');
+        err?.remove();
+      }
+    };
+
+    form.addEventListener('input', (e) => {
+      const el = e.target as HTMLInputElement;
+      if (el.type === 'number') {
+        const raw = el.value.trim();
+        const n = Number(raw.replace(',', '.'));
+        const min = el.min !== '' ? Number(el.min) : 0;
+        showErr(el, raw !== '' && (!Number.isFinite(n) || n < min) ? root.dataset.msgInvalid! : '');
+      }
+      if (el.type === 'date') {
+        form.querySelectorAll<HTMLInputElement>('input[type="date"][name^="out"]').forEach((out) => {
+          const inp = form.querySelector<HTMLInputElement>(`input[name="in${out.name.slice(3)}"]`);
+          showErr(out, inp?.value && out.value && out.value < inp.value ? root.dataset.msgDate! : '');
+        });
+      }
+      if (!started) { started = true; track('calculator_start'); }
+      if (!completed) { completed = true; window.setTimeout(() => track('calculator_complete'), 2000); }
+    });
+  });
+</script>

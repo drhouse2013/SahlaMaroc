@@ -19,12 +19,12 @@ const cfg = JSON.stringify({ rate: EUR_TO_MAD, locale: LOCALE_META[lang].intl })
     <label>{T.adults}<input name="adults" type="number" min="1" value="2" /></label>
     <label>{T.kids}<input name="kids" type="number" min="0" value="2" /></label>
     <label>{T.days}<input name="days" type="number" min="1" value="21" /></label>
-    <label data-car>{T.ferry}<input name="ferry" type="number" step="10" value="600" /></label>
-    <label data-car>{T.fuel}<input name="fuel" type="number" step="10" value="450" /></label>
-    <label data-plane hidden>{T.flight}<input name="flight" type="number" step="10" value="250" /></label>
-    <label data-plane hidden>{T.rental}<input name="rental" type="number" step="1" value="35" /></label>
-    <label>{T.daily}<input name="daily" type="number" step="5" value="60" /></label>
-    <label>{T.gifts}<input name="gifts" type="number" step="50" value="500" /></label>
+    <label data-car>{T.ferry}<input name="ferry" type="number" min="0" step="10" value="600" /></label>
+    <label data-car>{T.fuel}<input name="fuel" type="number" min="0" step="10" value="450" /></label>
+    <label data-plane hidden>{T.flight}<input name="flight" type="number" min="0" step="10" value="250" /></label>
+    <label data-plane hidden>{T.rental}<input name="rental" type="number" min="0" step="1" value="35" /></label>
+    <label>{T.daily}<input name="daily" type="number" min="0" step="5" value="60" /></label>
+    <label>{T.gifts}<input name="gifts" type="number" min="0" step="50" value="500" /></label>
   </Fragment>
   <Fragment slot="result">
     <p class="text-sm text-white/85">{T.total}</p>
