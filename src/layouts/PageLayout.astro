@@ -1,21 +1,61 @@
 ---
-/** Gabarit simple pour pages statiques (à propos, confidentialité, outils). */
+/**
+ * Gabarit des pages de contenu (à propos, méthodologie, contact, légal, calculateurs).
+ * - Fil d'Ariane + JSON-LD BreadcrumbList.
+ * - Pages calculateurs : bloc méthode / hypothèses / sources / guide lié + autres calculateurs.
+ * - Page « À propos » : JSON-LD Person + Organization.
+ */
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
-import type { Alternates } from '../utils/i18n';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ToolGrid from '../components/ToolGrid.astro';
+import CalcInfo from '../components/calc/CalcInfo.astro';
+import Icon from '../components/Icon.astro';
+import { useTranslations } from '../i18n';
+import { toolByKey } from '../data/tools';
+import { formatDate } from '../utils/date';
+import { getPageUrl, homePath, type Alternates } from '../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, organizationJsonLd, personJsonLd } from '../utils/seo';
 
-interface Props { entry: CollectionEntry<'pages'>; alternates: Alternates }
-const { entry, alternates } = Astro.props;
+interface Props { entry: CollectionEntry<'pages'>; alternates: Alternates; switchTargets?: Alternates }
+const { entry, alternates, switchTargets } = Astro.props;
 const d = entry.data;
+const lang = d.lang;
+const t = useTranslations(lang);
+const tool = toolByKey(d.translationKey);
+const isHubTools = d.translationKey === 'calculators';
+const toolsUrl = await getPageUrl(lang, 'calculators');
+const url = absoluteUrl(Astro.url.pathname, Astro.site);
+
+const crumbs = [
+  { name: t('breadcrumb.home'), href: homePath(lang) },
+  ...(tool && toolsUrl ? [{ name: t('nav.tools'), href: toolsUrl }] : []),
+  { name: d.title },
+];
+const jsonLd: object[] = [breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: absoluteUrl(c.href ?? Astro.url.pathname, Astro.site) })))];
+if (d.translationKey === 'about') jsonLd.push(personJsonLd(Astro.site, url, d.description), organizationJsonLd(Astro.site));
 ---
 
-<BaseLayout lang={d.lang} title={d.title} description={d.description} alternates={alternates} noindex={d.noindex || d.machineTranslated}>
-  <div class="zellige-soft border-b border-ink-900/5 dark:border-white/5">
-    <h1 class="mx-auto max-w-3xl px-4 pt-14 pb-10 text-4xl font-bold sm:text-5xl">{d.title}</h1>
+<BaseLayout lang={lang} title={d.title} description={d.description} alternates={alternates} switchTargets={switchTargets} noindex={d.noindex || d.machineTranslated} jsonLd={jsonLd}>
+  <div class="zellige-soft border-b border-[var(--line)]">
+    <div class:list={['container-page pt-8 pb-10', tool || isHubTools ? 'max-w-5xl' : 'max-w-3xl']}>
+      <Breadcrumbs items={crumbs} lang={lang} />
+      {tool && <span class="icon-tile mt-8 size-12"><Icon name={tool.icon} class="size-6" /></span>}
+      <h1 class:list={['text-3xl font-semibold sm:text-[2.6rem]', tool ? 'mt-4' : 'mt-8']}>{d.title}</h1>
+      <p class="mt-4 max-w-2xl text-lg muted">{d.description}</p>
+      {d.updatedDate && <p class="mt-4 inline-flex items-center gap-1.5 text-sm muted"><Icon name="calendar" class="size-4" /><time datetime={d.updatedDate.toISOString()}>{t('common.updatedOn', { date: formatDate(d.updatedDate, lang) })}</time></p>}
+    </div>
   </div>
-  <div class="mx-auto max-w-3xl px-4 pt-6">
-    <div class="prose prose-lg mt-8 max-w-none dark:prose-invert prose-a:text-majorelle-600 dark:prose-a:text-majorelle-100">
+  <div class:list={['container-page pt-8', tool || isHubTools ? 'max-w-5xl' : 'max-w-3xl']}>
+    <div class="prose prose-lg max-w-none dark:prose-invert prose-headings:font-semibold prose-a:text-[var(--link)] prose-a:underline-offset-2">
       <slot />
     </div>
+    {tool && <CalcInfo lang={lang} toolKey={tool.key} />}
+    {tool && (
+      <section class="mt-14" aria-labelledby="other-tools">
+        <h2 id="other-tools" class="section-title !text-2xl">{t('calc.others')}</h2>
+        <div class="mt-6"><ToolGrid lang={lang} exclude={tool.key} /></div>
+      </section>
+    )}
   </div>
 </BaseLayout>

@@ -1,8 +1,9 @@
 ---
 /**
  * ArticleLayout — gabarit des guides.
- * En-tête large avec illustration en arc, colonne de lecture (~68 caractères),
- * barre latérale collante (sommaire + essentiels affiliés) sur grand écran.
+ * Structure : fil d'Ariane, H1, introduction, auteur et dates (publication, mise à jour, vérification),
+ * avertissement « règles qui évoluent » sur les sujets sensibles, sommaire, contenu, sources officielles,
+ * « Signaler une erreur », auteur, calculateurs liés, villes liées, guides liés, thème parent.
  */
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
@@ -14,23 +15,27 @@ import AdSlot from '../components/AdSlot.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import AuthorBox from '../components/AuthorBox.astro';
 import AffiliateLink from '../components/AffiliateLink.astro';
+import ToolGrid from '../components/ToolGrid.astro';
+import Icon from '../components/Icon.astro';
 import { useTranslations } from '../i18n';
-import { CATEGORIES } from '../i18n/categories';
-import { L } from '../data/home';
+import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { formatDate } from '../utils/date';
-import { categoryPath, getPageUrl, homePath, type Alternates } from '../utils/i18n';
+import { categoryPath, cityPath, getPageUrl, homePath, type Alternates } from '../utils/i18n';
 import { illustration } from '../utils/illustrations';
 import { absoluteUrl, articleJsonLd, breadcrumbJsonLd } from '../utils/seo';
+import { checklistsIn, citedLinks, isYmyl, officialSourcesFor, relatedCitiesFor, relatedToolsFor } from '../utils/content';
+import { cityLabel } from '../data/cities';
 
 interface Props {
   entry: CollectionEntry<'articles'>;
   alternates: Alternates;
+  switchTargets: Alternates;
   headings: MarkdownHeading[];
   minutes: number;
   related: CollectionEntry<'articles'>[];
 }
 
-const { entry, alternates, headings, minutes, related } = Astro.props;
+const { entry, alternates, switchTargets, headings, minutes, related } = Astro.props;
 const d = entry.data;
 const lang = d.lang;
 const t = useTranslations(lang);
@@ -39,7 +44,18 @@ const url = absoluteUrl(Astro.url.pathname, Astro.site);
 const cover = d.heroImage ?? illustration(d.illustration);
 const imageUrl = d.heroImage ? absoluteUrl(d.heroImage.src, Astro.site) : undefined;
 const toc = headings.filter((h) => h.depth === 2);
-const toolUrl = await getPageUrl(lang, 'calculators');
+const aboutUrl = await getPageUrl(lang, 'about');
+const contactUrl = await getPageUrl(lang, 'contact');
+const disclosureUrl = await getPageUrl(lang, 'disclosure');
+const reportUrl = contactUrl ? `${contactUrl}?type=correction&page=${encodeURIComponent(url)}` : undefined;
+const hasAffiliate = /<AffiliateLink\b/.test(entry.body ?? '');
+const ymyl = isYmyl(entry);
+const official = officialSourcesFor(entry);
+const cited = citedLinks(entry.body);
+const tools = relatedToolsFor(entry);
+const cities = relatedCitiesFor(entry);
+const checklists = checklistsIn(entry.body);
+const updated = d.updatedDate ?? d.pubDate;
 
 const crumbs = [
   { name: t('breadcrumb.home'), href: homePath(lang) },
@@ -50,98 +66,151 @@ const crumbs = [
 const jsonLd = [
   articleJsonLd({
     url, title: d.title, description: d.description, lang, image: imageUrl,
-    datePublished: d.pubDate, dateModified: d.updatedDate, author: d.author, site: Astro.site, section: cat.label[lang],
+    datePublished: d.pubDate, dateModified: d.updatedDate, author: d.author,
+    authorUrl: aboutUrl ? absoluteUrl(aboutUrl, Astro.site) : undefined, site: Astro.site, section: cat.label[lang],
   }),
   breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: absoluteUrl(c.href ?? Astro.url.pathname, Astro.site) }))),
 ];
 
 const essentials = {
-  en: ['Morocco eSIM', 'Hotels & riads', 'Tours with free cancellation', 'Nomad insurance'],
-  fr: ['eSIM Maroc', 'Hôtels et riads', 'Excursions annulables', 'Assurance nomade'],
-  es: ['eSIM para Marruecos', 'Hoteles y riads', 'Excursiones con cancelación gratuita', 'Seguro para nómadas'],
-  de: ['eSIM für Marokko', 'Hotels & Riads', 'Touren mit kostenloser Stornierung', 'Nomaden-Versicherung'],
-  ar: ['شريحة eSIM للمغرب', 'فنادق ورياض', 'رحلات بإلغاء مجاني', 'تأمين للرحّالة الرقميين'],
+  en: ['Morocco eSIM', 'Hotels & riads', 'Tours with free cancellation', 'Travel health insurance'],
+  fr: ['eSIM Maroc', 'Hôtels et riads', 'Excursions annulables', 'Assurance santé voyage'],
+  es: ['eSIM para Marruecos', 'Hoteles y riads', 'Excursiones con cancelación gratuita', 'Seguro médico de viaje'],
+  de: ['eSIM für Marokko', 'Hotels & Riads', 'Touren mit kostenloser Stornierung', 'Reisekrankenversicherung'],
+  ar: ['شريحة eSIM للمغرب', 'فنادق ورياض', 'رحلات بإلغاء مجاني', 'تأمين صحي للسفر'],
 }[lang];
 ---
 
-<BaseLayout lang={lang} title={d.title} description={d.description} alternates={alternates} image={d.heroImage?.src} type="article" noindex={d.machineTranslated} jsonLd={jsonLd}>
-  <header class="zellige-soft border-b border-ink-900/5 dark:border-white/5">
-    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-8 pb-12 md:grid-cols-[1.3fr_0.7fr]">
-      <div>
-        <Breadcrumbs items={crumbs} />
-        <a href={categoryPath(lang, d.category)} class="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-moroccan-100 px-3 py-1 text-sm font-semibold text-emerald-moroccan-600 dark:bg-emerald-moroccan-600/25 dark:text-emerald-moroccan-100">
-          {cat.icon} {cat.label[lang]}
+<BaseLayout lang={lang} title={d.title} description={d.description} alternates={alternates} switchTargets={switchTargets} image={imageUrl} imageAlt={d.heroAlt} type="article" noindex={d.machineTranslated} jsonLd={jsonLd} publishedTime={d.pubDate} modifiedTime={d.updatedDate}>
+  <header class="zellige-soft border-b border-[var(--line)]">
+    <div class="container-page grid items-center gap-8 pt-8 pb-10 md:grid-cols-[1.4fr_0.6fr] md:gap-12 md:pb-14">
+      <div class="min-w-0">
+        <Breadcrumbs items={crumbs} lang={lang} />
+        <a href={categoryPath(lang, d.category)} class="badge badge-emerald mt-6">
+          <Icon name={CATEGORY_ICON[d.category]} class="size-3.5" />{cat.label[lang]}
         </a>
-        <h1 class="mt-4 text-4xl leading-[1.1] font-bold sm:text-5xl">{d.title}</h1>
-        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink-900/75 dark:text-sand-100/80">{d.description}</p>
-        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-900/75 dark:text-sand-100/75">
+        <h1 class="mt-4 text-[2rem] leading-[1.12] font-semibold sm:text-5xl">{d.title}</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed muted">{d.description}</p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm muted">
           <span class="flex items-center gap-2">
-            <span class="grid size-8 place-items-center rounded-full bg-majorelle-600 font-bold text-white">{d.author.charAt(0)}</span>
-            <strong>{d.author}</strong>
+            <span class="grid size-8 place-items-center rounded-full bg-navy-700 text-sm font-semibold text-white" aria-hidden="true">{d.author.charAt(0)}</span>
+            {aboutUrl ? <a href={aboutUrl} class="font-semibold text-[var(--text)] hover:underline">{d.author}</a> : <strong class="text-[var(--text)]">{d.author}</strong>}
           </span>
-          <time datetime={(d.updatedDate ?? d.pubDate).toISOString()}>
-            {d.updatedDate ? t('article.updated') : t('article.published')} {formatDate(d.updatedDate ?? d.pubDate, lang)}
-          </time>
-          <span>· {t('article.readingTime', { n: minutes })}</span>
-          {d.checkedDate && <span class="font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100">✓ {t('article.checked')} {formatDate(d.checkedDate, lang)}</span>}
+          <span class="inline-flex items-center gap-1.5"><Icon name="calendar" class="size-4" />
+            {d.updatedDate
+              ? <span>{t('article.updated')} <time datetime={d.updatedDate.toISOString()}>{formatDate(d.updatedDate, lang)}</time></span>
+              : <span>{t('article.published')} <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate, lang)}</time></span>}
+          </span>
+          <span class="inline-flex items-center gap-1.5"><Icon name="clock" class="size-4" />{t('article.readingTime', { n: minutes })}</span>
+          {d.checkedDate && <span class="inline-flex items-center gap-1.5 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100"><Icon name="checkCircle" class="size-4" />{t('article.checked')} {formatDate(d.checkedDate, lang)}</span>}
         </div>
       </div>
-      <div class="arch mx-auto aspect-[4/5] w-full max-w-xs border-8 border-white shadow-xl dark:border-night-800">
-        <Image src={cover} alt={d.heroAlt ?? ''} width={600} loading="eager" fetchpriority="high" class="h-full w-full object-cover" />
+      <div class="arch mx-auto hidden aspect-[4/5] w-full max-w-[16rem] border-8 border-white shadow-[var(--shadow-lg)] md:block dark:border-night-800">
+        <Image src={cover} alt={d.heroAlt ?? ''} width={520} loading="eager" fetchpriority="high" class="h-full w-full object-cover" />
       </div>
     </div>
   </header>
 
-  <div class="mx-auto grid max-w-6xl gap-12 px-4 pt-10 lg:grid-cols-[minmax(0,1fr)_280px]">
-    <article class="min-w-0">
-      <Disclosure lang={lang} />
+  <div class="container-page grid gap-12 pt-8 lg:grid-cols-[minmax(0,1fr)_17.5rem]">
+    <article class="min-w-0" data-article={d.translationKey}>
+      {ymyl && (
+        <div class="alert alert-info not-prose">
+          <Icon name="shield" class="mt-0.5 size-5 shrink-0 text-navy-700 dark:text-navy-100" />
+          <p class="text-sm"><strong>{t('article.ymyl.title')} : </strong>{t('article.ymyl.text')}</p>
+        </div>
+      )}
+      {hasAffiliate && <div class="mt-3"><Disclosure lang={lang} /></div>}
 
       {toc.length >= 3 && (
-        <nav class="card mt-6 p-5 text-sm lg:hidden" aria-label={L.onThisPage[lang]}>
-          <p class="eyebrow text-ink-900/65 dark:text-sand-100/65">{L.onThisPage[lang]}</p>
-          <ol class="mt-3 list-decimal space-y-1.5 ps-5">{toc.map((h) => <li><a href={`#${h.slug}`} class="hover:underline">{h.text}</a></li>)}</ol>
+        <nav class="card mt-6 p-5 text-sm lg:hidden" aria-label={t('article.onThisPage')}>
+          <p class="eyebrow muted">{t('article.onThisPage')}</p>
+          <ol class="mt-3 list-decimal space-y-1.5 ps-5 marker:text-[var(--muted)]">{toc.map((h) => <li><a href={`#${h.slug}`} class="hover:underline">{h.text}</a></li>)}</ol>
         </nav>
       )}
 
-      <div class="prose prose-lg mt-8 max-w-[68ch] dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-a:text-majorelle-600 prose-strong:text-ink-900 prose-th:text-start dark:prose-a:text-majorelle-100 dark:prose-strong:text-white">
+      {checklists.length > 0 && (
+        <p class="not-prose mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100">
+          <Icon name="listChecks" class="size-4" /><a href={`#checklist-${checklists[0].id}`} class="hover:underline">{t('article.checklist')}</a>
+        </p>
+      )}
+
+      <div class="prose prose-lg mt-6 max-w-[70ch] dark:prose-invert prose-headings:font-semibold prose-a:text-[var(--link)] prose-a:underline-offset-2 prose-strong:text-[var(--text)] prose-th:text-start prose-img:rounded-2xl">
         <slot />
       </div>
 
+      <section class="not-prose mt-12 card p-5 sm:p-6" aria-labelledby="sources-title">
+        <h2 id="sources-title" class="flex items-center gap-2 text-lg font-semibold"><Icon name="landmark" class="size-5 text-navy-600 dark:text-navy-300" />{t('article.sources')}</h2>
+        <p class="mt-1.5 text-sm muted">{t('article.sourcesNote')}</p>
+        <ul class="mt-4 grid gap-2 text-sm">
+          {official.map((s) => <li><a href={s.url} target="_blank" rel="noopener noreferrer" class="link inline-flex items-center gap-1">{s.name[lang] ?? s.name.en}<Icon name="external" class="size-3.5" /></a></li>)}
+        </ul>
+        {cited.length > 0 && (
+          <>
+            <p class="mt-5 text-xs font-semibold uppercase tracking-wide muted">{t('article.sourcesCited')}</p>
+            <ul class="mt-2 grid gap-2 text-sm">
+              {cited.map((c) => <li><a href={c.url} target="_blank" rel="noopener noreferrer" class="link">{c.text}</a> <span class="muted">({c.host})</span></li>)}
+            </ul>
+          </>
+        )}
+        <div class="mt-5 flex flex-col gap-3 border-t border-[var(--line)] pt-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p class="inline-flex items-center gap-1.5 muted"><Icon name="refresh" class="size-4" /><time datetime={updated.toISOString()}>{t('article.lastUpdate', { date: formatDate(updated, lang) })}</time></p>
+          {reportUrl && <a href={reportUrl} class="inline-flex items-center gap-1.5 font-semibold text-terracotta-600 hover:underline dark:text-terracotta-300" data-track="report_error_click"><Icon name="flag" class="size-4" />{t('article.report')}</a>}
+        </div>
+      </section>
+
       <AuthorBox lang={lang} name={d.author} />
+
+      {tools.length > 0 && (
+        <section class="mt-12" aria-labelledby="rel-tools">
+          <h2 id="rel-tools" class="text-xl font-semibold">{t('article.relatedTools')}</h2>
+          <div class="mt-4"><ToolGrid lang={lang} keys={tools.map((x) => x.key)} compact /></div>
+        </section>
+      )}
+
+      {cities.length > 0 && (
+        <section class="mt-10" aria-labelledby="rel-cities">
+          <h2 id="rel-cities" class="text-xl font-semibold">{t('article.relatedCities')}</h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {cities.map((c) => <li><a href={cityPath(lang, c.slug[lang])} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="mapPin" class="size-4" />{cityLabel(c.id, lang)}</a></li>)}
+          </ul>
+        </section>
+      )}
+
       <AdSlot type="banner" lang={lang} />
     </article>
 
-    <aside class="hidden lg:block">
+    <aside class="hidden lg:block" aria-label={t('article.onThisPage')}>
       <div class="sticky top-24 grid gap-6">
         {toc.length >= 3 && (
-          <nav class="text-sm" aria-label={L.onThisPage[lang]}>
-            <p class="eyebrow text-ink-900/65 dark:text-sand-100/65">{L.onThisPage[lang]}</p>
-            <ol class="mt-3 grid gap-2 border-s-2 border-sand-200 dark:border-white/10">
-              {toc.map((h) => <li><a href={`#${h.slug}`} class="-ms-0.5 block border-s-2 border-transparent ps-4 text-ink-900/75 hover:border-terracotta-500 hover:text-ink-900 dark:text-sand-100/75 dark:hover:text-white">{h.text}</a></li>)}
+          <nav class="text-sm" aria-label={t('article.onThisPage')}>
+            <p class="eyebrow muted">{t('article.onThisPage')}</p>
+            <ol class="mt-3 grid gap-1.5 border-s-2 border-[var(--line)]">
+              {toc.map((h) => <li><a href={`#${h.slug}`} class="-ms-0.5 block border-s-2 border-transparent py-0.5 ps-4 muted hover:border-terracotta-500 hover:text-[var(--text)]">{h.text}</a></li>)}
             </ol>
           </nav>
         )}
-        <div class="rounded-3xl bg-majorelle-600 p-5 text-white">
-          <p class="font-display text-lg font-bold">{L.essentials[lang]}</p>
-          <ul class="mt-3 grid gap-2 text-sm">
-            <li><AffiliateLink provider="airalo" class="!text-white !decoration-saffron-400">📶 {essentials[0]}</AffiliateLink></li>
-            <li><AffiliateLink provider="booking" query="Marrakech" class="!text-white !decoration-saffron-400">🏡 {essentials[1]}</AffiliateLink></li>
-            <li><AffiliateLink provider="getyourguide" query="Morocco" class="!text-white !decoration-saffron-400">🐪 {essentials[2]}</AffiliateLink></li>
-            <li><AffiliateLink provider="safetywing" class="!text-white !decoration-saffron-400">🩺 {essentials[3]}</AffiliateLink></li>
+        <div class="card p-5">
+          <p class="font-semibold">{t('article.reco.title')}</p>
+          <ul class="mt-3 grid gap-2.5 text-sm">
+            <li class="flex items-center gap-2"><Icon name="wifi" class="size-4 shrink-0 muted" /><AffiliateLink provider="airalo">{essentials[0]}</AffiliateLink></li>
+            <li class="flex items-center gap-2"><Icon name="bed" class="size-4 shrink-0 muted" /><AffiliateLink provider="booking" query="Morocco">{essentials[1]}</AffiliateLink></li>
+            <li class="flex items-center gap-2"><Icon name="compass" class="size-4 shrink-0 muted" /><AffiliateLink provider="getyourguide" query="Morocco">{essentials[2]}</AffiliateLink></li>
+            <li class="flex items-center gap-2"><Icon name="heart" class="size-4 shrink-0 muted" /><AffiliateLink provider="safetywing">{essentials[3]}</AffiliateLink></li>
           </ul>
-          {toolUrl && <a href={toolUrl} class="btn mt-5 w-full justify-center bg-white !py-2.5 text-sm text-majorelle-700 hover:bg-sand-100">🧮 {t('nav.tools')}</a>}
+          <p class="mt-4 text-xs muted">{t('article.reco.why')} {disclosureUrl && <a href={disclosureUrl} class="underline">{t('disclosure.link')}</a>}</p>
         </div>
         <AdSlot type="sidebar" lang={lang} />
       </div>
     </aside>
   </div>
 
-  {
-    related.length > 0 && (
-      <section class="mx-auto mt-20 max-w-6xl px-4">
-        <h2 class="text-3xl font-bold">{t('article.related')}</h2>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{related.map((a) => <ArticleCard article={a} />)}</div>
-      </section>
-    )
-  }
+  {related.length > 0 && (
+    <section class="container-page mt-16" aria-labelledby="rel-guides">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <h2 id="rel-guides" class="section-title">{t('article.next')}</h2>
+        <a href={categoryPath(lang, d.category)} class="btn-tertiary btn inline-flex items-center gap-1.5 font-semibold">{t('article.parentCta', { topic: cat.label[lang] })}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+      </div>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{related.map((a) => <ArticleCard article={a} />)}</div>
+    </section>
+  )}
 </BaseLayout>

@@ -1,22 +1,22 @@
 ---
 /**
  * BaseLayout — squelette de toutes les pages.
- * Performance (objectif Lighthouse > 90 sur les 4 axes) :
- * - Polices système (0 requête), CSS Tailwind purgé et inliné si petit.
- * - JS total < 2 Ko : thème (inline, anti-flash), toggle, chargeur AdSense différé, tracker de clics.
+ * Performance :
+ * - Polices auto-hébergées ; seule la police de texte (Readex Pro) est préchargée.
+ * - JS minimal : thème (inline, anti-flash), menus, recherche (index chargé à la demande),
+ *   chargeur AdSense différé, petit traceur d'événements (Umami, uniquement s'il est configuré).
  * - AdSense chargé seulement après interaction ou 3,5 s => n'impacte ni LCP ni TBT.
  */
 import '@fontsource-variable/readex-pro';
 import '@fontsource-variable/marhey';
 import '../styles/global.css';
-// Préchargement des polices principales (évite le décalage de mise en page au chargement)
-import marheyLatin from '@fontsource-variable/marhey/files/marhey-latin-wght-normal.woff2?url';
-import marheyArabic from '@fontsource-variable/marhey/files/marhey-arabic-wght-normal.woff2?url';
 import readexLatin from '@fontsource-variable/readex-pro/files/readex-pro-latin-wght-normal.woff2?url';
 import readexArabic from '@fontsource-variable/readex-pro/files/readex-pro-arabic-wght-normal.woff2?url';
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MobileNav from '../components/MobileNav.astro';
+import SearchBox from '../components/SearchBox.astro';
 import { LOCALE_META, isIndexable, useTranslations, type Locale } from '../i18n';
 import { rssPath, type Alternates } from '../utils/i18n';
 import { ADSENSE_CLIENT, UMAMI_WEBSITE_ID } from '../config/site';
@@ -25,14 +25,20 @@ interface Props {
   lang: Locale;
   title?: string;
   description?: string;
+  /** hreflang : versions indexables uniquement */
   alternates: Alternates;
+  /** Sélecteur de langue : toutes les versions existantes (par défaut = alternates) */
+  switchTargets?: Alternates;
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
   noindex?: boolean;
   jsonLd?: object[];
+  publishedTime?: Date;
+  modifiedTime?: Date;
 }
 
-const { lang, alternates, ...seo } = Astro.props;
+const { lang, alternates, switchTargets, ...seo } = Astro.props;
 // Langue pas encore lancée => noindex automatique (voir site.config.mjs)
 const noindex = seo.noindex || !isIndexable(lang);
 const t = useTranslations(lang);
@@ -44,15 +50,16 @@ const description = seo.description ?? t('site.description');
 <html lang={meta.hreflang} dir={meta.dir}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="google-site-verification" content="WYCTZCgbChnFf2QffNqOmXH0864UscD392U7WB8QJXw" />
-    <meta name="theme-color" content="#1e3abf" />
+    <meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1626" media="(prefers-color-scheme: dark)" />
+    <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="alternate" type="application/rss+xml" title={t('rss.title')} href={rssPath(lang)} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    {(meta.dir === 'rtl' ? [marheyArabic, readexArabic] : [marheyLatin, readexLatin]).map((href) => (
-      <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />
-    ))}
+    <link rel="preload" href={meta.dir === 'rtl' ? readexArabic : readexLatin} as="font" type="font/woff2" crossorigin />
     {ADSENSE_CLIENT && <meta name="google-adsense-account" content={ADSENSE_CLIENT} />}
 
     <SEO lang={lang} alternates={alternates} description={description} {...seo} noindex={noindex} />
@@ -69,17 +76,43 @@ const description = seo.description ?? t('site.description');
 
     {UMAMI_WEBSITE_ID && <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={UMAMI_WEBSITE_ID}></script>}
   </head>
-  <body class="min-h-screen bg-sand-50 font-sans text-ink-900 antialiased dark:bg-night-900 dark:text-sand-100">
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:p-2">Skip</a>
-    <Header lang={lang} alternates={alternates} />
-    <main id="main">
+  <body class="min-h-screen bg-sand-50 pb-[calc(3.5rem+env(safe-area-inset-bottom))] font-sans text-ink-900 antialiased lg:pb-0 dark:bg-night-900 dark:text-sand-100">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-navy-700 focus:shadow-lg">{t('nav.skip')}</a>
+    <Header lang={lang} switchTargets={switchTargets ?? alternates} />
+    <main id="main" tabindex="-1" class="outline-none">
       <slot />
     </main>
     <Footer lang={lang} />
+    <MobileNav lang={lang} />
+    <SearchBox lang={lang} mode="dialog" />
 
-    <!-- Chargeur AdSense différé + suivi des clics affiliés -->
+    <!-- Événements (Umami si configuré) + chargeur AdSense différé -->
     <script is:inline define:vars={{ client: ADSENSE_CLIENT ?? '' }}>
       (function () {
+        // Traceur unique : aucun envoi si Umami n'est pas configuré.
+        window.sahlaTrack = function (name, data) {
+          try { if (window.umami) window.umami.track(name, Object.assign({ page: location.pathname }, data || {})); } catch (e) {}
+        };
+        document.addEventListener('click', function (e) {
+          var el = e.target.closest && e.target.closest('a[data-affiliate], a[data-lang-link], [data-track]');
+          if (!el) return;
+          if (el.dataset.affiliate) window.sahlaTrack('affiliate_click', { provider: el.dataset.affiliate });
+          else if (el.dataset.langLink) window.sahlaTrack('language_change', { to: el.dataset.langLink });
+          else window.sahlaTrack(el.dataset.track, { label: el.dataset.trackLabel || '' });
+        });
+        // Lecture d'un guide : 75 % de l'article atteints
+        var art = document.querySelector('[data-article]');
+        if (art) {
+          var onScroll = function () {
+            var r = art.getBoundingClientRect();
+            if (r.top + r.height * 0.75 < innerHeight) {
+              window.sahlaTrack('article_read', { slug: art.dataset.article });
+              removeEventListener('scroll', onScroll);
+            }
+          };
+          addEventListener('scroll', onScroll, { passive: true });
+        }
+
         var slots = document.querySelectorAll('ins.adsbygoogle');
         if (client && slots.length) {
           var loaded = false;
@@ -98,11 +131,6 @@ const description = seo.description ?? t('site.description');
           });
           setTimeout(load, 3500);
         }
-        // Événement "affiliate_click" (Umami) => savoir quel article/fournisseur rapporte.
-        document.addEventListener('click', function (e) {
-          var a = e.target.closest && e.target.closest('a[data-affiliate]');
-          if (a && window.umami) window.umami.track('affiliate_click', { provider: a.dataset.affiliate, page: location.pathname });
-        });
       })();
     </script>
   </body>
