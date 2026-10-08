@@ -1,15 +1,37 @@
 ---
 title: "Acerca de Sahla Morocco"
-description: "Quién escribe Sahla Morocco y cómo elaboramos nuestras guías y calculadoras para los marroquíes en el extranjero (MRE) y los visitantes de Marruecos."
+description: "Quién escribe Sahla Morocco, para quién, cómo comprobamos la información, cómo ganamos dinero y cómo contactarnos."
 slug: "acerca-de"
 translationKey: "about"
 lang: "es"
+updatedDate: 2026-10-08
 ---
 
-Sahla Morocco está escrito por **Yassine**, que vive cerca de Casablanca, en Marruecos. Hablo árabe (darija), francés e inglés. *Sahla* significa «fácil»: nuestra misión es hacer Marruecos sencillo y práctico, para los MRE que regresan, invierten o envían dinero, y para los visitantes que descubren el país.
+**Sahla Morocco — la guía práctica de Marruecos para marroquíes en el extranjero y viajeros.** *Sahla* significa «fácil» en darija: nuestra misión es que Marruecos sea sencillo de entender y de recorrer.
+
+## ¿Quién escribe?
+
+Sahla Morocco lo escribe **Yassine**, que vive cerca de Casablanca. Hablo darija, francés e inglés. Escribo las guías que me habría gustado dar a mis amigos extranjeros el primer día.
+
+## ¿Para quién?
+
+- **Marroquíes en el extranjero (MRE)**: vuelta de verano, coche y regla de los 180 días, envío de dinero, vivienda, trámites.
+- **Viajeros**: llegada, transporte, alojamiento, excursiones y presupuesto.
 
 ## Cómo trabajamos
 
-- **Con fuentes y fechas.** Los precios, trámites y tipos proceden de fuentes oficiales y de la prensa, y cada guía indica cuándo se actualizó por última vez. Cuando una cifra puede cambiar o las fuentes divergen, lo decimos y te remitimos a la administración competente. La etiqueta «Verificado sobre el terreno» solo aparece cuando de verdad hemos comprobado algo in situ.
-- **Independientes.** Algunos enlaces son de afiliación (consulta nuestra [divulgación de afiliados](/es/divulgacion-de-afiliados)). Solo recomendamos lo que usaríamos nosotros mismos, y ningún socio revisa nuestros contenidos.
-- **Las correcciones son bienvenidas.** ¿Algo ha cambiado? Escribe a **contact@sahlamaroc.com** y actualizaremos la guía.
+- **Con fuentes y fechas.** Cada guía muestra su fecha de actualización. Las normas y tarifas delicadas remiten a la administración competente. Lee nuestra [metodología](/es/metodologia) y la [política editorial](/es/politica-editorial).
+- **Estimaciones señaladas.** Las calculadoras muestran sus hipótesis, fuentes y fecha de comprobación, y sus resultados se presentan siempre como estimaciones.
+- **Correcciones bienvenidas.** ¿Algo desfasado o erróneo? Consulta [correcciones](/es/correcciones) o [infórmanos aquí](/es/contacto?type=correction).
+
+## Cómo ganamos dinero
+
+El sitio es gratuito. Algunos enlaces son de afiliación y podemos recibir una comisión sin coste adicional para ti; puede haber publicidad. Los socios no revisan nuestros contenidos. Detalles en el [aviso de afiliación](/es/divulgacion-de-afiliados).
+
+## Idiomas
+
+El francés y el inglés son las versiones de referencia. Las versiones en español, alemán y árabe son traducciones automáticas pendientes de revisión humana y se marcan como no indexables para los buscadores hasta que se revisen.
+
+## Contacto
+
+Usa la [página de contacto](/es/contacto).
