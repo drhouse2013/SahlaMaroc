@@ -1,0 +1,19 @@
+---
+/** En-tête commun des pages hub (fil d'Ariane, icône, titre, introduction). */
+import Breadcrumbs from './Breadcrumbs.astro';
+import Icon from './Icon.astro';
+import type { Locale } from '../i18n';
+import type { IconName } from '../data/icons';
+interface Props { lang: Locale; crumbs: { name: string; href?: string }[]; title: string; intro?: string; icon?: IconName; meta?: string }
+const { lang, crumbs, title, intro, icon, meta } = Astro.props;
+---
+<div class="zellige-soft border-b border-[var(--line)]">
+  <div class="container-page pt-8 pb-10">
+    <Breadcrumbs items={crumbs} lang={lang} />
+    {icon && <span class="icon-tile mt-8 size-12"><Icon name={icon} class="size-6" /></span>}
+    <h1 class:list={['text-3xl font-semibold sm:text-[2.6rem]', icon ? 'mt-4' : 'mt-8']}>{title}</h1>
+    {intro && <p class="mt-4 max-w-3xl text-lg muted">{intro}</p>}
+    {meta && <p class="mt-4 text-sm muted">{meta}</p>}
+    <slot />
+  </div>
+</div>

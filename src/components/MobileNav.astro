@@ -1,0 +1,35 @@
+---
+/** Barre de navigation basse (mobile et tablette) : Accueil, Guides, Rechercher, Outils. */
+import Icon from './Icon.astro';
+import type { IconName } from '../data/icons';
+import { useTranslations, type Locale } from '../i18n';
+import { getPageUrl, homePath, hubPath } from '../utils/i18n';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const path = Astro.url.pathname;
+const tools = (await getPageUrl(lang, 'calculators')) ?? homePath(lang);
+const items: { href: string; label: string; icon: IconName; search?: boolean }[] = [
+  { href: homePath(lang), label: t('nav.home'), icon: 'home' },
+  { href: hubPath(lang, 'guides'), label: t('nav.guides'), icon: 'book' },
+  { href: hubPath(lang, 'search'), label: t('nav.search'), icon: 'search', search: true },
+  { href: tools, label: t('nav.tools'), icon: 'calculator' },
+];
+---
+<nav class="no-print fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-sand-50/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden dark:bg-night-900/95" aria-label={t('nav.mobile')}>
+  <ul class="mx-auto grid max-w-lg grid-cols-4">
+    {items.map((it) => {
+      const current = it.href === path;
+      return (
+        <li class="min-w-0">
+          <a href={it.href} data-search-open={it.search ? '' : undefined} aria-current={current ? 'page' : undefined}
+            class="flex min-h-14 min-w-0 flex-col items-center justify-center gap-0.5 text-[0.7rem] font-medium muted aria-[current=page]:text-terracotta-600 dark:aria-[current=page]:text-terracotta-300">
+            <Icon name={it.icon} class="size-5" />
+            <span class="max-w-full truncate px-1">{it.label}</span>
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>

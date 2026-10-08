@@ -1,0 +1,24 @@
+---
+/**
+ * <Icon name="ship" /> — SVG en ligne (Lucide, ISC), décoratif par défaut (aria-hidden).
+ * Passer `label` pour une icône porteuse de sens (role="img" + aria-label).
+ */
+import { ICONS, type IconName } from '../data/icons';
+interface Props { name: IconName; class?: string; label?: string; strokeWidth?: number }
+const { name, class: className = 'size-5', label, strokeWidth = 1.75 } = Astro.props;
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width={strokeWidth}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  aria-hidden={label ? undefined : 'true'}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  focusable="false"
+  set:html={ICONS[name]}
+/>

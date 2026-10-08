@@ -1,0 +1,112 @@
+---
+/**
+ * Formulaire de contact (utilisable dans les pages MDX : <ContactForm />).
+ * - Préremplissage : /contact?type=correction&page=<url> (lien « Signaler une erreur »).
+ * - Envoi : PUBLIC_FORM_ENDPOINT (POST JSON) si configuré, sinon e-mail pré-rempli.
+ * - Validation côté client (champs requis, e-mail, longueur) + champ piège anti-robots.
+ *   La validation « serveur » relève du service de formulaires choisi (pas de backend ici).
+ */
+import { useTranslations, type Locale } from '../i18n';
+import { CONTACT_EMAIL, FORM_ENDPOINT } from '../config/site';
+
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(lang);
+const types = ['correction', 'suggestion', 'partnership', 'general'] as const;
+const msgs = {
+  required: t('contact.required'), invalidEmail: t('contact.invalidEmail'), tooShort: t('contact.tooShort'),
+  sending: t('contact.sending'), success: t('contact.success'), mailto: t('contact.mailto'), error: t('contact.error', { email: CONTACT_EMAIL }),
+};
+---
+<form class="not-prose card mt-8 grid gap-5 p-5 sm:grid-cols-2 sm:p-7" data-contact data-endpoint={FORM_ENDPOINT ?? ''} data-email={CONTACT_EMAIL} data-msgs={JSON.stringify(msgs)} data-lang={lang} novalidate>
+  <div class="field">
+    <label for="c-name">{t('contact.name')}</label>
+    <input id="c-name" name="name" class="input" required autocomplete="name" maxlength="120" aria-describedby="c-name-err" />
+    <p id="c-name-err" class="field-error" hidden></p>
+  </div>
+  <div class="field">
+    <label for="c-email">{t('contact.email')}</label>
+    <input id="c-email" name="email" type="email" class="input" required autocomplete="email" inputmode="email" maxlength="200" aria-describedby="c-email-err" />
+    <p id="c-email-err" class="field-error" hidden></p>
+  </div>
+  <div class="field sm:col-span-2">
+    <label for="c-type">{t('contact.type')}</label>
+    <select id="c-type" name="type" class="input">
+      {types.map((k) => <option value={k}>{t(`contact.type.${k}`)}</option>)}
+    </select>
+  </div>
+  <div class="field sm:col-span-2">
+    <label for="c-page">{t('contact.page')}</label>
+    <input id="c-page" name="page" type="url" class="input" maxlength="300" placeholder="https://" />
+  </div>
+  <div class="field sm:col-span-2">
+    <label for="c-message">{t('contact.message')}</label>
+    <textarea id="c-message" name="message" class="input min-h-40 resize-y" required minlength="10" maxlength="5000" aria-describedby="c-message-err"></textarea>
+    <p id="c-message-err" class="field-error" hidden></p>
+  </div>
+  <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+  <div class="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
+    <p class="text-xs muted">{t('contact.privacy')}</p>
+    <button type="submit" class="btn btn-primary">{t('contact.send')}</button>
+  </div>
+  <p class="text-sm font-medium sm:col-span-2" role="status" aria-live="polite" data-contact-status></p>
+</form>
+<p class="not-prose mt-4 text-sm muted">{t('contact.direct')} <a class="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('form[data-contact]').forEach((form) => {
+    const m = JSON.parse(form.dataset.msgs || '{}') as Record<string, string>;
+    const status = form.querySelector<HTMLElement>('[data-contact-status]')!;
+    const el = (n: string) => form.elements.namedItem(n) as HTMLInputElement;
+    // Préremplissage depuis l'URL (?type=correction&page=…)
+    const params = new URLSearchParams(location.search);
+    const type = params.get('type');
+    if (type && el('type').querySelector(`option[value="${CSS.escape(type)}"]`)) el('type').value = type;
+    const page = params.get('page');
+    if (page && /^https?:\/\//.test(page)) el('page').value = page.slice(0, 300);
+
+    const setErr = (name: string, text: string) => {
+      const input = el(name);
+      const err = form.querySelector<HTMLElement>(`#c-${name}-err`);
+      if (text) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+      if (err) { err.textContent = text; err.hidden = !text; }
+      return !text;
+    };
+    const validate = () => {
+      const ok = [
+        setErr('name', el('name').value.trim() ? '' : m.required),
+        setErr('email', !el('email').value.trim() ? m.required : /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el('email').value.trim()) ? '' : m.invalidEmail),
+        setErr('message', !el('message').value.trim() ? m.required : el('message').value.trim().length < 10 ? m.tooShort : ''),
+      ];
+      return ok.every(Boolean);
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (el('website').value) return; // robot
+      if (!validate()) { form.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus(); return; }
+      const data = {
+        name: el('name').value.trim(), email: el('email').value.trim(), type: el('type').value,
+        page: el('page').value.trim(), message: el('message').value.trim(), lang: form.dataset.lang,
+      };
+      const track = (window as unknown as { sahlaTrack?: (n: string, d?: object) => void }).sahlaTrack;
+      const endpoint = form.dataset.endpoint;
+      if (!endpoint) {
+        const subject = `[Sahla] ${(form.elements.namedItem('type') as HTMLSelectElement).selectedOptions[0]?.textContent ?? data.type}`;
+        const body = `${data.message}\n\n— ${data.name} <${data.email}>${data.page ? `\nPage : ${data.page}` : ''}`;
+        location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        status.textContent = m.mailto;
+        track?.('contact_submit', { type: data.type, via: 'mailto' });
+        return;
+      }
+      const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+      btn.disabled = true; status.textContent = m.sending;
+      try {
+        const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+        if (!res.ok) throw new Error(String(res.status));
+        status.textContent = m.success; form.reset();
+        track?.('contact_submit', { type: data.type, via: 'provider' });
+      } catch { status.textContent = m.error; }
+      finally { btn.disabled = false; }
+    });
+  });
+</script>

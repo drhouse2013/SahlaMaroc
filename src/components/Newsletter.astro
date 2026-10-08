@@ -1,0 +1,75 @@
+---
+/**
+ * Inscription à la lettre d'information.
+ * Abstraction de fournisseur : si PUBLIC_NEWSLETTER_ENDPOINT est défini, envoi JSON (POST {email, lang})
+ * vers ce service ; sinon, ouverture d'un e-mail pré-rempli vers l'adresse de contact (aucune donnée
+ * n'est envoyée à un tiers à l'insu de l'utilisateur). États : envoi, succès, erreur, e-mail invalide.
+ */
+import Icon from './Icon.astro';
+import { useTranslations, type Locale } from '../i18n';
+import { getPageUrl } from '../utils/i18n';
+import { CONTACT_EMAIL, NEWSLETTER_ENDPOINT } from '../config/site';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const privacy = await getPageUrl(lang, 'privacy');
+const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'), mailto: t('newsletter.mailto'), error: t('newsletter.error'), invalid: t('newsletter.invalid'), subject: t('newsletter.title') };
+---
+<section class="container-page section" aria-labelledby="nl-title">
+  <div class="relative overflow-hidden rounded-[2rem] bg-navy-700 px-6 py-10 text-white sm:px-10 sm:py-12 dark:bg-navy-800">
+    <div class="zellige pointer-events-none absolute inset-y-0 end-0 hidden w-24 opacity-30 md:block" aria-hidden="true"></div>
+    <div class="relative grid gap-8 md:grid-cols-[1.1fr_1fr] md:items-center md:pe-24">
+      <div>
+        <span class="icon-tile bg-white/10 text-gold-300"><Icon name="mail" /></span>
+        <h2 id="nl-title" class="mt-4 text-2xl font-semibold sm:text-3xl">{t('newsletter.title')}</h2>
+        <p class="mt-3 text-white/80">{t('newsletter.text')}</p>
+      </div>
+      <form class="grid gap-3" data-newsletter data-endpoint={NEWSLETTER_ENDPOINT ?? ''} data-email={CONTACT_EMAIL} data-lang={lang} data-msgs={JSON.stringify(msgs)} novalidate>
+        <label for="nl-email" class="text-sm font-medium text-white/90">{t('newsletter.email')}</label>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <input id="nl-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder={t('newsletter.placeholder')} class="input !border-white/20 !bg-white !text-ink-900" aria-describedby="nl-msg nl-privacy" />
+          <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary shrink-0">{t('newsletter.cta')}</button>
+        </div>
+        <p id="nl-msg" class="min-h-5 text-sm font-medium text-gold-300" role="status" aria-live="polite"></p>
+        <p id="nl-privacy" class="text-xs text-white/70">{t('newsletter.privacy')} {privacy && <a href={privacy} class="underline underline-offset-2 hover:text-white">{t('newsletter.privacyLink')}</a>}</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('form[data-newsletter]').forEach((form) => {
+    const msg = form.querySelector<HTMLElement>('[role="status"]')!;
+    const input = form.querySelector<HTMLInputElement>('input[type="email"]')!;
+    const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const m = JSON.parse(form.dataset.msgs || '{}') as Record<string, string>;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if ((form.elements.namedItem('company') as HTMLInputElement).value) return; // robot
+      const email = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        input.setAttribute('aria-invalid', 'true'); msg.textContent = m.invalid; input.focus(); return;
+      }
+      input.removeAttribute('aria-invalid');
+      const endpoint = form.dataset.endpoint;
+      const track = (window as unknown as { sahlaTrack?: (n: string, d?: object) => void }).sahlaTrack;
+      if (!endpoint) {
+        const body = `Email: ${email}\nLangue / language: ${form.dataset.lang}`;
+        location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Newsletter — ' + m.subject)}&body=${encodeURIComponent(body)}`;
+        msg.textContent = m.mailto;
+        track?.('newsletter_signup', { via: 'mailto' });
+        return;
+      }
+      btn.disabled = true; msg.textContent = m.sending;
+      try {
+        const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email, lang: form.dataset.lang }) });
+        if (!res.ok) throw new Error(String(res.status));
+        msg.textContent = m.success; form.reset();
+        track?.('newsletter_signup', { via: 'provider' });
+      } catch { msg.textContent = m.error; }
+      finally { btn.disabled = false; }
+    });
+  });
+</script>
