@@ -1,0 +1,424 @@
+---
+/**
+ * Calculateur des droits et taxes de dédouanement d'une voiture (MRE, retour définitif).
+ * Logique pure : src/utils/customs.mjs (testée : tools/test-customs.mjs). Paramètres datés et sourcés : src/config/customs.ts.
+ * L'outil ne détermine NI la valeur retenue par la douane NI le barème d'âge : l'utilisateur les saisit.
+ */
+import { type Locale, LOCALE_META } from '../../i18n';
+import CalcShell from './CalcShell.astro';
+import { CUSTOMS_VALUES as V, CUSTOMS_LAST_CHECKED } from '../../config/customs';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+/** Typographie française : espace insécable avant ; : ? ! % et autour des guillemets. */
+const nb = (s: string) => s.replace(/ ([;:?!%»])/g, ' $1').replace(/« /g, '« ');
+const fr = {
+  value: 'Valeur retenue par la douane (DH)',
+  valueHelp: 'Régime de 90 % : valeur à l’état neuf fixée par la douane pour votre modèle. Sinon : base imposable qu’elle vous a communiquée. La valeur affichée est un exemple à remplacer : seule la douane la détermine.',
+  regime: 'Régime', rStd: 'Droits et taxes, avec l’abattement éventuel saisi ci-dessous', r90: 'Abattement de 90 % (MRE de 60 ans et plus)',
+  other: 'Abattement communiqué par la douane (%)', otherHelp: 'Laissez 0 si vous n’en connaissez pas : l’outil n’applique aucun barème d’âge.',
+  vtype: 'Motorisation (taux indicatif du droit d’importation)', vThermal: 'Voiture thermique', vEv: 'Hybride ou électrique', vCustom: 'Autre taux (à saisir)',
+  di: 'Droit d’importation (%)', tpi: 'Taxe parafiscale à l’importation (%)', vat: 'TVA à l’importation (%)',
+  vage: 'Âge du véhicule (années depuis la 1re mise en circulation)',
+  r90title: 'Conditions de l’abattement de 90 %', bage: 'Votre âge (ans)', resy: 'Années de résidence effective à l’étranger',
+  car: 'Voiture de tourisme de 9 places au plus, conducteur compris (ni utilitaire, ni pick-up, ni camping-car, ni moto, ni quad)',
+  used: 'J’ai déjà bénéficié de cet abattement', settled: 'Je suis déjà installé(e) de façon permanente au Maroc',
+  total: 'Droits et taxes estimés', ofValue: 'de la valeur saisie', detail: 'Détail du calcul', lTotal: 'Total à payer à la douane (estimé)',
+  lValue: 'Valeur retenue', lAbat: 'Abattement', lBase: 'Base imposable', lDi: 'Droit d’importation', lTpi: 'Taxe parafiscale à l’importation', lVat: 'TVA à l’importation',
+  of: 'de', tagLegal: 'taux légal', tagInd: 'taux indicatif', tagCond: 'sous conditions',
+  wait: 'Renseignez les champs pour voir le détail.', inelig: 'Abattement de 90 % non applicable : conditions non remplies', fallback: 'Le détail ci-dessous est calculé sans cet abattement.',
+  notCleared: 'Aucun montant n’est calculé : un véhicule de plus de {ageE} ans ne peut en principe pas être dédouané.', warnT: 'À confirmer auprès de la douane',
+  m: {
+    value_required: 'Saisissez la valeur retenue par la douane.', value_positive: 'La valeur doit être supérieure à 0.', rate_required: 'Saisissez un taux entre 0 et 100.', rate_range: 'Le taux doit être compris entre 0 et 100.', age_invalid: 'Saisissez un nombre positif ou nul.',
+    age_below: 'Il faut avoir {minAge} ans ou plus.', residence_below: 'Il faut justifier de plus de {minRes} ans de résidence effective à l’étranger.',
+    vehicle_kind: 'Le véhicule doit être une voiture de tourisme de 9 places au plus : utilitaires, pick-up, camping-cars, motos et quads sont exclus.',
+    already_used: 'L’abattement n’est accordé qu’une seule fois dans la vie.', settled: 'Selon la circulaire de l’ADII, l’abattement n’est pas accordé aux personnes déjà installées de façon permanente au Maroc.',
+    vehicle_too_old: 'Un véhicule de plus de {ageE} ans ne peut en principe pas être dédouané.',
+    residence_borderline: 'Le texte exige « plus de {minRes} ans » : avec exactement {minRes} ans, c’est la douane qui tranche.',
+    vehicle_age_borderline: 'Véhicule à la limite des {ageE} ans : c’est la douane qui tranche.',
+    vehicle_age_missing: 'Âge du véhicule non renseigné : les limites d’âge ({ageG} ans en règle générale, jusqu’à {ageE} ans pour un MRE retraité ou en retour définitif) n’ont pas été contrôlées.',
+    vehicle_age_5_10: 'Entre {ageG} et {ageE} ans : possible seulement pour un MRE retraité (plus de {minRes} ans de résidence à l’étranger) ou en retour définitif, pour une berline de 9 places au plus. À confirmer avec la douane.',
+    luxury_stamp: 'À partir de {lux} DH, un droit de timbre sur les voitures de valeur élevée peut s’ajouter : il n’est pas calculé ici.',
+    cap_exceeded: 'Dans ce calcul, la part de la valeur au-dessus de {cap} DH est retenue sans abattement (droit commun) : la douane confirme la base exacte.',
+  },
+  secT: 'Ce que montre ce résultat', offT: 'Règles officielles', estT: 'Estimations', notT: 'Coûts non inclus',
+  off: [
+    'TVA à l’importation : taux normal de 20 %.',
+    'Abattement de 90 % : 60 ans et plus, plus de 10 ans de résidence effective à l’étranger, une seule fois dans la vie, valeur à l’état neuf plafonnée à 300 000 DH, voiture de tourisme de 9 places au plus (circulaire ADII n° 5945/311 du 4 juin 2019, conditions reprises dans les mesures Marhaba 2026).',
+  ],
+  est: [
+    'La valeur saisie : seule la douane fixe la valeur à l’état neuf de votre modèle et la base imposable.',
+    'Droit d’importation : taux indicatifs (17,5 % pour une thermique, 2,5 % pour une hybride ou électrique) relevés dans la presse et des sources professionnelles, non retrouvés sur le site de l’ADII. Le taux réel dépend de la position tarifaire et de l’origine.',
+    'Taxe parafiscale de 0,25 %, calculée sur la base imposable : texte de loi non vérifié ici.',
+    'Assiette de la TVA (base + droit d’importation + taxe parafiscale) et arrondi au dirham de chaque ligne.',
+  ],
+  not: [
+    'Frais de transitaire ou de commissionnaire en douane, transport, assurance du transport.',
+    'Droit de timbre sur les voitures de valeur élevée, autres abattements (par exemple le « vieillissement de 3 ans »), à saisir tels que communiqués.',
+    'Pénalité si le délai d’admission temporaire est dépassé (de 1 000 à 10 000 DH selon la circulaire ADII de 2019).',
+    'Certificat d’identification, visite technique et contre-visite, carte grise.',
+    'Vignette (taxe spéciale annuelle) et assurance marocaine.',
+  ],
+  note: `Résultat estimatif — confirmation par l’ADII. Paramètres vérifiés le ${CUSTOMS_LAST_CHECKED}. Ce site ne fixe ni la valeur en douane ni les taux : seule l’ADII fait foi.`,
+};
+const en = {
+  value: 'Value set by customs (MAD)',
+  valueHelp: '90% scheme: the as-new value customs sets for your model. Otherwise: the taxable base customs gave you. The figure shown is an example to replace: only customs determines it.',
+  regime: 'Scheme', rStd: 'Duties and taxes, with any abatement you enter below', r90: '90% abatement (Moroccans abroad aged 60+)',
+  other: 'Abatement given by customs (%)', otherHelp: 'Leave 0 if you do not know of one: the tool applies no age-based scale.',
+  vtype: 'Engine type (indicative import duty rate)', vThermal: 'Petrol or diesel car', vEv: 'Hybrid or electric', vCustom: 'Other rate (enter it)',
+  di: 'Import duty (%)', tpi: 'Parafiscal import tax (%)', vat: 'Import VAT (%)',
+  vage: 'Vehicle age (years since first registration)',
+  r90title: 'Conditions for the 90% abatement', bage: 'Your age (years)', resy: 'Years of actual residence abroad',
+  car: 'Passenger car with at most 9 seats including the driver (no van, pick-up, camper, motorbike or quad)',
+  used: 'I have already used this abatement', settled: 'I am already permanently settled in Morocco',
+  total: 'Estimated duties and taxes', ofValue: 'of the value entered', detail: 'Calculation detail', lTotal: 'Total payable to customs (estimate)',
+  lValue: 'Value used', lAbat: 'Abatement', lBase: 'Taxable base', lDi: 'Import duty', lTpi: 'Parafiscal import tax', lVat: 'Import VAT',
+  of: 'of', tagLegal: 'statutory rate', tagInd: 'indicative rate', tagCond: 'if eligible',
+  wait: 'Fill in the fields to see the breakdown.', inelig: '90% abatement not applicable: conditions not met', fallback: 'The breakdown below is calculated without this abatement.',
+  notCleared: 'No amount is calculated: a vehicle over {ageE} years old cannot in principle be cleared.', warnT: 'To confirm with customs',
+  m: {
+    value_required: 'Enter the value set by customs.', value_positive: 'The value must be greater than 0.', rate_required: 'Enter a rate between 0 and 100.', rate_range: 'The rate must be between 0 and 100.', age_invalid: 'Enter a number, zero or more.',
+    age_below: 'You must be {minAge} or older.', residence_below: 'You must show more than {minRes} years of actual residence abroad.',
+    vehicle_kind: 'The vehicle must be a passenger car with at most 9 seats: vans, pick-ups, campers, motorbikes and quads are excluded.',
+    already_used: 'The abatement is granted only once in a lifetime.', settled: 'According to the ADII circular, the abatement is not granted to people already permanently settled in Morocco.',
+    vehicle_too_old: 'A vehicle over {ageE} years old cannot in principle be cleared.',
+    residence_borderline: 'The text requires “more than {minRes} years”: with exactly {minRes} years, customs decides.',
+    vehicle_age_borderline: 'Vehicle right at the {ageE}-year limit: customs decides.',
+    vehicle_age_missing: 'Vehicle age not entered: the age limits ({ageG} years as a general rule, up to {ageE} years for a retired Moroccan abroad or a permanent return) were not checked.',
+    vehicle_age_5_10: 'Between {ageG} and {ageE} years: possible only for a retired Moroccan abroad (more than {minRes} years of residence abroad) or on permanent return, for a saloon with at most 9 seats. Confirm with customs.',
+    luxury_stamp: 'From {lux} MAD, a stamp duty on high-value cars may be added: it is not calculated here.',
+    cap_exceeded: 'In this calculation, the part of the value above {cap} MAD is taken without abatement (ordinary rules): customs confirms the exact base.',
+  },
+  secT: 'What this result shows', offT: 'Official rules', estT: 'Estimates', notT: 'Costs not included',
+  off: [
+    'Import VAT: standard rate of 20%.',
+    '90% abatement: age 60+, more than 10 years of actual residence abroad, once in a lifetime, as-new value capped at 300,000 MAD, passenger car with at most 9 seats (ADII circular no. 5945/311 of 4 June 2019, conditions repeated in the 2026 Marhaba measures).',
+  ],
+  est: [
+    'The value entered: only customs sets the as-new value of your model and the taxable base.',
+    'Import duty: indicative rates (17.5% for a petrol or diesel car, 2.5% for a hybrid or electric one) found in the press and trade sources, not located on the ADII website. The actual rate depends on the tariff heading and the origin.',
+    'Parafiscal tax of 0.25%, applied to the taxable base: legal text not verified here.',
+    'VAT base (base + import duty + parafiscal tax) and rounding of each line to the dirham.',
+  ],
+  not: [
+    'Customs broker or freight forwarder fees, transport, transport insurance.',
+    'Stamp duty on high-value cars, and other abatements (for example the “3-year ageing”), to be entered as customs states them.',
+    'Penalty if the temporary admission period is exceeded (1,000 to 10,000 MAD under the 2019 ADII circular).',
+    'Identification certificate, technical inspection and re-inspection, registration card.',
+    'Annual vehicle tax (vignette) and Moroccan insurance.',
+  ],
+  note: `Estimate only — confirm with ADII. Parameters checked on ${CUSTOMS_LAST_CHECKED}. This site sets neither the customs value nor the rates: only ADII is authoritative.`,
+};
+const es = {
+  value: 'Valor fijado por la aduana (MAD)',
+  valueHelp: 'Régimen del 90 %: valor a nuevo que la aduana fija para tu modelo. En otro caso: la base imponible que te comunicó. La cifra mostrada es un ejemplo que debes sustituir: solo la aduana la determina.',
+  regime: 'Régimen', rStd: 'Derechos e impuestos, con el abatimiento que introduzcas abajo', r90: 'Abatimiento del 90 % (marroquíes en el extranjero de 60 años o más)',
+  other: 'Abatimiento comunicado por la aduana (%)', otherHelp: 'Deja 0 si no conoces ninguno: la herramienta no aplica ninguna escala por antigüedad.',
+  vtype: 'Motorización (tipo orientativo del derecho de importación)', vThermal: 'Coche de gasolina o diésel', vEv: 'Híbrido o eléctrico', vCustom: 'Otro tipo (introdúcelo)',
+  di: 'Derecho de importación (%)', tpi: 'Tasa parafiscal a la importación (%)', vat: 'IVA a la importación (%)',
+  vage: 'Antigüedad del vehículo (años desde la 1.ª matriculación)',
+  r90title: 'Condiciones del abatimiento del 90 %', bage: 'Tu edad (años)', resy: 'Años de residencia efectiva en el extranjero',
+  car: 'Turismo de 9 plazas como máximo, conductor incluido (ni furgoneta, ni pick-up, ni autocaravana, ni moto, ni quad)',
+  used: 'Ya he utilizado este abatimiento', settled: 'Ya estoy instalado/a de forma permanente en Marruecos',
+  total: 'Derechos e impuestos estimados', ofValue: 'del valor introducido', detail: 'Detalle del cálculo', lTotal: 'Total a pagar a la aduana (estimado)',
+  lValue: 'Valor considerado', lAbat: 'Abatimiento', lBase: 'Base imponible', lDi: 'Derecho de importación', lTpi: 'Tasa parafiscal a la importación', lVat: 'IVA a la importación',
+  of: 'de', tagLegal: 'tipo legal', tagInd: 'tipo orientativo', tagCond: 'si cumples las condiciones',
+  wait: 'Rellena los campos para ver el detalle.', inelig: 'Abatimiento del 90 % no aplicable: condiciones no cumplidas', fallback: 'El detalle siguiente se calcula sin este abatimiento.',
+  notCleared: 'No se calcula ningún importe: un vehículo de más de {ageE} años en principio no puede despacharse.', warnT: 'A confirmar con la aduana',
+  m: {
+    value_required: 'Introduce el valor fijado por la aduana.', value_positive: 'El valor debe ser mayor que 0.', rate_required: 'Introduce un tipo entre 0 y 100.', rate_range: 'El tipo debe estar entre 0 y 100.', age_invalid: 'Introduce un número igual o mayor que cero.',
+    age_below: 'Hay que tener {minAge} años o más.', residence_below: 'Hay que acreditar más de {minRes} años de residencia efectiva en el extranjero.',
+    vehicle_kind: 'El vehículo debe ser un turismo de 9 plazas como máximo: se excluyen furgonetas, pick-up, autocaravanas, motos y quads.',
+    already_used: 'El abatimiento solo se concede una vez en la vida.', settled: 'Según la circular de la ADII, el abatimiento no se concede a quien ya está instalado de forma permanente en Marruecos.',
+    vehicle_too_old: 'Un vehículo de más de {ageE} años en principio no puede despacharse.',
+    residence_borderline: 'El texto exige «más de {minRes} años»: con exactamente {minRes} años decide la aduana.',
+    vehicle_age_borderline: 'Vehículo justo en el límite de {ageE} años: decide la aduana.',
+    vehicle_age_missing: 'No has indicado la antigüedad del vehículo: no se han comprobado los límites ({ageG} años como regla general, hasta {ageE} años para un marroquí jubilado en el extranjero o en retorno definitivo).',
+    vehicle_age_5_10: 'Entre {ageG} y {ageE} años: solo es posible para un marroquí jubilado en el extranjero (más de {minRes} años de residencia fuera) o en retorno definitivo, con un sedán de 9 plazas como máximo. A confirmar con la aduana.',
+    luxury_stamp: 'A partir de {lux} MAD puede añadirse un impuesto de timbre sobre coches de alto valor: aquí no se calcula.',
+    cap_exceeded: 'En este cálculo, la parte del valor por encima de {cap} MAD se toma sin abatimiento (régimen general): la aduana confirma la base exacta.',
+  },
+  secT: 'Qué muestra este resultado', offT: 'Reglas oficiales', estT: 'Estimaciones', notT: 'Costes no incluidos',
+  off: [
+    'IVA a la importación: tipo normal del 20 %.',
+    'Abatimiento del 90 %: 60 años o más, más de 10 años de residencia efectiva en el extranjero, una sola vez en la vida, valor a nuevo limitado a 300.000 MAD, turismo de 9 plazas como máximo (circular ADII n.º 5945/311 del 4 de junio de 2019, condiciones recogidas en las medidas Marhaba 2026).',
+  ],
+  est: [
+    'El valor introducido: solo la aduana fija el valor a nuevo de tu modelo y la base imponible.',
+    'Derecho de importación: tipos orientativos (17,5 % para gasolina o diésel, 2,5 % para híbrido o eléctrico) tomados de la prensa y de fuentes profesionales, no localizados en la web de la ADII. El tipo real depende de la partida arancelaria y del origen.',
+    'Tasa parafiscal del 0,25 %, aplicada a la base imponible: texto legal no verificado aquí.',
+    'Base del IVA (base + derecho de importación + tasa parafiscal) y redondeo de cada línea al dírham.',
+  ],
+  not: [
+    'Honorarios del transitario o agente de aduanas, transporte, seguro del transporte.',
+    'Impuesto de timbre sobre coches de alto valor y otros abatimientos (por ejemplo el «envejecimiento de 3 años»), que debes introducir tal como los comunique la aduana.',
+    'Sanción si se supera el plazo de admisión temporal (de 1.000 a 10.000 MAD según la circular ADII de 2019).',
+    'Certificado de identificación, inspección técnica y contrainspección, permiso de circulación.',
+    'Impuesto anual del vehículo (viñeta) y seguro marroquí.',
+  ],
+  note: `Resultado estimado — confirmación por la ADII. Parámetros comprobados el ${CUSTOMS_LAST_CHECKED}. Este sitio no fija ni el valor en aduana ni los tipos: solo la ADII es la referencia.`,
+};
+const de = {
+  value: 'Vom Zoll festgesetzter Wert (MAD)',
+  valueHelp: '90-%-Regelung: der Neuwert, den der Zoll für dein Modell festlegt. Sonst: die steuerpflichtige Bemessungsgrundlage, die dir der Zoll genannt hat. Der angezeigte Betrag ist ein Beispiel, das du ersetzen musst: nur der Zoll bestimmt ihn.',
+  regime: 'Regelung', rStd: 'Abgaben mit eventuell unten eingetragenem Abschlag', r90: '90-%-Abschlag (Auslandsmarokkaner ab 60 Jahren)',
+  other: 'Vom Zoll genannter Abschlag (%)', otherHelp: 'Lass 0 stehen, wenn du keinen kennst: das Tool wendet keine Alterstabelle an.',
+  vtype: 'Antrieb (Richtsatz des Einfuhrzolls)', vThermal: 'Benzin- oder Diesel-Pkw', vEv: 'Hybrid oder Elektro', vCustom: 'Anderer Satz (eingeben)',
+  di: 'Einfuhrzoll (%)', tpi: 'Parafiskalische Einfuhrabgabe (%)', vat: 'Einfuhrumsatzsteuer (%)',
+  vage: 'Fahrzeugalter (Jahre seit Erstzulassung)',
+  r90title: 'Voraussetzungen für den 90-%-Abschlag', bage: 'Dein Alter (Jahre)', resy: 'Jahre tatsächlichen Wohnsitzes im Ausland',
+  car: 'Pkw mit höchstens 9 Plätzen einschließlich Fahrer (kein Transporter, Pick-up, Wohnmobil, Motorrad oder Quad)',
+  used: 'Ich habe diesen Abschlag bereits genutzt', settled: 'Ich lebe bereits dauerhaft in Marokko',
+  total: 'Geschätzte Abgaben', ofValue: 'des eingegebenen Werts', detail: 'Berechnung im Detail', lTotal: 'Gesamt an den Zoll (geschätzt)',
+  lValue: 'Angesetzter Wert', lAbat: 'Abschlag', lBase: 'Bemessungsgrundlage', lDi: 'Einfuhrzoll', lTpi: 'Parafiskalische Einfuhrabgabe', lVat: 'Einfuhrumsatzsteuer',
+  of: 'von', tagLegal: 'gesetzlicher Satz', tagInd: 'Richtsatz', tagCond: 'bei erfüllten Voraussetzungen',
+  wait: 'Felder ausfüllen, um die Aufschlüsselung zu sehen.', inelig: '90-%-Abschlag nicht anwendbar: Voraussetzungen nicht erfüllt', fallback: 'Die Aufschlüsselung unten ist ohne diesen Abschlag berechnet.',
+  notCleared: 'Es wird kein Betrag berechnet: Ein Fahrzeug über {ageE} Jahre kann grundsätzlich nicht verzollt werden.', warnT: 'Beim Zoll bestätigen lassen',
+  m: {
+    value_required: 'Gib den vom Zoll festgesetzten Wert ein.', value_positive: 'Der Wert muss größer als 0 sein.', rate_required: 'Gib einen Satz zwischen 0 und 100 ein.', rate_range: 'Der Satz muss zwischen 0 und 100 liegen.', age_invalid: 'Gib eine Zahl ab null ein.',
+    age_below: 'Du musst mindestens {minAge} Jahre alt sein.', residence_below: 'Du musst mehr als {minRes} Jahre tatsächlichen Wohnsitz im Ausland nachweisen.',
+    vehicle_kind: 'Das Fahrzeug muss ein Pkw mit höchstens 9 Plätzen sein: Transporter, Pick-ups, Wohnmobile, Motorräder und Quads sind ausgeschlossen.',
+    already_used: 'Der Abschlag wird nur einmal im Leben gewährt.', settled: 'Laut ADII-Rundschreiben wird der Abschlag nicht gewährt, wenn man bereits dauerhaft in Marokko lebt.',
+    vehicle_too_old: 'Ein Fahrzeug über {ageE} Jahre kann grundsätzlich nicht verzollt werden.',
+    residence_borderline: 'Der Text verlangt „mehr als {minRes} Jahre“: bei genau {minRes} Jahren entscheidet der Zoll.',
+    vehicle_age_borderline: 'Fahrzeug genau an der Grenze von {ageE} Jahren: der Zoll entscheidet.',
+    vehicle_age_missing: 'Fahrzeugalter nicht angegeben: Die Altersgrenzen ({ageG} Jahre als Regel, bis {ageE} Jahre für einen Auslandsmarokkaner im Ruhestand oder bei endgültiger Rückkehr) wurden nicht geprüft.',
+    vehicle_age_5_10: 'Zwischen {ageG} und {ageE} Jahren: nur für einen Auslandsmarokkaner im Ruhestand (mehr als {minRes} Jahre Wohnsitz im Ausland) oder bei endgültiger Rückkehr möglich, für eine Limousine mit höchstens 9 Plätzen. Beim Zoll bestätigen lassen.',
+    luxury_stamp: 'Ab {lux} MAD kann eine Stempelsteuer auf hochwertige Pkw hinzukommen: sie wird hier nicht berechnet.',
+    cap_exceeded: 'In dieser Berechnung wird der Teil des Werts über {cap} MAD ohne Abschlag angesetzt (allgemeines Recht): der Zoll bestätigt die genaue Grundlage.',
+  },
+  secT: 'Was dieses Ergebnis zeigt', offT: 'Offizielle Regeln', estT: 'Schätzungen', notT: 'Nicht enthaltene Kosten',
+  off: [
+    'Einfuhrumsatzsteuer: Normalsatz von 20 %.',
+    '90-%-Abschlag: ab 60 Jahren, mehr als 10 Jahre tatsächlicher Wohnsitz im Ausland, einmal im Leben, Neuwert auf 300.000 MAD begrenzt, Pkw mit höchstens 9 Plätzen (ADII-Rundschreiben Nr. 5945/311 vom 4. Juni 2019, Bedingungen in den Marhaba-Maßnahmen 2026 wieder aufgeführt).',
+  ],
+  est: [
+    'Der eingegebene Wert: nur der Zoll legt den Neuwert deines Modells und die Bemessungsgrundlage fest.',
+    'Einfuhrzoll: Richtsätze (17,5 % für Benzin/Diesel, 2,5 % für Hybrid/Elektro) aus Presse und Fachquellen, auf der ADII-Website nicht gefunden. Der tatsächliche Satz hängt von Zolltarifposition und Herkunft ab.',
+    'Parafiskalische Abgabe von 0,25 % auf die Bemessungsgrundlage: Rechtstext hier nicht geprüft.',
+    'Bemessung der Umsatzsteuer (Grundlage + Einfuhrzoll + parafiskalische Abgabe) und Rundung jeder Zeile auf den Dirham.',
+  ],
+  not: [
+    'Gebühren für Zollagent oder Spediteur, Transport, Transportversicherung.',
+    'Stempelsteuer auf hochwertige Pkw und andere Abschläge (z. B. die „3-Jahres-Alterung“): so eingeben, wie der Zoll sie nennt.',
+    'Strafe bei Überschreitung der vorübergehenden Einfuhr (1.000 bis 10.000 MAD laut ADII-Rundschreiben von 2019).',
+    'Identifikationsbescheinigung, technische Prüfung und Nachprüfung, Zulassungsbescheinigung.',
+    'Jährliche Fahrzeugsteuer (Vignette) und marokkanische Versicherung.',
+  ],
+  note: `Unverbindliche Schätzung — Bestätigung durch die ADII. Parameter geprüft am ${CUSTOMS_LAST_CHECKED}. Diese Website legt weder den Zollwert noch die Sätze fest: maßgeblich ist allein die ADII.`,
+};
+const ar = {
+  value: 'القيمة التي تعتمدها الجمارك (درهم)',
+  valueHelp: 'نظام 90%: القيمة وهي جديدة التي تحددها الجمارك لطراز سيارتك. وإلا: الوعاء الخاضع للضريبة الذي أبلغتك به الجمارك. الرقم المعروض مثال عليك استبداله: الجمارك وحدها تحدده.',
+  regime: 'النظام', rStd: 'الرسوم والضرائب، مع التخفيض الذي تدخله أدناه إن وُجد', r90: 'تخفيض 90% (مغاربة العالم بعمر 60 سنة فأكثر)',
+  other: 'التخفيض الذي أبلغتك به الجمارك (%)', otherHelp: 'اترك 0 إن كنت لا تعرف أي تخفيض: الأداة لا تطبق أي سلّم حسب العمر.',
+  vtype: 'نوع المحرك (نسبة إرشادية لرسم الاستيراد)', vThermal: 'سيارة بنزين أو ديزل', vEv: 'هجينة أو كهربائية', vCustom: 'نسبة أخرى (أدخلها)',
+  di: 'رسم الاستيراد (%)', tpi: 'الضريبة شبه الجبائية على الاستيراد (%)', vat: 'الضريبة على القيمة المضافة عند الاستيراد (%)',
+  vage: 'عمر السيارة (بالسنوات منذ أول تسجيل)',
+  r90title: 'شروط تخفيض 90%', bage: 'عمرك (بالسنوات)', resy: 'سنوات الإقامة الفعلية بالخارج',
+  car: 'سيارة سياحية بـ 9 مقاعد على الأكثر بما فيها السائق (دون سيارات نفعية أو بيك أب أو منزل متنقل أو دراجة نارية أو رباعية العجلات)',
+  used: 'سبق أن استفدت من هذا التخفيض', settled: 'أنا مستقر بشكل دائم في المغرب',
+  total: 'الرسوم والضرائب التقديرية', ofValue: 'من القيمة المدخلة', detail: 'تفصيل الحساب', lTotal: 'المجموع المستحق للجمارك (تقديري)',
+  lValue: 'القيمة المعتمدة', lAbat: 'التخفيض', lBase: 'الوعاء الخاضع للضريبة', lDi: 'رسم الاستيراد', lTpi: 'الضريبة شبه الجبائية على الاستيراد', lVat: 'الضريبة على القيمة المضافة عند الاستيراد',
+  of: 'من', tagLegal: 'نسبة قانونية', tagInd: 'نسبة إرشادية', tagCond: 'إن استوفيت الشروط',
+  wait: 'املأ الحقول لتظهر لك التفاصيل.', inelig: 'تخفيض 90% غير قابل للتطبيق: الشروط غير مستوفاة', fallback: 'التفصيل أدناه محسوب دون هذا التخفيض.',
+  notCleared: 'لا يُحتسب أي مبلغ: السيارة التي يزيد عمرها على {ageE} سنوات لا يمكن في الأصل تخليصها جمركياً.', warnT: 'للتأكد لدى الجمارك',
+  m: {
+    value_required: 'أدخل القيمة التي تعتمدها الجمارك.', value_positive: 'يجب أن تكون القيمة أكبر من 0.', rate_required: 'أدخل نسبة بين 0 و00.', rate_range: 'يجب أن تكون النسبة بين 0 و00.', age_invalid: 'أدخل رقماً موجباً أو صفراً.',
+    age_below: 'يجب أن يبلغ عمرك {minAge} سنة فأكثر.', residence_below: 'يجب إثبات إقامة فعلية بالخارج تفوق {minRes} سنوات.',
+    vehicle_kind: 'يجب أن تكون المركبة سيارة سياحية بـ 9 مقاعد على الأكثر: تُستثنى السيارات النفعية والبيك أب والمنازل المتنقلة والدراجات النارية والرباعية العجلات.',
+    already_used: 'لا يُمنح التخفيض إلا مرة واحدة في العمر.', settled: 'حسب دورية إدارة الجمارك، لا يُمنح التخفيض لمن استقر بشكل دائم في المغرب.',
+    vehicle_too_old: 'السيارة التي يزيد عمرها على {ageE} سنوات لا يمكن في الأصل تخليصها جمركياً.',
+    residence_borderline: 'النص يشترط «أكثر من {minRes} سنوات»: مع {minRes} سنوات بالضبط تبتّ الجمارك في الأمر.',
+    vehicle_age_borderline: 'السيارة عند حد {ageE} سنوات بالضبط: تبتّ الجمارك في الأمر.',
+    vehicle_age_missing: 'لم تُدخل عمر السيارة: لم تُراقَب حدود العمر ({ageG} سنوات كقاعدة عامة، وحتى {ageE} سنوات للمغربي المتقاعد بالخارج أو في حالة العودة النهائية).',
+    vehicle_age_5_10: 'بين {ageG} و{ageE} سنوات: ممكن فقط للمغربي المتقاعد بالخارج (إقامة تفوق {minRes} سنوات) أو في حالة العودة النهائية، لسيارة سيدان بـ 9 مقاعد على الأكثر. للتأكد لدى الجمارك.',
+    luxury_stamp: 'ابتداءً من {lux} درهم قد يُضاف رسم الطابع على السيارات مرتفعة القيمة: لا يُحتسب هنا.',
+    cap_exceeded: 'في هذا الحساب، يُحتسب الجزء من القيمة الذي يفوق {cap} درهم دون تخفيض (القانون العام): تؤكد الجمارك الوعاء الدقيق.',
+  },
+  secT: 'ماذا تعني هذه النتيجة', offT: 'قواعد رسمية', estT: 'تقديرات', notT: 'تكاليف غير مشمولة',
+  off: [
+    'الضريبة على القيمة المضافة عند الاستيراد: السعر العادي 20%.',
+    'تخفيض 90%: 60 سنة فأكثر، إقامة فعلية بالخارج تفوق 10 سنوات، مرة واحدة في العمر، القيمة وهي جديدة محددة في 300000 درهم، سيارة سياحية بـ 9 مقاعد على الأكثر (دورية إدارة الجمارك رقم 5945/311 بتاريخ 4 يونيو 2019، والشروط نفسها وردت في تدابير مرحبا 2026).',
+  ],
+  est: [
+    'القيمة المدخلة: الجمارك وحدها تحدد قيمة طرازك وهو جديد والوعاء الخاضع للضريبة.',
+    'رسم الاستيراد: نسب إرشادية (17.5% للبنزين أو الديزل و2.5% للهجينة أو الكهربائية) وردت في الصحافة ومصادر مهنية، ولم نجدها في موقع إدارة الجمارك. النسبة الفعلية تتوقف على البند الجمركي والمصدر.',
+    'ضريبة شبه جبائية بنسبة 0.25% على الوعاء الخاضع للضريبة: النص القانوني لم نتحقق منه هنا.',
+    'وعاء الضريبة على القيمة المضافة (الوعاء + رسم الاستيراد + الضريبة شبه الجبائية) وتقريب كل سطر إلى الدرهم.',
+  ],
+  not: [
+    'أتعاب الوسيط الجمركي أو وكيل الشحن، النقل، تأمين النقل.',
+    'رسم الطابع على السيارات مرتفعة القيمة وتخفيضات أخرى (مثل «التقادم بثلاث سنوات»)، تُدخل كما تبلغك بها الجمارك.',
+    'غرامة تجاوز أجل القبول المؤقت (من 1000 إلى 10000 درهم حسب دورية الجمارك لسنة 2019).',
+    'شهادة التعريف، الفحص التقني وإعادة الفحص، البطاقة الرمادية.',
+    'الضريبة السنوية على السيارات (الملصق) والتأمين المغربي.',
+  ],
+  note: `نتيجة تقديرية — التأكيد لدى إدارة الجمارك. المعطيات روجعت بتاريخ ${CUSTOMS_LAST_CHECKED}. هذا الموقع لا يحدد قيمة الجمارك ولا النسب: المرجع الوحيد هو إدارة الجمارك.`,
+};
+const T = { fr, en, es, de, ar }[lang];
+const tx = (s: string) => (lang === 'fr' ? nb(s) : s);
+const txObj = (o: Record<string, string>) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, tx(v)]));
+const fmtPct = (n: number) => new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 2 }).format(n);
+const pctSuffix = lang === 'en' || lang === 'ar' ? '%' : ' %';
+const cfg = JSON.stringify({
+  p: V,
+  locale: LOCALE_META[lang].intl,
+  m: txObj(T.m),
+  l: txObj({ lTotal: T.lTotal, inelig: T.inelig, fallback: T.fallback, notCleared: T.notCleared, warnT: T.warnT, wait: T.wait, lValue: T.lValue, lAbat: T.lAbat, lBase: T.lBase, lDi: T.lDi, lTpi: T.lTpi, lVat: T.lVat, of: T.of, tagLegal: T.tagLegal, tagInd: T.tagInd, tagCond: T.tagCond }),
+});
+---
+<div data-customs data-cfg={cfg}>
+<CalcShell id="customs" note={tx(T.note)}>
+  <Fragment slot="form">
+    <label class="full">{tx(T.value)}<input name="value" type="number" inputmode="numeric" min="0" step="1000" value="100000" aria-describedby="customs-value-help" /><span id="customs-value-help" class="text-xs font-normal muted">{tx(T.valueHelp)}</span></label>
+    <label class="full">{tx(T.regime)}
+      <select name="regime"><option value="standard">{tx(T.rStd)}</option><option value="abatement90">{tx(T.r90)}</option></select>
+    </label>
+    <label class="full" data-show="standard">{tx(T.other)}<input name="other" type="number" inputmode="decimal" min="0" max="100" step="1" value="0" aria-describedby="customs-other-help" /><span id="customs-other-help" class="text-xs font-normal muted">{tx(T.otherHelp)}</span></label>
+    <label class="full">{tx(T.vtype)}
+      <select name="vtype"><option value="thermal">{T.vThermal} ({fmtPct(V.diThermalPct)} {lang === 'fr' ? ' %' : '%'})</option><option value="ev">{T.vEv} ({fmtPct(V.diEvHybridPct)} {lang === 'fr' ? ' %' : '%'})</option><option value="custom">{tx(T.vCustom)}</option></select>
+    </label>
+    <label>{tx(T.di)}<input name="di" type="number" inputmode="decimal" min="0" max="100" step="0.5" value={V.diThermalPct} /></label>
+    <label>{tx(T.tpi)}<input name="tpi" type="number" inputmode="decimal" min="0" max="100" step="0.05" value={V.tpiPct} /></label>
+    <label>{tx(T.vat)}<input name="vat" type="number" inputmode="decimal" min="0" max="100" step="1" value={V.vatPct} /></label>
+    <label>{tx(T.vage)}<input name="vage" type="number" inputmode="numeric" min="0" step="1" value="2" /></label>
+    <div class="full grid gap-4 rounded-2xl border border-[var(--line)] p-4 sm:grid-cols-2" data-show="abatement90" hidden>
+      <p class="full text-sm font-semibold">{tx(T.r90title)}</p>
+      <label>{tx(T.bage)}<input name="bage" type="number" inputmode="numeric" min="0" step="1" value="62" /></label>
+      <label>{tx(T.resy)}<input name="resy" type="number" inputmode="decimal" min="0" step="1" value="15" /></label>
+      <label class="full flex !grid-cols-none items-start !flex-row gap-2"><input name="car" type="checkbox" class="!w-auto mt-0.5 size-4 shrink-0 accent-terracotta-500" checked /> <span>{tx(T.car)}</span></label>
+      <label class="full flex !grid-cols-none items-start !flex-row gap-2"><input name="used" type="checkbox" class="!w-auto mt-0.5 size-4 shrink-0 accent-terracotta-500" /> <span>{tx(T.used)}</span></label>
+      <label class="full flex !grid-cols-none items-start !flex-row gap-2"><input name="settled" type="checkbox" class="!w-auto mt-0.5 size-4 shrink-0 accent-terracotta-500" /> <span>{tx(T.settled)}</span></label>
+    </div>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{tx(T.total)}</p>
+    <p class="big"><span data-out="total">—</span> DH</p>
+    <p class="text-sm text-white/85"><span data-out="pct">—</span> {tx(T.ofValue)}</p>
+    <div data-out="msgs" class="mt-3 grid gap-2 text-sm" role="status"></div>
+    <dl data-out="lines"></dl>
+  </Fragment>
+</CalcShell>
+<section class="not-prose mt-6 grid gap-4 md:grid-cols-3" aria-labelledby="customs-sec">
+  <h2 id="customs-sec" class="sr-only">{tx(T.secT)}</h2>
+  <div class="card p-4"><h3 class="font-semibold">{tx(T.offT)}</h3><ul class="mt-2 grid gap-2 text-sm">{T.off.map((x) => <li>{tx(x)}</li>)}</ul></div>
+  <div class="card p-4"><h3 class="font-semibold">{tx(T.estT)}</h3><ul class="mt-2 grid gap-2 text-sm">{T.est.map((x) => <li>{tx(x)}</li>)}</ul></div>
+  <div class="card p-4"><h3 class="font-semibold">{tx(T.notT)}</h3><ul class="mt-2 grid gap-2 text-sm">{T.not.map((x) => <li>{tx(x)}</li>)}</ul></div>
+</section>
+</div>
+<script>
+  import { computeCustoms, parseNum, type CustomsParams } from '../../utils/customs.mjs';
+
+  type Cfg = { p: CustomsParams & { luxuryThreshold: number }; locale: string; m: Record<string, string>; l: Record<string, string> };
+  const FIELD: Record<string, string> = { value: 'value', diPct: 'di', tpiPct: 'tpi', vatPct: 'vat', otherAbatementPct: 'other', vehicleAge: 'vage', beneficiaryAge: 'bage', residenceYears: 'resy' };
+
+  document.querySelectorAll<HTMLElement>('[data-customs]').forEach((root) => {
+    const cfg = JSON.parse(root.dataset.cfg!) as Cfg;
+    const form = root.querySelector('form')!;
+    const fmt = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 0 });
+    const fmtR = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 2 });
+    const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement;
+    const sel = (n: string) => form.elements.namedItem(n) as HTMLSelectElement;
+    const num = (n: string) => parseNum(f(n).value);
+    const out = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+    const subst = (s: string) => s
+      .replace(/\{minAge\}/g, String(cfg.p.minAge)).replace(/\{minRes\}/g, String(cfg.p.minResidenceYears))
+      .replace(/\{ageG\}/g, String(cfg.p.ageGeneral)).replace(/\{ageE\}/g, String(cfg.p.ageExtended))
+      .replace(/\{cap\}/g, fmt.format(cfg.p.capMad)).replace(/\{lux\}/g, fmt.format(cfg.p.luxuryThreshold));
+
+    /** Message d'erreur propre à l'outil (même style que la validation générique de CalcShell). */
+    const setErr = (name: string, text: string) => {
+      const input = f(name);
+      const label = input.closest('label')!;
+      label.querySelector('.calc-err[data-own]')?.remove();
+      if (text) {
+        input.setAttribute('aria-invalid', 'true');
+        const span = document.createElement('span');
+        span.className = 'calc-err'; span.dataset.own = '1'; span.setAttribute('role', 'alert'); span.textContent = text;
+        label.appendChild(span);
+      } else if (!label.querySelector('.calc-err')) {
+        input.removeAttribute('aria-invalid');
+      }
+    };
+
+    const toggle = () => {
+      const r = sel('regime').value;
+      root.querySelectorAll<HTMLElement>('[data-show]').forEach((el) => { el.hidden = el.dataset.show !== r; });
+    };
+
+    const run = () => {
+      toggle();
+      const regime = sel('regime').value as 'standard' | 'abatement90';
+      const res = computeCustoms({
+        value: num('value'), regime, otherAbatementPct: num('other'),
+        diPct: num('di'), tpiPct: num('tpi'), vatPct: num('vat'), vehicleAge: num('vage'),
+        beneficiaryAge: num('bage'), residenceYears: num('resy'),
+        passengerCar: f('car').checked, alreadyUsed: f('used').checked, settled: f('settled').checked,
+      }, cfg.p);
+      Object.values(FIELD).forEach((n) => setErr(n, ''));
+      const msgs = out('msgs'); const lines = out('lines');
+      msgs.replaceChildren(); lines.replaceChildren();
+      if (!res.ok) {
+        res.errors.forEach((e) => { const n = FIELD[e.field]; if (n) setErr(n, subst(cfg.m[e.code] ?? '')); });
+        out('total').textContent = '—'; out('pct').textContent = '—';
+        const p = document.createElement('p'); p.textContent = cfg.l.wait; msgs.appendChild(p);
+        return;
+      }
+      const note = (text: string, strong = false) => { const p = document.createElement('p'); p.textContent = subst(text); if (strong) p.className = 'font-semibold'; return p; };
+      if (res.eligible90 === false) {
+        msgs.appendChild(note(cfg.l.inelig, true));
+        const ul = document.createElement('ul'); ul.className = 'grid gap-1 ps-4 list-disc';
+        res.blockers.forEach((b) => { const li = document.createElement('li'); li.textContent = subst(cfg.m[b] ?? b); ul.appendChild(li); });
+        msgs.appendChild(ul);
+        if (res.cleared) msgs.appendChild(note(cfg.l.fallback));
+      }
+      if (!res.cleared) {
+        msgs.appendChild(note(cfg.l.notCleared, true));
+        out('total').textContent = '—'; out('pct').textContent = '—';
+        return;
+      }
+      if (res.warnings.length) {
+        msgs.appendChild(note(cfg.l.warnT, true));
+        const ul = document.createElement('ul'); ul.className = 'grid gap-1 ps-4 list-disc';
+        res.warnings.forEach((w) => { const li = document.createElement('li'); li.textContent = subst(cfg.m[w] ?? w); ul.appendChild(li); });
+        msgs.appendChild(ul);
+      }
+      const tag = (id: string) => (id === 'vat' ? cfg.l.tagLegal : id === 'di' || id === 'tpi' ? cfg.l.tagInd : id === 'abatement' && res.applied === 'abatement90' ? cfg.l.tagCond : '');
+      const label: Record<string, string> = { value: cfg.l.lValue, abatement: cfg.l.lAbat, base: cfg.l.lBase, di: cfg.l.lDi, tpi: cfg.l.lTpi, vat: cfg.l.lVat };
+      res.lines.forEach((ln) => {
+        const row = document.createElement('div');
+        const dt = document.createElement('dt');
+        dt.append(label[ln.id]);
+        const small = document.createElement('span');
+        small.className = 'block text-xs text-white/70';
+        const parts: string[] = [];
+        if (ln.ratePct !== null) parts.push(`${fmtR.format(ln.ratePct)} % ${cfg.l.of} ${fmt.format(ln.base ?? 0)}`);
+        const tg = tag(ln.id); if (tg) parts.push(tg);
+        small.textContent = parts.join(' · ');
+        if (parts.length) dt.appendChild(small);
+        const dd = document.createElement('dd');
+        dd.textContent = `${ln.amount < 0 ? '− ' : ''}${fmt.format(Math.abs(ln.amount))} DH`;
+        row.append(dt, dd); lines.appendChild(row);
+      });
+      const tot = document.createElement('div'); tot.className = '!border-0 text-base';
+      const tdt = document.createElement('dt'); tdt.className = 'font-semibold'; tdt.textContent = cfg.l.lTotal;
+      const tdd = document.createElement('dd'); tdd.textContent = `${fmt.format(res.total)} DH`;
+      tot.append(tdt, tdd); lines.appendChild(tot);
+      out('total').textContent = fmt.format(res.total);
+      out('pct').textContent = fmtR.format(res.totalPctOfValue ?? 0) + ' %';
+    };
+
+    sel('vtype').addEventListener('change', () => {
+      const t = sel('vtype').value;
+      if (t === 'thermal') f('di').value = String(cfg.p.diThermalPct);
+      else if (t === 'ev') f('di').value = String(cfg.p.diEvHybridPct);
+    });
+    f('di').addEventListener('input', () => {
+      const d = num('di');
+      sel('vtype').value = d === cfg.p.diThermalPct ? 'thermal' : d === cfg.p.diEvHybridPct ? 'ev' : 'custom';
+    });
+    form.addEventListener('input', run);
+    form.addEventListener('change', run);
+    run();
+  });
+</script>
