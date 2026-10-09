@@ -729,6 +729,193 @@ export const CITY_PAGES: CityPage[] = [
       },
     },
   },
+  {
+    id: 'nador',
+    slug: { en: 'nador', fr: 'nador', es: 'nador', de: 'nador', ar: 'nador' },
+    accessKeys: ['ferry-guide', 'airports', 'motorway'],
+    stayKey: 'where-to-stay-nador',
+    tripKeys: [],
+    moreKeys: ['marhaba-guide', 'short-term-rental', 'where-to-stay-tetouan-mdiq', 'where-to-stay-al-hoceima'],
+    bookingQuery: 'Nador',
+    text: {
+      fr: {
+        intro: "Grande ville du nord-est du Rif, très liée à la diaspora : beaucoup de familles y passent l'été et le port de Beni Enzar est une porte d'entrée vers le Maroc depuis l'Espagne et la France. Le bon logement dépend surtout de votre manière d'arriver et de la durée du séjour.",
+        why: ["Le port de Beni Enzar, porte d'entrée depuis l'Espagne et la France", 'Un centre pratique : hôtels, commerces, services et taxis regroupés', 'La lagune de Marchica, un secteur en cours d\'aménagement'],
+        when: "Juillet-août est la période de forte affluence des MRE : réservez tôt. Les tarifs varient fortement entre l'été et le reste de l'année ; ils sont à vérifier à la réservation.",
+        access: "En ferry par le port de Nador (Beni Enzar), relié selon Ferryhopper à Almería, Motril, Sète et Barcelone ; les rotations changent, confirmez auprès de la compagnie. En avion par Nador-Al Aroui (NDR), à environ 24 km au sud de la ville, avec des liaisons saisonnières à confirmer. En train, une ligne ONCF relie Nador à Taourirt : vérifiez les horaires sur oncf.ma. Nador West Med n'est pas présenté comme un port de passagers.",
+        areas: [
+          { name: 'Centre de Nador', text: 'Le choix le plus simple pour quelques nuits ou des démarches ; plus animé et plus bruyant en été. La gare de Nador Ville s\'y trouve.' },
+          { name: 'Beni Enzar et le port', text: 'À environ 13 km au nord de Nador, selon Ferryhopper ; utile pour une nuit d\'étape avant ou après le ferry.' },
+          { name: 'Lagune de Marchica', text: 'Le grand plan d\'eau qui borde la ville ; l\'aménagement avance à son rythme, vérifiez ce qui est réellement ouvert avant de réserver.' },
+        ],
+        faq: [
+          { q: 'Où dormir si mon ferry part tôt ou arrive tard ?', a: 'À Beni Enzar, près du port, ou dans le centre de Nador : une nuit d\'étape évite de courir ou de rouler fatigué après la traversée.' },
+          { q: 'Peut-on réserver à Marchica sur la foi des visuels de projet ?', a: 'Non. Le calendrier annoncé du programme Marchica Med (2009-2025) est passé : vérifiez la localisation exacte, l\'accès et l\'avancement réel avant de réserver.' },
+          { q: 'Nador West Med est-il un port pour les voyageurs ?', a: 'Il est présenté comme un pôle portuaire, industriel et logistique dont l\'ouverture est prévue fin 2026, pas comme un port de passagers : ne planifiez pas votre voyage dessus.' },
+        ],
+      },
+      en: {
+        intro: "A major city of the north-east Rif, closely tied to the diaspora: many families spend the summer here, and the port at Beni Enzar is a gateway into Morocco from Spain and France. The right place to stay depends mostly on how you arrive and for how long.",
+        why: ['The Beni Enzar port, a gateway from Spain and France', 'A practical centre: hotels, shops, services and taxis close together', 'The Marchica lagoon, an area still being developed'],
+        when: 'July-August is peak season for Moroccans living abroad: book early. Rates vary strongly between summer and the rest of the year; check them at booking.',
+        access: 'By ferry via the port of Nador (Beni Enzar), linked according to Ferryhopper to Almería, Motril, Sète and Barcelona; rotations change, so confirm with the operator. By air via Nador-Al Aroui (NDR), about 24 km south of the city, with seasonal routes to be confirmed. By train, an ONCF line links Nador to Taourirt: check timetables on oncf.ma. Nador West Med is not presented as a passenger port.',
+        areas: [
+          { name: 'Nador centre', text: 'The simplest choice for a few nights or errands; livelier and noisier in summer. The Nador Ville railway station is here.' },
+          { name: 'Beni Enzar and the port', text: 'About 13 km north of Nador, according to Ferryhopper; handy for a stopover night before or after the ferry.' },
+          { name: 'Marchica lagoon', text: 'The large body of water beside the city; development is ongoing, so check what is actually open before you book.' },
+        ],
+        faq: [
+          { q: 'Where should I stay if my ferry leaves early or arrives late?', a: 'In Beni Enzar by the port, or in the centre of Nador: a stopover night avoids a rush or driving tired after the crossing.' },
+          { q: 'Can I book at Marchica based on project visuals?', a: 'No. The announced timeline of the Marchica Med programme (2009-2025) has passed: check the exact location, access and real progress before booking.' },
+          { q: 'Is Nador West Med a port for travellers?', a: 'It is described as a port, industrial and logistics hub due to open at the end of 2026, not as a passenger port: do not plan your trip around it.' },
+        ],
+      },
+      es: {
+        intro: 'Gran ciudad del nordeste del Rif, muy ligada a la diáspora: muchas familias pasan aquí el verano y el puerto de Beni Enzar es una puerta de entrada a Marruecos desde España y Francia. El alojamiento adecuado depende sobre todo de cómo llegues y de cuánto tiempo te quedes.',
+        why: ['El puerto de Beni Enzar, puerta de entrada desde España y Francia', 'Un centro práctico: hoteles, comercios, servicios y taxis cerca unos de otros', 'La laguna de Marchica, una zona todavía en desarrollo'],
+        when: 'Julio y agosto son la época de mayor afluencia de los marroquíes residentes en el extranjero: reserva con antelación. Las tarifas varían mucho entre el verano y el resto del año; compruébalas al reservar.',
+        access: 'En ferri por el puerto de Nador (Beni Enzar), conectado según Ferryhopper con Almería, Motril, Sète y Barcelona; las rotaciones cambian, confirma con la naviera. En avión por Nador-Al Aroui (NDR), a unos 24 km al sur de la ciudad, con vuelos de temporada por confirmar. En tren, una línea de ONCF une Nador con Taourirt: consulta los horarios en oncf.ma. Nador West Med no se presenta como puerto de pasajeros.',
+        areas: [
+          { name: 'Centro de Nador', text: 'La opción más sencilla para unas noches o para gestiones; más animado y ruidoso en verano. Aquí está la estación de Nador Ville.' },
+          { name: 'Beni Enzar y el puerto', text: 'A unos 13 km al norte de Nador, según Ferryhopper; útil para una noche de etapa antes o después del ferri.' },
+          { name: 'Laguna de Marchica', text: 'El gran espejo de agua junto a la ciudad; la urbanización sigue en marcha, así que comprueba qué está realmente abierto antes de reservar.' },
+        ],
+        faq: [
+          { q: '¿Dónde dormir si mi ferri sale temprano o llega tarde?', a: 'En Beni Enzar, junto al puerto, o en el centro de Nador: una noche de etapa evita las prisas o conducir cansado tras la travesía.' },
+          { q: '¿Se puede reservar en Marchica fiándose de las imágenes del proyecto?', a: 'No. El calendario anunciado del programa Marchica Med (2009-2025) ya pasó: comprueba la ubicación exacta, el acceso y el avance real antes de reservar.' },
+          { q: '¿Es Nador West Med un puerto para viajeros?', a: 'Se presenta como un polo portuario, industrial y logístico cuya apertura está prevista para finales de 2026, no como puerto de pasajeros: no planifiques tu viaje contando con él.' },
+        ],
+      },
+      de: {
+        intro: 'Große Stadt im Nordosten des Rif, eng mit der Diaspora verbunden: Viele Familien verbringen hier den Sommer, und der Hafen Beni Enzar ist ein Tor nach Marokko aus Spanien und Frankreich. Die passende Unterkunft hängt vor allem davon ab, wie Sie anreisen und wie lange Sie bleiben.',
+        why: ['Der Hafen Beni Enzar, Tor nach Marokko aus Spanien und Frankreich', 'Ein praktisches Zentrum: Hotels, Geschäfte, Dienste und Taxis dicht beieinander', 'Die Marchica-Lagune, ein Gebiet, das noch erschlossen wird'],
+        when: 'Juli und August sind die Hauptzeit der Auslandsmarokkaner: früh buchen. Die Preise schwanken zwischen Sommer und übrigem Jahr stark; bei der Buchung prüfen.',
+        access: 'Per Fähre über den Hafen Nador (Beni Enzar), laut Ferryhopper mit Almería, Motril, Sète und Barcelona verbunden; die Fahrpläne ändern sich, bitte bei der Reederei bestätigen. Per Flugzeug über Nador-Al Aroui (NDR), etwa 24 km südlich der Stadt, mit saisonalen Verbindungen (zu bestätigen). Per Bahn verbindet eine ONCF-Linie Nador mit Taourirt: Fahrpläne auf oncf.ma prüfen. Nador West Med wird nicht als Passagierhafen beschrieben.',
+        areas: [
+          { name: 'Zentrum von Nador', text: 'Die einfachste Wahl für ein paar Nächte oder Behördengänge; im Sommer lebhafter und lauter. Hier liegt der Bahnhof Nador Ville.' },
+          { name: 'Beni Enzar und der Hafen', text: 'Laut Ferryhopper etwa 13 km nördlich von Nador; praktisch für eine Zwischenübernachtung vor oder nach der Fähre.' },
+          { name: 'Marchica-Lagune', text: 'Das große Gewässer neben der Stadt; die Erschließung läuft noch, prüfen Sie vor der Buchung, was tatsächlich geöffnet ist.' },
+        ],
+        faq: [
+          { q: 'Wo übernachten, wenn meine Fähre früh abfährt oder spät ankommt?', a: 'In Beni Enzar am Hafen oder im Zentrum von Nador: Eine Zwischenübernachtung erspart Hektik und müde Fahrten nach der Überfahrt.' },
+          { q: 'Kann man in Marchica nach Projektbildern buchen?', a: 'Nein. Der angekündigte Zeitplan des Programms Marchica Med (2009–2025) ist verstrichen: Genauen Standort, Zugang und tatsächlichen Stand vor der Buchung prüfen.' },
+          { q: 'Ist Nador West Med ein Hafen für Reisende?', a: 'Er wird als Hafen-, Industrie- und Logistikzentrum mit geplanter Eröffnung Ende 2026 beschrieben, nicht als Passagierhafen: Die Reise nicht darauf planen.' },
+        ],
+      },
+      ar: {
+        intro: 'الناظور مدينة كبرى في شمال شرق الريف، وترتبط ارتباطاً وثيقاً بالجالية: تقضي فيها عائلات كثيرة الصيف، وميناء بني انصار بوابة إلى المغرب قادمين من إسبانيا وفرنسا. اختيار الإقامة المناسبة يتوقف أساساً على طريقة وصولك ومدة بقائك.',
+        why: ['ميناء بني انصار، بوابة قادمة من إسبانيا وفرنسا', 'وسط مدينة عملي: فنادق ومتاجر وخدمات وسيارات أجرة متقاربة', 'بحيرة مارتشيكا، منطقة ما زالت قيد التهيئة'],
+        when: 'يوليوز وغشت هما ذروة توافد مغاربة العالم: احجز مبكراً. تتفاوت الأسعار كثيراً بين الصيف وباقي السنة؛ تحقق منها عند الحجز.',
+        access: 'بالعبّارة عبر ميناء الناظور (بني انصار)، المرتبط حسب Ferryhopper بألميريا وموتريل وسيت وبرشلونة؛ الرحلات تتغير فتأكد من الشركة. بالطائرة عبر مطار الناظور العروي (NDR) على بعد نحو 24 كلم جنوب المدينة، بخطوط موسمية يجب التأكد منها. بالقطار يربط خط للمكتب الوطني للسكك الحديدية الناظور بتاوريرت: تحقق من المواعيد على oncf.ma. لا يُقدَّم ميناء الناظور غرب المتوسط كميناء للمسافرين.',
+        areas: [
+          { name: 'وسط الناظور', text: 'الخيار الأبسط لبضع ليال أو لقضاء الأغراض الإدارية؛ أكثر حركة وضجيجاً في الصيف. وفيه محطة القطار الناظور المدينة.' },
+          { name: 'بني انصار والميناء', text: 'على بعد نحو 13 كلم شمال الناظور حسب Ferryhopper؛ مفيدة لليلة توقف قبل العبّارة أو بعدها.' },
+          { name: 'بحيرة مارتشيكا', text: 'المسطح المائي الكبير المجاور للمدينة؛ التهيئة متواصلة، فتحقق مما هو مفتوح فعلاً قبل الحجز.' },
+        ],
+        faq: [
+          { q: 'أين أبيت إذا كانت عبّارتي تغادر مبكراً أو تصل متأخرة؟', a: 'في بني انصار قرب الميناء أو في وسط الناظور: ليلة توقف تجنبك الاستعجال أو القيادة وأنت متعب بعد العبور.' },
+          { q: 'هل يمكن الحجز في مارتشيكا اعتماداً على صور المشروع؟', a: 'لا. الجدول الزمني المعلن لبرنامج مارتشيكا ميد (2009-2025) انقضى: تحقق من الموقع الدقيق والوصول والتقدم الفعلي قبل الحجز.' },
+          { q: 'هل ميناء الناظور غرب المتوسط للمسافرين؟', a: 'يُقدَّم كقطب مينائي وصناعي ولوجستي يُنتظر افتتاحه نهاية 2026، لا كميناء للمسافرين: لا تبنِ رحلتك عليه.' },
+        ],
+      },
+    },
+  },
+  {
+    id: 'tetouan',
+    slug: { en: 'tetouan', fr: 'tetouan', es: 'tetuan', de: 'tetouan', ar: 'tetwan' },
+    accessKeys: ['motorway', 'ferry-guide', 'airports', 'ctm-supratours'],
+    stayKey: 'where-to-stay-tetouan-mdiq',
+    tripKeys: ['chefchaouen-trip'],
+    moreKeys: ['marhaba-guide', 'riad-or-hotel', 'short-term-rental', 'where-to-stay-nador'],
+    bookingQuery: 'Tetouan',
+    text: {
+      fr: {
+        intro: "Tétouan et la côte de M'diq se complètent : la première pour la culture et l'histoire, avec une médina inscrite à l'UNESCO, la seconde pour la mer. Pour un séjour d'été ou un passage depuis Tanger Med, la vraie question est « ville ou plage ? ».",
+        why: ["La médina de Tétouan, inscrite au patrimoine mondial de l'UNESCO", "L'Ensanche espagnol, pratique pour les restaurants et les taxis", 'Martil, Cabo Negro et M\'diq pour la plage en famille'],
+        when: "En juillet-août, la côte est très fréquentée : circulation, stationnement et prix augmentent. Réservez à l'avance et vérifiez les tarifs à la réservation.",
+        access: "Depuis Tanger Med, Tétouan est à environ 46 km selon Wikipédia : voir le guide de l'autoroute. L'aéroport de Tétouan (TTU, Sania R'mel) a une desserte limitée : vérifiez les lignes en cours, les grands aéroports voisins étant souvent utilisés à la place. Des liaisons en autocar existent (CTM, Supratours) ; vérifiez horaires et lignes auprès des opérateurs.",
+        areas: [
+          { name: 'Médina de Tétouan', text: 'Idéale pour l\'histoire ; accès à pied, demandez les indications de votre hôte.' },
+          { name: 'Ensanche', text: 'La ville espagnole à l\'ouest de la médina, avec des immeubles d\'environ cinq étages et des commerces au rez-de-chaussée.' },
+          { name: 'Martil et Cabo Negro', text: 'Martil, balnéaire de proximité au nord-est de Tétouan ; Cabo Negro, au nord, connu pour son golf.' },
+          { name: 'M\'diq', text: 'Entre Tétouan et Fnideq, avec un port de plaisance et de pêche ; attire aussi des visiteurs de Ceuta le week-end.' },
+        ],
+        faq: [
+          { q: 'Tétouan ou la côte : où loger ?', a: 'Médina ou Ensanche pour la culture et une courte visite ; Martil, Cabo Negro ou M\'diq pour la plage en famille, avec un appartement meublé pour 1 à 3 semaines.' },
+          { q: 'Peut-on rejoindre Tétouan en avion ?', a: 'Tétouan a un aéroport (TTU) à desserte limitée ; vérifiez les lignes en cours auprès des compagnies avant de réserver.' },
+          { q: 'Que prévoir en voiture en été ?', a: 'Circulation, stationnement et prix augmentent sur la côte : choisissez un logement avec stationnement.' },
+        ],
+      },
+      en: {
+        intro: "Tetouan and the M'diq coast complement each other: the first for culture and history, with a UNESCO-listed medina, the second for the sea. For a summer stay or a transit from Tanger Med, the real question is \"city or beach?\".",
+        why: ["Tetouan's medina, a UNESCO World Heritage site", 'The Spanish Ensanche, practical for restaurants and taxis', "Martil, Cabo Negro and M'diq for a family beach stay"],
+        when: 'In July-August the coast is very busy: traffic, parking pressure and prices rise. Book ahead and check rates at booking.',
+        access: "From Tanger Med, Tetouan is about 46 km away according to Wikipedia: see the motorway guide. Tetouan airport (TTU, Sania R'mel) has limited service: check current routes, as larger nearby airports are often used instead. Coach services exist (CTM, Supratours); check timetables and lines with the operators.",
+        areas: [
+          { name: 'Tetouan medina', text: 'Ideal for history; access is on foot, so ask your host for directions.' },
+          { name: 'Ensanche', text: 'The Spanish-era town west of the medina, with buildings of about five storeys and shops at street level.' },
+          { name: 'Martil and Cabo Negro', text: 'Martil, a nearby seaside area north-east of Tetouan; Cabo Negro, to the north, known for its golf resort.' },
+          { name: "M'diq", text: 'Between Tetouan and Fnideq, with a marina and fishing harbour; also draws weekend visitors from Ceuta.' },
+        ],
+        faq: [
+          { q: 'Tetouan or the coast: where should I stay?', a: "Medina or Ensanche for culture and a short visit; Martil, Cabo Negro or M'diq for a family beach stay, with a furnished apartment for 1 to 3 weeks." },
+          { q: 'Can I fly to Tetouan?', a: 'Tetouan has an airport (TTU) with limited service; check current routes with the airlines before booking.' },
+          { q: 'What should I plan for by car in summer?', a: 'Traffic, parking pressure and prices rise on the coast: choose accommodation with parking.' },
+        ],
+      },
+      es: {
+        intro: 'Tetuán y la costa de M\'diq se complementan: la primera para la cultura y la historia, con una medina inscrita por la UNESCO, la segunda para el mar. Para una estancia de verano o un paso desde Tanger Med, la verdadera pregunta es «¿ciudad o playa?».',
+        why: ['La medina de Tetuán, Patrimonio Mundial de la UNESCO', 'El Ensanche español, práctico para restaurantes y taxis', 'Martil, Cabo Negro y M\'diq para la playa en familia'],
+        when: 'En julio y agosto la costa está muy concurrida: aumentan el tráfico, la presión de aparcamiento y los precios. Reserva con antelación y comprueba las tarifas al reservar.',
+        access: 'Desde Tanger Med, Tetuán está a unos 46 km según Wikipedia: consulta la guía de la autopista. El aeropuerto de Tetuán (TTU, Sania R\'mel) tiene un servicio limitado: comprueba las rutas actuales, ya que a menudo se usan los grandes aeropuertos vecinos. Hay servicios de autocar (CTM, Supratours); consulta horarios y líneas con los operadores.',
+        areas: [
+          { name: 'Medina de Tetuán', text: 'Ideal para la historia; el acceso es a pie, pide indicaciones a tu anfitrión.' },
+          { name: 'Ensanche', text: 'La ciudad de época española al oeste de la medina, con edificios de unas cinco plantas y comercios en la planta baja.' },
+          { name: 'Martil y Cabo Negro', text: 'Martil, zona de playa cercana al nordeste de Tetuán; Cabo Negro, al norte, conocido por su golf.' },
+          { name: 'M\'diq', text: 'Entre Tetuán y Fnideq, con puerto deportivo y pesquero; también atrae a visitantes de Ceuta los fines de semana.' },
+        ],
+        faq: [
+          { q: 'Tetuán o la costa: ¿dónde alojarse?', a: 'Medina o Ensanche para la cultura y una visita corta; Martil, Cabo Negro o M\'diq para la playa en familia, con un apartamento amueblado de 1 a 3 semanas.' },
+          { q: '¿Se puede llegar a Tetuán en avión?', a: 'Tetuán tiene un aeropuerto (TTU) con servicio limitado; comprueba las rutas actuales con las aerolíneas antes de reservar.' },
+          { q: '¿Qué prever en coche en verano?', a: 'En la costa aumentan el tráfico, la presión de aparcamiento y los precios: elige un alojamiento con aparcamiento.' },
+        ],
+      },
+      de: {
+        intro: 'Tétouan und die Küste von M\'diq ergänzen sich: die Stadt für Kultur und Geschichte mit einer UNESCO-Medina, die Küste für das Meer. Für einen Sommeraufenthalt oder eine Durchreise ab Tanger Med lautet die eigentliche Frage: „Stadt oder Strand?“.',
+        why: ['Die Medina von Tétouan, UNESCO-Welterbe', 'Das spanische Ensanche, praktisch für Restaurants und Taxis', 'Martil, Cabo Negro und M\'diq für den Familienurlaub am Strand'],
+        when: 'Im Juli und August ist die Küste sehr voll: Verkehr, Parkdruck und Preise steigen. Früh buchen und die Preise bei der Buchung prüfen.',
+        access: 'Ab Tanger Med liegt Tétouan laut Wikipedia etwa 46 km entfernt: siehe Autobahn-Ratgeber. Der Flughafen Tétouan (TTU, Sania R\'mel) wird nur eingeschränkt bedient: aktuelle Verbindungen prüfen, oft werden stattdessen größere Flughäfen in der Nähe genutzt. Es gibt Busverbindungen (CTM, Supratours); Fahrpläne und Linien bei den Betreibern prüfen.',
+        areas: [
+          { name: 'Medina von Tétouan', text: 'Ideal für Geschichte; Zugang nur zu Fuß, Wegbeschreibung beim Gastgeber erfragen.' },
+          { name: 'Ensanche', text: 'Die Stadt aus spanischer Zeit westlich der Medina, mit Gebäuden von etwa fünf Stockwerken und Läden im Erdgeschoss.' },
+          { name: 'Martil und Cabo Negro', text: 'Martil, nahes Badeviertel nordöstlich von Tétouan; Cabo Negro im Norden, bekannt für sein Golfresort.' },
+          { name: 'M\'diq', text: 'Zwischen Tétouan und Fnideq, mit Jacht- und Fischereihafen; zieht am Wochenende auch Besucher aus Ceuta an.' },
+        ],
+        faq: [
+          { q: 'Tétouan oder Küste: wo übernachten?', a: 'Medina oder Ensanche für Kultur und einen Kurzbesuch; Martil, Cabo Negro oder M\'diq für den Familienurlaub am Strand, mit einer möblierten Wohnung für 1 bis 3 Wochen.' },
+          { q: 'Kann man nach Tétouan fliegen?', a: 'Tétouan hat einen Flughafen (TTU) mit eingeschränktem Angebot; aktuelle Verbindungen vor der Buchung bei den Airlines prüfen.' },
+          { q: 'Was ist im Sommer mit dem Auto zu beachten?', a: 'An der Küste steigen Verkehr, Parkdruck und Preise: eine Unterkunft mit Parkplatz wählen.' },
+        ],
+      },
+      ar: {
+        intro: 'تكمل تطوان وساحل المضيق إحداهما الأخرى: الأولى للثقافة والتاريخ بمدينتها العتيقة المصنفة لدى اليونسكو، والثانية للبحر. وسواء كانت إقامتك صيفية أو عبوراً من طنجة المتوسط، فالسؤال الحقيقي: «مدينة أم شاطئ؟».',
+        why: ['المدينة العتيقة لتطوان، مدرجة في التراث العالمي لليونسكو', 'الإنسانش الإسباني، عملي للمطاعم وسيارات الأجرة', 'مرتيل وكابو نيغرو والمضيق لقضاء العطلة الشاطئية مع العائلة'],
+        when: 'في يوليوز وغشت يكون الساحل مزدحماً جداً: يزداد السير وضغط مواقف السيارات والأسعار. احجز مسبقاً وتحقق من الأسعار عند الحجز.',
+        access: 'من طنجة المتوسط تبعد تطوان نحو 46 كلم حسب ويكيبيديا: راجع دليل الطريق السيار. مطار تطوان (TTU، سانية الرمل) محدود الخدمة: تحقق من الخطوط الحالية، إذ تُستعمل غالباً المطارات الكبرى المجاورة بدلاً منه. توجد خطوط حافلات (CTM وسوبراتور)؛ تحقق من المواعيد والخطوط لدى المشغلين.',
+        areas: [
+          { name: 'المدينة العتيقة لتطوان', text: 'مثالية لمحبي التاريخ؛ الوصول إليها مشياً، فاطلب الوصف من مضيفك.' },
+          { name: 'الإنسانش', text: 'المدينة ذات الطابع الإسباني غرب المدينة العتيقة، بعمارات من نحو خمسة طوابق ومتاجر في الطابق الأرضي.' },
+          { name: 'مرتيل وكابو نيغرو', text: 'مرتيل منطقة شاطئية قريبة شمال شرق تطوان؛ وكابو نيغرو شمالها، معروفة بمنتجعها للغولف.' },
+          { name: 'المضيق', text: 'بين تطوان والفنيدق، بها ميناء للترفيه والصيد، وتستقطب أيضاً زوار نهاية الأسبوع من سبتة.' },
+        ],
+        faq: [
+          { q: 'تطوان أم الساحل: أين أقيم؟', a: 'المدينة العتيقة أو الإنسانش للثقافة وزيارة قصيرة؛ ومرتيل أو كابو نيغرو أو المضيق للشاطئ مع العائلة، بشقة مفروشة لمدة أسبوع إلى ثلاثة.' },
+          { q: 'هل يمكن الوصول إلى تطوان بالطائرة؟', a: 'لتطوان مطار (TTU) محدود الخدمة؛ تحقق من الخطوط الحالية لدى شركات الطيران قبل الحجز.' },
+          { q: 'ماذا أتوقع إذا جئت بالسيارة في الصيف؟', a: 'يزداد السير وضغط مواقف السيارات والأسعار على الساحل: اختر إقامة بها موقف.' },
+        ],
+      },
+    },
+  },
 ];
 
 export const cityById = (id: string) => CITY_PAGES.find((c) => c.id === id);
