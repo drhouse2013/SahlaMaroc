@@ -47,6 +47,8 @@ const GROUPS = [
   'rabat الرباط',
   'essaouira esauira الصويره',
   'chefchaouen chaouen شفشاون',
+  'nador beni enzar marchica الناظور',
+  'tetouan tetuan martil mdiq تطوان',
   'taghazout agadir تغازوت اكادير',
 ].map((g) => g.split(' ').map(strip));
 
