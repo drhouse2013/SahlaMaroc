@@ -4,16 +4,21 @@
  * Abstraction de fournisseur : si PUBLIC_NEWSLETTER_ENDPOINT est défini, envoi JSON (POST {email, lang})
  * vers ce service ; sinon, ouverture d'un e-mail pré-rempli vers l'adresse de contact (aucune donnée
  * n'est envoyée à un tiers à l'insu de l'utilisateur). États : envoi, succès, erreur, e-mail invalide.
+ * Cadeau d'inscription : la check-list PDF est toujours téléchargeable directement (aucun verrou) ; le lien
+ * « cadeau » apparaît en plus après un envoi réussi / un e-mail pré-rempli. Aucun e-mail de livraison automatique.
  */
 import Icon from './Icon.astro';
 import { useTranslations, type Locale } from '../i18n';
 import { getPageUrl } from '../utils/i18n';
-import { CONTACT_EMAIL, NEWSLETTER_ENDPOINT } from '../config/site';
+import { CONTACT_EMAIL, NEWSLETTER_ENDPOINT, checklistPdfPath } from '../config/site';
+import { checklistPdfExists } from '../utils/pdf';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const privacy = await getPageUrl(lang, 'privacy');
+const pdfUrl = checklistPdfPath(lang);
+const hasPdf = checklistPdfExists(lang);
 const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'), mailto: t('newsletter.mailto'), error: t('newsletter.error'), invalid: t('newsletter.invalid'), subject: t('newsletter.title') };
 ---
 <section class="container-page section" aria-labelledby="nl-title">
@@ -24,6 +29,12 @@ const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'
         <span class="icon-tile bg-white/10 text-gold-300"><Icon name="mail" /></span>
         <h2 id="nl-title" class="mt-4 text-2xl font-semibold sm:text-3xl">{t('newsletter.title')}</h2>
         <p class="mt-3 text-white/80">{t('newsletter.text')}</p>
+        {hasPdf && <div class="mt-5 rounded-2xl border border-white/20 bg-white/5 p-4 text-sm">
+          <p class="font-semibold text-gold-300">{t('newsletter.pdfBadge')}</p>
+          <p class="mt-1 font-medium">{t('newsletter.pdfTitle')}</p>
+          <p class="mt-1 text-white/80">{t('newsletter.pdfText')}</p>
+          <p class="mt-2 text-white/80">{t('newsletter.pdfDirect')} <a href={pdfUrl} download class="font-semibold underline underline-offset-2 hover:text-white" data-track="checklist_pdf_download" data-track-label={`newsletter-direct:${lang}`}>{t('newsletter.pdfDownload')}</a></p>
+        </div>}
       </div>
       <form class="grid gap-3" data-newsletter data-endpoint={NEWSLETTER_ENDPOINT ?? ''} data-email={CONTACT_EMAIL} data-lang={lang} data-msgs={JSON.stringify(msgs)} novalidate>
         <label for="nl-email" class="text-sm font-medium text-white/90">{t('newsletter.email')}</label>
@@ -33,6 +44,8 @@ const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'
           <button type="submit" class="btn btn-primary shrink-0">{t('newsletter.cta')}</button>
         </div>
         <p id="nl-msg" class="min-h-5 text-sm font-medium text-gold-300" role="status" aria-live="polite"></p>
+        {hasPdf && <p class="hidden text-sm font-medium text-white" data-pdf-gift role="status">{t('newsletter.pdfThanks')} <a href={pdfUrl} download class="font-semibold text-gold-300 underline underline-offset-2" data-track="checklist_pdf_download" data-track-label={`newsletter-gift:${lang}`}>{t('newsletter.pdfDownload')}</a></p>}
+        {hasPdf && <p class="text-xs text-white/70">{t('newsletter.pdfNoGate')}</p>}
         <p id="nl-privacy" class="text-xs text-white/70">{t('newsletter.privacy')} {privacy && <a href={privacy} class="underline underline-offset-2 hover:text-white">{t('newsletter.privacyLink')}</a>}</p>
       </form>
     </div>
@@ -45,6 +58,7 @@ const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'
     const input = form.querySelector<HTMLInputElement>('input[type="email"]')!;
     const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     const m = JSON.parse(form.dataset.msgs || '{}') as Record<string, string>;
+    const gift = form.querySelector<HTMLElement>('[data-pdf-gift]');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if ((form.elements.namedItem('company') as HTMLInputElement).value) return; // robot
@@ -59,6 +73,7 @@ const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'
         const body = `Email: ${email}\nLangue / language: ${form.dataset.lang}`;
         location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Newsletter — ' + m.subject)}&body=${encodeURIComponent(body)}`;
         msg.textContent = m.mailto;
+        gift?.classList.remove('hidden');
         track?.('newsletter_signup', { via: 'mailto' });
         return;
       }
@@ -67,6 +82,7 @@ const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'
         const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email, lang: form.dataset.lang }) });
         if (!res.ok) throw new Error(String(res.status));
         msg.textContent = m.success; form.reset();
+        gift?.classList.remove('hidden');
         track?.('newsletter_signup', { via: 'provider' });
       } catch { msg.textContent = m.error; }
       finally { btn.disabled = false; }

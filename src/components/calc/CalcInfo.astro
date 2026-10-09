@@ -18,7 +18,7 @@ const guide = tool ? await getArticleByKey(lang, tool.guideKey) : null;
 const sources = (tool?.sources ?? []).map((id) => SOURCES[id]).filter(Boolean);
 ---
 {tool && (
-  <section class="not-prose mt-10 grid gap-6" aria-labelledby="calc-how">
+  <section class="not-prose mt-10 grid grid-cols-1 gap-6" aria-labelledby="calc-how">
     <div class="card p-5 sm:p-7">
       <h2 id="calc-how" class="flex items-center gap-2 text-xl font-semibold"><Icon name="info" class="size-5 text-navy-600 dark:text-navy-300" />{t('calc.how')}</h2>
       <h3 class="mt-5 text-sm font-semibold uppercase tracking-wide muted">{t('calc.method')}</h3>

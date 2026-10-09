@@ -3,6 +3,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../PageHero.astro';
 import Icon from '../Icon.astro';
+import PdfDownload from '../PdfDownload.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { allChecklists } from '../../utils/content';
 import { allLocalesAlternates, allLocalesTargets, homePath, hubPath } from '../../utils/i18n';
@@ -19,6 +20,7 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('checklists.title'), description: t('checklists.description'), lang, items: list.map((c) => ({ name: c.title, url: absoluteUrl(`/${lang}/${c.article.data.slug}#checklist-${c.id}`, Astro.site) })) })]}>
   <PageHero lang={lang} crumbs={crumbs} title={t('checklists.title')} intro={t('checklists.intro')} icon="listChecks" meta={t('checklists.privacy')} />
   <div class="container-page pt-8">
+    <PdfDownload lang={lang} source="hub" />
     <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {list.map((c) => (
         <li class="group card card-hover relative flex flex-col gap-3 p-5">

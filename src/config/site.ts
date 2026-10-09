@@ -32,3 +32,6 @@ export const CONTACT_EMAIL = (import.meta.env.PUBLIC_CONTACT_EMAIL as string | u
  */
 export const FORM_ENDPOINT = import.meta.env.PUBLIC_FORM_ENDPOINT as string | undefined;
 export const NEWSLETTER_ENDPOINT = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT as string | undefined;
+
+/** Check-list imprimable « Retour d'été au Maroc » (PDF généré par `node tools/build-pdf.mjs`, commité dans public/downloads/). */
+export const checklistPdfPath = (lang: string) => `/downloads/sahla-checklist-retour-ete-${lang}.pdf`;

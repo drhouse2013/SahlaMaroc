@@ -36,6 +36,12 @@ const articles = defineCollection({
       updatedDate: z.coerce.date().optional(),
       /** Date de dernière vérification terrain (prix, procédures) — signal E-E-A-T affiché */
       checkedDate: z.coerce.date().optional(),
+      /**
+       * Date de dernière VÉRIFICATION FACTUELLE des chiffres et règles auprès de sources officielles
+       * (≠ pubDate, ≠ updatedDate qui peut être une simple retouche, ≠ checkedDate = terrain).
+       * Ne renseigner que si la vérification a réellement eu lieu ; jamais de date « du jour » par défaut.
+       */
+      verifiedDate: z.coerce.date().optional(),
       heroImage: image().optional(),
       /** Illustration maison utilisée si pas de photo (src/assets/illustrations/<scene>.svg) */
       illustration: z
