@@ -1,0 +1,28 @@
+---
+/**
+ * Carte de téléchargement directe de la check-list PDF (aucune inscription requise).
+ * Utilisable dans le MDX sans import (<PdfDownload lang="fr" />) et dans les pages hub.
+ * L'événement `checklist_pdf_download` passe par le traceur global (data-track, voir BaseLayout).
+ */
+import Icon from './Icon.astro';
+import { useTranslations, type Locale } from '../i18n';
+import { checklistPdfPath } from '../config/site';
+import { checklistPdfExists } from '../utils/pdf';
+interface Props { lang: Locale; source?: string }
+const { lang, source = 'card' } = Astro.props;
+const t = useTranslations(lang);
+const available = checklistPdfExists(lang);
+---
+{available && <aside class="not-prose my-8 flex flex-col gap-3 rounded-3xl border border-[var(--line)] bg-[var(--surface-2,transparent)] p-5 sm:flex-row sm:items-center sm:justify-between" aria-label={t('newsletter.pdfLabel')}>
+  <div class="flex items-start gap-3">
+    <span class="icon-tile shrink-0"><Icon name="listChecks" /></span>
+    <div>
+      <p class="font-semibold">{t('newsletter.pdfTitle')}</p>
+      <p class="mt-1 text-sm muted">{t('newsletter.pdfText')}</p>
+    </div>
+  </div>
+  <a href={checklistPdfPath(lang)} download class="btn btn-primary shrink-0" data-track="checklist_pdf_download" data-track-label={`${source}:${lang}`} hreflang={lang} type="application/pdf">
+    {t('newsletter.pdfDownload')}
+    <span class="sr-only"> ({t('newsletter.pdfMeta')})</span>
+  </a>
+</aside>}

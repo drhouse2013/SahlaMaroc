@@ -166,7 +166,7 @@
   .btn-sm { padding: .5rem .95rem; min-height: 2.25rem; font-size: .9rem; }
 
   /* Cartes */
-  .card :is(h1,h2,h3,h4,a,dt,dd) { overflow-wrap: anywhere; }
+  .card :is(h1,h2,h3,h4,a,dt,dd,p,li,span) { overflow-wrap: anywhere; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: var(--shadow-sm); }
   .card-hover { transition: transform .2s, box-shadow .2s, border-color .2s; }
   .card-hover:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
