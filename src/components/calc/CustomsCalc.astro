@@ -223,7 +223,7 @@ const ar = {
   wait: 'املأ الحقول لتظهر لك التفاصيل.', inelig: 'تخفيض 90% غير قابل للتطبيق: الشروط غير مستوفاة', fallback: 'التفصيل أدناه محسوب دون هذا التخفيض.',
   notCleared: 'لا يُحتسب أي مبلغ: السيارة التي يزيد عمرها على {ageE} سنوات لا يمكن في الأصل تخليصها جمركياً.', warnT: 'للتأكد لدى الجمارك',
   m: {
-    value_required: 'أدخل القيمة التي تعتمدها الجمارك.', value_positive: 'يجب أن تكون القيمة أكبر من 0.', rate_required: 'أدخل نسبة بين 0 و00.', rate_range: 'يجب أن تكون النسبة بين 0 و00.', age_invalid: 'أدخل رقماً موجباً أو صفراً.',
+    value_required: 'أدخل القيمة التي تعتمدها الجمارك.', value_positive: 'يجب أن تكون القيمة أكبر من 0.', rate_required: 'أدخل نسبة بين 0 و100.', rate_range: 'يجب أن تكون النسبة بين 0 و100.', age_invalid: 'أدخل رقماً موجباً أو صفراً.',
     age_below: 'يجب أن يبلغ عمرك {minAge} سنة فأكثر.', residence_below: 'يجب إثبات إقامة فعلية بالخارج تفوق {minRes} سنوات.',
     vehicle_kind: 'يجب أن تكون المركبة سيارة سياحية بـ 9 مقاعد على الأكثر: تُستثنى السيارات النفعية والبيك أب والمنازل المتنقلة والدراجات النارية والرباعية العجلات.',
     already_used: 'لا يُمنح التخفيض إلا مرة واحدة في العمر.', settled: 'حسب دورية إدارة الجمارك، لا يُمنح التخفيض لمن استقر بشكل دائم في المغرب.',
@@ -259,7 +259,7 @@ const T = { fr, en, es, de, ar }[lang];
 const tx = (s: string) => (lang === 'fr' ? nb(s) : s);
 const txObj = (o: Record<string, string>) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, tx(v)]));
 const fmtPct = (n: number) => new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 2 }).format(n);
-const pctSuffix = lang === 'en' || lang === 'ar' ? '%' : ' %';
+const pctSuffix = lang === 'en' || lang === 'ar' ? '%' : '\u00a0%';
 const cfg = JSON.stringify({
   p: V,
   locale: LOCALE_META[lang].intl,

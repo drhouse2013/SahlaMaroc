@@ -8,6 +8,7 @@ import type { IconName } from './icons';
 import { MRE_LAST_CHECKED } from '../config/mre';
 import { COSTS_LAST_UPDATED } from '../config/costs';
 import { EUR_TO_MAD_DATE } from '../config/site';
+import { CUSTOMS_LAST_CHECKED } from '../config/customs';
 
 type T = Record<Locale, string>;
 
@@ -107,6 +108,25 @@ export const TOOLS: Tool[] = [
     },
   },
   {
+    key: 'calc-retirement-budget', icon: 'home', audience: 'mre', guideKey: 'retire-in-morocco', checked: COSTS_LAST_UPDATED, sources: ['dgi', 'mremin'],
+    title: { en: 'Retirement budget in Morocco', fr: 'Budget de retraite au Maroc', es: 'Presupuesto de jubilación en Marruecos', de: 'Ruhestandsbudget Marokko', ar: 'ميزانية التقاعد في المغرب' },
+    text: { en: 'Estimate your monthly cost of living and compare it with the net pension you enter.', fr: 'Estimez votre coût de vie mensuel et comparez-le à la pension nette que vous saisissez.', es: 'Estima tu coste de vida mensual y compáralo con la pensión neta que introduces.', de: 'Schätzen Sie Ihre monatlichen Lebenshaltungskosten und vergleichen Sie sie mit der eingegebenen Netto-Rente.', ar: 'قدّر تكلفة معيشتك الشهرية وقارنها بالمعاش الصافي الذي تدخله.' },
+    method: {
+      fr: 'Addition de vos postes (logement, alimentation, transport, santé, énergie et télécoms, loisirs) plus une marge d’imprévus en pourcentage, convertie dans la devise et la périodicité choisies. La pension nette que vous saisissez est ensuite comparée à ce budget : solde et taux de couverture. Aucun impôt n’est calculé.',
+      en: 'Adds up your items (housing, food, transport, health, energy and telecoms, leisure) plus a contingency margin as a percentage, converted to the currency and period you choose. The net pension you enter is then compared with that budget: balance and coverage rate. No tax is calculated.',
+      es: 'Suma de tus partidas (vivienda, alimentación, transporte, salud, energía y telecomunicaciones, ocio) más un margen de imprevistos en porcentaje, convertida a la divisa y periodicidad elegidas. La pensión neta que introduces se compara con ese presupuesto: saldo y tasa de cobertura. No se calcula ningún impuesto.',
+      de: 'Summe Ihrer Posten (Wohnen, Ernährung, Verkehr, Gesundheit, Energie und Telekommunikation, Freizeit) plus eine prozentuale Reserve für Unvorhergesehenes, umgerechnet in die gewählte Währung und den gewählten Zeitraum. Die eingegebene Netto-Rente wird mit diesem Budget verglichen: Saldo und Deckungsgrad. Es werden keine Steuern berechnet.',
+      ar: 'جمع بنودك (السكن، التغذية، النقل، الصحة، الطاقة والاتصالات، الترفيه) مع هامش للطوارئ بنسبة مئوية، محولاً إلى العملة والدورية التي تختارها. ثم يُقارن المعاش الصافي الذي تدخله بهذه الميزانية: الرصيد ونسبة التغطية. لا تُحسب أي ضريبة.',
+    },
+    assumptions: {
+      fr: ['Valeurs de départ tirées d’estimations de coûts datées, à remplacer par vos chiffres ; santé, énergie/eau/internet/téléphone et imprévus : exemples modifiables', 'Pension saisie par vous, nette et stable : aucun impôt ni avantage fiscal n’est calculé', 'Taux indicatif 1 € ≈ 11 DH ; un mois = 30 jours'],
+      en: ['Starting values come from dated cost estimates: replace them with your own figures; health, energy/water/internet/phone and contingency are editable examples', 'Pension entered by you, net and stable: no tax or tax advantage is calculated', 'Indicative rate €1 ≈ 11 MAD; one month = 30 days'],
+      es: ['Los valores iniciales proceden de estimaciones de costes fechadas: sustitúyelos por tus cifras; salud, energía/agua/internet/teléfono e imprevistos son ejemplos editables', 'Pensión introducida por ti, neta y estable: no se calcula ningún impuesto ni ventaja fiscal', 'Tipo orientativo 1 € ≈ 11 MAD; un mes = 30 días'],
+      de: ['Die Startwerte stammen aus datierten Kostenschätzungen: durch eigene Zahlen ersetzen; Gesundheit, Energie/Wasser/Internet/Telefon und Unvorhergesehenes sind änderbare Beispiele', 'Von Ihnen eingegebene Rente, netto und stabil: Steuern oder Steuervorteile werden nicht berechnet', 'Richtkurs 1 € ≈ 11 MAD; ein Monat = 30 Tage'],
+      ar: ['القيم الابتدائية مأخوذة من تقديرات تكاليف مؤرخة: عوّضها بأرقامك؛ الصحة والطاقة/الماء/الإنترنت/الهاتف والطوارئ أمثلة قابلة للتعديل', 'المعاش من إدخالك، صافٍ وثابت: لا تُحسب أي ضريبة أو امتياز ضريبي', 'سعر تقريبي 1 € ≈ 11 درهم؛ الشهر = 30 يوماً'],
+    },
+  },
+  {
     key: 'calc-car-days', icon: 'car', audience: 'mre', guideKey: 'car-180-days', checked: MRE_LAST_CHECKED, sources: ['douane'],
     title: { en: '180-day car counter', fr: 'Compteur des 180 jours (voiture)', es: 'Contador de 180 días (coche)', de: '180-Tage-Zähler (Auto)', ar: 'عداد 180 يوماً للسيارة' },
     text: { en: 'How many days your foreign-plated car has left this year.', fr: 'Combien de jours il reste à votre voiture immatriculée à l’étranger.', es: 'Cuántos días le quedan este año a tu coche con matrícula extranjera.', de: 'Wie viele Tage dein Auto mit ausländischem Kennzeichen dieses Jahr noch hat.', ar: 'كم يوماً بقي لسيارتك ذات الترقيم الأجنبي هذه السنة.' },
@@ -123,6 +143,25 @@ export const TOOLS: Tool[] = [
       es: ['Regla general de admisión temporal: 180 días por año natural, en una o varias estancias', 'Los casos particulares (prórroga, fin de año, residencia) los decide la aduana'],
       de: ['Allgemeine Regel der vorübergehenden Einfuhr: 180 Tage pro Kalenderjahr, in einem oder mehreren Aufenthalten', 'Sonderfälle (Verlängerung, Jahresende, Wohnsitz) entscheidet der Zoll'],
       ar: ['القاعدة العامة للقبول المؤقت: 180 يوماً في السنة الميلادية، دفعة واحدة أو على عدة مرات', 'الحالات الخاصة (التمديد، نهاية السنة، صفة المقيم) تحسم فيها الجمارك'],
+    },
+  },
+  {
+    key: 'calc-customs', icon: 'calculator', audience: 'mre', guideKey: 'import-car-permanent-return', checked: CUSTOMS_LAST_CHECKED, sources: ['douane', 'mremin', 'narsa'],
+    title: { en: 'Car customs clearance costs', fr: 'Frais de dédouanement d’une voiture', es: 'Costes de despacho aduanero de un coche', de: 'Zollkosten für ein Auto', ar: 'تكاليف التخليص الجمركي لسيارة' },
+    text: { en: 'Duties and VAT on a car brought to Morocco, with the 90% abatement if you qualify.', fr: 'Droits et TVA sur une voiture importée au Maroc, avec l’abattement de 90 % si vous y avez droit.', es: 'Derechos e IVA de un coche llevado a Marruecos, con el abatimiento del 90 % si cumples las condiciones.', de: 'Zoll und Mehrwertsteuer für ein nach Marokko gebrachtes Auto, mit dem 90-%-Abschlag bei Anspruch.', ar: 'الرسوم والضريبة على القيمة المضافة لسيارة تُدخل إلى المغرب، مع تخفيض 90% إن كنت مؤهلاً.' },
+    method: {
+      fr: 'Vous saisissez la valeur retenue par la douane. L’outil en déduit l’abattement (90 % jusqu’à 300 000 DH si les conditions sont remplies), puis applique le droit d’importation et la taxe parafiscale sur la base obtenue, et la TVA sur base + droits. Chaque ligne est arrondie au dirham.',
+      en: 'You enter the value customs has set. The tool deducts the abatement (90% up to 300,000 MAD if the conditions are met), then applies import duty and the parafiscal tax to the resulting base, and VAT on base + duties. Each line is rounded to the dirham.',
+      es: 'Introduces el valor fijado por la aduana. La herramienta descuenta el abatimiento (90 % hasta 300.000 MAD si se cumplen las condiciones), aplica el derecho de importación y la tasa parafiscal a la base resultante y el IVA sobre base + derechos. Cada línea se redondea al dírham.',
+      de: 'Du gibst den vom Zoll festgesetzten Wert ein. Das Tool zieht den Abschlag ab (90 % bis 300.000 MAD bei erfüllten Voraussetzungen), wendet Einfuhrzoll und parafiskalische Abgabe auf die entstandene Grundlage an und die Umsatzsteuer auf Grundlage + Abgaben. Jede Zeile wird auf den Dirham gerundet.',
+      ar: 'تُدخل القيمة التي حددتها الجمارك. تخصم الأداة التخفيض (90% حتى 300000 درهم إذا استوفيت الشروط)، ثم تطبق رسم الاستيراد والضريبة شبه الجبائية على الوعاء الناتج، والضريبة على القيمة المضافة على الوعاء + الرسوم. يُقرَّب كل سطر إلى الدرهم.',
+    },
+    assumptions: {
+      fr: ['La valeur retenue et le barème d’âge relèvent de la douane : l’outil ne les détermine pas', 'TVA 20 % ; taxe parafiscale 0,25 % ; droit d’importation indicatif (17,5 % thermique, 2,5 % hybride ou électrique), à confirmer auprès de l’ADII', 'Hors frais de transitaire, transport, droit de timbre sur les voitures de valeur élevée, carte grise, vignette et assurance'],
+      en: ['The value used and any age-based scale are for customs to set: the tool does not determine them', 'VAT 20%; parafiscal tax 0.25%; indicative import duty (17.5% petrol or diesel, 2.5% hybrid or electric), to confirm with ADII', 'Excludes broker fees, transport, stamp duty on high-value cars, registration card, annual vehicle tax and insurance'],
+      es: ['El valor considerado y la escala por antigüedad corresponden a la aduana: la herramienta no los determina', 'IVA 20 %; tasa parafiscal 0,25 %; derecho de importación orientativo (17,5 % gasolina o diésel, 2,5 % híbrido o eléctrico), a confirmar con la ADII', 'Sin honorarios de transitario, transporte, impuesto de timbre sobre coches de alto valor, permiso de circulación, viñeta ni seguro'],
+      de: ['Angesetzter Wert und eine eventuelle Alterstabelle bestimmt der Zoll: das Tool legt sie nicht fest', 'MwSt. 20 %; parafiskalische Abgabe 0,25 %; Richtsatz Einfuhrzoll (17,5 % Benzin/Diesel, 2,5 % Hybrid/Elektro), bei der ADII zu bestätigen', 'Ohne Zollagent, Transport, Stempelsteuer auf hochwertige Pkw, Zulassung, Vignette und Versicherung'],
+      ar: ['القيمة المعتمدة وأي سلّم حسب العمر من اختصاص الجمارك: الأداة لا تحددها', 'ضريبة القيمة المضافة 20%؛ الضريبة شبه الجبائية 0.25%؛ رسم استيراد إرشادي (17.5% للبنزين أو الديزل و2.5% للهجينة أو الكهربائية)، يؤكد لدى إدارة الجمارك', 'دون أتعاب الوسيط الجمركي والنقل ورسم الطابع على السيارات مرتفعة القيمة والبطاقة الرمادية والملصق والتأمين'],
     },
   },
   {

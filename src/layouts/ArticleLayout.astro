@@ -102,6 +102,9 @@ const essentials = {
               : <span>{t('article.published')} <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate, lang)}</time></span>}
           </span>
           <span class="inline-flex items-center gap-1.5"><Icon name="clock" class="size-4" />{t('article.readingTime', { n: minutes })}</span>
+          {d.verifiedDate
+            ? <span class="inline-flex items-center gap-1.5 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100" data-verified><Icon name="checkCircle" class="size-4" />{t('article.verified')} <time datetime={d.verifiedDate.toISOString()}>{formatDate(d.verifiedDate, lang)}</time></span>
+            : <span class="inline-flex items-center gap-1.5" data-verified-missing><Icon name="clock" class="size-4" />{t('article.verifiedMissing')}</span>}
           {d.checkedDate && <span class="inline-flex items-center gap-1.5 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100"><Icon name="checkCircle" class="size-4" />{t('article.checked')} {formatDate(d.checkedDate, lang)}</span>}
         </div>
       </div>

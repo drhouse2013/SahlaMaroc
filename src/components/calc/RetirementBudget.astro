@@ -1,0 +1,258 @@
+---
+/**
+ * Budget de retraite au Maroc.
+ * Bloc 1 : budget de vie estimé (postes modifiables, valeurs de départ de src/config/costs.ts).
+ * Bloc 2 : comparaison avec la pension NETTE saisie par l'utilisateur. Aucun impôt ni avantage fiscal n'est calculé.
+ * Logique pure : src/utils/retirement.mjs (testée par tools/test-retirement.mjs).
+ */
+import Icon from '../Icon.astro';
+import CalcShell from './CalcShell.astro';
+import { type Locale, LOCALE_META } from '../../i18n';
+import { BASE, CITIES, CITY_FACTOR, CITY_LABEL, COSTS_LAST_UPDATED } from '../../config/costs';
+import { EUR_TO_MAD, EUR_TO_MAD_DATE } from '../../config/site';
+import { formatDate } from '../../utils/date';
+import { entryPath, getArticleByKey } from '../../utils/i18n';
+import { EXAMPLE_CONTINGENCY_PCT } from '../../utils/retirement.mjs';
+
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const T = {
+  fr: {
+    h1: '1. Budget de vie estimé', h2: '2. Comparaison avec votre pension', currency: 'Devise', period: 'Périodicité', monthly: 'Mensuel', annual: 'Annuel',
+    city: 'Ville de référence', style: 'Style de vie', budget: 'Économique', mid: 'Confortable', comfort: 'Premium',
+    housingType: 'Logement', rent: 'Location', own: 'Propriété (charges à saisir)',
+    housing: 'Logement (loyer ou charges, taxes, entretien)', food: 'Alimentation', transport: 'Transport', health: 'Santé et assurances', utilities: 'Énergie, eau, internet, téléphone', leisure: 'Loisirs et divers',
+    contingency: 'Imprévus (% du sous-total)', pension: 'Votre pension nette (après impôts et prélèvements éventuels)',
+    hintCosts: 'valeur de départ (estimation datée)', hintExample: 'exemple modifiable', hintOwn: 'à saisir', hintPension: 'à saisir vous-même, laissé vide : pas de comparaison',
+    total: 'Budget de vie estimé', perYear: 'par an', eq: 'Équivalent', lSub: 'Sous-total des postes', lCont: 'Imprévus',
+    cmp: 'Comparaison avec votre pension saisie', balM: 'Solde mensuel', balY: 'Solde annuel', cover: 'Taux de couverture',
+    surplus: 'La pension saisie couvre le budget estimé.', deficit: 'La pension saisie ne couvre pas tout le budget estimé.', none: 'Saisissez votre pension nette pour la comparer au budget.',
+    invalid: 'Corrigez les champs signalés (nombres positifs ou nuls) pour afficher le résultat.',
+    hypTitle: 'Hypothèses', hyp1: 'Un mois = 30 jours ; budget annuel = 12 mois.', hyp2: 'Le coefficient de la ville s’applique à toutes les valeurs de départ tirées des relevés de coûts.', hyp3: 'La pension saisie est supposée nette et stable ; aucun impôt, aucune évolution du taux de change ni inflation n’est calculé.',
+    note: (r: string, d: string, c: string) => `Valeurs de départ : estimations de coûts datées du ${c}, à remplacer par vos propres chiffres. Santé, énergie/eau/internet/téléphone et imprévus : exemples modifiables. Taux : 1 € ≈ ${r} MAD (indicatif, ${d}).`,
+    taxTitle: 'Fiscalité de la pension : non calculée ici', taxText: 'Ce calculateur ne calcule ni impôt ni avantage fiscal : saisissez le montant net que vous recevrez réellement. Le régime fiscal des pensions de source étrangère dépend de votre situation et des conventions fiscales ; lisez le guide, puis confirmez avec votre caisse de retraite et un fiscaliste.', taxLink: 'Lire le guide : prendre sa retraite au Maroc',
+  },
+  en: {
+    h1: '1. Estimated cost of living', h2: '2. Comparison with your pension', currency: 'Currency', period: 'Period', monthly: 'Monthly', annual: 'Annual',
+    city: 'Reference city', style: 'Lifestyle', budget: 'Budget', mid: 'Comfortable', comfort: 'Premium',
+    housingType: 'Housing', rent: 'Renting', own: 'Owner (enter running costs)',
+    housing: 'Housing (rent, or running costs, taxes, upkeep)', food: 'Food', transport: 'Transport', health: 'Health and insurance', utilities: 'Energy, water, internet, phone', leisure: 'Leisure and sundries',
+    contingency: 'Contingency (% of subtotal)', pension: 'Your net pension (after tax and any deductions)',
+    hintCosts: 'starting value (dated estimate)', hintExample: 'editable example', hintOwn: 'enter your own', hintPension: 'enter your own figure; leave empty to skip the comparison',
+    total: 'Estimated cost of living', perYear: 'per year', eq: 'Equivalent', lSub: 'Subtotal of items', lCont: 'Contingency',
+    cmp: 'Comparison with the pension you entered', balM: 'Monthly balance', balY: 'Annual balance', cover: 'Coverage rate',
+    surplus: 'The pension you entered covers the estimated budget.', deficit: 'The pension you entered does not cover the whole estimated budget.', none: 'Enter your net pension to compare it with the budget.',
+    invalid: 'Fix the flagged fields (positive numbers or zero) to see the result.',
+    hypTitle: 'Assumptions', hyp1: 'One month = 30 days; annual budget = 12 months.', hyp2: 'The city factor applies to all starting values taken from the cost estimates.', hyp3: 'The pension is assumed net and stable; no tax, exchange-rate change or inflation is calculated.',
+    note: (r: string, d: string, c: string) => `Starting values: cost estimates dated ${c}, to be replaced by your own figures. Health, energy/water/internet/phone and contingency are editable examples. Rate: €1 ≈ ${r} MAD (indicative, ${d}).`,
+    taxTitle: 'Pension taxation: not calculated here', taxText: 'This calculator computes no tax and no tax advantage: enter the net amount you will actually receive. How a foreign-source pension is taxed depends on your situation and on tax treaties; read the guide, then confirm with your pension fund and a tax adviser.', taxLink: 'Read the guide: retiring in Morocco',
+  },
+  es: {
+    h1: '1. Coste de vida estimado', h2: '2. Comparación con tu pensión', currency: 'Divisa', period: 'Periodicidad', monthly: 'Mensual', annual: 'Anual',
+    city: 'Ciudad de referencia', style: 'Estilo de vida', budget: 'Económico', mid: 'Cómodo', comfort: 'Premium',
+    housingType: 'Vivienda', rent: 'Alquiler', own: 'Propiedad (introduce los gastos)',
+    housing: 'Vivienda (alquiler o gastos, impuestos, mantenimiento)', food: 'Alimentación', transport: 'Transporte', health: 'Salud y seguros', utilities: 'Energía, agua, internet, teléfono', leisure: 'Ocio y varios',
+    contingency: 'Imprevistos (% del subtotal)', pension: 'Tu pensión neta (tras impuestos y retenciones)',
+    hintCosts: 'valor inicial (estimación fechada)', hintExample: 'ejemplo editable', hintOwn: 'introdúcelo tú', hintPension: 'introduce tu cifra; vacío: sin comparación',
+    total: 'Coste de vida estimado', perYear: 'al año', eq: 'Equivalente', lSub: 'Subtotal de partidas', lCont: 'Imprevistos',
+    cmp: 'Comparación con la pensión introducida', balM: 'Saldo mensual', balY: 'Saldo anual', cover: 'Tasa de cobertura',
+    surplus: 'La pensión introducida cubre el presupuesto estimado.', deficit: 'La pensión introducida no cubre todo el presupuesto estimado.', none: 'Introduce tu pensión neta para compararla con el presupuesto.',
+    invalid: 'Corrige los campos señalados (números positivos o cero) para ver el resultado.',
+    hypTitle: 'Hipótesis', hyp1: 'Un mes = 30 días; presupuesto anual = 12 meses.', hyp2: 'El coeficiente de la ciudad se aplica a todos los valores iniciales tomados de las estimaciones de costes.', hyp3: 'Se supone la pensión neta y estable; no se calcula ningún impuesto, variación del tipo de cambio ni inflación.',
+    note: (r: string, d: string, c: string) => `Valores iniciales: estimaciones de costes fechadas el ${c}, que debes sustituir por tus cifras. Salud, energía/agua/internet/teléfono e imprevistos son ejemplos editables. Tipo: 1 € ≈ ${r} MAD (orientativo, ${d}).`,
+    taxTitle: 'Fiscalidad de la pensión: no se calcula aquí', taxText: 'Esta calculadora no calcula impuestos ni ventajas fiscales: introduce el importe neto que recibirás de verdad. La tributación de una pensión de origen extranjero depende de tu situación y de los convenios fiscales; lee la guía y confírmalo con tu entidad pagadora y un asesor fiscal.', taxLink: 'Leer la guía: jubilarse en Marruecos',
+  },
+  de: {
+    h1: '1. Geschätzte Lebenshaltungskosten', h2: '2. Vergleich mit Ihrer Rente', currency: 'Währung', period: 'Zeitraum', monthly: 'Monatlich', annual: 'Jährlich',
+    city: 'Referenzstadt', style: 'Lebensstil', budget: 'Sparsam', mid: 'Komfortabel', comfort: 'Premium',
+    housingType: 'Wohnen', rent: 'Miete', own: 'Eigentum (Nebenkosten eingeben)',
+    housing: 'Wohnen (Miete oder Nebenkosten, Steuern, Instandhaltung)', food: 'Ernährung', transport: 'Verkehr', health: 'Gesundheit und Versicherungen', utilities: 'Energie, Wasser, Internet, Telefon', leisure: 'Freizeit und Sonstiges',
+    contingency: 'Unvorhergesehenes (% der Zwischensumme)', pension: 'Ihre Netto-Rente (nach Steuern und Abzügen)',
+    hintCosts: 'Startwert (datierte Schätzung)', hintExample: 'änderbares Beispiel', hintOwn: 'selbst eingeben', hintPension: 'eigenen Betrag eingeben; leer: kein Vergleich',
+    total: 'Geschätzte Lebenshaltungskosten', perYear: 'pro Jahr', eq: 'Entspricht', lSub: 'Zwischensumme der Posten', lCont: 'Unvorhergesehenes',
+    cmp: 'Vergleich mit der eingegebenen Rente', balM: 'Monatlicher Saldo', balY: 'Jährlicher Saldo', cover: 'Deckungsgrad',
+    surplus: 'Die eingegebene Rente deckt das geschätzte Budget.', deficit: 'Die eingegebene Rente deckt nicht das ganze geschätzte Budget.', none: 'Geben Sie Ihre Netto-Rente ein, um sie mit dem Budget zu vergleichen.',
+    invalid: 'Korrigieren Sie die markierten Felder (positive Zahlen oder null), um das Ergebnis zu sehen.',
+    hypTitle: 'Annahmen', hyp1: 'Ein Monat = 30 Tage; Jahresbudget = 12 Monate.', hyp2: 'Der Stadtfaktor gilt für alle Startwerte aus den Kostenschätzungen.', hyp3: 'Die Rente gilt als netto und stabil; Steuern, Wechselkursänderungen und Inflation werden nicht berechnet.',
+    note: (r: string, d: string, c: string) => `Startwerte: Kostenschätzungen vom ${c}, durch eigene Zahlen zu ersetzen. Gesundheit, Energie/Wasser/Internet/Telefon und Unvorhergesehenes sind änderbare Beispiele. Kurs: 1 € ≈ ${r} MAD (Richtwert, ${d}).`,
+    taxTitle: 'Besteuerung der Rente: hier nicht berechnet', taxText: 'Dieser Rechner berechnet weder Steuern noch Steuervorteile: Geben Sie den Nettobetrag ein, den Sie tatsächlich erhalten. Wie eine Rente aus dem Ausland besteuert wird, hängt von Ihrer Situation und den Doppelbesteuerungsabkommen ab; lesen Sie den Ratgeber und klären Sie es mit Ihrem Rentenversicherungsträger und einem Steuerberater.', taxLink: 'Zum Ratgeber: Ruhestand in Marokko',
+  },
+  ar: {
+    h1: '1. تكلفة المعيشة التقديرية', h2: '2. المقارنة مع معاشك', currency: 'العملة', period: 'الدورية', monthly: 'شهري', annual: 'سنوي',
+    city: 'مدينة المرجع', style: 'نمط العيش', budget: 'اقتصادي', mid: 'مريح', comfort: 'فاخر',
+    housingType: 'السكن', rent: 'كراء', own: 'ملكية (أدخل التكاليف الجارية)',
+    housing: 'السكن (الكراء أو التكاليف والضرائب والصيانة)', food: 'التغذية', transport: 'النقل', health: 'الصحة والتأمين', utilities: 'الطاقة والماء والإنترنت والهاتف', leisure: 'الترفيه ومصاريف متنوعة',
+    contingency: 'الطوارئ (% من المجموع الجزئي)', pension: 'معاشك الصافي (بعد الضرائب والاقتطاعات)',
+    hintCosts: 'قيمة ابتدائية (تقدير مؤرخ)', hintExample: 'مثال قابل للتعديل', hintOwn: 'أدخلها بنفسك', hintPension: 'أدخل رقمك؛ اتركه فارغاً لتفادي المقارنة',
+    total: 'تكلفة المعيشة التقديرية', perYear: 'في السنة', eq: 'ما يعادل', lSub: 'المجموع الجزئي للبنود', lCont: 'الطوارئ',
+    cmp: 'المقارنة مع المعاش المدخل', balM: 'الرصيد الشهري', balY: 'الرصيد السنوي', cover: 'نسبة التغطية',
+    surplus: 'المعاش المدخل يغطي الميزانية التقديرية.', deficit: 'المعاش المدخل لا يغطي كامل الميزانية التقديرية.', none: 'أدخل معاشك الصافي لمقارنته بالميزانية.',
+    invalid: 'صحّح الحقول المشار إليها (أعداد موجبة أو صفر) لعرض النتيجة.',
+    hypTitle: 'الافتراضات', hyp1: 'الشهر = 30 يوماً؛ الميزانية السنوية = 12 شهراً.', hyp2: 'يطبق معامل المدينة على كل القيم الابتدائية المأخوذة من تقديرات التكاليف.', hyp3: 'يُفترض أن المعاش صافٍ وثابت؛ لا تُحسب أي ضريبة أو تغير في سعر الصرف أو تضخم.',
+    note: (r: string, d: string, c: string) => `القيم الابتدائية: تقديرات تكاليف مؤرخة في ${c}، عوّضها بأرقامك. الصحة والطاقة/الماء/الإنترنت/الهاتف والطوارئ أمثلة قابلة للتعديل. السعر: 1 € ≈ ${r} درهم (تقريبي، ${d}).`,
+    taxTitle: 'ضريبة المعاش: غير محسوبة هنا', taxText: 'لا تحسب هذه الأداة أي ضريبة أو امتياز ضريبي: أدخل المبلغ الصافي الذي ستتوصل به فعلاً. تخضع المعاشات ذات المصدر الأجنبي لنظام يتوقف على وضعك والاتفاقيات الضريبية؛ اقرأ الدليل ثم تأكد لدى صندوق التقاعد ومستشار ضريبي.', taxLink: 'اقرأ الدليل: التقاعد في المغرب',
+  },
+}[lang];
+
+const guide = await getArticleByKey(lang, 'retire-in-morocco');
+const rateTxt = new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 2 }).format(EUR_TO_MAD);
+const note = T.note(rateTxt, formatDate(new Date(EUR_TO_MAD_DATE), lang), formatDate(new Date(COSTS_LAST_UPDATED), lang));
+const cfg = JSON.stringify({
+  rate: EUR_TO_MAD, base: BASE, factors: CITY_FACTOR, locale: LOCALE_META[lang].intl, contingency: EXAMPLE_CONTINGENCY_PCT,
+  hint: { costs: T.hintCosts, example: T.hintExample, own: T.hintOwn },
+  txt: { surplus: T.surplus, deficit: T.deficit, none: T.none, invalid: T.invalid, monthly: T.monthly, annual: T.annual },
+});
+const items = ['housing', 'food', 'transport', 'health', 'utilities', 'leisure'] as const;
+const source: Record<(typeof items)[number], 'costs' | 'example'> = { housing: 'costs', food: 'costs', transport: 'costs', health: 'example', utilities: 'example', leisure: 'costs' };
+---
+<div data-retirement-budget data-config={cfg}>
+<CalcShell id="retirement-budget" note={note}>
+  <Fragment slot="form">
+    <fieldset class="full grid gap-4 border-0 p-0 sm:grid-cols-2 min-w-0">
+      <legend class="mb-2 text-base font-semibold">{T.h1}</legend>
+      <label>{T.currency}<select name="currency"><option value="EUR">EUR (€)</option><option value="MAD">MAD (DH)</option></select></label>
+      <label>{T.period}<select name="period"><option value="monthly">{T.monthly}</option><option value="annual">{T.annual}</option></select></label>
+      <label>{T.city}<select name="city">{CITIES.map((c) => <option value={c} selected={c === 'casablanca'}>{CITY_LABEL[c]}</option>)}</select></label>
+      <label>{T.style}<select name="style"><option value="budget">{T.budget}</option><option value="mid" selected>{T.mid}</option><option value="comfort">{T.comfort}</option></select></label>
+      <label class="full">{T.housingType}<select name="housingType"><option value="rent">{T.rent}</option><option value="own">{T.own}</option></select></label>
+      {items.map((k) => (
+        <label>
+          <span>{T[k]} <span class="text-xs muted" data-unit></span></span>
+          <input name={k} type="number" min="0" step="1" inputmode="decimal" value="0" />
+          <span class="text-xs muted" data-hint={k} data-source={source[k]}></span>
+        </label>
+      ))}
+      <label class="full">{T.contingency}<input name="contingency" type="number" min="0" max="100" step="1" inputmode="decimal" value={EXAMPLE_CONTINGENCY_PCT} /><span class="text-xs muted">{T.hintExample}</span></label>
+    </fieldset>
+    <fieldset class="full grid gap-4 border-0 border-t border-[var(--line)] p-0 pt-4 min-w-0">
+      <legend class="mb-2 text-base font-semibold">{T.h2}</legend>
+      <label>
+        <span>{T.pension} <span class="text-xs muted" data-unit></span></span>
+        <input name="pension" type="number" min="0" step="1" inputmode="decimal" value="" />
+        <span class="text-xs muted">{T.hintPension}</span>
+      </label>
+    </fieldset>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{T.total}</p>
+    <p class="big"><span data-out="totalM">—</span></p>
+    <p class="text-sm text-white/85"><span data-out="totalY">—</span> {T.perYear} · {T.eq} <span data-out="eq">—</span></p>
+    <p class="mt-2 text-sm font-semibold text-gold-300" data-out="invalidMsg" role="status" hidden></p>
+    <dl>
+      {items.map((k) => <div><dt>{T[k]}</dt><dd data-out={k}>—</dd></div>)}
+      <div><dt>{T.lSub}</dt><dd data-out="sub">—</dd></div>
+      <div><dt>{T.lCont}</dt><dd data-out="cont">—</dd></div>
+    </dl>
+    <h3 class="mt-6 text-sm font-semibold text-white">{T.cmp}</h3>
+    <p class="mt-1 text-sm text-white/85" data-out="status">{T.none}</p>
+    <dl>
+      <div><dt>{T.balM}</dt><dd data-out="balM">—</dd></div>
+      <div><dt>{T.balY}</dt><dd data-out="balY">—</dd></div>
+      <div><dt>{T.cover}</dt><dd data-out="cover">—</dd></div>
+    </dl>
+    <h3 class="mt-6 text-sm font-semibold text-white">{T.hypTitle}</h3>
+    <ul class="mt-1 grid gap-1 text-xs text-white/80">
+      <li>{T.hyp1}</li><li>{T.hyp2}</li><li>{T.hyp3}</li>
+    </ul>
+  </Fragment>
+</CalcShell>
+<div class="alert alert-warn not-prose my-6">
+  <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" />
+  <div class="text-sm">
+    <p class="font-semibold">{T.taxTitle}</p>
+    <p class="mt-1">{T.taxText}</p>
+    {guide && <p class="mt-2"><a class="link" href={entryPath(lang, guide.data.slug)}>{T.taxLink}</a></p>}
+  </div>
+</div>
+</div>
+
+<script>
+  import { ITEMS, startValues, convertAmount, computeBudget, parseAmount } from '../../utils/retirement.mjs';
+
+  type Cur = 'EUR' | 'MAD';
+  type Per = 'monthly' | 'annual';
+  document.querySelectorAll<HTMLElement>('[data-retirement-budget]').forEach((root) => {
+    const c = JSON.parse(root.dataset.config!);
+    const form = root.querySelector('form')!;
+    const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement | HTMLSelectElement;
+    const out = (k: string, t: string) => { const el = root.querySelector(`[data-out="${k}"]`); if (el) el.textContent = t; };
+    const nf = new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 });
+    const money = (n: number, cur: Cur) => `${nf.format(Math.round(n))} ${cur === 'EUR' ? '€' : 'DH'}`;
+    const signed = (n: number, cur: Cur) => `${n > 0 ? '+' : ''}${money(n, cur)}`;
+    let prev = { currency: f('currency').value as Cur, period: f('period').value as Per };
+
+    function units() {
+      const cur = f('currency').value as Cur, per = f('period').value as Per;
+      const label = `(${cur === 'EUR' ? '€' : 'DH'} / ${per === 'annual' ? c.txt.annual : c.txt.monthly})`.toLowerCase();
+      root.querySelectorAll('[data-unit]').forEach((el) => { el.textContent = label; });
+    }
+    function hints() {
+      const own = f('housingType').value === 'own';
+      root.querySelectorAll<HTMLElement>('[data-hint]').forEach((el) => {
+        const k = el.dataset.hint!;
+        el.textContent = k === 'housing' && own ? c.hint.own : c.hint[el.dataset.source!];
+      });
+    }
+    function refill(notify: boolean) {
+      const v = startValues(c.base, c.factors[f('city').value] ?? 1, f('style').value, f('housingType').value, f('currency').value, f('period').value, c.rate);
+      ITEMS.forEach((k: string) => {
+        f(k).value = String(v[k]);
+        // Réinitialise les erreurs de validation du cadre (CalcShell) sans compter une saisie au chargement.
+        if (notify) f(k).dispatchEvent(new Event('input', { bubbles: true }));
+      });
+      hints();
+    }
+    function switchUnit() {
+      const next = { currency: f('currency').value as Cur, period: f('period').value as Per };
+      [...ITEMS, 'pension'].forEach((k: string) => {
+        const n = parseAmount(f(k).value);
+        if (Number.isFinite(n) && n >= 0) f(k).value = String(Math.round(convertAmount(n, prev, next, c.rate)));
+      });
+      prev = next;
+      units();
+    }
+
+    function run() {
+      const cur = f('currency').value as Cur, per = f('period').value as Per;
+      const items: Record<string, string> = {};
+      ITEMS.forEach((k: string) => { items[k] = f(k).value; });
+      const r = computeBudget({ currency: cur, period: per, rate: c.rate, items, contingencyPct: f('contingency').value, pension: f('pension').value });
+      const msg = root.querySelector<HTMLElement>('[data-out="invalidMsg"]')!;
+      if (!r.ok) {
+        msg.hidden = false; msg.textContent = c.txt.invalid;
+        ['totalM', 'totalY', 'eq', 'sub', 'cont', 'balM', 'balY', 'cover', ...ITEMS].forEach((k) => out(k, '—'));
+        out('status', c.txt.none);
+        return;
+      }
+      msg.hidden = true; msg.textContent = '';
+      // Affichage dans la périodicité choisie ; l'équivalent est dans l'autre devise.
+      const mul = per === 'annual' ? 12 : 1;
+      const other: Cur = cur === 'EUR' ? 'MAD' : 'EUR';
+      const conv = (n: number) => (cur === 'EUR' ? n * c.rate : n / c.rate);
+      out('totalM', money(r.totalMonthly, cur) + ` / ${c.txt.monthly.toLowerCase()}`);
+      out('totalY', money(r.totalAnnual, cur));
+      out('eq', `${money(conv(r.totalMonthly), other)} / ${c.txt.monthly.toLowerCase()}`);
+      const pl = ` / ${(per === 'annual' ? c.txt.annual : c.txt.monthly).toLowerCase()}`;
+      ITEMS.forEach((k: string) => out(k, money(r.monthlyItems[k] * mul, cur) + pl));
+      out('sub', money(r.subtotalMonthly * mul, cur) + pl);
+      out('cont', money(r.contingencyMonthly * mul, cur) + pl);
+      if (r.hasPension) {
+        out('balM', signed(r.balanceMonthly, cur));
+        out('balY', signed(r.balanceAnnual, cur));
+        out('cover', r.coveragePct === null ? '—' : `${nf.format(Math.round(r.coveragePct))} %`);
+        out('status', r.balanceMonthly >= 0 ? c.txt.surplus : c.txt.deficit);
+      } else {
+        ['balM', 'balY', 'cover'].forEach((k) => out(k, '—'));
+        out('status', c.txt.none);
+      }
+    }
+
+    form.addEventListener('change', (e) => {
+      const n = (e.target as HTMLInputElement).name;
+      if (n === 'currency' || n === 'period') switchUnit();
+      else if (n === 'city' || n === 'style' || n === 'housingType') refill(true);
+      run();
+    });
+    form.addEventListener('input', run);
+    units(); refill(false); run();
+  });
+</script>

@@ -13,7 +13,8 @@ export const pick = <T,>(m: Partial<Record<Locale, T>> & { en: T }, lang: Locale
 
 export type Scene =
   | 'marrakech' | 'casablanca' | 'chefchaouen' | 'sahara' | 'essaouira' | 'fes'
-  | 'rabat' | 'tangier' | 'taghazout' | 'atlas' | 'souk' | 'riad';
+  | 'rabat' | 'tangier' | 'taghazout' | 'atlas' | 'souk' | 'riad'
+  | 'nador' | 'tetouan'; // nador/tetouan : pas d'illustration propre, voir ILLUSTRATION_ALIAS (utils/illustrations.ts)
 
 /* ---------------------------------------------------------------- libellés */
 export const L: Record<string, Full<string>> = {
@@ -60,7 +61,7 @@ export const PERSONAS: Partial2<{ icon: string; title: string; text: string; key
 };
 
 /* ---------------------------------------------------------------- villes */
-export interface City { id: Scene; name: string; vibe: Partial2<string>; tags: Partial2<string[]>; budget: 1 | 2 | 3; host2030?: boolean }
+export interface City { id: Scene; name: string; vibe: Partial2<string>; tags: Partial2<string[]>; budget?: 1 | 2 | 3; host2030?: boolean }
 export const CITIES: City[] = [
   { id: 'marrakech', host2030: true, name: 'Marrakech', budget: 2, vibe: { en: 'Riads, souks and the Atlas on the horizon. Intense, social, unforgettable.', fr: 'Riads, souks et l’Atlas à l’horizon. Intense, sociable, inoubliable.' }, tags: { en: ['Nightlife', 'Day trips', 'Coworkings'], fr: ['Vie nocturne', 'Excursions', 'Coworkings'] } },
   { id: 'casablanca', host2030: true, name: 'Casablanca', budget: 3, vibe: { en: 'The business capital: fibre, malls, ocean corniche and real city life.', fr: 'La capitale économique : fibre, centres commerciaux, corniche et vraie vie urbaine.' }, tags: { en: ['Business', 'Fast internet', 'Ocean'], fr: ['Business', 'Internet rapide', 'Océan'] } },
@@ -70,6 +71,8 @@ export const CITIES: City[] = [
   { id: 'tangier', host2030: true, name: 'Tangier', budget: 2, vibe: { en: 'Gateway to Europe, 2 h 10 to Casablanca on the high-speed train.', fr: 'Porte de l’Europe, à 2 h 10 de Casablanca en TGV Al Boraq.' }, tags: { en: ['Ferry to Spain', 'High-speed train', 'Beaches'], fr: ['Ferry Espagne', 'TGV', 'Plages'] } },
   { id: 'fes', host2030: true, name: 'Fès', budget: 1, vibe: { en: 'The world’s largest car-free medina. History, crafts and low prices.', fr: 'La plus grande médina piétonne du monde. Histoire, artisanat et petits prix.' }, tags: { en: ['History', 'Crafts', 'Budget'], fr: ['Histoire', 'Artisanat', 'Petit budget'] } },
   { id: 'chefchaouen', name: 'Chefchaouen', budget: 1, vibe: { en: 'The blue town of the Rif mountains. Hiking, quiet and photo spots.', fr: 'La ville bleue du Rif. Randonnée, calme et spots photo.' }, tags: { en: ['Hiking', 'Quiet', 'Photos'], fr: ['Randonnée', 'Calme', 'Photos'] } },
+  { id: 'nador', name: 'Nador', vibe: { en: 'North-east Rif city tied to the diaspora: ferry port at Beni Enzar and the Marchica lagoon.', fr: 'Ville du nord-est du Rif liée à la diaspora : port de Beni Enzar et lagune de Marchica.' }, tags: { en: ['Ferry port', 'Marchica lagoon', 'Summer return'], fr: ['Port ferry', 'Lagune de Marchica', 'Retour d’été'] } },
+  { id: 'tetouan', name: 'Tetouan', vibe: { en: 'UNESCO-listed medina, plus Martil, Cabo Negro and M’diq beaches on the coast.', fr: 'Médina classée à l’UNESCO, plus les plages de Martil, Cabo Negro et M’diq sur la côte.' }, tags: { en: ['UNESCO medina', 'Beaches', 'Tanger Med'], fr: ['Médina UNESCO', 'Plages', 'Tanger Med'] } },
 ];
 
 /* ---------------------------------------------------------------- chiffres clés */
@@ -206,6 +209,8 @@ const CITY_I18N: Record<string, Record<'es' | 'de' | 'ar', [string, string[]]>> 
   tangier: { es: ['Puerta de Europa, a 2 h 10 de Casablanca en tren rápido.', ['Ferry a España', 'Tren rápido', 'Playas']], de: ['Tor nach Europa, 2 h 10 nach Casablanca per Schnellzug.', ['Fähre Spanien', 'Schnellzug', 'Strände']], ar: ['بوابة أوروبا، على بعد ساعتين وعشر دقائق من الدار البيضاء بالبراق.', ['عبّارة إسبانيا', 'قطار فائق السرعة', 'شواطئ']] },
   fes: { es: ['La mayor medina peatonal del mundo. Historia y precios bajos.', ['Historia', 'Artesanía', 'Barata']], de: ['Größte autofreie Medina der Welt. Geschichte, niedrige Preise.', ['Geschichte', 'Handwerk', 'Günstig']], ar: ['أكبر مدينة عتيقة بدون سيارات في العالم. تاريخ وأسعار منخفضة.', ['تاريخ', 'صناعة تقليدية', 'اقتصادية']] },
   chefchaouen: { es: ['El pueblo azul del Rif. Senderismo y calma.', ['Senderismo', 'Calma', 'Fotos']], de: ['Die blaue Stadt im Rif. Wandern und Ruhe.', ['Wandern', 'Ruhe', 'Fotos']], ar: ['المدينة الزرقاء في جبال الريف. مشي وهدوء.', ['مشي', 'هدوء', 'صور']] },
+  nador: { es: ['Ciudad del nordeste del Rif ligada a la diáspora: puerto de Beni Enzar y laguna de Marchica.', ['Puerto de ferri', 'Laguna de Marchica', 'Regreso de verano']], de: ['Stadt im Nordosten des Rif, eng mit der Diaspora verbunden: Hafen Beni Enzar und Marchica-Lagune.', ['Fährhafen', 'Marchica-Lagune', 'Sommerheimkehr']], ar: ['مدينة في شمال شرق الريف مرتبطة بالجالية: ميناء بني انصار وبحيرة مارتشيكا.', ['ميناء العبّارات', 'بحيرة مارتشيكا', 'عودة الصيف']] },
+  tetouan: { es: ['Medina Patrimonio de la UNESCO y, en la costa, las playas de Martil, Cabo Negro y M’diq.', ['Medina UNESCO', 'Playas', 'Tanger Med']], de: ['Medina als UNESCO-Welterbe und an der Küste die Strände von Martil, Cabo Negro und M’diq.', ['UNESCO-Medina', 'Strände', 'Tanger Med']], ar: ['مدينة عتيقة مصنفة لدى اليونسكو، وعلى الساحل شواطئ مرتيل وكابو نيغرو والمضيق.', ['مدينة عتيقة', 'شواطئ', 'طنجة المتوسط']] },
 };
 /** Noms de villes localisés (sinon le nom par défaut) */
 export const CITY_NAMES: Record<string, Partial<Record<Locale, string>>> = {
@@ -217,6 +222,8 @@ export const CITY_NAMES: Record<string, Partial<Record<Locale, string>>> = {
   tangier: { fr: 'Tanger', es: 'Tánger', de: 'Tanger', ar: 'طنجة' },
   fes: { es: 'Fez', ar: 'فاس' },
   chefchaouen: { ar: 'شفشاون' },
+  nador: { ar: 'الناظور' },
+  tetouan: { fr: 'Tétouan', es: 'Tetuán', de: 'Tétouan', ar: 'تطوان' },
 };
 export const cityName = (c: City, lang: Locale) => CITY_NAMES[c.id]?.[lang] ?? c.name;
 

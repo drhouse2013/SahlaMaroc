@@ -15,10 +15,13 @@ import PropertyFees from '../../components/calc/PropertyFees.astro';
 import MortgageCalc from '../../components/calc/MortgageCalc.astro';
 import TransferCalc from '../../components/calc/TransferCalc.astro';
 import SummerBudget from '../../components/calc/SummerBudget.astro';
+import RetirementBudget from '../../components/calc/RetirementBudget.astro';
 import CarDaysCounter from '../../components/calc/CarDaysCounter.astro';
+import CustomsCalc from '../../components/calc/CustomsCalc.astro';
 import Roadmap from '../../components/Roadmap.astro';
 import RoadmapStep from '../../components/RoadmapStep.astro';
 import Checklist from '../../components/Checklist.astro';
+import PdfDownload from '../../components/PdfDownload.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import Newsletter from '../../components/Newsletter.astro';
 import GuidesHub from '../../components/hubs/GuidesHub.astro';
@@ -52,7 +55,7 @@ const alternates = entry ? await getEntryAlternates(entry) : {};
 const switchTargets = entry ? await getEntrySwitchTargets(entry) : {};
 
 /** Composants disponibles dans tous les fichiers MDX SANS import. */
-const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, CarDaysCounter, Roadmap, RoadmapStep, Checklist, ContactForm, Newsletter };
+const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, RetirementBudget, CarDaysCounter, CustomsCalc, Roadmap, RoadmapStep, Checklist, PdfDownload, ContactForm, Newsletter };
 
 let related: Awaited<ReturnType<typeof getArticles>> = [];
 if (entry?.collection === 'articles') {

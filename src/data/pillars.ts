@@ -72,7 +72,7 @@ export const PILLARS: Record<CategoryId, Pillar> = {
       ar: 'التأشيرة والتأشيرة الإلكترونية، قاعدة 90 يوماً، بطاقة الإقامة، رخصة السياقة، جواز السفر والبطاقة الوطنية، الحالة المدنية، الأبوستيل، الجمارك والعودة النهائية: الإجراءات بشرح مبسط مع الإدارات المختصة.',
     },
     start: ['visa-90-days', 'passport-cnie', 'customs'],
-    tools: ['calc-car-days'],
+    tools: ['calc-car-days', 'calc-customs', 'calc-retirement-budget'],
     cities: ['rabat'],
     sources: ['acces', 'diplomatie', 'dgsn', 'douane', 'narsa'],
     ymyl: true,
@@ -135,7 +135,7 @@ export const PILLARS: Record<CategoryId, Pillar> = {
 export const AUDIENCE_HUBS = {
   mre: {
     categories: ['retour', 'immobilier', 'money', 'demarches'] as CategoryId[],
-    tools: ['calc-summer', 'calc-car-days', 'calc-transfer', 'calc-property-fees', 'calc-mortgage'],
+    tools: ['calc-summer', 'calc-car-days', 'calc-customs', 'calc-transfer', 'calc-property-fees', 'calc-mortgage', 'calc-retirement-budget'],
     start: ['summer-checklist', 'marhaba-guide', 'car-180-days', 'send-money', 'buy-property-abroad', 'passport-cnie'],
     cities: ['tangier', 'casablanca', 'rabat'],
   },
