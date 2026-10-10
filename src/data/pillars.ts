@@ -86,7 +86,7 @@ export const PILLARS: Record<CategoryId, Pillar> = {
       ar: 'وصول مريح إلى المغرب: من المطار إلى وسط المدينة، اختيار الشريحة أو eSIM، ركوب القطار أو الحافلة أو الترامواي أو سيارة الأجرة، كراء سيارة وتجنب أساليب الاحتيال الشائعة.',
     },
     start: ['casablanca-airport', 'sim-esim-morocco', 'trains'],
-    tools: ['budget-calculator'],
+    tools: ['budget-calculator', 'prayer-times'],
     cities: ['casablanca', 'marrakech', 'tangier'],
     sources: ['onda', 'oncf', 'anrt'],
   },
@@ -141,7 +141,7 @@ export const AUDIENCE_HUBS = {
   },
   visit: {
     categories: ['arrival', 'tours', 'stay', 'living'] as CategoryId[],
-    tools: ['budget-calculator'],
+    tools: ['budget-calculator', 'prayer-times'],
     start: ['e-visa', 'sim-esim-morocco', 'marrakech-airport', 'scams-safety', 'riad-or-hotel', 'merzouga-tour'],
     cities: ['marrakech', 'fes', 'chefchaouen', 'essaouira', 'casablanca', 'taghazout'],
   },

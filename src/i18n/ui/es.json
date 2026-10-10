@@ -93,6 +93,7 @@
   "newsletter.success": "¡Gracias! Tu solicitud de suscripción ha quedado registrada.",
   "newsletter.mailto": "Se abre tu correo con un mensaje rellenado: envíalo para confirmar la suscripción.",
   "newsletter.error": "Algo ha fallado. Inténtalo más tarde.",
+  "newsletter.pending": "Solicitud enviada. Recibirás un correo de confirmación: haz clic en el enlace para completar la suscripción (revisa también la carpeta de spam).",
   "newsletter.invalid": "Introduce un correo electrónico válido.",
   "newsletter.pdfBadge": "Regalo de suscripción",
   "newsletter.pdfTitle": "Lista imprimible: regreso de verano a Marruecos",

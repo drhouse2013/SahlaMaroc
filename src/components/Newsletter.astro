@@ -4,13 +4,16 @@
  * Abstraction de fournisseur : si PUBLIC_NEWSLETTER_ENDPOINT est défini, envoi JSON (POST {email, lang})
  * vers ce service ; sinon, ouverture d'un e-mail pré-rempli vers l'adresse de contact (aucune donnée
  * n'est envoyée à un tiers à l'insu de l'utilisateur). États : envoi, succès, erreur, e-mail invalide.
- * Cadeau d'inscription : la check-list PDF est toujours téléchargeable directement (aucun verrou) ; le lien
+ * Mode fournisseur (PUBLIC_NEWSLETTER_PROVIDER=brevo|mailerlite|buttondown + PUBLIC_NEWSLETTER_FORM_ID, voir
+ * src/config/site.ts et docs/NEWSLETTER-PDF.md) : POST de formulaire vers l'URL publique du fournisseur, qui gère
+ * la double confirmation et l'e-mail de bienvenue. La réponse étant opaque (no-cors), on n'affiche jamais « inscrit » :
+ * seulement « demande envoyée, confirmez par e-mail ». Cadeau d'inscription : la check-list PDF est toujours téléchargeable directement (aucun verrou) ; le lien
  * « cadeau » apparaît en plus après un envoi réussi / un e-mail pré-rempli. Aucun e-mail de livraison automatique.
  */
 import Icon from './Icon.astro';
 import { useTranslations, type Locale } from '../i18n';
 import { getPageUrl } from '../utils/i18n';
-import { CONTACT_EMAIL, NEWSLETTER_ENDPOINT, checklistPdfPath } from '../config/site';
+import { CONTACT_EMAIL, NEWSLETTER_ENDPOINT, checklistPdfPath, newsletterProviderTarget } from '../config/site';
 import { checklistPdfExists } from '../utils/pdf';
 
 interface Props { lang: Locale }
@@ -19,7 +22,8 @@ const t = useTranslations(lang);
 const privacy = await getPageUrl(lang, 'privacy');
 const pdfUrl = checklistPdfPath(lang);
 const hasPdf = checklistPdfExists(lang);
-const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'), mailto: t('newsletter.mailto'), error: t('newsletter.error'), invalid: t('newsletter.invalid'), subject: t('newsletter.title') };
+const target = newsletterProviderTarget(lang);
+const msgs = { sending: t('newsletter.sending'), pending: t('newsletter.pending'), success: t('newsletter.success'), mailto: t('newsletter.mailto'), error: t('newsletter.error'), invalid: t('newsletter.invalid'), subject: t('newsletter.title') };
 ---
 <section class="container-page section" aria-labelledby="nl-title">
   <div class="relative overflow-hidden rounded-[2rem] bg-navy-700 px-6 py-10 text-white sm:px-10 sm:py-12 dark:bg-navy-800">
@@ -36,7 +40,7 @@ const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'
           <p class="mt-2 text-white/80">{t('newsletter.pdfDirect')} <a href={pdfUrl} download class="font-semibold underline underline-offset-2 hover:text-white" data-track="checklist_pdf_download" data-track-label={`newsletter-direct:${lang}`}>{t('newsletter.pdfDownload')}</a></p>
         </div>}
       </div>
-      <form class="grid gap-3" data-newsletter data-endpoint={NEWSLETTER_ENDPOINT ?? ''} data-email={CONTACT_EMAIL} data-lang={lang} data-msgs={JSON.stringify(msgs)} novalidate>
+      <form class="grid gap-3" data-newsletter data-endpoint={target?.url ?? NEWSLETTER_ENDPOINT ?? ''} data-provider={target?.provider ?? ''} data-email={CONTACT_EMAIL} data-lang={lang} data-msgs={JSON.stringify(msgs)} novalidate>
         <label for="nl-email" class="text-sm font-medium text-white/90">{t('newsletter.email')}</label>
         <div class="flex flex-col gap-3 sm:flex-row">
           <input id="nl-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder={t('newsletter.placeholder')} class="input !border-white/20 !bg-white !text-ink-900" aria-describedby="nl-msg nl-privacy" />
@@ -78,6 +82,24 @@ const msgs = { sending: t('newsletter.sending'), success: t('newsletter.success'
         return;
       }
       btn.disabled = true; msg.textContent = m.sending;
+      const provider = form.dataset.provider;
+      if (provider) {
+        // Corps attendu par chaque fournisseur (formulaires publics, sans secret). Réponse opaque (no-cors) :
+        // on ne peut pas lire le statut ; seule une erreur réseau est détectable.
+        const lang = form.dataset.lang || '';
+        const fields: Record<string, string> =
+          provider === 'brevo' ? { EMAIL: email, email_address_check: '', locale: lang, html_type: 'simple' }
+          : provider === 'mailerlite' ? { 'fields[email]': email, 'ml-submit': '1', anticsrf: 'true' }
+          : { email, embed: '1' };
+        try {
+          await fetch(endpoint, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(fields) });
+          msg.textContent = m.pending; form.reset();
+          gift?.classList.remove('hidden');
+          track?.('newsletter_signup', { via: provider });
+        } catch { msg.textContent = m.error; }
+        finally { btn.disabled = false; }
+        return;
+      }
       try {
         const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email, lang: form.dataset.lang }) });
         if (!res.ok) throw new Error(String(res.status));

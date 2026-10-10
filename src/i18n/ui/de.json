@@ -93,6 +93,7 @@
   "newsletter.success": "Danke! Deine Anmeldung wurde gespeichert.",
   "newsletter.mailto": "Dein E-Mail-Programm öffnet sich mit einer vorausgefüllten Nachricht: Sende sie, um die Anmeldung zu bestätigen.",
   "newsletter.error": "Etwas ist schiefgelaufen. Bitte später erneut versuchen.",
+  "newsletter.pending": "Anfrage gesendet. Du erhältst eine Bestätigungs-E-Mail: Klicke auf den Link darin, um die Anmeldung abzuschließen (prüfe auch den Spam-Ordner).",
   "newsletter.invalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
   "newsletter.pdfBadge": "Geschenk zur Anmeldung",
   "newsletter.pdfTitle": "Druckbare Checkliste: Sommerreise nach Marokko",

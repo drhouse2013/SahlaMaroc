@@ -1,6 +1,6 @@
 /**
  * Paramètres du calculateur « Frais de dédouanement d'une voiture » (retour définitif / MRE).
- * Date de la dernière vérification : 2026-10-09. À revérifier à chaque loi de finances et à chaque
+ * Date de la dernière vérification : 2026-10-10. À revérifier à chaque loi de finances et à chaque
  * circulaire ADII (opération Marhaba, en général en mai-juin).
  *
  * Légende du champ `status` :
@@ -11,8 +11,13 @@
  *
  * Note d'accès : douane.gov.ma a refusé les requêtes automatisées pendant la recherche (« Request Rejected »).
  * Les textes ADII ont donc été lus via leurs copies publiées sur finances.gov.ma et via la presse qui les cite.
+ * 2026-10-10 : la fiche officielle « Dédouanement d'un véhicule » du catalogue de services ADII (douane.gov.ma, articleId=51643,
+ * lue via Firecrawl) confirme l'abattement 90 % (60 ans, > 10 ans de résidence, plafond 300 000 DH, 9 places), le vieillissement
+ * de 3 ans (abattement 25 %) pour le retour définitif et les limites d'âge du véhicule. Elle ne donne PAS le taux du droit
+ * d'importation (renvoi à l'application MCV, SPA non lisible) ; les pages ADiL (adil/info_2.asp) renvoient « Request Rejected ».
+ * Tarif SH 8703 non retrouvé sur un texte officiel : droits d'importation laissés 'secondary' (indicatifs).
  */
-export const CUSTOMS_LAST_CHECKED = '2026-10-09';
+export const CUSTOMS_LAST_CHECKED = '2026-10-10';
 
 export interface CustomsParam<T = number> {
   value: T;
@@ -54,7 +59,7 @@ export const CUSTOMS = {
    * version 2011 : 85 %, relevé ensuite à 90 %) ; Bladi.net 07/06/2026 et 09/12/2025 (circulaires Marhaba, mêmes
    * conditions) ; Bladi.net 17/07/2023 (citation du guide ADII).
    */
-  abatement90Pct: { value: 90, status: 'official', source: 'Circulaire ADII 5945/311 (04/06/2019) ; Marhaba 2026 via Bladi 07/06/2026' } satisfies CustomsParam,
+  abatement90Pct: { value: 90, status: 'official', source: 'Fiche ADII « Dédouanement d’un véhicule » (douane.gov.ma, 10/10/2026) ; circulaire 5945/311 (04/06/2019)' } satisfies CustomsParam,
   /** Plafond de la valeur à l'état neuf soumise à l'abattement : au-delà, droit commun (mêmes sources). */
   abatement90CapMad: { value: 300000, status: 'official', source: 'Circulaire ADII 5945/311 ; Marhaba 2026 via Bladi 07/06/2026' } satisfies CustomsParam,
   /** Âge minimal du bénéficiaire (ans révolus). */

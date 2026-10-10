@@ -93,6 +93,7 @@
   "newsletter.success": "Merci ! Votre demande d'inscription est bien enregistrée.",
   "newsletter.mailto": "Votre messagerie s'ouvre avec un message pré-rempli : envoyez-le pour confirmer votre inscription.",
   "newsletter.error": "Une erreur est survenue. Réessayez plus tard.",
+  "newsletter.pending": "Demande envoyée. Vous allez recevoir un e-mail de confirmation : cliquez sur le lien qu'il contient pour finaliser l'inscription (pensez à vérifier vos courriers indésirables).",
   "newsletter.invalid": "Saisissez une adresse e-mail valide.",
   "newsletter.pdfBadge": "Cadeau d'inscription",
   "newsletter.pdfTitle": "Check-list imprimable « Retour d'été au Maroc »",

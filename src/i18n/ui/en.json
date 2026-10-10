@@ -93,6 +93,7 @@
   "newsletter.success": "Thank you! Your subscription request has been recorded.",
   "newsletter.mailto": "Your email app opens with a pre-filled message: send it to confirm your subscription.",
   "newsletter.error": "Something went wrong. Please try again later.",
+  "newsletter.pending": "Request sent. You will receive a confirmation email: click the link inside to complete your subscription (check your spam folder too).",
   "newsletter.invalid": "Please enter a valid email address.",
   "newsletter.pdfBadge": "Sign-up gift",
   "newsletter.pdfTitle": "Printable checklist: summer return to Morocco",

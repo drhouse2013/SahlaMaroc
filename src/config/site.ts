@@ -33,5 +33,52 @@ export const CONTACT_EMAIL = (import.meta.env.PUBLIC_CONTACT_EMAIL as string | u
 export const FORM_ENDPOINT = import.meta.env.PUBLIC_FORM_ENDPOINT as string | undefined;
 export const NEWSLETTER_ENDPOINT = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT as string | undefined;
 
+/**
+ * Mode « fournisseur » de la lettre d'information (voir docs/NEWSLETTER-PDF.md). Aucun secret : seuls des
+ * identifiants publics de formulaire sont utilisés.
+ * - PUBLIC_NEWSLETTER_PROVIDER = brevo | mailerlite | buttondown
+ * - PUBLIC_NEWSLETTER_FORM_ID  = brevo : URL complète du formulaire (https://xxxx.sibforms.com/serve/...) ;
+ *                                mailerlite : « <idCompte>/<idFormulaire> » ; buttondown : nom d'utilisateur.
+ * - PUBLIC_NEWSLETTER_FORM_ID_FR|EN|ES|DE|AR (facultatif) : identifiant propre à une langue (un formulaire
+ *   par langue permet un e-mail de bienvenue par langue). À défaut, PUBLIC_NEWSLETTER_FORM_ID.
+ * Priorité : fournisseur valide > PUBLIC_NEWSLETTER_ENDPOINT (JSON) > e-mail pré-rempli.
+ */
+export type NewsletterProvider = 'brevo' | 'mailerlite' | 'buttondown';
+const NL_IDS: Record<string, string | undefined> = {
+  default: import.meta.env.PUBLIC_NEWSLETTER_FORM_ID,
+  fr: import.meta.env.PUBLIC_NEWSLETTER_FORM_ID_FR,
+  en: import.meta.env.PUBLIC_NEWSLETTER_FORM_ID_EN,
+  es: import.meta.env.PUBLIC_NEWSLETTER_FORM_ID_ES,
+  de: import.meta.env.PUBLIC_NEWSLETTER_FORM_ID_DE,
+  ar: import.meta.env.PUBLIC_NEWSLETTER_FORM_ID_AR,
+};
+/** Construit l'URL publique de soumission ; renvoie null (et avertit au build) si la configuration est absente ou invalide. */
+export function newsletterProviderTarget(
+  lang: string,
+  provider: string | undefined = import.meta.env.PUBLIC_NEWSLETTER_PROVIDER,
+  ids: Record<string, string | undefined> = NL_IDS,
+): { provider: NewsletterProvider; url: string } | null {
+  const p = (provider ?? '').trim().toLowerCase();
+  if (!p) return null;
+  const id = (ids[lang] || ids.default || '').trim();
+  const fail = (why: string) => { console.warn(`[newsletter] PUBLIC_NEWSLETTER_PROVIDER=${p} ignoré : ${why}`); return null; };
+  if (!id) return fail('identifiant de formulaire manquant');
+  if (p === 'brevo') {
+    try {
+      const u = new URL(id);
+      if (u.protocol !== 'https:' || !u.hostname.endsWith('.sibforms.com') || !u.pathname.startsWith('/serve/')) return fail('URL Brevo attendue : https://xxxx.sibforms.com/serve/...');
+      return { provider: 'brevo', url: u.toString() };
+    } catch { return fail('URL Brevo invalide'); }
+  }
+  if (p === 'mailerlite') {
+    const m = /^(\d+)\/(\d+)$/.exec(id);
+    return m ? { provider: 'mailerlite', url: `https://assets.mailerlite.com/jsonp/${m[1]}/forms/${m[2]}/subscribe` } : fail('format attendu : <idCompte>/<idFormulaire> (chiffres)');
+  }
+  if (p === 'buttondown') {
+    return /^[A-Za-z0-9_-]+$/.test(id) ? { provider: 'buttondown', url: `https://buttondown.com/api/emails/embed-subscribe/${id}` } : fail('nom d\'utilisateur Buttondown attendu (lettres, chiffres, - _)');
+  }
+  return fail('fournisseur inconnu (brevo | mailerlite | buttondown)');
+}
+
 /** Check-list imprimable « Retour d'été au Maroc » (PDF généré par `node tools/build-pdf.mjs`, commité dans public/downloads/). */
 export const checklistPdfPath = (lang: string) => `/downloads/sahla-checklist-retour-ete-${lang}.pdf`;
