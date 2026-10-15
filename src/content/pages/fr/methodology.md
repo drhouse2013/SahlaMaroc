@@ -52,7 +52,6 @@ Les photos du site proviennent de Wikimedia Commons et sont utilisées sous lice
 - **Al Boraq à Tanger** : SpreeTom, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), [source](https://commons.wikimedia.org/wiki/File:Al_Boraq_Tangier.jpg)
 - **Port Tanger Med** : HrAd, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), [source](https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG)
 - **Quai du ferry à Tanger Med** : Bertrand SOUBEYRAND, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Le_cruise-ferry_Excellent_de_GNV_dans_le_port_de_Tanger_MED_au_Maroc_le_30-10-2023.jpg)
-
 - **Tanneries de Fès**: Andrzej Szkopiński, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), [source](https://commons.wikimedia.org/wiki/File:Fes_El_Bali,_Fes,_Morocco_-_panoramio_(2).jpg)
 - **Grand Socco, Tanger**: Shbbkr, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Tangier_-_Grand_Socco_-_20200906181817.jpg)
 - **Front de mer d'Agadir**: Ideophagous, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Plage_d'Agadir_-_from_Dunes_d'Or_hotel_1.jpg)
