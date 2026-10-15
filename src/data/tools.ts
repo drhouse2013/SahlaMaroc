@@ -9,6 +9,7 @@ import { MRE_LAST_CHECKED } from '../config/mre';
 import { COSTS_LAST_UPDATED } from '../config/costs';
 import { EUR_TO_MAD_DATE } from '../config/site';
 import { CUSTOMS_LAST_CHECKED } from '../config/customs';
+import { CAPITAL_GAINS_LAST_CHECKED } from '../config/capital-gains';
 
 type T = Record<Locale, string>;
 
@@ -162,6 +163,63 @@ export const TOOLS: Tool[] = [
       es: ['El valor considerado y la escala por antigüedad corresponden a la aduana: la herramienta no los determina', 'IVA 20 %; tasa parafiscal 0,25 %; derecho de importación orientativo (17,5 % gasolina o diésel, 2,5 % híbrido o eléctrico), a confirmar con la ADII', 'Sin honorarios de transitario, transporte, impuesto de timbre sobre coches de alto valor, permiso de circulación, viñeta ni seguro'],
       de: ['Angesetzter Wert und eine eventuelle Alterstabelle bestimmt der Zoll: das Tool legt sie nicht fest', 'MwSt. 20 %; parafiskalische Abgabe 0,25 %; Richtsatz Einfuhrzoll (17,5 % Benzin/Diesel, 2,5 % Hybrid/Elektro), bei der ADII zu bestätigen', 'Ohne Zollagent, Transport, Stempelsteuer auf hochwertige Pkw, Zulassung, Vignette und Versicherung'],
       ar: ['القيمة المعتمدة وأي سلّم حسب العمر من اختصاص الجمارك: الأداة لا تحددها', 'ضريبة القيمة المضافة 20%؛ الضريبة شبه الجبائية 0.25%؛ رسم استيراد إرشادي (17.5% للبنزين أو الديزل و2.5% للهجينة أو الكهربائية)، يؤكد لدى إدارة الجمارك', 'دون أتعاب الوسيط الجمركي والنقل ورسم الطابع على السيارات مرتفعة القيمة والبطاقة الرمادية والملصق والتأمين'],
+    },
+  },
+  {
+    key: 'ramadan-2027-times', icon: 'moon', audience: 'visitors', guideKey: 'holidays-2027', checked: '2026-10-15', sources: ['habous'],
+    title: { en: 'Ramadan 2027 timetable', fr: 'Horaires du Ramadan 2027', es: 'Horarios de Ramadán 2027', de: 'Ramadan 2027: Imsak und Iftar', ar: 'مواقيت رمضان 2027' },
+    text: { en: 'Imsak and iftar, day by day, for 35 Moroccan cities (provisional dates).', fr: 'Imsak et iftar jour par jour pour 35 villes marocaines (dates prévisionnelles).', es: 'Imsak e iftar día a día en 35 ciudades marroquíes (fechas provisionales).', de: 'Imsak und Iftar Tag für Tag für 35 marokkanische Städte (vorläufige Daten).', ar: 'الإمساك والإفطار يوماً بيوم لـ35 مدينة مغربية (تواريخ تقديرية).' },
+    method: {
+      fr: 'Même calcul astronomique que l’outil des horaires de prière, exécuté dans votre navigateur pour chacun des 30 jours à partir du 8 février 2027 : imsak = heure du Fajr (19°) et iftar = heure du Maghrib. Aucune donnée n’est envoyée.',
+      en: 'Same astronomical calculation as the prayer times tool, run in your browser for each of the 30 days from 8 February 2027: imsak = Fajr time (19°) and iftar = Maghrib time. No data is sent anywhere.',
+      es: 'El mismo cálculo astronómico que la herramienta de horarios de oración, ejecutado en tu navegador para cada uno de los 30 días desde el 8 de febrero de 2027: imsak = hora del Fajr (19°) e iftar = hora del Magrib. No se envía ningún dato.',
+      de: 'Dieselbe astronomische Berechnung wie beim Gebetszeiten-Tool, in deinem Browser für jeden der 30 Tage ab dem 8. Februar 2027 ausgeführt: Imsak = Zeit des Fadschr (19°), Iftar = Zeit des Maghrib. Es werden keine Daten gesendet.',
+      ar: 'الحساب الفلكي نفسه المعتمد في أداة مواقيت الصلاة، يُنفَّذ في متصفحك لكل يوم من الأيام الثلاثين ابتداءً من 8 فبراير 2027: الإمساك = وقت الفجر (19°) والإفطار = وقت المغرب. لا تُرسل أي بيانات.',
+    },
+    assumptions: {
+      fr: ['Dates prévisionnelles : début attendu le 8 février 2027, à confirmer par l’annonce officielle du ministère des Habous après l’observation du croissant (décalage possible d’un jour)', 'Imsak = Fajr, sans marge de précaution ; certains calendriers impriment l’imsak une dizaine de minutes avant', 'Horaires calculés, pouvant différer de quelques minutes du calendrier officiel', 'Heure légale du Maroc : GMT+0 toute l’année depuis le 20 septembre 2026, donc pas de changement d’heure pendant le Ramadan'],
+      en: ['Provisional dates: start expected on 8 February 2027, to be confirmed by the official announcement of the Ministry of Habous after the crescent sighting (one day of difference is possible)', 'Imsak = Fajr, with no safety margin; some calendars print imsak about ten minutes earlier', 'Calculated times, which can differ by a few minutes from the official calendar', 'Moroccan legal time: GMT+0 all year since 20 September 2026, so no clock change during Ramadan'],
+      es: ['Fechas provisionales: inicio previsto el 8 de febrero de 2027, a confirmar con el anuncio oficial del Ministerio de Habous tras la observación de la luna (posible diferencia de un día)', 'Imsak = Fajr, sin margen de precaución; algunos calendarios imprimen el imsak unos diez minutos antes', 'Horarios calculados, que pueden diferir unos minutos del calendario oficial', 'Hora legal de Marruecos: GMT+0 todo el año desde el 20 de septiembre de 2026, sin cambio de hora en Ramadán'],
+      de: ['Vorläufige Daten: erwarteter Beginn am 8. Februar 2027, zu bestätigen durch die offizielle Bekanntgabe des Habous-Ministeriums nach der Mondsichtung (ein Tag Abweichung möglich)', 'Imsak = Fadschr, ohne Sicherheitspuffer; manche Kalender drucken den Imsak etwa zehn Minuten früher', 'Berechnete Zeiten, die um einige Minuten vom offiziellen Kalender abweichen können', 'Marokkanische Zeit: ganzjährig GMT+0 seit dem 20. September 2026, also keine Zeitumstellung im Ramadan'],
+      ar: ['تواريخ تقديرية: بداية متوقعة في 8 فبراير 2027، يؤكدها الإعلان الرسمي لوزارة الأوقاف بعد رؤية الهلال (احتمال فارق يوم واحد)', 'الإمساك = الفجر دون هامش احتياط؛ وتطبع بعض التقاويم الإمساك قبله بنحو عشر دقائق', 'مواقيت محسوبة قد تختلف بضع دقائق عن التقويم الرسمي', 'التوقيت القانوني للمغرب: GMT+0 طوال السنة منذ 20 شتنبر 2026، فلا تغيير للساعة في رمضان'],
+    },
+  },
+  {
+    key: 'calc-capital-gains', icon: 'home', audience: 'mre', guideKey: 'property-taxes', checked: CAPITAL_GAINS_LAST_CHECKED, sources: ['dgi', 'mremin'],
+    title: { en: 'Property capital gains tax', fr: 'Impôt sur la plus-value immobilière', es: 'Impuesto sobre la plusvalía inmobiliaria', de: 'Immobiliengewinnsteuer', ar: 'الضريبة على الأرباح العقارية' },
+    text: { en: 'Estimate the tax on the profit from selling Moroccan property, with the main exemptions.', fr: 'Estimez l’impôt sur le profit de la vente d’un bien au Maroc, avec les principales exonérations.', es: 'Estima el impuesto sobre el beneficio de vender un inmueble en Marruecos, con las principales exenciones.', de: 'Schätze die Steuer auf den Gewinn aus dem Verkauf einer Immobilie in Marokko, mit den wichtigsten Befreiungen.', ar: 'قدّر الضريبة على ربح بيع عقار بالمغرب، مع أهم الإعفاءات.' },
+    method: {
+      fr: 'Profit net = prix de cession − (prix d’acquisition × coefficient de réévaluation saisi + frais d’acquisition + dépenses justifiées). Impôt = 20 % du profit net, avec un minimum de 3 % du prix de cession même sans profit. Les frais d’acquisition sont portés au forfait de 15 % du prix d’acquisition s’ils sont inférieurs.',
+      en: 'Net profit = sale price − (purchase price × the revaluation coefficient you enter + purchase costs + documented expenses). Tax = 20% of the net profit, with a minimum of 3% of the sale price even without profit. Purchase costs are raised to the flat 15% of the purchase price if they are lower.',
+      es: 'Beneficio neto = precio de venta − (precio de compra × coeficiente de revalorización introducido + gastos de compra + gastos justificados). Impuesto = 20 % del beneficio neto, con un mínimo del 3 % del precio de venta aun sin beneficio. Los gastos de compra se elevan al tanto alzado del 15 % del precio de compra si son inferiores.',
+      de: 'Nettogewinn = Verkaufspreis − (Kaufpreis × eingegebener Aufwertungskoeffizient + Erwerbskosten + nachgewiesene Ausgaben). Steuer = 20 % des Nettogewinns, mindestens 3 % des Verkaufspreises, auch ohne Gewinn. Liegen die Erwerbskosten darunter, gilt die Pauschale von 15 % des Kaufpreises.',
+      ar: 'الربح الصافي = ثمن البيع − (ثمن الشراء × معامل إعادة التقييم الذي تدخله + مصاريف الاقتناء + المصاريف المبرَّرة). الضريبة = 20% من الربح الصافي بحد أدنى 3% من ثمن البيع حتى في غياب الربح. ترفع مصاريف الاقتناء إلى النسبة الجزافية 15% من ثمن الشراء إذا كانت أقل.',
+    },
+    assumptions: {
+      fr: ['Le coefficient de réévaluation est saisi par vous : le tableau officiel de la DGI n’est pas intégré', 'Exonérations vérifiées sur les conditions saisies : habitation principale (5 ans, non louée, une fois en 5 ans, cession dans l’année suivant la vacance), logement social (4 ans, 50 à 80 m², 250 000 DH HT), cessions de l’année jusqu’à 140 000 DH', 'Source : Guide fiscal MRE (ministère chargé des MRE, juillet 2025) ; la DGI reste seule compétente ; hors intérêts d’emprunt, commissions et cas particuliers'],
+      en: ['You enter the revaluation coefficient: the official DGI table is not built in', 'Exemptions are checked against the conditions you enter: main home (5 years, not rented, once in 5 years, sale within a year of vacancy), social housing (4 years, 50 to 80 m², 250,000 MAD excl. VAT), the year’s sales up to 140,000 MAD', 'Source: MRE Tax Guide (ministry in charge of MRE, July 2025); the DGI alone decides; loan interest, commissions and special cases are excluded'],
+      es: ['El coeficiente de revalorización lo introduces tú: la tabla oficial de la DGI no está integrada', 'Las exenciones se comprueban con las condiciones introducidas: vivienda habitual (5 años, no alquilada, una vez cada 5 años, venta en el año siguiente a quedar vacía), vivienda social (4 años, 50 a 80 m², 250.000 MAD sin IVA), ventas del año hasta 140.000 MAD', 'Fuente: Guía fiscal MRE (ministerio encargado de los MRE, julio de 2025); solo la DGI decide; sin intereses del préstamo, comisiones ni casos particulares'],
+      de: ['Den Aufwertungskoeffizienten geben Sie selbst ein: die offizielle DGI-Tabelle ist nicht integriert', 'Befreiungen werden anhand der eingegebenen Bedingungen geprüft: Hauptwohnsitz (5 Jahre, nicht vermietet, einmal in 5 Jahren, Verkauf binnen eines Jahres nach Leerstand), Sozialwohnung (4 Jahre, 50 bis 80 m², 250.000 MAD ohne MwSt.), Verkäufe des Jahres bis 140.000 MAD', 'Quelle: Steuerleitfaden MRE (zuständiges Ministerium, Juli 2025); allein die DGI entscheidet; ohne Darlehenszinsen, Provisionen und Sonderfälle'],
+      ar: ['معامل إعادة التقييم من إدخالك: الجدول الرسمي للمديرية العامة للضرائب غير مدمج', 'تُراجع الإعفاءات حسب الشروط التي تدخلها: السكن الرئيسي (5 سنوات، غير مُكرى، مرة كل 5 سنوات، التفويت خلال سنة من الشغور)، السكن الاجتماعي (4 سنوات، من 50 إلى 80 م²، 250000 درهم دون الضريبة على القيمة المضافة)، تفويتات السنة حتى 140000 درهم', 'المصدر: الدليل الضريبي لمغاربة العالم (الوزارة المكلفة بهم، يوليوز 2025)؛ القرار للمديرية العامة للضرائب وحدها؛ دون فوائد القرض والعمولات والحالات الخاصة'],
+    },
+  },
+  {
+    key: 'calc-fx', icon: 'send', audience: 'mre', guideKey: 'send-money', checked: EUR_TO_MAD_DATE, sources: ['bkam', 'oc'],
+    title: { en: 'Euro to dirham converter', fr: 'Convertisseur euro-dirham', es: 'Conversor euro-dírham', de: 'Euro-Dirham-Rechner', ar: 'محوّل اليورو إلى الدرهم' },
+    text: { en: 'Convert euros to dirhams and back with a dated rate you can edit.', fr: 'Convertissez euros et dirhams avec un taux daté que vous pouvez modifier.', es: 'Convierte euros y dírhams con un tipo fechado que puedes modificar.', de: 'Rechne Euro und Dirham mit einem datierten, änderbaren Kurs um.', ar: 'حوّل بين اليورو والدرهم بسعر مؤرخ يمكنك تعديله.' },
+    method: {
+      fr: 'Montant × taux (euros vers dirhams) ou montant ÷ taux (dirhams vers euros), arrondi au centime. Le taux de départ est le taux indicatif du projet à la date indiquée ; vous pouvez le remplacer par celui de votre banque.',
+      en: 'Amount × rate (euros to dirhams) or amount ÷ rate (dirhams to euros), rounded to the cent. The starting rate is the project’s indicative rate on the date shown; you can replace it with your bank’s rate.',
+      es: 'Importe × tipo (euros a dírhams) o importe ÷ tipo (dírhams a euros), redondeado al céntimo. El tipo inicial es el tipo orientativo del proyecto en la fecha indicada; puedes sustituirlo por el de tu banco.',
+      de: 'Betrag × Kurs (Euro in Dirham) oder Betrag ÷ Kurs (Dirham in Euro), auf den Cent gerundet. Der Startkurs ist der Richtkurs des Projekts am angegebenen Datum; Sie können ihn durch den Kurs Ihrer Bank ersetzen.',
+      ar: 'المبلغ × السعر (من اليورو إلى الدرهم) أو المبلغ ÷ السعر (من الدرهم إلى اليورو)، مقرَّب إلى السنتيم. سعر البداية هو السعر الإرشادي للمشروع في التاريخ المبيّن؛ يمكنك تعويضه بسعر بنكك.',
+    },
+    assumptions: {
+      fr: ['Taux indicatif unique, non officiel ; ni marge bancaire ni frais de transfert', 'Le taux appliqué par votre banque ou opérateur fait foi ; cours officiels : Bank Al-Maghrib', 'Aucune donnée n’est envoyée : le calcul se fait dans votre navigateur'],
+      en: ['Single indicative rate, not official; no bank margin or transfer fees', 'The rate applied by your bank or provider prevails; official rates: Bank Al-Maghrib', 'No data is sent: the calculation runs in your browser'],
+      es: ['Un único tipo orientativo, no oficial; sin margen bancario ni comisiones de envío', 'Prevalece el tipo que aplique tu banco o proveedor; tipos oficiales: Bank Al-Maghrib', 'No se envía ningún dato: el cálculo se hace en tu navegador'],
+      de: ['Ein einziger Richtkurs, nicht offiziell; ohne Bankmarge und Überweisungsgebühren', 'Maßgeblich ist der Kurs Ihrer Bank oder Ihres Anbieters; offizielle Kurse: Bank Al-Maghrib', 'Es werden keine Daten gesendet: die Berechnung läuft in Ihrem Browser'],
+      ar: ['سعر إرشادي واحد غير رسمي؛ دون هامش بنكي أو مصاريف التحويل', 'العبرة بالسعر الذي يطبقه بنكك أو مزوّد الخدمة؛ الأسعار الرسمية: بنك المغرب', 'لا تُرسل أي بيانات: يتم الحساب داخل متصفحك'],
     },
   },
   {

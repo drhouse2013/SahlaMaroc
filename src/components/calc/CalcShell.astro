@@ -18,7 +18,7 @@ const t = useTranslations(lang);
     <form class="grid content-start gap-4 p-5 sm:grid-cols-2 sm:p-6" onsubmit="return false" novalidate>
       <slot name="form" />
     </form>
-    <div class="calc-result bg-navy-700 p-5 text-white sm:p-6 dark:bg-navy-800" aria-live="polite">
+    <div class="calc-result bg-navy-700 p-5 text-white sm:p-6 dark:bg-navy-800">
       <p class="calc-badge mb-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold text-gold-300"><Icon name="info" class="size-3.5" />{t('calc.estimate')}</p>
       <slot name="result" />
     </div>
@@ -32,7 +32,14 @@ const t = useTranslations(lang);
     width: 100%; min-height: 2.75rem; border-radius: 0.8rem; border: 1px solid var(--line-strong); background: var(--surface);
     padding: 0.55rem 0.8rem; font: inherit; color: var(--text); font-variant-numeric: tabular-nums;
   }
-  .calc input:focus, .calc select:focus { outline: none; border-color: var(--color-majorelle-500); box-shadow: 0 0 0 3px rgb(47 75 216 / .18); }
+  .calc input:focus-visible, .calc select:focus-visible, .calc button:focus-visible, .calc a:focus-visible, .calc summary:focus-visible {
+    outline: 3px solid var(--color-majorelle-500); outline-offset: 2px; border-color: var(--color-majorelle-500); box-shadow: 0 0 0 5px rgb(47 75 216 / .25);
+  }
+  .calc-result :focus-visible { outline-color: #fff; box-shadow: none; }
+  .calc button, .calc summary, .calc a.btn, .calc [role="button"] { min-height: 2.75rem; min-width: 2.75rem; }
+  .calc input[type="checkbox"], .calc input[type="radio"] { width: 1.5rem; height: 1.5rem; }
+  .calc label:has(> input[type="checkbox"]), .calc label:has(> input[type="radio"]) { min-height: 2.75rem; align-items: center; }
+  @media (prefers-reduced-motion: reduce) { .calc * { transition: none !important; animation: none !important; } }
   .calc input[aria-invalid="true"] { border-color: var(--color-terracotta-500); }
   .calc .calc-err { font-size: .78rem; font-weight: 500; color: var(--color-terracotta-600); }
   .dark .calc .calc-err { color: var(--color-terracotta-300); }
@@ -50,6 +57,14 @@ const t = useTranslations(lang);
     const form = root.querySelector('form')!;
     const id = root.dataset.calc;
     const track = (n: string) => (window as unknown as { sahlaTrack?: (n: string, d?: object) => void }).sahlaTrack?.(n, { calculator: id });
+    // Zone live limitée au montant principal (et non à tout le résultat).
+    const big = root.querySelector<HTMLElement>('.calc-result .big');
+    if (big) { big.setAttribute('aria-live', 'polite'); big.setAttribute('aria-atomic', 'true'); }
+    // Clavier numérique mobile.
+    form.querySelectorAll<HTMLInputElement>('input[type="number"]').forEach((i) => {
+      if (!i.hasAttribute('inputmode')) i.setAttribute('inputmode', i.step && i.step.includes('.') || i.step === 'any' ? 'decimal' : 'numeric');
+    });
+    let n = 0;
     let started = false;
     let completed = false;
 
@@ -58,10 +73,15 @@ const t = useTranslations(lang);
       let err = label.querySelector<HTMLElement>('.calc-err');
       if (text) {
         input.setAttribute('aria-invalid', 'true');
-        if (!err) { err = document.createElement('span'); err.className = 'calc-err'; err.setAttribute('role', 'alert'); label.appendChild(err); }
+        if (!err) {
+          err = document.createElement('span'); err.className = 'calc-err'; err.setAttribute('role', 'alert');
+          err.id = `calc-err-${id}-${++n}`; label.appendChild(err);
+        }
+        input.setAttribute('aria-describedby', err.id);
         err.textContent = text;
       } else {
         input.removeAttribute('aria-invalid');
+        input.removeAttribute('aria-describedby');
         err?.remove();
       }
     };

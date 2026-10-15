@@ -916,6 +916,436 @@ export const CITY_PAGES: CityPage[] = [
       },
     },
   },
+  {
+    id: 'meknes',
+    slug: { en: 'meknes', fr: 'meknes', es: 'meknes', de: 'meknes', ar: 'meknas' },
+    accessKeys: ['trains', 'ctm-supratours'],
+    stayKey: 'where-to-stay-meknes',
+    tripKeys: ['where-to-stay-fes'],
+    moreKeys: ['riad-or-hotel', 'transport-apps', 'scams-safety'],
+    bookingQuery: 'Meknes',
+    text: {
+      fr: {
+        intro: "Ancienne capitale impériale de Moulay Ismaïl, Meknès est plus petite et plus calme que Fès, et souvent visitée en un ou deux jours. La ville se compose de deux centres distincts, la médina et la Ville Nouvelle (Hamria), séparés par l'oued Boufekrane.",
+        why: ["Une ville historique inscrite à l'UNESCO depuis 1996, avec Bab Mansour et la place el-Hedim", 'Plus calme que Fès, facile à visiter en un ou deux jours', 'Une base pour Fès et pour les ruines romaines de Volubilis'],
+        when: "Meknès a un climat méditerranéen à influence continentale : été chaud, hiver frais. Le printemps et l'automne sont généralement plus agréables.",
+        access: "Meknès est sur la ligne de train Fès – Rabat, avec deux gares : Meknès-Ville, côté Hamria, et Meknès-Amir Abdelkader ; vérifiez laquelle dessert votre train. La gare routière CTM est proche de Meknès-Ville. Volubilis est à moins de 40 minutes en voiture selon le Rough Guides.",
+        areas: [
+          { name: 'Médina', text: "Monuments, souks et cafés à pied, riads et maisons d'hôtes près d'el-Hedim et de Bab Mansour. Ruelles étroites, accès en voiture limité." },
+          { name: 'Ville Nouvelle (Hamria)', text: "Plus pratique : restaurants, hôtels avec parking, taxis faciles et gares proches. Pas de monument, la médina se rejoint en taxi." },
+          { name: 'Volubilis', text: "Les ruines romaines, le plus grand site archéologique romain du Maroc selon l'ONMT, se visitent souvent avec Moulay Idriss. Vérifiez le transport avant de partir." },
+        ],
+        faq: [
+          { q: 'Où loger à Meknès pour une première visite ?', a: "Un riad ou une maison d'hôtes dans la médina, près d'el-Hedim, pour 1 à 2 nuits. Pour une étape en train ou en voiture, la Ville Nouvelle est plus simple." },
+          { q: 'Peut-on combiner Meknès et Fès ?', a: "Oui : certains voyageurs dorment à Fès et reviennent, d'autres font l'inverse. Choisissez selon les horaires de train et votre envie de calme." },
+        ],
+      },
+      en: {
+        intro: 'The former imperial capital of Moulay Ismail, Meknes is smaller and calmer than Fes and often visited in a day or two. The city has two separate centres, the medina and the Ville Nouvelle (Hamria), divided by the Boufekrane wadi.',
+        why: ['A historic city on the UNESCO list since 1996, with Bab Mansour and Place el-Hedim', 'Calmer than Fes and easy to see in a day or two', 'A base for Fes and for the Roman ruins of Volubilis'],
+        when: 'Meknes has a Mediterranean climate with continental influence: hot summers and cool winters. Spring and autumn are generally more pleasant.',
+        access: 'Meknes is on the Fes-Rabat train line and has two stations: Meknes-Ville, on the Hamria side, and Meknes-Amir Abdelkader; check which one your train uses. The CTM bus station is close to Meknes-Ville. Volubilis is under 40 minutes by car according to Rough Guides.',
+        areas: [
+          { name: 'Medina', text: 'Monuments, souks and cafés on foot, with riads and guesthouses near el-Hedim and Bab Mansour. Narrow lanes and limited car access.' },
+          { name: 'Ville Nouvelle (Hamria)', text: 'More practical: restaurants, hotels with parking, easy taxis and the stations nearby. No monuments; the medina is a short taxi ride away.' },
+          { name: 'Volubilis', text: 'The Roman ruins, the largest Roman archaeological site in Morocco according to ONMT, are often visited together with Moulay Idriss. Check transport before you go.' },
+        ],
+        faq: [
+          { q: 'Where should I stay in Meknes on a first visit?', a: 'A riad or guesthouse in the medina near el-Hedim for 1 to 2 nights. For a stopover by train or car, the Ville Nouvelle is simpler.' },
+          { q: 'Can I combine Meknes and Fes?', a: 'Yes: some travellers sleep in Fes and come back, others do the opposite. Choose according to train times and how much calm you want.' },
+        ],
+      },
+      es: {
+        intro: 'Antigua capital imperial de Moulay Ismail, Mequinez es más pequeña y tranquila que Fez y suele visitarse en uno o dos días. La ciudad tiene dos centros distintos, la medina y la Ville Nouvelle (Hamria), separados por el uadi Boufekrane.',
+        why: ['Una ciudad histórica en la lista de la UNESCO desde 1996, con Bab Mansour y la plaza el-Hedim', 'Más tranquila que Fez y fácil de ver en uno o dos días', 'Una base para Fez y para las ruinas romanas de Volubilis'],
+        when: 'Mequinez tiene un clima mediterráneo con influencia continental: verano caluroso e invierno fresco. La primavera y el otoño suelen ser más agradables.',
+        access: 'Mequinez está en la línea de tren Fez-Rabat y tiene dos estaciones: Meknès-Ville, en el lado de Hamria, y Meknès-Amir Abdelkader; comprueba cuál usa tu tren. La estación de autobuses CTM está cerca de Meknès-Ville. Volubilis queda a menos de 40 minutos en coche según Rough Guides.',
+        areas: [
+          { name: 'Medina', text: 'Monumentos, zocos y cafés a pie, con riads y casas de huéspedes cerca de el-Hedim y Bab Mansour. Callejuelas estrechas y acceso limitado en coche.' },
+          { name: 'Ville Nouvelle (Hamria)', text: 'Más práctica: restaurantes, hoteles con aparcamiento, taxis fáciles y estaciones cerca. Sin monumentos; la medina queda a un corto trayecto en taxi.' },
+          { name: 'Volubilis', text: 'Las ruinas romanas, el mayor yacimiento arqueológico romano de Marruecos según el ONMT, suelen visitarse junto con Moulay Idriss. Comprueba el transporte antes de salir.' },
+        ],
+        faq: [
+          { q: '¿Dónde alojarse en Mequinez en una primera visita?', a: 'Un riad o casa de huéspedes en la medina, cerca de el-Hedim, de 1 a 2 noches. Para una parada en tren o en coche, la Ville Nouvelle es más sencilla.' },
+          { q: '¿Se pueden combinar Mequinez y Fez?', a: 'Sí: algunos viajeros duermen en Fez y vuelven, otros hacen lo contrario. Elige según los horarios de tren y las ganas de tranquilidad.' },
+        ],
+      },
+      de: {
+        intro: 'Die frühere Kaiserstadt von Moulay Ismail ist kleiner und ruhiger als Fès und wird oft in ein bis zwei Tagen besucht. Die Stadt besteht aus zwei getrennten Zentren, der Medina und der Ville Nouvelle (Hamria), geteilt durch das Wadi Boufekrane.',
+        why: ['Eine historische Stadt auf der UNESCO-Liste seit 1996, mit Bab Mansour und dem Platz el-Hedim', 'Ruhiger als Fès und in ein bis zwei Tagen gut zu sehen', 'Ein Stützpunkt für Fès und für die römischen Ruinen von Volubilis'],
+        when: 'Meknès hat ein mediterranes Klima mit kontinentalem Einfluss: heiße Sommer, kühle Winter. Frühling und Herbst sind meist angenehmer.',
+        access: 'Meknès liegt an der Bahnlinie Fès–Rabat und hat zwei Bahnhöfe: Meknès-Ville auf der Hamria-Seite und Meknès-Amir Abdelkader; prüfen Sie, welchen Ihr Zug anfährt. Der CTM-Busbahnhof liegt nahe Meknès-Ville. Volubilis ist laut Rough Guides in weniger als 40 Minuten mit dem Auto erreichbar.',
+        areas: [
+          { name: 'Medina', text: 'Monumente, Souks und Cafés zu Fuß, Riads und Gästehäuser nahe el-Hedim und Bab Mansour. Enge Gassen, eingeschränkter Autozugang.' },
+          { name: 'Ville Nouvelle (Hamria)', text: 'Praktischer: Restaurants, Hotels mit Parkplatz, leicht Taxis und Bahnhöfe in der Nähe. Keine Monumente; die Medina erreicht man per Taxi.' },
+          { name: 'Volubilis', text: 'Die römischen Ruinen, laut ONMT die größte römische Ausgrabungsstätte Marokkos, werden oft zusammen mit Moulay Idriss besucht. Transport vorab klären.' },
+        ],
+        faq: [
+          { q: 'Wo übernachtet man in Meknès beim ersten Besuch?', a: 'In einem Riad oder Gästehaus in der Medina nahe el-Hedim, für 1 bis 2 Nächte. Für einen Zwischenstopp mit Zug oder Auto ist die Ville Nouvelle einfacher.' },
+          { q: 'Kann man Meknès und Fès kombinieren?', a: 'Ja: Manche übernachten in Fès und kommen zurück, andere umgekehrt. Entscheiden Sie nach Zugzeiten und Ihrem Wunsch nach Ruhe.' },
+        ],
+      },
+      ar: {
+        intro: 'مكناس العاصمة الإمبراطورية القديمة للمولى إسماعيل، أصغر وأهدأ من فاس، وتُزار غالباً في يوم أو يومين. تتكون المدينة من مركزين منفصلين هما المدينة العتيقة والمدينة الجديدة (الحمرية)، يفصل بينهما واد بوفكران.',
+        why: ['مدينة تاريخية مدرجة لدى اليونسكو منذ 1996، بباب المنصور وساحة الهديم', 'أهدأ من فاس ويسهل زيارتها في يوم أو يومين', 'قاعدة لزيارة فاس والآثار الرومانية لوليلي'],
+        when: 'لمكناس مناخ متوسطي بتأثير قاري: صيف حار وشتاء بارد. والربيع والخريف عموماً أنسب.',
+        access: 'تقع مكناس على خط القطار فاس–الرباط ولها محطتان: مكناس المدينة من جهة الحمرية، ومكناس الأمير عبد القادر؛ تحقق من المحطة التي يمر بها قطارك. محطة حافلات CTM قريبة من محطة مكناس المدينة. وليلي على بعد أقل من 40 دقيقة بالسيارة حسب Rough Guides.',
+        areas: [
+          { name: 'المدينة العتيقة', text: 'معالم وأسواق ومقاهٍ مشياً على الأقدام، مع رياضات ودور ضيافة قرب الهديم وباب المنصور. أزقة ضيقة وولوج محدود للسيارات.' },
+          { name: 'المدينة الجديدة (الحمرية)', text: 'أكثر عملية: مطاعم وفنادق بمواقف وسيارات أجرة سهلة ومحطات قريبة. لا معالم بها، والمدينة العتيقة على بعد رحلة قصيرة بسيارة أجرة.' },
+          { name: 'وليلي', text: 'الآثار الرومانية، وهي أكبر موقع أثري روماني في المغرب حسب المكتب الوطني المغربي للسياحة، تُزار غالباً مع مولاي إدريس. تحقق من وسيلة النقل قبل الانطلاق.' },
+        ],
+        faq: [
+          { q: 'أين أقيم في مكناس في الزيارة الأولى؟', a: 'في رياض أو دار ضيافة بالمدينة العتيقة قرب الهديم لمدة ليلة إلى ليلتين. أما للتوقف بالقطار أو السيارة فالمدينة الجديدة أبسط.' },
+          { q: 'هل يمكن الجمع بين مكناس وفاس؟', a: 'نعم: بعض المسافرين ينامون في فاس ويعودون، وآخرون يفعلون العكس. اختر حسب مواعيد القطار ورغبتك في الهدوء.' },
+        ],
+      },
+    },
+  },
+  {
+    id: 'ouarzazate',
+    slug: { en: 'ouarzazate', fr: 'ouarzazate', es: 'ouarzazate', de: 'ouarzazate', ar: 'warzazat' },
+    accessKeys: ['airports', 'ctm-supratours', 'car-rental'],
+    stayKey: 'where-to-stay-ouarzazate',
+    tripKeys: ['fes-merzouga', 'where-to-stay-merzouga'],
+    moreKeys: ['riad-or-hotel', 'scams-safety'],
+    bookingQuery: 'Ouarzazate',
+    text: {
+      fr: {
+        intro: "Ouarzazate est la grande étape entre le Haut Atlas et le Sud : on y dort pour visiter les kasbahs et les ksour, ou simplement pour couper la route vers le désert. La vraie question est de choisir où se placer : en ville, près d'une kasbah, ou dans la campagne autour.",
+        why: ["La kasbah de Taourirt et les studios de cinéma (Atlas Studios, créés en 1983)", "Le ksar d'Aït Ben Haddou, inscrit à l'UNESCO depuis 1987", 'Une étape pratique sur la route du désert, avec un aéroport international'],
+        when: "Le printemps et l'automne sont généralement les plus confortables. L'été est chaud (maximales avoisinant 37 °C en plein été) et, en hiver, les nuits peuvent descendre sous 0 °C : vérifiez le chauffage.",
+        access: "Ouarzazate possède un aéroport international (OZZ) ; les liaisons changent selon les saisons, consultez l'ONDA ou la compagnie. Depuis Marrakech, la route passe par le col du Tizi n'Tichka (2 260 m) : l'ONMT indique 194 km et 3 h 45 de route ; la neige peut compliquer le passage en hiver.",
+        areas: [
+          { name: 'En ville', text: "Le plus simple pour une nuit d'étape : hôtels, restaurants et taxis concentrés, départs matinaux faciles. Le centre est fonctionnel, pas une médina ancienne." },
+          { name: 'Kasbah de Taourirt', text: "Dormir près de la kasbah permet de la visiter à pied. Vérifiez l'adresse exacte et le stationnement avant de réserver." },
+          { name: "Périphérie et Aït Ben Haddou", text: "Maisons d'hôtes et hôtels de style kasbah, plus calmes mais éloignés : sans voiture, prévoyez un transfert ou un taxi pour dîner et pour les excursions." },
+        ],
+        faq: [
+          { q: "Où dormir à Ouarzazate pour une nuit d'étape ?", a: "En ville, près de la kasbah de Taourirt : restaurants et taxis sont à portée, et les départs matinaux (avion, bus, circuit) sont faciles." },
+          { q: "Faut-il loger près d'Aït Ben Haddou ?", a: "C'est plus dépaysant, avec un accès tranquille en fin de journée, mais l'offre est limitée et il faut s'organiser pour les repas et le retour. Vérifiez la distance et le transport avant de réserver." },
+        ],
+      },
+      en: {
+        intro: 'Ouarzazate is the big stopover between the High Atlas and the South: people sleep here to visit the kasbahs and ksour, or simply to break the road to the desert. The real question is where to base yourself: in town, near a kasbah, or in the countryside around.',
+        why: ['The Taourirt kasbah and the film studios (Atlas Studios, created in 1983)', 'The ksar of Ait Ben Haddou, on the UNESCO list since 1987', 'A practical stopover on the road to the desert, with an international airport'],
+        when: 'Spring and autumn are generally the most comfortable. Summer is hot (midsummer highs around 37 °C) and winter nights can fall below 0 °C: check the heating.',
+        access: 'Ouarzazate has an international airport (OZZ); routes change with the seasons, so check ONDA or the airline. From Marrakech the road crosses the Tizi n\'Tichka pass (2,260 m): ONMT gives 194 km and 3 h 45 of driving; snow can complicate the crossing in winter.',
+        areas: [
+          { name: 'In town', text: 'The simplest choice for a stopover: hotels, restaurants and taxis close together, easy early departures. The centre is functional, not an old medina.' },
+          { name: 'Taourirt kasbah', text: 'Sleeping near the kasbah lets you visit it on foot. Check the exact address and parking before booking.' },
+          { name: 'Outskirts and Ait Ben Haddou', text: 'Guesthouses and kasbah-style hotels, calmer but remote: without a car, plan a transfer or a taxi for dinner and excursions.' },
+        ],
+        faq: [
+          { q: 'Where should I sleep in Ouarzazate for a stopover night?', a: 'In town, near the Taourirt kasbah: restaurants and taxis are within reach and early departures (flight, bus, tour) are easy.' },
+          { q: 'Should I stay near Ait Ben Haddou?', a: 'It feels more remote, with quiet access late in the day, but the choice is limited and you need to organise meals and the return. Check the distance and transport before booking.' },
+        ],
+      },
+      es: {
+        intro: 'Uarzazate es la gran etapa entre el Alto Atlas y el Sur: se duerme aquí para visitar las kasbahs y los ksour, o simplemente para cortar el camino hacia el desierto. La verdadera cuestión es dónde instalarse: en la ciudad, cerca de una kasbah o en el campo de alrededor.',
+        why: ['La kasbah de Taourirt y los estudios de cine (Atlas Studios, creados en 1983)', 'El ksar de Ait Ben Haddou, en la lista de la UNESCO desde 1987', 'Una parada práctica en la ruta al desierto, con aeropuerto internacional'],
+        when: 'La primavera y el otoño suelen ser los más cómodos. El verano es caluroso (máximas en torno a 37 °C en pleno verano) y en invierno las noches pueden bajar de 0 °C: comprueba la calefacción.',
+        access: 'Uarzazate tiene aeropuerto internacional (OZZ); las conexiones cambian según la temporada, consulta la ONDA o la aerolínea. Desde Marrakech la carretera cruza el puerto del Tizi n\'Tichka (2260 m): el ONMT indica 194 km y 3 h 45 de ruta; la nieve puede complicar el paso en invierno.',
+        areas: [
+          { name: 'En la ciudad', text: 'Lo más sencillo para una noche de etapa: hoteles, restaurantes y taxis juntos, salidas tempranas fáciles. El centro es funcional, no una medina antigua.' },
+          { name: 'Kasbah de Taourirt', text: 'Dormir cerca de la kasbah permite visitarla a pie. Comprueba la dirección exacta y el aparcamiento antes de reservar.' },
+          { name: 'Afueras y Ait Ben Haddou', text: 'Casas de huéspedes y hoteles de estilo kasbah, más tranquilos pero alejados: sin coche, prevé un traslado o un taxi para cenar y para las excursiones.' },
+        ],
+        faq: [
+          { q: '¿Dónde dormir en Uarzazate para una noche de etapa?', a: 'En la ciudad, cerca de la kasbah de Taourirt: restaurantes y taxis a mano y salidas tempranas (avión, autobús, circuito) fáciles.' },
+          { q: '¿Conviene alojarse cerca de Ait Ben Haddou?', a: 'Es más apartado, con acceso tranquilo a última hora del día, pero la oferta es limitada y hay que organizar comidas y regreso. Comprueba la distancia y el transporte antes de reservar.' },
+        ],
+      },
+      de: {
+        intro: 'Ouarzazate ist die große Etappe zwischen Hohem Atlas und Süden: Man übernachtet hier, um Kasbahs und Ksour zu besuchen oder die Fahrt in die Wüste zu unterbrechen. Die eigentliche Frage ist, wo man sich niederlässt: in der Stadt, nahe einer Kasbah oder auf dem Land ringsum.',
+        why: ['Die Kasbah Taourirt und die Filmstudios (Atlas Studios, gegründet 1983)', 'Das Ksar Aït Ben Haddou, seit 1987 UNESCO-Welterbe', 'Ein praktischer Zwischenstopp auf dem Weg in die Wüste, mit internationalem Flughafen'],
+        when: 'Frühling und Herbst sind meist am angenehmsten. Der Sommer ist heiß (Höchstwerte um 37 °C im Hochsommer), im Winter können die Nächte unter 0 °C fallen: Heizung prüfen.',
+        access: 'Ouarzazate hat einen internationalen Flughafen (OZZ); die Verbindungen wechseln mit der Saison, prüfen Sie ONDA oder die Airline. Ab Marrakesch führt die Straße über den Tizi n\'Tichka (2.260 m): ONMT nennt 194 km und 3 h 45 Fahrt; Schnee kann die Überquerung im Winter erschweren.',
+        areas: [
+          { name: 'In der Stadt', text: 'Am einfachsten für eine Zwischenübernachtung: Hotels, Restaurants und Taxis dicht beieinander, frühe Abreisen sind leicht. Das Zentrum ist funktional, keine alte Medina.' },
+          { name: 'Kasbah Taourirt', text: 'Wer in der Nähe der Kasbah schläft, besucht sie zu Fuß. Genaue Adresse und Parkplatz vor der Buchung prüfen.' },
+          { name: 'Umland und Aït Ben Haddou', text: 'Gästehäuser und Hotels im Kasbah-Stil, ruhiger, aber abgelegen: ohne Auto Transfer oder Taxi fürs Abendessen und für Ausflüge einplanen.' },
+        ],
+        faq: [
+          { q: 'Wo übernachtet man in Ouarzazate für eine Zwischennacht?', a: 'In der Stadt, nahe der Kasbah Taourirt: Restaurants und Taxis sind in Reichweite, frühe Abreisen (Flug, Bus, Tour) sind leicht.' },
+          { q: 'Lohnt es sich, nahe Aït Ben Haddou zu wohnen?', a: 'Es ist abgelegener, mit ruhigem Zugang am Spätnachmittag, aber das Angebot ist begrenzt und Mahlzeiten und Rückweg müssen organisiert werden. Entfernung und Transport vor der Buchung prüfen.' },
+        ],
+      },
+      ar: {
+        intro: 'ورزازات محطة كبرى بين الأطلس الكبير والجنوب: ينام فيها الزوار لزيارة القصبات والقصور، أو لقطع الطريق نحو الصحراء. والسؤال الحقيقي هو أين تقيم: في المدينة، أم قرب قصبة، أم في الريف المحيط.',
+        why: ['قصبة تاوريرت واستوديوهات السينما (أطلس ستوديوز، أُنشئت سنة 1983)', 'قصر آيت بن حدو، مدرج لدى اليونسكو منذ 1987', 'محطة عملية في طريق الصحراء، بمطار دولي'],
+        when: 'الربيع والخريف عموماً أكثر راحة. الصيف حار (تبلغ القصوى نحو 37 درجة في أوج الصيف) وقد تنزل الليالي شتاءً إلى ما دون الصفر: تحقق من التدفئة.',
+        access: 'لورزازات مطار دولي (OZZ)؛ تتغير الخطوط حسب المواسم، فراجع المكتب الوطني للمطارات أو شركة الطيران. من مراكش يمر الطريق عبر ممر تيزي نتيشكا (2260 م): يذكر المكتب الوطني المغربي للسياحة 194 كلم و3 ساعات و45 دقيقة؛ وقد يعقّد الثلج العبور شتاءً.',
+        areas: [
+          { name: 'في المدينة', text: 'الأبسط لليلة عبور: فنادق ومطاعم وسيارات أجرة متقاربة، ومغادرة مبكرة سهلة. المركز عملي وليس مدينة عتيقة.' },
+          { name: 'قصبة تاوريرت', text: 'النوم قرب القصبة يتيح زيارتها مشياً. تحقق من العنوان الدقيق والمواقف قبل الحجز.' },
+          { name: 'الضواحي وآيت بن حدو', text: 'دور ضيافة وفنادق على طراز القصبات، أهدأ لكنها بعيدة: دون سيارة رتّب نقلاً أو سيارة أجرة للعشاء وللرحلات.' },
+        ],
+        faq: [
+          { q: 'أين أنام في ورزازات لليلة عبور؟', a: 'في المدينة قرب قصبة تاوريرت: المطاعم وسيارات الأجرة في المتناول، والمغادرة المبكرة (طائرة، حافلة، جولة) سهلة.' },
+          { q: 'هل أقيم قرب آيت بن حدو؟', a: 'الإقامة هناك أبعد وأهدأ مع وصول هادئ في آخر النهار، لكن العرض محدود ويلزم تدبير الوجبات والعودة. تحقق من المسافة والنقل قبل الحجز.' },
+        ],
+      },
+    },
+  },
+  {
+    id: 'oujda',
+    slug: { en: 'oujda', fr: 'oujda', es: 'oujda', de: 'oujda', ar: 'wajda' },
+    accessKeys: ['airports', 'trains', 'car-rental'],
+    stayKey: 'where-to-stay-oujda',
+    tripKeys: [],
+    moreKeys: ['short-term-rental', 'where-to-stay-nador', 'where-to-stay-al-hoceima', 'where-to-stay-tetouan-mdiq'],
+    bookingQuery: 'Oujda',
+    text: {
+      fr: {
+        intro: "Oujda est la grande ville de l'Oriental, porte nord-est du Maroc. On y fait souvent étape en famille ou on la prend comme base pour rejoindre Saïdia et sa plage.",
+        why: ["Une étape pratique : aéroport Angads, gare ONCF et commerces", "Une médina traditionnelle d'environ 25 hectares, entourée de remparts du XIXe siècle", 'Saïdia, la grande plage de l\'est marocain, à environ 50 à 60 km'],
+        when: "Juillet-août est la période de forte affluence des familles, surtout à Saïdia : réservez tôt. Les prix saisonniers sont à vérifier à la réservation.",
+        access: "L'aéroport Angads (OUD) est à une dizaine de kilomètres au nord de la ville. La gare d'Oujda relie l'ouest du pays (Fès, Rabat, Casablanca) ; pour l'été 2026, l'ONCF a annoncé des trains de nuit supplémentaires Tanger-Oujda du 22 juin au 13 septembre. La frontière terrestre avec l'Algérie est fermée : ne prévoyez pas de passage.",
+        areas: [
+          { name: 'Centre moderne', text: "Le plus pratique pour un passage ou une étape avant l'avion : commerces, cafés et taxis. Regardez la distance réelle à la gare ONCF." },
+          { name: 'Médina', text: "Traditionnelle et intéressante en journée, avec quatre portes principales ; l'offre d'hébergement y est plus limitée." },
+          { name: 'Sidi Yahya et Saïdia', text: "Sidi Yahya, oasis à environ 6 km, est une excursion plutôt qu'un secteur d'hébergement. Saïdia, station balnéaire avec marina et golf, est la destination plage." },
+        ],
+        faq: [
+          { q: 'Où dormir à Oujda pour une nuit avant un vol ou un train ?', a: "Dans un hôtel du centre d'Oujda, hors médina : commerces et taxis sont à proximité. Vérifiez la distance à la gare ou à l'endroit où vous avez affaire." },
+          { q: "Faut-il loger à Oujda ou à Saïdia l'été ?", a: "Pour la plage sur une à trois semaines, un appartement meublé ou une résidence à Saïdia. Oujda convient pour une étape, la culture ou une base ; les distances divergent selon les sources (52 à 60 km)." },
+        ],
+      },
+      en: {
+        intro: "Oujda is the main city of the Oriental region, the north-east gateway to Morocco. People often stop here with family or use it as a base to reach Saidia and its beach.",
+        why: ['A practical stopover: Angads airport, ONCF station and shops', 'A traditional medina of about 25 hectares, ringed by 19th-century ramparts', 'Saidia, the main beach of eastern Morocco, about 50 to 60 km away'],
+        when: 'July-August is peak season for families, especially in Saidia: book early. Seasonal prices should be checked at booking.',
+        access: "Angads airport (OUD) is about ten kilometres north of the city. Oujda station links the west of the country (Fes, Rabat, Casablanca); for summer 2026 ONCF announced extra night trains on Tangier-Oujda from 22 June to 13 September. The land border with Algeria is closed: do not plan to cross.",
+        areas: [
+          { name: 'Modern centre', text: 'The most practical for a passing night or a stop before a flight: shops, cafés and taxis. Look at the real distance to the ONCF station.' },
+          { name: 'Medina', text: 'Traditional and interesting by day, with four main gates; accommodation is more limited here.' },
+          { name: 'Sidi Yahya and Saidia', text: 'Sidi Yahya, an oasis about 6 km away, is an excursion rather than a place to stay. Saidia, a seaside resort with a marina and golf course, is the beach destination.' },
+        ],
+        faq: [
+          { q: 'Where should I sleep in Oujda before a flight or a train?', a: 'In a hotel in the centre of Oujda, outside the medina: shops and taxis are close by. Check the distance to the station or to where you need to be.' },
+          { q: 'Should I stay in Oujda or Saidia in summer?', a: 'For the beach over one to three weeks, a furnished flat or residence in Saidia. Oujda suits a stopover, culture or a base; distances differ between sources (52 to 60 km).' },
+        ],
+      },
+      es: {
+        intro: 'Uchda es la gran ciudad de la región Oriental, la puerta noreste de Marruecos. A menudo se hace escala en familia o se usa como base para llegar a Saidia y su playa.',
+        why: ['Una escala práctica: aeropuerto Angads, estación de la ONCF y comercios', 'Una medina tradicional de unas 25 hectáreas, rodeada de murallas del siglo XIX', 'Saidia, la gran playa del este marroquí, a unos 50 a 60 km'],
+        when: 'Julio y agosto son la época de mayor afluencia de familias, sobre todo en Saidia: reserva pronto. Los precios de temporada deben comprobarse al reservar.',
+        access: 'El aeropuerto Angads (OUD) está a una decena de kilómetros al norte de la ciudad. La estación de Uchda conecta con el oeste del país (Fez, Rabat, Casablanca); para el verano de 2026 la ONCF anunció trenes nocturnos adicionales Tánger-Uchda del 22 de junio al 13 de septiembre. La frontera terrestre con Argelia está cerrada: no prevean cruzarla.',
+        areas: [
+          { name: 'Centro moderno', text: 'Lo más práctico para una noche de paso o una escala antes del avión: comercios, cafés y taxis. Mira la distancia real a la estación de la ONCF.' },
+          { name: 'Medina', text: 'Tradicional e interesante de día, con cuatro puertas principales; la oferta de alojamiento es más limitada.' },
+          { name: 'Sidi Yahya y Saidia', text: 'Sidi Yahya, un oasis a unos 6 km, es una excursión más que una zona donde alojarse. Saidia, estación balnearia con puerto deportivo y golf, es el destino de playa.' },
+        ],
+        faq: [
+          { q: '¿Dónde dormir en Uchda antes de un vuelo o un tren?', a: 'En un hotel del centro de Uchda, fuera de la medina: comercios y taxis cerca. Comprueba la distancia a la estación o al lugar de tus gestiones.' },
+          { q: '¿Alojarse en Uchda o en Saidia en verano?', a: 'Para la playa de una a tres semanas, un apartamento amueblado o una residencia en Saidia. Uchda sirve para una escala, la cultura o como base; las distancias difieren según las fuentes (52 a 60 km).' },
+        ],
+      },
+      de: {
+        intro: 'Oujda ist die große Stadt der Region Oriental, das Nordosttor Marokkos. Man legt hier oft mit der Familie einen Zwischenstopp ein oder nutzt sie als Basis für Saïdia und seinen Strand.',
+        why: ['Ein praktischer Zwischenstopp: Flughafen Angads, ONCF-Bahnhof und Geschäfte', 'Eine traditionelle Medina von rund 25 Hektar, umgeben von Stadtmauern aus dem 19. Jahrhundert', 'Saïdia, der große Strand Ostmarokkos, etwa 50 bis 60 km entfernt'],
+        when: 'Juli und August sind die Hauptreisezeit für Familien, vor allem in Saïdia: früh buchen. Saisonpreise bei der Buchung prüfen.',
+        access: 'Der Flughafen Angads (OUD) liegt rund zehn Kilometer nördlich der Stadt. Der Bahnhof Oujda verbindet mit dem Westen des Landes (Fès, Rabat, Casablanca); für den Sommer 2026 kündigte die ONCF zusätzliche Nachtzüge Tanger–Oujda vom 22. Juni bis 13. September an. Die Landgrenze zu Algerien ist geschlossen: Einen Übergang nicht einplanen.',
+        areas: [
+          { name: 'Modernes Zentrum', text: 'Am praktischsten für eine Durchreise oder einen Stopp vor dem Flug: Geschäfte, Cafés und Taxis. Die tatsächliche Entfernung zum ONCF-Bahnhof prüfen.' },
+          { name: 'Medina', text: 'Traditionell und tagsüber interessant, mit vier Haupttoren; das Übernachtungsangebot ist begrenzter.' },
+          { name: 'Sidi Yahya und Saïdia', text: 'Sidi Yahya, eine Oase in etwa 6 km Entfernung, ist eher ein Ausflug als ein Übernachtungsviertel. Saïdia, ein Badeort mit Marina und Golfplatz, ist das Strandziel.' },
+        ],
+        faq: [
+          { q: 'Wo übernachtet man in Oujda vor einem Flug oder Zug?', a: 'In einem Hotel im Zentrum von Oujda, außerhalb der Medina: Geschäfte und Taxis sind nah. Die Entfernung zum Bahnhof oder zum Ziel prüfen.' },
+          { q: 'Im Sommer in Oujda oder in Saïdia wohnen?', a: 'Für den Strand über ein bis drei Wochen eine möblierte Wohnung oder Residenz in Saïdia. Oujda eignet sich für einen Zwischenstopp, Kultur oder als Basis; die Entfernungen unterscheiden sich je nach Quelle (52 bis 60 km).' },
+        ],
+      },
+      ar: {
+        intro: 'وجدة هي المدينة الكبرى في جهة الشرق وبوابة المغرب الشمالية الشرقية. يتوقف فيها الزوار غالباً مع العائلة أو يتخذونها قاعدة للوصول إلى السعيدية وشاطئها.',
+        why: ['محطة عملية: مطار أنكاد ومحطة المكتب الوطني للسكك الحديدية ومتاجر', 'مدينة عتيقة تقليدية مساحتها نحو 25 هكتاراً، تحيط بها أسوار من القرن 19', 'السعيدية، أكبر شاطئ في شرق المغرب، على بعد نحو 50 إلى 60 كلم'],
+        when: 'يوليوز وغشت فترة ذروة توافد العائلات، خاصة في السعيدية: احجز مبكراً. وتُراجع الأسعار الموسمية عند الحجز.',
+        access: 'مطار أنكاد (OUD) على بعد عشرة كيلومترات تقريباً شمال المدينة. تربط محطة وجدة غرب البلاد (فاس، الرباط، الدار البيضاء)؛ وأعلن المكتب الوطني للسكك الحديدية لصيف 2026 قطارات ليلية إضافية طنجة–وجدة من 22 يونيو إلى 13 شتنبر. الحدود البرية مع الجزائر مغلقة: لا تخطط لعبورها.',
+        areas: [
+          { name: 'المركز الحديث', text: 'الأنسب لليلة عبور أو توقف قبل الطائرة: متاجر ومقاهٍ وسيارات أجرة. انظر إلى المسافة الفعلية إلى محطة القطار.' },
+          { name: 'المدينة العتيقة', text: 'تقليدية ومثيرة للاهتمام نهاراً، بأربعة أبواب رئيسية؛ وعرض الإيواء فيها أكثر محدودية.' },
+          { name: 'سيدي يحيى والسعيدية', text: 'سيدي يحيى واحة على بعد نحو 6 كلم، وهي رحلة أكثر منها حيّاً للإقامة. والسعيدية منتجع ساحلي بمرسى وملعب غولف، وهي وجهة الشاطئ.' },
+        ],
+        faq: [
+          { q: 'أين أنام في وجدة قبل رحلة جوية أو قطار؟', a: 'في فندق بوسط وجدة خارج المدينة العتيقة: المتاجر وسيارات الأجرة قريبة. تحقق من المسافة إلى المحطة أو إلى وجهتك.' },
+          { q: 'هل أقيم في وجدة أم السعيدية صيفاً؟', a: 'للشاطئ لمدة أسبوع إلى ثلاثة، شقة مفروشة أو إقامة في السعيدية. وجدة تناسب التوقف أو الثقافة أو كقاعدة؛ وتختلف المسافات حسب المصادر (52 إلى 60 كلم).' },
+        ],
+      },
+    },
+  },
+  {
+    id: 'al-hoceima',
+    slug: { en: 'al-hoceima', fr: 'al-hoceima', es: 'alhucemas', de: 'al-hoceima', ar: 'al-hoceima' },
+    accessKeys: ['ferry-guide', 'airports', 'motorway'],
+    stayKey: 'where-to-stay-al-hoceima',
+    tripKeys: [],
+    moreKeys: ['marhaba-guide', 'short-term-rental', 'where-to-stay-nador', 'where-to-stay-oujda'],
+    bookingQuery: 'Al Hoceima',
+    text: {
+      fr: {
+        intro: "Al Hoceïma est une station balnéaire du Rif méditerranéen, très prisée l'été par les familles venues de l'étranger. Bien choisir son secteur évite les trajets inutiles entre plage, commerces et port.",
+        why: ["Les plages de Quemado et Sfiha, proches du centre", "Le parc national d'Al Hoceïma : falaises calcaires, dauphins, balbuzards pêcheurs", 'Un accès par avion, par ferry depuis Motril et par la route nationale 16'],
+        when: "Juillet-août concentre la demande des MRE : réservez tôt. Les prix montent en haute saison et sont à vérifier à la réservation, jamais garantis.",
+        access: "L'aéroport Charif Al Idrissi (AHU) est à 17 km de la ville ; des vols saisonniers et une ligne Royal Air Maroc Express vers Casablanca existent, à confirmer auprès des compagnies. Le port est relié à Motril (Baleària annonce 4 départs par semaine, environ 5 heures ; les sources divergent sur la saison). Par la route : Nador à 126 km selon Wikipédia, Tanger à environ 290 km (5 h 10 selon l'ONMT).",
+        areas: [
+          { name: 'Centre-ville', text: "Le plus simple pour un court séjour sans voiture : hôtels, restaurants, magasins et taxis. Animé en soirée en été." },
+          { name: 'Quemado, Sfiha et Cala Bonita', text: "Plages et secteurs balnéaires avec des complexes hôteliers. Comparez la distance réelle au centre et l'accès en voiture." },
+          { name: "Parc national d'Al Hoceïma", text: "Créé en octobre 2004, 48 460 ha dont 19 000 en mer. Cala Iris et Badés : cadre nature loin des commerces, pour qui est motorisé et organisé." },
+        ],
+        faq: [
+          { q: 'Où loger à Al Hoceïma sans voiture ?', a: "Dans un hôtel du centre-ville, proche des commerces et de la mer. Pour un séjour de plusieurs semaines en famille, un appartement meublé avec cuisine." },
+          { q: 'Peut-on arriver en ferry ?', a: "Oui, le port est relié à Motril (Espagne), mais les sources divergent sur la saison et la fréquence : vérifiez auprès de la compagnie avant de réserver." },
+        ],
+      },
+      en: {
+        intro: 'Al Hoceima is a seaside resort on the Mediterranean Rif coast, very popular in summer with families from abroad. Choosing the right area avoids pointless trips between the beach, the shops and the port.',
+        why: ['The Quemado and Sfiha beaches, close to the centre', 'Al Hoceima National Park: limestone cliffs, dolphins and ospreys', 'Access by air, by ferry from Motril and by the N16 road'],
+        when: 'July-August concentrates demand from Moroccans living abroad: book early. Prices rise in high season and should be checked at booking, never assumed.',
+        access: "Charif Al Idrissi airport (AHU) is 17 km from town; seasonal flights and a Royal Air Maroc Express route to Casablanca exist, to be confirmed with the airlines. The port is linked to Motril (Balearia announces 4 departures a week, about 5 hours; sources differ on the season). By road: Nador is 126 km away according to Wikipedia, Tangier about 290 km (5 h 10 according to ONMT).",
+        areas: [
+          { name: 'Town centre', text: 'The simplest choice for a short stay without a car: hotels, restaurants, shops and taxis. Lively in the evening in summer.' },
+          { name: 'Quemado, Sfiha and Cala Bonita', text: 'Beaches and seaside areas with hotel complexes. Compare the real distance to the centre and car access.' },
+          { name: 'Al Hoceima National Park', text: 'Created in October 2004, 48,460 ha including 19,000 at sea. Cala Iris and Bades: a natural setting away from the shops, for those with a car and good planning.' },
+        ],
+        faq: [
+          { q: 'Where should I stay in Al Hoceima without a car?', a: 'In a hotel in the town centre, close to the shops and the sea. For several weeks with family, a furnished flat with a kitchen.' },
+          { q: 'Can I arrive by ferry?', a: 'Yes, the port is linked to Motril (Spain), but sources differ on the season and frequency: check with the operator before booking.' },
+        ],
+      },
+      es: {
+        intro: 'Alhucemas es una estación balnearia del Rif mediterráneo, muy popular en verano entre las familias llegadas del extranjero. Elegir bien la zona evita trayectos inútiles entre la playa, los comercios y el puerto.',
+        why: ['Las playas de Quemado y Sfiha, cerca del centro', 'El Parque Nacional de Alhucemas: acantilados calizos, delfines y águilas pescadoras', 'Acceso en avión, en ferri desde Motril y por la carretera N16'],
+        when: 'Julio y agosto concentran la demanda de los marroquíes residentes en el extranjero: reserva pronto. Los precios suben en temporada alta y deben comprobarse al reservar, nunca darse por hechos.',
+        access: 'El aeropuerto Charif Al Idrissi (AHU) está a 17 km de la ciudad; hay vuelos estacionales y una ruta de Royal Air Maroc Express a Casablanca, a confirmar con las aerolíneas. El puerto está unido con Motril (Baleària anuncia 4 salidas por semana, unas 5 horas; las fuentes difieren sobre la temporada). Por carretera: Nador está a 126 km según Wikipedia y Tánger a unos 290 km (5 h 10 según el ONMT).',
+        areas: [
+          { name: 'Centro urbano', text: 'Lo más sencillo para una estancia corta sin coche: hoteles, restaurantes, tiendas y taxis. Animado por la noche en verano.' },
+          { name: 'Quemado, Sfiha y Cala Bonita', text: 'Playas y zonas balnearias con complejos hoteleros. Compara la distancia real al centro y el acceso en coche.' },
+          { name: 'Parque Nacional de Alhucemas', text: 'Creado en octubre de 2004, 48.460 ha, de ellas 19.000 en el mar. Cala Iris y Badés: entorno natural lejos de los comercios, para quien tiene coche y se organiza.' },
+        ],
+        faq: [
+          { q: '¿Dónde alojarse en Alhucemas sin coche?', a: 'En un hotel del centro, cerca de los comercios y del mar. Para varias semanas en familia, un apartamento amueblado con cocina.' },
+          { q: '¿Se puede llegar en ferri?', a: 'Sí, el puerto está unido con Motril (España), pero las fuentes difieren sobre la temporada y la frecuencia: comprueba con la naviera antes de reservar.' },
+        ],
+      },
+      de: {
+        intro: 'Al Hoceïma ist ein Badeort an der mediterranen Rif-Küste, im Sommer bei Familien aus dem Ausland sehr beliebt. Die richtige Wahl des Viertels erspart unnötige Wege zwischen Strand, Geschäften und Hafen.',
+        why: ['Die Strände Quemado und Sfiha nahe dem Zentrum', 'Der Nationalpark Al Hoceïma: Kalksteinklippen, Delfine und Fischadler', 'Anreise per Flugzeug, per Fähre ab Motril und über die Nationalstraße N16'],
+        when: 'Juli und August bündeln die Nachfrage der Auslandsmarokkaner: früh buchen. Die Preise steigen in der Hochsaison und sind bei der Buchung zu prüfen, nie als gegeben anzunehmen.',
+        access: 'Der Flughafen Charif Al Idrissi (AHU) liegt 17 km von der Stadt entfernt; es gibt saisonale Flüge und eine Royal-Air-Maroc-Express-Verbindung nach Casablanca, bei den Airlines zu bestätigen. Der Hafen ist mit Motril verbunden (Baleària nennt 4 Abfahrten pro Woche, etwa 5 Stunden; die Quellen weichen bei der Saison ab). Auf der Straße: Nador liegt laut Wikipedia 126 km entfernt, Tanger etwa 290 km (5 h 10 laut ONMT).',
+        areas: [
+          { name: 'Stadtzentrum', text: 'Am einfachsten für einen kurzen Aufenthalt ohne Auto: Hotels, Restaurants, Geschäfte und Taxis. Im Sommer abends belebt.' },
+          { name: 'Quemado, Sfiha und Cala Bonita', text: 'Strände und Badeviertel mit Hotelanlagen. Die tatsächliche Entfernung zum Zentrum und die Autoanfahrt vergleichen.' },
+          { name: 'Nationalpark Al Hoceïma', text: 'Im Oktober 2004 gegründet, 48.460 ha, davon 19.000 auf dem Meer. Cala Iris und Badés: Naturkulisse fern der Geschäfte, für Autofahrer mit guter Planung.' },
+        ],
+        faq: [
+          { q: 'Wo wohnt man in Al Hoceïma ohne Auto?', a: 'In einem Hotel im Stadtzentrum, nahe Geschäften und Meer. Für mehrere Wochen mit der Familie eine möblierte Wohnung mit Küche.' },
+          { q: 'Kann man mit der Fähre anreisen?', a: 'Ja, der Hafen ist mit Motril (Spanien) verbunden, doch die Quellen weichen bei Saison und Frequenz ab: vor der Buchung bei der Reederei prüfen.' },
+        ],
+      },
+      ar: {
+        intro: 'الحسيمة منتجع ساحلي في الريف المتوسطي، يقصده في الصيف كثير من العائلات القادمة من الخارج. واختيار الحي المناسب يجنّب التنقلات غير الضرورية بين الشاطئ والمتاجر والميناء.',
+        why: ['شاطئا كيمادو وصفيحة قرب وسط المدينة', 'المنتزه الوطني للحسيمة: جروف كلسية ودلافين وعقاب البحر', 'الوصول بالطائرة أو بالعبّارة من موتريل أو عبر الطريق الوطنية 16'],
+        when: 'يتركز طلب أفراد الجالية في يوليوز وغشت: احجز مبكراً. ترتفع الأسعار في الذروة وتُراجع عند الحجز ولا تُعتبر مضمونة.',
+        access: 'مطار الشريف الإدريسي (AHU) على بعد 17 كلم من المدينة؛ توجد رحلات موسمية وخط للخطوط الملكية المغربية إكسبريس نحو الدار البيضاء، يلزم تأكيدها لدى الشركات. الميناء مرتبط بموتريل (تعلن بالياريا عن 4 رحلات أسبوعياً، نحو 5 ساعات؛ وتختلف المصادر حول الموسم). برّاً: الناظور على بعد 126 كلم حسب ويكيبيديا، وطنجة نحو 290 كلم (5 ساعات و10 دقائق حسب المكتب الوطني المغربي للسياحة).',
+        areas: [
+          { name: 'وسط المدينة', text: 'الأبسط لإقامة قصيرة دون سيارة: فنادق ومطاعم ومتاجر وسيارات أجرة. نابض بالحياة مساءً في الصيف.' },
+          { name: 'كيمادو وصفيحة وكالا بونيطا', text: 'شواطئ ومناطق ساحلية بها مركبات فندقية. قارن المسافة الفعلية إلى الوسط وسهولة الوصول بالسيارة.' },
+          { name: 'المنتزه الوطني للحسيمة', text: 'أُحدث في أكتوبر 2004 على 48460 هكتاراً منها 19000 في البحر. كالا إيريس وباديس: إطار طبيعي بعيد عن المتاجر لمن يملك سيارة ويحسن التنظيم.' },
+        ],
+        faq: [
+          { q: 'أين أقيم في الحسيمة دون سيارة؟', a: 'في فندق بوسط المدينة قرب المتاجر والبحر. ولإقامة عائلية من عدة أسابيع، شقة مفروشة بمطبخ.' },
+          { q: 'هل يمكن الوصول بالعبّارة؟', a: 'نعم، الميناء مرتبط بموتريل (إسبانيا)، لكن المصادر تختلف حول الموسم والوتيرة: تحقق لدى الشركة قبل الحجز.' },
+        ],
+      },
+    },
+  },
+  {
+    id: 'merzouga',
+    slug: { en: 'merzouga', fr: 'merzouga', es: 'merzouga', de: 'merzouga', ar: 'merzouga' },
+    accessKeys: ['merzouga-tour', 'fes-merzouga', 'car-rental'],
+    stayKey: 'where-to-stay-merzouga',
+    tripKeys: [],
+    moreKeys: ['scams-safety', 'cash-atms', 'tipping', 'health-travellers'],
+    bookingQuery: 'Merzouga',
+    text: {
+      fr: {
+        intro: "Merzouga est le village d'accès à l'Erg Chebbi, dans le sud-est du Maroc. Y dormir, c'est choisir entre une nuit dans les dunes (bivouac ou camp), une auberge au pied de l'erg, ou un mélange des deux.",
+        why: ["Les dunes de l'Erg Chebbi, l'une des portes du Sahara selon l'ONMT", 'Le trajet à dromadaire, le dîner et la nuit en bivouac', "Des auberges au pied des dunes, pour un vrai lit sans renoncer au coucher de soleil"],
+        when: "Le printemps (mars à mai) et l'automne (septembre à novembre) sont les meilleures périodes. L'été est extrêmement chaud ; l'hiver, haute saison, a des nuits très froides : consultez la météo avant le départ.",
+        access: "Merzouga est à environ 50 km d'Erfoud et 562 km de Marrakech selon Wikipédia (à confirmer sur votre itinéraire). Les circuits depuis Marrakech et Fès sont détaillés dans nos guides ; l'aéroport d'Errachidia fait partie du réseau de l'ONDA. Évitez de rouler de nuit.",
+        areas: [
+          { name: 'Camp dans les dunes', text: "Forfait classique : trajet à dromadaire, dîner, petit-déjeuner et animation. Les camps dits « luxe » ont des tentes avec lit : le terme n'est pas normé, demandez détails et photos récentes." },
+          { name: 'Auberge ou kasbah-hôtel', text: "Vrai lit, vraie douche, chauffage ou climatisation, avec le dromadaire au coucher du soleil sans dormir sous tente." },
+          { name: 'Formule mixte', text: "Chambres et camp à quelques kilomètres : utile pour une nuit sous tente puis une nuit confortable." },
+        ],
+        faq: [
+          { q: 'Quel hébergement choisir pour une première fois ?', a: "Un camp dans les dunes avec trajet à dromadaire, dîner et petit-déjeuner pour une nuit. Si vous craignez le froid ou la tente, une auberge puis une excursion à la journée." },
+          { q: 'Que vérifier avant de réserver un camp ?', a: "Ce qui est inclus (repas, eau, douche, transfert), les couvertures, l'annulation et l'acompte par écrit, et l'heure d'arrivée avant le départ des dromadaires. Réservez directement avec l'établissement, pas avec un rabatteur à Rissani, Erfoud ou Merzouga." },
+        ],
+      },
+      en: {
+        intro: 'Merzouga is the gateway village to the Erg Chebbi in south-east Morocco. Staying here means choosing between a night in the dunes (bivouac or camp), a guesthouse at the foot of the erg, or a mix of both.',
+        why: ['The Erg Chebbi dunes, one of the gateways to the Sahara according to ONMT', 'The camel ride, dinner and a night in a bivouac', 'Guesthouses at the foot of the dunes, for a proper bed without missing the sunset'],
+        when: 'Spring (March to May) and autumn (September to November) are the best periods. Summer is extremely hot; winter, the high season, has very cold nights: check the weather before you leave.',
+        access: 'Merzouga is about 50 km from Erfoud and 562 km from Marrakech according to Wikipedia (confirm on your own route). Tours from Marrakech and Fes are detailed in our guides; Errachidia airport is part of the ONDA network. Avoid driving at night.',
+        areas: [
+          { name: 'Camp in the dunes', text: 'The classic package: camel ride, dinner, breakfast and entertainment. So-called "luxury" camps have tents with beds: the term is not standardised, so ask for details and recent photos.' },
+          { name: 'Guesthouse or kasbah hotel', text: 'A real bed, a real shower, heating or air conditioning, with the camel ride at sunset without sleeping in a tent.' },
+          { name: 'Mixed option', text: 'Rooms plus a camp a few kilometres away: useful for one night under canvas and one in comfort.' },
+        ],
+        faq: [
+          { q: 'Which accommodation should I choose the first time?', a: 'A camp in the dunes with a camel ride, dinner and breakfast for one night. If you dislike cold or tents, a guesthouse and a day excursion.' },
+          { q: 'What should I check before booking a camp?', a: 'What is included (meals, water, shower, transfer), blankets, cancellation and deposit in writing, and arrival time before the camels leave. Book directly with the establishment, not with a tout in Rissani, Erfoud or Merzouga.' },
+        ],
+      },
+      es: {
+        intro: 'Merzouga es el pueblo de acceso al Erg Chebbi, en el sureste de Marruecos. Dormir aquí es elegir entre una noche en las dunas (vivac o campamento), un albergue al pie del erg o una mezcla de ambos.',
+        why: ['Las dunas del Erg Chebbi, una de las puertas del Sáhara según el ONMT', 'El paseo en dromedario, la cena y la noche en vivac', 'Albergues al pie de las dunas, para una cama de verdad sin renunciar al atardecer'],
+        when: 'La primavera (marzo a mayo) y el otoño (septiembre a noviembre) son las mejores épocas. El verano es extremadamente caluroso; el invierno, temporada alta, tiene noches muy frías: consulta el tiempo antes de salir.',
+        access: 'Merzouga está a unos 50 km de Erfoud y 562 km de Marrakech según Wikipedia (a confirmar en tu itinerario). Los circuitos desde Marrakech y Fez se detallan en nuestras guías; el aeropuerto de Errachidia forma parte de la red de la ONDA. Evita conducir de noche.',
+        areas: [
+          { name: 'Campamento en las dunas', text: 'El paquete clásico: paseo en dromedario, cena, desayuno y animación. Los campamentos llamados «de lujo» tienen tiendas con cama: el término no está normalizado, pide detalles y fotos recientes.' },
+          { name: 'Albergue u hotel-kasbah', text: 'Cama de verdad, ducha de verdad, calefacción o aire acondicionado, con el paseo en dromedario al atardecer sin dormir en tienda.' },
+          { name: 'Fórmula mixta', text: 'Habitaciones y campamento a pocos kilómetros: útil para una noche en tienda y otra con comodidad.' },
+        ],
+        faq: [
+          { q: '¿Qué alojamiento elegir la primera vez?', a: 'Un campamento en las dunas con paseo en dromedario, cena y desayuno para una noche. Si te asusta el frío o la tienda, un albergue y una excursión de un día.' },
+          { q: '¿Qué comprobar antes de reservar un campamento?', a: 'Qué incluye (comidas, agua, ducha, traslado), las mantas, la cancelación y el depósito por escrito, y la hora de llegada antes de la salida de los dromedarios. Reserva directamente con el establecimiento, no con un captador en Rissani, Erfoud o Merzouga.' },
+        ],
+      },
+      de: {
+        intro: 'Merzouga ist das Zugangsdorf zum Erg Chebbi im Südosten Marokkos. Hier zu übernachten heißt, zwischen einer Nacht in den Dünen (Biwak oder Camp), einer Herberge am Fuß des Ergs oder einer Mischung aus beidem zu wählen.',
+        why: ['Die Dünen des Erg Chebbi, laut ONMT eines der Tore zur Sahara', 'Der Kamelritt, das Abendessen und die Nacht im Biwak', 'Herbergen am Fuß der Dünen, für ein richtiges Bett ohne auf den Sonnenuntergang zu verzichten'],
+        when: 'Frühling (März bis Mai) und Herbst (September bis November) sind die besten Zeiten. Der Sommer ist extrem heiß; der Winter, Hauptsaison, hat sehr kalte Nächte: Wetter vor der Abreise prüfen.',
+        access: 'Merzouga liegt laut Wikipedia etwa 50 km von Erfoud und 562 km von Marrakesch entfernt (auf Ihrer Route zu prüfen). Die Touren ab Marrakesch und Fès sind in unseren Ratgebern beschrieben; der Flughafen Errachidia gehört zum ONDA-Netz. Nachts nicht fahren.',
+        areas: [
+          { name: 'Camp in den Dünen', text: 'Das klassische Paket: Kamelritt, Abendessen, Frühstück und Unterhaltung. Sogenannte „Luxus“-Camps haben Zelte mit Betten: Der Begriff ist nicht genormt, fragen Sie nach Details und aktuellen Fotos.' },
+          { name: 'Herberge oder Kasbah-Hotel', text: 'Ein richtiges Bett, eine richtige Dusche, Heizung oder Klimaanlage, mit Kamelritt zum Sonnenuntergang ohne Zeltnacht.' },
+          { name: 'Gemischte Variante', text: 'Zimmer plus ein Camp einige Kilometer entfernt: praktisch für eine Nacht im Zelt und eine im Komfort.' },
+        ],
+        faq: [
+          { q: 'Welche Unterkunft beim ersten Mal?', a: 'Ein Camp in den Dünen mit Kamelritt, Abendessen und Frühstück für eine Nacht. Wer Kälte oder Zelt scheut, wählt eine Herberge und einen Tagesausflug.' },
+          { q: 'Was vor der Buchung eines Camps prüfen?', a: 'Was enthalten ist (Mahlzeiten, Wasser, Dusche, Transfer), Decken, Stornierung und Anzahlung schriftlich sowie die Ankunftszeit vor dem Abmarsch der Kamele. Direkt beim Betrieb buchen, nicht bei einem Anwerber in Rissani, Erfoud oder Merzouga.' },
+        ],
+      },
+      ar: {
+        intro: 'مرزوكة قرية الولوج إلى عرق الشبي في جنوب شرق المغرب. والإقامة فيها اختيار بين ليلة في الكثبان (مخيم أو بيفواك)، أو نزل عند سفح العرق، أو مزيج بينهما.',
+        why: ['كثبان عرق الشبي، إحدى بوابات الصحراء حسب المكتب الوطني المغربي للسياحة', 'ركوب الجمال والعشاء والمبيت في المخيم', 'نُزل عند سفح الكثبان، لسرير حقيقي دون التخلي عن غروب الشمس'],
+        when: 'الربيع (من مارس إلى ماي) والخريف (من شتنبر إلى نونبر) أفضل الفترات. الصيف شديد الحرارة؛ والشتاء، وهو الذروة، لياليه شديدة البرودة: تحقق من الطقس قبل المغادرة.',
+        access: 'تبعد مرزوكة نحو 50 كلم عن أرفود و562 كلم عن مراكش حسب ويكيبيديا (يلزم التأكد حسب مسارك). جولات مراكش وفاس مفصلة في أدلتنا؛ ومطار الراشيدية ضمن شبكة المكتب الوطني للمطارات. تجنب القيادة ليلاً.',
+        areas: [
+          { name: 'مخيم في الكثبان', text: 'الصيغة الكلاسيكية: ركوب الجمال والعشاء والفطور والترفيه. المخيمات المسماة «فاخرة» بها خيام بأسرّة: المصطلح غير موحد، فاطلب التفاصيل وصوراً حديثة.' },
+          { name: 'نزل أو فندق على طراز القصبة', text: 'سرير حقيقي ودوش حقيقي وتدفئة أو تكييف، مع ركوب الجمال عند الغروب دون النوم في خيمة.' },
+          { name: 'صيغة مختلطة', text: 'غرف ومخيم على بعد بضعة كيلومترات: مفيد لليلة في خيمة وأخرى في راحة.' },
+        ],
+        faq: [
+          { q: 'أي إقامة أختار أول مرة؟', a: 'مخيم في الكثبان مع ركوب الجمال وعشاء وفطور لليلة واحدة. وإن كنت تخشى البرد أو الخيمة فنزل مع رحلة نهارية.' },
+          { q: 'ماذا أتحقق منه قبل حجز مخيم؟', a: 'ما يشمله السعر (الوجبات، الماء، الدوش، النقل)، والأغطية، والإلغاء والعربون كتابةً، ووقت الوصول قبل انطلاق الجمال. احجز مباشرة مع المؤسسة لا مع سمسار في الريصاني أو أرفود أو مرزوكة.' },
+        ],
+      },
+    },
+  },
 ];
 
 export const cityById = (id: string) => CITY_PAGES.find((c) => c.id === id);

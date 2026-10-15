@@ -1,0 +1,89 @@
+---
+/**
+ * Convertisseur euro-dirham. Logique pure : src/utils/fx.mjs (testée : tools/test-capitalgain.mjs).
+ * Taux de départ et date : EUR_TO_MAD / EUR_TO_MAD_DATE (src/config/site.ts) ; l'utilisateur peut le modifier.
+ * Taux indicatif : ce n'est ni un taux bancaire ni un taux de transfert.
+ */
+import { type Locale, LOCALE_META } from '../../i18n';
+import CalcShell from './CalcShell.astro';
+import { EUR_TO_MAD, EUR_TO_MAD_DATE } from '../../config/site';
+import { formatDate } from '../../utils/date';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const nb = (s: string) => s.replace(/ ([;:?!%»€])/g, ' $1');
+const dateTxt = formatDate(new Date(EUR_TO_MAD_DATE), lang);
+const rateTxt = new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 4 }).format(EUR_TO_MAD);
+const TT = {
+  fr: { dir: 'Sens de conversion', d1: 'Euros vers dirhams', d2: 'Dirhams vers euros', amount: 'Montant', rate: 'Taux (1 € = … DH)', rateHelp: `Taux indicatif du ${dateTxt} : modifiez-le avec le taux de votre banque ou de votre opérateur.`, res: 'Montant converti', inv: '1 DH =', wait: 'Saisissez un montant et un taux valides.', reset: `Remettre le taux du ${dateTxt}`, m: { required: 'Saisissez un nombre.', negative: 'Le montant ne peut pas être négatif.', positive: 'Le taux doit être supérieur à 0.' }, note: `Taux indicatif de ${rateTxt} DH pour 1 € au ${dateTxt}, modifiable. Résultat estimatif : ce n’est ni un cours officiel ni le taux appliqué par votre banque, qui ajoute en général une marge et des frais. Cours officiels : Bank Al-Maghrib.` },
+  en: { dir: 'Direction', d1: 'Euros to dirhams', d2: 'Dirhams to euros', amount: 'Amount', rate: 'Rate (€1 = … MAD)', rateHelp: `Indicative rate of ${dateTxt}: edit it with your bank’s or provider’s rate.`, res: 'Converted amount', inv: '1 MAD =', wait: 'Enter a valid amount and rate.', reset: `Reset to the rate of ${dateTxt}`, m: { required: 'Enter a number.', negative: 'The amount cannot be negative.', positive: 'The rate must be greater than 0.' }, note: `Indicative rate of ${rateTxt} MAD per €1 on ${dateTxt}, editable. Estimated result: not an official rate and not the rate your bank applies, which usually adds a margin and fees. Official rates: Bank Al-Maghrib.` },
+  es: { dir: 'Sentido', d1: 'Euros a dírhams', d2: 'Dírhams a euros', amount: 'Importe', rate: 'Tipo (1 € = … MAD)', rateHelp: `Tipo orientativo del ${dateTxt}: modifícalo con el de tu banco o proveedor.`, res: 'Importe convertido', inv: '1 MAD =', wait: 'Introduce un importe y un tipo válidos.', reset: `Volver al tipo del ${dateTxt}`, m: { required: 'Introduce un número.', negative: 'El importe no puede ser negativo.', positive: 'El tipo debe ser mayor que 0.' }, note: `Tipo orientativo de ${rateTxt} MAD por 1 € el ${dateTxt}, modificable. Resultado estimativo: no es un tipo oficial ni el que aplica tu banco, que suele añadir margen y comisiones. Tipos oficiales: Bank Al-Maghrib.` },
+  de: { dir: 'Richtung', d1: 'Euro in Dirham', d2: 'Dirham in Euro', amount: 'Betrag', rate: 'Kurs (1 € = … MAD)', rateHelp: `Richtkurs vom ${dateTxt}: ändern Sie ihn auf den Kurs Ihrer Bank oder Ihres Anbieters.`, res: 'Umgerechneter Betrag', inv: '1 MAD =', wait: 'Geben Sie einen gültigen Betrag und Kurs ein.', reset: `Auf den Kurs vom ${dateTxt} zurücksetzen`, m: { required: 'Geben Sie eine Zahl ein.', negative: 'Der Betrag darf nicht negativ sein.', positive: 'Der Kurs muss größer als 0 sein.' }, note: `Richtkurs von ${rateTxt} MAD je 1 € am ${dateTxt}, änderbar. Geschätztes Ergebnis: kein offizieller Kurs und nicht der Kurs Ihrer Bank, die meist Marge und Gebühren aufschlägt. Offizielle Kurse: Bank Al-Maghrib.` },
+  ar: { dir: 'اتجاه التحويل', d1: 'من اليورو إلى الدرهم', d2: 'من الدرهم إلى اليورو', amount: 'المبلغ', rate: 'السعر (1 يورو = … درهم)', rateHelp: `سعر إرشادي بتاريخ ${dateTxt}: عدّله بسعر بنكك أو مزوّد الخدمة.`, res: 'المبلغ بعد التحويل', inv: '1 درهم =', wait: 'أدخل مبلغاً وسعراً صالحين.', reset: `الرجوع إلى سعر ${dateTxt}`, m: { required: 'أدخل رقماً.', negative: 'لا يمكن أن يكون المبلغ سالباً.', positive: 'يجب أن يكون السعر أكبر من 0.' }, note: `سعر إرشادي قدره ${rateTxt} درهم لكل 1 يورو بتاريخ ${dateTxt}، قابل للتعديل. نتيجة تقديرية: ليس سعراً رسمياً ولا السعر الذي يطبقه بنكك والذي يضيف عادة هامشاً ومصاريف. الأسعار الرسمية: بنك المغرب.` },
+};
+const T = TT[lang];
+const tx = (s: string) => (lang === 'fr' ? nb(s) : s);
+const cfg = JSON.stringify({ rate: EUR_TO_MAD, locale: LOCALE_META[lang].intl, m: T.m, wait: T.wait, inv: T.inv, ar: lang === 'ar' });
+---
+<div data-fx data-cfg={cfg}>
+<CalcShell id="fx" note={tx(T.note)}>
+  <Fragment slot="form">
+    <label class="full">{tx(T.dir)}
+      <select name="dir"><option value="eur-mad">{tx(T.d1)}</option><option value="mad-eur">{tx(T.d2)}</option></select>
+    </label>
+    <label>{tx(T.amount)}<input name="amount" type="number" inputmode="decimal" min="0" step="any" value="100" /></label>
+    <label>{tx(T.rate)}<input name="rate" type="number" inputmode="decimal" min="0" step="0.01" value={EUR_TO_MAD} aria-describedby="fx-rate-help" /></label>
+    <p id="fx-rate-help" class="full text-xs muted">{tx(T.rateHelp)} <button type="button" data-reset class="underline">{tx(T.reset)}</button></p>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{tx(T.res)}</p>
+    <p class="big"><span data-out="result">—</span> <span data-out="unit"></span></p>
+    <p class="mt-3 text-sm text-white/85"><span data-out="inv">—</span></p>
+    <div data-out="msgs" class="mt-3 grid gap-2 text-sm" role="status"></div>
+  </Fragment>
+</CalcShell>
+</div>
+<script>
+  import { convert, parseNum } from '../../utils/fx.mjs';
+
+  document.querySelectorAll<HTMLElement>('[data-fx]').forEach((root) => {
+    const cfg = JSON.parse(root.dataset.cfg!) as { rate: number; locale: string; m: Record<string, string>; wait: string; inv: string; ar: boolean };
+    const form = root.querySelector('form')!;
+    const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement;
+    const out = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+    const fmt2 = new Intl.NumberFormat(cfg.locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const fmt4 = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 4 });
+    const eur = cfg.ar ? 'يورو' : '€';
+    const mad = cfg.ar ? 'درهم' : 'DH';
+
+    const setErr = (name: string, text: string) => {
+      const input = f(name);
+      const label = input.closest('label')!;
+      label.querySelector('.calc-err[data-own]')?.remove();
+      if (text) {
+        input.setAttribute('aria-invalid', 'true');
+        const span = document.createElement('span');
+        span.className = 'calc-err'; span.dataset.own = '1'; span.setAttribute('role', 'alert'); span.textContent = text;
+        label.appendChild(span);
+      } else if (!label.querySelector('.calc-err')) input.removeAttribute('aria-invalid');
+    };
+
+    const run = () => {
+      const direction = (form.elements.namedItem('dir') as HTMLSelectElement).value as 'eur-mad' | 'mad-eur';
+      const res = convert({ amount: parseNum(f('amount').value), rate: parseNum(f('rate').value), direction });
+      setErr('amount', ''); setErr('rate', '');
+      const msgs = out('msgs'); msgs.replaceChildren();
+      if (!res.ok) {
+        res.errors.forEach((e) => setErr(e.field, cfg.m[e.code] ?? ''));
+        out('result').textContent = '—'; out('unit').textContent = ''; out('inv').textContent = '—';
+        const p = document.createElement('p'); p.textContent = cfg.wait; msgs.appendChild(p);
+        return;
+      }
+      out('result').textContent = fmt2.format(res.result);
+      out('unit').textContent = direction === 'eur-mad' ? mad : eur;
+      out('inv').textContent = `${cfg.inv} ${fmt4.format(res.inverseRate)} ${eur}`;
+    };
+    root.querySelector('[data-reset]')!.addEventListener('click', () => { f('rate').value = String(cfg.rate); run(); });
+    form.addEventListener('input', run);
+    form.addEventListener('change', run);
+    run();
+  });
+</script>

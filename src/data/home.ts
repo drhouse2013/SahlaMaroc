@@ -14,7 +14,7 @@ export const pick = <T,>(m: Partial<Record<Locale, T>> & { en: T }, lang: Locale
 export type Scene =
   | 'marrakech' | 'casablanca' | 'chefchaouen' | 'sahara' | 'essaouira' | 'fes'
   | 'rabat' | 'tangier' | 'taghazout' | 'atlas' | 'souk' | 'riad'
-  | 'nador' | 'tetouan'; // nador/tetouan : pas d'illustration propre, voir ILLUSTRATION_ALIAS (utils/illustrations.ts)
+  | 'nador' | 'tetouan' | 'meknes' | 'ouarzazate' | 'oujda' | 'al-hoceima' | 'merzouga'; // nador/tetouan : pas d'illustration propre, voir ILLUSTRATION_ALIAS (utils/illustrations.ts)
 
 /* ---------------------------------------------------------------- libellés */
 export const L: Record<string, Full<string>> = {
@@ -73,6 +73,11 @@ export const CITIES: City[] = [
   { id: 'chefchaouen', name: 'Chefchaouen', budget: 1, vibe: { en: 'The blue town of the Rif mountains. Hiking, quiet and photo spots.', fr: 'La ville bleue du Rif. Randonnée, calme et spots photo.' }, tags: { en: ['Hiking', 'Quiet', 'Photos'], fr: ['Randonnée', 'Calme', 'Photos'] } },
   { id: 'nador', name: 'Nador', vibe: { en: 'North-east Rif city tied to the diaspora: ferry port at Beni Enzar and the Marchica lagoon.', fr: 'Ville du nord-est du Rif liée à la diaspora : port de Beni Enzar et lagune de Marchica.' }, tags: { en: ['Ferry port', 'Marchica lagoon', 'Summer return'], fr: ['Port ferry', 'Lagune de Marchica', 'Retour d’été'] } },
   { id: 'tetouan', name: 'Tetouan', vibe: { en: 'UNESCO-listed medina, plus Martil, Cabo Negro and M’diq beaches on the coast.', fr: 'Médina classée à l’UNESCO, plus les plages de Martil, Cabo Negro et M’diq sur la côte.' }, tags: { en: ['UNESCO medina', 'Beaches', 'Tanger Med'], fr: ['Médina UNESCO', 'Plages', 'Tanger Med'] } },
+  { id: 'meknes', name: 'Meknes', vibe: { en: "Former imperial capital: medina and Ville Nouvelle, close to Fes and Volubilis.", fr: "Ancienne capitale impériale : médina et Ville Nouvelle, près de Fès et de Volubilis." }, tags: { en: ["Imperial city","UNESCO","Volubilis"], fr: ["Ville impériale","UNESCO","Volubilis"] } },
+  { id: 'ouarzazate', name: 'Ouarzazate', vibe: { en: "Stopover between the High Atlas and the South: Taourirt kasbah and Ait Ben Haddou.", fr: "Étape entre le Haut Atlas et le Sud : kasbah de Taourirt et Aït Ben Haddou." }, tags: { en: ["Kasbahs","Film studios","Desert road"], fr: ["Kasbahs","Studios de cinéma","Route du désert"] } },
+  { id: 'oujda', name: 'Oujda', vibe: { en: "Main city of the Oriental region, base for the Saidia beach.", fr: "Grande ville de l’Oriental, base pour la plage de Saïdia." }, tags: { en: ["Oriental","Saidia","Summer return"], fr: ["Oriental","Saïdia","Retour d’été"] } },
+  { id: 'al-hoceima', name: 'Al Hoceima', vibe: { en: "Mediterranean Rif seaside resort with a national park, popular with families in summer.", fr: "Station balnéaire du Rif méditerranéen avec parc national, très prisée des familles l’été." }, tags: { en: ["Beaches","National park","Summer return"], fr: ["Plages","Parc national","Retour d’été"] } },
+  { id: 'merzouga', name: 'Merzouga', vibe: { en: "Gateway village to the Erg Chebbi dunes: camps, camel rides and guesthouses.", fr: "Village d’accès aux dunes de l’Erg Chebbi : camps, dromadaires et auberges." }, tags: { en: ["Dunes","Desert camps","Camel ride"], fr: ["Dunes","Camps dans le désert","Dromadaire"] } },
 ];
 
 /* ---------------------------------------------------------------- chiffres clés */
@@ -211,6 +216,11 @@ const CITY_I18N: Record<string, Record<'es' | 'de' | 'ar', [string, string[]]>> 
   chefchaouen: { es: ['El pueblo azul del Rif. Senderismo y calma.', ['Senderismo', 'Calma', 'Fotos']], de: ['Die blaue Stadt im Rif. Wandern und Ruhe.', ['Wandern', 'Ruhe', 'Fotos']], ar: ['المدينة الزرقاء في جبال الريف. مشي وهدوء.', ['مشي', 'هدوء', 'صور']] },
   nador: { es: ['Ciudad del nordeste del Rif ligada a la diáspora: puerto de Beni Enzar y laguna de Marchica.', ['Puerto de ferri', 'Laguna de Marchica', 'Regreso de verano']], de: ['Stadt im Nordosten des Rif, eng mit der Diaspora verbunden: Hafen Beni Enzar und Marchica-Lagune.', ['Fährhafen', 'Marchica-Lagune', 'Sommerheimkehr']], ar: ['مدينة في شمال شرق الريف مرتبطة بالجالية: ميناء بني انصار وبحيرة مارتشيكا.', ['ميناء العبّارات', 'بحيرة مارتشيكا', 'عودة الصيف']] },
   tetouan: { es: ['Medina Patrimonio de la UNESCO y, en la costa, las playas de Martil, Cabo Negro y M’diq.', ['Medina UNESCO', 'Playas', 'Tanger Med']], de: ['Medina als UNESCO-Welterbe und an der Küste die Strände von Martil, Cabo Negro und M’diq.', ['UNESCO-Medina', 'Strände', 'Tanger Med']], ar: ['مدينة عتيقة مصنفة لدى اليونسكو، وعلى الساحل شواطئ مرتيل وكابو نيغرو والمضيق.', ['مدينة عتيقة', 'شواطئ', 'طنجة المتوسط']] },
+  'meknes': { es: ["Antigua capital imperial: medina y Ville Nouvelle, cerca de Fez y Volubilis.", ["Ciudad imperial","UNESCO","Volubilis"]], de: ["Frühere Kaiserstadt: Medina und Ville Nouvelle, nahe Fès und Volubilis.", ["Kaiserstadt","UNESCO","Volubilis"]], ar: ["العاصمة الإمبراطورية القديمة: مدينة عتيقة ومدينة جديدة، قرب فاس ووليلي.", ["مدينة إمبراطورية","اليونسكو","وليلي"]] },
+  'ouarzazate': { es: ["Etapa entre el Alto Atlas y el Sur: kasbah de Taourirt y Ait Ben Haddou.", ["Kasbahs","Estudios de cine","Ruta del desierto"]], de: ["Zwischenstopp zwischen Hohem Atlas und Süden: Kasbah Taourirt und Aït Ben Haddou.", ["Kasbahs","Filmstudios","Wüstenstraße"]], ar: ["محطة بين الأطلس الكبير والجنوب: قصبة تاوريرت وآيت بن حدو.", ["قصبات","استوديوهات سينما","طريق الصحراء"]] },
+  'oujda': { es: ["Gran ciudad de la región Oriental, base para la playa de Saidia.", ["Oriental","Saidia","Regreso de verano"]], de: ["Große Stadt der Region Oriental, Basis für den Strand von Saïdia.", ["Oriental","Saïdia","Sommerheimkehr"]], ar: ["المدينة الكبرى بجهة الشرق، قاعدة لشاطئ السعيدية.", ["الشرق","السعيدية","عودة الصيف"]] },
+  'al-hoceima': { es: ["Estación balnearia del Rif mediterráneo con parque nacional, muy popular entre las familias en verano.", ["Playas","Parque nacional","Regreso de verano"]], de: ["Badeort an der mediterranen Rif-Küste mit Nationalpark, im Sommer bei Familien beliebt.", ["Strände","Nationalpark","Sommerheimkehr"]], ar: ["منتجع ساحلي في الريف المتوسطي بمنتزه وطني، يقصده العائلات صيفاً.", ["شواطئ","منتزه وطني","عودة الصيف"]] },
+  'merzouga': { es: ["Pueblo de acceso a las dunas del Erg Chebbi: campamentos, dromedarios y albergues.", ["Dunas","Campamentos","Paseo en dromedario"]], de: ["Zugangsdorf zu den Dünen des Erg Chebbi: Camps, Kamelritte und Herbergen.", ["Dünen","Wüstencamps","Kamelritt"]], ar: ["قرية الولوج إلى كثبان عرق الشبي: مخيمات وجمال ونُزل.", ["كثبان","مخيمات صحراوية","ركوب الجمال"]] },
 };
 /** Noms de villes localisés (sinon le nom par défaut) */
 export const CITY_NAMES: Record<string, Partial<Record<Locale, string>>> = {
@@ -224,6 +234,11 @@ export const CITY_NAMES: Record<string, Partial<Record<Locale, string>>> = {
   chefchaouen: { ar: 'شفشاون' },
   nador: { ar: 'الناظور' },
   tetouan: { fr: 'Tétouan', es: 'Tetuán', de: 'Tétouan', ar: 'تطوان' },
+  meknes: { fr: 'Meknès', es: 'Mequinez', de: 'Meknès', ar: 'مكناس' },
+  ouarzazate: { ar: 'ورزازات' },
+  oujda: { es: 'Uchda', ar: 'وجدة' },
+  'al-hoceima': { fr: 'Al Hoceïma', es: 'Alhucemas', de: 'Al Hoceïma', ar: 'الحسيمة' },
+  merzouga: { ar: 'مرزوكة' },
 };
 export const cityName = (c: City, lang: Locale) => CITY_NAMES[c.id]?.[lang] ?? c.name;
 

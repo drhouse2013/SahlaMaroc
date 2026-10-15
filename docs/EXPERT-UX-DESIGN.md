@@ -1,0 +1,20 @@
+# Expertise UX / design / accessibilité : 8 propositions priorisées
+
+Base : lecture ciblée de Hero, CalcShell, BaseLayout, global.css, docs/PHOTOS.md. Aucun code modifié.
+
+| # | Proposition | Impact | Effort | Fichiers |
+|---|---|---|---|---|
+| 1 | **Focus visible fort dans les calculateurs.** `.calc input:focus` supprime l'outline et ne garde qu'un halo à 18 % d'opacité : échec probable de 1.4.11 / 2.4.11. Remplacer par `outline: 3px solid var(--color-majorelle-600); outline-offset: 2px` (clair) et majorelle-300 (sombre), via `:focus-visible`. | Élevé | Faible | `src/components/calc/CalcShell.astro`, `src/styles/global.css` |
+| 2 | **Erreurs de saisie reliées au champ.** Les messages `.calc-err` sont ajoutés avec `role="alert"` mais sans `aria-describedby` sur l'input. Ajouter un id par message et le lier ; ajouter `inputmode="decimal"` aux champs numériques (clavier mobile adapté). | Élevé | Faible | `CalcShell.astro` (script), composants `calc/*.astro` |
+| 3 | **Résultat de calcul : annonce plus sobre et résumé mobile.** `aria-live="polite"` sur tout le bloc lit le détail à chaque frappe. Limiter la live region au montant principal (`.big`) et ajouter `aria-atomic="true"`. Sur mobile, rendre le résultat collant en bas (barre « Total estimé ») pour éviter le défilement. | Élevé | Moyen | `CalcShell.astro`, calculateurs `calc/*.astro` |
+| 4 | **Vraies photos en tête d'accueil et de ville.** L'accueil et `CityPage` utilisent encore `illustration()`. Passer à `heroImage` (type `image()`) avec repli illustration, suivre l'ordre 1 à 14 de docs/PHOTOS.md, et afficher une photo cadrée en arche aussi sur mobile (aujourd'hui `hidden lg:block`, donc absente en mobile-first). | Élevé | Moyen | `src/components/home/Hero.astro`, `home/CityGrid.astro`, `hubs/CityPage.astro`, `src/assets/photos/` |
+| 5 | **Performance image et polices.** Hero : `Image` avec `widths`/`sizes` et formats avif/webp ; photos hors écran en `loading="lazy"` + `decoding="async"`. Deux polices variables (Readex Pro, Marhey) : vérifier que Marhey n'est chargée que pour les titres/arabe et utiliser `font-display: swap`, subset latin pour fr/en. Budget cible : LCP < 2,5 s sur 4G. | Moyen | Moyen | `src/layouts/BaseLayout.astro`, `Hero.astro`, `ArticleCard.astro` |
+| 6 | **Signature visuelle distinctive.** Le site reste générique (cartes arrondies + dégradés). Renforcer l'identité : motif zellige déjà présent à utiliser avec parcimonie (hero, bandeaux), arche comme masque récurrent des photos, une couleur d'accent par parcours (terracotta MRE, émeraude visiteur) répétée sur titres, puces et boutons. Tokens uniquement dans `@theme`. | Moyen | Moyen | `src/styles/global.css`, `home/FactsBand.astro`, `PageHero.astro`, `ToolGrid.astro` |
+| 7 | **RTL arabe : audit des propriétés logiques et des nombres.** Le hero utilise déjà `ms-auto`, `-start-8`, `rtl:-scale-x-100`. Vérifier le reste : bannir `ml-/mr-/pl-/pr-/text-left` (grep), forcer `dir="ltr"` via `<bdi>` sur montants, IBAN, téléphones, miroir des icônes directionnelles (chevrons, flèches), `tabular-nums` avec chiffres cohérents, interlignage arabe 1,8 min. Test visuel Playwright `/ar/` mobile et desktop. | Moyen | Faible | `src/components/**/*.astro`, `src/styles/global.css` |
+| 8 | **Cibles tactiles, mouvement et contraste.** Garantir 44 px (mobile) sur badges d'exemples de recherche (`min-h-9` = 36 px), liens de pied de page et `MobileNav`. Ajouter `@media (prefers-reduced-motion: reduce)` global (survols `translate`, transitions). Contrôler 4,5:1 des textes `muted` et `text-gold-300` sur `bg-navy-700`, ainsi que du texte blanc sur terracotta-500. | Moyen | Faible | `Hero.astro`, `MobileNav.astro`, `Footer.astro`, `src/styles/global.css` |
+
+## Ordre recommandé
+1 et 2 (corrections WCAG rapides) puis 8, 7, 3, 4 (photos au fil de la collecte), 5, 6.
+
+## Points déjà solides (à conserver)
+Lien d'évitement, recherche accessible sans JavaScript, `min-h-14` sur la recherche, `rtl:` sur les flèches, badge « Résultat estimatif », validation générique avec `aria-invalid`, préchargement de la bonne police selon `dir`.

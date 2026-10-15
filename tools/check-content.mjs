@@ -13,9 +13,10 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LANGS = ['en', 'fr', 'es', 'de', 'ar'];
 // TODO/FIXME/TBD : sensibles à la casse (« todo » existe en espagnol) ; les autres marqueurs ne le sont pas.
 const PLACEHOLDER = /\b(TODO|FIXME|TBD)\b|\b(lorem ipsum|à compléter|a completar|coming soon)\b|XXXX|\[\.\.\.\]/;
@@ -84,6 +85,27 @@ for (const e of entries) {
     if (staticRoutes.includes(url)) continue;
     if (/^\/(en|fr|es|de|ar)\/(topics|themes|temas|themen|mawadi)\//.test(url)) continue;
     if (!known.has(url)) err(e, `lien interne cassé ${m[1]}`);
+  }
+}
+
+// Avertissements qualité : fraîcheur, verifiedDate manquant, doublons titre/description
+const today = Date.now();
+const noVerified = {};
+for (const e of entries) {
+  if (e.collection !== 'articles') continue;
+  const v = e.data.verifiedDate;
+  if (!v) { noVerified[e.lang] = (noVerified[e.lang] || 0) + 1; continue; }
+  const age = Math.floor((today - new Date(v).getTime()) / 86400000);
+  if (age > 180) warn(e, `verifiedDate vieille de ${age} jours (> 180)`);
+}
+for (const [l, n] of Object.entries(noVerified)) warnings.push(`articles/${l}: ${n} guide(s) sans verifiedDate`);
+for (const field of ['title', 'description']) {
+  const seen = new Map();
+  for (const e of entries) {
+    const k = `${e.lang}|${String(e.data[field] || '').trim().toLowerCase()}`;
+    if (!e.data[field]) continue;
+    if (seen.has(k)) warn(e, `${field} dupliqué avec ${seen.get(k)}`);
+    else seen.set(k, e.file);
   }
 }
 

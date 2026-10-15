@@ -21,6 +21,8 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "Content-Security-Policy-Report-Only", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net https://assets.mailerlite.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloud.umami.is https://api-gateway.umami.dev https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net https://*.sibforms.com https://*.mailerlite.com https://buttondown.com; frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.sibforms.com https://buttondown.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://*.sibforms.com https://*.mailerlite.com https://buttondown.com" },
         { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
       ]
     },

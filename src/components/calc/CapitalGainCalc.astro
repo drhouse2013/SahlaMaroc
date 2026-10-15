@@ -1,0 +1,360 @@
+---
+/**
+ * Calculateur de l'impôt sur la plus-value immobilière (profits fonciers, MRE).
+ * Logique pure : src/utils/capitalgain.mjs (testée : tools/test-capitalgain.mjs). Paramètres datés et sourcés : src/config/capital-gains.ts.
+ * Le coefficient de réévaluation est saisi par l'utilisateur : l'outil ne le détermine pas.
+ */
+import { type Locale, LOCALE_META } from '../../i18n';
+import CalcShell from './CalcShell.astro';
+import { CAPITAL_GAINS as V, CAPITAL_GAINS_LAST_CHECKED } from '../../config/capital-gains';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const nb = (s: string) => s.replace(/ ([;:?!%»])/g, ' $1').replace(/« /g, '« ');
+const fr = {
+  price: 'Prix de cession (DH)', acq: 'Prix d’acquisition (DH)', coef: 'Coefficient de réévaluation',
+  coefHelp: 'À reprendre du tableau officiel des coefficients de la DGI selon l’année d’acquisition. Laissez 1 si vous l’ignorez : aucune réévaluation n’est alors appliquée.',
+  costs: 'Frais d’acquisition réels justifiés (DH)', costsHelp: 'Le forfait de {flat} % du prix d’acquisition est retenu si vos frais réels sont inférieurs.',
+  works: 'Dépenses de construction, d’agrandissement ou d’amélioration justifiées (DH)',
+  exemption: 'Exonération possible', eNone: 'Aucune (régime standard)', eMain: 'Habitation principale occupée depuis {mainY} ans ou plus', eSocial: 'Logement social (première cession)', eSmall: 'Cessions de l’année d’une valeur totale réduite',
+  occ: 'Années d’occupation à titre d’habitation principale', rented: 'Le logement a été loué ou affecté à un usage professionnel', used: 'J’ai déjà bénéficié de cette exonération dans les {mainY} dernières années',
+  vac: 'Mois écoulés depuis que le logement est vacant (0 s’il est encore occupé)', area: 'Superficie couverte (m²)', first: 'C’est la première cession de ce logement social', yearTotal: 'Valeur totale de vos cessions immobilières de l’année civile (DH)',
+  total: 'Impôt estimé', ofPrice: 'du prix de cession', wait: 'Renseignez les champs pour voir le détail.',
+  lPrice: 'Prix de cession', lReval: 'Prix d’acquisition réévalué', lCosts: 'Frais d’acquisition', lWorks: 'Dépenses d’investissement', lBase: 'Base d’acquisition', lProfit: 'Profit net', lLoss: 'Perte (aucun profit)', lRate: 'Impôt de 20 % sur le profit', lMin: 'Cotisation minimale de 3 % du prix', lTax: 'Impôt à payer (estimé)', lNet: 'Reste après impôt',
+  kFlat: 'forfait', kActual: 'frais réels', applied: 'Exonération appliquée', notApplied: 'Exonération non applicable : conditions non remplies', fallback: 'Le détail ci-dessous est calculé sans cette exonération.', warnT: 'À confirmer auprès de la DGI',
+  m: {
+    required: 'Saisissez un nombre.', positive: 'La valeur doit être supérieure à 0.', negative: 'La valeur ne peut pas être négative.', coef_min: 'Le coefficient est d’au moins 1.',
+    main_years: 'Il faut avoir occupé le logement comme habitation principale depuis {mainY} ans au moins.', main_rented: 'Le logement ne doit avoir été ni loué ni affecté à un usage professionnel.',
+    main_used: 'L’exonération ne peut être utilisée qu’une seule fois pendant {mainY} ans.', main_vacancy: 'La cession doit intervenir dans l’année suivant la vacance du logement.',
+    main_vacancy_border: 'Vous êtes à la limite d’un an après la vacance : la DGI tranche.', main_land: 'Pour le terrain, l’exonération est limitée à 5 fois la superficie couverte : cette limite n’est pas calculée ici.',
+    social_years: 'Il faut avoir occupé le logement depuis {socY} ans au moins.', social_area: 'La superficie couverte doit être comprise entre {areaMin} et {areaMax} m².', social_price: 'Le prix de cession (hors TVA) ne doit pas dépasser {socPrice} DH.', social_first: 'L’exonération ne vaut que pour la première cession.',
+    small_total: 'La valeur totale des cessions de l’année ne doit pas dépasser {small} DH.',
+  },
+  secT: 'Ce que montre ce résultat', offT: 'Règles officielles', estT: 'Estimations et saisies', notT: 'Non inclus',
+  off: [
+    'Taux de 20 % sur le profit net, avec un minimum de 3 % du prix de cession, même sans profit (Guide fiscal MRE, ministère chargé des MRE, juillet 2025).',
+    'Exonération de l’habitation principale occupée depuis 5 ans au moins (non louée, une fois en 5 ans, cession dans l’année suivant la vacance), avec un minimum de 3 % sur la fraction du prix au-delà de 4 000 000 DH.',
+    'Exonérations : cessions de l’année d’au plus 140 000 DH au total ; première cession d’un logement social (4 ans d’occupation, 50 à 80 m², 250 000 DH HT au plus).',
+    'Déclaration par voie électronique et paiement dans les 30 jours suivant la cession.',
+  ],
+  est: [
+    'Le coefficient de réévaluation est saisi par vous : le tableau officiel n’est pas intégré à l’outil.',
+    'Prix d’acquisition et frais : repris tels que vous les saisissez ; le forfait de 15 % du prix d’acquisition est appliqué si vos frais réels sont inférieurs.',
+    'Seule l’administration qualifie l’habitation principale et vérifie les justificatifs.',
+  ],
+  not: [
+    'Intérêts d’emprunt, commission d’agence et frais de cession : à vérifier avec la DGI ou un notaire avant de les déduire.',
+    'Frais de notaire et de conservation foncière, TVA éventuelle.',
+    'Cas particuliers (indivision, donation, société, terrain agricole).',
+  ],
+  note: `Résultat estimatif — confirmation par la DGI. Paramètres vérifiés le ${CAPITAL_GAINS_LAST_CHECKED}. Ce site ne remplace ni la DGI ni un notaire.`,
+};
+const en = {
+  price: 'Sale price (MAD)', acq: 'Purchase price (MAD)', coef: 'Revaluation coefficient',
+  coefHelp: 'Take it from the official DGI coefficient table for your year of purchase. Leave 1 if you do not know it: no revaluation is then applied.',
+  costs: 'Documented actual purchase costs (MAD)', costsHelp: 'The flat {flat}% of the purchase price is used if your actual costs are lower.',
+  works: 'Documented construction, extension or improvement costs (MAD)',
+  exemption: 'Possible exemption', eNone: 'None (standard rule)', eMain: 'Main home lived in for {mainY} years or more', eSocial: 'Social housing (first sale)', eSmall: 'Low total of sales in the year',
+  occ: 'Years lived in as your main home', rented: 'The home was rented out or used for business', used: 'I already used this exemption in the last {mainY} years',
+  vac: 'Months since the home became vacant (0 if still occupied)', area: 'Built area (m²)', first: 'This is the first sale of this social home', yearTotal: 'Total value of your property sales in the calendar year (MAD)',
+  total: 'Estimated tax', ofPrice: 'of the sale price', wait: 'Fill in the fields to see the breakdown.',
+  lPrice: 'Sale price', lReval: 'Revalued purchase price', lCosts: 'Purchase costs', lWorks: 'Investment costs', lBase: 'Acquisition base', lProfit: 'Net profit', lLoss: 'Loss (no profit)', lRate: '20% tax on the profit', lMin: 'Minimum of 3% of the price', lTax: 'Tax to pay (estimate)', lNet: 'Left after tax',
+  kFlat: 'flat rate', kActual: 'actual costs', applied: 'Exemption applied', notApplied: 'Exemption not applicable: conditions not met', fallback: 'The breakdown below is calculated without this exemption.', warnT: 'To confirm with the DGI',
+  m: {
+    required: 'Enter a number.', positive: 'The value must be greater than 0.', negative: 'The value cannot be negative.', coef_min: 'The coefficient is at least 1.',
+    main_years: 'You must have lived in the home as your main home for at least {mainY} years.', main_rented: 'The home must not have been rented out or used for business.',
+    main_used: 'The exemption can be used only once in {mainY} years.', main_vacancy: 'The sale must take place within a year of the home becoming vacant.',
+    main_vacancy_border: 'You are at the one-year limit after vacancy: the DGI decides.', main_land: 'For the land, the exemption is limited to 5 times the built area: that limit is not calculated here.',
+    social_years: 'You must have lived in the home for at least {socY} years.', social_area: 'The built area must be between {areaMin} and {areaMax} m².', social_price: 'The sale price (excluding VAT) must not exceed {socPrice} MAD.', social_first: 'The exemption applies to the first sale only.',
+    small_total: 'The total value of the year’s sales must not exceed {small} MAD.',
+  },
+  secT: 'What this result shows', offT: 'Official rules', estT: 'Estimates and your inputs', notT: 'Not included',
+  off: [
+    '20% rate on the net profit, with a minimum of 3% of the sale price even without profit (Tax guide for Moroccans living abroad, ministry in charge of MRE, July 2025).',
+    'Main-home exemption for a home lived in for at least 5 years (not rented, once in 5 years, sale within a year of the home becoming vacant), with a 3% minimum on the part of the price above 4,000,000 MAD.',
+    'Exemptions: sales of up to 140,000 MAD in total in the year; first sale of a social home (4 years lived in, 50 to 80 m², 250,000 MAD excl. VAT at most).',
+    'Electronic declaration and payment within 30 days of the sale.',
+  ],
+  est: [
+    'You enter the revaluation coefficient: the official table is not built into the tool.',
+    'Purchase price and costs are taken as you enter them; the 15% flat amount of the purchase price is used if your actual costs are lower.',
+    'Only the administration qualifies a main home and checks the supporting documents.',
+  ],
+  not: [
+    'Loan interest, agency commission and selling costs: check with the DGI or a notary before deducting them.',
+    'Notary and land registry fees, any VAT.',
+    'Special cases (joint ownership, gifts, companies, farmland).',
+  ],
+  note: `Estimated result — to be confirmed by the DGI. Parameters checked on ${CAPITAL_GAINS_LAST_CHECKED}. This site replaces neither the DGI nor a notary.`,
+};
+const es = {
+  price: 'Precio de venta (MAD)', acq: 'Precio de compra (MAD)', coef: 'Coeficiente de revalorización',
+  coefHelp: 'Tómalo de la tabla oficial de coeficientes de la DGI según el año de compra. Deja 1 si no lo conoces: entonces no se aplica revalorización.',
+  costs: 'Gastos reales de compra justificados (MAD)', costsHelp: 'Si tus gastos reales son inferiores, se aplica el tanto alzado del {flat} % del precio de compra.',
+  works: 'Gastos justificados de construcción, ampliación o mejora (MAD)',
+  exemption: 'Posible exención', eNone: 'Ninguna (régimen general)', eMain: 'Vivienda habitual ocupada {mainY} años o más', eSocial: 'Vivienda social (primera venta)', eSmall: 'Ventas del año de valor total reducido',
+  occ: 'Años de ocupación como vivienda habitual', rented: 'La vivienda se alquiló o se destinó a uso profesional', used: 'Ya usé esta exención en los últimos {mainY} años',
+  vac: 'Meses desde que la vivienda quedó vacía (0 si sigue ocupada)', area: 'Superficie construida (m²)', first: 'Es la primera venta de esta vivienda social', yearTotal: 'Valor total de tus ventas inmobiliarias del año natural (MAD)',
+  total: 'Impuesto estimado', ofPrice: 'del precio de venta', wait: 'Rellena los campos para ver el detalle.',
+  lPrice: 'Precio de venta', lReval: 'Precio de compra revalorizado', lCosts: 'Gastos de compra', lWorks: 'Gastos de inversión', lBase: 'Base de adquisición', lProfit: 'Beneficio neto', lLoss: 'Pérdida (sin beneficio)', lRate: 'Impuesto del 20 % sobre el beneficio', lMin: 'Mínimo del 3 % del precio', lTax: 'Impuesto a pagar (estimado)', lNet: 'Queda tras el impuesto',
+  kFlat: 'tanto alzado', kActual: 'gastos reales', applied: 'Exención aplicada', notApplied: 'Exención no aplicable: condiciones no cumplidas', fallback: 'El detalle de abajo se calcula sin esta exención.', warnT: 'A confirmar con la DGI',
+  m: {
+    required: 'Introduce un número.', positive: 'El valor debe ser mayor que 0.', negative: 'El valor no puede ser negativo.', coef_min: 'El coeficiente es como mínimo 1.',
+    main_years: 'Debes haber ocupado la vivienda como habitual al menos {mainY} años.', main_rented: 'La vivienda no debe haberse alquilado ni destinado a uso profesional.',
+    main_used: 'La exención solo puede usarse una vez cada {mainY} años.', main_vacancy: 'La venta debe hacerse en el año siguiente a quedar vacía la vivienda.',
+    main_vacancy_border: 'Estás en el límite de un año tras la vacancia: decide la DGI.', main_land: 'Para el terreno, la exención se limita a 5 veces la superficie construida: ese límite no se calcula aquí.',
+    social_years: 'Debes haber ocupado la vivienda al menos {socY} años.', social_area: 'La superficie construida debe estar entre {areaMin} y {areaMax} m².', social_price: 'El precio de venta (sin IVA) no debe superar {socPrice} MAD.', social_first: 'La exención solo vale para la primera venta.',
+    small_total: 'El valor total de las ventas del año no debe superar {small} MAD.',
+  },
+  secT: 'Qué muestra este resultado', offT: 'Reglas oficiales', estT: 'Estimaciones y tus datos', notT: 'No incluido',
+  off: [
+    'Tipo del 20 % sobre el beneficio neto, con un mínimo del 3 % del precio de venta aun sin beneficio (Guía fiscal MRE, ministerio encargado de los MRE, julio de 2025).',
+    'Exención de la vivienda habitual ocupada al menos 5 años (no alquilada, una vez cada 5 años, venta en el año siguiente a quedar vacía), con un mínimo del 3 % sobre la parte del precio que supera 4.000.000 MAD.',
+    'Exenciones: ventas del año de hasta 140.000 MAD en total; primera venta de una vivienda social (4 años de ocupación, 50 a 80 m², máximo 250.000 MAD sin IVA).',
+    'Declaración electrónica y pago en los 30 días siguientes a la venta.',
+  ],
+  est: [
+    'El coeficiente de revalorización lo introduces tú: la tabla oficial no está integrada en la herramienta.',
+    'Precio y gastos de compra se toman tal como los introduces; se aplica el tanto alzado del 15 % del precio de compra si tus gastos reales son inferiores.',
+    'Solo la administración califica la vivienda habitual y comprueba los justificantes.',
+  ],
+  not: [
+    'Intereses del préstamo, comisión de agencia y gastos de venta: consulta con la DGI o un notario antes de deducirlos.',
+    'Honorarios de notario y registro de la propiedad, IVA eventual.',
+    'Casos particulares (indivisión, donación, sociedad, terreno agrícola).',
+  ],
+  note: `Resultado estimativo — a confirmar con la DGI. Parámetros verificados el ${CAPITAL_GAINS_LAST_CHECKED}. Este sitio no sustituye a la DGI ni a un notario.`,
+};
+const de = {
+  price: 'Verkaufspreis (MAD)', acq: 'Kaufpreis (MAD)', coef: 'Aufwertungskoeffizient',
+  coefHelp: 'Aus der offiziellen Koeffiziententabelle der DGI für das Kaufjahr übernehmen. Lassen Sie 1, wenn Sie ihn nicht kennen: dann wird keine Aufwertung angewendet.',
+  costs: 'Nachgewiesene tatsächliche Erwerbskosten (MAD)', costsHelp: 'Liegen Ihre tatsächlichen Kosten darunter, gilt die Pauschale von {flat} % des Kaufpreises.',
+  works: 'Nachgewiesene Bau-, Erweiterungs- oder Verbesserungskosten (MAD)',
+  exemption: 'Mögliche Befreiung', eNone: 'Keine (Regelfall)', eMain: 'Hauptwohnsitz, seit {mainY} Jahren oder länger bewohnt', eSocial: 'Sozialwohnung (erster Verkauf)', eSmall: 'Verkäufe des Jahres mit geringem Gesamtwert',
+  occ: 'Jahre der Nutzung als Hauptwohnsitz', rented: 'Die Wohnung wurde vermietet oder gewerblich genutzt', used: 'Ich habe diese Befreiung in den letzten {mainY} Jahren schon genutzt',
+  vac: 'Monate seit dem Leerstand der Wohnung (0, wenn noch bewohnt)', area: 'Bebaute Fläche (m²)', first: 'Dies ist der erste Verkauf dieser Sozialwohnung', yearTotal: 'Gesamtwert Ihrer Immobilienverkäufe im Kalenderjahr (MAD)',
+  total: 'Geschätzte Steuer', ofPrice: 'des Verkaufspreises', wait: 'Felder ausfüllen, um die Aufschlüsselung zu sehen.',
+  lPrice: 'Verkaufspreis', lReval: 'Aufgewerteter Kaufpreis', lCosts: 'Erwerbskosten', lWorks: 'Investitionskosten', lBase: 'Anschaffungsbasis', lProfit: 'Nettogewinn', lLoss: 'Verlust (kein Gewinn)', lRate: '20 % Steuer auf den Gewinn', lMin: 'Mindestbetrag von 3 % des Preises', lTax: 'Zu zahlende Steuer (geschätzt)', lNet: 'Verbleibt nach Steuer',
+  kFlat: 'Pauschale', kActual: 'tatsächliche Kosten', applied: 'Befreiung angewendet', notApplied: 'Befreiung nicht anwendbar: Voraussetzungen nicht erfüllt', fallback: 'Die Aufschlüsselung unten wird ohne diese Befreiung berechnet.', warnT: 'Bei der DGI zu bestätigen',
+  m: {
+    required: 'Geben Sie eine Zahl ein.', positive: 'Der Wert muss größer als 0 sein.', negative: 'Der Wert darf nicht negativ sein.', coef_min: 'Der Koeffizient beträgt mindestens 1.',
+    main_years: 'Sie müssen die Wohnung mindestens {mainY} Jahre als Hauptwohnsitz bewohnt haben.', main_rented: 'Die Wohnung darf weder vermietet noch gewerblich genutzt worden sein.',
+    main_used: 'Die Befreiung kann nur einmal in {mainY} Jahren genutzt werden.', main_vacancy: 'Der Verkauf muss innerhalb eines Jahres nach dem Leerstand erfolgen.',
+    main_vacancy_border: 'Sie liegen an der Grenze von einem Jahr nach dem Leerstand: die DGI entscheidet.', main_land: 'Beim Grundstück ist die Befreiung auf das 5-Fache der bebauten Fläche begrenzt: diese Grenze wird hier nicht berechnet.',
+    social_years: 'Sie müssen die Wohnung mindestens {socY} Jahre bewohnt haben.', social_area: 'Die bebaute Fläche muss zwischen {areaMin} und {areaMax} m² liegen.', social_price: 'Der Verkaufspreis (ohne MwSt.) darf {socPrice} MAD nicht übersteigen.', social_first: 'Die Befreiung gilt nur für den ersten Verkauf.',
+    small_total: 'Der Gesamtwert der Verkäufe des Jahres darf {small} MAD nicht übersteigen.',
+  },
+  secT: 'Was dieses Ergebnis zeigt', offT: 'Offizielle Regeln', estT: 'Schätzungen und Ihre Eingaben', notT: 'Nicht enthalten',
+  off: [
+    'Satz von 20 % auf den Nettogewinn, mit einem Mindestbetrag von 3 % des Verkaufspreises, auch ohne Gewinn (Steuerleitfaden für Auslandsmarokkaner, zuständiges Ministerium, Juli 2025).',
+    'Befreiung des Hauptwohnsitzes bei mindestens 5 Jahren Nutzung (nicht vermietet, einmal in 5 Jahren, Verkauf innerhalb eines Jahres nach Leerstand), mit 3 % Mindestbetrag auf den Teil des Preises über 4.000.000 MAD.',
+    'Befreiungen: Verkäufe des Jahres von insgesamt höchstens 140.000 MAD; erster Verkauf einer Sozialwohnung (4 Jahre bewohnt, 50 bis 80 m², höchstens 250.000 MAD ohne MwSt.).',
+    'Elektronische Erklärung und Zahlung innerhalb von 30 Tagen nach dem Verkauf.',
+  ],
+  est: [
+    'Den Aufwertungskoeffizienten geben Sie selbst ein: die offizielle Tabelle ist nicht in das Tool integriert.',
+    'Kaufpreis und Kosten werden so übernommen, wie Sie sie eingeben; die Pauschale von 15 % des Kaufpreises gilt, wenn Ihre tatsächlichen Kosten niedriger sind.',
+    'Nur die Verwaltung stuft einen Hauptwohnsitz ein und prüft die Nachweise.',
+  ],
+  not: [
+    'Darlehenszinsen, Maklerprovision und Verkaufskosten: vor dem Abzug bei der DGI oder einem Notar prüfen.',
+    'Notar- und Grundbuchgebühren, eventuelle MwSt.',
+    'Sonderfälle (Miteigentum, Schenkung, Gesellschaft, landwirtschaftliches Grundstück).',
+  ],
+  note: `Geschätztes Ergebnis — von der DGI zu bestätigen. Parameter geprüft am ${CAPITAL_GAINS_LAST_CHECKED}. Diese Seite ersetzt weder die DGI noch einen Notar.`,
+};
+const ar = {
+  price: 'ثمن البيع (درهم)', acq: 'ثمن الشراء (درهم)', coef: 'معامل إعادة التقييم',
+  coefHelp: 'خذه من الجدول الرسمي للمعاملات لدى المديرية العامة للضرائب حسب سنة الشراء. اترك 1 إن كنت لا تعرفه: فلا تُطبَّق حينها إعادة تقييم.',
+  costs: 'مصاريف الاقتناء الفعلية المبرَّرة (درهم)', costsHelp: 'تُعتمد نسبة جزافية قدرها {flat}% من ثمن الشراء إذا كانت مصاريفك الفعلية أقل.',
+  works: 'مصاريف البناء أو التوسيع أو التحسين المبرَّرة (درهم)',
+  exemption: 'إعفاء محتمل', eNone: 'بدون (النظام العادي)', eMain: 'سكن رئيسي مشغول منذ {mainY} سنوات فأكثر', eSocial: 'سكن اجتماعي (أول تفويت)', eSmall: 'تفويتات السنة ذات قيمة إجمالية ضعيفة',
+  occ: 'سنوات السكن كسكن رئيسي', rented: 'تم كراء السكن أو تخصيصه لاستعمال مهني', used: 'سبق أن استفدت من هذا الإعفاء خلال آخر {mainY} سنوات',
+  vac: 'عدد الأشهر منذ أن أصبح السكن شاغراً (0 إن كان لا يزال مشغولاً)', area: 'المساحة المغطاة (م²)', first: 'هذا أول تفويت لهذا السكن الاجتماعي', yearTotal: 'القيمة الإجمالية لتفويتاتك العقارية خلال السنة المدنية (درهم)',
+  total: 'الضريبة التقديرية', ofPrice: 'من ثمن البيع', wait: 'املأ الحقول لعرض التفصيل.',
+  lPrice: 'ثمن البيع', lReval: 'ثمن الشراء بعد إعادة التقييم', lCosts: 'مصاريف الاقتناء', lWorks: 'مصاريف الاستثمار', lBase: 'وعاء الاقتناء', lProfit: 'الربح الصافي', lLoss: 'خسارة (لا ربح)', lRate: 'ضريبة 20% على الربح', lMin: 'الحد الأدنى 3% من الثمن', lTax: 'الضريبة المستحقة (تقديرية)', lNet: 'المتبقي بعد الضريبة',
+  kFlat: 'نسبة جزافية', kActual: 'مصاريف فعلية', applied: 'تم تطبيق الإعفاء', notApplied: 'الإعفاء غير قابل للتطبيق: الشروط غير مستوفاة', fallback: 'التفصيل أدناه محسوب دون هذا الإعفاء.', warnT: 'يؤكد لدى المديرية العامة للضرائب',
+  m: {
+    required: 'أدخل رقماً.', positive: 'يجب أن تكون القيمة أكبر من 0.', negative: 'لا يمكن أن تكون القيمة سالبة.', coef_min: 'المعامل لا يقل عن 1.',
+    main_years: 'يجب أن تكون قد سكنت العقار كسكن رئيسي منذ {mainY} سنوات على الأقل.', main_rented: 'يجب ألا يكون السكن قد كُري أو خُصص لاستعمال مهني.',
+    main_used: 'لا يمكن استعمال الإعفاء إلا مرة واحدة خلال {mainY} سنوات.', main_vacancy: 'يجب أن يتم التفويت خلال السنة التي تلي شغور السكن.',
+    main_vacancy_border: 'أنت عند حد السنة بعد الشغور: القرار للمديرية العامة للضرائب.', main_land: 'بالنسبة للأرض، يقتصر الإعفاء على 5 أضعاف المساحة المغطاة: هذا الحد غير محسوب هنا.',
+    social_years: 'يجب أن تكون قد سكنت العقار منذ {socY} سنوات على الأقل.', social_area: 'يجب أن تتراوح المساحة المغطاة بين {areaMin} و{areaMax} م².', social_price: 'يجب ألا يتجاوز ثمن البيع (دون احتساب الضريبة على القيمة المضافة) {socPrice} درهم.', social_first: 'لا يسري الإعفاء إلا على أول تفويت.',
+    small_total: 'يجب ألا تتجاوز القيمة الإجمالية لتفويتات السنة {small} درهم.',
+  },
+  secT: 'ما الذي تبينه هذه النتيجة', offT: 'القواعد الرسمية', estT: 'التقديرات ومدخلاتك', notT: 'غير مشمول',
+  off: [
+    'نسبة 20% على الربح الصافي، مع حد أدنى 3% من ثمن البيع حتى في غياب الربح (الدليل الضريبي لمغاربة العالم، الوزارة المكلفة بالمغاربة المقيمين بالخارج، يوليوز 2025).',
+    'إعفاء السكن الرئيسي المشغول منذ 5 سنوات على الأقل (غير مُكرى، مرة واحدة كل 5 سنوات، التفويت خلال السنة التي تلي الشغور)، مع حد أدنى 3% على الجزء من الثمن الذي يتجاوز 4.000.000 درهم.',
+    'إعفاءات: تفويتات السنة التي لا تتجاوز 140.000 درهم في مجموعها؛ أول تفويت لسكن اجتماعي (4 سنوات سكن، من 50 إلى 80 م²، وبحد أقصى 250.000 درهم دون احتساب الضريبة على القيمة المضافة).',
+    'التصريح بالطريقة الإلكترونية والأداء داخل 30 يوماً من تاريخ التفويت.',
+  ],
+  est: [
+    'معامل إعادة التقييم من إدخالك: الجدول الرسمي غير مدمج في الأداة.',
+    'يؤخذ ثمن الشراء والمصاريف كما تدخلها؛ وتُعتمد النسبة الجزافية 15% من ثمن الشراء إذا كانت مصاريفك الفعلية أقل.',
+    'الإدارة وحدها تكيّف السكن الرئيسي وتتحقق من المستندات.',
+  ],
+  not: [
+    'فوائد القرض وعمولة الوكالة ومصاريف البيع: تحقق لدى المديرية العامة للضرائب أو موثق قبل خصمها.',
+    'أتعاب الموثق ورسوم المحافظة العقارية، والضريبة على القيمة المضافة عند الاقتضاء.',
+    'الحالات الخاصة (الشياع، الهبة، الشركات، الأراضي الفلاحية).',
+  ],
+  note: `نتيجة تقديرية — تؤكدها المديرية العامة للضرائب. تم التحقق من المعطيات في ${CAPITAL_GAINS_LAST_CHECKED}. هذا الموقع لا يغني عن المديرية العامة للضرائب ولا عن الموثق.`,
+};
+const T = { fr, en, es, de, ar }[lang];
+const tx = (s: string) => (lang === 'fr' ? nb(s) : s);
+const fmtN = (n: number) => new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 0 }).format(n);
+const sub = (s: string) => s
+  .replace(/\{flat\}/g, String(V.acquisitionCostFlatPct)).replace(/\{mainY\}/g, String(V.mainResidenceYears))
+  .replace(/\{socY\}/g, String(V.socialYears)).replace(/\{areaMin\}/g, String(V.socialAreaMin)).replace(/\{areaMax\}/g, String(V.socialAreaMax))
+  .replace(/\{socPrice\}/g, fmtN(V.socialPriceCapMad)).replace(/\{small\}/g, fmtN(V.smallSalesCapMad));
+const txs = (s: string) => tx(sub(s));
+const cfg = JSON.stringify({
+  p: V,
+  locale: LOCALE_META[lang].intl,
+  m: Object.fromEntries(Object.entries(T.m).map(([k, v]) => [k, txs(v)])),
+  l: Object.fromEntries(Object.entries({
+    wait: T.wait, lPrice: T.lPrice, lReval: T.lReval, lCosts: T.lCosts, lWorks: T.lWorks, lBase: T.lBase, lProfit: T.lProfit, lLoss: T.lLoss,
+    lRate: T.lRate, lMin: T.lMin, lTax: T.lTax, lNet: T.lNet, kFlat: T.kFlat, kActual: T.kActual, applied: T.applied,
+    notApplied: T.notApplied, fallback: T.fallback, warnT: T.warnT,
+  }).map(([k, v]) => [k, tx(v)])),
+});
+---
+<div data-capgain data-cfg={cfg}>
+<CalcShell id="capgain" note={tx(T.note)}>
+  <Fragment slot="form">
+    <label>{tx(T.price)}<input name="price" type="number" inputmode="numeric" min="0" step="10000" value="1000000" /></label>
+    <label>{tx(T.acq)}<input name="acq" type="number" inputmode="numeric" min="0" step="10000" value="600000" /></label>
+    <label class="full">{tx(T.coef)}<input name="coef" type="number" inputmode="decimal" min="1" step="0.01" value="1" aria-describedby="capgain-coef-help" /><span id="capgain-coef-help" class="text-xs font-normal muted">{tx(T.coefHelp)}</span></label>
+    <label>{txs(T.costs)}<input name="costs" type="number" inputmode="numeric" min="0" step="1000" value="0" aria-describedby="capgain-costs-help" /><span id="capgain-costs-help" class="text-xs font-normal muted">{txs(T.costsHelp)}</span></label>
+    <label>{tx(T.works)}<input name="works" type="number" inputmode="numeric" min="0" step="1000" value="0" /></label>
+    <label class="full">{tx(T.exemption)}
+      <select name="exemption">
+        <option value="none">{tx(T.eNone)}</option>
+        <option value="main">{txs(T.eMain)}</option>
+        <option value="social">{tx(T.eSocial)}</option>
+        <option value="small">{tx(T.eSmall)}</option>
+      </select>
+    </label>
+    <div class="full grid gap-4 rounded-2xl border border-[var(--line)] p-4 sm:grid-cols-2" data-show="main" hidden>
+      <label>{tx(T.occ)}<input name="occ" type="number" inputmode="decimal" min="0" step="1" value="6" /></label>
+      <label>{tx(T.vac)}<input name="vac" type="number" inputmode="numeric" min="0" step="1" value="0" /></label>
+      <label class="full flex !grid-cols-none items-start !flex-row gap-2"><input name="rented" type="checkbox" class="!w-auto mt-0.5 size-4 shrink-0 accent-terracotta-500" /> <span>{tx(T.rented)}</span></label>
+      <label class="full flex !grid-cols-none items-start !flex-row gap-2"><input name="used" type="checkbox" class="!w-auto mt-0.5 size-4 shrink-0 accent-terracotta-500" /> <span>{txs(T.used)}</span></label>
+    </div>
+    <div class="full grid gap-4 rounded-2xl border border-[var(--line)] p-4 sm:grid-cols-2" data-show="social" hidden>
+      <label>{tx(T.occ)}<input name="sococc" type="number" inputmode="decimal" min="0" step="1" value="4" /></label>
+      <label>{tx(T.area)}<input name="area" type="number" inputmode="decimal" min="0" step="1" value="70" /></label>
+      <label class="full flex !grid-cols-none items-start !flex-row gap-2"><input name="first" type="checkbox" class="!w-auto mt-0.5 size-4 shrink-0 accent-terracotta-500" checked /> <span>{tx(T.first)}</span></label>
+    </div>
+    <div class="full grid gap-4 rounded-2xl border border-[var(--line)] p-4" data-show="small" hidden>
+      <label>{tx(T.yearTotal)}<input name="year" type="number" inputmode="numeric" min="0" step="1000" value="100000" /></label>
+    </div>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{tx(T.total)}</p>
+    <p class="big"><span data-out="total">—</span> {lang === 'ar' ? 'درهم' : 'DH'}</p>
+    <p class="text-sm text-white/85"><span data-out="pct">—</span> {tx(T.ofPrice)}</p>
+    <div data-out="msgs" class="mt-3 grid gap-2 text-sm" role="status"></div>
+    <dl data-out="lines"></dl>
+  </Fragment>
+</CalcShell>
+<section class="not-prose mt-6 grid gap-4 md:grid-cols-3" aria-labelledby="capgain-sec">
+  <h2 id="capgain-sec" class="sr-only">{tx(T.secT)}</h2>
+  <div class="card p-4"><h3 class="font-semibold">{tx(T.offT)}</h3><ul class="mt-2 grid gap-2 text-sm">{T.off.map((x) => <li>{txs(x)}</li>)}</ul></div>
+  <div class="card p-4"><h3 class="font-semibold">{tx(T.estT)}</h3><ul class="mt-2 grid gap-2 text-sm">{T.est.map((x) => <li>{txs(x)}</li>)}</ul></div>
+  <div class="card p-4"><h3 class="font-semibold">{tx(T.notT)}</h3><ul class="mt-2 grid gap-2 text-sm">{T.not.map((x) => <li>{txs(x)}</li>)}</ul></div>
+</section>
+</div>
+<script>
+  import { computeCapitalGain, parseNum, type CapitalGainParams } from '../../utils/capitalgain.mjs';
+
+  type Cfg = { p: CapitalGainParams; locale: string; m: Record<string, string>; l: Record<string, string> };
+  const FIELD: Record<string, string> = { price: 'price', acquisitionPrice: 'acq', coefficient: 'coef', acquisitionCosts: 'costs', works: 'works' };
+
+  document.querySelectorAll<HTMLElement>('[data-capgain]').forEach((root) => {
+    const cfg = JSON.parse(root.dataset.cfg!) as Cfg;
+    const form = root.querySelector('form')!;
+    const fmt = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 0 });
+    const fmtR = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 2 });
+    const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement;
+    const sel = (n: string) => form.elements.namedItem(n) as HTMLSelectElement;
+    const num = (n: string) => parseNum(f(n).value);
+    const out = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+    const unit = document.documentElement.lang === 'ar' ? 'درهم' : 'DH';
+
+    const setErr = (name: string, text: string) => {
+      const input = f(name);
+      const label = input.closest('label')!;
+      label.querySelector('.calc-err[data-own]')?.remove();
+      if (text) {
+        input.setAttribute('aria-invalid', 'true');
+        const span = document.createElement('span');
+        span.className = 'calc-err'; span.dataset.own = '1'; span.setAttribute('role', 'alert'); span.textContent = text;
+        label.appendChild(span);
+      } else if (!label.querySelector('.calc-err')) {
+        input.removeAttribute('aria-invalid');
+      }
+    };
+    const para = (text: string, strong = false) => { const p = document.createElement('p'); p.textContent = text; if (strong) p.className = 'font-semibold'; return p; };
+    const list = (codes: string[]) => {
+      const ul = document.createElement('ul'); ul.className = 'grid gap-1 ps-4 list-disc';
+      codes.forEach((c) => { const li = document.createElement('li'); li.textContent = cfg.m[c] ?? c; ul.appendChild(li); });
+      return ul;
+    };
+
+    const run = () => {
+      const exemption = sel('exemption').value as 'none' | 'main' | 'social' | 'small';
+      root.querySelectorAll<HTMLElement>('[data-show]').forEach((el) => { el.hidden = el.dataset.show !== exemption; });
+      const res = computeCapitalGain({
+        price: num('price'), acquisitionPrice: num('acq'), coefficient: num('coef'), acquisitionCosts: num('costs'), works: num('works'),
+        exemption,
+        occupancyYears: exemption === 'social' ? num('sococc') : num('occ'),
+        rented: f('rented').checked, usedRecently: f('used').checked, vacancyMonths: num('vac'),
+        areaM2: num('area'), firstSale: f('first').checked, yearSalesTotal: num('year'),
+      }, cfg.p);
+      Object.values(FIELD).forEach((n) => setErr(n, ''));
+      const msgs = out('msgs'); const lines = out('lines');
+      msgs.replaceChildren(); lines.replaceChildren();
+      if (!res.ok) {
+        res.errors.forEach((e) => { const n = FIELD[e.field]; if (n) setErr(n, cfg.m[e.code] ?? ''); });
+        out('total').textContent = '—'; out('pct').textContent = '—';
+        msgs.appendChild(para(cfg.l.wait));
+        return;
+      }
+      if (res.exemption !== 'none') {
+        if (res.eligible) msgs.appendChild(para(cfg.l.applied, true));
+        else { msgs.appendChild(para(cfg.l.notApplied, true)); msgs.appendChild(list(res.blockers)); msgs.appendChild(para(cfg.l.fallback)); }
+        if (res.warnings.length) { msgs.appendChild(para(cfg.l.warnT, true)); msgs.appendChild(list(res.warnings)); }
+      }
+      const row = (label: string, amount: number, sub = '', neg = false) => {
+        const r = document.createElement('div');
+        const dt = document.createElement('dt'); dt.append(label);
+        if (sub) { const s = document.createElement('span'); s.className = 'block text-xs text-white/70'; s.textContent = sub; dt.appendChild(s); }
+        const dd = document.createElement('dd'); dd.textContent = `${neg && amount > 0 ? '− ' : ''}${fmt.format(amount)} ${unit}`;
+        r.append(dt, dd); lines.appendChild(r);
+      };
+      const price = num('price');
+      row(cfg.l.lPrice, price);
+      row(cfg.l.lReval, res.revalued, `× ${fmtR.format(num('coef'))}`, true);
+      row(cfg.l.lCosts, res.costsUsed, res.costsKind === 'flat' ? cfg.l.kFlat : cfg.l.kActual, true);
+      if (res.works > 0) row(cfg.l.lWorks, res.works, '', true);
+      row(cfg.l.lBase, res.acquisitionBase);
+      if (res.loss) row(cfg.l.lLoss, Math.abs(res.profit));
+      else row(cfg.l.lProfit, res.profit);
+      if (res.applied === 'none') {
+        row(cfg.l.lRate, Math.round(Math.max(res.profit, 0) * cfg.p.ratePct / 100));
+        row(cfg.l.lMin, res.minTax);
+      }
+      const tot = document.createElement('div'); tot.className = '!border-0 text-base';
+      const tdt = document.createElement('dt'); tdt.className = 'font-semibold'; tdt.textContent = cfg.l.lTax;
+      const tdd = document.createElement('dd'); tdd.textContent = `${fmt.format(res.tax)} ${unit}`;
+      tot.append(tdt, tdd); lines.appendChild(tot);
+      row(cfg.l.lNet, res.netProceeds);
+      out('total').textContent = fmt.format(res.tax);
+      out('pct').textContent = fmtR.format((res.tax / price) * 100) + ' %';
+    };
+
+    form.addEventListener('input', run);
+    form.addEventListener('change', run);
+    run();
+  });
+</script>

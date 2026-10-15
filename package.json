@@ -15,7 +15,8 @@
     "translate": "node src/i18n/translate.mjs",
     "prebuild": "node tools/raster.mjs",
     "predev": "node tools/raster.mjs",
-    "check:content": "node tools/check-content.mjs"
+    "check:content": "node tools/check-content.mjs",
+    "check:dist": "node tools/check-dist.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",

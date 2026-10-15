@@ -18,7 +18,10 @@ import SummerBudget from '../../components/calc/SummerBudget.astro';
 import RetirementBudget from '../../components/calc/RetirementBudget.astro';
 import CarDaysCounter from '../../components/calc/CarDaysCounter.astro';
 import CustomsCalc from '../../components/calc/CustomsCalc.astro';
+import CapitalGainCalc from '../../components/calc/CapitalGainCalc.astro';
+import FxCalc from '../../components/calc/FxCalc.astro';
 import PrayerTimes from '../../components/calc/PrayerTimes.astro';
+import RamadanTimes from '../../components/calc/RamadanTimes.astro';
 import Roadmap from '../../components/Roadmap.astro';
 import RoadmapStep from '../../components/RoadmapStep.astro';
 import Checklist from '../../components/Checklist.astro';
@@ -56,16 +59,20 @@ const alternates = entry ? await getEntryAlternates(entry) : {};
 const switchTargets = entry ? await getEntrySwitchTargets(entry) : {};
 
 /** Composants disponibles dans tous les fichiers MDX SANS import. */
-const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, RetirementBudget, CarDaysCounter, CustomsCalc, PrayerTimes, Roadmap, RoadmapStep, Checklist, PdfDownload, ContactForm, Newsletter };
+const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, RetirementBudget, CarDaysCounter, CustomsCalc, CapitalGainCalc, FxCalc, PrayerTimes, RamadanTimes, Roadmap, RoadmapStep, Checklist, PdfDownload, ContactForm, Newsletter };
 
 let related: Awaited<ReturnType<typeof getArticles>> = [];
 if (entry?.collection === 'articles') {
-  const pool = (await getArticles(entry.data.lang)).filter((a) => a.id !== entry.id);
-  // Même catégorie d'abord, puis les plus récents : maillage interne pertinent.
-  related = [
-    ...pool.filter((a) => a.data.category === entry.data.category),
-    ...pool.filter((a) => a.data.category !== entry.data.category),
-  ].slice(0, 3);
+  // Même langue, hors article courant ; pas de traduction automatique (noindex) vers une page indexable.
+  const pool = (await getArticles(entry.data.lang)).filter((a) => a.id !== entry.id && (entry.data.machineTranslated || !a.data.machineTranslated));
+  // Même catégorie + tags communs d'abord, puis les plus récents : maillage interne pertinent.
+  const score = (a: (typeof pool)[number]) =>
+    (a.data.category === entry.data.category ? 10 : 0) + a.data.tags.filter((tg) => entry.data.tags.includes(tg)).length;
+  related = pool
+    .map((a, i) => ({ a, i, s: score(a) }))
+    .sort((x, y) => y.s - x.s || x.i - y.i)
+    .slice(0, 3)
+    .map((x) => x.a);
 }
 ---
 
