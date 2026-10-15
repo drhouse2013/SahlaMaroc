@@ -2,6 +2,7 @@
 /** /<lang>/villes : hub des villes. */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../PageHero.astro';
+import CitiesMap from './CitiesMap.astro';
 import CityGrid from '../home/CityGrid.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { CITY_PAGES, cityLabel } from '../../data/cities';
@@ -17,5 +18,6 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
 <BaseLayout lang={lang} title={t('city.hub.title')} description={t('city.hub.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('city.hub.title'), description: t('city.hub.description'), lang, items: CITY_PAGES.map((c) => ({ name: cityLabel(c.id, lang), url: absoluteUrl(cityPath(lang, c.slug[lang]), Astro.site) })) })]}>
   <PageHero lang={lang} crumbs={crumbs} title={t('city.hub.title')} intro={t('city.hub.intro')} icon="mapPin" />
+  <CitiesMap lang={lang} />
   <div class="container-page pt-8"><CityGrid lang={lang} showHeading={false} /></div>
 </BaseLayout>

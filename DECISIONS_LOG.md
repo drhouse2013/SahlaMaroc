@@ -79,3 +79,7 @@ Décisions prises sans demande de validation, conformément à la directive de c
 ## 2026-10-15 — Sécurité : en-têtes Vercel et npm audit
 - **vercel.json** : ajout HSTS (1 an, includeSubDomains, sans preload) et `Content-Security-Policy-Report-Only` (Umami, AdSense, MailerLite, Brevo/sibforms, Buttondown ; frame-ancestors 'self'). Les autres en-têtes (nosniff, Referrer-Policy, X-Frame-Options, Permissions-Policy) existaient déjà. CSP en report-only : à durcir en mode bloquant après observation des rapports.
 - **npm audit** : `npm audit fix` (sans --force) appliqué. Reste : sharp (librsvg) et gray-matter/sprintf-js, qui exigent une mise à jour majeure : non appliquée. Override vite conservé.
+
+## 2026-10-16 — Calculateurs « Budget de retour définitif » et « Coût de la vie par ville »
+- Ajouts : `returnbudget.mjs` (+ `costofliving.mjs`), `src/config/return-budget.ts`, composants `ReturnBudget`/`CityCosts`, 10 pages (es/de/ar machineTranslated), tests `tools/test-returnbudget.mjs`.
+- Décision : déménagement, mois de caution, installation et scolarité n'ont aucune source dans le dépôt : départ à 0, à saisir (aucun chiffre inventé). Dépenses courantes = costs.ts ; droits voiture = customs.mjs (taux d'import `secondary`).

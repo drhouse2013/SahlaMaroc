@@ -1,0 +1,93 @@
+---
+/**
+ * Coût de la vie par ville : même ménage, mêmes habitudes, 7 villes de src/config/costs.ts.
+ * Logique pure : src/utils/costofliving.mjs (tests : tools/test-returnbudget.mjs).
+ */
+import CalcShell from './CalcShell.astro';
+import { type Locale, LOCALE_META } from '../../i18n';
+import { BASE, CITIES, CITY_FACTOR, CITY_LABEL, COSTS_LAST_UPDATED } from '../../config/costs';
+import { EUR_TO_MAD, EUR_TO_MAD_DATE } from '../../config/site';
+import { formatDate } from '../../utils/date';
+import { entryPath, getArticleByKey } from '../../utils/i18n';
+
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const T = {
+  fr: { style: 'Style de vie', budget: 'Économique', mid: 'Confortable', comfort: 'Premium', persons: 'Personnes dans le ménage', ref: 'Ville de référence', city: 'Ville', total: 'Total / mois', diff: 'Écart', housing: 'Logement', food: 'Alimentation', transport: 'Transport', leisure: 'Loisirs', mobile: 'Mobile', invalid: 'Indiquez un nombre entier de personnes (1 ou plus).', cheapest: 'La moins chère', eq: 'Équivalent', guide: 'Lire le guide : coût de la vie au Maroc',
+    note: (c: string, r: string, d: string) => `Estimations de coûts datées du ${c}, coefficient propre à chaque ville ; ce ne sont pas des prix relevés pour un logement précis. Taux : 1 € ≈ ${r} MAD (${d}).` },
+  en: { style: 'Lifestyle', budget: 'Budget', mid: 'Comfortable', comfort: 'Premium', persons: 'People in the household', ref: 'Reference city', city: 'City', total: 'Total / month', diff: 'Difference', housing: 'Housing', food: 'Food', transport: 'Transport', leisure: 'Leisure', mobile: 'Mobile', invalid: 'Enter a whole number of people (1 or more).', cheapest: 'Cheapest', eq: 'Equivalent', guide: 'Read the guide: cost of living in Morocco',
+    note: (c: string, r: string, d: string) => `Cost estimates dated ${c} with a city-specific factor; they are not prices recorded for a specific home. Rate: €1 ≈ ${r} MAD (${d}).` },
+  es: { style: 'Estilo de vida', budget: 'Económico', mid: 'Cómodo', comfort: 'Premium', persons: 'Personas en el hogar', ref: 'Ciudad de referencia', city: 'Ciudad', total: 'Total / mes', diff: 'Diferencia', housing: 'Vivienda', food: 'Alimentación', transport: 'Transporte', leisure: 'Ocio', mobile: 'Móvil', invalid: 'Indica un número entero de personas (1 o más).', cheapest: 'La más barata', eq: 'Equivalente', guide: 'Leer la guía: coste de vida en Marruecos',
+    note: (c: string, r: string, d: string) => `Estimaciones de costes fechadas el ${c} con un coeficiente por ciudad; no son precios medidos para una vivienda concreta. Tipo: 1 € ≈ ${r} MAD (${d}).` },
+  de: { style: 'Lebensstil', budget: 'Sparsam', mid: 'Komfortabel', comfort: 'Premium', persons: 'Personen im Haushalt', ref: 'Referenzstadt', city: 'Stadt', total: 'Gesamt / Monat', diff: 'Differenz', housing: 'Wohnen', food: 'Ernährung', transport: 'Verkehr', leisure: 'Freizeit', mobile: 'Mobilfunk', invalid: 'Geben Sie eine ganze Zahl an Personen an (1 oder mehr).', cheapest: 'Günstigste', eq: 'Entspricht', guide: 'Zum Ratgeber: Lebenshaltungskosten in Marokko',
+    note: (c: string, r: string, d: string) => `Kostenschätzungen vom ${c} mit stadtspezifischem Faktor; keine erhobenen Preise für eine bestimmte Wohnung. Kurs: 1 € ≈ ${r} MAD (${d}).` },
+  ar: { style: 'نمط العيش', budget: 'اقتصادي', mid: 'مريح', comfort: 'فاخر', persons: 'عدد أفراد الأسرة', ref: 'مدينة المرجع', city: 'المدينة', total: 'المجموع / شهر', diff: 'الفرق', housing: 'السكن', food: 'التغذية', transport: 'النقل', leisure: 'الترفيه', mobile: 'الهاتف', invalid: 'أدخل عدداً صحيحاً من الأشخاص (1 فأكثر).', cheapest: 'الأرخص', eq: 'ما يعادل', guide: 'اقرأ الدليل: غلاء المعيشة في المغرب',
+    note: (c: string, r: string, d: string) => `تقديرات تكاليف مؤرخة في ${c} مع معامل خاص بكل مدينة؛ ليست أسعاراً مسجلة لسكن بعينه. السعر: 1 € ≈ ${r} درهم (${d}).` },
+}[lang];
+
+const guide = await getArticleByKey(lang, 'cost-of-living');
+const rateTxt = new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 2 }).format(EUR_TO_MAD);
+const note = T.note(formatDate(new Date(COSTS_LAST_UPDATED), lang), rateTxt, formatDate(new Date(EUR_TO_MAD_DATE), lang));
+const cfg = JSON.stringify({ base: BASE, factors: CITY_FACTOR, labels: CITY_LABEL, rate: EUR_TO_MAD, locale: LOCALE_META[lang].intl, txt: { invalid: T.invalid, cheapest: T.cheapest, cols: [T.housing, T.food, T.transport, T.leisure, T.mobile], city: T.city, total: T.total, diff: T.diff } });
+---
+<div data-city-costs data-config={cfg}>
+<CalcShell id="city-costs" note={note}>
+  <Fragment slot="form">
+    <label>{T.style}<select name="style"><option value="budget">{T.budget}</option><option value="mid" selected>{T.mid}</option><option value="comfort">{T.comfort}</option></select></label>
+    <label>{T.persons}<input name="persons" type="number" min="1" step="1" inputmode="numeric" value="1" /></label>
+    <label class="full">{T.ref}<select name="ref">{CITIES.map((c) => <option value={c} selected={c === 'casablanca'}>{CITY_LABEL[c]}</option>)}</select></label>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85" data-out="title">—</p>
+    <p class="big"><span data-out="refTotal">—</span></p>
+    <p class="text-sm text-white/85">{T.eq} <span data-out="refEur">—</span></p>
+    <p class="mt-2 text-sm font-semibold text-gold-300" data-out="msg" role="status" hidden></p>
+    <dl data-out="rows"></dl>
+  </Fragment>
+</CalcShell>
+{guide && <p class="not-prose text-sm"><a class="link" href={entryPath(lang, guide.data.slug)}>{T.guide}</a></p>}
+</div>
+
+<script>
+  import { costsByCity } from '../../utils/costofliving.mjs';
+
+  document.querySelectorAll<HTMLElement>('[data-city-costs]').forEach((root) => {
+    const c = JSON.parse(root.dataset.config!);
+    const form = root.querySelector('form')!;
+    const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement | HTMLSelectElement;
+    const el = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+    const nf = new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 });
+    const mad = (n: number) => `${nf.format(Math.round(n))} DH`;
+
+    function run() {
+      const persons = Number(String(f('persons').value).trim().replace(',', '.'));
+      const rows = costsByCity(c.base, c.factors, f('style').value, persons);
+      const msg = el('msg');
+      const list = el('rows');
+      list.textContent = '';
+      if (!rows) {
+        msg.hidden = false; msg.textContent = c.txt.invalid;
+        ['title', 'refTotal', 'refEur'].forEach((k) => { el(k).textContent = '—'; });
+        return;
+      }
+      msg.hidden = true; msg.textContent = '';
+      const ref = rows.find((r) => r.city === f('ref').value) ?? rows[0];
+      el('title').textContent = `${c.labels[ref.city]} · ${c.txt.total}`;
+      el('refTotal').textContent = mad(ref.total);
+      el('refEur').textContent = `${nf.format(Math.round(ref.total / c.rate))} €`;
+      rows.forEach((r, i) => {
+        const wrap = document.createElement('div');
+        const dt = document.createElement('dt');
+        const dd = document.createElement('dd');
+        const diff = r.total - ref.total;
+        dt.textContent = `${c.labels[r.city]}${i === 0 ? ` (${c.txt.cheapest})` : ''}`;
+        dd.textContent = `${mad(r.total)}${r.city === ref.city ? '' : ` · ${diff > 0 ? '+' : ''}${nf.format(Math.round(diff))}`}`;
+        dd.title = [r.housing, r.food, r.transport, r.leisure, r.mobile].map((v, j) => `${c.txt.cols[j]} ${mad(v)}`).join(' · ');
+        wrap.append(dt, dd);
+        list.append(wrap);
+      });
+    }
+    form.addEventListener('input', run);
+    form.addEventListener('change', run);
+    run();
+  });
+</script>

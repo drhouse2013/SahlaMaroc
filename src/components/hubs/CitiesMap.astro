@@ -1,0 +1,80 @@
+---
+/** Carte SVG simplifiée du Maroc (sans dépendance ni requête réseau). Coordonnées WGS84 approchées. */
+import { useTranslations, type Locale } from '../../i18n';
+import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { BASE, CITY_FACTOR, COSTS_LAST_UPDATED } from '../../config/costs';
+import { PRAYER_CITIES } from '../../data/prayer-cities';
+import { cityPath } from '../../utils/i18n';
+import { formatDate } from '../../utils/date';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+// Taghazout et Merzouga ne figurent pas dans prayer-cities : positions approchées des localités.
+const EXTRA: Record<string, [number, number]> = { taghazout: [30.54, -9.71], merzouga: [31.1, -4.01] };
+const LON0 = -11, LAT1 = 36.2, SX = 83, SY = 100;
+const pt = (lat: number, lon: number) => [Math.round((lon - LON0) * SX), Math.round((LAT1 - lat) * SY)] as const;
+// Contour très simplifié (lat, lon) : littoral méditerranéen, frontière est, limite sud de la vue, Atlantique.
+const OUTLINE: [number, number][] = [[35.8, -5.9], [35.9, -5.3], [35.2, -4.4], [35.4, -3.0], [35.1, -2.2], [34.7, -1.8], [33.7, -1.7], [32.5, -1.7], [32.0, -2.5], [31.7, -3.7], [30.9, -3.7], [29.9, -5.5], [29.5, -7.0], [29.5, -10.5], [29.7, -9.9], [30.5, -9.7], [31.5, -9.8], [32.3, -9.3], [33.2, -8.5], [33.6, -7.6], [34.0, -6.8], [34.5, -6.5], [35.2, -6.2]];
+const d = 'M' + OUTLINE.map(([la, lo]) => pt(la, lo).join(' ')).join('L') + 'Z';
+const fmt = new Intl.NumberFormat(lang === 'ar' ? 'ar-MA-u-nu-latn' : lang, { maximumFractionDigits: 0 });
+const date = formatDate(new Date(COSTS_LAST_UPDATED), lang);
+const items = CITY_PAGES.flatMap((c) => {
+  const p = PRAYER_CITIES.find((x) => x.id === c.id);
+  const pos = p ? ([p.lat, p.lng] as const) : EXTRA[c.id];
+  if (!pos) return [];
+  const [x, y] = pt(pos[0], pos[1]);
+  let day: number | null = null;
+  if (c.costCity) day = Math.round(((BASE.nightStay.mid + BASE.foodDay.mid + BASE.transportDay.mid + BASE.funDay.mid) * CITY_FACTOR[c.costCity]) / 50) * 50;
+  return [{ id: c.id, x, y, name: cityLabel(c.id, lang), href: cityPath(lang, c.slug[lang]), day }];
+});
+---
+<section class="container-page pt-8" aria-labelledby="cmap-title">
+  <h2 id="cmap-title" class="section-title !text-2xl">{t('city.map.title')}</h2>
+  <p class="mt-2 text-sm muted">{t('city.map.hint')}</p>
+  <div class="cmap card mt-4 grid gap-4 p-4 md:grid-cols-[2fr_1fr]" data-cmap>
+    <svg viewBox="0 0 830 670" role="group" aria-label={t('city.map.aria')} class="h-auto w-full">
+      <path d={d} class="cmap-land" />
+      {items.map((c) => (
+        <g class="cmap-pt" role="button" tabindex="0" data-id={c.id} aria-label={c.name}>
+          <circle cx={c.x} cy={c.y} r="22" fill="transparent" />
+          <circle cx={c.x} cy={c.y} r="9" class="cmap-dot" />
+        </g>
+      ))}
+    </svg>
+    <div aria-live="polite">
+      {items.map((c) => (
+        <div data-panel={c.id} hidden>
+          <h3 class="text-lg font-semibold">{c.name}</h3>
+          {c.day !== null && (
+            <p class="mt-2 text-sm"><bdi dir="ltr" class="font-bold tabular-nums">≈ {fmt.format(c.day)} MAD</bdi> <span class="muted">{t('city.budgetDay')}</span><br /><span class="muted">{date}</span></p>
+          )}
+          <a href={c.href} class="btn btn-ghost btn-sm mt-3">{t('city.see')}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .cmap-land { fill: var(--surface-2, color-mix(in srgb, var(--link) 10%, transparent)); stroke: var(--line); stroke-width: 3; stroke-linejoin: round; }
+  .cmap-dot { fill: var(--link); stroke: var(--surface); stroke-width: 3; }
+  .cmap-pt { cursor: pointer; outline: none; }
+  .cmap-pt:hover .cmap-dot, .cmap-pt:focus-visible .cmap-dot, .cmap-pt[aria-pressed='true'] .cmap-dot { stroke: currentColor; stroke-width: 5; }
+  .cmap-pt:focus-visible .cmap-dot { stroke-width: 6; }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-cmap]').forEach((root) => {
+    const pts = root.querySelectorAll<SVGGElement>('.cmap-pt');
+    const show = (id: string) => {
+      root.querySelectorAll<HTMLElement>('[data-panel]').forEach((p) => (p.hidden = p.dataset.panel !== id));
+      pts.forEach((p) => p.setAttribute('aria-pressed', String(p.dataset.id === id)));
+    };
+    pts.forEach((p) => {
+      const id = p.dataset.id!;
+      p.addEventListener('click', () => show(id));
+      p.addEventListener('focus', () => show(id));
+      p.addEventListener('mouseenter', () => show(id));
+      p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(id); } });
+    });
+    if (pts[0]) show(pts[0].dataset.id!);
+  });
+</script>

@@ -1,0 +1,188 @@
+---
+/**
+ * Budget de retour définitif : dépenses ponctuelles + 12 premiers mois courants.
+ * Logique pure : src/utils/returnbudget.mjs (tests : tools/test-returnbudget.mjs).
+ * Valeurs courantes de départ : src/config/costs.ts via src/config/return-budget.ts ; droits voiture : src/config/customs.ts.
+ * Déménagement, caution, installation, scolarité : à saisir (aucun chiffre sourcé n'est inventé).
+ */
+import CalcShell from './CalcShell.astro';
+import { type Locale, LOCALE_META } from '../../i18n';
+import { CITIES, CITY_LABEL } from '../../config/costs';
+import { monthlyStart, RETURN_BUDGET_LAST_CHECKED, COSTS_LAST_UPDATED } from '../../config/return-budget';
+import { CUSTOMS_VALUES as V, CUSTOMS_LAST_CHECKED } from '../../config/customs';
+import { EUR_TO_MAD, EUR_TO_MAD_DATE } from '../../config/site';
+import { formatDate } from '../../utils/date';
+import { entryPath, getArticleByKey } from '../../utils/i18n';
+
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const T = {
+  fr: {
+    h1: '1. Dépenses ponctuelles', h2: '2. Dépenses courantes (12 premiers mois)', city: 'Ville d’installation', style: 'Style de vie', budget: 'Économique', mid: 'Confortable', comfort: 'Premium',
+    moving: 'Déménagement / fret (devis)', depositMonths: 'Mois de caution et d’avance de loyer', installation: 'Installation (équipement, travaux, démarches)', school: 'Scolarité, 1re année (total)',
+    h3: 'Voiture (dédouanement)', carValue: 'Valeur retenue par la douane (0 = pas de voiture)', regime: 'Régime', std: 'Droit commun', a90: 'Abattement 90 % (60 ans et plus)', di: 'Droit d’importation (%)', benAge: 'Âge du demandeur', resYears: 'Années de résidence à l’étranger', vehAge: 'Âge du véhicule (ans)',
+    housing: 'Loyer', food: 'Alimentation', transport: 'Transport', leisure: 'Loisirs', mobile: 'Mobile', contingency: 'Imprévus (% du courant)',
+    hintCosts: 'départ : estimation datée', hintOwn: 'à saisir d’après vos devis',
+    oneOffTotal: 'Total ponctuel', running: 'Courant sur 12 mois', grand: 'Budget total estimé', perMonth: 'par mois courant', eq: 'Équivalent', carLine: 'Droits et taxes voiture', depositLine: 'Caution / avance',
+    invalid: 'Corrigez les champs signalés (nombres positifs ou nuls).', blocked: 'Véhicule non dédouanable selon l’âge saisi : aucun montant retenu.', not90: 'Conditions de l’abattement 90 % non remplies : droit commun appliqué.',
+    hypTitle: 'Hypothèses', hyp1: 'Montants en dirhams ; équivalent en euros au taux indicatif.', hyp2: 'Les postes courants sont multipliés par 12 ; pas d’inflation, pas de revenu.', hyp3: 'Droits voiture : calcul de l’outil de dédouanement (taux d’importation indicatifs, à confirmer auprès de la douane).',
+    note: (r: string, d: string, c: string, k: string, u: string) => `Postes courants : estimations de coûts du ${c}. Droits voiture : paramètres vérifiés le ${k}. Déménagement, caution, installation et scolarité : aucun chiffre sourcé, à saisir. Paramètres revus le ${u}. Taux : 1 € ≈ ${r} MAD (${d}).`,
+    guide: 'Lire le guide : retour définitif au Maroc',
+  },
+  en: {
+    h1: '1. One-off costs', h2: '2. Running costs (first 12 months)', city: 'City of settlement', style: 'Lifestyle', budget: 'Budget', mid: 'Comfortable', comfort: 'Premium',
+    moving: 'Removal / freight (quote)', depositMonths: 'Months of deposit and rent in advance', installation: 'Setting up (furniture, works, paperwork)', school: 'Schooling, first year (total)',
+    h3: 'Car (customs clearance)', carValue: 'Value used by customs (0 = no car)', regime: 'Regime', std: 'Standard', a90: '90% abatement (age 60+)', di: 'Import duty (%)', benAge: 'Applicant age', resYears: 'Years of residence abroad', vehAge: 'Vehicle age (years)',
+    housing: 'Rent', food: 'Food', transport: 'Transport', leisure: 'Leisure', mobile: 'Mobile', contingency: 'Contingency (% of running)',
+    hintCosts: 'start: dated estimate', hintOwn: 'enter from your quotes',
+    oneOffTotal: 'One-off total', running: 'Running over 12 months', grand: 'Estimated total budget', perMonth: 'per running month', eq: 'Equivalent', carLine: 'Car duties and taxes', depositLine: 'Deposit / advance',
+    invalid: 'Fix the flagged fields (positive numbers or zero).', blocked: 'Vehicle cannot be cleared given the age entered: no amount counted.', not90: '90% abatement conditions not met: standard regime applied.',
+    hypTitle: 'Assumptions', hyp1: 'Amounts in dirhams; euro equivalent at the indicative rate.', hyp2: 'Running items are multiplied by 12; no inflation, no income.', hyp3: 'Car duties: computed by the customs tool (indicative import rates, confirm with customs).',
+    note: (r: string, d: string, c: string, k: string, u: string) => `Running items: cost estimates dated ${c}. Car duties: parameters checked ${k}. Removal, deposit, setting up and schooling: no sourced figure, enter your own. Parameters reviewed ${u}. Rate: €1 ≈ ${r} MAD (${d}).`,
+    guide: 'Read the guide: permanent return to Morocco',
+  },
+  es: {
+    h1: '1. Gastos puntuales', h2: '2. Gastos corrientes (primeros 12 meses)', city: 'Ciudad de instalación', style: 'Estilo de vida', budget: 'Económico', mid: 'Cómodo', comfort: 'Premium',
+    moving: 'Mudanza / flete (presupuesto)', depositMonths: 'Meses de fianza y alquiler por adelantado', installation: 'Instalación (equipamiento, obras, trámites)', school: 'Escolaridad, 1.er año (total)',
+    h3: 'Coche (despacho de aduana)', carValue: 'Valor fijado por la aduana (0 = sin coche)', regime: 'Régimen', std: 'Derecho común', a90: 'Reducción del 90 % (60 años o más)', di: 'Derecho de importación (%)', benAge: 'Edad del solicitante', resYears: 'Años de residencia en el extranjero', vehAge: 'Edad del vehículo (años)',
+    housing: 'Alquiler', food: 'Alimentación', transport: 'Transporte', leisure: 'Ocio', mobile: 'Móvil', contingency: 'Imprevistos (% de lo corriente)',
+    hintCosts: 'inicio: estimación fechada', hintOwn: 'introduce según tus presupuestos',
+    oneOffTotal: 'Total puntual', running: 'Corriente en 12 meses', grand: 'Presupuesto total estimado', perMonth: 'por mes corriente', eq: 'Equivalente', carLine: 'Aranceles e impuestos del coche', depositLine: 'Fianza / adelanto',
+    invalid: 'Corrige los campos señalados (números positivos o cero).', blocked: 'Vehículo no despachable por la edad introducida: no se cuenta ningún importe.', not90: 'No se cumplen las condiciones de la reducción del 90 %: se aplica el derecho común.',
+    hypTitle: 'Hipótesis', hyp1: 'Importes en dirhams; equivalente en euros al tipo orientativo.', hyp2: 'Las partidas corrientes se multiplican por 12; sin inflación ni ingresos.', hyp3: 'Aranceles del coche: calculados por la herramienta de aduana (tipos de importación orientativos, confirmar con la aduana).',
+    note: (r: string, d: string, c: string, k: string, u: string) => `Partidas corrientes: estimaciones de costes del ${c}. Aranceles del coche: parámetros verificados el ${k}. Mudanza, fianza, instalación y escolaridad: sin cifra con fuente, introduce la tuya. Parámetros revisados el ${u}. Tipo: 1 € ≈ ${r} MAD (${d}).`,
+    guide: 'Leer la guía: retorno definitivo a Marruecos',
+  },
+  de: {
+    h1: '1. Einmalige Kosten', h2: '2. Laufende Kosten (erste 12 Monate)', city: 'Ansiedlungsstadt', style: 'Lebensstil', budget: 'Sparsam', mid: 'Komfortabel', comfort: 'Premium',
+    moving: 'Umzug / Fracht (Angebot)', depositMonths: 'Monate Kaution und Vorauszahlung Miete', installation: 'Einrichtung (Ausstattung, Arbeiten, Formalitäten)', school: 'Schule, 1. Jahr (gesamt)',
+    h3: 'Auto (Verzollung)', carValue: 'Vom Zoll angesetzter Wert (0 = kein Auto)', regime: 'Regelung', std: 'Normalregelung', a90: '90 % Abschlag (ab 60 Jahren)', di: 'Einfuhrzoll (%)', benAge: 'Alter des Antragstellers', resYears: 'Jahre Wohnsitz im Ausland', vehAge: 'Fahrzeugalter (Jahre)',
+    housing: 'Miete', food: 'Ernährung', transport: 'Verkehr', leisure: 'Freizeit', mobile: 'Mobilfunk', contingency: 'Unvorhergesehenes (% der laufenden Kosten)',
+    hintCosts: 'Start: datierte Schätzung', hintOwn: 'nach Ihren Angeboten eingeben',
+    oneOffTotal: 'Einmalige Summe', running: 'Laufend über 12 Monate', grand: 'Geschätztes Gesamtbudget', perMonth: 'pro laufendem Monat', eq: 'Entspricht', carLine: 'Zoll und Steuern Auto', depositLine: 'Kaution / Vorauszahlung',
+    invalid: 'Korrigieren Sie die markierten Felder (positive Zahlen oder null).', blocked: 'Fahrzeug bei diesem Alter nicht verzollbar: kein Betrag angesetzt.', not90: 'Bedingungen des 90-%-Abschlags nicht erfüllt: Normalregelung angewendet.',
+    hypTitle: 'Annahmen', hyp1: 'Beträge in Dirham; Euro-Gegenwert zum Richtkurs.', hyp2: 'Laufende Posten werden mit 12 multipliziert; keine Inflation, kein Einkommen.', hyp3: 'Autozoll: vom Zollrechner berechnet (Richtsätze, beim Zoll bestätigen).',
+    note: (r: string, d: string, c: string, k: string, u: string) => `Laufende Posten: Kostenschätzungen vom ${c}. Autozoll: Parameter geprüft am ${k}. Umzug, Kaution, Einrichtung und Schule: keine belegte Zahl, bitte selbst eingeben. Parameter überprüft am ${u}. Kurs: 1 € ≈ ${r} MAD (${d}).`,
+    guide: 'Zum Ratgeber: endgültige Rückkehr nach Marokko',
+  },
+  ar: {
+    h1: '1. نفقات لمرة واحدة', h2: '2. النفقات الجارية (أول 12 شهراً)', city: 'مدينة الاستقرار', style: 'نمط العيش', budget: 'اقتصادي', mid: 'مريح', comfort: 'فاخر',
+    moving: 'الترحيل / الشحن (عرض سعر)', depositMonths: 'أشهر الضمان والكراء المسبق', installation: 'التجهيز (معدات، أشغال، إجراءات)', school: 'التمدرس، السنة الأولى (المجموع)',
+    h3: 'السيارة (التخليص الجمركي)', carValue: 'القيمة المعتمدة لدى الجمارك (0 = بدون سيارة)', regime: 'النظام', std: 'القانون العام', a90: 'تخفيض 90% (60 سنة فأكثر)', di: 'رسم الاستيراد (%)', benAge: 'سن المستفيد', resYears: 'سنوات الإقامة بالخارج', vehAge: 'عمر السيارة (سنوات)',
+    housing: 'الكراء', food: 'التغذية', transport: 'النقل', leisure: 'الترفيه', mobile: 'الهاتف', contingency: 'الطوارئ (% من الجاري)',
+    hintCosts: 'ابتدائي: تقدير مؤرخ', hintOwn: 'أدخلها حسب عروض الأسعار',
+    oneOffTotal: 'مجموع النفقات الفردية', running: 'الجاري على 12 شهراً', grand: 'الميزانية الإجمالية التقديرية', perMonth: 'للشهر الجاري', eq: 'ما يعادل', carLine: 'رسوم وضرائب السيارة', depositLine: 'ضمان / كراء مسبق',
+    invalid: 'صحّح الحقول المشار إليها (أعداد موجبة أو صفر).', blocked: 'لا يمكن تخليص السيارة بالعمر المدخل: لا يُحتسب أي مبلغ.', not90: 'شروط تخفيض 90% غير مستوفاة: يطبق القانون العام.',
+    hypTitle: 'الافتراضات', hyp1: 'المبالغ بالدرهم؛ ما يعادلها بالأورو بالسعر التقريبي.', hyp2: 'تضرب البنود الجارية في 12؛ بلا تضخم ولا دخل.', hyp3: 'رسوم السيارة: محسوبة بأداة الجمارك (نسب استيراد تقريبية، تأكد لدى الجمارك).',
+    note: (r: string, d: string, c: string, k: string, u: string) => `البنود الجارية: تقديرات تكاليف مؤرخة في ${c}. رسوم السيارة: معطيات مراجعة في ${k}. الترحيل والضمان والتجهيز والتمدرس: لا رقم موثق، أدخل رقمك. المعطيات روجعت في ${u}. السعر: 1 € ≈ ${r} درهم (${d}).`,
+    guide: 'اقرأ الدليل: العودة النهائية إلى المغرب',
+  },
+}[lang];
+
+const guide = await getArticleByKey(lang, 'permanent-return');
+const rateTxt = new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 2 }).format(EUR_TO_MAD);
+const fd = (d: string) => formatDate(new Date(d), lang);
+const note = T.note(rateTxt, fd(EUR_TO_MAD_DATE), fd(COSTS_LAST_UPDATED), fd(CUSTOMS_LAST_CHECKED), fd(RETURN_BUDGET_LAST_CHECKED));
+const starts = Object.fromEntries(CITIES.flatMap((c) => (['budget', 'mid', 'comfort'] as const).map((s) => [`${c}:${s}`, monthlyStart(c, s)])));
+const cfg = JSON.stringify({ rate: EUR_TO_MAD, starts, customs: V, locale: LOCALE_META[lang].intl, txt: { invalid: T.invalid, blocked: T.blocked, not90: T.not90 } });
+const monthly = ['housing', 'food', 'transport', 'leisure', 'mobile'] as const;
+const rows = [['moving', 'moving'], ['car', 'carLine'], ['deposit', 'depositLine'], ['installation', 'installation'], ['school', 'school']] as const;
+---
+<div data-return-budget data-config={cfg}>
+<CalcShell id="return-budget" note={note}>
+  <Fragment slot="form">
+    <fieldset class="full grid gap-4 border-0 p-0 sm:grid-cols-2 min-w-0">
+      <legend class="mb-2 text-base font-semibold">{T.h1}</legend>
+      <label>{T.moving} <span class="text-xs muted">(DH)</span><input name="moving" type="number" min="0" step="1" inputmode="decimal" value="0" /><span class="text-xs muted">{T.hintOwn}</span></label>
+      <label>{T.depositMonths}<input name="depositMonths" type="number" min="0" step="0.5" inputmode="decimal" value="0" /><span class="text-xs muted">{T.hintOwn}</span></label>
+      <label>{T.installation} <span class="text-xs muted">(DH)</span><input name="installation" type="number" min="0" step="1" inputmode="decimal" value="0" /><span class="text-xs muted">{T.hintOwn}</span></label>
+      <label>{T.school} <span class="text-xs muted">(DH)</span><input name="school" type="number" min="0" step="1" inputmode="decimal" value="0" /><span class="text-xs muted">{T.hintOwn}</span></label>
+    </fieldset>
+    <fieldset class="full grid gap-4 border-0 border-t border-[var(--line)] p-0 pt-4 sm:grid-cols-2 min-w-0">
+      <legend class="mb-2 text-base font-semibold">{T.h3}</legend>
+      <label class="full">{T.carValue} <span class="text-xs muted">(DH)</span><input name="carValue" type="number" min="0" step="1" inputmode="decimal" value="0" /></label>
+      <label>{T.regime}<select name="regime"><option value="standard">{T.std}</option><option value="abatement90">{T.a90}</option></select></label>
+      <label>{T.di}<input name="diPct" type="number" min="0" max="100" step="0.5" inputmode="decimal" value={V.diThermalPct} /></label>
+      <label>{T.benAge}<input name="beneficiaryAge" type="number" min="0" step="1" inputmode="numeric" value="" /></label>
+      <label>{T.resYears}<input name="residenceYears" type="number" min="0" step="1" inputmode="numeric" value="" /></label>
+      <label class="full">{T.vehAge}<input name="vehicleAge" type="number" min="0" step="1" inputmode="numeric" value="" /></label>
+    </fieldset>
+    <fieldset class="full grid gap-4 border-0 border-t border-[var(--line)] p-0 pt-4 sm:grid-cols-2 min-w-0">
+      <legend class="mb-2 text-base font-semibold">{T.h2}</legend>
+      <label>{T.city}<select name="city">{CITIES.map((c) => <option value={c} selected={c === 'casablanca'}>{CITY_LABEL[c]}</option>)}</select></label>
+      <label>{T.style}<select name="style"><option value="budget">{T.budget}</option><option value="mid" selected>{T.mid}</option><option value="comfort">{T.comfort}</option></select></label>
+      {monthly.map((k) => (
+        <label>{T[k]} <span class="text-xs muted">(DH)</span><input name={k} type="number" min="0" step="1" inputmode="decimal" value="0" /><span class="text-xs muted">{T.hintCosts}</span></label>
+      ))}
+      <label>{T.contingency}<input name="contingency" type="number" min="0" max="100" step="1" inputmode="decimal" value="10" /></label>
+    </fieldset>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{T.grand}</p>
+    <p class="big"><span data-out="grand">—</span></p>
+    <p class="text-sm text-white/85">{T.eq} <span data-out="grandEur">—</span></p>
+    <p class="mt-2 text-sm font-semibold text-gold-300" data-out="msg" role="status" hidden></p>
+    <dl>
+      {rows.map(([k, l]) => <div><dt>{T[l]}</dt><dd data-out={k}>—</dd></div>)}
+      <div><dt>{T.oneOffTotal}</dt><dd data-out="oneOffTotal">—</dd></div>
+      <div><dt>{T.running}</dt><dd data-out="first12">—</dd></div>
+      <div><dt>{T.perMonth}</dt><dd data-out="monthlyTotal">—</dd></div>
+    </dl>
+    <h3 class="mt-6 text-sm font-semibold text-white">{T.hypTitle}</h3>
+    <ul class="mt-1 grid gap-1 text-xs text-white/80"><li>{T.hyp1}</li><li>{T.hyp2}</li><li>{T.hyp3}</li></ul>
+  </Fragment>
+</CalcShell>
+{guide && <p class="not-prose text-sm"><a class="link" href={entryPath(lang, guide.data.slug)}>{T.guide}</a></p>}
+</div>
+
+<script>
+  import { computeReturnBudget } from '../../utils/returnbudget.mjs';
+
+  document.querySelectorAll<HTMLElement>('[data-return-budget]').forEach((root) => {
+    const c = JSON.parse(root.dataset.config!);
+    const form = root.querySelector('form')!;
+    const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement | HTMLSelectElement;
+    const out = (k: string, t: string) => { const el = root.querySelector(`[data-out="${k}"]`); if (el) el.textContent = t; };
+    const nf = new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 });
+    const mad = (n: number) => `${nf.format(Math.round(n))} DH`;
+    const KEYS = ['housing', 'food', 'transport', 'leisure', 'mobile'];
+    const OUT = ['grand', 'grandEur', 'moving', 'car', 'deposit', 'installation', 'school', 'oneOffTotal', 'first12', 'monthlyTotal'];
+
+    function refill() {
+      const s = c.starts[`${f('city').value}:${f('style').value}`];
+      if (!s) return;
+      KEYS.forEach((k) => { f(k).value = String(s[k]); f(k).dispatchEvent(new Event('input', { bubbles: true })); });
+    }
+    function run() {
+      const r = computeReturnBudget({
+        monthly: Object.fromEntries(KEYS.map((k) => [k, f(k).value])),
+        oneOff: { moving: f('moving').value, installation: f('installation').value, school: f('school').value },
+        depositMonths: f('depositMonths').value, contingencyPct: f('contingency').value,
+        car: { value: f('carValue').value, regime: f('regime').value as 'standard' | 'abatement90', diPct: f('diPct').value, beneficiaryAge: f('beneficiaryAge').value, residenceYears: f('residenceYears').value, vehicleAge: f('vehicleAge').value },
+        customsParams: c.customs,
+      });
+      const msg = root.querySelector<HTMLElement>('[data-out="msg"]')!;
+      if (!r.ok) {
+        msg.hidden = false; msg.textContent = c.txt.invalid;
+        OUT.forEach((k) => out(k, '—'));
+        return;
+      }
+      const notes: string[] = [];
+      if (r.car.blockers.includes('vehicle_too_old') || (r.car.result && r.car.result.ok && !r.car.result.cleared)) notes.push(c.txt.blocked);
+      else if (f('regime').value === 'abatement90' && r.car.result && r.car.applied === 'standard') notes.push(c.txt.not90);
+      msg.hidden = notes.length === 0; msg.textContent = notes.join(' ');
+      out('grand', mad(r.grandTotal));
+      out('grandEur', `${nf.format(Math.round(r.grandTotal / c.rate))} €`);
+      (['moving', 'car', 'deposit', 'installation', 'school'] as const).forEach((k) => out(k, mad(r.oneOff[k])));
+      out('oneOffTotal', mad(r.oneOffTotal));
+      out('first12', mad(r.first12Running));
+      out('monthlyTotal', mad(r.monthlyTotal));
+    }
+    form.addEventListener('change', (e) => {
+      const n = (e.target as HTMLInputElement).name;
+      if (n === 'city' || n === 'style') refill();
+      run();
+    });
+    form.addEventListener('input', run);
+    refill(); run();
+  });
+</script>

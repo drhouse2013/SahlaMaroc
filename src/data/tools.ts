@@ -7,6 +7,7 @@ import type { Locale } from '../i18n/config';
 import type { IconName } from './icons';
 import { MRE_LAST_CHECKED } from '../config/mre';
 import { COSTS_LAST_UPDATED } from '../config/costs';
+import { RETURN_BUDGET_LAST_CHECKED } from '../config/return-budget';
 import { EUR_TO_MAD_DATE } from '../config/site';
 import { CUSTOMS_LAST_CHECKED } from '../config/customs';
 import { CAPITAL_GAINS_LAST_CHECKED } from '../config/capital-gains';
@@ -147,6 +148,25 @@ export const TOOLS: Tool[] = [
     },
   },
   {
+    key: 'calc-ferry-compare', icon: 'car', audience: 'mre', guideKey: 'ferry-guide', checked: '2026-10-10', sources: ['adm'],
+    title: { en: 'Ferry and route comparator', fr: 'Comparateur de ferries et d’itinéraires', es: 'Comparador de ferris y rutas', de: 'Fähren- und Routenvergleich', ar: 'مقارن العبّارات والطرق' },
+    text: { en: 'Filter Spain, France and Italy routes to Moroccan ports, with ADM tolls.', fr: 'Filtrez les liaisons Espagne, France, Italie vers les ports marocains, avec péages ADM.', es: 'Filtra las líneas de España, Francia e Italia a los puertos marroquíes, con peajes ADM.', de: 'Verbindungen aus Spanien, Frankreich und Italien zu marokkanischen Häfen filtern, mit ADM-Maut.', ar: 'صفِّ الخطوط من إسبانيا وفرنسا وإيطاليا نحو الموانئ المغربية مع رسوم ADM.' },
+    method: {
+      fr: 'Tableau filtré dans votre navigateur à partir de données statiques tirées de nos guides (durées, compagnies) et de la grille ADM (péages classe 1). Aucune requête réseau ; aucun prix de traversée.',
+      en: 'Table filtered in your browser from static data taken from our guides (durations, operators) and the ADM grid (class 1 tolls). No network request; no crossing prices.',
+      es: 'Tabla filtrada en tu navegador con datos estáticos de nuestras guías (duraciones, compañías) y de la tarifa ADM (peajes clase 1). Sin peticiones de red; sin precios de travesía.',
+      de: 'Im Browser gefilterte Tabelle aus statischen Daten unserer Ratgeber (Dauer, Reedereien) und der ADM-Tarifliste (Maut Klasse 1). Keine Netzwerkabfrage; keine Überfahrtspreise.',
+      ar: 'جدول يُصفّى في متصفحك من بيانات ثابتة مأخوذة من أدلتنا (المدد والشركات) ومن جدول ADM (رسوم الفئة 1). لا طلبات شبكة ولا أسعار عبور.',
+    },
+    assumptions: {
+      fr: ['Durées et compagnies indicatives, programmes été 2026 ; elles changent selon les saisons', 'Prix non affichés : voir le site de la compagnie', 'Péages en classe 1, tronçons publiés uniquement ; Sebta non documentée'],
+      en: ['Indicative durations and operators, summer 2026 timetables; they change by season', 'Prices not shown: see the operator’s website', 'Class 1 tolls, published sections only; Ceuta not documented'],
+      es: ['Duraciones y compañías orientativas, programas de verano 2026; cambian por temporada', 'Precios no mostrados: consulta la web de la compañía', 'Peajes clase 1, solo tramos publicados; Ceuta no documentada'],
+      de: ['Richtdauer und Reedereien nach Sommerfahrplänen 2026; saisonal wechselnd', 'Preise nicht angezeigt: siehe Website der Reederei', 'Maut Klasse 1, nur veröffentlichte Abschnitte; Ceuta nicht dokumentiert'],
+      ar: ['مدد وشركات تقريبية حسب برامج صيف 2026؛ تتغير بحسب المواسم', 'الأسعار غير معروضة: راجع موقع الشركة', 'رسوم الفئة 1، المقاطع المنشورة فقط؛ سبتة غير موثقة'],
+    },
+  },
+  {
     key: 'calc-customs', icon: 'calculator', audience: 'mre', guideKey: 'import-car-permanent-return', checked: CUSTOMS_LAST_CHECKED, sources: ['douane', 'mremin', 'narsa'],
     title: { en: 'Car customs clearance costs', fr: 'Frais de dédouanement d’une voiture', es: 'Costes de despacho aduanero de un coche', de: 'Zollkosten für ein Auto', ar: 'تكاليف التخليص الجمركي لسيارة' },
     text: { en: 'Duties and VAT on a car brought to Morocco, with the 90% abatement if you qualify.', fr: 'Droits et TVA sur une voiture importée au Maroc, avec l’abattement de 90 % si vous y avez droit.', es: 'Derechos e IVA de un coche llevado a Marruecos, con el abatimiento del 90 % si cumples las condiciones.', de: 'Zoll und Mehrwertsteuer für ein nach Marokko gebrachtes Auto, mit dem 90-%-Abschlag bei Anspruch.', ar: 'الرسوم والضريبة على القيمة المضافة لسيارة تُدخل إلى المغرب، مع تخفيض 90% إن كنت مؤهلاً.' },
@@ -258,6 +278,44 @@ export const TOOLS: Tool[] = [
       es: ['Horquillas medias orientativas, recalibradas cada trimestre', 'Sin vuelos internacionales ni seguro', 'Los precios varían mucho según la temporada y el barrio'],
       de: ['Unverbindliche Durchschnittswerte, vierteljährlich neu kalibriert', 'Ohne internationale Flüge und Versicherung', 'Preise schwanken stark nach Saison und Viertel'],
       ar: ['نطاقات متوسطة تقريبية تُراجع كل ثلاثة أشهر', 'دون الرحلات الدولية والتأمين', 'تختلف الأسعار كثيراً حسب الموسم والحي'],
+    },
+  },
+  {
+    key: 'calc-return-budget', icon: 'home', audience: 'mre', guideKey: 'permanent-return', checked: RETURN_BUDGET_LAST_CHECKED, sources: ['douane', 'mremin'],
+    title: { en: 'Permanent return budget', fr: 'Budget de retour définitif', es: 'Presupuesto de retorno definitivo', de: 'Budget für die endgültige Rückkehr', ar: 'ميزانية العودة النهائية' },
+    text: { en: 'One-off costs and the first 12 months of running costs of moving back.', fr: 'Dépenses ponctuelles et 12 premiers mois courants de votre retour.', es: 'Gastos puntuales y primeros 12 meses corrientes de tu regreso.', de: 'Einmalige Kosten und erste 12 Monate laufender Kosten Ihrer Rückkehr.', ar: 'النفقات الفردية ونفقات أول 12 شهراً من العودة.' },
+    method: {
+      fr: 'Somme des dépenses ponctuelles (déménagement, droits et taxes de la voiture, caution = mois x loyer, installation, scolarité) et des dépenses courantes x 12 avec une marge d’imprévus. Les droits de la voiture reprennent le calcul de l’outil de dédouanement.',
+      en: 'Sum of one-off costs (removal, car duties and taxes, deposit = months x rent, setting up, schooling) and running costs x 12 with a contingency margin. Car duties reuse the customs clearance tool’s calculation.',
+      es: 'Suma de gastos puntuales (mudanza, aranceles e impuestos del coche, fianza = meses x alquiler, instalación, escolaridad) y gastos corrientes x 12 con un margen de imprevistos. Los aranceles del coche reutilizan el cálculo de la herramienta de aduana.',
+      de: 'Summe der einmaligen Kosten (Umzug, Zoll und Steuern Auto, Kaution = Monate x Miete, Einrichtung, Schule) und der laufenden Kosten x 12 mit Reserve. Der Autozoll nutzt die Berechnung des Verzollungsrechners.',
+      ar: 'مجموع النفقات الفردية (الترحيل، رسوم وضرائب السيارة، الضمان = الأشهر x الكراء، التجهيز، التمدرس) والنفقات الجارية x 12 مع هامش للطوارئ. تعتمد رسوم السيارة على حساب أداة التخليص الجمركي.',
+    },
+    assumptions: {
+      fr: ['Déménagement, caution, installation et scolarité : aucun chiffre sourcé, à saisir d’après vos devis', 'Dépenses courantes : estimations de coûts datées, modifiables', 'Droits de la voiture : taux d’importation indicatifs, à confirmer auprès de la douane'],
+      en: ['Removal, deposit, setting up and schooling: no sourced figure, enter your own quotes', 'Running costs: dated, editable cost estimates', 'Car duties: indicative import rates, confirm with customs'],
+      es: ['Mudanza, fianza, instalación y escolaridad: sin cifra con fuente, introduce tus presupuestos', 'Gastos corrientes: estimaciones de costes fechadas y editables', 'Aranceles del coche: tipos de importación orientativos, confirmar con la aduana'],
+      de: ['Umzug, Kaution, Einrichtung und Schule: keine belegte Zahl, eigene Angebote eingeben', 'Laufende Kosten: datierte, änderbare Kostenschätzungen', 'Autozoll: Richtsätze, beim Zoll bestätigen'],
+      ar: ['الترحيل والضمان والتجهيز والتمدرس: لا رقم موثق، أدخل عروض أسعارك', 'النفقات الجارية: تقديرات تكاليف مؤرخة وقابلة للتعديل', 'رسوم السيارة: نسب استيراد تقريبية، تأكد لدى الجمارك'],
+    },
+  },
+  {
+    key: 'calc-city-costs', icon: 'home', audience: 'mre', guideKey: 'cost-of-living', checked: COSTS_LAST_UPDATED, sources: ['mremin'],
+    title: { en: 'Cost of living by city', fr: 'Coût de la vie par ville', es: 'Coste de vida por ciudad', de: 'Lebenshaltungskosten nach Stadt', ar: 'تكلفة المعيشة حسب المدينة' },
+    text: { en: 'Compare the monthly cost of living across seven Moroccan cities.', fr: 'Comparez le coût de la vie mensuel dans sept villes marocaines.', es: 'Compara el coste de vida mensual en siete ciudades marroquíes.', de: 'Vergleichen Sie die monatlichen Lebenshaltungskosten in sieben marokkanischen Städten.', ar: 'قارن تكلفة المعيشة الشهرية في سبع مدن مغربية.' },
+    method: {
+      fr: 'Loyer du style de vie choisi, plus alimentation, transport local et loisirs par personne et par jour x 30, chacun multiplié par le coefficient de la ville ; forfait mobile par personne.',
+      en: 'Rent for the chosen lifestyle, plus food, local transport and leisure per person per day x 30, each multiplied by the city factor; mobile plan per person.',
+      es: 'Alquiler del estilo de vida elegido, más alimentación, transporte local y ocio por persona y día x 30, cada uno multiplicado por el coeficiente de la ciudad; plan móvil por persona.',
+      de: 'Miete des gewählten Lebensstils plus Ernährung, Nahverkehr und Freizeit pro Person und Tag x 30, jeweils mit dem Stadtfaktor multipliziert; Mobilfunk pro Person.',
+      ar: 'كراء نمط العيش المختار، مع التغذية والنقل المحلي والترفيه للفرد في اليوم x 30، كل منها مضروب في معامل المدينة؛ وباقة الهاتف للفرد.',
+    },
+    assumptions: {
+      fr: ['Estimations de coûts datées, coefficient par ville', 'Un seul logement par ménage ; le reste est par personne', 'Pas des prix relevés pour un logement précis'],
+      en: ['Dated cost estimates, one factor per city', 'One home per household; the rest is per person', 'Not prices recorded for a specific home'],
+      es: ['Estimaciones de costes fechadas, un coeficiente por ciudad', 'Una vivienda por hogar; el resto es por persona', 'No son precios medidos para una vivienda concreta'],
+      de: ['Datierte Kostenschätzungen, ein Faktor je Stadt', 'Eine Wohnung je Haushalt; der Rest pro Person', 'Keine erhobenen Preise für eine bestimmte Wohnung'],
+      ar: ['تقديرات تكاليف مؤرخة، معامل لكل مدينة', 'سكن واحد لكل أسرة؛ والباقي للفرد', 'ليست أسعاراً مسجلة لسكن بعينه'],
     },
   },
 ];

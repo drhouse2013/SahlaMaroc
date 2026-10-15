@@ -1,0 +1,75 @@
+---
+/** Comparateur de ferries et péages ADM : filtre côté client, données statiques (src/data/ferries.ts). */
+import { type Locale } from '../../i18n';
+import { ROUTES, TOLLS, FERRIES_LAST_CHECKED } from '../../data/ferries';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const D = FERRIES_LAST_CHECKED;
+const T = {
+  fr: { from: 'Départ', dest: 'Arrivée', all: 'Toutes', es: 'Espagne', fr: 'France', it: 'Italie', port: 'Liaison', dur: 'Durée indicative', co: 'Compagnies', chk: 'Vérifié le', price: 'Prix : voir le site de la compagnie (non confirmés ici).', none: 'Aucune liaison pour ce filtre.', tolls: 'Péages ADM, classe 1 (voiture)', seg: 'Tronçon', toll: 'Péage', approx: 'environ', road: 'Tronçons publiés uniquement. Pour Rabat, Casablanca ou Fès depuis Tanger Med, additionnez les tronçons de la grille officielle ADM : distances et totaux non publiés ici.', tm: 'Tanger Med', tc: 'Tanger Ville', nd: 'Nador', ah: 'Al Hoceïma', h: 'h', plus: 'et plus', note: `Durées et compagnies d’après les programmes été 2026, qui changent selon les saisons. Vérifié le ${D}. Sebta : aucune liaison documentée dans nos guides. Péages : grille ADM, hors remorque.` },
+  en: { from: 'From', dest: 'To', all: 'All', es: 'Spain', fr: 'France', it: 'Italy', port: 'Route', dur: 'Indicative duration', co: 'Operators', chk: 'Checked', price: 'Prices: see the operator’s website (not confirmed here).', none: 'No route for this filter.', tolls: 'ADM motorway tolls, class 1 (car)', seg: 'Section', toll: 'Toll', approx: 'about', road: 'Published sections only. For Rabat, Casablanca or Fès from Tanger Med, add up the sections of the official ADM tariff grid: distances and totals are not published here.', tm: 'Tanger Med', tc: 'Tangier city', nd: 'Nador', ah: 'Al Hoceima', h: 'h', plus: 'and more', note: `Durations and operators follow the summer 2026 timetables, which change by season. Checked ${D}. Ceuta: no route documented in our guides. Tolls: ADM grid, no trailer.` },
+  es: { from: 'Salida', dest: 'Llegada', all: 'Todas', es: 'España', fr: 'Francia', it: 'Italia', port: 'Línea', dur: 'Duración indicativa', co: 'Compañías', chk: 'Verificado', price: 'Precios: consulta la web de la compañía (no confirmados aquí).', none: 'Ninguna línea para este filtro.', tolls: 'Peajes ADM, clase 1 (coche)', seg: 'Tramo', toll: 'Peaje', approx: 'aprox.', road: 'Solo tramos publicados. Para Rabat, Casablanca o Fez desde Tanger Med, suma los tramos de la tarifa oficial de ADM: distancias y totales no publicados aquí.', tm: 'Tanger Med', tc: 'Tánger ciudad', nd: 'Nador', ah: 'Alhucemas', h: 'h', plus: 'y más', note: `Duraciones y compañías según los programas de verano 2026, que cambian por temporada. Verificado ${D}. Ceuta: ninguna línea documentada en nuestras guías. Peajes: tarifa ADM, sin remolque.` },
+  de: { from: 'Abfahrt', dest: 'Ankunft', all: 'Alle', es: 'Spanien', fr: 'Frankreich', it: 'Italien', port: 'Verbindung', dur: 'Richtdauer', co: 'Reedereien', chk: 'Geprüft', price: 'Preise: siehe Website der Reederei (hier nicht bestätigt).', none: 'Keine Verbindung für diesen Filter.', tolls: 'ADM-Maut, Klasse 1 (Pkw)', seg: 'Abschnitt', toll: 'Maut', approx: 'ca.', road: 'Nur veröffentlichte Abschnitte. Für Rabat, Casablanca oder Fès ab Tanger Med die Abschnitte der offiziellen ADM-Tarifliste addieren: Entfernungen und Summen werden hier nicht angegeben.', tm: 'Tanger Med', tc: 'Tanger Stadt', nd: 'Nador', ah: 'Al Hoceïma', h: 'Std.', plus: 'und mehr', note: `Dauer und Reedereien nach den Sommerfahrplänen 2026, die saisonal wechseln. Geprüft ${D}. Ceuta: keine Verbindung in unseren Ratgebern dokumentiert. Maut: ADM-Tarif, ohne Anhänger.` },
+  ar: { from: 'الانطلاق', dest: 'الوصول', all: 'الكل', es: 'إسبانيا', fr: 'فرنسا', it: 'إيطاليا', port: 'الخط', dur: 'المدة التقريبية', co: 'الشركات', chk: 'تاريخ التحقق', price: 'الأسعار: راجع موقع الشركة (غير مؤكدة هنا).', none: 'لا يوجد خط لهذه التصفية.', tolls: 'رسوم أداء ADM، الفئة 1 (سيارة)', seg: 'المقطع', toll: 'الرسم', approx: 'حوالي', road: 'المقاطع المنشورة فقط. للرباط أو الدار البيضاء أو فاس انطلاقاً من طنجة المتوسط، اجمع مقاطع الجدول الرسمي لـ ADM: المسافات والمجاميع غير منشورة هنا.', tm: 'طنجة المتوسط', tc: 'مدينة طنجة', nd: 'الناظور', ah: 'الحسيمة', h: 'س', plus: 'وأكثر', note: `المدد والشركات حسب برامج صيف 2026 وتتغير بحسب المواسم. تم التحقق في ${D}. سبتة: لا يوجد خط موثق في أدلتنا. الرسوم: جدول ADM دون مقطورة.` },
+}[lang];
+const destLabel: Record<string, string> = { tangermed: T.tm, tangercity: T.tc, nador: T.nd, alhoceima: T.ah };
+const originLabel: Record<string, string> = { es: T.es, fr: T.fr, it: T.it };
+const dur = (r: (typeof ROUTES)[number]) =>
+  r.hours[1] === null ? `${r.hours[0]} ${T.h} ${T.plus}` : r.hours[0] === r.hours[1] ? `~${r.hours[0]} ${T.h}` : `${r.hours[0]} – ${r.hours[1]} ${T.h}`;
+---
+<div class="ferry-compare not-prose my-8" data-ferry>
+  <form class="grid gap-4 sm:grid-cols-2" onsubmit="return false">
+    <label class="grid gap-1 text-sm font-medium">{T.from}
+      <select name="origin" class="min-h-11 rounded-xl border border-[var(--line-strong)] bg-[var(--surface)] px-3">
+        <option value="">{T.all}</option>
+        {Object.keys(originLabel).map((k) => <option value={k}>{originLabel[k]}</option>)}
+      </select>
+    </label>
+    <label class="grid gap-1 text-sm font-medium">{T.dest}
+      <select name="dest" class="min-h-11 rounded-xl border border-[var(--line-strong)] bg-[var(--surface)] px-3">
+        <option value="">{T.all}</option>
+        {Object.keys(destLabel).map((k) => <option value={k}>{destLabel[k]}</option>)}
+      </select>
+    </label>
+  </form>
+  <div class="mt-4 overflow-x-auto">
+    <table class="w-full text-start text-sm">
+      <thead><tr><th>{T.port}</th><th>{T.dur}</th><th>{T.co}</th><th>{T.chk}</th></tr></thead>
+      <tbody>
+        {ROUTES.map((r) => (
+          <tr data-origin={r.origin} data-dest={r.dest}>
+            <td>{r.from} → {destLabel[r.dest]}</td>
+            <td>{dur(r)}</td><td>{r.companies.join(', ')}</td><td>{r.checked}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="mt-2 text-sm" data-empty hidden>{T.none}</p>
+  </div>
+  <p class="mt-2 text-sm muted">{T.price}</p>
+  <h2 class="mt-8 text-lg font-semibold">{T.tolls}</h2>
+  <table class="mt-2 w-full text-start text-sm">
+    <thead><tr><th>{T.seg}</th><th>{T.toll}</th></tr></thead>
+    <tbody>
+      {TOLLS.map((t) => <tr><td>{t.from} → {t.to}</td><td>{t.approx ? `${T.approx} ` : ''}{t.dh} DH</td></tr>)}
+    </tbody>
+  </table>
+  <p class="mt-2 text-sm muted">{T.road}</p>
+  <p class="mt-2 text-xs muted">{T.note}</p>
+</div>
+<style is:global>
+  .ferry-compare th, .ferry-compare td { padding: .5rem .6rem; border-bottom: 1px solid var(--line); }
+  .ferry-compare th { font-weight: 600; }
+</style>
+<script is:inline>
+  document.querySelectorAll('[data-ferry]').forEach(function (root) {
+    var f = root.querySelector('form'), rows = root.querySelectorAll('tbody tr[data-origin]'), empty = root.querySelector('[data-empty]');
+    f.addEventListener('change', function () {
+      var o = f.elements.origin.value, d = f.elements.dest.value, n = 0;
+      rows.forEach(function (r) {
+        var ok = (!o || r.dataset.origin === o) && (!d || r.dataset.dest === d);
+        r.hidden = !ok; if (ok) n++;
+      });
+      empty.hidden = n > 0;
+    });
+  });
+</script>
