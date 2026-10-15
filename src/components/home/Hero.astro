@@ -22,10 +22,10 @@ const paths = [
 ];
 ---
 <section class="zellige-soft relative overflow-hidden border-b border-[var(--line)]">
-  <div class="container-page grid items-center gap-10 pt-10 pb-12 md:pt-16 md:pb-20 lg:grid-cols-[1.25fr_0.75fr]">
+  <div class="container-page grid items-center gap-8 pt-6 pb-12 md:gap-12 md:pt-16 md:pb-24 lg:grid-cols-[1.25fr_0.75fr]">
     <div>
       <p class="eyebrow text-emerald-moroccan-600 dark:text-emerald-moroccan-100">{L.heroEyebrow[lang]}</p>
-      <h1 class="mt-4 text-[2.4rem] leading-[1.08] font-bold sm:text-6xl">{t('home.hero.title')}</h1>
+      <h1 class="mt-4 text-[2.25rem] leading-[1.08] font-bold tracking-tight sm:text-6xl">{t('home.hero.title')}</h1>
       <p class="mt-5 max-w-xl text-lg leading-relaxed muted">{t('home.hero.subtitle')}</p>
 
       <a href={searchUrl} data-search-open class="card card-hover mt-8 flex min-h-14 max-w-xl items-center gap-3 px-4 text-start" data-track="search_open" data-track-label="home">
@@ -49,11 +49,11 @@ const paths = [
         ))}
       </div>
     </div>
-    <div class="relative mx-auto hidden w-full max-w-sm lg:block">
-      <div class="arch aspect-[4/5] border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
+    <div class="relative mx-auto w-full max-w-sm max-lg:order-first max-lg:max-w-none">
+      <div class="arch aspect-[16/9] border-[6px] sm:aspect-[2/1] lg:aspect-[4/5] lg:border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
         <Image src={illustration('marrakech')} alt="" class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
       </div>
-      <div class="card absolute -start-8 bottom-14 max-w-[14rem] px-4 py-3 shadow-xl">
+      <div class="card absolute start-3 bottom-3 hidden max-w-[14rem] sm:block lg:-start-8 lg:bottom-14 px-4 py-3 shadow-xl">
         <p class="font-display text-xl font-bold text-majorelle-600 dark:text-majorelle-100"><bdi dir="ltr">{FACTS[lang][3].value}</bdi></p>
         <p class="text-xs muted">{FACTS[lang][3].label}</p>
       </div>

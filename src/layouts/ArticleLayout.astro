@@ -103,12 +103,12 @@ const essentials = {
           </span>
           <span class="inline-flex items-center gap-1.5"><Icon name="clock" class="size-4" />{t('article.readingTime', { n: minutes })}</span>
           {d.verifiedDate
-            ? <span class="inline-flex items-center gap-1.5 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100" data-verified><Icon name="checkCircle" class="size-4" />{t('article.verified')} <time datetime={d.verifiedDate.toISOString()}>{formatDate(d.verifiedDate, lang)}</time></span>
+            ? <span class="badge badge-emerald" data-verified><Icon name="checkCircle" class="size-4" />{t('article.verified')} <time datetime={d.verifiedDate.toISOString()}>{formatDate(d.verifiedDate, lang)}</time></span>
             : <span class="inline-flex items-center gap-1.5" data-verified-missing><Icon name="clock" class="size-4" />{t('article.verifiedMissing')}</span>}
           {d.checkedDate && <span class="inline-flex items-center gap-1.5 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100"><Icon name="checkCircle" class="size-4" />{t('article.checked')} {formatDate(d.checkedDate, lang)}</span>}
         </div>
       </div>
-      <div class="arch mx-auto hidden aspect-[4/5] w-full max-w-[16rem] border-8 border-white shadow-[var(--shadow-lg)] md:block dark:border-night-800">
+      <div class="arch mx-auto aspect-[16/9] w-full border-[6px] border-white shadow-[var(--shadow-lg)] max-md:order-first md:aspect-[4/5] md:max-w-[16rem] md:border-8 dark:border-night-800">
         <Image src={cover} alt={d.heroAlt ?? ''} width={520} loading="eager" fetchpriority="high" class="h-full w-full object-cover" />
       </div>
     </div>

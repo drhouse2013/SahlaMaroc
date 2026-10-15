@@ -84,6 +84,9 @@ def ridge(seed, base, amp, color, peaks=7, snow=None, jitter=0.35):
             tops.append((x2, y))
     pts.append((W, H))
     out = poly(pts, color)
+    for (x, y) in tops:  # face ombrée (lumière venant de la gauche)
+        out += poly([(x, y), (x + 120, base + 40), (x + 10, base + 40)], "#1a1030", 'opacity=".16"')
+        out += poly([(x, y), (x - 110, base + 40), (x - 10, base + 40)], "#ffffff", 'opacity=".07"')
     if snow:
         for (x, y) in tops:
             if y < base - amp * 0.7:
@@ -105,7 +108,12 @@ def dune(y, amp, color, phase=0.0, waves=2.2):
 def minaret(x, base, w, h, body, trim, dark):
     """Minaret marocain : fût carré, bandeau décoratif, créneaux, lanternon, dôme, jamour."""
     top = base - h
-    out = rect(x, top, w, h, body)
+    out = shadow(x + w * 0.5 + 20, base, w * 1.6, 12, 0.25)
+    out += rect(x, top, w, h, body)
+    out += rect(x + w * 0.7, top, w * 0.3, h, "#1a0f12", 'opacity=".2"')
+    out += rect(x, top, w * 0.08, h, "#ffffff", 'opacity=".25"')
+    for k in range(int(h // 46)):  # losanges de brique (sebka)
+        out += poly([(x + w / 2, top + 60 + k * 46), (x + w * 0.62, top + 74 + k * 46), (x + w / 2, top + 88 + k * 46), (x + w * 0.38, top + 74 + k * 46)], trim, 'opacity=".28"')
     # fenêtres en arc
     for k in range(3):
         wy = top + h * (0.2 + k * 0.22)
@@ -139,7 +147,7 @@ def minaret(x, base, w, h, body, trim, dark):
 
 def palm(x, base, h, trunk, leaf, lean=0.0):
     tx, ty = x + lean * h, base - h
-    out = path(
+    out = shadow(x + 30, base, h * 0.5, 10, 0.25) + path(
         f"M{f(x - 7)},{base} Q{f(x + lean * h * 0.4 - 4)},{f(base - h * 0.5)} {f(tx - 3)},{f(ty)} "
         f"L{f(tx + 4)},{f(ty)} Q{f(x + lean * h * 0.4 + 6)},{f(base - h * 0.5)} {f(x + 8)},{base} Z",
         trunk,
@@ -152,7 +160,7 @@ def palm(x, base, h, trunk, leaf, lean=0.0):
     return out
 
 
-def houses(seed, base, x0, x1, hmin, hmax, colors, win, wmin=50, wmax=110):
+def houses(seed, base, x0, x1, hmin, hmax, colors, win, wmin=50, wmax=110, detail=True):
     rnd = random.Random(seed)
     out = ""
     x = x0
@@ -161,6 +169,9 @@ def houses(seed, base, x0, x1, hmin, hmax, colors, win, wmin=50, wmax=110):
         h = rnd.uniform(hmin, hmax)
         c = rnd.choice(colors)
         out += rect(x, base - h, w + 1, h + 400, c)
+        out += rect(x + w * 0.68, base - h, w * 0.32 + 1, h + 400, "#1a0f12", 'opacity=".17"')
+        if detail:
+            out += rect(x, base - h, w + 1, 7, "#ffffff", 'opacity=".22"')
         # parapets
         if rnd.random() < 0.5:
             out += rect(x + 4, base - h - 6, w - 8, 6, c)
@@ -168,6 +179,8 @@ def houses(seed, base, x0, x1, hmin, hmax, colors, win, wmin=50, wmax=110):
             wx = x + rnd.uniform(8, max(9, w - 22))
             wy = base - h + rnd.uniform(14, max(15, h - 30))
             out += rect(wx, wy, 11, 16, win, 'rx="5"')
+            if detail:
+                out += rect(wx - 2, wy + 15, 15, 3, "#1a0f12", 'opacity=".18"')
         x += w
     return out
 
@@ -176,12 +189,14 @@ def horseshoe(cx, base, w, h, fill, extra=""):
     """Arc outrepassé (fer à cheval) — signature de l'architecture marocaine."""
     r = w / 2
     sy = base - h + r
-    return path(
+    d = (
         f"M{f(cx - r * 0.82)},{base} L{f(cx - r * 0.82)},{f(sy + r * 0.55)} "
-        f"A{f(r)},{f(r)} 0 1 1 {f(cx + r * 0.82)},{f(sy + r * 0.55)} L{f(cx + r * 0.82)},{base} Z",
-        fill,
-        extra,
+        f"A{f(r)},{f(r)} 0 1 1 {f(cx + r * 0.82)},{f(sy + r * 0.55)} L{f(cx + r * 0.82)},{base} Z"
     )
+    out = path(d, fill, extra)
+    out += path(d, "#1a0f12", 'opacity=".22" transform="translate(%s,%s) scale(.86)"' % (f(cx * 0.14), f(base * 0.14 + 4)))
+    out += path(d, "none", 'stroke="#ffffff" stroke-opacity=".28" stroke-width="2"')
+    return out
 
 
 def camel(x, base, s, color):
@@ -252,10 +267,55 @@ def zellige_band(y, h, c1, c2):
     return out
 
 
+FX = (
+    '<defs>'
+    '<filter id="gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/>'
+    '<feColorMatrix values="0 0 0 0 .1  0 0 0 0 .08  0 0 0 0 .06  0 0 0 .55 0"/></filter>'
+    '<radialGradient id="vg" cx=".5" cy=".45" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/>'
+    '<stop offset="1" stop-color="#1a0f12" stop-opacity=".38"/></radialGradient>'
+    '<linearGradient id="hz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+    '<stop offset="1" stop-color="#fff" stop-opacity=".28"/></linearGradient>'
+    '<linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/>'
+    '<stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>'
+    '<style>.dk{opacity:0}@media (prefers-color-scheme:dark){.dk{opacity:.22}}</style>'
+    '</defs>'
+)
+
+
+def haze(y, h, color="#ffffff", op=0.35):
+    """Brume atmosphérique : sépare les plans (profondeur)."""
+    return (
+        f'<linearGradient id="h{int(y)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{color}" stop-opacity="0"/>'
+        f'<stop offset="1" stop-color="{color}" stop-opacity="{op}"/></linearGradient>'
+        f'<rect x="0" y="{f(y)}" width="{W}" height="{f(h)}" fill="url(#h{int(y)})"/>'
+    )
+
+
+def shadow(x, y, w, h=14, op=0.28):
+    """Ombre portée douce au sol."""
+    return f'<ellipse cx="{f(x)}" cy="{f(y)}" rx="{f(w / 2)}" ry="{f(h / 2)}" fill="#1a0f12" opacity="{op}"/>'
+
+
+def rays(cx, cy, n=7, length=900, op=0.07, color="#fff6d8"):
+    """Rayons de lumière en éventail."""
+    out = ""
+    for i in range(n):
+        a = math.radians(70 + i * (40 / max(1, n - 1)))
+        a2 = a + math.radians(2.2)
+        out += poly([(cx, cy), (cx + length * math.cos(a), cy + length * math.sin(a)), (cx + length * math.cos(a2), cy + length * math.sin(a2))], color, f'opacity="{op}"')
+    return out
+
+
 def svg(body, title):
+    fx = (
+        f'<rect width="{W}" height="{H}" fill="url(#hz)"/>'
+        f'<rect width="{W}" height="{H}" fill="url(#vg)"/>'
+        f'<rect width="{W}" height="{H}" filter="url(#gr)" opacity=".16" style="mix-blend-mode:multiply"/>'
+        f'<rect class="dk" width="{W}" height="{H}" fill="#0b1030"/>'
+    )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="{title}" '
-        f'preserveAspectRatio="xMidYMid slice">{body}</svg>\n'
+        f'preserveAspectRatio="xMidYMid slice">{FX}{body}{fx}</svg>\n'
     )
 
 
@@ -264,16 +324,25 @@ def marrakech():
     b = sky("s", [(0, "#f6c58f"), (0.55, "#f3a87a"), (1, "#e9845a")])
     b += sun(860, 250, 70, "#fff1c9")
     b += ridge(3, 430, 170, "#c9a6c9", peaks=9, snow="#fbf3f8")
+    b += haze(300, 200, "#f7d8b0", 0.55)
     b += ridge(4, 470, 90, "#b78aa6", peaks=11)
+    b += haze(420, 150, "#f3b890", 0.4)
+    b += rays(860, 250, 8, 1000, 0.06)
     b += houses(1, 560, -20, 1240, 40, 120, ["#d9774f", "#cf6b46", "#e08a5a"], TERRA_D)
     b += minaret(470, 600, 92, 380, "#b9583a", "#2d8a6a", "#6e2a1c")
     b += palm(170, 620, 250, "#7a3b24", "#2f6f4f", -0.08)
     b += palm(260, 640, 200, "#7a3b24", "#3d8a5f", 0.1)
     b += palm(1040, 630, 240, "#7a3b24", "#2f6f4f", 0.06)
     b += rect(0, 600, W, 160, "#b5523a")
-    for k in range(25):  # créneaux du rempart
-        b += rect(k * 50 + 8, 588, 30, 14, "#b5523a")
-    b += horseshoe(820, 750, 120, 130, "#7a2f20")
+    b += rect(0, 600, W, 160, "url(#gs)")
+    for k in range(25):  # créneaux du rempart (pointes)
+        b += poly([(k * 50 + 6, 602), (k * 50 + 25, 580), (k * 50 + 44, 602)], "#b5523a")
+    b += zellige_band(640, 26, "#2d8a6a", "#e9b949")
+    for k in range(10):  # pisé : grain de terre
+        b += rect(k * 130 + 20, 690 + (k % 3) * 14, 90, 3, "#873425", 'opacity=".35"')
+    b += horseshoe(820, 750, 130, 150, "#4a1a12")
+    b += horseshoe(820, 750, 100, 120, "#7a2f20")
+    b += rect(808, 690, 24, 60, "#f3a05a", 'opacity=".35"')
     b += birds(5, 6, 600, 1000, 120, 220, "#7a3b24")
     return svg(b, "Marrakech")
 
@@ -283,15 +352,23 @@ def casablanca():
     b += sun(260, 190, 54, "#fff6dc")
     b += houses(2, 470, 640, 1240, 60, 190, ["#e9e4da", "#d9d3c7", "#f1ece3"], "#9fb6c8", 40, 90)
     # Mosquée : salle de prière + minaret élancé
+    b += rect(120, 500, 520, 26, "#d9d1c0")
+    b += rect(120, 500, 520, 6, "#ffffff", 'opacity=".4"')
     b += rect(150, 400, 420, 100, "#efe8dc")
+    b += rect(150, 400, 420, 100, "url(#gs)", 'opacity=".45"')
     for k in range(7):
         b += horseshoe(185 + k * 58, 500, 38, 70, "#2f8a7a")
     b += rect(150, 392, 420, 10, "#2f8a7a")
     b += minaret(560, 500, 70, 400, "#f1ebe0", "#1f8a76", "#9a8b74")
+    b += haze(430, 120, "#ffffff", 0.45)
     b += waves(520, "#3d8fc9", 10, 90)
+    b += rect(330, 526, 60, 70, "#efe8dc", 'opacity=".18"')
+    b += rect(560, 526, 70, 100, "#f1ebe0", 'opacity=".2"')
     b += waves(560, "#2a73b0", 12, 120)
     b += waves(610, MAJ, 10, 70)
     b += waves(680, MAJ_D, 8, 100)
+    for k in range(14):  # écume
+        b += rect(40 + k * 83, 540 + (k % 4) * 30, 38, 3, "#ffffff", 'opacity=".5" rx="1.5"')
     b += birds(7, 7, 750, 1100, 90, 200, "#5c6b80")
     return svg(b, "Casablanca")
 
@@ -299,16 +376,24 @@ def casablanca():
 def chefchaouen():
     b = sky("s", [(0, "#cfe6f5"), (1, "#eef6fb")])
     b += ridge(11, 330, 200, "#8fb2a0", peaks=7)
+    b += haze(200, 200, "#eef6fb", 0.5)
     b += ridge(12, 380, 110, "#6f9a84", peaks=9)
+    b += haze(330, 120, "#dcebf5", 0.4)
     rnd = random.Random(9)
     blues = ["#3f6fd8", "#5b8ae6", "#7aa6f0", "#2f58c4", "#9cc0f5"]
     for row in range(6):
-        b += houses(20 + row, 430 + row * 62, -40 + rnd.uniform(0, 60), 1260, 40, 90, blues, "#1d3a8a", 70, 130)
+        b += houses(20 + row, 430 + row * 62, -40 + rnd.uniform(0, 60), 1260, 40, 90, blues, "#1d3a8a", 70, 130, row >= 4)
     # escalier + porte
     b += horseshoe(600, 750, 110, 180, "#1d3a8a")
     b += circle(624, 690, 5, "#e9b949")
     for k in range(5):
         b += rect(420 + k * 12, 690 + k * 12, 140 - k * 24, 12, "#e9eef7")
+    b += rect(0, 680, W, 80, "url(#gs)", 'opacity=".5"')
+    for k in range(5):
+        b += rect(420 + k * 12, 690 + k * 12, 140 - k * 24, 3, "#1d3a8a", 'opacity=".4"')
+    for px in (500, 700, 1010):
+        b += poly([(px, 700), (px + 28, 700), (px + 24, 726), (px + 4, 726)], "#c8553d")
+        b += circle(px + 8, 692, 9, EMER) + circle(px + 20, 690, 8, "#d94f7a")
     b += lantern(950, 520, 1.1, "#6b4a2b", "#f4c35a")
     b += palm(140, 760, 160, "#6b4a2b", EMER_D, 0.05)
     return svg(b, "Chefchaouen")
@@ -317,11 +402,16 @@ def chefchaouen():
 def sahara():
     b = sky("s", [(0, "#3a2a6b"), (0.45, "#c5577a"), (0.75, "#f2955b"), (1, "#f7c97f")])
     b += sun(780, 360, 80, "#ffe1a1")
+    b += haze(300, 250, "#ffd9a0", 0.5)
     b += dune(470, 60, "#e59a5c", 0.2, 1.6)
     b += dune(540, 70, "#d9814a", 1.4, 2.1)
     b += dune(620, 60, "#c46a3a", 2.4, 1.8)
     b += dune(700, 40, "#a8552e", 0.9, 2.5)
+    b += rect(0, 560, W, 200, "url(#gs)", 'opacity=".5"')
+    for k in range(12):  # rides de sable
+        b += path(f"M{k * 100 + 10},{650 + (k % 4) * 16} q40,-8 80,0", "none", 'stroke="#fff1c9" stroke-opacity=".28" stroke-width="2"')
     for i, x in enumerate((300, 410, 520)):
+        b += shadow(x + 70, 566 - i * 6, 130, 12, 0.3)
         b += camel(x, 560 - i * 6, 0.9, "#2b1a2e")
         b += rider(x, 560 - i * 6, 0.9, "#2b1a2e")
     # piquets de bivouac
@@ -338,11 +428,18 @@ def essaouira():
     b += sun(980, 160, 50, "#fff7de")
     b += houses(31, 420, -20, 760, 60, 150, ["#f4efe6", "#e8e1d4", "#fbf7ef"], "#2f6fb8", 50, 100)
     b += rect(-10, 400, 790, 60, "#c9a27a")
+    b += rect(-10, 400, 790, 60, "url(#gs)", 'opacity=".55"')
+    for k in range(9):  # pierres de la skala
+        b += rect(k * 90 + 10, 420, 60, 3, "#7a5a3a", 'opacity=".35"')
+    for k in range(5):  # canons
+        b += rect(60 + k * 140, 428, 34, 8, "#2a2a30")
+        b += circle(62 + k * 140, 432, 6, "#2a2a30")
     for k in range(16):
         b += rect(k * 50, 388, 30, 14, "#c9a27a")
     b += rect(560, 300, 110, 110, "#c9a27a")
     for k in range(4):
         b += rect(560 + k * 30, 288, 20, 14, "#c9a27a")
+    b += haze(380, 120, "#ffffff", 0.35)
     b += waves(470, "#5aa7d6", 8, 80)
     b += waves(520, "#3a8cc6", 10, 110)
     for i, (x, y) in enumerate(((120, 560), (300, 600), (520, 570), (760, 610), (930, 560))):
@@ -355,7 +452,12 @@ def essaouira():
 def fes():
     b = sky("s", [(0, "#f2d6a8"), (1, "#f8ead0")])
     b += ridge(41, 420, 120, "#d6b98e", peaks=9)
+    b += haze(300, 200, "#f8ead0", 0.5)
     b += houses(42, 520, -20, 1240, 40, 140, ["#e8d3b0", "#dcc29b", "#efdcbc"], "#9c7b54", 40, 80)
+    for k, c in enumerate(("#d9a441", "#c8553d", "#f1e3c0", "#7a9a5a", "#b5523a", "#e9b949", "#e8dcc4")):  # bassins de la tannerie
+        b += circle(40 + k * 62, 700, 26, c) + circle(40 + k * 62, 700, 26, "#1a0f12", 'opacity=".12"')
+    for k, c in enumerate(("#d9a441", "#f1e3c0", "#c8553d", "#7a9a5a", "#e9b949")):
+        b += circle(1160 - k * 62, 700, 26, c)
     # Bab : porte monumentale à décor bleu
     b += rect(330, 330, 540, 420, MAJ)
     b += rect(330, 330, 540, 30, "#e9b949")
@@ -364,6 +466,10 @@ def fes():
     for cx in (440, 600, 760):
         b += horseshoe(cx, 750, 120, 300 if cx == 600 else 240, "#f8ead0" if cx == 600 else "#d9c3a0")
     b += rect(330, 700, 540, 50, "#173a8f")
+    b += rect(330, 330, 540, 420, "url(#gs)", 'opacity=".35"')
+    b += zellige_band(366, 34, "#173a8f", "#e9b949")
+    for k in range(7):
+        b += poly([(345 + k * 80, 750), (360 + k * 80, 722), (375 + k * 80, 750)], "#e9b949", 'opacity=".55"')
     b += minaret(980, 560, 70, 260, "#c9a27a", EMER, "#7a5a3a")
     return svg(b, "Fès")
 
@@ -373,12 +479,17 @@ def rabat():
     b += waves(560, "#4b97cf", 8, 100)
     b += rect(0, 520, W, 50, "#d8c4a0")
     # Tour Hassan (inachevée) + colonnes
+    b += haze(300, 250, "#ffffff", 0.35)
     b += rect(460, 200, 170, 330, "#c79a6e")
+    b += rect(590, 200, 40, 330, "#1a0f12", 'opacity=".2"')
+    b += rect(460, 200, 12, 330, "#ffffff", 'opacity=".25"')
+    for k in range(8):  # assises de pierre
+        b += rect(460, 230 + k * 40, 170, 2, "#7a5a3a", 'opacity=".4"')
     for k in range(3):
         b += horseshoe(545, 300 + k * 80, 48, 60, "#8a6040")
     for k in range(14):
         x = 120 + k * 70 if k < 5 else 700 + (k - 5) * 52
-        b += rect(x, 470, 20, 60, "#e3d2b4")
+        b += rect(x, 470, 20, 60, "#e3d2b4") + rect(x + 14, 470, 6, 60, "#1a0f12", 'opacity=".18"') + shadow(x + 22, 532, 34, 6, 0.2)
     b += palm(1080, 540, 230, "#6b4a2b", EMER_D, -0.05)
     b += birds(19, 6, 700, 1000, 120, 220, "#5a6a7a")
     return svg(b, "Rabat")
@@ -387,14 +498,18 @@ def rabat():
 def tangier():
     b = sky("s", [(0, "#9ccbe8"), (1, "#e6f2f8")])
     b += ridge(51, 400, 80, "#9db3c2", peaks=8)
+    b += haze(340, 150, "#ffffff", 0.45)
     b += waves(470, "#3a8cc6", 8, 120)
     b += houses(52, 470, 600, 1240, 50, 230, ["#f8f6f1", "#ece8df", "#e0ddd3"], "#5d86a8", 40, 90)
     b += minaret(820, 300, 50, 220, "#efeae0", EMER, "#8f8a7f")
     b += boat(140, 540, 330, "#f4f1ea", MAJ)
     b += rect(250, 470, 120, 70, "#f4f1ea")
     b += rect(280, 440, 40, 34, TERRA)
+    b += shadow(300, 548, 340, 12, 0.3)
     b += waves(600, MAJ, 10, 90)
     b += waves(680, MAJ_D, 8, 100)
+    for k in range(10):
+        b += rect(60 + k * 120, 620 + (k % 3) * 24, 50, 3, "#ffffff", 'opacity=".4"')
     return svg(b, "Tanger")
 
 
@@ -403,6 +518,8 @@ def taghazout():
     b += sun(300, 330, 90, "#fff0c8")
     b += ridge(61, 380, 100, "#d08b62", peaks=7)
     b += houses(62, 430, 750, 1240, 30, 110, ["#f1e6d6", "#e9c9a8", "#dcb48a"], "#2f6fb8", 40, 80)
+    b += rays(300, 330, 7, 900, 0.07)
+    b += haze(330, 150, "#fff0c8", 0.4)
     b += waves(470, TEAL, 10, 110)
     # rouleau de vague
     b += path("M500,560 C620,420 800,420 880,520 C820,480 740,490 700,560 Z", "#5cc3c9")
@@ -411,6 +528,9 @@ def taghazout():
     b += poly([(690, 512), (760, 500), (765, 506), (695, 518)], "#f4c35a")
     b += rect(722, 470, 9, 32, INK) + circle(726, 462, 7, INK)
     b += waves(650, "#0f5f72", 10, 90)
+    for k in range(12):
+        b += rect(30 + k * 100, 580 + (k % 4) * 28, 44, 3, "#ffffff", 'opacity=".5"')
+    b += shadow(200, 682, 200, 12, 0.3)
     # arganier
     b += rect(140, 560, 16, 120, "#5a3a22")
     b += path("M60,580 Q150,470 250,580 Q150,610 60,580 Z", "#3f7a4a")
@@ -420,12 +540,16 @@ def taghazout():
 def atlas():
     b = sky("s", [(0, "#9fc7ea"), (1, "#e9f2f7")])
     b += ridge(71, 330, 230, "#7f8fb5", peaks=7, snow="#ffffff")
+    b += haze(250, 200, "#e9f2f7", 0.5)
     b += ridge(72, 420, 160, "#5f739b", peaks=9, snow="#eef3fb")
+    b += haze(380, 140, "#e9f2f7", 0.35)
     b += ridge(73, 520, 90, "#a35f43", peaks=11)
     # village berbère (pisé)
     b += houses(74, 610, 300, 900, 40, 110, ["#b8704f", "#a9603f", "#c47e5a"], "#5a2f1f", 50, 90)
     b += minaret(560, 620, 40, 150, "#a9603f", "#e9b949", "#5a2f1f")
+    b += shadow(600, 615, 700, 14, 0.25)
     b += ridge(75, 690, 50, "#3f6f4a", peaks=13)
+    b += rect(0, 600, W, 150, "url(#gs)", 'opacity=".4"')
     return svg(b, "Haut Atlas")
 
 
@@ -441,6 +565,11 @@ def souk():
     for k, c in enumerate(("#c8553d", "#e9b949", "#2f4bd8", "#0f8a5f", "#873425", "#f39a4a")):
         b += path(f"M{90 + k * 180},{690} Q{150 + k * 180},{610} {210 + k * 180},{690} Z", c)
     b += rect(0, 690, W, 60, "#2a1820")
+    b += rect(0, 0, W, H, "url(#gs)", 'opacity=".5"')
+    for k in range(6):
+        b += poly([(150 + k * 180, 672), (165 + k * 180, 656), (180 + k * 180, 672), (165 + k * 180, 688)], "#fbf8f3", 'opacity=".6"')
+    for x in (180, 520, 810, 1080):
+        b += circle(x, 190, 90, "#ffcf6b", 'opacity=".12"')
     return svg(b, "Souk")
 
 
@@ -456,7 +585,9 @@ def riad():
     b += rect(0, 150, W, 30, "#d7a96c")
     b += rect(0, 620, W, 130, "#e8d6b8")
     # bassin + fontaine
+    b += poly([(380, 0), (520, 0), (700, 750), (380, 750)], "#fff6d8", 'opacity=".18"')
     b += path("M400,700 Q600,640 800,700 Q600,760 400,700 Z", "#3a8cc6")
+    b += path("M450,700 Q600,665 750,700", "none", 'stroke="#ffffff" stroke-opacity=".55" stroke-width="3"')
     b += rect(590, 600, 20, 90, "#d7a96c")
     b += path("M560,605 Q600,570 640,605 Z", "#3a8cc6")
     b += palm(220, 700, 200, "#6b4a2b", EMER_D, 0.05)

@@ -169,6 +169,7 @@
   .card :is(h1,h2,h3,h4,a,dt,dd,p,li,span) { overflow-wrap: anywhere; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: var(--shadow-sm); }
   .card-hover { transition: transform .2s, box-shadow .2s, border-color .2s; }
+  .card a, .btn { -webkit-tap-highlight-color: transparent; }
   .card-hover:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
 
   /* Badges */
