@@ -64,3 +64,6 @@ Les photos du site proviennent de Wikimedia Commons et sont utilisées sous lice
 - **Aéroport Mohammed V, Casablanca**: Sharon Hahn Darlin, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), [source](https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Interior.jpg)
 - **Aéroport Marrakech-Menara**: Kevinbeets1995, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Marrakech_Airport.jpg)
 - **Aéroport Agadir Al Massira**: Werner100359, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Agadir_%E2%80%93_Al_Massira_Airport_01.jpg)
+- **Vallée d'Imlil, Toubkal** : Alexander Klink, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), [source](https://commons.wikimedia.org/wiki/File:Morocco_Toubkal_National_Park_Imlil_Valley.jpg)
+- **Cascades d'Ouzoud** : Jakub Hałun, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), [source](https://commons.wikimedia.org/wiki/File:Ouzoud_Falls,_Morocco,_20250126_1357_7467.jpg)
+- **Tajine** : Marco Almbauer, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Moroccan_tajine_with_meat.jpg)

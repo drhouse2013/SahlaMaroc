@@ -65,4 +65,31 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { articles, pages };
+/**
+ * news : src/content/news/<lang>/<fichier>.md -> entrée datée du fil /<lang>/<hub nouveautés>.
+ * Ajouter une entrée = ajouter un fichier .md (frontmatter seul, voir docs/NOUVEAUTES-ADMIN-DRAFT.md).
+ * `related` = translationKey de guides (liens vers les guides + encadré « Nouveautés liées » dans chaque guide).
+ */
+const news = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
+  schema: z.object({
+    title: z.string().max(70, 'Titre : 70 caractères max'),
+    summary: z.string().min(50).max(300),
+    lang: z.enum(LOCALES),
+    translationKey: z.string(),
+    theme: z.enum(['civil', 'car', 'tax', 'health', 'travel']),
+    /** reminder = rappel / état du droit ; change = changement effectif */
+    kind: z.enum(['reminder', 'change']),
+    pubDate: z.coerce.date(),
+    /** Date de vérification auprès de sources réellement lues (jamais « du jour » par défaut) */
+    verifiedDate: z.coerce.date(),
+    changes: z.array(z.string()).min(1),
+    sources: z.array(z.object({ label: z.string(), url: z.string().url() })).min(1),
+    limits: z.array(z.string()).min(1),
+    related: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+    machineTranslated: z.boolean().default(false),
+  }),
+});
+
+export const collections = { articles, pages, news };

@@ -1,0 +1,81 @@
+---
+/** /<lang>/<hub nouveautés> : fil chronologique d'entrées datées, filtrable par thème (src/content/news). */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale, type UIKey } from '../../i18n';
+import { getNews, NEWS_THEMES, NEWS_THEME_ICON } from '../../utils/news';
+import { formatDate } from '../../utils/date';
+import { allLocalesAlternates, allLocalesTargets, entryPath, getArticleByKey, homePath, hubPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const list = await getNews(lang);
+const guides = await Promise.all(list.map(async (n) => (await Promise.all(n.data.related.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null)));
+const used = NEWS_THEMES.filter((th) => list.some((n) => n.data.theme === th));
+const self = (l: Locale) => hubPath(l, 'news');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('news.title') }];
+const anchor = (n: (typeof list)[number]) => `n-${n.data.translationKey}`;
+---
+<BaseLayout lang={lang} title={t('news.title')} description={t('news.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('news.title'), description: t('news.description'), lang, items: list.map((n) => ({ name: n.data.title, url: `${url}#${anchor(n)}` })) })]}>
+  <PageHero lang={lang} crumbs={crumbs} title={t('news.title')} intro={t('news.intro')} icon="stamp" />
+  <div class="container-page pt-8">
+    {used.length > 1 && (
+      <div class="mb-8 hidden flex-wrap gap-2" role="group" aria-label={t('news.filter')} data-news-filters>
+        <button type="button" class="badge badge-navy min-h-10 px-4 text-sm" data-theme="all" aria-pressed="true">{t('news.all')}</button>
+        {used.map((th) => <button type="button" class="badge min-h-10 px-4 text-sm" data-theme={th} aria-pressed="false"><Icon name={NEWS_THEME_ICON[th]} class="size-4" />{t(`news.theme.${th}` as UIKey)}</button>)}
+      </div>
+    )}
+    <ol class="relative grid gap-8 border-s-2 border-[var(--line)] ps-6 sm:ps-8" data-news-list>
+      {list.map((n, i) => (
+        <li id={anchor(n)} data-theme={n.data.theme} class="relative scroll-mt-24">
+          <span class="icon-tile absolute -start-[2.9rem] top-0 size-9 bg-[var(--surface)] sm:-start-[3.4rem]" aria-hidden="true"><Icon name={NEWS_THEME_ICON[n.data.theme]} class="size-4" /></span>
+          <article class="card p-5 sm:p-7">
+            <p class="flex flex-wrap items-center gap-2 text-sm">
+              <span class:list={['badge', n.data.kind === 'change' ? 'badge-navy' : '']}>{t(`news.kind.${n.data.kind}` as UIKey)}</span>
+              <span class="badge">{t(`news.theme.${n.data.theme}` as UIKey)}</span>
+              <span class="muted">{t('news.published')} <time datetime={n.data.pubDate.toISOString()}>{formatDate(n.data.pubDate, lang)}</time></span>
+              <span class="muted">· {t('news.verified')} <time datetime={n.data.verifiedDate.toISOString()}>{formatDate(n.data.verifiedDate, lang)}</time></span>
+            </p>
+            <h2 class="mt-3 text-xl font-semibold sm:text-2xl">{n.data.title}</h2>
+            <p class="mt-2 text-lg muted">{n.data.summary}</p>
+            <h3 class="mt-5 text-base font-semibold">{t('news.changes')}</h3>
+            <ul class="mt-2 list-disc space-y-1.5 ps-5">{n.data.changes.map((c) => <li>{c}</li>)}</ul>
+            <h3 class="mt-5 text-base font-semibold">{t('news.sources')}</h3>
+            <ul class="mt-2 space-y-1">{n.data.sources.map((s) => <li><a href={s.url} rel="noopener nofollow" target="_blank" class="inline-flex items-center gap-1.5 text-[var(--link)] underline-offset-4 hover:underline" dir="auto">{s.label}<Icon name="external" class="size-3.5" /></a></li>)}</ul>
+            <h3 class="mt-5 text-base font-semibold">{t('news.limits')}</h3>
+            <ul class="mt-2 list-disc space-y-1.5 ps-5 muted">{n.data.limits.map((c) => <li>{c}</li>)}</ul>
+            {guides[i].length > 0 && (
+              <>
+                <h3 class="mt-5 text-base font-semibold">{t('news.guides')}</h3>
+                <ul class="mt-2 flex flex-wrap gap-2">{guides[i].map((a) => <li><a href={entryPath(lang, a.data.slug)} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="book" class="size-4" />{a.data.title}</a></li>)}</ul>
+              </>
+            )}
+          </article>
+        </li>
+      ))}
+    </ol>
+    <p class="mt-6 muted" data-news-empty hidden>{t('news.empty')}</p>
+  </div>
+</BaseLayout>
+<script>
+  const bar = document.querySelector<HTMLElement>('[data-news-filters]');
+  if (bar) {
+    bar.classList.remove('hidden');
+    bar.classList.add('flex');
+    const items = document.querySelectorAll<HTMLElement>('[data-news-list] > li');
+    const empty = document.querySelector<HTMLElement>('[data-news-empty]');
+    bar.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-theme]');
+      if (!b) return;
+      const th = b.dataset.theme;
+      bar.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      let shown = 0;
+      items.forEach((li) => { const on = th === 'all' || li.dataset.theme === th; li.hidden = !on; if (on) shown++; });
+      if (empty) empty.hidden = shown > 0;
+    });
+  }
+</script>

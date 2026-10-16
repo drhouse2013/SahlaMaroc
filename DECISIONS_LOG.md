@@ -118,3 +118,12 @@ Décisions prises sans demande de validation, conformément à la directive de c
 
 ## 2026-10-16 — Cycle expert (idées, 4e passage)
 - Idée taxe d'habitation / services communaux MRE examinée puis rejetée (sources non officielles, contradictoires) : idée 15 dans docs/IDEES-EXPERT.md. Aucun code ni contenu modifié, donc pas de build ni de publication.
+
+## 2026-10-16 — Actualité « 22 attestations supprimées » (loi 55.19)
+- Constat : la mesure n'est pas nouvelle (circulaire Intérieur avril 2021 + Idarati ; chiffre 22 annoncé par M. Laftit, relayé en 2022). Aucune source 2026 ni texte officiel (BO/SGG/circulaire) listant les 22 documents n'a été trouvé ; texte de la loi 55.19 lu (art. 4, 16, silence vaut accord). Détails dans docs/FACTS.csv (page « nouveautes-admin »).
+- Guides : encadré « Ce qui change » ajouté (fr/en/es/de/ar, es/de/ar machineTranslated déjà posé) dans mariage/état civil, apostille, certificat de vie (distinction retraite étrangère vs certificat administratif marocain), voyage enfants (autorisation légalisée), achat voiture. Formulation prudente « selon l'administration ». Pas de changement de `verifiedDate`.
+- Fiche réutilisable : docs/NOUVEAUTES-ADMIN-DRAFT.md. Non traités : héritage, retour définitif, passeport/CNIE (aucune liste de pièces concernée trouvée).
+
+## 2026-10-16 — Section « Nouveautés et procédures administratives »
+- Collection `news` (src/content/news/<lang>/*.md, schéma dans content.config.ts), hub `HUB_SLUGS.news` (/fr/nouveautes-administratives, /en/admin-news…), composant `NewsHub.astro` (fil daté, filtres par thème, sources, limites, guides liés), liens Header/Footer, index de recherche, sitemap (auto, fr/en), encadré « Nouveautés liées » dans ArticleLayout via le champ `related` (translationKey) : aucun Edit de guide nécessaire. Ajouter une entrée = ajouter un fichier .md par langue.
+- 3 entrées (fr/en relues, es/de/ar machineTranslated) : loi 55.19 présentée comme rappel (liste des 22 documents non confirmée), heure légale GMT (décret 2.26.530, BO 7521), admission temporaire 180 j + prorogation (guide ADII 2025). Faits issus de docs/FACTS.csv uniquement. Test : tests-e2e/nouveautes.spec.mjs.

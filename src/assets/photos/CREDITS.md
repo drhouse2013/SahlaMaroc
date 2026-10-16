@@ -25,3 +25,6 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | aeroport-casablanca.jpg | Sharon Hahn Darlin | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Interior.jpg |
 | aeroport-marrakech.jpg | Kevinbeets1995 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Marrakech_Airport.jpg |
 | aeroport-agadir.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Agadir_%E2%80%93_Al_Massira_Airport_01.jpg |
+| toubkal-imlil.jpg | Alexander Klink | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Morocco_Toubkal_National_Park_Imlil_Valley.jpg |
+| cascades-ouzoud.jpg | Jakub Hałun | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Ouzoud_Falls,_Morocco,_20250126_1357_7467.jpg |
+| cuisine-tajine.jpg | Marco Almbauer | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Moroccan_tajine_with_meat.jpg |

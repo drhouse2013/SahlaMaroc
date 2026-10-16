@@ -16,3 +16,11 @@ Sources lues : guide fiscal MRE 2026 (mre.gov.ma, copie `docs/archives/guide-fis
 7. **operation-marhaba-guide-pratique** — « +1,8 % vs 2025 » non retrouvé ; 4,1 millions relayé par médias uniquement.
 8. **impots-mre-maroc-ce-quil-faut-declarer** — critère des 183 jours non retrouvé dans le guide fiscal MRE ; à confirmer au CGI (art. 23).
 9. **envoyer-argent-maroc** — 89,2 Mds DH (8 mois 2026) : bulletin Office des changes non lu.
+
+## Passe verifiedDate (2026-10-16, 2e lot)
+Aucun `verifiedDate` posé : les 13 guides restants (acheter voiture, aéroports, AMO, rapatriement, colis, comparatif assurance voyage, auto-entrepreneur, héritage, importer voiture, location courte durée, louer logement, Marhaba 2027, école/CNSS) ont encore des faits clés non prouvés par une source officielle lue. Raisons principales :
+10. **importer-voiture-retour-definitif-maroc** — CORRIGÉ (fr/en/es/de/ar) : « sans prorogation » était faux, le guide ADII 2025 prévoit une prorogation de 6 mois pour les AT échéant dès le 1er décembre. Le « 25 % » et « moins de 3 ans » du vieillissement ne figurent pas dans le guide ADII 2025 (il parle de 3 ans d'abattement supplémentaire, 1 seul véhicule, 1 fois) : à confirmer avant de dater. Abattement 90 % (60 ans, 10 ans de résidence, plafond 300 000 DH) CONFIRMÉ.
+11. **marhaba-2027 / operation-marhaba** — 10 juin-15 sept. 2026 et 4 137 594 MRE (+1,8 %) concordent dans 5 médias, mais le bilan de la Fondation Mohammed V n'a pas été lu : reste non confirmé. Les dates 2027 n'existent pas encore.
+12. **assurance-maladie-amo-retour** — principe AMO Achamil/Tadamon confirmé (CNSS, CLEISS) ; montants de cotisation (144-1 164 DH évoqués par des sites tiers), seuils RSU et cas des MRE non trouvés sur cnss.ma.
+13. **ferry-maroc-guide** — aucun programme de compagnie lu (durées, tarifs, 3 h avant) : reste non confirmé.
+14. Assurances voyage, carte de séjour, e-visa, visa 90 jours, permis, crédit MRE, envoyer de l'argent : non revérifiés dans ce lot (sources MAECI/DGSN, Bank Al-Maghrib, Office des changes non lues).

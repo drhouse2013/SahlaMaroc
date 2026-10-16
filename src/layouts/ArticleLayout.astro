@@ -20,10 +20,11 @@ import Icon from '../components/Icon.astro';
 import { useTranslations } from '../i18n';
 import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { formatDate } from '../utils/date';
-import { categoryPath, cityPath, getPageUrl, homePath, type Alternates } from '../utils/i18n';
+import { categoryPath, cityPath, getPageUrl, homePath, hubPath, type Alternates } from '../utils/i18n';
 import { illustration } from '../utils/illustrations';
 import { absoluteUrl, articleJsonLd, breadcrumbJsonLd } from '../utils/seo';
 import { checklistsIn, citedLinks, isYmyl, officialSourcesFor, relatedCitiesFor, relatedToolsFor } from '../utils/content';
+import { getNews } from '../utils/news';
 import { cityLabel } from '../data/cities';
 
 interface Props {
@@ -54,6 +55,7 @@ const official = officialSourcesFor(entry);
 const cited = citedLinks(entry.body);
 const tools = relatedToolsFor(entry);
 const cities = relatedCitiesFor(entry);
+const news = (await getNews(entry.data.lang)).filter((n) => n.data.related.includes(entry.data.translationKey));
 const checklists = checklistsIn(entry.body);
 const updated = d.updatedDate ?? d.pubDate;
 
@@ -175,6 +177,15 @@ const essentials = {
           <h2 id="rel-cities" class="text-xl font-semibold">{t('article.relatedCities')}</h2>
           <ul class="mt-4 flex flex-wrap gap-2">
             {cities.map((c) => <li><a href={cityPath(lang, c.slug[lang])} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="mapPin" class="size-4" />{cityLabel(c.id, lang)}</a></li>)}
+          </ul>
+        </section>
+      )}
+
+      {news.length > 0 && (
+        <section class="mt-10" aria-labelledby="rel-news">
+          <h2 id="rel-news" class="text-xl font-semibold">{t('news.related')}</h2>
+          <ul class="mt-4 grid gap-2">
+            {news.map((n) => <li><a href={`${hubPath(lang, 'news')}#n-${n.data.translationKey}`} class="card card-hover flex items-center gap-3 p-4 font-medium"><Icon name="stamp" class="size-5 shrink-0 text-navy-600 dark:text-navy-300" />{n.data.title}</a></li>)}
           </ul>
         </section>
       )}
