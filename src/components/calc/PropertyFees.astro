@@ -49,7 +49,7 @@ const cfg = JSON.stringify({ F, DAAM_SAKANE, locale: LOCALE_META[lang].intl });
     document.querySelectorAll('[data-calc="property-fees"]').forEach(function (root) {
       var form = root.querySelector('form');
       var fmt = function (n) { return new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 }).format(n); };
-      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) ? x : 0; };
+      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) && x > 0 ? x : 0; };
       var out = function (k, t) { root.querySelector('[data-out="' + k + '"]').textContent = t; };
       form.elements.type.addEventListener('change', function () {
         form.elements.reg.value = form.elements.type.value === 'land' ? c.F.registrationLand : c.F.registrationHousing;

@@ -48,6 +48,11 @@ const updated = d.updatedDate ?? d.pubDate;
       <p class="mt-auto flex flex-wrap gap-x-3 pt-4 text-xs muted">
         <span>{t('article.readingTime', { n: readingTime(article.body) })}</span>
         <time datetime={updated.toISOString()}>{t('common.updatedOn', { date: formatDate(updated, d.lang, 'short') })}</time>
+        {d.verifiedDate && (
+          <span class="inline-flex items-center gap-1 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100">
+            <Icon name="check" class="size-3.5" />{t('article.verified')} {formatDate(d.verifiedDate, d.lang, 'short')}
+          </span>
+        )}
       </p>
     </div>
   </article>

@@ -44,7 +44,7 @@ const cfg = JSON.stringify({ rate: EUR_TO_MAD, locale: LOCALE_META[lang].intl })
     document.querySelectorAll('[data-calc="summer"]').forEach(function (root) {
       var form = root.querySelector('form');
       var fmt = function (n) { return new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 }).format(n); };
-      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) ? x : 0; };
+      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) && x > 0 ? x : 0; };
       var out = function (k, t) { root.querySelector('[data-out="' + k + '"]').textContent = t; };
       function run() {
         var plane = form.elements.mode.value === 'plane';

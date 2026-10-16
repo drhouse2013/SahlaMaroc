@@ -37,7 +37,7 @@ const locale = LOCALE_META[lang].intl;
     document.querySelectorAll('[data-calc="mortgage"]').forEach(function (root) {
       var form = root.querySelector('form');
       var fmt = function (n) { return new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(n); };
-      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) ? x : 0; };
+      var v = function (n) { var x = parseFloat(String(form.elements[n].value).replace(',', '.')); return isFinite(x) && x > 0 ? x : 0; };
       var out = function (k, t) { root.querySelector('[data-out="' + k + '"]').textContent = t; };
       function run() {
         var loan = Math.max(0, v('price') - v('down'));
