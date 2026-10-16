@@ -1,0 +1,80 @@
+---
+/**
+ * Calculateur de la vignette (taxe spéciale annuelle sur les véhicules, TSAV).
+ * Logique pure : src/utils/vignette.mjs (testée : tools/test-vignette.mjs). Barème daté et sourcé : src/config/vignette.ts.
+ */
+import { type Locale, LOCALE_META } from '../../i18n';
+import CalcShell from './CalcShell.astro';
+import { VIGNETTE as V, VIGNETTE_LAST_CHECKED } from '../../config/vignette';
+import { formatDate } from '../../utils/date';
+const lang = (Astro.currentLocale ?? 'en') as Locale;
+const dateTxt = formatDate(new Date(VIGNETTE_LAST_CHECKED), lang);
+const TT = {
+  fr: { cv: 'Puissance fiscale (CV)', cvHelp: 'Indiquée sur la carte grise.', fuel: 'Carburant', f1: 'Essence', f2: 'Gasoil (diesel)', f3: 'Électrique ou hybride (électrique + thermique)', f4: 'Pick-up gasoil d’un particulier', months: 'Mois restants dans l’année (12 = année complète)', res: 'Vignette estimée', per: 'DH', annual: 'Montant annuel du barème', scale: 'Barème appliqué', sP: 'essence', sD: 'gasoil', wait: 'Saisissez une puissance fiscale valide.', m: { required: 'Saisissez un nombre.', cv_int: 'Entier supérieur ou égal à 1.', cv_max: 'Valeur trop élevée.', months: 'Entre 1 et 12.' }, note: `Barème DGI lu le ${dateTxt} (véhicules de 3 000 kg au plus). Résultat estimatif : exonérations et cas particuliers non traités. Paiement en janvier ; la DGI reste seule compétente.` },
+  en: { cv: 'Fiscal horsepower (CV)', cvHelp: 'Shown on the registration card.', fuel: 'Fuel', f1: 'Petrol', f2: 'Diesel', f3: 'Electric or hybrid (electric + combustion)', f4: 'Diesel pick-up owned by an individual', months: 'Months left in the year (12 = full year)', res: 'Estimated vignette', per: 'MAD', annual: 'Annual scale amount', scale: 'Scale applied', sP: 'petrol', sD: 'diesel', wait: 'Enter a valid fiscal horsepower.', m: { required: 'Enter a number.', cv_int: 'A whole number of at least 1.', cv_max: 'Value too high.', months: 'Between 1 and 12.' }, note: `DGI scale read on ${dateTxt} (vehicles up to 3,000 kg). Estimated result: exemptions and special cases not handled. Payable in January; the DGI alone decides.` },
+  es: { cv: 'Potencia fiscal (CV)', cvHelp: 'Figura en la tarjeta de matriculación.', fuel: 'Combustible', f1: 'Gasolina', f2: 'Diésel', f3: 'Eléctrico o híbrido (eléctrico + térmico)', f4: 'Pick-up diésel de un particular', months: 'Meses restantes del año (12 = año completo)', res: 'Vignette estimada', per: 'MAD', annual: 'Importe anual del baremo', scale: 'Baremo aplicado', sP: 'gasolina', sD: 'diésel', wait: 'Introduce una potencia fiscal válida.', m: { required: 'Introduce un número.', cv_int: 'Un entero mayor o igual que 1.', cv_max: 'Valor demasiado alto.', months: 'Entre 1 y 12.' }, note: `Baremo de la DGI leído el ${dateTxt} (vehículos de hasta 3.000 kg). Resultado estimativo: no se tratan exenciones ni casos particulares. Pago en enero; solo la DGI decide.` },
+  de: { cv: 'Steuer-PS (CV)', cvHelp: 'Steht im Fahrzeugschein.', fuel: 'Kraftstoff', f1: 'Benzin', f2: 'Diesel', f3: 'Elektro oder Hybrid (elektrisch + Verbrenner)', f4: 'Diesel-Pick-up einer Privatperson', months: 'Verbleibende Monate im Jahr (12 = ganzes Jahr)', res: 'Geschätzte Vignette', per: 'MAD', annual: 'Jahresbetrag laut Tarif', scale: 'Angewandter Tarif', sP: 'Benzin', sD: 'Diesel', wait: 'Geben Sie eine gültige Steuer-PS-Zahl ein.', m: { required: 'Geben Sie eine Zahl ein.', cv_int: 'Eine ganze Zahl ab 1.', cv_max: 'Wert zu hoch.', months: 'Zwischen 1 und 12.' }, note: `DGI-Tarif gelesen am ${dateTxt} (Fahrzeuge bis 3.000 kg). Geschätztes Ergebnis: Befreiungen und Sonderfälle nicht berücksichtigt. Zahlbar im Januar; allein die DGI entscheidet.` },
+  ar: { cv: 'القوة الجبائية (حصان)', cvHelp: 'مبيّنة في البطاقة الرمادية.', fuel: 'نوع الوقود', f1: 'بنزين', f2: 'غازوال', f3: 'كهربائي أو مزدوج (كهربائي + حراري)', f4: 'سيارة نفعية «بيك أب» غازوال مملوكة لشخص ذاتي', months: 'الأشهر المتبقية من السنة (12 = سنة كاملة)', res: 'الضريبة التقديرية', per: 'درهم', annual: 'المبلغ السنوي حسب التعريفة', scale: 'التعريفة المطبقة', sP: 'بنزين', sD: 'غازوال', wait: 'أدخل قوة جبائية صالحة.', m: { required: 'أدخل رقماً.', cv_int: 'عدد صحيح لا يقل عن 1.', cv_max: 'القيمة مرتفعة جداً.', months: 'بين 1 و12.' }, note: `تعريفة المديرية العامة للضرائب المقروءة بتاريخ ${dateTxt} (مركبات حتى 3000 كلغ). نتيجة تقديرية: لا تُعالج الإعفاءات والحالات الخاصة. الأداء في يناير؛ القرار للمديرية وحدها.` },
+};
+const T = TT[lang];
+const cfg = JSON.stringify({ v: { petrol: V.petrol, diesel: V.diesel }, locale: LOCALE_META[lang].intl, m: T.m, wait: T.wait, sP: T.sP, sD: T.sD, per: T.per });
+---
+<div data-vig data-cfg={cfg}>
+<CalcShell id="vignette" note={T.note}>
+  <Fragment slot="form">
+    <label>{T.cv}<input name="cv" type="number" inputmode="numeric" min="1" step="1" value="7" aria-describedby="vig-cv-help" /></label>
+    <label>{T.fuel}
+      <select name="fuel"><option value="petrol">{T.f1}</option><option value="diesel">{T.f2}</option><option value="hybrid">{T.f3}</option><option value="pickup">{T.f4}</option></select>
+    </label>
+    <p id="vig-cv-help" class="full text-xs muted">{T.cvHelp}</p>
+    <label class="full">{T.months}<input name="months" type="number" inputmode="numeric" min="1" max="12" step="1" value="12" /></label>
+  </Fragment>
+  <Fragment slot="result">
+    <p class="text-sm text-white/85">{T.res}</p>
+    <p class="big"><span data-out="amount">—</span> <span data-out="unit"></span></p>
+    <p class="mt-3 text-sm text-white/85">{T.annual} : <span data-out="annual">—</span></p>
+    <p class="text-sm text-white/85">{T.scale} : <span data-out="scale">—</span></p>
+    <div data-out="msgs" class="mt-3 grid gap-2 text-sm" role="status"></div>
+  </Fragment>
+</CalcShell>
+</div>
+<script>
+  import { computeVignette, parseNum } from '../../utils/vignette.mjs';
+
+  document.querySelectorAll<HTMLElement>('[data-vig]').forEach((root) => {
+    const cfg = JSON.parse(root.dataset.cfg!) as { v: { petrol: number[]; diesel: number[] }; locale: string; m: Record<string, string>; wait: string; sP: string; sD: string; per: string };
+    const form = root.querySelector('form')!;
+    const f = (n: string) => form.elements.namedItem(n) as HTMLInputElement;
+    const out = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+    const fmt = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 0 });
+    const setErr = (name: string, text: string) => {
+      const input = f(name);
+      const label = input.closest('label')!;
+      label.querySelector('.calc-err[data-own]')?.remove();
+      if (text) {
+        input.setAttribute('aria-invalid', 'true');
+        const span = document.createElement('span');
+        span.className = 'calc-err'; span.dataset.own = '1'; span.setAttribute('role', 'alert'); span.textContent = text;
+        label.appendChild(span);
+      } else if (!label.querySelector('.calc-err')) input.removeAttribute('aria-invalid');
+    };
+    const run = () => {
+      const res = computeVignette({ cv: parseNum(f('cv').value), fuel: f('fuel').value as 'petrol', months: parseNum(f('months').value) }, cfg.v);
+      ['cv', 'months'].forEach((n) => setErr(n, ''));
+      const msgs = out('msgs'); msgs.replaceChildren();
+      if (!res.ok) {
+        res.errors.forEach((e) => setErr(e.field, cfg.m[e.code] ?? ''));
+        out('amount').textContent = '—'; out('unit').textContent = ''; out('annual').textContent = '—'; out('scale').textContent = '—';
+        const p = document.createElement('p'); p.textContent = cfg.wait; msgs.appendChild(p);
+        return;
+      }
+      out('amount').textContent = fmt.format(res.amount);
+      out('unit').textContent = cfg.per;
+      out('annual').textContent = `${fmt.format(res.annual)} ${cfg.per}`;
+      out('scale').textContent = res.scale === 'diesel' ? cfg.sD : cfg.sP;
+    };
+    form.addEventListener('input', run);
+    form.addEventListener('change', run);
+    run();
+  });
+</script>

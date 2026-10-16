@@ -11,6 +11,7 @@ import { RETURN_BUDGET_LAST_CHECKED } from '../config/return-budget';
 import { EUR_TO_MAD_DATE } from '../config/site';
 import { CUSTOMS_LAST_CHECKED } from '../config/customs';
 import { CAPITAL_GAINS_LAST_CHECKED } from '../config/capital-gains';
+import { VIGNETTE_LAST_CHECKED } from '../config/vignette';
 
 type T = Record<Locale, string>;
 
@@ -34,6 +35,25 @@ export interface Tool {
 
 export const TOOLS: Tool[] = [
   {
+    key: 'calc-vignette', icon: 'car', audience: 'mre', guideKey: 'buy-car-morocco-mre', checked: VIGNETTE_LAST_CHECKED, sources: ['dgi'],
+    title: { en: 'Vehicle tax (vignette)', fr: 'Vignette auto (TSAV)', es: 'Vignette de vehículos (TSAV)', de: 'Kfz-Vignette (TSAV)', ar: 'الضريبة الخصوصية السنوية على السيارات (الفينيت)' },
+    text: { en: 'Estimate the annual vehicle tax from fiscal horsepower and fuel.', fr: 'Estimez la taxe annuelle sur le véhicule selon la puissance fiscale et le carburant.', es: 'Estima la tasa anual del vehículo según la potencia fiscal y el combustible.', de: 'Schätzen Sie die jährliche Fahrzeugsteuer nach Steuer-PS und Kraftstoff.', ar: 'قدّر الضريبة السنوية على السيارة حسب القوة الجبائية ونوع الوقود.' },
+    method: {
+      fr: 'Montant annuel lu dans le barème DGI selon la tranche de puissance fiscale (moins de 8, 8 à 10, 11 à 14, 15 CV et plus) et le carburant. En cours d’année, montant × mois restants ÷ 12, arrondi au dirham.',
+      en: 'Annual amount read from the DGI scale by fiscal horsepower band (under 8, 8 to 10, 11 to 14, 15 CV and over) and fuel. Part-year: amount × months left ÷ 12, rounded to the dirham.',
+      es: 'Importe anual leído en el baremo de la DGI según la franja de potencia fiscal (menos de 8, 8 a 10, 11 a 14, 15 CV o más) y el combustible. En el año en curso, importe × meses restantes ÷ 12, redondeado al dírham.',
+      de: 'Jahresbetrag aus dem DGI-Tarif nach Steuer-PS-Stufe (unter 8, 8 bis 10, 11 bis 14, ab 15 CV) und Kraftstoff. Im laufenden Jahr: Betrag × verbleibende Monate ÷ 12, auf den Dirham gerundet.',
+      ar: 'المبلغ السنوي من تعريفة المديرية العامة للضرائب حسب شريحة القوة الجبائية (أقل من 8، من 8 إلى 10، من 11 إلى 14، 15 حصاناً فأكثر) ونوع الوقود. في سنة الشروع: المبلغ × الأشهر المتبقية ÷ 12، مقرَّب إلى الدرهم.',
+    },
+    assumptions: {
+      fr: ['Barème des véhicules de 3 000 kg au plus ; exonérations (transport public, utilitaires de plus de 3 000 kg, etc.) non traitées', 'Moteur électrique ou double motorisation et pick-up gasoil de particulier : tarif essence, d’après la fiche DGI', 'Paiement en janvier ; la DGI reste seule compétente'],
+      en: ['Scale for vehicles up to 3,000 kg; exemptions (public transport, utility vehicles over 3,000 kg, etc.) not handled', 'Electric or dual engine and diesel pick-up owned by an individual: petrol rate, per the DGI sheet', 'Payable in January; the DGI alone decides'],
+      es: ['Baremo de vehículos de hasta 3.000 kg; exenciones (transporte público, utilitarios de más de 3.000 kg, etc.) no tratadas', 'Motor eléctrico o doble motorización y pick-up diésel de particular: tarifa de gasolina, según la ficha de la DGI', 'Pago en enero; solo la DGI decide'],
+      de: ['Tarif für Fahrzeuge bis 3.000 kg; Befreiungen (öffentlicher Verkehr, Nutzfahrzeuge über 3.000 kg usw.) nicht berücksichtigt', 'Elektro- oder Doppelantrieb und Diesel-Pick-up von Privatpersonen: Benzintarif laut DGI-Merkblatt', 'Zahlbar im Januar; allein die DGI entscheidet'],
+      ar: ['تعريفة المركبات حتى 3000 كلغ؛ لا تُعالج الإعفاءات (النقل العمومي، النفعية التي يزيد وزنها على 3000 كلغ، إلخ)', 'المحرك الكهربائي أو المزدوج والسيارة النفعية «بيك أب» غازوال للأشخاص الذاتيين: تعريفة البنزين حسب وثيقة المديرية', 'الأداء في يناير؛ القرار للمديرية العامة للضرائب وحدها'],
+    },
+  },
+  {
     key: 'calc-property-fees', icon: 'home', audience: 'mre', guideKey: 'buy-property-abroad', checked: MRE_LAST_CHECKED, sources: ['ancfcc', 'dgi', 'daamsakane'],
     title: { en: 'Property buying costs', fr: 'Frais d’achat immobilier', es: 'Gastos de compra de vivienda', de: 'Kaufnebenkosten Immobilie', ar: 'مصاريف شراء العقار' },
     text: { en: 'Registration, land registry, notary and Daam Sakane aid.', fr: 'Enregistrement, conservation foncière, notaire et aide Daam Sakane.', es: 'Registro, registro de la propiedad, notario y ayuda Daam Sakane.', de: 'Registrierung, Grundbuch, Notar und Förderung Daam Sakane.', ar: 'التسجيل، المحافظة العقارية، الموثق ودعم السكن.' },
@@ -45,11 +65,11 @@ export const TOOLS: Tool[] = [
       ar: 'كل مصروف هو نسبة من السعر (نسب قابلة للتعديل)، مع مبلغ ثابت للمحافظة العقارية وحد أدنى لأتعاب الموثق شاملة الضريبة. يُخصم دعم السكن إذا فعّلت الخانة وكان السعر تحت السقف.',
     },
     assumptions: {
-      fr: ['Droits d’enregistrement : 4 % pour un logement (taux différent pour un terrain ou un local commercial)', 'Conservation foncière : 1,5 % + 200 DH', 'Notaire : environ 1 % (minimum usuel 4 000 DH) + TVA 20 %', 'Daam Sakane : 100 000 DH jusqu’à 300 000 DH, 70 000 DH jusqu’à 700 000 DH (logement neuf, première acquisition)'],
-      en: ['Registration duty: 4% for a home (a different rate applies to land or commercial premises)', 'Land registry: 1.5% + 200 MAD', 'Notary: about 1% (usual minimum 4,000 MAD) + 20% VAT', 'Daam Sakane: 100,000 MAD up to 300,000 MAD, 70,000 MAD up to 700,000 MAD (new home, first purchase)'],
-      es: ['Impuesto de registro: 4 % para una vivienda (otra tasa para terrenos o locales)', 'Registro de la propiedad: 1,5 % + 200 MAD', 'Notario: alrededor del 1 % (mínimo habitual 4.000 MAD) + IVA del 20 %', 'Daam Sakane: 100.000 MAD hasta 300.000 MAD, 70.000 MAD hasta 700.000 MAD (vivienda nueva, primera compra)'],
-      de: ['Registrierungsgebühr: 4 % für Wohnimmobilien (anderer Satz für Grundstücke oder Gewerbe)', 'Grundbuch: 1,5 % + 200 MAD', 'Notar: etwa 1 % (übliches Minimum 4.000 MAD) + 20 % MwSt.', 'Daam Sakane: 100.000 MAD bis 300.000 MAD, 70.000 MAD bis 700.000 MAD (Neubau, Ersterwerb)'],
-      ar: ['رسوم التسجيل: 4% للسكن (نسبة مختلفة للأرض أو المحل التجاري)', 'المحافظة العقارية: 1.5% + 200 درهم', 'الموثق: حوالي 1% (حد أدنى معتاد 4000 درهم) + ضريبة 20%', 'دعم السكن: 100000 درهم حتى 300000 درهم، و70000 درهم حتى 700000 درهم (سكن جديد، أول اقتناء)'],
+      fr: ['Droits d’enregistrement : 4 % pour un logement (taux différent pour un terrain ou un local commercial)', 'Conservation foncière : 1,5 % + 100 DH (minimum 500 DH)', 'Notaire : environ 1 % (minimum usuel 4 000 DH) + TVA 20 %', 'Daam Sakane : 100 000 DH jusqu’à 300 000 DH, 70 000 DH jusqu’à 700 000 DH (logement neuf, première acquisition)'],
+      en: ['Registration duty: 4% for a home (a different rate applies to land or commercial premises)', 'Land registry: 1.5% + 100 MAD (minimum 500 MAD)', 'Notary: about 1% (usual minimum 4,000 MAD) + 20% VAT', 'Daam Sakane: 100,000 MAD up to 300,000 MAD, 70,000 MAD up to 700,000 MAD (new home, first purchase)'],
+      es: ['Impuesto de registro: 4 % para una vivienda (otra tasa para terrenos o locales)', 'Registro de la propiedad: 1,5 % + 100 MAD (mínimo 500 MAD)', 'Notario: alrededor del 1 % (mínimo habitual 4.000 MAD) + IVA del 20 %', 'Daam Sakane: 100.000 MAD hasta 300.000 MAD, 70.000 MAD hasta 700.000 MAD (vivienda nueva, primera compra)'],
+      de: ['Registrierungsgebühr: 4 % für Wohnimmobilien (anderer Satz für Grundstücke oder Gewerbe)', 'Grundbuch: 1,5 % + 100 MAD (mínimo 500 MAD)', 'Notar: etwa 1 % (übliches Minimum 4.000 MAD) + 20 % MwSt.', 'Daam Sakane: 100.000 MAD bis 300.000 MAD, 70.000 MAD bis 700.000 MAD (Neubau, Ersterwerb)'],
+      ar: ['رسوم التسجيل: 4% للسكن (نسبة مختلفة للأرض أو المحل التجاري)', 'المحافظة العقارية: 1.5% + 100 درهم (حد أدنى 500 درهم)', 'الموثق: حوالي 1% (حد أدنى معتاد 4000 درهم) + ضريبة 20%', 'دعم السكن: 100000 درهم حتى 300000 درهم، و70000 درهم حتى 700000 درهم (سكن جديد، أول اقتناء)'],
     },
   },
   {

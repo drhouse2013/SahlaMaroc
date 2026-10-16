@@ -20,3 +20,8 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | ouarzazate-taourirt.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_in_Ouarzazate_2011.jpg |
 | tetouan-medina.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg |
 | oujda-mosquee.jpg | Brahim Faraji (Farajiibrahim), recadrée | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg |
+| al-hoceima-plage.jpg | Ismailchahab1, recadrée | CC0 | https://commons.wikimedia.org/wiki/File:Al_hoceima_beach.jpg |
+| nador-ville.jpg | Pencil68 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador_City_Hill.jpg |
+| aeroport-casablanca.jpg | Sharon Hahn Darlin | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Interior.jpg |
+| aeroport-marrakech.jpg | Kevinbeets1995 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Marrakech_Airport.jpg |
+| aeroport-agadir.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Agadir_%E2%80%93_Al_Massira_Airport_01.jpg |

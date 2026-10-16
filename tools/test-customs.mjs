@@ -126,10 +126,10 @@ test('éligibilité 90 % : seuil d’âge du bénéficiaire (59 / 60)', () => {
 test('éligibilité 90 % : résidence « plus de 10 ans » (9,9 / 10 / 11)', () => {
   assert.deepEqual(r90({ value: 100000, residenceYears: 9.9 }).blockers, ['residence_below']);
   const lim = r90({ value: 100000, residenceYears: 10 });
-  assert.equal(lim.eligible90, true);
-  assert.ok(lim.warnings.includes('residence_borderline'));
+  assert.equal(lim.eligible90, false); // exactement 10 ans : « plus de 10 ans » exigé
+  assert.deepEqual(lim.blockers, ['residence_below']);
   const ok = r90({ value: 100000, residenceYears: 11 });
-  assert.ok(!ok.warnings.includes('residence_borderline'));
+  assert.equal(ok.eligible90, true);
 });
 
 test('inéligible : message(s) et repli sur le calcul sans l’abattement de 90 %', () => {

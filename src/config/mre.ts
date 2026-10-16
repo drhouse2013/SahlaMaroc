@@ -3,16 +3,18 @@
  * ⚠️ À revérifier chaque trimestre (loi de finances, barèmes ANCFCC, notaires).
  * Toutes les valeurs restent modifiables par l'utilisateur dans les calculateurs.
  */
-export const MRE_LAST_CHECKED = '2026-10-10';
+export const MRE_LAST_CHECKED = '2026-10-16';
 
 /** Frais d'acquisition immobilière (taux usuels constatés en 2026) */
 export const PROPERTY_FEES = {
   /** Droits d'enregistrement : logement 4 % ; terrain nu / local commercial : taux différent (souvent cité à 5 %) */
   registrationHousing: 4,
   registrationLand: 5,
-  /** Conservation foncière (ANCFCC) : 1,5 % + montant fixe */
+  /** Conservation foncière (ANCFCC) : 1,5 % + droit fixe 100 DH par propriété, minimum de perception 500 DH
+   *  (décret n° 2.16.375, chap. II A.1, tarif lu sur ancfcc.gov.ma/media/1234/tarifs-fr.pdf, 2026-10-16) */
   landRegistry: 1.5,
-  landRegistryFixed: 200,
+  landRegistryFixed: 100,
+  landRegistryMin: 500,
   /**
    * Honoraires du notaire : ~1 % (hypothèse indicative) ; minimum 4 000 DH pour une vente <= 300 000 DH.
    * Barème du projet de décret n° 2.17.481 (presse, LesEco.ma 14/12/2018 ; adopté en Conseil de gouvernement,

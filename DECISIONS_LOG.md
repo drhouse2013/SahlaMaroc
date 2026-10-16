@@ -83,3 +83,23 @@ Décisions prises sans demande de validation, conformément à la directive de c
 ## 2026-10-16 — Calculateurs « Budget de retour définitif » et « Coût de la vie par ville »
 - Ajouts : `returnbudget.mjs` (+ `costofliving.mjs`), `src/config/return-budget.ts`, composants `ReturnBudget`/`CityCosts`, 10 pages (es/de/ar machineTranslated), tests `tools/test-returnbudget.mjs`.
 - Décision : déménagement, mois de caution, installation et scolarité n'ont aucune source dans le dépôt : départ à 0, à saisir (aucun chiffre inventé). Dépenses courantes = costs.ts ; droits voiture = customs.mjs (taux d'import `secondary`).
+
+## 2026-10-16 — Guide certificat de vie (idée 2)
+- 5 langues (es/de/ar machineTranslated), sources : Service-Public, Assurance retraite, CLEISS, SFP Belgique. Délais divergents (1 mois / 2 mois / 30 jours) : écrits sans règle unique, "selon votre caisse". verifiedDate = 2026-10-16 (lecture des pages officielles). Caisses CNSS/CMR/CIMR, espagnole, allemande non lues : non détaillées.
+
+## 2026-10-16 — Tests de parcours Playwright
+- Ajout : `@playwright/test` (devDependency, override vite intact), `playwright.config.mjs` (astro preview sur dist/, port 4331), `tests-e2e/parcours.spec.mjs`, script `npm run test:e2e` (builder avant). Chromium du cache ms-playwright utilise, aucun telechargement.
+- Couverture : 15 calculateurs (defaut, negatif, vide, virgule), 404 fr/ar (rtl), recherche, newsletter (champ piege), mobile 360 px, console. Resultat : tout vert, aucun bug reel trouve, aucun code du site modifie.
+
+## 2026-10-16 — Écarts calculateurs : frais ANCFCC et résidence douane
+- Frais d'achat : tarif ANCFCC relu (décret 2.16.375, chap. II A.1, cession) = 1,5 % + droit fixe 100 DH par propriété, minimum de perception 500 DH. `landRegistryFixed` 200 -> 100, ajout `landRegistryMin: 500` (appliqué dans PropertyFees.astro), tools.ts mis à jour, MRE_LAST_CHECKED = 2026-10-16.
+- Douane 90 % : résidence strictement > 10 ans (circ. ADII 5945/311) ; 10 pile = inéligible ; test ajouté dans tools/test-customs.mjs.
+
+## 2026-10-16 — Calculateur vignette (TSAV) et guide assurances voyage
+- **Vignette** : barème lu sur la fiche officielle DGI (PDF section arabe, tax.gov.ma ; version française en 503 ; CGI 2026 de 765 p. non exploitable par les outils, réseau local bloqué). Essence 350/650/3000/8000 DH, gasoil 700/1500/6000/20000 DH (<8, 8-10, 11-14, >=15 CV). Le PDF n'est pas daté : date de lecture 2026-10-16 retenue. Outil : `vignette.mjs`, `VignetteCalc.astro`, `src/config/vignette.ts`, `tools/test-vignette.mjs`, 5 pages (es/de/ar machineTranslated), entrée TOOLS `calc-vignette`. Exonérations non traitées (notées dans l'outil).
+- **Guide passeport/CNIE depuis l'étranger** : déjà publié dans les 5 langues (translationKey `passport-cnie`, verifiedDate 2026-10-10) ; rien recréé.
+- **Guide assurances voyage/rapatriement** : critères uniquement, aucun prix ni assureur ; pas de `verifiedDate` (aucune source officielle lue). Carte européenne d'assurance maladie = UE, non applicable au Maroc (connaissance générale, à sourcer).
+
+## 2026-10-16 — Loyers MRE et heure légale
+- Guide `impots-vente-location-bien-maroc-mre` (fr/en/es/de/ar, es/de/ar machineTranslated) : option 20 % limitée aux loyers soumis à retenue à la source ; retenue 10 % (< 120 000 DH) / 15 % (>= 120 000 DH) selon guide fiscal MRE 2026 (mre.gov.ma, juillet 2026). Le « 5 % dès le 1er juillet 2026 » est retiré (aucune source officielle).
+- Heure légale : décret 2.26.530 (25/06/2026) lu dans le BO n° 7521 du 29/06/2026 (sgg.gov.ma), abroge le décret 2.18.855 ; GMT+0 depuis le 20/09/2026 confirmé, aucune mention d’incertitude ajoutée.

@@ -57,7 +57,7 @@ const cfg = JSON.stringify({ F, DAAM_SAKANE, locale: LOCALE_META[lang].intl });
       function run() {
         var p = v('price');
         var reg = p * v('reg') / 100;
-        var cf = p * v('cf') / 100 + (p > 0 ? c.F.landRegistryFixed : 0);
+        var cf = p > 0 ? Math.max(p * v('cf') / 100 + c.F.landRegistryFixed, c.F.landRegistryMin) : 0;
         var notHT = Math.max(p * v('notary') / 100, p > 0 ? c.F.notaryMin : 0);
         var not = notHT * (1 + v('vat') / 100);
         var misc = v('misc');

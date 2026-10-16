@@ -45,8 +45,8 @@ export function checkEligibility90(i, p) {
   const blockers = [];
   const warnings = [];
   if (i.beneficiaryAge < p.minAge) blockers.push('age_below');
-  if (i.residenceYears < p.minResidenceYears) blockers.push('residence_below');
-  else if (i.residenceYears === p.minResidenceYears) warnings.push('residence_borderline'); // texte : « plus de 10 ans »
+  // texte ADII (circ. 5945/311) : « plus de 10 ans » -> strictement supérieur
+  if (!(i.residenceYears > p.minResidenceYears)) blockers.push('residence_below');
   if (!i.passengerCar) blockers.push('vehicle_kind');
   if (i.alreadyUsed) blockers.push('already_used');
   if (i.settled) blockers.push('settled');

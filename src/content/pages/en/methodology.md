@@ -59,3 +59,8 @@ The site's photos come from Wikimedia Commons and are used under free licences (
 - **Taourirt Kasbah, Ouarzazate**: Bjørn Christian Tørrissen, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), [source](https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_in_Ouarzazate_2011.jpg)
 - **Tetouan medina**: Ideophagous, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg)
 - **Oujda minaret**: Brahim Faraji, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (image recadrée), [source](https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg)
+- **Al Hoceima cove**: Ismailchahab1, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) (cropped), [source](https://commons.wikimedia.org/wiki/File:Al_hoceima_beach.jpg)
+- **Nador**: Pencil68, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Nador_City_Hill.jpg)
+- **Mohammed V airport, Casablanca**: Sharon Hahn Darlin, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), [source](https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Interior.jpg)
+- **Marrakech-Menara airport**: Kevinbeets1995, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Marrakech_Airport.jpg)
+- **Agadir Al Massira airport**: Werner100359, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Agadir_%E2%80%93_Al_Massira_Airport_01.jpg)
