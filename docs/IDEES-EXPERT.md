@@ -22,6 +22,7 @@ Limites : recherche web rapide (3 requêtes), aucun forum MRE lu directement. La
 - Pourquoi : crédibilité, mais mise à jour manuelle datée suffit. Mention obligatoire « indicatif, pas le taux de votre banque ».
 
 ## 4. Page « Documents d'état civil : acte de naissance, copie intégrale, pré-déclaration en ligne »
+- RÉALISÉE le 2026-10-16 : guide `acte-de-naissance-maroc-copie-integrale-extrait-watiqa-mre` (5 langues).
 - Demande : https://www.demarchesmaroc.com/obtenir-acte-de-naissance/
 - Source officielle : portail état civil du ministère de l'Intérieur (nom exact du portail à vérifier avant d'écrire).
 - Effort : moyen. Risque : moyen (apostille déjà couverte, éviter le doublon : faire un lien vers le guide apostille).

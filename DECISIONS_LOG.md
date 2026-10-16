@@ -103,3 +103,6 @@ Décisions prises sans demande de validation, conformément à la directive de c
 ## 2026-10-16 — Loyers MRE et heure légale
 - Guide `impots-vente-location-bien-maroc-mre` (fr/en/es/de/ar, es/de/ar machineTranslated) : option 20 % limitée aux loyers soumis à retenue à la source ; retenue 10 % (< 120 000 DH) / 15 % (>= 120 000 DH) selon guide fiscal MRE 2026 (mre.gov.ma, juillet 2026). Le « 5 % dès le 1er juillet 2026 » est retiré (aucune source officielle).
 - Heure légale : décret 2.26.530 (25/06/2026) lu dans le BO n° 7521 du 29/06/2026 (sgg.gov.ma), abroge le décret 2.18.855 ; GMT+0 depuis le 20/09/2026 confirmé, aucune mention d’incertitude ajoutée.
+
+## 2026-10-16 — Guide acte de naissance / copie intégrale / Watiqa
+- Guide `acte-de-naissance-maroc-copie-integrale-extrait-watiqa-mre` (translationKey `birth-certificate-civil-registry`, fr/en/es/de/ar ; es/de/ar machineTranslated, verifiedDate fr/en seulement). Faits limités à watiqa.ma, consulat.ma et alhalalmadania.ma (lu par extrait) ; aucun tarif ni délai chiffré ; quelle administration exige extrait ou copie intégrale : non sourcé, renvoi à l'organisme destinataire. Liens internes vers apostille, mariage/état civil, passeport/CNIE ; une phrase de renvoi ajoutée dans les guides mariage et apostille (fr, en).
