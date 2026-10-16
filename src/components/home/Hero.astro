@@ -4,12 +4,11 @@
  * La recherche est un lien-bouton : avec JavaScript il ouvre la fenêtre de recherche, sans JavaScript
  * il mène à la page de recherche. Aucune image lourde : illustration SVG légère en arche.
  */
-import { Image } from 'astro:assets';
+import CityImage from '../CityImage.astro';
 import Icon from '../Icon.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { L, pick, FACTS } from '../../data/home';
 import { hubPath } from '../../utils/i18n';
-import { illustration } from '../../utils/illustrations';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -50,8 +49,8 @@ const paths = [
       </div>
     </div>
     <div class="relative mx-auto w-full max-w-sm max-lg:order-first max-lg:max-w-none">
-      <div class="arch aspect-[16/9] border-[6px] sm:aspect-[2/1] lg:aspect-[4/5] lg:border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
-        <Image src={illustration('marrakech')} alt="" class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
+      <div class="arch relative aspect-[16/9] border-[6px] sm:aspect-[2/1] lg:aspect-[4/5] lg:border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
+        <CityImage scene="home-hero" fallback="marrakech" lang={lang} width={640} sizes="(min-width:1024px) 400px, 100vw" eager />
       </div>
       <div class="card absolute start-3 bottom-3 hidden max-w-[14rem] sm:block lg:-start-8 lg:bottom-14 px-4 py-3 shadow-xl">
         <p class="font-display text-xl font-bold text-majorelle-600 dark:text-majorelle-100"><bdi dir="ltr">{FACTS[lang][3].value}</bdi></p>

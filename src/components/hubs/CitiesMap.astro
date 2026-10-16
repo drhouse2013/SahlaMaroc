@@ -3,41 +3,51 @@
 import { useTranslations, type Locale } from '../../i18n';
 import { CITY_PAGES, cityLabel } from '../../data/cities';
 import { BASE, CITY_FACTOR, COSTS_LAST_UPDATED } from '../../config/costs';
-import { PRAYER_CITIES } from '../../data/prayer-cities';
 import { cityPath } from '../../utils/i18n';
 import { formatDate } from '../../utils/date';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-// Taghazout et Merzouga ne figurent pas dans prayer-cities : positions approchées des localités.
-const EXTRA: Record<string, [number, number]> = { taghazout: [30.54, -9.71], merzouga: [31.1, -4.01] };
-const LON0 = -11, LAT1 = 36.2, SX = 83, SY = 100;
-const pt = (lat: number, lon: number) => [Math.round((lon - LON0) * SX), Math.round((LAT1 - lat) * SY)] as const;
-// Contour très simplifié (lat, lon) : littoral méditerranéen, frontière est, limite sud de la vue, Atlantique.
-const OUTLINE: [number, number][] = [[35.8, -5.9], [35.9, -5.3], [35.2, -4.4], [35.4, -3.0], [35.1, -2.2], [34.7, -1.8], [33.7, -1.7], [32.5, -1.7], [32.0, -2.5], [31.7, -3.7], [30.9, -3.7], [29.9, -5.5], [29.5, -7.0], [29.5, -10.5], [29.7, -9.9], [30.5, -9.7], [31.5, -9.8], [32.3, -9.3], [33.2, -8.5], [33.6, -7.6], [34.0, -6.8], [34.5, -6.5], [35.2, -6.2]];
-const d = 'M' + OUTLINE.map(([la, lo]) => pt(la, lo).join(' ')).join('L') + 'Z';
+// Projection équirectangulaire (x corrigé par cos(lat0)), identique à celle du tracé généré (voir DECISIONS_LOG.md).
+const LON0 = -17.2, LAT1 = 36.1, SC = 80, K = Math.cos((28.5 * Math.PI) / 180);
+const pt = (lat: number, lon: number) => [Math.round((lon - LON0) * K * SC), Math.round((LAT1 - lat) * SC)] as const;
+// Maroc dans ses frontières nationales (provinces du Sud incluses). Source : Natural Earth 1:50m (domaine public), simplifié (Douglas-Peucker).
+const LAND = 'M1053.2 79.7L1055.2 85.6L1059.4 90.3L1083 107.8L1083.3 110.1L1079.2 119.4L1087 128.3L1087.4 130.6L1083.3 138.6L1089.2 153.9L1090.2 168.8L1088.7 185.5L1089.5 190.7L1094.6 202.7L1091.2 222.5L1095 233.3L1100.2 242.1L1103.1 257.8L1107.3 265.2L1114.2 271.7L1131.1 283.8L1134.3 290.5L1122.1 301L1120.5 306.3L1123.1 319.4L1119.6 320.9L1037.1 317.6L1007.9 322L1003.2 324.6L997.1 341.3L967.4 351.6L955.8 353.1L949.1 352L940.2 355L938.6 362.7L942.3 373L942.9 379.1L939.7 392.2L941.3 394.7L951.1 399.1L954.4 402.7L954.3 407.9L951.5 410.9L949 412.4L929.1 414.9L905.3 432.1L873.3 443.8L860 450.8L845.1 474.7L837.1 483.3L826.2 491.4L803.2 498.5L787.1 501.5L772.3 503.1L753.7 502.4L751.7 505.3L750.8 515.2L747.7 519.7L742.8 522.5L710.4 518L705.9 519L683 536.6L673.2 538L668.9 540L646.9 557.4L628.2 569.6L607.6 586.6L600.4 590.5L598.8 598.3L598.8 675.5L589.3 675.5L592.4 691.2L590.4 699.1L590.8 703.3L593.8 712.7L593.8 715.9L590.9 718.3L576.4 720.8L547.5 720.9L524.8 739.1L519 740L513.2 740L503.9 735.1L492.9 739.1L488.5 739.1L467.4 728.7L452.9 726.4L441.3 727.2L408.3 737.3L410.5 744.5L413.6 748.4L412.1 757.3L399.9 770.4L387.8 790.9L385.4 799.7L363.4 805.5L359.9 814.4L359.9 818.3L353.6 836.8L343.7 879.1L335.3 901.5L321.2 913.6L295.9 930.4L291 935.9L279 960.8L273.4 969.5L241.1 984.8L236.2 988L232.6 992.7L223.5 1015.1L217.9 1040L213 1067.2L211.6 1091.9L209.4 1103.2L203.1 1112.7L194 1121.5L180.6 1139.1L182 1148L177.8 1160L172.2 1168L165.9 1171.9L156.7 1172.7L122.3 1171.9L101.9 1168.7L81.5 1168L70.9 1169.5L33 1170.4L13.8 1174.3L18.9 1136L28.6 1115.2L36.3 1106.1L48.2 1101.3L59.1 1080.4L63 1061.2L70.2 1052.4L72.4 1045.4L69.6 1040.2L76.4 1029.8L88.4 1003.8L99.2 984.6L98.3 980.6L85.7 994.4L91.4 980.4L100 971.8L113.4 962.2L141.4 929.7L151.9 924.1L161.4 910.4L164.8 898.3L165.7 870.4L169.1 855.7L175.3 844.2L182.6 823.3L188.2 814L191.9 795L195.9 787.7L203 784.3L213.1 774.8L228.3 768.9L254.8 749.2L260.4 738.2L266.5 716.3L277.3 693.2L282.9 675.5L292.4 666.4L298.9 654.9L309.8 649.7L332.6 647.2L366.6 637.7L397 623.2L405.6 617.4L414.9 605.9L430.2 590.9L458.8 572.9L472 562.8L492.1 537.6L505.5 516.7L516.6 503.3L524.2 491.3L529.6 479.3L532.6 459.8L530.6 452.2L522.1 439.8L516.5 436.4L515 430.6L518 420.2L519.6 374L529.1 351.1L552.1 321.1L556.4 308.8L559.2 282.2L588 254.4L604.9 233L610.8 227.8L625.6 218.1L677.6 196.8L706.9 181.6L724.1 170.5L734.3 157.4L762.6 105.9L792.7 25.1L813.9 21.7L829.8 13.6L838.2 15.8L834 19.5L834 28.4L840 38.8L850.3 50.6L869.2 65.5L883.9 71.5L904.8 75.1L929.3 68.5L942.9 68.4L949.6 65.6L956.8 69.7L970.6 71.1L983.9 68.9L993.9 62.6L1000.3 55.4L1001.6 62.8L1009.6 77.8L1017.2 77.2L1023.9 79L1038.9 78.1ZM589.3 675.5L598.8 675.5L598.8 808.4L364.4 808.4L363.9 1010.6L339.4 1022.6L322 1026.3L293.1 1048L284.5 1062.4L284.3 1072.9L288.7 1088.3L294.1 1181.3L16.6 1181.7L9.6 1216.1L10.7 1223.5L7.1 1219.4L13.8 1174.3L33 1170.4L70.9 1169.5L81.5 1168L101.9 1168.7L122.3 1171.9L165.9 1171.9L172.2 1168L177.8 1160L182 1148L180.6 1139.1L194 1121.5L203.1 1112.7L209.4 1103.2L211.6 1091.9L213 1067.2L217.9 1040L223.5 1015.1L232.6 992.7L236.2 988L241.1 984.8L273.4 969.5L279 960.8L291 935.9L295.9 930.4L321.2 913.6L335.3 901.5L343.7 879.1L353.6 836.8L359.9 818.3L361.3 808.7L363.4 805.5L385.4 799.7L387.8 790.9L399.9 770.4L412.1 757.3L413.6 748.4L410.5 744.5L408.3 737.3L441.3 727.2L452.9 726.4L467.4 728.7L488.5 739.1L492.9 739.1L503.9 735.1L513.2 740L519 740L524.8 739.1L547.5 720.9L576.4 720.8L590.9 718.3L593.8 715.9L593.8 712.7L590.8 703.3L590.4 699.1L592.4 691.2Z';
 const fmt = new Intl.NumberFormat(lang === 'ar' ? 'ar-MA-u-nu-latn' : lang, { maximumFractionDigits: 0 });
 const date = formatDate(new Date(COSTS_LAST_UPDATED), lang);
-const items = CITY_PAGES.flatMap((c) => {
-  const p = PRAYER_CITIES.find((x) => x.id === c.id);
-  const pos = p ? ([p.lat, p.lng] as const) : EXTRA[c.id];
-  if (!pos) return [];
-  const [x, y] = pt(pos[0], pos[1]);
+// Source unique : lat/lon de CITY_PAGES. Les points trop proches (Agadir/Taghazout, Tanger/Tétouan) sont écartés à l'affichage (min. MIN unités SVG).
+const MIN = 36;
+const base = CITY_PAGES.flatMap((c) => {
+  if (c.lat === undefined || c.lon === undefined) return [];
   let day: number | null = null;
   if (c.costCity) day = Math.round(((BASE.nightStay.mid + BASE.foodDay.mid + BASE.transportDay.mid + BASE.funDay.mid) * CITY_FACTOR[c.costCity]) / 50) * 50;
+  const [x, y] = pt(c.lat, c.lon);
   return [{ id: c.id, x, y, name: cityLabel(c.id, lang), href: cityPath(lang, c.slug[lang]), day }];
 });
+for (let it = 0; it < 60; it++) {
+  for (let i = 0; i < base.length; i++) for (let j = i + 1; j < base.length; j++) {
+    const a = base[i], b = base[j];
+    let dx = b.x - a.x, dy = b.y - a.y;
+    const d = Math.hypot(dx, dy);
+    if (d >= MIN) continue;
+    if (d < 0.01) { dx = 1; dy = 0; }
+    const m = (MIN - d) / 2 / (d || 1);
+    a.x -= dx * m; a.y -= dy * m; b.x += dx * m; b.y += dy * m;
+  }
+}
+const items = base.map((c) => ({ ...c, x: Math.round(c.x), y: Math.round(c.y) }));
 ---
 <section class="container-page pt-8" aria-labelledby="cmap-title">
   <h2 id="cmap-title" class="section-title !text-2xl">{t('city.map.title')}</h2>
   <p class="mt-2 text-sm muted">{t('city.map.hint')}</p>
   <div class="cmap card mt-4 grid gap-4 p-4 md:grid-cols-[2fr_1fr]" data-cmap>
-    <svg viewBox="0 0 830 670" role="group" aria-label={t('city.map.aria')} class="h-auto w-full">
-      <path d={d} class="cmap-land" />
+    <svg viewBox="0 0 1140 1235" role="group" aria-label={t('city.map.aria')} class="mx-auto h-auto w-full max-w-[520px]">
+      <path d={LAND} class="cmap-edge" />
+      <path d={LAND} class="cmap-land" />
       {items.map((c) => (
         <g class="cmap-pt" role="button" tabindex="0" data-id={c.id} aria-label={c.name}>
-          <circle cx={c.x} cy={c.y} r="22" fill="transparent" />
-          <circle cx={c.x} cy={c.y} r="9" class="cmap-dot" />
+          <circle cx={c.x} cy={c.y} r="18" fill="transparent" />
+          <circle cx={c.x} cy={c.y} r="12" class="cmap-dot" />
         </g>
       ))}
     </svg>
@@ -55,11 +65,12 @@ const items = CITY_PAGES.flatMap((c) => {
   </div>
 </section>
 <style>
-  .cmap-land { fill: var(--surface-2, color-mix(in srgb, var(--link) 10%, transparent)); stroke: var(--line); stroke-width: 3; stroke-linejoin: round; }
-  .cmap-dot { fill: var(--link); stroke: var(--surface); stroke-width: 3; }
+  .cmap-edge { fill: none; stroke: var(--line); stroke-width: 7; stroke-linejoin: round; }
+  .cmap-land { fill: color-mix(in srgb, var(--link) 12%, var(--surface)); }
+  .cmap-dot { fill: var(--link); stroke: var(--surface); stroke-width: 5; }
   .cmap-pt { cursor: pointer; outline: none; }
-  .cmap-pt:hover .cmap-dot, .cmap-pt:focus-visible .cmap-dot, .cmap-pt[aria-pressed='true'] .cmap-dot { stroke: currentColor; stroke-width: 5; }
-  .cmap-pt:focus-visible .cmap-dot { stroke-width: 6; }
+  .cmap-pt:hover .cmap-dot, .cmap-pt:focus-visible .cmap-dot, .cmap-pt[aria-pressed='true'] .cmap-dot { stroke: currentColor; stroke-width: 8; }
+  .cmap-pt:focus-visible .cmap-dot { stroke-width: 10; }
 </style>
 <script>
   document.querySelectorAll<HTMLElement>('[data-cmap]').forEach((root) => {

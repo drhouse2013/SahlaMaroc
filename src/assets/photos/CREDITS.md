@@ -28,3 +28,31 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | toubkal-imlil.jpg | Alexander Klink | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Morocco_Toubkal_National_Park_Imlil_Valley.jpg |
 | cascades-ouzoud.jpg | Jakub Hałun | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Ouzoud_Falls,_Morocco,_20250126_1357_7467.jpg |
 | cuisine-tajine.jpg | Marco Almbauer | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Moroccan_tajine_with_meat.jpg |
+
+
+## Photos villes (cities/)
+
+| Fichier | Auteur | Licence | Source |
+|---|---|---|---|
+| cities/marrakech.jpg | Misa.stefanovic.07 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A01_-_Marrakech,_Koutoubia.jpg |
+| cities/casablanca.jpg | OussamaHamama | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg |
+| cities/rabat.jpg | Bikerhiker75 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Oudayas,_Rabat,_Morocco.jpg |
+| cities/tangier.jpg | Herbert wie | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg |
+| cities/fes.jpg | Petar Milošević | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg |
+| cities/essaouira.jpg | Christinagrabelusshaikh | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg |
+| cities/chefchaouen.jpg | Badr Rachadi | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg |
+| cities/taghazout.jpg | Hamza Izourane | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fishing_boats_in_Taghazout.jpg |
+| cities/nador.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg |
+| cities/tetouan.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg |
+| cities/meknes.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg |
+| cities/ouarzazate.jpg | Petar Milošević | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg |
+| cities/oujda.jpg | Farajiibrahim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg |
+| cities/al-hoceima.jpg | Abdel Jalil Bouhaj | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg |
+| cities/merzouga.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Les_dunes_de_Merzouga_(Une_caravane_de_chameaux_).jpg |
+| cities/home-hero.jpg | Merzougaloisirs | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg |
+| cities/tafraout.jpg | Marek Ślusarczyk (Tupungato) | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg |
+| cities/agadir.jpg | Francesc Fort | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg |
+| cities/dakhla.jpg | Lärchenholz | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kitesurfing_in_Dakhla,_Western_Sahara.JPG |
+| cities/laayoune.jpg | Zakaria Taberkant / Commune of Laayoune | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg |
+| cities/el-jadida.jpg | Mathew Koshy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg |
+| cities/saidia.jpg | Meryem BOURAS | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg |

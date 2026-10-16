@@ -53,6 +53,8 @@ export const PRAYER_CITIES: PrayerCity[] = [
   c('khemisset', 33.8244, -6.0661, 400, "Khémisset", "Khemisset", "Khemisset", "Khémisset", "الخميسات"),
   c('tan-tan', 28.438, -11.103, 200, "Tan-Tan", "Tan-Tan", "Tan-Tan", "Tan-Tan", "طانطان"),
   c('sidi-ifni', 29.3797, -10.173, 50, "Sidi Ifni", "Sidi Ifni", "Sidi Ifni", "Sidi Ifni", "سيدي إفني"),
+  c('saidia', 35.0881, -2.2333, 5, "Saïdia", "Saidia", "Saidia", "Saïdia", "السعيدية"),
+  c('tafraout', 29.7219, -8.9764, 1000, "Tafraout", "Tafraout", "Tafraout", "Tafraout", "تافراوت"),
 ];
 
 export const prayerCityById = (id: string) => PRAYER_CITIES.find((x) => x.id === id);

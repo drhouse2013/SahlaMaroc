@@ -5,7 +5,7 @@ import type { Scene } from '../data/home';
 const files = import.meta.glob<{ default: ImageMetadata }>('../assets/illustrations/*.svg', { eager: true });
 
 /** Villes sans illustration propre : mêmes illustrations que leurs guides « où loger ». */
-const ILLUSTRATION_ALIAS: Partial<Record<Scene, Scene>> = { nador: 'sahara', tetouan: 'chefchaouen', meknes: 'fes', ouarzazate: 'sahara', oujda: 'atlas', 'al-hoceima': 'tangier', merzouga: 'sahara' };
+const ILLUSTRATION_ALIAS: Partial<Record<Scene, Scene>> = { nador: 'sahara', tetouan: 'chefchaouen', meknes: 'fes', ouarzazate: 'sahara', oujda: 'atlas', 'al-hoceima': 'tangier', merzouga: 'sahara', tafraout: 'atlas', agadir: 'taghazout', dakhla: 'sahara', laayoune: 'sahara', 'el-jadida': 'essaouira', saidia: 'tangier' };
 
 export function illustration(scene: Scene): ImageMetadata {
   const hit = files[`../assets/illustrations/${ILLUSTRATION_ALIAS[scene] ?? scene}.svg`];

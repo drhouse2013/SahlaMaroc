@@ -14,7 +14,7 @@ export const pick = <T,>(m: Partial<Record<Locale, T>> & { en: T }, lang: Locale
 export type Scene =
   | 'marrakech' | 'casablanca' | 'chefchaouen' | 'sahara' | 'essaouira' | 'fes'
   | 'rabat' | 'tangier' | 'taghazout' | 'atlas' | 'souk' | 'riad'
-  | 'nador' | 'tetouan' | 'meknes' | 'ouarzazate' | 'oujda' | 'al-hoceima' | 'merzouga'; // nador/tetouan : pas d'illustration propre, voir ILLUSTRATION_ALIAS (utils/illustrations.ts)
+  | 'nador' | 'tetouan' | 'meknes' | 'ouarzazate' | 'oujda' | 'al-hoceima' | 'merzouga' | 'agadir' | 'dakhla' | 'laayoune' | 'el-jadida' | 'saidia' | 'tafraout'; // nador/tetouan : pas d'illustration propre, voir ILLUSTRATION_ALIAS (utils/illustrations.ts)
 
 /* ---------------------------------------------------------------- libellés */
 export const L: Record<string, Full<string>> = {
@@ -78,6 +78,12 @@ export const CITIES: City[] = [
   { id: 'oujda', name: 'Oujda', vibe: { en: "Main city of the Oriental region, base for the Saidia beach.", fr: "Grande ville de l’Oriental, base pour la plage de Saïdia." }, tags: { en: ["Oriental","Saidia","Summer return"], fr: ["Oriental","Saïdia","Retour d’été"] } },
   { id: 'al-hoceima', name: 'Al Hoceima', vibe: { en: "Mediterranean Rif seaside resort with a national park, popular with families in summer.", fr: "Station balnéaire du Rif méditerranéen avec parc national, très prisée des familles l’été." }, tags: { en: ["Beaches","National park","Summer return"], fr: ["Plages","Parc national","Retour d’été"] } },
   { id: 'merzouga', name: 'Merzouga', vibe: { en: "Gateway village to the Erg Chebbi dunes: camps, camel rides and guesthouses.", fr: "Village d’accès aux dunes de l’Erg Chebbi : camps, dromadaires et auberges." }, tags: { en: ["Dunes","Desert camps","Camel ride"], fr: ["Dunes","Camps dans le désert","Dromadaire"] } },
+  { id: 'tafraout', name: 'Tafraout', vibe: { en: "Anti-Atlas town among pink granite rocks and almond valleys.", fr: "Ville de l’Anti-Atlas entre rochers de granit rose et vallées d’amandiers." }, tags: { en: ["Almond blossom","Hiking","Crafts"], fr: ["Amandiers en fleurs","Randonnée","Artisanat"] } },
+  { id: 'agadir', name: 'Agadir', vibe: { en: "Morocco’s big beach resort: long beach, resorts and surf nearby.", fr: "La grande station balnéaire : longue plage, resorts et surf à proximité." }, tags: { en: ["Beach","Resorts","Surf"], fr: ["Plage","Resorts","Surf"] } },
+  { id: 'dakhla', name: 'Dakhla', vibe: { en: "Peninsula between desert and ocean, kitesurf lagoon.", fr: "Presqu’île entre désert et océan, lagune de kitesurf." }, tags: { en: ["Kitesurf","Lagoon","Desert"], fr: ["Kitesurf","Lagune","Désert"] } },
+  { id: 'laayoune', name: 'Laayoune', vibe: { en: "Largest city of the south, stopover towards Dakhla.", fr: "Plus grande ville du Sud, étape vers Dakhla." }, tags: { en: ["Southern road","Airport","Stopover"], fr: ["Route du Sud","Aéroport","Étape"] } },
+  { id: 'el-jadida', name: 'El Jadida', vibe: { en: "Coastal city south-west of Casablanca with a UNESCO Portuguese city.", fr: "Ville côtière au sud-ouest de Casablanca, cité portugaise UNESCO." }, tags: { en: ["UNESCO","Beach","Weekend"], fr: ["UNESCO","Plage","Week-end"] } },
+  { id: 'saidia', name: 'Saidia', vibe: { en: "Mediterranean resort of the Oriental with one of the longest beaches.", fr: "Station méditerranéenne de l’Oriental, l’une des plus longues plages." }, tags: { en: ["Beach","Marina","Summer return"], fr: ["Plage","Marina","Retour d’été"] } },
 ];
 
 /* ---------------------------------------------------------------- chiffres clés */
@@ -221,6 +227,12 @@ const CITY_I18N: Record<string, Record<'es' | 'de' | 'ar', [string, string[]]>> 
   'oujda': { es: ["Gran ciudad de la región Oriental, base para la playa de Saidia.", ["Oriental","Saidia","Regreso de verano"]], de: ["Große Stadt der Region Oriental, Basis für den Strand von Saïdia.", ["Oriental","Saïdia","Sommerheimkehr"]], ar: ["المدينة الكبرى بجهة الشرق، قاعدة لشاطئ السعيدية.", ["الشرق","السعيدية","عودة الصيف"]] },
   'al-hoceima': { es: ["Estación balnearia del Rif mediterráneo con parque nacional, muy popular entre las familias en verano.", ["Playas","Parque nacional","Regreso de verano"]], de: ["Badeort an der mediterranen Rif-Küste mit Nationalpark, im Sommer bei Familien beliebt.", ["Strände","Nationalpark","Sommerheimkehr"]], ar: ["منتجع ساحلي في الريف المتوسطي بمنتزه وطني، يقصده العائلات صيفاً.", ["شواطئ","منتزه وطني","عودة الصيف"]] },
   'merzouga': { es: ["Pueblo de acceso a las dunas del Erg Chebbi: campamentos, dromedarios y albergues.", ["Dunas","Campamentos","Paseo en dromedario"]], de: ["Zugangsdorf zu den Dünen des Erg Chebbi: Camps, Kamelritte und Herbergen.", ["Dünen","Wüstencamps","Kamelritt"]], ar: ["قرية الولوج إلى كثبان عرق الشبي: مخيمات وجمال ونُزل.", ["كثبان","مخيمات صحراوية","ركوب الجمال"]] },
+  tafraout: { es: ['Ciudad del Antiatlas entre rocas de granito rosa y valles de almendros.', ['Almendros en flor','Senderismo','Artesanía']], de: ['Stadt im Anti-Atlas zwischen rosa Granitfelsen und Mandeltälern.', ['Mandelblüte','Wandern','Handwerk']], ar: ['بلدة في الأطلس الصغير بين صخور الغرانيت الوردية ووديان اللوز.', ['إزهار اللوز','مشي','صناعة تقليدية']] },
+  agadir: { es: ['Gran ciudad de playa de Marruecos: playa larga, resorts y surf cerca.', ['Playa','Resorts','Surf']], de: ['Große Badestadt Marokkos: langer Strand, Resorts und Surfen in der Nähe.', ['Strand','Resorts','Surfen']], ar: ['المحطة الشاطئية الكبرى: شاطئ طويل ومنتجعات وركوب الأمواج قريباً.', ['شاطئ','منتجعات','ركوب الأمواج']] },
+  dakhla: { es: ['Península entre desierto y océano, laguna de kitesurf.', ['Kitesurf','Laguna','Desierto']], de: ['Halbinsel zwischen Wüste und Ozean, Kitesurf-Lagune.', ['Kitesurf','Lagune','Wüste']], ar: ['شبه جزيرة بين الصحراء والمحيط ولاغون لركوب الأمواج بالطائرة الشراعية.', ['كايتسيرف','لاغون','صحراء']] },
+  laayoune: { es: ['Mayor ciudad del sur, escala hacia Dajla.', ['Carretera del sur','Aeropuerto','Escala']], de: ['Größte Stadt des Südens, Zwischenstopp nach Dakhla.', ['Südroute','Flughafen','Zwischenstopp']], ar: ['أكبر مدينة في الجنوب ومحطة نحو الداخلة.', ['طريق الجنوب','مطار','محطة']] },
+  'el-jadida': { es: ['Ciudad costera al suroeste de Casablanca con ciudad portuguesa UNESCO.', ['UNESCO','Playa','Fin de semana']], de: ['Küstenstadt südwestlich von Casablanca mit portugiesischer UNESCO-Stadt.', ['UNESCO','Strand','Wochenende']], ar: ['مدينة ساحلية جنوب غرب الدار البيضاء بمدينة برتغالية مصنفة.', ['اليونسكو','شاطئ','عطلة أسبوعية']] },
+  saidia: { es: ['Estación mediterránea del Oriental con una de las playas más largas.', ['Playa','Marina','Regreso de verano']], de: ['Mittelmeer-Badeort im Oriental mit einem der längsten Strände.', ['Strand','Marina','Sommerheimkehr']], ar: ['محطة متوسطية بالشرق بأحد أطول الشواطئ.', ['شاطئ','مارينا','عودة الصيف']] },
 };
 /** Noms de villes localisés (sinon le nom par défaut) */
 export const CITY_NAMES: Record<string, Partial<Record<Locale, string>>> = {

@@ -139,3 +139,10 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Politique de confidentialité réécrite dans les 5 langues (es/de/ar machineTranslated) : finalités, base, destinataires (Brevo, Google AdSense, Umami, Vercel), transfert hors Maroc, durée (sans chiffre inventé), droits art. 7-9, formalités CNDP « à déclarer ou autoriser selon le cas », consentement AdSense (message Google EEE/RU/Suisse).
 - Nouvelle page Mentions légales (translationKey `legal-notice`, 5 langues, lien dans le pied de page via `footer.legalNotice`). Identité de l'éditeur, statut, adresse, ICE/RC, directeur de publication, registrar et n° de récépissé CNDP : marqueur « [À RENSEIGNER PAR L'ÉDITEUR AVANT PUBLICATION] » (non interdit par check:content), listés dans docs/ACTIONS-PROPRIETAIRE.md. Liste légale des mentions obligatoires au Maroc non trouvée : structure = bonne pratique.
 - docs/MISE-EN-LIGNE.md section 7 : Wise a priori inutilisable pour un résident marocain (source Wise de 2023) ; AdSense vers banque marocaine, règles de l'Office des changes à confirmer avec banque et comptable.
+
+## 2026-10-16 — Carte des villes : tracé national complet
+- Ancien contour schématique (arrêté au sud d'Agadir) remplacé par le Maroc dans ses frontières nationales (provinces du Sud jusqu'à Lagouira, ≈ 20,7° N) : polygones « Morocco » + « W. Sahara » de Natural Earth 1:50m map units (domaine public, naturalearthdata.com), simplifiés par Douglas-Peucker (~300 points), projection équirectangulaire avec correction cos(28,5°), identique à celle des points de villes. Frontières telles que représentées par le Royaume du Maroc. Aucune requête réseau à l'exécution (path inline dans CitiesMap.astro).
+
+## 2026-10-16 - Pages villes : lot 1 (Tafraout, Agadir, Dakhla, Laâyoune, El Jadida, Saïdia)
+- Ajout de `lat`/`lon` (optionnels) à `CityPage` ; scènes de repli via `ILLUSTRATION_ALIAS`. Carte non modifiée.
+- Faits limités à nos guides et sources ONDA citées ; ONDA/ONCF/ADM illisibles par outil, d'où mentions « à vérifier » (voir docs/FACTS.csv, docs/VILLES-PLAN.md). Pas de budget hors Agadir (costCity).

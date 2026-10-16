@@ -1,12 +1,11 @@
 ---
 /** Grille des villes : chaque carte mène à la page ville (sans donnée inventée). */
-import { Image } from 'astro:assets';
+import CityImage from '../CityImage.astro';
 import Icon from '../Icon.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { CITY_PAGES, cityLabel } from '../../data/cities';
 import { L } from '../../data/home';
 import { cityPath, hubPath } from '../../utils/i18n';
-import { illustration } from '../../utils/illustrations';
 
 interface Props { lang: Locale; ids?: string[]; limit?: number; showHeading?: boolean; headingLevel?: 'h2' | 'h3' }
 const { lang, ids, limit, showHeading = true } = Astro.props;
@@ -27,8 +26,8 @@ const list = CITY_PAGES.filter((c) => !ids || ids.includes(c.id)).slice(0, limit
     {list.map((c) => (
       <li class="group card card-hover relative flex flex-col overflow-hidden">
         {c.host2030 && <span class="badge badge-gold absolute end-3 top-3 z-10">{L.hostCity[lang]}</span>}
-        <div class="arch mx-4 mt-4 aspect-[4/3] overflow-hidden">
-          <Image src={illustration(c.id)} alt="" width={480} loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        <div class="arch relative mx-4 mt-4 aspect-[4/3] overflow-hidden">
+          <CityImage scene={c.id} lang={lang} width={480} sizes="(min-width:1024px) 280px, (min-width:640px) 45vw, 90vw" />
         </div>
         <div class="flex flex-1 flex-col p-5 pt-4">
           <h3 class="text-xl font-semibold"><a href={cityPath(lang, c.slug[lang])} class="after:absolute after:inset-0">{cityLabel(c.id, lang)}</a></h3>
