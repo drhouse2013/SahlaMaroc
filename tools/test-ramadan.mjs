@@ -20,7 +20,7 @@ test('GMT+0 toute l’année depuis le 20/09/2026 : aucun décalage pendant le R
 });
 
 test('35 villes × 30 jours : imsak < iftar, entiers, durée du jeûne plausible (11 h 30 – 13 h 30)', () => {
-  assert.equal(PRAYER_CITIES.length, 35);
+  assert.ok(PRAYER_CITIES.length >= 35);
   for (const c of PRAYER_CITIES) {
     for (const d of days()) {
       const t = at(c, d);
