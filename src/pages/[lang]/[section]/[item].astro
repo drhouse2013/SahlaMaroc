@@ -5,12 +5,14 @@
  */
 import PillarPage from '../../../components/hubs/PillarPage.astro';
 import CityPage from '../../../components/hubs/CityPage.astro';
+import RegionPage from '../../../components/hubs/RegionPage.astro';
+import { REGIONS } from '../../../data/regions';
 import { HUB_SLUGS, LOCALES, TOPICS_SEGMENT, type Locale } from '../../../i18n';
 import { CATEGORIES, type CategoryId } from '../../../i18n/categories';
 import { CITY_PAGES } from '../../../data/cities';
 import { getActiveCategories } from '../../../utils/i18n';
 
-type Props = { kind: 'topic'; id: CategoryId } | { kind: 'city'; id: string };
+type Props = { kind: 'topic'; id: CategoryId } | { kind: 'city'; id: string } | { kind: 'region'; id: string };
 
 export async function getStaticPaths() {
   // Seules les catégories avec au moins un guide sont générées (pas de pages vides indexables).
@@ -24,10 +26,14 @@ export async function getStaticPaths() {
     params: { lang, section: HUB_SLUGS.cities[lang], item: c.slug[lang] },
     props: { kind: 'city' as const, id: c.id },
   })));
-  return [...topics.flat(), ...cities];
+  const regions = LOCALES.flatMap((lang) => REGIONS.map((r) => ({
+    params: { lang, section: HUB_SLUGS.regions[lang], item: r.slug },
+    props: { kind: 'region' as const, id: r.id },
+  })));
+  return [...topics.flat(), ...cities, ...regions];
 }
 
 const lang = Astro.params.lang as Locale;
 const props = Astro.props as Props;
 ---
-{props.kind === 'topic' ? <PillarPage lang={lang} id={props.id} /> : <CityPage lang={lang} id={props.id} />}
+{props.kind === 'topic' ? <PillarPage lang={lang} id={props.id} /> : props.kind === 'region' ? <RegionPage lang={lang} id={props.id} /> : <CityPage lang={lang} id={props.id} />}

@@ -14,6 +14,8 @@ import { LOCALES, isIndexable } from '../../i18n/config';
 import { allLocalesTargets, cityPath, getArticleByKey, getPageUrl, homePath, hubPath, type Alternates } from '../../utils/i18n';
 import { formatDate } from '../../utils/date';
 import CityImage from '../CityImage.astro';
+import SpotsGallery from '../SpotsGallery.astro';
+import { SPOTS } from '../../data/spots';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd } from '../../utils/seo';
 
 interface Props { lang: Locale; id: string }
@@ -51,8 +53,10 @@ const jsonLd = [
   breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))),
   ...(text.faq.length ? [faqJsonLd(text.faq)] : []),
 ];
+const spots = SPOTS[id] ?? [];
 const sections = [
-  { id: 'why', label: t('city.why') }, { id: 'access', label: t('city.access') }, { id: 'areas', label: t('city.areas') },
+  { id: 'why', label: t('city.why') },
+  ...(spots.length ? [{ id: 'spots', label: t('city.spots') }] : []), { id: 'access', label: t('city.access') }, { id: 'areas', label: t('city.areas') },
   ...(city.costCity ? [{ id: 'budget', label: t('city.budget') }] : []),
   ...(trips.length ? [{ id: 'trips', label: t('city.trips') }] : []),
   ...(text.faq.length ? [{ id: 'faq', label: t('city.faq') }] : []),
@@ -73,6 +77,13 @@ const sections = [
 
   <div class="container-page grid gap-10 pt-8 lg:grid-cols-[1fr_16rem]">
     <div class="min-w-0">
+      {spots.length > 0 && (
+        <section id="spots" class="scroll-mt-24 pb-10" aria-labelledby="h-spots">
+          <h2 id="h-spots" class="section-title !text-2xl">{t('city.spots')}</h2>
+          <SpotsGallery lang={lang} cityId={id} spots={spots} />
+        </section>
+      )}
+
       <section id="why" class="scroll-mt-24" aria-labelledby="h-why">
         <h2 id="h-why" class="section-title !text-2xl">{t('city.why')}</h2>
         <ul class="mt-4 grid gap-2">{text.why.map((w) => <li class="flex gap-2"><Icon name="check" class="mt-1 size-4 shrink-0 text-emerald-moroccan-500" />{w}</li>)}</ul>

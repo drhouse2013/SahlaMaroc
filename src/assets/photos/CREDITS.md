@@ -56,3 +56,23 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | cities/laayoune.jpg | Zakaria Taberkant / Commune of Laayoune | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg |
 | cities/el-jadida.jpg | Mathew Koshy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg |
 | cities/saidia.jpg | Meryem BOURAS | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg |
+
+
+## Photos des lieux (groupe 3)
+
+| Fichier | Auteur | Licence | Source |
+|---|---|---|---|
+| spots/merzouga-erg-chebbi.jpg | Thomas Fuhrmann | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Erg_Chebbi_in_the_evening_light.jpg |
+| spots/merzouga-grand-dune.jpg | Thomas Fuhrmann | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Erg_Chebbi_sunset.jpg |
+| spots/tafraout-painted-rocks.jpg | Simohnt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Colored_Rocks_1.jpg |
+| spots/tafraout-napoleons-hat.jpg | Just Booked A Trip | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg |
+| spots/agadir-oufella.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg |
+| spots/agadir-beach.jpg | Elmschrat | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:02-beach-agadir-morocco.JPG |
+| spots/agadir-souk-el-had.jpg | Anass Sedrati | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg |
+| spots/agadir-amazigh-museum.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg |
+| spots/dakhla-lighthouse.jpg | Vanbasten 23 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Faro_de_Dajla.jpg |
+| spots/dakhla-mount-carmel-church.jpg | User:Zenwort | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dakhla_kathKirche_20221024_181750.jpg |
+| spots/laayoune-cathedral.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Laayoune_Cathedral_2011.jpg |
+| spots/laayoune-beach.jpg | Nassima Chahboun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%B4%D8%A7%D8%B7%D8%A6_%D9%81%D9%85_%D8%A7%D9%84%D9%88%D8%A7%D8%AF%D8%8C_%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86.jpg |
+| spots/el-jadida-mazagan.jpg | M. Rais | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Forteresse_Jadida_03.JPG |
+| spots/el-jadida-cistern.jpg | Alamrani.a | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Water_reflection_Portuguese_Cistern.jpg |

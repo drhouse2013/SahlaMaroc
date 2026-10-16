@@ -17,6 +17,7 @@ export const categoryPath = (lang: Locale, id: CategoryId) =>
 export const rssPath = (lang: Locale) => `/${lang}/rss.xml`;
 export const hubPath = (lang: Locale, hub: HubId) => `/${lang}/${HUB_SLUGS[hub][lang]}`;
 export const cityPath = (lang: Locale, citySlug: string) => `/${lang}/${HUB_SLUGS.cities[lang]}/${citySlug}`;
+export const regionPath = (lang: Locale, regionSlug: string) => `/${lang}/${HUB_SLUGS.regions[lang]}/${regionSlug}`;
 export const searchIndexPath = (lang: Locale) => `/${lang}/search-index.json`;
 
 /** En prod on masque les brouillons ; en dev on les affiche pour relecture. */

@@ -12,6 +12,9 @@ Statut des accès : « ONDA » = aéroport du réseau ONDA cité dans une source
 | 5 | El Jadida | Casablanca-Settat | Route/autoroute depuis Casablanca (ADM, à vérifier) ; pas d'aéroport propre | Cité portugaise UNESCO, week-end |
 | 6 | Saïdia | Oriental (Berkane) | Aéroport Oujda-Angads, gare ONCF d'Oujda, RN16 (nos guides) | Plage, retour d'été MRE |
 
+## Lot 2 (implémenté)
+Guelmim, Tiznit, Sidi Ifni, Taroudant, Zagora, Errachidia (liée à Merzouga), Ifrane, Asilah, Larache, Kénitra. Niveau « Régions » : 12 pages + hub /regions (src/data/regions.ts, décret n° 2-15-40 du 20 février 2015) ; champ region sur chaque ville. Accès non confirmés marqués « à confirmer », voir docs/FACTS.csv.
+
 ## Lots suivants (~25 villes, par priorité)
 | Ville | Région | Accès à confirmer | Raison |
 |---|---|---|---|

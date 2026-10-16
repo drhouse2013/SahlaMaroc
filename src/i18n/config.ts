@@ -57,6 +57,7 @@ export const TOPICS_SEGMENT: Record<Locale, string> = {
 export const HUB_SLUGS = {
   guides: { en: 'guides', fr: 'guides', es: 'guias', de: 'ratgeber', ar: 'adilla' },
   cities: { en: 'cities', fr: 'villes', es: 'ciudades', de: 'staedte', ar: 'mudun' },
+  regions: { en: 'regions', fr: 'regions', es: 'regiones', de: 'regionen', ar: 'jihat' },
   checklists: { en: 'checklists', fr: 'checklists', es: 'listas-de-control', de: 'checklisten', ar: 'qawaim-al-tahaqquq' },
   news: { en: 'admin-news', fr: 'nouveautes-administratives', es: 'novedades-administrativas', de: 'verwaltungs-neuigkeiten', ar: 'mustajaddat-idariya' },
   search: { en: 'search', fr: 'recherche', es: 'buscar', de: 'suche', ar: 'bahth' },

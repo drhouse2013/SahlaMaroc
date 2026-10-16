@@ -1,0 +1,44 @@
+---
+/** Page région : /<lang>/regions/<région>. Textes issus de src/data/regions.ts, villes liées via CITY_PAGES. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import CityGrid from '../home/CityGrid.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { REGIONS, regionById, regionCities } from '../../data/regions';
+import { allLocalesTargets, homePath, hubPath, regionPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+interface Props { lang: Locale; id: string }
+const { lang, id } = Astro.props;
+const t = useTranslations(lang);
+const region = regionById(id)!;
+const text = region.text[lang];
+const name = region.name[lang];
+const cities = regionCities(region.id);
+const url = absoluteUrl(regionPath(lang, region.slug), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('nav.regions'), href: hubPath(lang, 'regions') }, { name }];
+const others = REGIONS.filter((r) => r.id !== region.id);
+---
+<BaseLayout lang={lang} title={t('region.title', { region: name })} description={t('region.description', { region: name })} alternates={Object.fromEntries((['en', 'fr', 'es', 'de', 'ar'] as Locale[]).map((l) => [l, regionPath(l, region.slug)]))} switchTargets={allLocalesTargets((l) => regionPath(l, region.slug))}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}>
+  <PageHero lang={lang} crumbs={crumbs} title={t('region.title', { region: name })} intro={text.intro} icon="mapPin" meta={`${t('region.capital')} : ${region.capital[lang]}`} />
+  <div class="container-page section">
+    <section aria-labelledby="h-cities">
+      <h2 id="h-cities" class="section-title !text-2xl">{t('region.cities')}</h2>
+      {cities.length > 0 ? <div class="mt-6"><CityGrid lang={lang} ids={cities.map((c) => c.id)} showHeading={false} /></div> : <p class="mt-3 muted">{t('region.noCities')}</p>}
+    </section>
+    <section class="mt-10" aria-labelledby="h-when">
+      <h2 id="h-when" class="section-title !text-2xl">{t('region.when')}</h2>
+      <p class="mt-3 max-w-3xl">{text.when}</p>
+    </section>
+    <section class="mt-10" aria-labelledby="h-access">
+      <h2 id="h-access" class="section-title !text-2xl">{t('region.access')}</h2>
+      <p class="mt-3 max-w-3xl">{text.access}</p>
+    </section>
+    <section class="mt-10" aria-labelledby="h-others">
+      <h2 id="h-others" class="section-title !text-2xl">{t('region.others')}</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">{others.map((r) => <li><a href={regionPath(lang, r.slug)} class="badge">{r.name[lang]}</a></li>)}</ul>
+      <p class="mt-4"><a href={hubPath(lang, 'regions')} class="btn btn-ghost btn-sm">{t('region.seeAll')}</a></p>
+    </section>
+    <p class="mt-8 text-xs muted">{t('region.source')}</p>
+  </div>
+</BaseLayout>

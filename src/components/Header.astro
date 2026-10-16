@@ -23,6 +23,7 @@ const cats = await getActiveCategories(lang);
 const path = Astro.url.pathname;
 const nav = [
   { href: hubPath(lang, 'cities'), label: t('nav.cities') },
+  { href: hubPath(lang, 'regions'), label: t('nav.regions') },
   { href: toolUrl, label: t('nav.tools') },
   { href: hubPath(lang, 'checklists'), label: t('nav.checklists') },
   { href: hubPath(lang, 'mre'), label: t('nav.mre') },

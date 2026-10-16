@@ -20,7 +20,7 @@ const paths = [
   { id: 'visit', icon: 'compass' as const, title: t('home.path.visit'), text: t('home.path.visitText'), href: hubPath(lang, 'visit'), tint: 'bg-emerald-moroccan-100 dark:bg-emerald-moroccan-600/20' },
 ];
 ---
-<section class="zellige-soft relative overflow-hidden border-b border-[var(--line)]">
+<section class="zellige-soft hero-aura relative overflow-hidden border-b border-[var(--line)]">
   <div class="container-page grid items-center gap-8 pt-6 pb-12 md:gap-12 md:pt-16 md:pb-24 lg:grid-cols-[1.25fr_0.75fr]">
     <div>
       <p class="eyebrow text-emerald-moroccan-600 dark:text-emerald-moroccan-100">{L.heroEyebrow[lang]}</p>
@@ -49,7 +49,7 @@ const paths = [
       </div>
     </div>
     <div class="relative mx-auto w-full max-w-sm max-lg:order-first max-lg:max-w-none">
-      <div class="arch relative aspect-[16/9] border-[6px] sm:aspect-[2/1] lg:aspect-[4/5] lg:border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
+      <div class="arch hero-photo relative aspect-[16/9] border-[6px] sm:aspect-[2/1] lg:aspect-[4/5] lg:border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
         <CityImage scene="home-hero" fallback="marrakech" lang={lang} width={640} sizes="(min-width:1024px) 400px, 100vw" eager />
       </div>
       <div class="card absolute start-3 bottom-3 hidden max-w-[14rem] sm:block lg:-start-8 lg:bottom-14 px-4 py-3 shadow-xl">

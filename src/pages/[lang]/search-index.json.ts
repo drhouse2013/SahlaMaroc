@@ -40,6 +40,7 @@ export const GET: APIRoute = async ({ params }) => {
     ['mre', t('hub.mre.title'), t('hub.mre.description')],
     ['visit', t('hub.visit.title'), t('hub.visit.description')],
     ['cities', t('city.hub.title'), t('city.hub.description', { cities: cityListText(lang) })],
+    ['regions', t('region.hub.title'), t('region.hub.description')],
     ['checklists', t('checklists.title'), t('checklists.description')],
     ['news', t('news.title'), t('news.description')],
   ];

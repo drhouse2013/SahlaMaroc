@@ -18,3 +18,15 @@ export function getPhoto(scene: string, lang: Locale): CityPhoto | null {
   if (!e || !hit) return null;
   return { src: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit, source: e.source };
 }
+
+/** Photos de lieux à visiter : src/assets/photos/spots/<ville>-<lieu>.jpg + manifest.json ({"ville/lieu": entrée}). Optionnelles. */
+const spotFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/spots/*.{jpg,jpeg,png,webp,avif}', { eager: true });
+const spotManifests = import.meta.glob<{ default: Record<string, Entry> }>('../assets/photos/spots/manifest.json', { eager: true });
+const spotManifest: Record<string, Entry> = Object.values(spotManifests)[0]?.default ?? {};
+
+export function getSpotPhoto(cityId: string, spotId: string, lang: Locale): CityPhoto | null {
+  const e = spotManifest[`${cityId}/${spotId}`];
+  const hit = e && spotFiles[`../assets/photos/spots/${e.file}`];
+  if (!e || !hit) return null;
+  return { src: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit, source: e.source };
+}

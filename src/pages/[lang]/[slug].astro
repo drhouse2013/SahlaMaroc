@@ -34,6 +34,7 @@ import ContactForm from '../../components/ContactForm.astro';
 import Newsletter from '../../components/Newsletter.astro';
 import GuidesHub from '../../components/hubs/GuidesHub.astro';
 import CitiesHub from '../../components/hubs/CitiesHub.astro';
+import RegionsHub from '../../components/hubs/RegionsHub.astro';
 import ChecklistsHub from '../../components/hubs/ChecklistsHub.astro';
 import NewsHub from '../../components/hubs/NewsHub.astro';
 import SearchPage from '../../components/hubs/SearchPage.astro';
@@ -85,6 +86,7 @@ if (entry?.collection === 'articles') {
   !entry ? (
     hub === 'guides' ? <GuidesHub lang={lang} /> :
     hub === 'cities' ? <CitiesHub lang={lang} /> :
+    hub === 'regions' ? <RegionsHub lang={lang} /> :
     hub === 'checklists' ? <ChecklistsHub lang={lang} /> :
     hub === 'news' ? <NewsHub lang={lang} /> :
     hub === 'search' ? <SearchPage lang={lang} /> :

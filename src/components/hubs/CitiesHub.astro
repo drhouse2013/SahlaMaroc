@@ -2,6 +2,7 @@
 /** /<lang>/villes : hub des villes. */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../PageHero.astro';
+import FlagMA from '../FlagMA.astro';
 import CitiesMap from './CitiesMap.astro';
 import CityGrid from '../home/CityGrid.astro';
 import { useTranslations, type Locale } from '../../i18n';
@@ -19,5 +20,5 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('city.hub.title'), description: t('city.hub.description', { cities: cityListText(lang) }), lang, items: CITY_PAGES.map((c) => ({ name: cityLabel(c.id, lang), url: absoluteUrl(cityPath(lang, c.slug[lang]), Astro.site) })) })]}>
   <PageHero lang={lang} crumbs={crumbs} title={t('city.hub.title')} intro={t('city.hub.intro')} icon="mapPin" />
   <CitiesMap lang={lang} />
-  <div class="container-page pt-8"><CityGrid lang={lang} showHeading={false} /></div>
+  <div class="container-page pt-8"><FlagMA lang={lang} class="mb-4 h-5 w-auto rounded-[2px] shadow-sm" /><CityGrid lang={lang} showHeading={false} /><p class="mt-8"><a href={hubPath(lang, 'regions')} class="btn btn-ghost btn-sm">{t('region.hub.title')}</a></p></div>
 </BaseLayout>

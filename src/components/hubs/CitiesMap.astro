@@ -5,6 +5,7 @@ import { CITY_PAGES, cityLabel } from '../../data/cities';
 import { BASE, CITY_FACTOR, COSTS_LAST_UPDATED } from '../../config/costs';
 import { cityPath } from '../../utils/i18n';
 import { formatDate } from '../../utils/date';
+import FlagMA from '../FlagMA.astro';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
@@ -40,13 +41,17 @@ const items = base.map((c) => ({ ...c, x: Math.round(c.x), y: Math.round(c.y) })
 <section class="container-page pt-8" aria-labelledby="cmap-title">
   <h2 id="cmap-title" class="section-title !text-2xl">{t('city.map.title')}</h2>
   <p class="mt-2 text-sm muted">{t('city.map.hint')}</p>
-  <div class="cmap card mt-4 grid gap-4 p-4 md:grid-cols-[2fr_1fr]" data-cmap>
+  <div class="cmap card relative mt-4 grid gap-4 p-4 md:grid-cols-[2fr_1fr]" data-cmap>
+    <FlagMA lang={lang} class="cmap-flag" />
     <svg viewBox="0 0 1140 1235" role="group" aria-label={t('city.map.aria')} class="mx-auto h-auto w-full max-w-[520px]">
       <path d={LAND} class="cmap-edge" />
       <path d={LAND} class="cmap-land" />
-      {items.map((c) => (
+      <path d={LAND} class="cmap-flash" pathLength="100" aria-hidden="true" />
+      {items.map((c, i) => (
         <g class="cmap-pt" role="button" tabindex="0" data-id={c.id} aria-label={c.name}>
           <circle cx={c.x} cy={c.y} r="18" fill="transparent" />
+          <circle cx={c.x} cy={c.y} r="12" class="cmap-halo" style={`animation-delay:${(i * 0.37) % 2.6}s`} aria-hidden="true" />
+          <circle cx={c.x} cy={c.y} r="26" class="cmap-ring" aria-hidden="true" />
           <circle cx={c.x} cy={c.y} r="12" class="cmap-dot" />
         </g>
       ))}
@@ -65,12 +70,26 @@ const items = base.map((c) => ({ ...c, x: Math.round(c.x), y: Math.round(c.y) })
   </div>
 </section>
 <style>
+  :global(.cmap-flag) { position: absolute; top: .75rem; inset-inline-start: .75rem; z-index: 1; width: 2.6rem; height: auto; border-radius: 3px; box-shadow: 0 2px 8px rgb(0 0 0 / .25), 0 0 0 1px rgb(255 255 255 / .6); }
   .cmap-edge { fill: none; stroke: var(--line); stroke-width: 7; stroke-linejoin: round; }
   .cmap-land { fill: color-mix(in srgb, var(--link) 12%, var(--surface)); }
-  .cmap-dot { fill: var(--link); stroke: var(--surface); stroke-width: 5; }
+  .cmap-flash { fill: none; stroke: var(--color-gold-500); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 14 86; opacity: 0; filter: drop-shadow(0 0 6px var(--color-gold-300)); pointer-events: none; }
+  .cmap-dot { fill: var(--link); stroke: var(--surface); stroke-width: 5; transition: stroke-width .2s; }
+  .cmap-halo { fill: var(--link); opacity: 0; transform-box: fill-box; transform-origin: center; pointer-events: none; }
+  .cmap-ring { fill: none; stroke: var(--color-terracotta-500); stroke-width: 4; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.6); transition: opacity .2s, transform .25s; pointer-events: none; }
   .cmap-pt { cursor: pointer; outline: none; }
-  .cmap-pt:hover .cmap-dot, .cmap-pt:focus-visible .cmap-dot, .cmap-pt[aria-pressed='true'] .cmap-dot { stroke: currentColor; stroke-width: 8; }
-  .cmap-pt:focus-visible .cmap-dot { stroke-width: 10; }
+  .cmap-pt:hover .cmap-dot, .cmap-pt:focus-visible .cmap-dot { stroke: currentColor; stroke-width: 8; }
+  .cmap-pt[aria-pressed='true'] .cmap-dot { fill: var(--color-terracotta-600); stroke: var(--surface); stroke-width: 6; }
+  .cmap-pt[aria-pressed='true'] .cmap-ring, .cmap-pt:focus-visible .cmap-ring { opacity: 1; transform: none; }
+  .cmap-pt[aria-pressed='true'] .cmap-halo { fill: var(--color-terracotta-500); }
+  @media (prefers-reduced-motion: no-preference) {
+    .cmap-halo { animation: cmap-pulse 2.6s ease-out infinite; }
+    .cmap-flash { animation: cmap-sweep 2.2s ease-in-out .2s 1 both; }
+    .cmap-pt[aria-pressed='true'] .cmap-ring { animation: cmap-ring 2.2s ease-in-out infinite; }
+  }
+  @keyframes cmap-pulse { 0% { opacity: .5; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(3.2); } }
+  @keyframes cmap-sweep { 0% { opacity: 0; stroke-dashoffset: 14; } 8%, 92% { opacity: 1; } 100% { opacity: 0; stroke-dashoffset: -86; } }
+  @keyframes cmap-ring { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
 </style>
 <script>
   document.querySelectorAll<HTMLElement>('[data-cmap]').forEach((root) => {
