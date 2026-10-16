@@ -293,5 +293,17 @@
   "region.count": "{n} city page(s)",
   "region.source": "Official split: organic law no. 111-14 and decree no. 2-15-40 of 20 February 2015. Schedules, routes and distances are to be confirmed with ONDA, ONCF and ADM.",
   "region.seeAll": "All regions",
-  "region.of": "Region"
+  "region.of": "Region",
+  "spots.all": "All",
+  "spots.kindPl.monument": "Monuments",
+  "spots.kindPl.place": "Squares",
+  "spots.kindPl.beach": "Beaches",
+  "spots.kindPl.nature": "Nature",
+  "spots.kindPl.market": "Souks",
+  "spots.kindPl.museum": "Museums",
+  "spots.kindPl.viewpoint": "Viewpoints",
+  "spots.count": "{n} place|{n} places",
+  "spots.showAll": "Show all places ({n})",
+  "spots.showLess": "Show fewer",
+  "spots.filters": "Filter places by type"
 }

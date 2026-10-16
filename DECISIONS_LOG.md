@@ -146,3 +146,13 @@ Décisions prises sans demande de validation, conformément à la directive de c
 ## 2026-10-16 - Pages villes : lot 1 (Tafraout, Agadir, Dakhla, Laâyoune, El Jadida, Saïdia)
 - Ajout de `lat`/`lon` (optionnels) à `CityPage` ; scènes de repli via `ILLUSTRATION_ALIAS`. Carte non modifiée.
 - Faits limités à nos guides et sources ONDA citées ; ONDA/ONCF/ADM illisibles par outil, d'où mentions « à vérifier » (voir docs/FACTS.csv, docs/VILLES-PLAN.md). Pas de budget hors Agadir (costCity).
+
+## 2026-10-16 - Lieux a visiter : paliers par taille de ville
+- Paliers (poids touristique) : A 16-20 lieux (Casablanca, Marrakech, Fes, Tanger, Rabat, Agadir) ; B 10-12 (Meknes, Oujda, Kenitra, Tetouan, Nador, Laayoune) ; C 7-9 (El Jadida, Dakhla, Al Hoceima, Ouarzazate...) ; D 5-8 (petites villes ; Essaouira et Chefchaouen jusqu'a 10).
+- Regle : seuls les lieux confirmes par une source lue (Wikivoyage, Wikipedia) sont gardes ; les villes sous leur palier faute de sources le restent (pas d'invention).
+- Casablanca : retrait de Sidi Abderrahman et du Musee du judaisme (photos, manifeste, credits, faits). Aucun lieu a theme juif dans les lieux (Tetouan : mention retiree de la medina). Fiche Hassan II sans superlatif.
+
+## 2026-10-17 - Lieux a visiter : 2e passage (completion des paliers)
+- +109 lieux (Wikivoyage FR/EN, Wikipedia FR/EN lus) ; 9 villes creees (Errachidia, Guelmim, Taroudant, Larache, Asilah, Ifrane, Zagora, Sidi Ifni, Tiznit). Rattachements verifies ville par ville : aucune erreur.
+- Exclus : tout lieu a theme juif (ex. Fondation Lorin a Tanger, synagogues d'Ouarzazate/Agadir/El Jadida), lieux « fermes/en renovation » (musee Sijilmassa, parc oiseaux de Laayoune), prix/horaires/distances.
+- Villes encore sous palier faute de source lue : Laayoune 4, Merzouga 4, Kenitra 8, Nador 9, Al Hoceima 9 (B/C), Errachidia 5, Taroudant 6, Tiznit 5, Asilah 5, Tafraout 5, Zagora 6, Guelmim 6 (sources Wikivoyage/Wikipedia minces). Photos : lignes ajoutees en fin de docs/SPOTS-PHOTOS.md.

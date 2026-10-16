@@ -293,5 +293,17 @@
   "region.count": "{n} صفحة مدينة",
   "region.source": "التقسيم الرسمي: القانون التنظيمي رقم 111-14 والمرسوم رقم 2-15-40 الصادر في 20 فبراير 2015. المواعيد والخطوط والمسافات تؤكد لدى المكتب الوطني للمطارات والمكتب الوطني للسكك الحديدية والشركة الوطنية للطرق السيارة.",
   "region.seeAll": "كل الجهات",
-  "region.of": "جهة"
+  "region.of": "جهة",
+  "spots.all": "الكل",
+  "spots.kindPl.monument": "معالم",
+  "spots.kindPl.place": "ساحات",
+  "spots.kindPl.beach": "شواطئ",
+  "spots.kindPl.nature": "طبيعة",
+  "spots.kindPl.market": "أسواق",
+  "spots.kindPl.museum": "متاحف",
+  "spots.kindPl.viewpoint": "إطلالات",
+  "spots.count": "لا أماكن|مكان واحد|مكانان|{n} أماكن|{n} مكانًا|{n} مكان",
+  "spots.showAll": "عرض كل الأماكن ({n})",
+  "spots.showLess": "عرض أقل",
+  "spots.filters": "تصفية الأماكن حسب النوع"
 }

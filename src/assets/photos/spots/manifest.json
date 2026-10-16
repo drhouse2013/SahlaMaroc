@@ -95,30 +95,6 @@
   "credit": "Rais67, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Ancien_consulat_d%27Allemagne.JPG"
  },
- "casablanca/sidi-abderrahman": {
-  "file": "casablanca-sidi-abderrahman.jpg",
-  "alt": {
-   "fr": "Sanctuaire blanc de Sidi Abderrahman sur son îlot rocheux, Casablanca",
-   "en": "The white Sidi Abderrahman shrine on its rocky islet, Casablanca",
-   "es": "El santuario blanco de Sidi Abderrahman sobre su islote rocoso, Casablanca",
-   "de": "Der weiße Schrein Sidi Abderrahman auf seiner Felseninsel, Casablanca",
-   "ar": "ضريح سيدي عبد الرحمن الأبيض فوق جزيرته الصخرية بالدار البيضاء"
-  },
-  "credit": "Ninara from Helsinki, Finland, CC BY 2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Casablanca,_Morocco_(387219703).jpg"
- },
- "casablanca/judaism-museum": {
-  "file": "casablanca-judaism-museum.jpg",
-  "alt": {
-   "fr": "Salle de synagogue reconstituée au Musée du judaïsme marocain, Casablanca",
-   "en": "Reconstructed synagogue hall at the Museum of Moroccan Judaism, Casablanca",
-   "es": "Sala de sinagoga reconstruida en el Museo del Judaísmo Marroquí, Casablanca",
-   "de": "Nachgebauter Synagogenraum im Museum des marokkanischen Judentums, Casablanca",
-   "ar": "قاعة كنيس معاد تشكيلها بمتحف اليهودية المغربية بالدار البيضاء"
-  },
-  "credit": "Osama Shukir Muhammed Amin FRCP(Glasg), CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:One_of_the_halls_at_the_Moroccan_Jewish_Museum,_Casablanca,_Morocco.jpg"
- },
  "rabat/oudayas": {
   "file": "rabat-oudayas.jpg",
   "alt": {
@@ -838,5 +814,965 @@
   },
   "credit": "Alamrani.a, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Water_reflection_Portuguese_Cistern.jpg"
+ },
+ "marrakech/souks": {
+  "file": "marrakech-souks.jpg",
+  "alt": {
+   "fr": "Étals colorés d'un souk de la médina de Marrakech",
+   "en": "Colourful stalls in a Marrakech medina souk",
+   "es": "Puestos de colores en un zoco de la medina de Marrakech",
+   "de": "Bunte Stände in einem Souk der Medina von Marrakesch",
+   "ar": "أكشاك ملونة في سوق بالمدينة العتيقة بمراكش"
+  },
+  "credit": "David Broad, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg"
+ },
+ "marrakech/tanneries": {
+  "file": "marrakech-tanneries.jpg",
+  "alt": {
+   "fr": "Cuves de la tannerie traditionnelle de Marrakech",
+   "en": "Vats of the traditional tannery in Marrakech",
+   "es": "Cubas de la curtiduría tradicional de Marrakech",
+   "de": "Becken der traditionellen Gerberei in Marrakesch",
+   "ar": "أحواض المدبغة التقليدية في مراكش"
+  },
+  "credit": "mwanasimba, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Marrakech_tanneries_(2846868933).jpg"
+ },
+ "marrakech/ysl-museum": {
+  "file": "marrakech-ysl-museum.jpg",
+  "alt": {
+   "fr": "Façade en briques du musée Yves Saint Laurent à Marrakech",
+   "en": "Brick façade of the Yves Saint Laurent Museum in Marrakech",
+   "es": "Fachada de ladrillo del Museo Yves Saint Laurent en Marrakech",
+   "de": "Backsteinfassade des Museums Yves Saint Laurent in Marrakesch",
+   "ar": "واجهة الآجر لمتحف إيف سان لوران في مراكش"
+  },
+  "credit": "Pivari, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Architetti_studio_ko,_museo_YSL_a_Marrakech.jpg"
+ },
+ "marrakech/dar-si-said": {
+  "file": "marrakech-dar-si-said.jpg",
+  "alt": {
+   "fr": "Patio du musée Dar Si Saïd à Marrakech",
+   "en": "Courtyard of the Dar Si Said Museum in Marrakech",
+   "es": "Patio del museo Dar Si Said en Marrakech",
+   "de": "Innenhof des Museums Dar Si Said in Marrakesch",
+   "ar": "فناء متحف دار السي سعيد في مراكش"
+  },
+  "credit": "C messier, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dar_Si_Said_1489.jpg"
+ },
+ "marrakech/bahia": {
+  "file": "marrakech-bahia.jpg",
+  "alt": {
+   "fr": "Grande cour du palais de la Bahia à Marrakech",
+   "en": "The large courtyard of the Bahia Palace in Marrakech",
+   "es": "Gran patio del palacio de la Bahía en Marrakech",
+   "de": "Großer Hof des Bahia-Palasts in Marrakesch",
+   "ar": "الفناء الكبير لقصر الباهية في مراكش"
+  },
+  "credit": "Val Traveler, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg"
+ },
+ "marrakech/menara": {
+  "file": "marrakech-menara.jpg",
+  "alt": {
+   "fr": "Bassin des jardins de la Menara vu depuis le pavillon, Marrakech",
+   "en": "The Menara Gardens basin seen from the pavilion, Marrakech",
+   "es": "Estanque de los jardines de la Menara visto desde el pabellón, Marrakech",
+   "de": "Becken der Menara-Gärten, vom Pavillon aus gesehen, Marrakesch",
+   "ar": "حوض حدائق المنارة من الجناح في مراكش"
+  },
+  "credit": "Werner100359, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Menara_Garden_(Marrakech,_Moroc)_10.jpg"
+ },
+ "marrakech/marrakech-museum": {
+  "file": "marrakech-marrakech-museum.jpg",
+  "alt": {
+   "fr": "Cour intérieure du musée de Marrakech",
+   "en": "Inner courtyard of the Marrakech Museum",
+   "es": "Patio interior del Museo de Marrakech",
+   "de": "Innenhof des Museums von Marrakesch",
+   "ar": "الفناء الداخلي لمتحف مراكش"
+  },
+  "credit": "Donar Reiskoffer, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Museum_of_Marrakech.JPG"
+ },
+ "marrakech/ali-ben-youssef": {
+  "file": "marrakech-ali-ben-youssef.jpg",
+  "alt": {
+   "fr": "Minaret de la mosquée Ali Ben Youssef au-dessus des toits de Marrakech",
+   "en": "The Ali Ben Youssef Mosque minaret above the rooftops of Marrakech",
+   "es": "Alminar de la mezquita Ali Ben Youssef sobre los tejados de Marrakech",
+   "de": "Minarett der Ali-Ben-Youssef-Moschee über den Dächern von Marrakesch",
+   "ar": "صومعة مسجد علي بن يوسف فوق أسطح مراكش"
+  },
+  "credit": "William John Gauthier, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_Youssef_Mosque_(52188886638).jpg"
+ },
+ "marrakech/almoravid-koubba": {
+  "file": "marrakech-almoravid-koubba.jpg",
+  "alt": {
+   "fr": "Koubba almoravide et son dôme à Marrakech",
+   "en": "The Almoravid Koubba and its dome in Marrakech",
+   "es": "La Qubba almorávide y su cúpula en Marrakech",
+   "de": "Die almoravidische Koubba mit ihrer Kuppel in Marrakesch",
+   "ar": "القبة المرابطية وقبتها في مراكش"
+  },
+  "credit": "Michal Osmenda, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Marrakesh,_Almoravid_Koubba_(5365339756)_(2).jpg"
+ },
+ "casablanca/corniche": {
+  "file": "casablanca-corniche.jpg",
+  "alt": {
+   "fr": "Promenade de la Corniche d'Aïn Diab à Casablanca",
+   "en": "The Ain Diab Corniche promenade in Casablanca",
+   "es": "Paseo de la Corniche de Ain Diab en Casablanca",
+   "de": "Promenade der Corniche von Ain Diab in Casablanca",
+   "ar": "كورنيش عين الذئاب في الدار البيضاء"
+  },
+  "credit": "Bertrand SOUBEYRAND, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Promenade_sur_la_Corniche_Ain_Diab_%C3%A0_Casablanca_-_photo_Bertrand_SOUBEYRAND.jpg"
+ },
+ "casablanca/mahkama-pacha": {
+  "file": "casablanca-mahkama-pacha.jpg",
+  "alt": {
+   "fr": "Patio à galerie de bois de la Mahkama du Pacha à Casablanca",
+   "en": "Wooden-galleried courtyard of the Mahkama du Pacha in Casablanca",
+   "es": "Patio con galería de madera de la Mahkama del Pachá en Casablanca",
+   "de": "Hof mit Holzgalerie der Mahkama du Pacha in Casablanca",
+   "ar": "فناء برواق خشبي في محكمة الباشا بالدار البيضاء"
+  },
+  "credit": "HombreDHojalata, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mahkama_du_Pacha_ou_Palais_du_M%C3%A9chouar.jpg"
+ },
+ "casablanca/marche-central": {
+  "file": "casablanca-marche-central.jpg",
+  "alt": {
+   "fr": "Façade du Marché central de Casablanca et son tramway",
+   "en": "Façade of the Central Market in Casablanca with a tram",
+   "es": "Fachada del Mercado Central de Casablanca con un tranvía",
+   "de": "Fassade der Markthalle Marché central in Casablanca mit Straßenbahn",
+   "ar": "واجهة السوق المركزي بالدار البيضاء والترامواي"
+  },
+  "credit": "C messier, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CE%AE_%CE%91%CE%B3%CE%BF%CF%81%CE%AC_%CE%9A%CE%B1%CE%B6%CE%B1%CE%BC%CF%80%CE%BB%CE%AC%CE%BD%CE%BA%CE%B1_1821.jpg"
+ },
+ "casablanca/mohammed-v-square": {
+  "file": "casablanca-mohammed-v-square.jpg",
+  "alt": {
+   "fr": "Fontaine et tour de la place Mohammed V à Casablanca",
+   "en": "Fountain and tower on Mohammed V Square in Casablanca",
+   "es": "Fuente y torre de la plaza Mohammed V en Casablanca",
+   "de": "Brunnen und Turm am Platz Mohammed V in Casablanca",
+   "ar": "نافورة وبرج ساحة محمد الخامس بالدار البيضاء"
+  },
+  "credit": "Hamza Izourane, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Place_Mohammed_V_-_Casablanca_-_2022.jpg"
+ },
+ "casablanca/slaoui-museum": {
+  "file": "casablanca-slaoui-museum.jpg",
+  "alt": {
+   "fr": "Salle d'exposition du musée Abderrahman Slaoui à Casablanca",
+   "en": "Exhibition hall of the Abderrahman Slaoui Museum in Casablanca",
+   "es": "Sala de exposición del Museo Abderrahman Slaoui en Casablanca",
+   "de": "Ausstellungssaal des Museums Abderrahman Slaoui in Casablanca",
+   "ar": "قاعة عرض في متحف عبد الرحمن السلاوي بالدار البيضاء"
+  },
+  "credit": "Musee Abderrahman Slaoui, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_gen%C3%A8se_2.jpg"
+ },
+ "casablanca/villa-des-arts": {
+  "file": "casablanca-villa-des-arts.jpg",
+  "alt": {
+   "fr": "Façade de la Villa des Arts à Casablanca",
+   "en": "Façade of the Villa des Arts in Casablanca",
+   "es": "Fachada de la Villa des Arts en Casablanca",
+   "de": "Fassade der Villa des Arts in Casablanca",
+   "ar": "واجهة فيلا الفنون بالدار البيضاء"
+  },
+  "credit": "Fraguando, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Villa_des_arts_Casablanca_02.jpg"
+ },
+ "casablanca/poste-centrale": {
+  "file": "casablanca-poste-centrale.jpg",
+  "alt": {
+   "fr": "Poste centrale de Casablanca et son tramway",
+   "en": "The Central Post Office in Casablanca with a tram",
+   "es": "Oficina central de Correos de Casablanca con un tranvía",
+   "de": "Hauptpostamt von Casablanca mit Straßenbahn",
+   "ar": "مبنى البريد المركزي بالدار البيضاء والترامواي"
+  },
+  "credit": "L. Vadillo - MaL PhotoSpain, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:20190814_CASABLANCA_69.jpg"
+ },
+ "casablanca/twin-center": {
+  "file": "casablanca-twin-center.jpg",
+  "alt": {
+   "fr": "Tours jumelles du Twin Center à Casablanca",
+   "en": "The twin towers of the Twin Center in Casablanca",
+   "es": "Las torres gemelas del Twin Center en Casablanca",
+   "de": "Die Zwillingstürme des Twin Center in Casablanca",
+   "ar": "برجا توين سنتر بالدار البيضاء"
+  },
+  "credit": "karel291, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ma%C3%A2rif,_Morocco_-_panoramio_(7).jpg"
+ },
+ "casablanca/el-hank-lighthouse": {
+  "file": "casablanca-el-hank-lighthouse.jpg",
+  "alt": {
+   "fr": "Phare d'El Hank à Casablanca",
+   "en": "The El Hank Lighthouse in Casablanca",
+   "es": "El faro de El Hank en Casablanca",
+   "de": "Der Leuchtturm El Hank in Casablanca",
+   "ar": "منارة العنك بالدار البيضاء"
+  },
+  "credit": "HombreDHojalata, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Le_phare_d'El_Hank,_Casablanca,_Maroc.jpg"
+ },
+ "casablanca/ricks-cafe": {
+  "file": "casablanca-ricks-cafe.jpg",
+  "alt": {
+   "fr": "Entrée de Rick's Café à Casablanca",
+   "en": "Entrance of Rick's Café in Casablanca",
+   "es": "Entrada de Rick's Café en Casablanca",
+   "de": "Eingang von Rick's Café in Casablanca",
+   "ar": "مدخل مقهى ريك بالدار البيضاء"
+  },
+  "credit": "Werner100359, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rick%C2%B4s_Cafe_01.jpg"
+ },
+ "casablanca/stade-mohammed-v": {
+  "file": "casablanca-stade-mohammed-v.jpg",
+  "alt": {
+   "fr": "Vue aérienne du stade Mohammed V à Casablanca",
+   "en": "Aerial view of the Mohammed V Stadium in Casablanca",
+   "es": "Vista aérea del estadio Mohammed V de Casablanca",
+   "de": "Luftaufnahme des Stadions Mohammed V in Casablanca",
+   "ar": "منظر جوي لملعب محمد الخامس بالدار البيضاء"
+  },
+  "credit": "DRONE PROD-CINE MAROC, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mohammed_V_stadium.jpg"
+ },
+ "casablanca/art-deco": {
+  "file": "casablanca-art-deco.jpg",
+  "alt": {
+   "fr": "Immeuble art déco du centre de Casablanca",
+   "en": "An Art Deco building in central Casablanca",
+   "es": "Edificio art déco del centro de Casablanca",
+   "de": "Art-déco-Gebäude im Zentrum von Casablanca",
+   "ar": "مبنى بطراز الآرت ديكو وسط الدار البيضاء"
+  },
+  "credit": "Reda benkhadra, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Immeuble_Art_d%C3%A9co.jpg"
+ },
+ "rabat/history-museum": {
+  "file": "rabat-history-museum.jpg",
+  "alt": {
+   "fr": "Bâtiment du musée de l'histoire et des civilisations à Rabat",
+   "en": "The Museum of History and Civilizations building in Rabat",
+   "es": "Edificio del Museo de la Historia y las Civilizaciones de Rabat",
+   "de": "Gebäude des Museums für Geschichte und Zivilisationen in Rabat",
+   "ar": "مبنى متحف التاريخ والحضارات بالرباط"
+  },
+  "credit": "ArnoldBetten, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l'histoire,_Rabat_(2).jpg"
+ },
+ "rabat/st-peters": {
+  "file": "rabat-st-peters.jpg",
+  "alt": {
+   "fr": "Cathédrale Saint-Pierre de Rabat et ses deux tours",
+   "en": "St. Peter's Cathedral in Rabat with its two towers",
+   "es": "Catedral de San Pedro de Rabat con sus dos torres",
+   "de": "Kathedrale Saint-Pierre in Rabat mit ihren zwei Türmen",
+   "ar": "كاتدرائية القديس بطرس بالرباط وبرجاها"
+  },
+  "credit": "Nawalbennani, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-Pierre_de_Rabat.JPG"
+ },
+ "rabat/bab-rouah": {
+  "file": "rabat-bab-rouah.jpg",
+  "alt": {
+   "fr": "Porte Bab er-Rouah et ses remparts à Rabat",
+   "en": "Bab er-Rouah gate and its ramparts in Rabat",
+   "es": "Puerta Bab er-Rouah y sus murallas en Rabat",
+   "de": "Das Tor Bab er-Rouah und seine Mauern in Rabat",
+   "ar": "باب الرواح وأسواره بالرباط"
+  },
+  "credit": "Dortiti, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D8%AD.jpg"
+ },
+ "rabat/mmvi-museum": {
+  "file": "rabat-mmvi-museum.jpg",
+  "alt": {
+   "fr": "Façade du musée Mohammed VI d'art moderne et contemporain à Rabat",
+   "en": "Façade of the Mohammed VI Museum of Modern and Contemporary Art in Rabat",
+   "es": "Fachada del Museo Mohammed VI de Arte Moderno y Contemporáneo en Rabat",
+   "de": "Fassade des Mohammed-VI-Museums für moderne und zeitgenössische Kunst in Rabat",
+   "ar": "واجهة متحف محمد السادس للفن الحديث والمعاصر بالرباط"
+  },
+  "credit": "Boubloub, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rabat_Mohammed_VI_Museum.jpg"
+ },
+ "rabat/currency-museum": {
+  "file": "rabat-currency-museum.jpg",
+  "alt": {
+   "fr": "Bâtiment du musée de Bank Al-Maghrib à Rabat",
+   "en": "The Bank Al-Maghrib Museum building in Rabat",
+   "es": "Edificio del Museo de Bank Al-Maghrib en Rabat",
+   "de": "Gebäude des Museums von Bank Al-Maghrib in Rabat",
+   "ar": "مبنى متحف بنك المغرب بالرباط"
+  },
+  "credit": "Boubloub, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Morocco_Rabat_Bank_Museum.jpg"
+ },
+ "rabat/bab-el-had": {
+  "file": "rabat-bab-el-had.jpg",
+  "alt": {
+   "fr": "Porte Bab El Had et ses remparts à Rabat",
+   "en": "Bab El Had gate and ramparts in Rabat",
+   "es": "Puerta Bab El Had y sus murallas en Rabat",
+   "de": "Das Tor Bab El Had und seine Mauern in Rabat",
+   "ar": "باب الحد وأسواره بالرباط"
+  },
+  "credit": "Photo2023, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bab_El_Had.jpg"
+ },
+ "rabat/oudayas-museum": {
+  "file": "rabat-oudayas-museum.jpg",
+  "alt": {
+   "fr": "Cour du musée national de la Parure dans la kasbah des Oudayas, Rabat",
+   "en": "Courtyard of the National Museum of Adornment in the Oudayas Kasbah, Rabat",
+   "es": "Patio del Museo Nacional del Adorno en la alcazaba de los Udaya, Rabat",
+   "de": "Hof des Nationalmuseums für Schmuck in der Kasbah des Oudaya, Rabat",
+   "ar": "فناء المتحف الوطني للحلي في قصبة الأوداية بالرباط"
+  },
+  "credit": "OussamaHamama, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:MUS%C3%89E_NATIONAL_DE_LA_PARURE.jpg"
+ },
+ "rabat/rabat-beach": {
+  "file": "rabat-rabat-beach.jpg",
+  "alt": {
+   "fr": "Côte rocheuse et plage de Rabat",
+   "en": "Rocky shore and beach at Rabat",
+   "es": "Costa rocosa y playa de Rabat",
+   "de": "Felsige Küste und Strand von Rabat",
+   "ar": "شاطئ الرباط وساحله الصخري"
+  },
+  "credit": "Mohammad lotfi 1, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_de_Rabat_v.jpg"
+ },
+ "tangier/petit-socco": {
+  "file": "tangier-petit-socco.jpg",
+  "alt": {
+   "fr": "Ruelle et façades blanches du Petit Socco à Tanger",
+   "en": "Whitewashed façades around the Petit Socco in Tangier",
+   "es": "Fachadas blancas alrededor del Petit Socco de Tánger",
+   "de": "Weiße Fassaden am Petit Socco in Tanger",
+   "ar": "واجهات بيضاء حول بيتي سوكو في طنجة"
+  },
+  "credit": "Boubloub, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Petit_Socco.jpg"
+ },
+ "tangier/sidi-bou-abib": {
+  "file": "tangier-sidi-bou-abib.jpg",
+  "alt": {
+   "fr": "Minaret et arcades de la mosquée Sidi Bou Abib à Tanger",
+   "en": "Minaret and arcades of the Sidi Bou Abib Mosque in Tangier",
+   "es": "Alminar y arcadas de la mezquita Sidi Bou Abib en Tánger",
+   "de": "Minarett und Arkaden der Sidi-Bou-Abib-Moschee in Tanger",
+   "ar": "مئذنة وأروقة مسجد سيدي بوعبيد في طنجة"
+  },
+  "credit": "Diego Delso, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaza_del_9_de_abril_de_1947,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_28.JPG"
+ },
+ "tangier/st-andrews": {
+  "file": "tangier-st-andrews.jpg",
+  "alt": {
+   "fr": "Tour blanche et toits verts de l’église Saint-André à Tanger",
+   "en": "White tower and green roofs of St Andrew’s Church in Tangier",
+   "es": "Torre blanca y tejados verdes de la iglesia de San Andrés en Tánger",
+   "de": "Weißer Turm und grüne Dächer der Andreaskirche in Tanger",
+   "ar": "البرج الأبيض والأسقف الخضراء لكنيسة القديس أندرو في طنجة"
+  },
+  "credit": "KJP1, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Church_of_St_Andrew,_Tangier.jpg"
+ },
+ "tangier/cap-malabata": {
+  "file": "tangier-cap-malabata.jpg",
+  "alt": {
+   "fr": "Falaises et phare du cap Malabata près de Tanger",
+   "en": "Cliffs and lighthouse at Cap Malabata near Tangier",
+   "es": "Acantilados y faro del cabo Malabata cerca de Tánger",
+   "de": "Klippen und Leuchtturm am Cap Malabata bei Tanger",
+   "ar": "منحدرات ومنارة رأس مالاباطا قرب طنجة"
+  },
+  "credit": "California Will, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cape_Malabata_Lighthouse.jpg"
+ },
+ "tangier/cervantes-theatre": {
+  "file": "tangier-cervantes-theatre.jpg",
+  "alt": {
+   "fr": "Façade carrelée du Gran Teatro Cervantes à Tanger",
+   "en": "Tiled façade of the Gran Teatro Cervantes in Tangier",
+   "es": "Fachada de azulejos del Gran Teatro Cervantes de Tánger",
+   "de": "Gekachelte Fassade des Gran Teatro Cervantes in Tanger",
+   "ar": "واجهة مزينة بالزليج لمسرح ثيربانتس الكبير في طنجة"
+  },
+  "credit": "Diego Delso, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Gran_Teatro_Cervantes,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_50.JPG"
+ },
+ "tangier/great-mosque": {
+  "file": "tangier-great-mosque.jpg",
+  "alt": {
+   "fr": "Minaret vert et portail de la Grande mosquée de Tanger",
+   "en": "Green minaret and doorway of the Great Mosque of Tangier",
+   "es": "Alminar verde y portal de la Gran Mezquita de Tánger",
+   "de": "Grünes Minarett und Portal der Großen Moschee von Tanger",
+   "ar": "المئذنة الخضراء ومدخل المسجد الأعظم بطنجة"
+  },
+  "credit": "Hiroki Ogawa, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:La_Gran_Mezquita_Tanger.Morocco_-_panoramio.jpg"
+ },
+ "tangier/mendoubia": {
+  "file": "tangier-mendoubia.jpg",
+  "alt": {
+   "fr": "Bâtiment blanc et canon dans les jardins de la Mendoubia à Tanger",
+   "en": "White building and cannon in the Mendoubia gardens, Tangier",
+   "es": "Edificio blanco y cañón en los jardines de la Mendoubia, Tánger",
+   "de": "Weißes Gebäude und Kanone in den Mendoubia-Gärten, Tanger",
+   "ar": "مبنى أبيض ومدفع في حدائق المندوبية بطنجة"
+  },
+  "credit": "Boubloub, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Mendoubia.jpg"
+ },
+ "tangier/plaza-de-toros": {
+  "file": "tangier-plaza-de-toros.jpg",
+  "alt": {
+   "fr": "Arène circulaire de la Plaza de Toros à Tanger",
+   "en": "The circular Plaza de Toros bullring in Tangier",
+   "es": "El ruedo circular de la Plaza de Toros de Tánger",
+   "de": "Die runde Stierkampfarena Plaza de Toros in Tanger",
+   "ar": "حلبة مصارعة الثيران الدائرية في طنجة"
+  },
+  "credit": "عبد الكريم للوشت, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:PlazaTorosTanger.jpg"
+ },
+ "fes/andalusian-mosque": {
+  "file": "fes-andalusian-mosque.jpg",
+  "alt": {
+   "fr": "Portail décoré de la mosquée des Andalous à Fès",
+   "en": "Decorated portal of the Andalusian Mosque in Fes",
+   "es": "Portal decorado de la mezquita de los Andaluces en Fez",
+   "de": "Verziertes Portal der Andalusier-Moschee in Fès",
+   "ar": "المدخل المزخرف لجامع الأندلس في فاس"
+  },
+  "credit": "Robert Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Andalous_mosque_portal.jpg"
+ },
+ "fes/borj-sud": {
+  "file": "fes-borj-sud.jpg",
+  "alt": {
+   "fr": "Rempart ocre du Borj Sud dominant Fès",
+   "en": "The ochre ramparts of Borj Sud overlooking Fes",
+   "es": "Los muros ocres del Borj Sud sobre Fez",
+   "de": "Die ockerfarbenen Mauern des Borj Sud über Fès",
+   "ar": "أسوار برج الجنوب المطلة على فاس"
+  },
+  "credit": "Robert Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Borj_sud1.jpg"
+ },
+ "fes/merenid-tombs": {
+  "file": "fes-merenid-tombs.jpg",
+  "alt": {
+   "fr": "Ruines en pisé des tombeaux mérinides sous un ciel bleu à Fès",
+   "en": "Rammed-earth ruins of the Marinid Tombs under a blue sky in Fes",
+   "es": "Ruinas de tapial de las tumbas meriníes bajo un cielo azul en Fez",
+   "de": "Lehmruinen der Meriniden-Gräber unter blauem Himmel in Fès",
+   "ar": "أطلال المقابر المرينية تحت سماء زرقاء في فاس"
+  },
+  "credit": "Mx. Granger, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Marinid_Tombs_in_April_2016_1.jpg"
+ },
+ "fes/quaraouiyine": {
+  "file": "fes-quaraouiyine.jpg",
+  "alt": {
+   "fr": "Cour carrelée et minaret de la mosquée Al Quaraouiyine à Fès",
+   "en": "Tiled courtyard and minaret of the Al Quaraouiyine Mosque in Fes",
+   "es": "Patio de azulejos y alminar de la mezquita Al Qarawiyyin en Fez",
+   "de": "Gefliester Hof und Minarett der Al-Qarawiyyin-Moschee in Fès",
+   "ar": "صحن مبلط ومئذنة جامع القرويين في فاس"
+  },
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3_(83359).jpg"
+ },
+ "fes/nejjarine": {
+  "file": "fes-nejjarine.jpg",
+  "alt": {
+   "fr": "Galeries en bois sculpté du musée Nejjarine à Fès",
+   "en": "Carved wooden galleries of the Nejjarine Museum in Fes",
+   "es": "Galerías de madera tallada del museo Nejjarine en Fez",
+   "de": "Geschnitzte Holzgalerien des Nejjarine-Museums in Fès",
+   "ar": "أروقة خشبية منحوتة بمتحف النجارين في فاس"
+  },
+  "credit": "Michal Osmenda from Brussels, Belgium, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Fondouk_el-Nejjarine_(Old_name-_Fes_(5364129707)).jpg"
+ },
+ "fes/dar-batha": {
+  "file": "fes-dar-batha.jpg",
+  "alt": {
+   "fr": "Patio carrelé avec fontaine du musée Dar Batha à Fès",
+   "en": "Tiled courtyard and fountain of the Dar Batha Museum in Fes",
+   "es": "Patio de azulejos con fuente del museo Dar Batha en Fez",
+   "de": "Gefliester Hof mit Brunnen im Dar-Batha-Museum, Fès",
+   "ar": "فناء مبلط بنافورة في متحف دار البطحاء بفاس"
+  },
+  "credit": "R Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dar_Batha_DSCF2801.jpg"
+ },
+ "fes/jnan-sbil": {
+  "file": "fes-jnan-sbil.jpg",
+  "alt": {
+   "fr": "Bassin et palmiers du jardin Jnan Sbil à Fès",
+   "en": "Pond and palm trees in the Jnan Sbil Garden, Fes",
+   "es": "Estanque y palmeras en el jardín Jnan Sbil de Fez",
+   "de": "Teich und Palmen im Jnan-Sbil-Garten in Fès",
+   "ar": "بركة ونخيل في حديقة جنان السبيل بفاس"
+  },
+  "credit": "just_a_cheeseburger, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Jnan_Sbil_(Bou_Jeloud_Gardens),_Fes_(8952352159).jpg"
+ },
+ "fes/glaoui-palace": {
+  "file": "fes-glaoui-palace.jpg",
+  "alt": {
+   "fr": "Cour à arcades du palais Glaoui à Fès",
+   "en": "Arcaded courtyard of the Glaoui Palace in Fes",
+   "es": "Patio con arcadas del palacio Glaoui en Fez",
+   "de": "Arkadenhof des Glaoui-Palasts in Fès",
+   "ar": "فناء بأقواس في قصر الكلاوي بفاس"
+  },
+  "credit": "R Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dar_Glaoui_Fes_DSCF4279.jpg"
+ },
+ "essaouira/fishing-port": {
+  "file": "essaouira-fishing-port.jpg",
+  "alt": {
+   "fr": "Barques bleues du port de pêche d’Essaouira",
+   "en": "Blue boats in Essaouira’s fishing port",
+   "es": "Barcas azules del puerto pesquero de Esauira",
+   "de": "Blaue Boote im Fischereihafen von Essaouira",
+   "ar": "قوارب زرقاء في ميناء الصيد بالصويرة"
+  },
+  "credit": "DimiTalen, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Fishing_boats_in_the_port_of_Essaouira,_2008.jpg"
+ },
+ "essaouira/beach": {
+  "file": "essaouira-beach.jpg",
+  "alt": {
+   "fr": "Grande plage de sable d’Essaouira sous un ciel nuageux",
+   "en": "The wide sandy beach of Essaouira under cloudy skies",
+   "es": "La amplia playa de arena de Esauira bajo un cielo nublado",
+   "de": "Der weite Sandstrand von Essaouira unter bewölktem Himmel",
+   "ar": "شاطئ الصويرة الرملي الواسع تحت سماء غائمة"
+  },
+  "credit": "Adam Harangozó, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Essaouira_beach_02.jpg"
+ },
+ "essaouira/place-moulay-hassan": {
+  "file": "essaouira-place-moulay-hassan.jpg",
+  "alt": {
+   "fr": "Façades blanches et bleues de la place Moulay Hassan à Essaouira",
+   "en": "White and blue façades on Moulay Hassan Square in Essaouira",
+   "es": "Fachadas blancas y azules en la plaza Mulay Hassan de Esauira",
+   "de": "Weiß-blaue Fassaden am Platz Moulay Hassan in Essaouira",
+   "ar": "واجهات بيضاء وزرقاء في ساحة مولاي الحسن بالصويرة"
+  },
+  "credit": "mwanasimba from La Réunion, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Place_Moulay_El_Hassan,_Essaouira_(2901935426).jpg"
+ },
+ "essaouira/sidi-kaouki": {
+  "file": "essaouira-sidi-kaouki.jpg",
+  "alt": {
+   "fr": "Bâtisse en pierre au bord de la plage de Sidi Kaouki",
+   "en": "Stone building on the beach at Sidi Kaouki",
+   "es": "Edificio de piedra en la playa de Sidi Kaouki",
+   "de": "Steingebäude am Strand von Sidi Kaouki",
+   "ar": "بناية حجرية على شاطئ سيدي كاوكي"
+  },
+  "credit": "Goldfinchshuffle, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Beach,_Sidi_Kaouki,_Morocco.jpg"
+ },
+ "chefchaouen/grand-mosque": {
+  "file": "chefchaouen-grand-mosque.jpg",
+  "alt": {
+   "fr": "Minaret de la Grande mosquée de Chefchaouen face aux montagnes",
+   "en": "Minaret of the Grand Mosque of Chefchaouen against the mountains",
+   "es": "Alminar de la Gran Mezquita de Chauen frente a las montañas",
+   "de": "Minarett der Großen Moschee von Chefchaouen vor den Bergen",
+   "ar": "مئذنة المسجد الأعظم بشفشاون أمام الجبال"
+  },
+  "credit": "cat_collector, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chefchaouen_(23479090035).jpg"
+ },
+ "chefchaouen/el-haouta": {
+  "file": "chefchaouen-el-haouta.jpg",
+  "alt": {
+   "fr": "Fontaine bleue de la place El Haouta à Chefchaouen",
+   "en": "Blue fountain on El Haouta Square in Chefchaouen",
+   "es": "Fuente azul de la plaza El Haouta en Chauen",
+   "de": "Blauer Brunnen auf dem Platz El Haouta in Chefchaouen",
+   "ar": "نافورة زرقاء في ساحة الحوتة بشفشاون"
+  },
+  "credit": "Badr Rachadi, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg"
+ },
+ "chefchaouen/bouzafar-mosque": {
+  "file": "chefchaouen-bouzafar-mosque.jpg",
+  "alt": {
+   "fr": "Mosquée blanche sur la colline de Chefchaouen",
+   "en": "White mosque on the hill above Chefchaouen",
+   "es": "Mezquita blanca en la colina sobre Chauen",
+   "de": "Weiße Moschee auf dem Hügel über Chefchaouen",
+   "ar": "مسجد أبيض على التل المطل على شفشاون"
+  },
+  "credit": "Robert Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Spanish_mosque_IMG_6179.jpg"
+ },
+ "agadir/valley-of-birds": {
+  "file": "agadir-valley-of-birds.jpg",
+  "alt": {
+   "fr": "Entrée de la Vallée des Oiseaux à Agadir",
+   "en": "Entrance of the Valley of the Birds in Agadir",
+   "es": "Entrada del Valle de los Pájaros en Agadir",
+   "de": "Eingang des Vogeltals in Agadir",
+   "ar": "مدخل وادي الطيور في أكادير"
+  },
+  "credit": "Rudko, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_18-39-49.JPG"
+ },
+ "agadir/mohammed-v-mosque": {
+  "file": "agadir-mohammed-v-mosque.jpg",
+  "alt": {
+   "fr": "Minaret et façade de la mosquée Mohammed V à Agadir",
+   "en": "Minaret and façade of the Mohammed V Mosque in Agadir",
+   "es": "Alminar y fachada de la mezquita Mohamed V en Agadir",
+   "de": "Minarett und Fassade der Mohammed-V-Moschee in Agadir",
+   "ar": "مئذنة وواجهة مسجد محمد الخامس في أكادير"
+  },
+  "credit": "Helmut Seger, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mohammed_V_Moschee_20111014_2.jpg"
+ },
+ "agadir/coco-polizzi-medina": {
+  "file": "agadir-coco-polizzi-medina.jpg",
+  "alt": {
+   "fr": "Place pavée de la médina de Coco Polizzi à Agadir",
+   "en": "Paved square of Coco Polizzi’s Medina in Agadir",
+   "es": "Plaza empedrada de la medina de Coco Polizzi en Agadir",
+   "de": "Gepflasterter Platz der Coco-Polizzi-Medina in Agadir",
+   "ar": "ساحة مبلطة في مدينة كوكو بوليزي بأكادير"
+  },
+  "credit": "Bisel91, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:M%C3%A9dina_Polizzi_Agadir_1.jpg"
+ },
+ "agadir/poste-centrale": {
+  "file": "agadir-poste-centrale.jpg",
+  "alt": {
+   "fr": "Façade de la poste centrale d’Agadir entre les palmiers",
+   "en": "Façade of Agadir’s main post office among palm trees",
+   "es": "Fachada de la oficina central de correos de Agadir entre palmeras",
+   "de": "Fassade der Hauptpost von Agadir zwischen Palmen",
+   "ar": "واجهة البريد المركزي بأكادير بين النخيل"
+  },
+  "credit": "Patrik Kunec, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agadir,_Morocco_-_Main_Post_Office.jpg"
+ },
+ "agadir/crocodile-park": {
+  "file": "agadir-crocodile-park.jpg",
+  "alt": {
+   "fr": "Crocodiles du Nil dans leur enclos du Crocoparc d’Agadir",
+   "en": "Nile crocodiles in their enclosure at Crocoparc Agadir",
+   "es": "Cocodrilos del Nilo en su recinto del Crocoparc de Agadir",
+   "de": "Nilkrokodile in ihrem Gehege im Crocoparc Agadir",
+   "ar": "تماسيح النيل في حظيرتها بحديقة التماسيح بأكادير"
+  },
+  "credit": "Camping Aourir from Aourir, Marokko, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Excursion_Crocoparc_Agadir_(33434626570).jpg"
+ },
+ "agadir/bert-flint-museum": {
+  "file": "agadir-bert-flint-museum.jpg",
+  "alt": {
+   "fr": "Entrée du musée municipal d’Agadir (collection Bert Flint)",
+   "en": "Entrance of the Agadir Municipal Museum (Bert Flint collection)",
+   "es": "Entrada del museo municipal de Agadir (colección Bert Flint)",
+   "de": "Eingang des Städtischen Museums Agadir (Sammlung Bert Flint)",
+   "ar": "مدخل المتحف البلدي بأكادير (مجموعة بيرت فلينت)"
+  },
+  "credit": "Rudko, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_17-52-06.JPG"
+ },
+ "nador/mar-chica-beach": {
+  "file": "nador-mar-chica-beach.jpg",
+  "alt": {
+   "fr": "Rivage de la lagune de Marchica à Nador au coucher du soleil",
+   "en": "Shore of the Marchica lagoon in Nador at sunset",
+   "es": "Orilla de la laguna de Marchica en Nador al atardecer",
+   "de": "Ufer der Lagune Marchica bei Nador im Sonnenuntergang",
+   "ar": "شاطئ بحيرة مارتشيكا في الناظور عند الغروب"
+  },
+  "credit": "Houssain tork, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg"
+ },
+ "nador/kariat-arekmane": {
+  "file": "nador-kariat-arekmane.jpg",
+  "alt": {
+   "fr": "Rochers rouges et barque de pêche sur la plage de Kariat Arekmane",
+   "en": "Red rocks and a fishing boat on Kariat Arekmane beach",
+   "es": "Rocas rojizas y una barca de pesca en la playa de Kariat Arekmane",
+   "de": "Rote Felsen und ein Fischerboot am Strand von Kariat Arekmane",
+   "ar": "صخور حمراء وقارب صيد على شاطئ قرية أركمان"
+  },
+  "credit": "Soufiane elkadaoui, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:La_plage_de_Kariat_Arkmane.jpg"
+ },
+ "tetouan/royal-palace": {
+  "file": "tetouan-royal-palace.jpg",
+  "alt": {
+   "fr": "Façade blanche et porte du Palais royal de Tétouan sur la place du Méchouar",
+   "en": "White façade and gate of the Royal Palace of Tetouan on the Mechouar square",
+   "es": "Fachada blanca y puerta del Palacio Real de Tetuán en la plaza del Mechuar",
+   "de": "Weiße Fassade und Tor des Königspalasts von Tétouan am Mechouar-Platz",
+   "ar": "واجهة بيضاء وباب القصر الملكي بتطوان على ساحة المشور"
+  },
+  "credit": "Dickelbers, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tetouan_Morocco_%C2%A9_03.jpg"
+ },
+ "meknes/sidi-ben-aissa": {
+  "file": "meknes-sidi-ben-aissa.jpg",
+  "alt": {
+   "fr": "Minaret et mosquée de Sidi Ben Aïssa à Meknès sous un ciel bleu",
+   "en": "Minaret and mosque of Sidi Ben Aissa in Meknes under a blue sky",
+   "es": "Alminar y mezquita de Sidi Ben Aissa en Mequinez bajo un cielo azul",
+   "de": "Minarett und Moschee von Sidi Ben Aissa in Meknès unter blauem Himmel",
+   "ar": "صومعة ومسجد سيدي بن عيسى بمكناس تحت سماء زرقاء"
+  },
+  "credit": "Robert Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg"
+ },
+ "ouarzazate/cinema-museum": {
+  "file": "ouarzazate-cinema-museum.jpg",
+  "alt": {
+   "fr": "Ancien projecteur Pathé exposé au musée du cinéma d'Ouarzazate",
+   "en": "Old Pathé projector displayed at the Ouarzazate cinema museum",
+   "es": "Antiguo proyector Pathé expuesto en el museo del cine de Uarzazate",
+   "de": "Alter Pathé-Projektor im Kinomuseum von Ouarzazate",
+   "ar": "جهاز عرض قديم من نوع باتيه معروض في متحف السينما بورزازات"
+  },
+  "credit": "Bjørn Christian Tørrissen, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Pathe_Projector_Ouarzazate.jpg"
+ },
+ "ouarzazate/solar-park": {
+  "file": "ouarzazate-solar-park.jpg",
+  "alt": {
+   "fr": "Champ de miroirs de la centrale solaire Noor à Ouarzazate",
+   "en": "Mirror field of the Noor solar power station in Ouarzazate",
+   "es": "Campo de espejos de la central solar Noor en Uarzazate",
+   "de": "Spiegelfeld des Solarkraftwerks Noor bei Ouarzazate",
+   "ar": "حقل المرايا بمحطة نور للطاقة الشمسية بورزازات"
+  },
+  "credit": "Richard Allaway, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Noor_1_and_2_-_Ouarzazate_Solar_Power_Station_(48962353822).jpg"
+ },
+ "ouarzazate/cla-studios": {
+  "file": "ouarzazate-cla-studios.jpg",
+  "alt": {
+   "fr": "Entrée des studios CLA à Ouarzazate avec un sphinx égyptien",
+   "en": "Entrance of the CLA Studios in Ouarzazate with an Egyptian sphinx",
+   "es": "Entrada de los estudios CLA en Uarzazate con una esfinge egipcia",
+   "de": "Eingang der CLA-Studios in Ouarzazate mit ägyptischer Sphinx",
+   "ar": "مدخل استوديوهات سي إل إيه بورزازات مع تمثال أبو الهول المصري"
+  },
+  "credit": "Souad.achaib, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cla_Studios.jpg"
+ },
+ "ouarzazate/main-square": {
+  "file": "ouarzazate-main-square.jpg",
+  "alt": {
+   "fr": "Bâtiments rouges et tour de la place principale d'Ouarzazate",
+   "en": "Red buildings and tower on Ouarzazate's main square",
+   "es": "Edificios rojos y torre en la plaza principal de Uarzazate",
+   "de": "Rote Gebäude und Turm am Hauptplatz von Ouarzazate",
+   "ar": "مبانٍ حمراء وبرج في الساحة الرئيسية بورزازات"
+  },
+  "credit": "Guillaume Baviere, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Morocco_2014-11-15_(15844367616).jpg"
+ },
+ "oujda/sidi-maafa": {
+  "file": "oujda-sidi-maafa.jpg",
+  "alt": {
+   "fr": "Pinède de la forêt de Sidi Maafa près d'Oujda",
+   "en": "Pine woods of the Sidi Maafa forest near Oujda",
+   "es": "Pinar del bosque de Sidi Maafa cerca de Uchda",
+   "de": "Kiefernwald von Sidi Maafa bei Oujda",
+   "ar": "غابة الصنوبر بسيدي معافة قرب وجدة"
+  },
+  "credit": "The-s-destination, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sidi_Maafa_01.png"
+ },
+ "dakhla/national-park": {
+  "file": "dakhla-national-park.jpg",
+  "alt": {
+   "fr": "Addax mâle dans le paysage rocailleux du parc national de Dakhla",
+   "en": "Male addax in the stony landscape of Dakhla National Park",
+   "es": "Addax macho en el paisaje pedregoso del Parque Nacional de Dajla",
+   "de": "Männlicher Mendesantilope im steinigen Gelände des Nationalparks Dakhla",
+   "ar": "ذكر أبو العنز في المشهد الصخري للمنتزه الوطني بالداخلة"
+  },
+  "credit": "HaytemBouchri93, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:A_big_male_Addax_showing_as_the_power_of_his_horns.jpg"
+ },
+ "dakhla/dragon-island": {
+  "file": "dakhla-dragon-island.jpg",
+  "alt": {
+   "fr": "Véliplanchiste devant l'île du Dragon dans la baie de Dakhla",
+   "en": "Windsurfer in front of Dragon Island in Dakhla Bay",
+   "es": "Windsurfista frente a la isla del Dragón en la bahía de Dajla",
+   "de": "Windsurfer vor der Dracheninsel in der Bucht von Dakhla",
+   "ar": "متزلج بالشراع أمام جزيرة التنين في خليج الداخلة"
+  },
+  "credit": "Nomadz, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Windsurfer_in_front_of_Dragon_Island_at_Dakhla,_March_2009.jpg"
+ },
+ "dakhla/beach": {
+  "file": "dakhla-beach.jpg",
+  "alt": {
+   "fr": "Grande plage de sable près de Dakhla sous un ciel dégagé",
+   "en": "Wide sandy beach near Dakhla under a clear sky",
+   "es": "Amplia playa de arena cerca de Dajla bajo un cielo despejado",
+   "de": "Breiter Sandstrand bei Dakhla unter klarem Himmel",
+   "ar": "شاطئ رملي واسع قرب الداخلة تحت سماء صافية"
+  },
+  "credit": "Tbo47, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_pr%C3%A8s_de_Dakhla_2.jpg"
+ },
+ "el-jadida/deauville-plage": {
+  "file": "el-jadida-deauville-plage.jpg",
+  "alt": {
+   "fr": "Plage d'El Jadida avec un abri bleu face à l'océan",
+   "en": "El Jadida beach with a blue shelter facing the ocean",
+   "es": "Playa de El Yadida con un cobertizo azul frente al océano",
+   "de": "Strand von El Jadida mit blauem Unterstand am Ozean",
+   "ar": "شاطئ الجديدة مع مظلة زرقاء أمام المحيط"
+  },
+  "credit": "Reda benkhadra, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:El_Jadida_Beach.jpg"
+ },
+ "el-jadida/assumption-church": {
+  "file": "el-jadida-assumption-church.jpg",
+  "alt": {
+   "fr": "Façade et clocher de l'église de l'Assomption à El Jadida",
+   "en": "Façade and bell tower of the Church of the Assumption in El Jadida",
+   "es": "Fachada y campanario de la iglesia de la Asunción en El Yadida",
+   "de": "Fassade und Glockenturm der Himmelfahrtskirche in El Jadida",
+   "ar": "واجهة وبرج كنيسة الانتقال في الجديدة"
+  },
+  "credit": "Sharon Hahn Darlin, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:El_Jadida,_Morocco_%F0%9F%87%B2%F0%9F%87%A6_-_Church_of_the_Assumption_Oct_2023.jpg"
+ },
+ "el-jadida/municipal-theatre": {
+  "file": "el-jadida-municipal-theatre.jpg",
+  "alt": {
+   "fr": "Façade blanche du théâtre municipal Afifi à El Jadida",
+   "en": "White façade of the Afifi municipal theatre in El Jadida",
+   "es": "Fachada blanca del teatro municipal Afifi de El Yadida",
+   "de": "Weiße Fassade des Stadttheaters Afifi in El Jadida",
+   "ar": "الواجهة البيضاء للمسرح البلدي عفيفي بالجديدة"
+  },
+  "credit": "Reda benkhadra, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Th%C3%A9%C3%A2tre_Afifi.jpg"
+ },
+ "kenitra/kasbah-mahdiyya": {
+  "file": "kenitra-kasbah-mahdiyya.jpg",
+  "alt": {
+   "fr": "Remparts de la kasbah de Mehdia",
+   "en": "Ramparts of the Mehdia kasbah",
+   "es": "Murallas de la alcazaba de Mehdia",
+   "de": "Wehrmauern der Kasbah von Mehdia",
+   "ar": "أسوار قصبة المهدية"
+  },
+  "credit": "Starssurfer, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Rampart_of_Mehdya_Castle.jpg"
+ },
+ "kenitra/merja-zerga": {
+  "file": "kenitra-merja-zerga.jpg",
+  "alt": {
+   "fr": "Lagune bleue de Merja Zerga à Moulay Bousselham et ses bancs de sable",
+   "en": "Blue Merja Zerga lagoon at Moulay Bousselham with its sandbanks",
+   "es": "Laguna azul de Merja Zerga en Muley Busselham con sus bancos de arena",
+   "de": "Blaue Lagune Merja Zerga bei Moulay Bousselham mit Sandbänken",
+   "ar": "بحيرة مرجة زرقة الزرقاء بمولاي بوسلهام وكثبانها الرملية"
+  },
+  "credit": "Younes MAHRACH, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lagune_Bleu_Moulay_Bousselham.jpg"
+ },
+ "kenitra/mehdia-beach": {
+  "file": "kenitra-mehdia-beach.jpg",
+  "alt": {
+   "fr": "Plage de Mehdia avec un abri de roseaux et des chaises",
+   "en": "Mehdia beach with a reed shelter and chairs",
+   "es": "Playa de Mehdia con un cobertizo de cañas y sillas",
+   "de": "Strand von Mehdia mit Schilfdach und Stühlen",
+   "ar": "شاطئ المهدية مع مظلة من القصب وكراسي"
+  },
+  "credit": "Frenchinmorocco, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_de_Mehdia.JPG"
+ },
+ "kenitra/sidi-boughaba": {
+  "file": "kenitra-sidi-boughaba.jpg",
+  "alt": {
+   "fr": "Lac de la merja de Sidi Boughaba bordé de forêt",
+   "en": "Lake of the Sidi Boughaba merja bordered by forest",
+   "es": "Lago de la merja de Sidi Boughaba bordeado de bosque",
+   "de": "See der Merja Sidi Boughaba, vom Wald gesäumt",
+   "ar": "بحيرة مرجة سيدي بوغابة تحيط بها الغابة"
+  },
+  "credit": "Timothy A. Gonsalves, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:NW_Central_Sidi_Boughaba_Lake_Kenitra_Nov25_A7CR_08995.jpg"
+ },
+ "kenitra/thamusida": {
+  "file": "kenitra-thamusida.jpg",
+  "alt": {
+   "fr": "Colonnes et vestiges romains du site de Thamusida au bord du Sebou",
+   "en": "Columns and Roman remains at the Thamusida site beside the Sebou",
+   "es": "Columnas y restos romanos del yacimiento de Thamusida junto al Sebú",
+   "de": "Säulen und römische Reste der Stätte Thamusida am Sebou",
+   "ar": "أعمدة وبقايا رومانية في موقع تموسيدا على نهر سبو"
+  },
+  "credit": "Carole Raddato from FRANKFURT, Germany, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Thamusida,_Mauretania_Tingitana,_Morocco_(25394792208).jpg"
+ },
+ "tafraout/ammeln-valley": {
+  "file": "tafraout-ammeln-valley.jpg",
+  "alt": {
+   "fr": "Vallée d'Ammeln près de Tafraout, route en lacets dans les montagnes de l'Anti-Atlas",
+   "en": "Ammeln Valley near Tafraout, a winding road through the Anti-Atlas mountains",
+   "es": "Valle de Ammeln cerca de Tafraout, con una carretera sinuosa entre las montañas del Antiatlas",
+   "de": "Das Ammeln-Tal bei Tafraout mit einer Serpentinenstraße durch das Anti-Atlas-Gebirge",
+   "ar": "وادي أملن قرب تافراوت وطريق متعرج وسط جبال الأطلس الصغير"
+  },
+  "credit": "Ayman Abdelilah, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Valley_of_Ammeln.jpg"
+ },
+ "merzouga/dayet-srji": {
+  "file": "merzouga-dayet-srji.jpg",
+  "alt": {
+   "fr": "Lac temporaire de Dayet Srji près de Merzouga, avec les dunes de l'erg Chebbi à l'horizon",
+   "en": "Dayet Srji seasonal lake near Merzouga, with the Erg Chebbi dunes on the horizon",
+   "es": "Lago temporal Dayet Srji cerca de Merzouga, con las dunas del Erg Chebbi al fondo",
+   "de": "Der saisonale See Dayet Srji bei Merzouga mit den Dünen des Erg Chebbi am Horizont",
+   "ar": "بحيرة ضاية سرجي الموسمية قرب مرزوكة وكثبان عرق الشبي في الأفق"
+  },
+  "credit": "Ron Knight from Seaford, East Sussex, United Kingdom, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Merzouga_Lake_(12383277085).jpg"
  }
 }

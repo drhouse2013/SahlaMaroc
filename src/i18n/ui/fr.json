@@ -293,5 +293,17 @@
   "region.count": "{n} fiche(s) ville",
   "region.source": "Découpage officiel : loi organique n° 111-14 et décret n° 2-15-40 du 20 février 2015. Les horaires, liaisons et distances sont à confirmer auprès de l'ONDA, de l'ONCF et d'ADM.",
   "region.seeAll": "Toutes les régions",
-  "region.of": "Région"
+  "region.of": "Région",
+  "spots.all": "Tous",
+  "spots.kindPl.monument": "Monuments",
+  "spots.kindPl.place": "Places",
+  "spots.kindPl.beach": "Plages",
+  "spots.kindPl.nature": "Nature",
+  "spots.kindPl.market": "Marchés",
+  "spots.kindPl.museum": "Musées",
+  "spots.kindPl.viewpoint": "Points de vue",
+  "spots.count": "{n} lieu|{n} lieux",
+  "spots.showAll": "Voir tous les lieux ({n})",
+  "spots.showLess": "Voir moins",
+  "spots.filters": "Filtrer les lieux par type"
 }

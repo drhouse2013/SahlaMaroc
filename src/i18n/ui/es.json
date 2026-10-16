@@ -293,5 +293,17 @@
   "region.count": "{n} ficha(s) de ciudad",
   "region.source": "División oficial: ley orgánica n.º 111-14 y decreto n.º 2-15-40 del 20 de febrero de 2015. Horarios, conexiones y distancias, por confirmar con la ONDA, la ONCF y ADM.",
   "region.seeAll": "Todas las regiones",
-  "region.of": "Región"
+  "region.of": "Región",
+  "spots.all": "Todos",
+  "spots.kindPl.monument": "Monumentos",
+  "spots.kindPl.place": "Plazas",
+  "spots.kindPl.beach": "Playas",
+  "spots.kindPl.nature": "Naturaleza",
+  "spots.kindPl.market": "Zocos",
+  "spots.kindPl.museum": "Museos",
+  "spots.kindPl.viewpoint": "Miradores",
+  "spots.count": "{n} lugar|{n} lugares",
+  "spots.showAll": "Ver todos los lugares ({n})",
+  "spots.showLess": "Ver menos",
+  "spots.filters": "Filtrar lugares por tipo"
 }

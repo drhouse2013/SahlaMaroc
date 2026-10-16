@@ -293,5 +293,17 @@
   "region.count": "{n} Stadtseite(n)",
   "region.source": "Offizielle Einteilung: Organgesetz Nr. 111-14 und Dekret Nr. 2-15-40 vom 20. Februar 2015. Fahrpläne, Verbindungen und Entfernungen bei ONDA, ONCF und ADM bestätigen.",
   "region.seeAll": "Alle Regionen",
-  "region.of": "Region"
+  "region.of": "Region",
+  "spots.all": "Alle",
+  "spots.kindPl.monument": "Denkmäler",
+  "spots.kindPl.place": "Plätze",
+  "spots.kindPl.beach": "Strände",
+  "spots.kindPl.nature": "Natur",
+  "spots.kindPl.market": "Souks",
+  "spots.kindPl.museum": "Museen",
+  "spots.kindPl.viewpoint": "Aussichtspunkte",
+  "spots.count": "{n} Ort|{n} Orte",
+  "spots.showAll": "Alle Orte anzeigen ({n})",
+  "spots.showLess": "Weniger anzeigen",
+  "spots.filters": "Orte nach Art filtern"
 }

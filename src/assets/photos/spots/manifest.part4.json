@@ -1,0 +1,350 @@
+{
+ "marrakech/souks": {
+  "file": "marrakech-souks.jpg",
+  "alt": {
+   "fr": "Étals colorés d'un souk de la médina de Marrakech",
+   "en": "Colourful stalls in a Marrakech medina souk",
+   "es": "Puestos de colores en un zoco de la medina de Marrakech",
+   "de": "Bunte Stände in einem Souk der Medina von Marrakesch",
+   "ar": "أكشاك ملونة في سوق بالمدينة العتيقة بمراكش"
+  },
+  "credit": "David Broad, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg"
+ },
+ "marrakech/tanneries": {
+  "file": "marrakech-tanneries.jpg",
+  "alt": {
+   "fr": "Cuves de la tannerie traditionnelle de Marrakech",
+   "en": "Vats of the traditional tannery in Marrakech",
+   "es": "Cubas de la curtiduría tradicional de Marrakech",
+   "de": "Becken der traditionellen Gerberei in Marrakesch",
+   "ar": "أحواض المدبغة التقليدية في مراكش"
+  },
+  "credit": "mwanasimba, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Marrakech_tanneries_(2846868933).jpg"
+ },
+ "marrakech/ysl-museum": {
+  "file": "marrakech-ysl-museum.jpg",
+  "alt": {
+   "fr": "Façade en briques du musée Yves Saint Laurent à Marrakech",
+   "en": "Brick façade of the Yves Saint Laurent Museum in Marrakech",
+   "es": "Fachada de ladrillo del Museo Yves Saint Laurent en Marrakech",
+   "de": "Backsteinfassade des Museums Yves Saint Laurent in Marrakesch",
+   "ar": "واجهة الآجر لمتحف إيف سان لوران في مراكش"
+  },
+  "credit": "Pivari, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Architetti_studio_ko,_museo_YSL_a_Marrakech.jpg"
+ },
+ "marrakech/dar-si-said": {
+  "file": "marrakech-dar-si-said.jpg",
+  "alt": {
+   "fr": "Patio du musée Dar Si Saïd à Marrakech",
+   "en": "Courtyard of the Dar Si Said Museum in Marrakech",
+   "es": "Patio del museo Dar Si Said en Marrakech",
+   "de": "Innenhof des Museums Dar Si Said in Marrakesch",
+   "ar": "فناء متحف دار السي سعيد في مراكش"
+  },
+  "credit": "C messier, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dar_Si_Said_1489.jpg"
+ },
+ "marrakech/bahia": {
+  "file": "marrakech-bahia.jpg",
+  "alt": {
+   "fr": "Grande cour du palais de la Bahia à Marrakech",
+   "en": "The large courtyard of the Bahia Palace in Marrakech",
+   "es": "Gran patio del palacio de la Bahía en Marrakech",
+   "de": "Großer Hof des Bahia-Palasts in Marrakesch",
+   "ar": "الفناء الكبير لقصر الباهية في مراكش"
+  },
+  "credit": "Val Traveler, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg"
+ },
+ "marrakech/menara": {
+  "file": "marrakech-menara.jpg",
+  "alt": {
+   "fr": "Bassin des jardins de la Menara vu depuis le pavillon, Marrakech",
+   "en": "The Menara Gardens basin seen from the pavilion, Marrakech",
+   "es": "Estanque de los jardines de la Menara visto desde el pabellón, Marrakech",
+   "de": "Becken der Menara-Gärten, vom Pavillon aus gesehen, Marrakesch",
+   "ar": "حوض حدائق المنارة من الجناح في مراكش"
+  },
+  "credit": "Werner100359, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Menara_Garden_(Marrakech,_Moroc)_10.jpg"
+ },
+ "marrakech/marrakech-museum": {
+  "file": "marrakech-marrakech-museum.jpg",
+  "alt": {
+   "fr": "Cour intérieure du musée de Marrakech",
+   "en": "Inner courtyard of the Marrakech Museum",
+   "es": "Patio interior del Museo de Marrakech",
+   "de": "Innenhof des Museums von Marrakesch",
+   "ar": "الفناء الداخلي لمتحف مراكش"
+  },
+  "credit": "Donar Reiskoffer, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Museum_of_Marrakech.JPG"
+ },
+ "marrakech/ali-ben-youssef": {
+  "file": "marrakech-ali-ben-youssef.jpg",
+  "alt": {
+   "fr": "Minaret de la mosquée Ali Ben Youssef au-dessus des toits de Marrakech",
+   "en": "The Ali Ben Youssef Mosque minaret above the rooftops of Marrakech",
+   "es": "Alminar de la mezquita Ali Ben Youssef sobre los tejados de Marrakech",
+   "de": "Minarett der Ali-Ben-Youssef-Moschee über den Dächern von Marrakesch",
+   "ar": "صومعة مسجد علي بن يوسف فوق أسطح مراكش"
+  },
+  "credit": "William John Gauthier, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ben_Youssef_Mosque_(52188886638).jpg"
+ },
+ "marrakech/almoravid-koubba": {
+  "file": "marrakech-almoravid-koubba.jpg",
+  "alt": {
+   "fr": "Koubba almoravide et son dôme à Marrakech",
+   "en": "The Almoravid Koubba and its dome in Marrakech",
+   "es": "La Qubba almorávide y su cúpula en Marrakech",
+   "de": "Die almoravidische Koubba mit ihrer Kuppel in Marrakesch",
+   "ar": "القبة المرابطية وقبتها في مراكش"
+  },
+  "credit": "Michal Osmenda, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Marrakesh,_Almoravid_Koubba_(5365339756)_(2).jpg"
+ },
+ "casablanca/corniche": {
+  "file": "casablanca-corniche.jpg",
+  "alt": {
+   "fr": "Promenade de la Corniche d'Aïn Diab à Casablanca",
+   "en": "The Ain Diab Corniche promenade in Casablanca",
+   "es": "Paseo de la Corniche de Ain Diab en Casablanca",
+   "de": "Promenade der Corniche von Ain Diab in Casablanca",
+   "ar": "كورنيش عين الذئاب في الدار البيضاء"
+  },
+  "credit": "Bertrand SOUBEYRAND, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Promenade_sur_la_Corniche_Ain_Diab_%C3%A0_Casablanca_-_photo_Bertrand_SOUBEYRAND.jpg"
+ },
+ "casablanca/mahkama-pacha": {
+  "file": "casablanca-mahkama-pacha.jpg",
+  "alt": {
+   "fr": "Patio à galerie de bois de la Mahkama du Pacha à Casablanca",
+   "en": "Wooden-galleried courtyard of the Mahkama du Pacha in Casablanca",
+   "es": "Patio con galería de madera de la Mahkama del Pachá en Casablanca",
+   "de": "Hof mit Holzgalerie der Mahkama du Pacha in Casablanca",
+   "ar": "فناء برواق خشبي في محكمة الباشا بالدار البيضاء"
+  },
+  "credit": "HombreDHojalata, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mahkama_du_Pacha_ou_Palais_du_M%C3%A9chouar.jpg"
+ },
+ "casablanca/marche-central": {
+  "file": "casablanca-marche-central.jpg",
+  "alt": {
+   "fr": "Façade du Marché central de Casablanca et son tramway",
+   "en": "Façade of the Central Market in Casablanca with a tram",
+   "es": "Fachada del Mercado Central de Casablanca con un tranvía",
+   "de": "Fassade der Markthalle Marché central in Casablanca mit Straßenbahn",
+   "ar": "واجهة السوق المركزي بالدار البيضاء والترامواي"
+  },
+  "credit": "C messier, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CE%AE_%CE%91%CE%B3%CE%BF%CF%81%CE%AC_%CE%9A%CE%B1%CE%B6%CE%B1%CE%BC%CF%80%CE%BB%CE%AC%CE%BD%CE%BA%CE%B1_1821.jpg"
+ },
+ "casablanca/mohammed-v-square": {
+  "file": "casablanca-mohammed-v-square.jpg",
+  "alt": {
+   "fr": "Fontaine et tour de la place Mohammed V à Casablanca",
+   "en": "Fountain and tower on Mohammed V Square in Casablanca",
+   "es": "Fuente y torre de la plaza Mohammed V en Casablanca",
+   "de": "Brunnen und Turm am Platz Mohammed V in Casablanca",
+   "ar": "نافورة وبرج ساحة محمد الخامس بالدار البيضاء"
+  },
+  "credit": "Hamza Izourane, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Place_Mohammed_V_-_Casablanca_-_2022.jpg"
+ },
+ "casablanca/slaoui-museum": {
+  "file": "casablanca-slaoui-museum.jpg",
+  "alt": {
+   "fr": "Salle d'exposition du musée Abderrahman Slaoui à Casablanca",
+   "en": "Exhibition hall of the Abderrahman Slaoui Museum in Casablanca",
+   "es": "Sala de exposición del Museo Abderrahman Slaoui en Casablanca",
+   "de": "Ausstellungssaal des Museums Abderrahman Slaoui in Casablanca",
+   "ar": "قاعة عرض في متحف عبد الرحمن السلاوي بالدار البيضاء"
+  },
+  "credit": "Musee Abderrahman Slaoui, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_gen%C3%A8se_2.jpg"
+ },
+ "casablanca/villa-des-arts": {
+  "file": "casablanca-villa-des-arts.jpg",
+  "alt": {
+   "fr": "Façade de la Villa des Arts à Casablanca",
+   "en": "Façade of the Villa des Arts in Casablanca",
+   "es": "Fachada de la Villa des Arts en Casablanca",
+   "de": "Fassade der Villa des Arts in Casablanca",
+   "ar": "واجهة فيلا الفنون بالدار البيضاء"
+  },
+  "credit": "Fraguando, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Villa_des_arts_Casablanca_02.jpg"
+ },
+ "casablanca/poste-centrale": {
+  "file": "casablanca-poste-centrale.jpg",
+  "alt": {
+   "fr": "Poste centrale de Casablanca et son tramway",
+   "en": "The Central Post Office in Casablanca with a tram",
+   "es": "Oficina central de Correos de Casablanca con un tranvía",
+   "de": "Hauptpostamt von Casablanca mit Straßenbahn",
+   "ar": "مبنى البريد المركزي بالدار البيضاء والترامواي"
+  },
+  "credit": "L. Vadillo - MaL PhotoSpain, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:20190814_CASABLANCA_69.jpg"
+ },
+ "casablanca/twin-center": {
+  "file": "casablanca-twin-center.jpg",
+  "alt": {
+   "fr": "Tours jumelles du Twin Center à Casablanca",
+   "en": "The twin towers of the Twin Center in Casablanca",
+   "es": "Las torres gemelas del Twin Center en Casablanca",
+   "de": "Die Zwillingstürme des Twin Center in Casablanca",
+   "ar": "برجا توين سنتر بالدار البيضاء"
+  },
+  "credit": "karel291, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ma%C3%A2rif,_Morocco_-_panoramio_(7).jpg"
+ },
+ "casablanca/el-hank-lighthouse": {
+  "file": "casablanca-el-hank-lighthouse.jpg",
+  "alt": {
+   "fr": "Phare d'El Hank à Casablanca",
+   "en": "The El Hank Lighthouse in Casablanca",
+   "es": "El faro de El Hank en Casablanca",
+   "de": "Der Leuchtturm El Hank in Casablanca",
+   "ar": "منارة العنك بالدار البيضاء"
+  },
+  "credit": "HombreDHojalata, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Le_phare_d'El_Hank,_Casablanca,_Maroc.jpg"
+ },
+ "casablanca/ricks-cafe": {
+  "file": "casablanca-ricks-cafe.jpg",
+  "alt": {
+   "fr": "Entrée de Rick's Café à Casablanca",
+   "en": "Entrance of Rick's Café in Casablanca",
+   "es": "Entrada de Rick's Café en Casablanca",
+   "de": "Eingang von Rick's Café in Casablanca",
+   "ar": "مدخل مقهى ريك بالدار البيضاء"
+  },
+  "credit": "Werner100359, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rick%C2%B4s_Cafe_01.jpg"
+ },
+ "casablanca/stade-mohammed-v": {
+  "file": "casablanca-stade-mohammed-v.jpg",
+  "alt": {
+   "fr": "Vue aérienne du stade Mohammed V à Casablanca",
+   "en": "Aerial view of the Mohammed V Stadium in Casablanca",
+   "es": "Vista aérea del estadio Mohammed V de Casablanca",
+   "de": "Luftaufnahme des Stadions Mohammed V in Casablanca",
+   "ar": "منظر جوي لملعب محمد الخامس بالدار البيضاء"
+  },
+  "credit": "DRONE PROD-CINE MAROC, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mohammed_V_stadium.jpg"
+ },
+ "casablanca/art-deco": {
+  "file": "casablanca-art-deco.jpg",
+  "alt": {
+   "fr": "Immeuble art déco du centre de Casablanca",
+   "en": "An Art Deco building in central Casablanca",
+   "es": "Edificio art déco del centro de Casablanca",
+   "de": "Art-déco-Gebäude im Zentrum von Casablanca",
+   "ar": "مبنى بطراز الآرت ديكو وسط الدار البيضاء"
+  },
+  "credit": "Reda benkhadra, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Immeuble_Art_d%C3%A9co.jpg"
+ },
+ "rabat/history-museum": {
+  "file": "rabat-history-museum.jpg",
+  "alt": {
+   "fr": "Bâtiment du musée de l'histoire et des civilisations à Rabat",
+   "en": "The Museum of History and Civilizations building in Rabat",
+   "es": "Edificio del Museo de la Historia y las Civilizaciones de Rabat",
+   "de": "Gebäude des Museums für Geschichte und Zivilisationen in Rabat",
+   "ar": "مبنى متحف التاريخ والحضارات بالرباط"
+  },
+  "credit": "ArnoldBetten, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l'histoire,_Rabat_(2).jpg"
+ },
+ "rabat/st-peters": {
+  "file": "rabat-st-peters.jpg",
+  "alt": {
+   "fr": "Cathédrale Saint-Pierre de Rabat et ses deux tours",
+   "en": "St. Peter's Cathedral in Rabat with its two towers",
+   "es": "Catedral de San Pedro de Rabat con sus dos torres",
+   "de": "Kathedrale Saint-Pierre in Rabat mit ihren zwei Türmen",
+   "ar": "كاتدرائية القديس بطرس بالرباط وبرجاها"
+  },
+  "credit": "Nawalbennani, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-Pierre_de_Rabat.JPG"
+ },
+ "rabat/bab-rouah": {
+  "file": "rabat-bab-rouah.jpg",
+  "alt": {
+   "fr": "Porte Bab er-Rouah et ses remparts à Rabat",
+   "en": "Bab er-Rouah gate and its ramparts in Rabat",
+   "es": "Puerta Bab er-Rouah y sus murallas en Rabat",
+   "de": "Das Tor Bab er-Rouah und seine Mauern in Rabat",
+   "ar": "باب الرواح وأسواره بالرباط"
+  },
+  "credit": "Dortiti, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D8%AD.jpg"
+ },
+ "rabat/mmvi-museum": {
+  "file": "rabat-mmvi-museum.jpg",
+  "alt": {
+   "fr": "Façade du musée Mohammed VI d'art moderne et contemporain à Rabat",
+   "en": "Façade of the Mohammed VI Museum of Modern and Contemporary Art in Rabat",
+   "es": "Fachada del Museo Mohammed VI de Arte Moderno y Contemporáneo en Rabat",
+   "de": "Fassade des Mohammed-VI-Museums für moderne und zeitgenössische Kunst in Rabat",
+   "ar": "واجهة متحف محمد السادس للفن الحديث والمعاصر بالرباط"
+  },
+  "credit": "Boubloub, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rabat_Mohammed_VI_Museum.jpg"
+ },
+ "rabat/currency-museum": {
+  "file": "rabat-currency-museum.jpg",
+  "alt": {
+   "fr": "Bâtiment du musée de Bank Al-Maghrib à Rabat",
+   "en": "The Bank Al-Maghrib Museum building in Rabat",
+   "es": "Edificio del Museo de Bank Al-Maghrib en Rabat",
+   "de": "Gebäude des Museums von Bank Al-Maghrib in Rabat",
+   "ar": "مبنى متحف بنك المغرب بالرباط"
+  },
+  "credit": "Boubloub, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Morocco_Rabat_Bank_Museum.jpg"
+ },
+ "rabat/bab-el-had": {
+  "file": "rabat-bab-el-had.jpg",
+  "alt": {
+   "fr": "Porte Bab El Had et ses remparts à Rabat",
+   "en": "Bab El Had gate and ramparts in Rabat",
+   "es": "Puerta Bab El Had y sus murallas en Rabat",
+   "de": "Das Tor Bab El Had und seine Mauern in Rabat",
+   "ar": "باب الحد وأسواره بالرباط"
+  },
+  "credit": "Photo2023, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bab_El_Had.jpg"
+ },
+ "rabat/oudayas-museum": {
+  "file": "rabat-oudayas-museum.jpg",
+  "alt": {
+   "fr": "Cour du musée national de la Parure dans la kasbah des Oudayas, Rabat",
+   "en": "Courtyard of the National Museum of Adornment in the Oudayas Kasbah, Rabat",
+   "es": "Patio del Museo Nacional del Adorno en la alcazaba de los Udaya, Rabat",
+   "de": "Hof des Nationalmuseums für Schmuck in der Kasbah des Oudaya, Rabat",
+   "ar": "فناء المتحف الوطني للحلي في قصبة الأوداية بالرباط"
+  },
+  "credit": "OussamaHamama, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:MUS%C3%89E_NATIONAL_DE_LA_PARURE.jpg"
+ },
+ "rabat/rabat-beach": {
+  "file": "rabat-rabat-beach.jpg",
+  "alt": {
+   "fr": "Côte rocheuse et plage de Rabat",
+   "en": "Rocky shore and beach at Rabat",
+   "es": "Costa rocosa y playa de Rabat",
+   "de": "Felsige Küste und Strand von Rabat",
+   "ar": "شاطئ الرباط وساحله الصخري"
+  },
+  "credit": "Mohammad lotfi 1, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_de_Rabat_v.jpg"
+ }
+}

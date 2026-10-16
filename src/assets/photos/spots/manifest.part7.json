@@ -1,0 +1,26 @@
+{
+ "tafraout/ammeln-valley": {
+  "file": "tafraout-ammeln-valley.jpg",
+  "alt": {
+   "fr": "Vallée d'Ammeln près de Tafraout, route en lacets dans les montagnes de l'Anti-Atlas",
+   "en": "Ammeln Valley near Tafraout, a winding road through the Anti-Atlas mountains",
+   "es": "Valle de Ammeln cerca de Tafraout, con una carretera sinuosa entre las montañas del Antiatlas",
+   "de": "Das Ammeln-Tal bei Tafraout mit einer Serpentinenstraße durch das Anti-Atlas-Gebirge",
+   "ar": "وادي أملن قرب تافراوت وطريق متعرج وسط جبال الأطلس الصغير"
+  },
+  "credit": "Ayman Abdelilah, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Valley_of_Ammeln.jpg"
+ },
+ "merzouga/dayet-srji": {
+  "file": "merzouga-dayet-srji.jpg",
+  "alt": {
+   "fr": "Lac temporaire de Dayet Srji près de Merzouga, avec les dunes de l'erg Chebbi à l'horizon",
+   "en": "Dayet Srji seasonal lake near Merzouga, with the Erg Chebbi dunes on the horizon",
+   "es": "Lago temporal Dayet Srji cerca de Merzouga, con las dunas del Erg Chebbi al fondo",
+   "de": "Der saisonale See Dayet Srji bei Merzouga mit den Dünen des Erg Chebbi am Horizont",
+   "ar": "بحيرة ضاية سرجي الموسمية قرب مرزوكة وكثبان عرق الشبي في الأفق"
+  },
+  "credit": "Ron Knight from Seaford, East Sussex, United Kingdom, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Merzouga_Lake_(12383277085).jpg"
+ }
+}

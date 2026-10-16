@@ -79,7 +79,7 @@ const sections = [
     <div class="min-w-0">
       {spots.length > 0 && (
         <section id="spots" class="scroll-mt-24 pb-10" aria-labelledby="h-spots">
-          <h2 id="h-spots" class="section-title !text-2xl">{t('city.spots')}</h2>
+          <h2 id="h-spots" class="section-title !text-2xl">{t('city.spots')} <span class="muted font-normal">({spots.length})</span></h2>
           <SpotsGallery lang={lang} cityId={id} spots={spots} />
         </section>
       )}
