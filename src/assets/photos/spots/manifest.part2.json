@@ -1,0 +1,302 @@
+{
+ "taghazout/panorama": {
+  "file": "taghazout-panorama.jpg",
+  "alt": {
+   "fr": "Plage Panorama de Taghazout avec surfeurs et rochers",
+   "en": "Panorama Beach in Taghazout with surfers and rocks",
+   "es": "Playa Panorama de Taghazout con surfistas y rocas",
+   "de": "Panorama-Strand in Taghazout mit Surfern und Felsen",
+   "ar": "شاطئ بانوراما في تغازوت مع راكبي أمواج وصخور"
+  },
+  "credit": "Heather Cowper from Bristol, UK, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Panorama_beach_at_Taghazout.jpg"
+ },
+ "taghazout/paradise-valley": {
+  "file": "taghazout-paradise-valley.jpg",
+  "alt": {
+   "fr": "Bassin naturel de Paradise Valley entre les falaises rouges",
+   "en": "Natural pool of Paradise Valley between red cliffs",
+   "es": "Piscina natural de Paradise Valley entre acantilados rojos",
+   "de": "Natürliches Becken im Paradise Valley zwischen roten Felswänden",
+   "ar": "بركة طبيعية في وادي الجنة بين جروف حمراء"
+  },
+  "credit": "Oussama Lahbari, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agadir_Paradise_Valley.jpg"
+ },
+ "nador/gourougou": {
+  "file": "nador-gourougou.jpg",
+  "alt": {
+   "fr": "Route de montagne sur le mont Gourougou avec vue sur la mer",
+   "en": "Mountain road on Mount Gourougou overlooking the sea",
+   "es": "Carretera de montaña en el monte Gurugú con vistas al mar",
+   "de": "Bergstraße am Berg Gourougou mit Blick aufs Meer",
+   "ar": "طريق جبلي في جبل كوروكو بإطلالة على البحر"
+  },
+  "credit": "Rachid0615, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mont_Gourougou.jpg"
+ },
+ "nador/corniche": {
+  "file": "nador-corniche.jpg",
+  "alt": {
+   "fr": "Jetée de la corniche de Nador au crépuscule, au bord de la lagune",
+   "en": "Nador corniche jetty at dusk beside the lagoon",
+   "es": "Espigón de la corniche de Nador al atardecer junto a la laguna",
+   "de": "Mole der Nador-Corniche in der Dämmerung an der Lagune",
+   "ar": "رصيف كورنيش الناظور عند الغسق بجانب البحيرة"
+  },
+  "credit": "Soufiane errami, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Nador_corniche.jpg"
+ },
+ "nador/city-hill": {
+  "file": "nador-city-hill.jpg",
+  "alt": {
+   "fr": "Vue sur la ville de Nador et la mer depuis la colline",
+   "en": "View of Nador city and the sea from the hill",
+   "es": "Vista de la ciudad de Nador y del mar desde la colina",
+   "de": "Blick auf die Stadt Nador und das Meer vom Hügel",
+   "ar": "إطلالة على مدينة الناظور والبحر من التل"
+  },
+  "credit": "Pencil68, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Nador_City_Hill.jpg"
+ },
+ "nador/marchica": {
+  "file": "nador-marchica.jpg",
+  "alt": {
+   "fr": "Coucher de soleil sur la lagune de Marchica à marée basse",
+   "en": "Sunset over the Marchica lagoon at low tide",
+   "es": "Atardecer sobre la laguna de Marchica con marea baja",
+   "de": "Sonnenuntergang über der Marchica-Lagune bei Ebbe",
+   "ar": "غروب الشمس فوق بحيرة مارشيكا عند الجزر"
+  },
+  "credit": "Houssain tork, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg"
+ },
+ "tetouan/medina": {
+  "file": "tetouan-medina.jpg",
+  "alt": {
+   "fr": "Minaret de la mosquée Al-Ayoun dans la médina de Tétouan",
+   "en": "Minaret of the Al-Ayoun mosque in the Tetouan medina",
+   "es": "Alminar de la mezquita Al-Ayun en la medina de Tetuán",
+   "de": "Minarett der Al-Ayun-Moschee in der Medina von Tetuan",
+   "ar": "مئذنة مسجد العيون في مدينة تطوان العتيقة"
+  },
+  "credit": "Yamen, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Medina_de_Tetouan_Nov2020_054.jpg"
+ },
+ "tetouan/bab-okla": {
+  "file": "tetouan-bab-okla.jpg",
+  "alt": {
+   "fr": "Porte Bab El Okla et ses arcs en brique, médina de Tétouan",
+   "en": "Bab El Okla gate with brick arches, Tetouan medina",
+   "es": "Puerta Bab El Okla con arcos de ladrillo, medina de Tetuán",
+   "de": "Tor Bab El Okla mit Backsteinbögen, Medina von Tetuan",
+   "ar": "باب العقلة بأقواسه الآجرية في مدينة تطوان العتيقة"
+  },
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg"
+ },
+ "tetouan/archaeological-museum": {
+  "file": "tetouan-archaeological-museum.jpg",
+  "alt": {
+   "fr": "Salle du musée archéologique de Tétouan avec vitrines",
+   "en": "Gallery of the Tetouan Archaeological Museum with display cases",
+   "es": "Sala del Museo Arqueológico de Tetuán con vitrinas",
+   "de": "Ausstellungsraum des Archäologischen Museums Tetuan mit Vitrinen",
+   "ar": "قاعة المتحف الأثري بتطوان مع واجهات العرض"
+  },
+  "credit": "Yamen, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg"
+ },
+ "tetouan/modern-art": {
+  "file": "tetouan-modern-art.jpg",
+  "alt": {
+   "fr": "Façade blanche du centre d'art moderne de Tétouan",
+   "en": "White façade of the Tetouan Modern Art Centre",
+   "es": "Fachada blanca del Centro de Arte Moderno de Tetuán",
+   "de": "Weiße Fassade des Zentrums für moderne Kunst in Tetuan",
+   "ar": "الواجهة البيضاء لمركز تطوان للفن الحديث"
+  },
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg"
+ },
+ "meknes/bab-mansour": {
+  "file": "meknes-bab-mansour.jpg",
+  "alt": {
+   "fr": "Bab Mansour, grande porte monumentale de Meknès, vue de face",
+   "en": "Bab Mansour, the monumental gate of Meknes, front view",
+   "es": "Bab Mansour, la monumental puerta de Mequinez, vista frontal",
+   "de": "Bab Mansour, das monumentale Tor von Meknès, Frontansicht",
+   "ar": "باب المنصور، البوابة الضخمة لمكناس، منظر أمامي"
+  },
+  "credit": "Steven Lek, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bab_Mansour_Meknes_2018_2.jpg"
+ },
+ "meknes/lahdim": {
+  "file": "meknes-lahdim.jpg",
+  "alt": {
+   "fr": "Place Lahdim à Meknès avec étals de poterie devant les remparts",
+   "en": "Lahdim Square in Meknes with pottery stalls before the ramparts",
+   "es": "Plaza Lahdim en Mequinez con puestos de cerámica ante las murallas",
+   "de": "Platz Lahdim in Meknès mit Töpferständen vor den Stadtmauern",
+   "ar": "ساحة الهديم في مكناس مع أكشاك الفخار أمام الأسوار"
+  },
+  "credit": "Werner100359, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Meknes_(2020)_06.jpg"
+ },
+ "meknes/moulay-ismail": {
+  "file": "meknes-moulay-ismail.jpg",
+  "alt": {
+   "fr": "Cour à fontaine du mausolée de Moulay Ismaïl à Meknès",
+   "en": "Fountain courtyard of the Moulay Ismail mausoleum in Meknes",
+   "es": "Patio con fuente del mausoleo de Muley Ismail en Mequinez",
+   "de": "Brunnenhof des Mausoleums von Moulay Ismail in Meknès",
+   "ar": "الصحن بنافورته في ضريح مولاي إسماعيل بمكناس"
+  },
+  "credit": "CTHOE, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mausoleum-Moulay-Ismail-2-CTH.jpg"
+ },
+ "meknes/bou-inania": {
+  "file": "meknes-bou-inania.jpg",
+  "alt": {
+   "fr": "Cour de la médersa Bou Inania de Meknès vue à travers une arche",
+   "en": "Courtyard of the Bou Inania madrasa in Meknes seen through an arch",
+   "es": "Patio de la madrasa Bou Inania de Mequinez visto a través de un arco",
+   "de": "Innenhof der Bou-Inania-Medrese in Meknès durch einen Bogen gesehen",
+   "ar": "صحن مدرسة بوعنانية بمكناس من خلال قوس"
+  },
+  "credit": "Ariel Gera, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bou_Inania_-_courtyard_through_arch.jpg"
+ },
+ "meknes/heri-souani": {
+  "file": "meknes-heri-souani.jpg",
+  "alt": {
+   "fr": "Arcades des greniers de Heri es-Souani à Meknès",
+   "en": "Arches of the Heri es-Souani granaries in Meknes",
+   "es": "Arcos de los graneros de Heri es-Souani en Mequinez",
+   "de": "Bögen der Kornspeicher Heri es-Souani in Meknès",
+   "ar": "أقواس مخازن هري السواني بمكناس"
+  },
+  "credit": "Grace Tankard, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Meknes_6_(39069702785).jpg"
+ },
+ "ouarzazate/taourirt": {
+  "file": "ouarzazate-taourirt.jpg",
+  "alt": {
+   "fr": "Remparts ocre de la kasbah de Taourirt sous un ciel bleu",
+   "en": "Ochre walls of the Taourirt Kasbah under a blue sky",
+   "es": "Muros ocres de la kasbah de Taourirt bajo un cielo azul",
+   "de": "Ockerfarbene Mauern der Taourirt-Kasbah unter blauem Himmel",
+   "ar": "أسوار قصبة تاوريرت الصفراء تحت سماء زرقاء"
+  },
+  "credit": "János Korom Dr., CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_26bDSC_0353_(39988264510).jpg"
+ },
+ "ouarzazate/ait-benhaddou": {
+  "file": "ouarzazate-ait-benhaddou.jpg",
+  "alt": {
+   "fr": "Ksar d'Aït Ben Haddou vu depuis le lit de l'oued",
+   "en": "Ksar of Ait Ben Haddou seen from the riverbed",
+   "es": "Ksar de Ait Ben Haddou visto desde el cauce del río",
+   "de": "Ksar Aït Ben Haddou vom Flussbett aus gesehen",
+   "ar": "قصر آيت بن حدو من مجرى الوادي"
+  },
+  "credit": "Peter in s, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:A%C3%AFt_Benhaddou_100.jpg"
+ },
+ "ouarzazate/atlas-studios": {
+  "file": "ouarzazate-atlas-studios.jpg",
+  "alt": {
+   "fr": "Décor égyptien des Atlas Studios devant les montagnes",
+   "en": "Egyptian film set at Atlas Studios against the mountains",
+   "es": "Decorado egipcio de Atlas Studios frente a las montañas",
+   "de": "Ägyptische Filmkulisse der Atlas Studios vor den Bergen",
+   "ar": "ديكور مصري في استوديوهات أطلس أمام الجبال"
+  },
+  "credit": "Yair Haklai, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Atlas_Corporation_Studios-Ouarzazate.jpg"
+ },
+ "ouarzazate/fint-oasis": {
+  "file": "ouarzazate-fint-oasis.jpg",
+  "alt": {
+   "fr": "Palmeraie de l'oasis de Fint au pied d'un massif rocheux",
+   "en": "Palm grove of the Fint oasis below a rocky massif",
+   "es": "Palmeral del oasis de Fint al pie de un macizo rocoso",
+   "de": "Palmenhain der Oase Fint am Fuß eines Felsmassivs",
+   "ar": "نخيل واحة فينت عند سفح جبل صخري"
+  },
+  "credit": "Fraguando, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Oasis_de_Fint,_Uarzazat_02.jpg"
+ },
+ "oujda/medina": {
+  "file": "oujda-medina.jpg",
+  "alt": {
+   "fr": "Minaret de la grande mosquée dans la médina d'Oujda",
+   "en": "Minaret of the Great Mosque in the Oujda medina",
+   "es": "Alminar de la Gran Mezquita en la medina de Uchda",
+   "de": "Minarett der Großen Moschee in der Medina von Oujda",
+   "ar": "مئذنة المسجد الكبير في مدينة وجدة العتيقة"
+  },
+  "credit": "Farajiibrahim, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg"
+ },
+ "oujda/bab-sidi-abdelwahab": {
+  "file": "oujda-bab-sidi-abdelwahab.jpg",
+  "alt": {
+   "fr": "Porte crénelée de Bab Sidi Abdelwahab dans les remparts d'Oujda",
+   "en": "Crenellated gate of Bab Sidi Abdelwahab in the Oujda ramparts",
+   "es": "Puerta almenada de Bab Sidi Abdelwahab en las murallas de Uchda",
+   "de": "Zinnenbewehrtes Tor Bab Sidi Abdelwahab in der Stadtmauer von Oujda",
+   "ar": "باب سيدي عبد الوهاب المسنن في أسوار وجدة"
+  },
+  "credit": "Iznassen, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Oujda.baba_sidi_abdel_wahab.jpg"
+ },
+ "oujda/lalla-aicha": {
+  "file": "oujda-lalla-aicha.jpg",
+  "alt": {
+   "fr": "Allée et grands arbres du parc Lalla Aïcha à Oujda",
+   "en": "Path and tall trees in Lalla Aicha Park, Oujda",
+   "es": "Paseo y grandes árboles en el parque Lalla Aicha de Uchda",
+   "de": "Weg und hohe Bäume im Lalla-Aicha-Park in Oujda",
+   "ar": "ممر وأشجار عالية في حديقة لالة عائشة بوجدة"
+  },
+  "credit": "خديجة الكناني, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:PARC_lala_Aicha_%C3%A0_Oujda_03.jpg"
+ },
+ "al-hoceima/national-park": {
+  "file": "al-hoceima-national-park.jpg",
+  "alt": {
+   "fr": "Littoral du parc national d'Al Hoceïma, falaises et pins sur la mer",
+   "en": "Coast of Al Hoceima National Park, cliffs and pines above the sea",
+   "es": "Costa del Parque Nacional de Alhucemas, acantilados y pinos sobre el mar",
+   "de": "Küste des Nationalparks Al Hoceima, Klippen und Kiefern über dem Meer",
+   "ar": "ساحل المنتزه الوطني للحسيمة، جروف وصنوبر فوق البحر"
+  },
+  "credit": "Kokopelado, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Alhucemas_(9).JPG"
+ },
+ "al-hoceima/quemado": {
+  "file": "al-hoceima-quemado.jpg",
+  "alt": {
+   "fr": "Plage Quemado d'Al Hoceïma vue du ciel, avec hôtel et sable",
+   "en": "Aerial view of Quemado Beach in Al Hoceima with hotel and sand",
+   "es": "Vista aérea de la playa Quemado en Alhucemas con hotel y arena",
+   "de": "Luftaufnahme des Strandes Quemado in Al Hoceima mit Hotel und Sand",
+   "ar": "منظر جوي لشاطئ كيمادو بالحسيمة مع فندق ورمال"
+  },
+  "credit": "Abdel Jalil Bouhaj, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg"
+ },
+ "al-hoceima/alhucemas-islands": {
+  "file": "al-hoceima-alhucemas-islands.jpg",
+  "alt": {
+   "fr": "Rocher fortifié du Peñón d'Alhucemas face à la côte marocaine",
+   "en": "Fortified Peñón de Alhucemas rock off the Moroccan coast",
+   "es": "Peñón de Alhucemas, roca fortificada frente a la costa marroquí",
+   "de": "Befestigter Felsen Peñón de Alhucemas vor der marokkanischen Küste",
+   "ar": "صخرة بادس المحصنة أمام الساحل المغربي"
+  },
+  "credit": "Miguel González Novo, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Pe%C3%B1%C3%B3n_de_Alhucemas_desde_la_costa_marroqu%C3%AD.jpg"
+ }
+}

@@ -42,7 +42,7 @@ const items = base.map((c) => ({ ...c, x: Math.round(c.x), y: Math.round(c.y) })
   <h2 id="cmap-title" class="section-title !text-2xl">{t('city.map.title')}</h2>
   <p class="mt-2 text-sm muted">{t('city.map.hint')}</p>
   <div class="cmap card relative mt-4 grid gap-4 p-4 md:grid-cols-[2fr_1fr]" data-cmap>
-    <FlagMA lang={lang} class="cmap-flag" />
+    <FlagMA lang={lang} bg class="cmap-flag" />
     <svg viewBox="0 0 1140 1235" role="group" aria-label={t('city.map.aria')} class="mx-auto h-auto w-full max-w-[520px]">
       <path d={LAND} class="cmap-edge" />
       <path d={LAND} class="cmap-land" />
@@ -70,7 +70,9 @@ const items = base.map((c) => ({ ...c, x: Math.round(c.x), y: Math.round(c.y) })
   </div>
 </section>
 <style>
-  :global(.cmap-flag) { position: absolute; top: .75rem; inset-inline-start: .75rem; z-index: 1; width: 2.6rem; height: auto; border-radius: 3px; box-shadow: 0 2px 8px rgb(0 0 0 / .25), 0 0 0 1px rgb(255 255 255 / .6); }
+  .cmap { overflow: hidden; isolation: isolate; }
+  :global(.cmap-flag) { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; border-radius: inherit; opacity: .42; pointer-events: none; }
+  .cmap::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(135deg, color-mix(in srgb, var(--surface) 55%, transparent), color-mix(in srgb, var(--surface) 25%, transparent)); pointer-events: none; }
   .cmap-edge { fill: none; stroke: var(--line); stroke-width: 7; stroke-linejoin: round; }
   .cmap-land { fill: color-mix(in srgb, var(--link) 12%, var(--surface)); }
   .cmap-flash { fill: none; stroke: var(--color-gold-500); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 14 86; opacity: 0; filter: drop-shadow(0 0 6px var(--color-gold-300)); pointer-events: none; }

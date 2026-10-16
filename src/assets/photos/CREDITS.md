@@ -76,3 +76,71 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/laayoune-beach.jpg | Nassima Chahboun | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%B4%D8%A7%D8%B7%D8%A6_%D9%81%D9%85_%D8%A7%D9%84%D9%88%D8%A7%D8%AF%D8%8C_%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86.jpg |
 | spots/el-jadida-mazagan.jpg | M. Rais | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Forteresse_Jadida_03.JPG |
 | spots/el-jadida-cistern.jpg | Alamrani.a | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Water_reflection_Portuguese_Cistern.jpg |
+
+
+## Photos des lieux (groupe 1)
+
+| Fichier | Auteur, licence | Source |
+|---|---|---|
+| spots/marrakech-jemaa-el-fna.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg |
+| spots/marrakech-koutoubia.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Kutubiyya_Mosque,_Marrakesh,_Morocco,_20250124_1834_7027.jpg |
+| spots/marrakech-majorelle.jpg | Viault, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG |
+| spots/marrakech-ben-youssef.jpg | Marco Almbauer, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg |
+| spots/marrakech-saadian-tombs.jpg | C messier, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg |
+| spots/marrakech-el-badi.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg |
+| spots/casablanca-hassan-ii.jpg | Tinuzzo, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg |
+| spots/casablanca-old-medina.jpg | Rais67, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ancien_consulat_d%27Allemagne.JPG |
+| spots/casablanca-sidi-abderrahman.jpg | Ninara from Helsinki, Finland, CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Casablanca,_Morocco_(387219703).jpg |
+| spots/casablanca-judaism-museum.jpg | Osama Shukir Muhammed Amin FRCP(Glasg), CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:One_of_the_halls_at_the_Moroccan_Jewish_Museum,_Casablanca,_Morocco.jpg |
+| spots/rabat-oudayas.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg |
+| spots/rabat-hassan-tower.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg |
+| spots/rabat-chellah.jpg | Mohibsam, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Challah.jpg |
+| spots/rabat-medina.jpg | U.S. Secretary of Defense, CC BY 2.0 | https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg |
+| spots/tangier-medina.jpg | logopop, CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ancien_Medina,_Tangier,_Morocco_-_panoramio_(11).jpg |
+| spots/tangier-kasbah-museum.jpg | ZAINEB HACHAMI, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_de_Tanger_2.jpg |
+| spots/tangier-american-legation.jpg | Susan, CC BY 2.0 | https://commons.wikimedia.org/wiki/File:American_Legation_Tangier_3.jpg |
+| spots/tangier-grand-socco.jpg | Mhobl, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tanger_-_Marktfrauen_am_Grand_Socco.jpg |
+| spots/tangier-hercules-caves.jpg | Diego Delso, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cuevas_de_H%C3%A9rcules,_Cabo_Espartel,_Marruecos,_2015-12-11,_DD_10-12_HDR.JPG |
+| spots/fes-fes-el-bali.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg |
+| spots/fes-chouara.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_Touristenattraktion_trotz_des_starken_Geruchs%22._01.jpg |
+| spots/fes-bou-inania.jpg | Petar Milošević, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg |
+| spots/fes-al-attarine.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Ein_Juwel_islamischer_Architektur%22._05.jpg |
+| spots/fes-borj-nord.jpg | R Prazeres, Public domain | https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg |
+| spots/essaouira-medina.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg |
+| spots/essaouira-skala.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg |
+| spots/essaouira-mogador-island.jpg | Christian Pirkl, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg |
+| spots/chefchaouen-kasbah.jpg | Emilien Lebourgeois, Public domain | https://commons.wikimedia.org/wiki/File:20230914_12h3632EX_Chefchaouen_Kasbah_(53256409248).jpg |
+| spots/chefchaouen-outa-el-hammam.jpg | Badr Rachadi, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen-the-blue-city-of-morocco-with-the-mountain-view-in-the-backrgound.jpg |
+| spots/chefchaouen-ras-el-ma.jpg | YoTuT from United States, CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen,_Morocco_(5409596611)_(4).jpg |
+| spots/chefchaouen-spanish-mosque.jpg | Emilien Lebourgeois, Public domain | https://commons.wikimedia.org/wiki/File:20230914_14h1617Em_Chefchaouen_(53255237732).jpg |
+
+
+## Photos des lieux (groupe 2)
+
+| Fichier | Auteur | Licence | Source |
+|---|---|---|---|
+| spots/taghazout-panorama.jpg | Heather Cowper from Bristol, UK | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Panorama_beach_at_Taghazout.jpg |
+| spots/taghazout-paradise-valley.jpg | Oussama Lahbari | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Agadir_Paradise_Valley.jpg |
+| spots/nador-gourougou.jpg | Rachid0615 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mont_Gourougou.jpg |
+| spots/nador-corniche.jpg | Soufiane errami | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador_corniche.jpg |
+| spots/nador-city-hill.jpg | Pencil68 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador_City_Hill.jpg |
+| spots/nador-marchica.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg |
+| spots/tetouan-medina.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_de_Tetouan_Nov2020_054.jpg |
+| spots/tetouan-bab-okla.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg |
+| spots/tetouan-archaeological-museum.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg |
+| spots/tetouan-modern-art.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg |
+| spots/meknes-bab-mansour.jpg | Steven Lek | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Mansour_Meknes_2018_2.jpg |
+| spots/meknes-lahdim.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_(2020)_06.jpg |
+| spots/meknes-moulay-ismail.jpg | CTHOE | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mausoleum-Moulay-Ismail-2-CTH.jpg |
+| spots/meknes-bou-inania.jpg | Ariel Gera | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_-_courtyard_through_arch.jpg |
+| spots/meknes-heri-souani.jpg | Grace Tankard | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Meknes_6_(39069702785).jpg |
+| spots/ouarzazate-taourirt.jpg | János Korom Dr. | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_26bDSC_0353_(39988264510).jpg |
+| spots/ouarzazate-ait-benhaddou.jpg | Peter in s | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A%C3%AFt_Benhaddou_100.jpg |
+| spots/ouarzazate-atlas-studios.jpg | Yair Haklai | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Atlas_Corporation_Studios-Ouarzazate.jpg |
+| spots/ouarzazate-fint-oasis.jpg | Fraguando | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Oasis_de_Fint,_Uarzazat_02.jpg |
+| spots/oujda-medina.jpg | Farajiibrahim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg |
+| spots/oujda-bab-sidi-abdelwahab.jpg | Iznassen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Oujda.baba_sidi_abdel_wahab.jpg |
+| spots/oujda-lalla-aicha.jpg | خديجة الكناني | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:PARC_lala_Aicha_%C3%A0_Oujda_03.jpg |
+| spots/al-hoceima-national-park.jpg | Kokopelado | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Alhucemas_(9).JPG |
+| spots/al-hoceima-quemado.jpg | Abdel Jalil Bouhaj | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg |
+| spots/al-hoceima-alhucemas-islands.jpg | Miguel González Novo | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Pe%C3%B1%C3%B3n_de_Alhucemas_desde_la_costa_marroqu%C3%AD.jpg |

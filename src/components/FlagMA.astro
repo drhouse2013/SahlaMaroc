@@ -1,8 +1,8 @@
 ---
 /** Drapeau du Maroc : fond rouge #C1272D, pentagramme vert #006233 (étoile de Salomon, 5 branches, tracé continu). */
 import { useTranslations, type Locale } from '../i18n';
-interface Props { lang: Locale; class?: string }
-const { lang, class: cls } = Astro.props;
+interface Props { lang: Locale; class?: string; bg?: boolean }
+const { lang, class: cls, bg = false } = Astro.props;
 const t = useTranslations(lang);
 const R = 14, cx = 45, cy = 31.5;
 const star = [0, 2, 4, 1, 3].map((k) => {
@@ -11,7 +11,7 @@ const star = [0, 2, 4, 1, 3].map((k) => {
 });
 const d = `M${star.join('L')}Z`;
 ---
-<svg viewBox="0 0 90 60" role="img" aria-label={t('flag.morocco')} class:list={['flag-ma', cls]}>
+<svg viewBox="0 0 90 60" preserveAspectRatio={bg ? 'xMidYMid slice' : undefined} role="img" aria-label={t('flag.morocco')} class:list={['flag-ma', cls]}>
   <rect width="90" height="60" rx="3" fill="#C1272D" />
   <path d={d} fill="none" stroke="#006233" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" />
 </svg>

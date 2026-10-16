@@ -1,0 +1,374 @@
+{
+ "marrakech/jemaa-el-fna": {
+  "file": "marrakech-jemaa-el-fna.jpg",
+  "alt": {
+   "fr": "Place Jemaa el-Fna à Marrakech, étals et foule sous un ciel dégagé",
+   "en": "Jemaa el-Fna square in Marrakech with market stalls and crowds under a clear sky",
+   "es": "Plaza Jemaa el-Fna en Marrakech con puestos y gente bajo un cielo despejado",
+   "de": "Der Platz Jemaa el-Fna in Marrakesch mit Marktständen und Menschen unter klarem Himmel",
+   "ar": "ساحة جامع الفنا في مراكش بأكشاكها وحشودها تحت سماء صافية"
+  },
+  "credit": "Jakub Hałun, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg"
+ },
+ "marrakech/koutoubia": {
+  "file": "marrakech-koutoubia.jpg",
+  "alt": {
+   "fr": "Minaret et façade de la mosquée de la Koutoubia à Marrakech",
+   "en": "Minaret and façade of the Koutoubia Mosque in Marrakech",
+   "es": "Minarete y fachada de la mezquita Kutubía en Marrakech",
+   "de": "Minarett und Fassade der Koutoubia-Moschee in Marrakesch",
+   "ar": "مئذنة وواجهة مسجد الكتبية في مراكش"
+  },
+  "credit": "Jakub Hałun, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kutubiyya_Mosque,_Marrakesh,_Morocco,_20250124_1834_7027.jpg"
+ },
+ "marrakech/majorelle": {
+  "file": "marrakech-majorelle.jpg",
+  "alt": {
+   "fr": "Villa bleu cobalt et bassin du jardin Majorelle à Marrakech",
+   "en": "Cobalt-blue villa and pond in the Majorelle Garden, Marrakech",
+   "es": "Villa azul cobalto y estanque del jardín Majorelle en Marrakech",
+   "de": "Kobaltblaue Villa und Becken im Jardin Majorelle in Marrakesch",
+   "ar": "الفيلا الزرقاء الكوبالتية وحوض ماء في حديقة ماجوريل بمراكش"
+  },
+  "credit": "Viault, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG"
+ },
+ "marrakech/ben-youssef": {
+  "file": "marrakech-ben-youssef.jpg",
+  "alt": {
+   "fr": "Cour intérieure et façade en bois sculpté de la médersa Ben Youssef à Marrakech",
+   "en": "Courtyard and carved cedar façade of the Ben Youssef Madrasa in Marrakech",
+   "es": "Patio y fachada de madera tallada de la madrasa Ben Youssef en Marrakech",
+   "de": "Innenhof und geschnitzte Holzfassade der Ben-Youssef-Medersa in Marrakesch",
+   "ar": "الفناء والواجهة الخشبية المنحوتة لمدرسة ابن يوسف بمراكش"
+  },
+  "credit": "Marco Almbauer, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg"
+ },
+ "marrakech/saadian-tombs": {
+  "file": "marrakech-saadian-tombs.jpg",
+  "alt": {
+   "fr": "Jardin et pavillon des tombeaux saadiens à Marrakech",
+   "en": "Garden and mausoleum pavilion of the Saadian Tombs in Marrakech",
+   "es": "Jardín y pabellón de las tumbas saadíes en Marrakech",
+   "de": "Garten und Mausoleum der Saadier-Gräber in Marrakesch",
+   "ar": "حديقة وجناح قبور السعديين بمراكش"
+  },
+  "credit": "C messier, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg"
+ },
+ "marrakech/el-badi": {
+  "file": "marrakech-el-badi.jpg",
+  "alt": {
+   "fr": "Remparts en pisé du palais El Badi se reflétant dans un bassin, Marrakech",
+   "en": "Rammed-earth walls of El Badi Palace reflected in a pool, Marrakech",
+   "es": "Muros de tapial del palacio El Badi reflejados en un estanque, Marrakech",
+   "de": "Lehmmauern des El-Badi-Palasts spiegeln sich in einem Becken, Marrakesch",
+   "ar": "أسوار قصر البديع الطينية تنعكس في حوض ماء بمراكش"
+  },
+  "credit": "Jakub Hałun, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg"
+ },
+ "casablanca/hassan-ii": {
+  "file": "casablanca-hassan-ii.jpg",
+  "alt": {
+   "fr": "Minaret et façade de la mosquée Hassan II à Casablanca",
+   "en": "Minaret and façade of the Hassan II Mosque in Casablanca",
+   "es": "Minarete y fachada de la mezquita Hassan II en Casablanca",
+   "de": "Minarett und Fassade der Hassan-II-Moschee in Casablanca",
+   "ar": "مئذنة وواجهة مسجد الحسن الثاني بالدار البيضاء"
+  },
+  "credit": "Tinuzzo, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg"
+ },
+ "casablanca/old-medina": {
+  "file": "casablanca-old-medina.jpg",
+  "alt": {
+   "fr": "Ancien consulat d'Allemagne, bâtiment rose dans l'ancienne médina de Casablanca",
+   "en": "Former German consulate, a pink building in Casablanca's old medina",
+   "es": "Antiguo consulado de Alemania, edificio rosa en la antigua medina de Casablanca",
+   "de": "Ehemaliges deutsches Konsulat, rosa Gebäude in der Altstadt von Casablanca",
+   "ar": "القنصلية الألمانية القديمة، مبنى وردي في المدينة القديمة بالدار البيضاء"
+  },
+  "credit": "Rais67, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ancien_consulat_d%27Allemagne.JPG"
+ },
+ "casablanca/sidi-abderrahman": {
+  "file": "casablanca-sidi-abderrahman.jpg",
+  "alt": {
+   "fr": "Sanctuaire blanc de Sidi Abderrahman sur son îlot rocheux, Casablanca",
+   "en": "The white Sidi Abderrahman shrine on its rocky islet, Casablanca",
+   "es": "El santuario blanco de Sidi Abderrahman sobre su islote rocoso, Casablanca",
+   "de": "Der weiße Schrein Sidi Abderrahman auf seiner Felseninsel, Casablanca",
+   "ar": "ضريح سيدي عبد الرحمن الأبيض فوق جزيرته الصخرية بالدار البيضاء"
+  },
+  "credit": "Ninara from Helsinki, Finland, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Casablanca,_Morocco_(387219703).jpg"
+ },
+ "casablanca/judaism-museum": {
+  "file": "casablanca-judaism-museum.jpg",
+  "alt": {
+   "fr": "Salle de synagogue reconstituée au Musée du judaïsme marocain, Casablanca",
+   "en": "Reconstructed synagogue hall at the Museum of Moroccan Judaism, Casablanca",
+   "es": "Sala de sinagoga reconstruida en el Museo del Judaísmo Marroquí, Casablanca",
+   "de": "Nachgebauter Synagogenraum im Museum des marokkanischen Judentums, Casablanca",
+   "ar": "قاعة كنيس معاد تشكيلها بمتحف اليهودية المغربية بالدار البيضاء"
+  },
+  "credit": "Osama Shukir Muhammed Amin FRCP(Glasg), CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:One_of_the_halls_at_the_Moroccan_Jewish_Museum,_Casablanca,_Morocco.jpg"
+ },
+ "rabat/oudayas": {
+  "file": "rabat-oudayas.jpg",
+  "alt": {
+   "fr": "Remparts de la kasbah des Oudayas et barques de pêche sur le Bouregreg, Rabat",
+   "en": "Walls of the Kasbah of the Udayas and fishing boats on the Bouregreg, Rabat",
+   "es": "Murallas de la kasba de los Udayas y barcas de pesca en el Bu Regreg, Rabat",
+   "de": "Mauern der Kasbah der Oudaya und Fischerboote am Bou Regreg, Rabat",
+   "ar": "أسوار قصبة الأوداية وقوارب الصيد على نهر أبي رقراق بالرباط"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg"
+ },
+ "rabat/hassan-tower": {
+  "file": "rabat-hassan-tower.jpg",
+  "alt": {
+   "fr": "Tour Hassan inachevée dominant l'esplanade de colonnes à Rabat",
+   "en": "The unfinished Hassan Tower above its field of columns in Rabat",
+   "es": "La torre Hassan inacabada sobre la explanada de columnas en Rabat",
+   "de": "Der unvollendete Hassan-Turm über dem Säulenfeld in Rabat",
+   "ar": "صومعة حسان غير المكتملة فوق ساحة الأعمدة بالرباط"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg"
+ },
+ "rabat/chellah": {
+  "file": "rabat-chellah.jpg",
+  "alt": {
+   "fr": "Porte monumentale à tours crénelées de la nécropole du Chellah, Rabat",
+   "en": "Monumental gate with crenellated towers at the Chellah necropolis, Rabat",
+   "es": "Monumental puerta con torres almenadas de la necrópolis de Chellah, Rabat",
+   "de": "Monumentales Tor mit Zinnentürmen der Nekropole Chellah, Rabat",
+   "ar": "البوابة الضخمة ذات الأبراج المسننة في موقع شالة بالرباط"
+  },
+  "credit": "Mohibsam, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Challah.jpg"
+ },
+ "rabat/medina": {
+  "file": "rabat-medina.jpg",
+  "alt": {
+   "fr": "Rue des Consuls dans la médina de Rabat, boutiques d'artisanat sous les façades blanchies",
+   "en": "Rue des Consuls in Rabat's medina, craft shops along whitewashed façades",
+   "es": "Rue des Consuls en la medina de Rabat, tiendas de artesanía junto a fachadas encaladas",
+   "de": "Rue des Consuls in der Medina von Rabat mit Kunsthandwerksläden an weißen Fassaden",
+   "ar": "شارع القناصل في مدينة الرباط العتيقة بمحلاته الحرفية وواجهاته البيضاء"
+  },
+  "credit": "U.S. Secretary of Defense, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg"
+ },
+ "tangier/medina": {
+  "file": "tangier-medina.jpg",
+  "alt": {
+   "fr": "Maisons blanchies à fenêtres en arc dans la médina de Tanger",
+   "en": "Whitewashed houses with arched windows in Tangier's medina",
+   "es": "Casas encaladas con ventanas de arco en la medina de Tánger",
+   "de": "Weiß getünchte Häuser mit Bogenfenstern in der Medina von Tanger",
+   "ar": "منازل بيضاء ذات نوافذ مقوسة في مدينة طنجة العتيقة"
+  },
+  "credit": "logopop, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ancien_Medina,_Tangier,_Morocco_-_panoramio_(11).jpg"
+ },
+ "tangier/kasbah-museum": {
+  "file": "tangier-kasbah-museum.jpg",
+  "alt": {
+   "fr": "Arcades de la cour intérieure du Musée de la Kasbah de Tanger",
+   "en": "Arcades of the inner courtyard of the Kasbah Museum in Tangier",
+   "es": "Arcadas del patio interior del Museo de la Kasbah de Tánger",
+   "de": "Arkaden im Innenhof des Kasbah-Museums von Tanger",
+   "ar": "أروقة الفناء الداخلي لمتحف القصبة بطنجة"
+  },
+  "credit": "ZAINEB HACHAMI, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kasbah_de_Tanger_2.jpg"
+ },
+ "tangier/american-legation": {
+  "file": "tangier-american-legation.jpg",
+  "alt": {
+   "fr": "Terrasse et entrée de la Légation américaine de Tanger",
+   "en": "Terrace and entrance of the American Legation in Tangier",
+   "es": "Terraza y entrada de la Legación Americana de Tánger",
+   "de": "Terrasse und Eingang der Amerikanischen Gesandtschaft in Tanger",
+   "ar": "شرفة ومدخل البعثة الأمريكية في طنجة"
+  },
+  "credit": "Susan, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:American_Legation_Tangier_3.jpg"
+ },
+ "tangier/grand-socco": {
+  "file": "tangier-grand-socco.jpg",
+  "alt": {
+   "fr": "Étals de fruits et passantes devant les arcades du Grand Socco, Tanger",
+   "en": "Fruit stalls and passers-by under the arcades of the Grand Socco, Tangier",
+   "es": "Puestos de fruta y transeúntes bajo los soportales del Grand Socco, Tánger",
+   "de": "Obststände und Passanten unter den Arkaden des Grand Socco in Tanger",
+   "ar": "أكشاك الفواكه ومارة أمام أروقة السوق الكبير بطنجة"
+  },
+  "credit": "Mhobl, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tanger_-_Marktfrauen_am_Grand_Socco.jpg"
+ },
+ "tangier/hercules-caves": {
+  "file": "tangier-hercules-caves.jpg",
+  "alt": {
+   "fr": "Ouverture sur l'Atlantique depuis l'intérieur des grottes d'Hercule, près de Tanger",
+   "en": "Opening onto the Atlantic from inside the Caves of Hercules near Tangier",
+   "es": "Abertura al Atlántico desde el interior de las Cuevas de Hércules, cerca de Tánger",
+   "de": "Blick auf den Atlantik aus dem Inneren der Herkulesgrotten bei Tanger",
+   "ar": "فتحة تطل على المحيط الأطلسي من داخل مغارات هرقل قرب طنجة"
+  },
+  "credit": "Diego Delso, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cuevas_de_H%C3%A9rcules,_Cabo_Espartel,_Marruecos,_2015-12-11,_DD_10-12_HDR.JPG"
+ },
+ "fes/fes-el-bali": {
+  "file": "fes-fes-el-bali.jpg",
+  "alt": {
+   "fr": "Toits et minarets de la médina de Fès el-Bali sous les collines environnantes",
+   "en": "Rooftops and minarets of the Fes el-Bali medina below the surrounding hills",
+   "es": "Tejados y minaretes de la medina de Fez el-Bali bajo las colinas circundantes",
+   "de": "Dächer und Minarette der Medina Fès el-Bali vor den umliegenden Hügeln",
+   "ar": "أسطح ومآذن مدينة فاس البالي تحت التلال المحيطة"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg"
+ },
+ "fes/chouara": {
+  "file": "fes-chouara.jpg",
+  "alt": {
+   "fr": "Cuves de teinture des tanneries Chouara vues depuis les terrasses, Fès",
+   "en": "Dye vats of the Chouara tanneries seen from the terraces, Fes",
+   "es": "Cubas de teñido de las curtidurías Chouara vistas desde las terrazas, Fez",
+   "de": "Färbebecken der Gerbereien Chouara von den Terrassen aus, Fès",
+   "ar": "أحواض الصباغة في دباغة الشوارة من المدرجات بفاس"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Eine_Touristenattraktion_trotz_des_starken_Geruchs%22._01.jpg"
+ },
+ "fes/bou-inania": {
+  "file": "fes-bou-inania.jpg",
+  "alt": {
+   "fr": "Minaret vu à travers une arche en stuc sculpté de la médersa Bou Inania, Fès",
+   "en": "Minaret seen through a carved stucco arch of the Bou Inania Madrasa, Fes",
+   "es": "Minarete visto a través de un arco de estuco tallado de la madrasa Bou Inania, Fez",
+   "de": "Minarett durch einen Stuckbogen der Bou-Inania-Medersa, Fès",
+   "ar": "مئذنة تظهر عبر قوس من الجبس المنحوت في مدرسة بوعنانية بفاس"
+  },
+  "credit": "Petar Milošević, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg"
+ },
+ "fes/al-attarine": {
+  "file": "fes-al-attarine.jpg",
+  "alt": {
+   "fr": "Cour de la médersa Al Attarine avec sa vasque centrale et ses zelliges, Fès",
+   "en": "Courtyard of the Al Attarine Madrasa with its central basin and zellige tiles, Fes",
+   "es": "Patio de la madrasa Al Attarine con su pila central y zelliges, Fez",
+   "de": "Innenhof der Al-Attarine-Medersa mit Brunnen und Zellige-Fliesen, Fès",
+   "ar": "فناء مدرسة العطارين بحوضه الأوسط وزليجه في فاس"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Ein_Juwel_islamischer_Architektur%22._05.jpg"
+ },
+ "fes/borj-nord": {
+  "file": "fes-borj-nord.jpg",
+  "alt": {
+   "fr": "Forteresse du Borj Nord dominant la médina de Fès depuis sa colline",
+   "en": "Borj Nord fortress on its hill overlooking the Fes medina",
+   "es": "Fortaleza de Borj Nord sobre su colina con vistas a la medina de Fez",
+   "de": "Die Festung Borj Nord auf ihrem Hügel über der Medina von Fès",
+   "ar": "حصن برج الشمال فوق تلته المطلة على مدينة فاس"
+  },
+  "credit": "R Prazeres, Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg"
+ },
+ "essaouira/medina": {
+  "file": "essaouira-medina.jpg",
+  "alt": {
+   "fr": "Rue animée à arcades et tour de l'horloge dans la médina d'Essaouira",
+   "en": "Busy arcaded street and clock tower in Essaouira's medina",
+   "es": "Calle animada con soportales y torre del reloj en la medina de Esauira",
+   "de": "Belebte Arkadenstraße mit Uhrturm in der Medina von Essaouira",
+   "ar": "شارع نابض بالحياة بأروقة وبرج الساعة في مدينة الصويرة العتيقة"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg"
+ },
+ "essaouira/skala": {
+  "file": "essaouira-skala.jpg",
+  "alt": {
+   "fr": "Canon de bronze sur les remparts de la Skala d'Essaouira",
+   "en": "Bronze cannon on the ramparts of the Skala of Essaouira",
+   "es": "Cañón de bronce en las murallas de la Skala de Esauira",
+   "de": "Bronzekanone auf den Wällen der Skala von Essaouira",
+   "ar": "مدفع برونزي فوق أسوار سقالة الصويرة"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg"
+ },
+ "essaouira/mogador-island": {
+  "file": "essaouira-mogador-island.jpg",
+  "alt": {
+   "fr": "Île de Mogador et son fort face à la plage d'Essaouira",
+   "en": "Mogador Island and its fort seen from Essaouira's shore",
+   "es": "Isla de Mogador y su fuerte vistos desde la costa de Esauira",
+   "de": "Die Insel Mogador mit ihrem Fort vom Strand von Essaouira aus",
+   "ar": "جزيرة موغادور وحصنها كما تُرى من شاطئ الصويرة"
+  },
+  "credit": "Christian Pirkl, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg"
+ },
+ "chefchaouen/kasbah": {
+  "file": "chefchaouen-kasbah.jpg",
+  "alt": {
+   "fr": "Tours crénelées de la kasbah de Chefchaouen et montagnes du Rif",
+   "en": "Crenellated towers of the Chefchaouen kasbah with the Rif mountains behind",
+   "es": "Torres almenadas de la alcazaba de Chefchaouen con las montañas del Rif al fondo",
+   "de": "Zinnentürme der Kasbah von Chefchaouen vor den Rif-Bergen",
+   "ar": "أبراج قصبة شفشاون المسننة وخلفها جبال الريف"
+  },
+  "credit": "Emilien Lebourgeois, Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:20230914_12h3632EX_Chefchaouen_Kasbah_(53256409248).jpg"
+ },
+ "chefchaouen/outa-el-hammam": {
+  "file": "chefchaouen-outa-el-hammam.jpg",
+  "alt": {
+   "fr": "Place Outa el-Hammam et ses terrasses de café, avec la médina bleue et la montagne",
+   "en": "Outa el-Hammam square with café terraces, the blue medina and the mountain behind",
+   "es": "Plaza Outa el-Hammam con terrazas de café, la medina azul y la montaña",
+   "de": "Platz Outa el-Hammam mit Caféterrassen, blauer Medina und Berg",
+   "ar": "ساحة وطاء الحمام بمقاهيها والمدينة الزرقاء والجبل خلفها"
+  },
+  "credit": "Badr Rachadi, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chefchaouen-the-blue-city-of-morocco-with-the-mountain-view-in-the-backrgound.jpg"
+ },
+ "chefchaouen/ras-el-ma": {
+  "file": "chefchaouen-ras-el-ma.jpg",
+  "alt": {
+   "fr": "Cascades de la source de Ras el-Ma au bord de la médina de Chefchaouen",
+   "en": "Cascades of the Ras el-Ma spring at the edge of Chefchaouen's medina",
+   "es": "Cascadas del manantial de Ras el-Ma al borde de la medina de Chefchaouen",
+   "de": "Kaskaden der Quelle Ras el-Ma am Rand der Medina von Chefchaouen",
+   "ar": "شلالات عين رأس الماء على أطراف مدينة شفشاون العتيقة"
+  },
+  "credit": "YoTuT from United States, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chefchaouen,_Morocco_(5409596611)_(4).jpg"
+ },
+ "chefchaouen/spanish-mosque": {
+  "file": "chefchaouen-spanish-mosque.jpg",
+  "alt": {
+   "fr": "Mosquée espagnole blanche sur sa colline au-dessus de Chefchaouen",
+   "en": "The white Spanish Mosque on its hill above Chefchaouen",
+   "es": "La mezquita española blanca en su colina sobre Chefchaouen",
+   "de": "Die weiße Spanische Moschee auf ihrem Hügel über Chefchaouen",
+   "ar": "المسجد الإسباني الأبيض فوق تلته المطلة على شفشاون"
+  },
+  "credit": "Emilien Lebourgeois, Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:20230914_14h1617Em_Chefchaouen_(53255237732).jpg"
+ }
+}
