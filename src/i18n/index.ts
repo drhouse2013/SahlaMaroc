@@ -8,6 +8,8 @@ import es from './ui/es.json';
 import de from './ui/de.json';
 import ar from './ui/ar.json';
 import { DEFAULT_LOCALE, type Locale } from './config';
+import { pluralize } from '../utils/plural';
+import { brandName } from '../utils/seo';
 
 export * from './config';
 
@@ -25,6 +27,9 @@ export function useTranslations(lang: Locale) {
   const fallback = DICTIONARIES[DEFAULT_LOCALE];
   return function t(key: UIKey, vars?: Record<string, string | number>): string {
     let str = dict[key] ?? fallback[key] ?? key;
+    // Formes plurielles « a|b|c » résolues d'après vars.n (voir utils/plural.ts).
+    if (typeof vars?.n === 'number' && str.includes('|')) str = pluralize(lang, vars.n, str);
+    str = str.replaceAll('{brand}', brandName(lang));
     if (vars) {
       for (const [k, v] of Object.entries(vars)) str = str.replaceAll(`{${k}}`, String(v));
     }

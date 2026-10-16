@@ -127,3 +127,15 @@ Décisions prises sans demande de validation, conformément à la directive de c
 ## 2026-10-16 — Section « Nouveautés et procédures administratives »
 - Collection `news` (src/content/news/<lang>/*.md, schéma dans content.config.ts), hub `HUB_SLUGS.news` (/fr/nouveautes-administratives, /en/admin-news…), composant `NewsHub.astro` (fil daté, filtres par thème, sources, limites, guides liés), liens Header/Footer, index de recherche, sitemap (auto, fr/en), encadré « Nouveautés liées » dans ArticleLayout via le champ `related` (translationKey) : aucun Edit de guide nécessaire. Ajouter une entrée = ajouter un fichier .md par langue.
 - 3 entrées (fr/en relues, es/de/ar machineTranslated) : loi 55.19 présentée comme rappel (liste des 22 documents non confirmée), heure légale GMT (décret 2.26.530, BO 7521), admission temporaire 180 j + prorogation (guide ADII 2025). Faits issus de docs/FACTS.csv uniquement. Test : tests-e2e/nouveautes.spec.mjs.
+
+## 2026-10-16 — Marque, pluriels, registre
+- Marque : règle conservée = « Sahla Maroc » en fr, « Sahla Morocco » dans toutes les autres langues (CLAUDE.md + `brandName`). Les chaînes UI utilisent désormais `{brand}` (résolu dans `t()` via `brandName(lang)`), plus aucun nom en dur dans les JSON.
+- Compteurs : `src/utils/plural.ts` (Intl.PluralRules, arabe 6 formes zero|one|two|few|many|other). Formes séparées par « | » dans les JSON, résolues par `t(key, { n })` et côté client dans la recherche.
+- Nombre de villes : `{n}` = `CITY_PAGES.length` ; liste des villes de `city.hub.description` générée (`cityListText`, Intl.ListFormat).
+- Registre : es = tú, de = Sie (articles et pages en Sie : 1438 vs 97 formes ; UI de passée du « du » au « Sie »). Reste listé dans docs/RELECTURE-TRADUCTIONS.md.
+
+## 2026-10-16 — Confidentialité (loi 09-08) et mentions légales
+- Sources lues : texte de la loi 09-08 (BO 5714, cndp.ma : art. 3, 5, 7, 8, 9, 12, 43, 44), lignes directrices CNDP sites web (notification, transfert, cookies, conservation), page CNDP « Procédures de notification » (délibérations D-939-2025 cookies et D-940-2025 newsletters, intitulés seulement ; leur contenu n'a pas été lu).
+- Politique de confidentialité réécrite dans les 5 langues (es/de/ar machineTranslated) : finalités, base, destinataires (Brevo, Google AdSense, Umami, Vercel), transfert hors Maroc, durée (sans chiffre inventé), droits art. 7-9, formalités CNDP « à déclarer ou autoriser selon le cas », consentement AdSense (message Google EEE/RU/Suisse).
+- Nouvelle page Mentions légales (translationKey `legal-notice`, 5 langues, lien dans le pied de page via `footer.legalNotice`). Identité de l'éditeur, statut, adresse, ICE/RC, directeur de publication, registrar et n° de récépissé CNDP : marqueur « [À RENSEIGNER PAR L'ÉDITEUR AVANT PUBLICATION] » (non interdit par check:content), listés dans docs/ACTIONS-PROPRIETAIRE.md. Liste légale des mentions obligatoires au Maroc non trouvée : structure = bonne pratique.
+- docs/MISE-EN-LIGNE.md section 7 : Wise a priori inutilisable pour un résident marocain (source Wise de 2023) ; AdSense vers banque marocaine, règles de l'Office des changes à confirmer avec banque et comptable.

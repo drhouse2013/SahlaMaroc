@@ -76,7 +76,9 @@ export default defineConfig({
           INDEXABLE_LOCALES.includes(lang) && // langues pas encore lancées => hors sitemap
           !path.includes('/404') &&
           // Pages de recherche : contenu dupliqué / sans valeur pour l'index
-          !/^\/[a-z]{2}\/(search|recherche|buscar|suche|bahth)$/.test(path)
+          !/^\/[a-z]{2}\/(search|recherche|buscar|suche|bahth)$/.test(path) &&
+          // Mentions légales : noindex tant que l'identité de l'éditeur n'est pas renseignée
+          !/^\/[a-z]{2}\/(mentions-legales|legal-notice)$/.test(path)
         );
       },
       // Pas de lastmod global : une date de build identique partout est ignorée par Google.

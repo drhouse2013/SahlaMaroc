@@ -4,7 +4,7 @@ import { LOCALES, HUB_SLUGS, useTranslations, type Locale } from '../../i18n';
 import { CATEGORIES } from '../../i18n/categories';
 import { PILLARS } from '../../data/pillars';
 import { TOOLS } from '../../data/tools';
-import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { CITY_PAGES, cityLabel, cityListText } from '../../data/cities';
 import { categoryPath, cityPath, entryPath, getActiveCategories, getArticles, getPages, hubPath } from '../../utils/i18n';
 import { getNews } from '../../utils/news';
 import { checklistsIn } from '../../utils/content';
@@ -39,7 +39,7 @@ export const GET: APIRoute = async ({ params }) => {
   const hubs: [keyof typeof HUB_SLUGS, string, string][] = [
     ['mre', t('hub.mre.title'), t('hub.mre.description')],
     ['visit', t('hub.visit.title'), t('hub.visit.description')],
-    ['cities', t('city.hub.title'), t('city.hub.description')],
+    ['cities', t('city.hub.title'), t('city.hub.description', { cities: cityListText(lang) })],
     ['checklists', t('checklists.title'), t('checklists.description')],
     ['news', t('news.title'), t('news.description')],
   ];

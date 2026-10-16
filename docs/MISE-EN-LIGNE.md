@@ -77,6 +77,12 @@ Tous les liens passent par `<AffiliateLink>` (rel=sponsored) et restent des lien
 
 Booking (`PUBLIC_BOOKING_AID`), Airalo (`PUBLIC_AIRALO_URL`), GetYourGuide, Viator, SafetyWing, DiscoverCars : obtenir l'agrément, renseigner la variable, redéployer, vérifier `rel="sponsored"` dans le HTML.
 
+## 7. Recevoir les revenus AdSense depuis le Maroc (Wise, Office des changes)
+
+- **Wise** : le blog de Wise Maroc (daté du 15/06/2023, signalé comme non mis à jour depuis plus d'un an) indique que l'ouverture d'un compte « n'est plus possible depuis le Maroc si vous n'avez pas d'adresse postale à l'étranger » et que le compte n'est disponible que pour les résidents de l'UE et de certains autres pays. **Ne pas compter sur Wise pour recevoir AdSense** tant qu'une page d'aide Wise actuelle (pays éligibles) n'a pas confirmé le contraire.
+- **Piste à prévoir** : virement AdSense vers un compte dans une banque marocaine. Les règles de change applicables à un résident (rapatriement, compte en devises, délais) n'ont pas été confirmées pour les revenus de publicité en ligne : la page de l'Office des changes lue (rapatriement du produit des exportations de services, section personnes morales) cite un délai de 60 jours (art. 398) et un crédit en devises jusqu'à 70 % (art. 399) mais ne vise pas expressément les particuliers ni les services en ligne ; la presse (Bladi, Infomédiaire, Le360) évoque 90 jours pour les services en ligne, non vérifié sur texte officiel. **À confirmer avec la banque et un comptable avant le premier paiement.**
+- Sources : https://wise.com/fr-ma/blog/wise-maroc · https://www.oc.gov.ma/fr/personnes-morales/rapatriement-du-produit-des-exportations-de-services · IGOC : https://www.oc.gov.ma/sites/default/files/reglementation/pdf/2024-01/IGOC%202024.pdf (non lue en entier).
+
 ## Liste de contrôle finale
 
 - [ ] Vercel Pro actif
@@ -85,6 +91,8 @@ Booking (`PUBLIC_BOOKING_AID`), Airalo (`PUBLIC_AIRALO_URL`), GetYourGuide, Viat
 - [ ] Sitemap soumis dans Search Console
 - [ ] Brevo : inscription de test et PDF reçus
 - [ ] Message de consentement Google publié avant d'afficher des annonces
+- [ ] Revenus AdSense : mode de réception confirmé avec banque et comptable (section 7)
+- [ ] Mentions légales et récépissé CNDP renseignés (docs/ACTIONS-PROPRIETAIRE.md)
 - [ ] Wise : agrément d'affiliation obtenu avant de renseigner `PUBLIC_WISE_URL`
 - [ ] `npm run build` et `npm run check:content` OK avant le dernier déploiement
 

@@ -1356,3 +1356,7 @@ export function cityLabel(id: string, lang: Locale): string {
   const c = CITIES.find((x) => x.id === id);
   return c ? cityName(c, lang) : id;
 }
+
+/** « Marrakech, Casablanca … et Tétouan » : liste localisée, toujours alignée sur CITY_PAGES. */
+export const cityListText = (lang: Locale) =>
+  new Intl.ListFormat(lang, { style: 'long', type: 'conjunction' }).format(CITY_PAGES.map((c) => cityLabel(c.id, lang)));

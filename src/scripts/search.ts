@@ -1,3 +1,4 @@
+import { pluralize } from '../utils/plural';
 /**
  * Recherche instantanée côté client (aucun service externe).
  * - L'index JSON de la langue (/<lang>/search-index.json, généré au build) n'est chargé
@@ -133,7 +134,7 @@ export function initSearch(root: HTMLElement) {
       list.innerHTML = '';
       setStatus(i18n.empty.replace('{q}', q) + ' ' + i18n.emptyHint);
     } else {
-      setStatus(res.length === 1 ? i18n.one : i18n.many.replace('{n}', String(res.length)));
+      setStatus(pluralize(document.documentElement.lang || 'en', res.length, i18n.many));
       list.innerHTML = res
         .map((r) => `<li><a href="${esc(r.u)}" class="search-hit"><span class="search-kind">${esc(i18n['k_' + r.k] || r.k)}${r.c ? ' · ' + esc(r.c) : ''}</span><span class="search-title">${esc(r.t)}</span><span class="search-desc">${esc(r.d)}</span></a></li>`)
         .join('');

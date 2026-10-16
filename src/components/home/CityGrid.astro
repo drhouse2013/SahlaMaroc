@@ -18,7 +18,7 @@ const list = CITY_PAGES.filter((c) => !ids || ids.includes(c.id)).slice(0, limit
     <div class="flex flex-wrap items-end justify-between gap-4">
       <div>
         <h2 id="cities-title" class="section-title">{t('home.cities.title')}</h2>
-        <p class="section-sub">{t('home.cities.sub')}</p>
+        <p class="section-sub">{t('home.cities.sub', { n: CITY_PAGES.length })}</p>
       </div>
       <a href={hubPath(lang, 'cities')} class="btn btn-ghost btn-sm">{t('common.seeAll')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
     </div>
