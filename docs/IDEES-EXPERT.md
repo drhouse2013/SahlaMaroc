@@ -65,3 +65,20 @@ Limites : recherche web rapide (3 requêtes), aucun forum MRE lu directement. La
 1. Vignette TSAV (idée 1), si barème vérifié sur vignette.ma.
 2. Certificat de vie (idée 2), faible effort, intention claire.
 3. FAQ structurée + dates de vérification visibles (idées 8-9), sans risque factuel.
+
+## 11. Extrait de casier judiciaire (bulletin n°3) pour MRE — REJETÉE le 2026-10-16
+- Demande : https://www.demarchesmaroc.com/extrait-de-casier-judiciaire/ ; https://www.expat.com/fr/forum/afrique/maroc/930785-demande-dextrait-de-casier-judiciaire-marocain-en-ligne.html
+- Raison du rejet : aucune source officielle lue (portail du ministère de la Justice non consulté ; recherche Firecrawl hors crédits). Les sources secondaires divergent (tribunal de naissance vs de domicile ; retrait physique vs consulat ; 10 DH et validité 3 mois non confirmés). À reprendre quand le portail officiel sera lisible.
+
+## 12. Drones en voyage au Maroc — DÉJÀ COUVERT (2026-10-16)
+- Le guide `douane-maroc-voyageurs-quoi-apporter` traite déjà les drones. Recherche : arrêté 386-15 (2015, licence préalable à l'importation), rappelé par la douane lors de la CAN 2025 (sources : presse, bladi.net, le360). Aucun texte officiel relu ce jour : rien ajouté.
+
+## 13. FAQ structurée sur les articles — REPORTÉE (2026-10-16)
+- `faqJsonLd` n'est utilisé que par CityPage. L'étendre aux guides demande un champ `faq` dans le schéma de contenu, des questions visibles sur chaque page et une relecture par langue ; gain Google non garanti (rich results FAQ limités). À faire en lot dédié, sans nouveau fait.
+
+## 14. Médicaments en voyage (franchise sur justificatifs, psychotropes) — DÉJÀ COUVERT (2026-10-16)
+- Sujets déjà traités dans `douane-maroc-voyageurs-quoi-apporter`, `sante-voyageurs-maroc-assurance-urgences` et `checklist-retour-ete-mre`. Recherche : sources = presse (bladi.net) et guide ADII 2012 (ccme.org.ma) ; aucun texte officiel actuel relu, aucun seuil de quantité publié. Rien ajouté. À reprendre si la page douane.gov.ma devient lisible.
+
+## 15. Taxe d'habitation / taxe de services communaux pour MRE propriétaires — REJETÉE (2026-10-16)
+- Demande : bladi.net (articles taxe d'habitation MRE 2025), le360, wafir.ma, upsilon-consulting.com.
+- Raison : aucune source officielle (DGI, loi 47-06) lue ; les sources divergent sur l'abattement de 75 % (résidence principale seulement ou non), sur la TSC et sur les barèmes. Non confirmé, non chiffré. À reprendre uniquement après lecture de la loi 47-06 sur le site de la DGI.

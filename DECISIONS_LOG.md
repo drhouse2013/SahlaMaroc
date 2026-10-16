@@ -106,3 +106,15 @@ Décisions prises sans demande de validation, conformément à la directive de c
 
 ## 2026-10-16 — Guide acte de naissance / copie intégrale / Watiqa
 - Guide `acte-de-naissance-maroc-copie-integrale-extrait-watiqa-mre` (translationKey `birth-certificate-civil-registry`, fr/en/es/de/ar ; es/de/ar machineTranslated, verifiedDate fr/en seulement). Faits limités à watiqa.ma, consulat.ma et alhalalmadania.ma (lu par extrait) ; aucun tarif ni délai chiffré ; quelle administration exige extrait ou copie intégrale : non sourcé, renvoi à l'organisme destinataire. Liens internes vers apostille, mariage/état civil, passeport/CNIE ; une phrase de renvoi ajoutée dans les guides mariage et apostille (fr, en).
+
+## 2026-10-16 — Cycle expert (idées)
+- Idée casier judiciaire MRE examinée puis rejetée (sources non officielles, contradictoires) : consignée dans docs/IDEES-EXPERT.md. Aucun code modifié. Firecrawl : crédits épuisés (402), recherche faite via WebSearch. Amélioration design : bloc « vérifié » déjà présent dans ArticleLayout, rien à ajouter.
+
+## 2026-10-16 — Cycle expert (idées, 2e passage)
+- Aucune nouvelle idée « excellente » : drones (déjà dans le guide douane), création d'entreprise, succession, vignette, certificat de vie, état civil déjà publiés. Idées 12-13 consignées dans docs/IDEES-EXPERT.md. Aucun code ni contenu modifié, donc pas de build ni de publication (publier-auto.bat non lancé : seul changement = docs).
+
+## 2026-10-16 — Cycle expert (idées, 3e passage)
+- Catalogue de 100+ guides déjà très complet. Idée examinée : médicaments/psychotropes en voyage, déjà couverte, sans source officielle actuelle : consignée (idée 14). Aucun code ni contenu modifié, donc pas de build ni de publication.
+
+## 2026-10-16 — Cycle expert (idées, 4e passage)
+- Idée taxe d'habitation / services communaux MRE examinée puis rejetée (sources non officielles, contradictoires) : idée 15 dans docs/IDEES-EXPERT.md. Aucun code ni contenu modifié, donc pas de build ni de publication.
