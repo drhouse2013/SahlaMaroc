@@ -52,6 +52,8 @@ The site's photos come from Wikimedia Commons and are used under free licences (
 - **Al Boraq in Tangier**: SpreeTom, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), [source](https://commons.wikimedia.org/wiki/File:Al_Boraq_Tangier.jpg)
 - **Tanger Med port**: HrAd, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), [source](https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG)
 - **Ferry quay at Tanger Med**: Bertrand SOUBEYRAND, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Le_cruise-ferry_Excellent_de_GNV_dans_le_port_de_Tanger_MED_au_Maroc_le_30-10-2023.jpg)
+- **Motorway in Morocco (car guide)**: Makary, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), [source](https://commons.wikimedia.org/wiki/File:A7_motorway_in_Morocco_2.JPG).
+- **Bouregreg marina district, Rabat (permanent return guide)**: Aisance KALONJI, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Eagle_Hills_Morocco,_Marina_Bouregreg_-_Rabat.jpg).
 - **Fes tanneries**: Andrzej Szkopiński, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), [source](https://commons.wikimedia.org/wiki/File:Fes_El_Bali,_Fes,_Morocco_-_panoramio_(2).jpg)
 - **Grand Socco, Tangier**: Shbbkr, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Tangier_-_Grand_Socco_-_20200906181817.jpg)
 - **Agadir seafront**: Ideophagous, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Plage_d'Agadir_-_from_Dunes_d'Or_hotel_1.jpg)
@@ -89,6 +91,26 @@ The site's photos come from Wikimedia Commons and are used under free licences (
 - **Central square of Laayoune (aerial view)** : Zakaria Taberkant / Commune of Laayoune, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg)
 - **Portuguese Cistern, El Jadida** : Mathew Koshy, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg)
 - **Saidia beach** : Meryem BOURAS, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg)
+- **New residential buildings in Gueliz, Marrakech** : mwanasimba from La Réunion, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), [source](https://commons.wikimedia.org/wiki/File:Gueliz_Marrakech_(2844899921).jpg)
+- **Bank Al-Maghrib building, Marrakech** : karel291, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), [source](https://commons.wikimedia.org/wiki/File:Hivernage,_Marrakesh,_Morocco_-_panoramio.jpg)
+- **Older apartment building in central Casablanca** : Taloubant, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Immeuble_casablanca.jpg)
+- **Building being finished in Gueliz, Marrakech** : mwanasimba from La Réunion, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), [source](https://commons.wikimedia.org/wiki/File:Gueliz_Marrakech_(2844895293).jpg)
+- **Institutional building in Rabat** : Boubloub, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Rabat_SupremeCourt.jpg)
+- **Old ruined house next to newer houses (Sidi Rbat)** : Timothy A. Gonsalves, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Old_New_Houses_Sidi_Rabat_Oct25_A7CR_08114.jpg)
+- **Tree-lined avenue in Agdal, Rabat** : Timothy A. Gonsalves, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Ave_Al_Eucalyptus_Rabat_Nov25_A7CR_08917.jpg)
+- **R203 road near the Tizi-n-Test pass (driving licence guide)**: Alexander Leisser, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:View_over_R_203_from_Tizi-n-Test.jpg).
+
+- **Moroccan dirham banknotes** : Freepius, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Dirhams_marocains_(MAD).jpeg)
+- **Casablanca Finance City business district (1)** : AyourAchtouk, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_14.jpg)
+- **Casablanca Finance City business district (2)** : AyourAchtouk, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_35.jpg)
+- **Casablanca Finance City business district (3)** : AyourAchtouk, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_37.jpg)
+- **Mint tea in Marrakech** : Adam Harangozó, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Mint_tea,_Marrakesh.jpg)
+- **CTM coach stop** : Bisel91, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:CTM_Bus%27_stop.jpg)
+- **Grand taxi in central Casablanca** : Sambasoccer27, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Grand_Taxi_in_Centre_Ville_Casablanca.jpg)
+- **Casablanca tram** : Mustapha Ennaimi, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), [source](https://commons.wikimedia.org/wiki/File:Casablanca_Tramway.jpg)
+- **Covered Semmarine souk in Marrakech** : DimiTalen, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Covered_Souk_Semmarine,_Marrakech,_2008.jpg)
+- **Casa-Voyageurs railway station** : calflier001, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), [source](https://commons.wikimedia.org/wiki/File:Gare_Casablanca_Voyageurs_Morroco_April_2013_(8709701559).jpg)
+- **Casablanca corniche** : Paolapezz, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Corniche,_Casablanca.jpg)
 
 ## Mapping
 

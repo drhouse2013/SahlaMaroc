@@ -246,3 +246,24 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/agadir-poste-centrale.jpg | Patrik Kunec | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Agadir,_Morocco_-_Main_Post_Office.jpg |
 | spots/agadir-crocodile-park.jpg | Camping Aourir from Aourir, Marokko | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Excursion_Crocoparc_Agadir_(33434626570).jpg |
 | spots/agadir-bert-flint-museum.jpg | Rudko | CC0 | https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_17-52-06.JPG |
+| voiture-autoroute.jpg | Makary | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:A7_motorway_in_Morocco_2.JPG |
+| retour-rabat-bouregreg.jpg | Aisance KALONJI | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Eagle_Hills_Morocco,_Marina_Bouregreg_-_Rabat.jpg |
+| immo-daam-sakane.jpg | mwanasimba from La Réunion | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Gueliz_Marrakech_(2844899921).jpg |
+| immo-credit.jpg | karel291 | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Hivernage,_Marrakesh,_Morocco_-_panoramio.jpg |
+| immo-acheter.jpg | Taloubant | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Immeuble_casablanca.jpg |
+| immo-construire.jpg | mwanasimba from La Réunion | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Gueliz_Marrakech_(2844895293).jpg |
+| immo-procuration.jpg | Boubloub | CC0 | https://commons.wikimedia.org/wiki/File:Rabat_SupremeCourt.jpg |
+| immo-heritage.jpg | Timothy A. Gonsalves | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Old_New_Houses_Sidi_Rabat_Oct25_A7CR_08114.jpg |
+| immo-louer.jpg | Timothy A. Gonsalves | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ave_Al_Eucalyptus_Rabat_Nov25_A7CR_08917.jpg |
+| permis-route-r203.jpg | Alexander Leisser | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:View_over_R_203_from_Tizi-n-Test.jpg |
+| argent-dirhams.jpg | Freepius | CC0 | https://commons.wikimedia.org/wiki/File:Dirhams_marocains_(MAD).jpeg |
+| finance-casablanca-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_14.jpg |
+| banque-casablanca-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_35.jpg |
+| epargne-casablanca-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_37.jpg |
+| the-menthe-marrakech.jpg | Adam Harangozó | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mint_tea,_Marrakesh.jpg |
+| bus-ctm-arret.jpg | Bisel91 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:CTM_Bus%27_stop.jpg |
+| grand-taxi-casablanca.jpg | Sambasoccer27 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Grand_Taxi_in_Centre_Ville_Casablanca.jpg |
+| tramway-casablanca.jpg | Mustapha Ennaimi | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Tramway.jpg |
+| souk-semmarine-marrakech.jpg | DimiTalen | CC0 | https://commons.wikimedia.org/wiki/File:Covered_Souk_Semmarine,_Marrakech,_2008.jpg |
+| gare-casa-voyageurs.jpg | calflier001 | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Gare_Casablanca_Voyageurs_Morroco_April_2013_(8709701559).jpg |
+| corniche-casablanca.jpg | Paolapezz | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Corniche,_Casablanca.jpg |

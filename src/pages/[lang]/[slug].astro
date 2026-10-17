@@ -37,6 +37,8 @@ import CitiesHub from '../../components/hubs/CitiesHub.astro';
 import RegionsHub from '../../components/hubs/RegionsHub.astro';
 import ChecklistsHub from '../../components/hubs/ChecklistsHub.astro';
 import NewsHub from '../../components/hubs/NewsHub.astro';
+import GlossaryHub from '../../components/hubs/GlossaryHub.astro';
+import CalendarHub from '../../components/hubs/CalendarHub.astro';
 import SearchPage from '../../components/hubs/SearchPage.astro';
 import AudienceHub from '../../components/hubs/AudienceHub.astro';
 import { HUB_SLUGS, LOCALES, type HubId, type Locale } from '../../i18n';
@@ -89,6 +91,8 @@ if (entry?.collection === 'articles') {
     hub === 'regions' ? <RegionsHub lang={lang} /> :
     hub === 'checklists' ? <ChecklistsHub lang={lang} /> :
     hub === 'news' ? <NewsHub lang={lang} /> :
+    hub === 'glossary' ? <GlossaryHub lang={lang} /> :
+    hub === 'calendar' ? <CalendarHub lang={lang} /> :
     hub === 'search' ? <SearchPage lang={lang} /> :
     <AudienceHub lang={lang} hub={hub as 'mre' | 'visit'} />
   ) : entry.collection === 'articles' ? (

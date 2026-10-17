@@ -29,6 +29,10 @@ const nav = [
   { href: hubPath(lang, 'mre'), label: t('nav.mre') },
   { href: hubPath(lang, 'news'), label: t('nav.news') },
 ];
+const more = [
+  { href: hubPath(lang, 'glossary'), label: t('nav.glossary') },
+  { href: hubPath(lang, 'calendar'), label: t('nav.calendar') },
+];
 const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
 const searchHref = hubPath(lang, 'search');
 ---
@@ -90,7 +94,7 @@ const searchHref = hubPath(lang, 'search');
             <a href={hubPath(lang, 'mre')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="ship" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.mre')}</a>
             <a href={hubPath(lang, 'visit')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="compass" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.visit')}</a>
             <hr class="my-2 border-[var(--line)]" />
-            {nav.map((n) => <a href={n.href} class="block rounded-xl px-3 py-2.5 hover:bg-sand-100 dark:hover:bg-white/10" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>)}
+            {[...nav, ...more].map((n) => <a href={n.href} class="block rounded-xl px-3 py-2.5 hover:bg-sand-100 dark:hover:bg-white/10" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>)}
             <hr class="my-2 border-[var(--line)]" />
             <p class="eyebrow px-3 pt-1 pb-1 muted">{t('nav.byTopic')}</p>
             <ul class="grid gap-0.5">

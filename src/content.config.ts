@@ -52,6 +52,14 @@ const articles = defineCollection({
       tags: z.array(z.string()).default([]),
       /** Mise en avant sur la page d'accueil */
       featured: z.boolean().default(false),
+      /** Niveau affiché sur la carte du guide (facultatif) */
+      level: z.enum(['essential', 'advanced']).optional(),
+      /** Bloc « En bref » (facultatif) : affiché seulement si au moins un champ est renseigné */
+      forWho: z.string().optional(),
+      delay: z.string().optional(),
+      cost: z.string().optional(),
+      /** FAQ structurée (facultatif) : section visible + JSON-LD FAQPage, uniquement si présente */
+      faq: z.array(z.object({ q: z.string().min(5), a: z.string().min(10) })).optional(),
     }),
 });
 

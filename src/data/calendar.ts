@@ -1,0 +1,141 @@
+/**
+ * Calendrier des démarches. Chaque entrée porte un statut explicite :
+ *  - confirmed : date lue dans une source officielle ou un guide officiel (ADII, DGI) ;
+ *  - expected  : date prévisionnelle (calcul astronomique, usage constaté) ;
+ *  - tbc       : « à confirmer » — pas de date publiée à ce jour.
+ * month = 1..12, 0 = tout au long de l'année. Aucun montant ici.
+ * es/de/ar : traduction automatique non relue (machineTranslated), noindex.
+ */
+import type { Locale } from '../i18n';
+
+export type CalendarStatus = 'confirmed' | 'expected' | 'tbc';
+export interface CalendarItem {
+  id: string;
+  month: number;
+  status: CalendarStatus;
+  guide: string;
+  src: { label: string; url: string };
+  text: Record<Locale, string>;
+}
+
+const S = {
+  adii: { label: 'ADII', url: 'https://www.douane.gov.ma' },
+  dgi: { label: 'DGI', url: 'https://www.tax.gov.ma' },
+  maroc: { label: 'maroc.ma', url: 'https://www.maroc.ma' },
+  habous: { label: 'Ministère des Habous', url: 'https://www.habous.gov.ma' },
+  fm5: { label: 'Fondation Mohammed V', url: 'https://www.fm5.ma' },
+  men: { label: 'Ministère de l’Éducation nationale', url: 'https://www.men.gov.ma' },
+};
+
+const C = (id: string, month: number, status: CalendarStatus, guide: string, src: CalendarItem['src'], fr: string, en: string, es: string, de: string, ar: string): CalendarItem => ({ id, month, status, guide, src, text: { fr, en, es, de, ar } });
+
+export const CALENDAR: CalendarItem[] = [
+  C('days-reset', 1, 'confirmed', 'car-180-days', S.adii,
+    '1er janvier : nouveau décompte des 180 jours d’admission temporaire de la voiture (année civile).',
+    '1 January: new count of the 180 days of temporary admission for your car (calendar year).',
+    '1 de enero: nuevo cómputo de los 180 días de admisión temporal del coche (año natural).',
+    '1. Januar: neue Zählung der 180 Tage vorübergehender Einfuhr des Autos (Kalenderjahr).',
+    '1 يناير: بداية احتساب جديد لـ 180 يوما من القبول المؤقت للسيارة (السنة المدنية).'),
+  C('tsav', 1, 'confirmed', 'buy-car-morocco-mre', S.maroc,
+    'Avant le 31 janvier : paiement de la vignette (TSAV) pour l’année. Barèmes à vérifier sur vignette.ma.',
+    'Before 31 January: payment of the annual vehicle tax (TSAV). Check the scales on vignette.ma.',
+    'Antes del 31 de enero: pago de la tasa anual de vehículos (TSAV). Compruebe los baremos en vignette.ma.',
+    'Vor dem 31. Januar: Zahlung der jährlichen Fahrzeugsteuer (TSAV). Tarife auf vignette.ma prüfen.',
+    'قبل 31 يناير: أداء الضريبة الخصوصية السنوية على المركبات (الڭينيت). تحققوا من الأسعار في vignette.ma.'),
+  C('declarations-31-jan', 1, 'confirmed', 'property-taxes', S.dgi,
+    '31 janvier : déclaration d’achèvement de travaux de construction et de changement de propriété ou d’affectation d’un immeuble, au titre de l’année précédente (guide fiscal MRE 2026).',
+    '31 January: declaration of completed construction works and of change of ownership or use of a building, for the previous year (2026 MRE tax guide).',
+    '31 de enero: declaración de fin de obras de construcción y de cambio de titularidad o uso de un inmueble, del año anterior (guía fiscal MRE 2026).',
+    '31. Januar: Erklärung über abgeschlossene Bauarbeiten sowie Eigentums- oder Nutzungsänderung einer Immobilie für das Vorjahr (Steuerleitfaden MRE 2026).',
+    '31 يناير: التصريح بإتمام أشغال البناء وبتغيير ملكية أو تخصيص عقار عن السنة السابقة (الدليل الضريبي 2026).'),
+  C('holidays-jan', 1, 'confirmed', 'holidays-2027', S.maroc,
+    '1er, 11 et 14 janvier : jours fériés nationaux (Nouvel An, Manifeste de l’indépendance, Yennayer). Administrations fermées.',
+    '1, 11 and 14 January: national holidays (New Year, Independence Manifesto, Yennayer). Offices closed.',
+    '1, 11 y 14 de enero: fiestas nacionales (Año Nuevo, Manifiesto de la Independencia, Yennayer). Administraciones cerradas.',
+    '1., 11. und 14. Januar: Nationalfeiertage (Neujahr, Unabhängigkeitsmanifest, Yennayer). Behörden geschlossen.',
+    '1 و11 و14 يناير: أعياد وطنية (رأس السنة، وثيقة الاستقلال، يناير الأمازيغي). الإدارات مغلقة.'),
+  C('ramadan', 2, 'expected', 'holidays-2027', S.habous,
+    'Ramadan 2027 : début attendu vers le 8 février, selon le calcul astronomique. Date officielle annoncée la veille par le ministère des Habous ; horaires et rythme des administrations changent.',
+    'Ramadan 2027: start expected around 8 February by astronomical calculation. Official date announced the evening before by the Ministry of Habous; opening hours change.',
+    'Ramadán 2027: inicio previsto hacia el 8 de febrero según el cálculo astronómico. Fecha oficial anunciada la víspera por el Ministerio de Habices; cambian los horarios.',
+    'Ramadan 2027: Beginn voraussichtlich um den 8. Februar nach astronomischer Berechnung. Offizielles Datum am Vorabend durch das Habous-Ministerium; Öffnungszeiten ändern sich.',
+    'رمضان 2027: بدايته المتوقعة حوالي 8 فبراير حسب الحساب الفلكي. يعلن التاريخ الرسمي عشية الرؤية وزارة الأوقاف؛ وتتغير مواعيد العمل.'),
+  C('rental-income', 2, 'confirmed', 'mre-taxes', S.dgi,
+    'Avant le 1er mars : déclaration électronique du revenu global au titre des revenus fonciers encaissés l’année précédente, et paiement de l’impôt (guide fiscal MRE 2026).',
+    'Before 1 March: electronic declaration of global income for property income received the previous year, and payment of the tax (2026 MRE tax guide).',
+    'Antes del 1 de marzo: declaración electrónica de la renta global por los ingresos inmobiliarios cobrados el año anterior y pago del impuesto (guía fiscal MRE 2026).',
+    'Vor dem 1. März: elektronische Erklärung des Gesamteinkommens für im Vorjahr erhaltene Grundstückseinkünfte und Zahlung der Steuer (Steuerleitfaden MRE 2026).',
+    'قبل فاتح مارس: التصريح الإلكتروني بالدخل الإجمالي عن المداخيل العقارية المقبوضة السنة السابقة وأداء الضريبة (الدليل الضريبي 2026).'),
+  C('eid-fitr', 3, 'expected', 'holidays-2027', S.habous,
+    'Aïd el-Fitr 2027 : attendu vers le 10 ou 11 mars. Pic de voyages des familles ; réservez transport et logement tôt.',
+    'Eid al-Fitr 2027: expected around 10 or 11 March. Family travel peak; book transport and lodging early.',
+    'Aíd el-Fitr 2027: previsto hacia el 10 u 11 de marzo. Pico de viajes familiares; reserve transporte y alojamiento con antelación.',
+    'Eid al-Fitr 2027: voraussichtlich um den 10. oder 11. März. Reisespitze der Familien; Transport und Unterkunft früh buchen.',
+    'عيد الفطر 2027: متوقع حوالي 10 أو 11 مارس. ذروة سفر العائلات؛ احجزوا النقل والإقامة مبكرا.'),
+  C('ferry-booking', 4, 'tbc', 'ferry-guide', S.fm5,
+    'Printemps : ouverture des ventes de ferries pour l’été et annonce des dates Marhaba. Dates d’ouverture fixées par chaque compagnie : à confirmer sur leur site.',
+    'Spring: ferry sales open for summer and Marhaba dates are announced. Opening dates are set by each carrier: confirm on their site.',
+    'Primavera: apertura de ventas de ferris para el verano y anuncio de las fechas de Marhaba. Cada naviera fija sus fechas: confirme en su sitio.',
+    'Frühjahr: Start des Fährverkaufs für den Sommer und Bekanntgabe der Marhaba-Termine. Jede Reederei legt ihre Termine fest: auf deren Seite prüfen.',
+    'الربيع: فتح بيع تذاكر العبّارات للصيف والإعلان عن مواعيد مرحبا. تحدد كل شركة مواعيدها: تأكدوا من موقعها.'),
+  C('eid-adha', 5, 'expected', 'holidays-2027', S.habous,
+    'Aïd el-Adha 2027 : attendu vers le 17 ou 18 mai ; 1er mai (Fête du travail) fixe. Prévoir ruées de voyage et commerces fermés.',
+    'Eid al-Adha 2027: expected around 17 or 18 May; 1 May (Labour Day) is fixed. Expect travel rushes and closed shops.',
+    'Aíd el-Adha 2027: previsto hacia el 17 o 18 de mayo; el 1 de mayo (Día del Trabajo) es fijo. Esperen avalanchas de viaje y comercios cerrados.',
+    'Eid al-Adha 2027: voraussichtlich um den 17. oder 18. Mai; der 1. Mai (Tag der Arbeit) ist fest. Reiseandrang und geschlossene Geschäfte einplanen.',
+    'عيد الأضحى 2027: متوقع حوالي 17 أو 18 ماي؛ وفاتح ماي (عيد الشغل) ثابت. توقعوا ازدحام السفر وإغلاق المحلات.'),
+  C('marhaba-start', 6, 'tbc', 'marhaba-guide', S.fm5,
+    'Début de l’opération Marhaba : en 2026, du 10 juin au 15 septembre. Les dates de 2027 ne sont pas publiées : à confirmer sur fm5.ma.',
+    'Start of Operation Marhaba: in 2026, from 10 June to 15 September. 2027 dates have not been published: confirm on fm5.ma.',
+    'Inicio de la Operación Marhaba: en 2026, del 10 de junio al 15 de septiembre. Las fechas de 2027 no se han publicado: confirme en fm5.ma.',
+    'Beginn der Operation Marhaba: 2026 vom 10. Juni bis 15. September. Die Termine für 2027 sind nicht veröffentlicht: auf fm5.ma bestätigen.',
+    'انطلاق عملية مرحبا: في 2026 من 10 يونيو إلى 15 شتنبر. لم تنشر مواعيد 2027 بعد: تأكدوا في fm5.ma.'),
+  C('marhaba-peak', 7, 'expected', 'marhaba-guide', S.fm5,
+    'Fin juillet - début août : pic d’affluence à l’aller (Marhaba) ; 30 juillet : Fête du Trône (jour férié).',
+    'Late July - early August: peak outbound crowds (Marhaba); 30 July: Throne Day (public holiday).',
+    'Finales de julio - principios de agosto: pico de afluencia a la ida (Marhaba); 30 de julio: Fiesta del Trono (festivo).',
+    'Ende Juli - Anfang August: Hochbetrieb bei der Hinreise (Marhaba); 30. Juli: Thronfest (Feiertag).',
+    'أواخر يوليوز - بداية غشت: ذروة التدفق في الذهاب (مرحبا)؛ 30 يوليوز: عيد العرش (عطلة).'),
+  C('august', 8, 'confirmed', 'holidays-2027', S.maroc,
+    '14, 20 et 21 août : jours fériés nationaux. Mawlid attendu vers le 14-15 août 2027. Retours vers l’Europe concentrés fin août.',
+    '14, 20 and 21 August: national holidays. Mawlid expected around 14-15 August 2027. Returns to Europe concentrated in late August.',
+    '14, 20 y 21 de agosto: fiestas nacionales. Mawlid previsto hacia el 14-15 de agosto de 2027. Regresos a Europa concentrados a finales de agosto.',
+    '14., 20. und 21. August: Nationalfeiertage. Mawlid voraussichtlich um den 14.-15. August 2027. Rückreisen nach Europa ballen sich Ende August.',
+    '14 و20 و21 غشت: أعياد وطنية. المولد النبوي متوقع حوالي 14-15 غشت 2027. تتركز رحلات العودة إلى أوروبا في أواخر غشت.'),
+  C('school', 9, 'tbc', 'return-morocco-with-children', S.men,
+    'Rentrée scolaire : dates fixées chaque année par le ministère de l’Éducation nationale. Inscription et équivalence à anticiper : à confirmer.',
+    'School year start: dates set each year by the Ministry of National Education. Plan enrolment and equivalence early: to confirm.',
+    'Inicio del curso escolar: fechas fijadas cada año por el Ministerio de Educación Nacional. Anticipe inscripción y equivalencia: por confirmar.',
+    'Schuljahresbeginn: Termine legt jedes Jahr das Bildungsministerium fest. Anmeldung und Gleichstellung früh planen: zu bestätigen.',
+    'الدخول المدرسي: تحدد وزارة التربية الوطنية مواعيده كل سنة. استبقوا التسجيل والمعادلة: يجب التأكد.'),
+  C('marhaba-end', 9, 'confirmed', 'marhaba-guide', S.fm5,
+    '15 septembre : fin de Marhaba 2026. Depuis le 20 septembre 2026, le Maroc est à l’heure GMT toute l’année.',
+    '15 September: end of Marhaba 2026. Since 20 September 2026, Morocco has been on GMT all year.',
+    '15 de septiembre: fin de Marhaba 2026. Desde el 20 de septiembre de 2026, Marruecos está en hora GMT todo el año.',
+    '15. September: Ende von Marhaba 2026. Seit dem 20. September 2026 gilt in Marokko ganzjährig GMT.',
+    '15 شتنبر: نهاية مرحبا 2026. منذ 20 شتنبر 2026 يعتمد المغرب توقيت غرينيتش طوال السنة.'),
+  C('unity-day', 10, 'confirmed', 'holidays-2027', S.maroc,
+    '31 octobre : Fête de l’Unité (jour férié depuis 2026).',
+    '31 October: Unity Day (public holiday since 2026).',
+    '31 de octubre: Fiesta de la Unidad (festivo desde 2026).',
+    '31. Oktober: Tag der Einheit (Feiertag seit 2026).',
+    '31 أكتوبر: عيد الوحدة (عطلة منذ 2026).'),
+  C('november', 11, 'confirmed', 'holidays-2027', S.maroc,
+    '6 novembre : Marche verte ; 18 novembre : Fête de l’indépendance (jours fériés nationaux).',
+    '6 November: Green March; 18 November: Independence Day (national holidays).',
+    '6 de noviembre: Marcha Verde; 18 de noviembre: Fiesta de la Independencia (festivos nacionales).',
+    '6. November: Grüner Marsch; 18. November: Unabhängigkeitstag (Nationalfeiertage).',
+    '6 نونبر: المسيرة الخضراء؛ 18 نونبر: عيد الاستقلال (أعياد وطنية).'),
+  C('at-december', 12, 'confirmed', 'car-180-days', S.adii,
+    'À partir du 1er décembre : une admission temporaire de voiture arrivant à échéance peut être prorogée de 6 mois, décomptés sur l’année suivante (guide douane MRE de l’ADII). Demande au bureau de douane.',
+    'From 1 December: a car temporary admission about to expire can be extended by 6 months, counted on the next year (ADII MRE customs guide). Apply at the customs office.',
+    'Desde el 1 de diciembre: una admisión temporal de coche a punto de vencer puede prorrogarse 6 meses, contados sobre el año siguiente (guía aduanera MRE de la ADII). Solicítelo en la aduana.',
+    'Ab 1. Dezember: eine auslaufende vorübergehende Einfuhr eines Autos kann um 6 Monate verlängert werden, gezählt auf das Folgejahr (Zollleitfaden MRE der ADII). Antrag beim Zollamt.',
+    'ابتداء من فاتح دجنبر: يمكن تمديد القبول المؤقت للسيارة التي شارف أجلها على الانتهاء بـ 6 أشهر تحتسب على السنة الموالية (دليل الجمارك). يقدم الطلب بمكتب الجمارك.'),
+  C('sale-30-days', 0, 'confirmed', 'property-taxes', S.dgi,
+    'Après une vente immobilière : déclaration du profit foncier dans les 30 jours de la cession ; actes à enregistrer dans les 30 jours de leur établissement (guide fiscal MRE 2026).',
+    'After a property sale: declaration of the capital gain within 30 days of the sale; deeds to be registered within 30 days of being drawn up (2026 MRE tax guide).',
+    'Tras una venta inmobiliaria: declaración de la plusvalía en los 30 días siguientes; actos a registrar en los 30 días desde su otorgamiento (guía fiscal MRE 2026).',
+    'Nach einem Immobilienverkauf: Erklärung des Gewinns innerhalb von 30 Tagen nach dem Verkauf; Urkunden binnen 30 Tagen nach Erstellung registrieren (Steuerleitfaden MRE 2026).',
+    'بعد بيع عقار: التصريح بالربح العقاري داخل 30 يوما من التفويت؛ وتسجيل العقود داخل 30 يوما من تحريرها (الدليل الضريبي 2026).'),
+];

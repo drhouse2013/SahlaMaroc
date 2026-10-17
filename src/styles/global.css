@@ -204,6 +204,12 @@
   .input:focus { outline: none; border-color: var(--color-majorelle-500); box-shadow: 0 0 0 3px rgb(47 75 216 / .18); }
   .input[aria-invalid="true"] { border-color: var(--color-terracotta-500); }
   .field-error { font-size: .82rem; font-weight: 500; color: var(--color-terracotta-600); }
+  .chip { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.5rem; padding: .35rem .9rem; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--text); font-size: .9rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: background-color .15s, border-color .15s, color .15s; }
+  .chip:hover { border-color: var(--color-navy-700); }
+  .dark .chip:hover { border-color: var(--color-sand-100); }
+  .chip[aria-pressed="true"] { background: var(--color-navy-700); border-color: var(--color-navy-700); color: #fff; }
+  .dark .chip[aria-pressed="true"] { background: var(--color-sand-50); border-color: var(--color-sand-50); color: var(--color-navy-800); }
+  [hidden] { display: none !important; }
   .dark .field-error { color: var(--color-terracotta-300); }
 
   /* Encadrés */
@@ -234,7 +240,18 @@
 
 @media print {
   body > header, body > footer, .no-print, nav[aria-label], ins.adsbygoogle { display: none !important; }
-  body { background: #fff !important; color: #000 !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+  aside, form, button, .arch, .zellige-soft::before, [data-article] ~ *, [data-journey-nav], [data-print-hide] { display: none !important; }
+  header.zellige-soft { background: none !important; border: 0 !important; }
+  header.zellige-soft .container-page, .container-page { display: block !important; max-width: none !important; padding-inline: 0 !important; }
+  .prose { max-width: none !important; }
+  .prose, .prose :where(p, li, h1, h2, h3, h4, strong, td, th, blockquote, figcaption) { color: #000 !important; }
+  .card, .alert { background: #fff !important; color: #000 !important; }
+  .prose a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; word-break: break-all; }
+  .prose h2, .prose h3 { break-after: avoid; }
+  .prose table, .prose figure, .card, [data-brief], [data-faq] > div { break-inside: avoid; }
+  .card { box-shadow: none !important; border: 1px solid #999 !important; }
+  :root { color-scheme: light; }
 }
 
 /* Verre dépoli de l'en-tête collant (touches modernes) */

@@ -1,0 +1,60 @@
+---
+/** /<lang>/<glossaire> : glossaire administratif (src/data/glossary.ts), filtre local, source officielle et guide lié. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { GLOSSARY, GLOSSARY_SOURCES } from '../../data/glossary';
+import { allLocalesAlternates, allLocalesTargets, entryPath, getArticleByKey, homePath, hubPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const norm = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const terms = [...GLOSSARY].sort((a, b) => a.name.localeCompare(b.name, lang));
+const rows = await Promise.all(terms.map(async (g) => ({ g, article: await getArticleByKey(lang, g.guide) })));
+const self = (l: Locale) => hubPath(l, 'glossary');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('glossary.title') }];
+const machine = lang !== 'fr' && lang !== 'en';
+---
+<BaseLayout lang={lang} title={t('glossary.title')} description={t('glossary.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('glossary.title'), description: t('glossary.description'), lang, items: terms.map((g) => ({ name: g.name, url: `${url}#g-${g.id}` })) })]}>
+  <PageHero lang={lang} crumbs={crumbs} title={t('glossary.title')} intro={t('glossary.intro')} icon="book" meta={t('glossary.count', { n: terms.length })} />
+  <div class="container-page pt-8" data-glossary>
+    {machine && <p class="mb-6 rounded-xl border border-[var(--line)] p-4 text-sm muted">{t('machine.note')}</p>}
+    <label class="block max-w-xl">
+      <span class="sr-only">{t('glossary.filter')}</span>
+      <input type="search" data-q class="w-full rounded-xl border border-[var(--line-strong)] bg-[var(--surface)] px-4 py-3" placeholder={t('glossary.filter.placeholder')} />
+    </label>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+      {rows.map(({ g, article }) => (
+        <li id={`g-${g.id}`} data-term data-q={norm(`${g.name} ${g.def[lang]}`)} class="card scroll-mt-24 p-5">
+          <h2 class="text-lg font-semibold" dir="auto">{g.name}</h2>
+          <p class="mt-2">{g.def[lang]}</p>
+          <p class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <a href={GLOSSARY_SOURCES[g.src].url} rel="noopener nofollow" target="_blank" class="inline-flex items-center gap-1.5 text-[var(--link)] underline-offset-4 hover:underline">{t('glossary.source')} : {GLOSSARY_SOURCES[g.src].label}<Icon name="external" class="size-3.5" /></a>
+            {article && <a href={entryPath(lang, article.data.slug)} class="inline-flex items-center gap-1.5 font-semibold text-[var(--link)] underline-offset-4 hover:underline"><Icon name="book" class="size-3.5" />{t('glossary.guide')} : {article.data.title}</a>}
+          </p>
+        </li>
+      ))}
+    </ul>
+    <p class="mt-6 hidden muted" data-empty>{t('glossary.empty')}</p>
+    <p class="mt-8 text-sm muted">{t('glossary.note')}</p>
+  </div>
+</BaseLayout>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-glossary]');
+  if (root) {
+    const norm = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const input = root.querySelector<HTMLInputElement>('input[data-q]')!;
+    const items = [...root.querySelectorAll<HTMLElement>('[data-term]')];
+    const empty = root.querySelector<HTMLElement>('[data-empty]')!;
+    input.addEventListener('input', () => {
+      const words = norm(input.value).split(/\s+/).filter(Boolean);
+      let shown = 0;
+      items.forEach((li) => { const ok = words.every((w) => (li.dataset.q || '').includes(w)); li.hidden = !ok; if (ok) shown++; });
+      empty.hidden = shown > 0;
+    });
+  }
+</script>

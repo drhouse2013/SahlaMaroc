@@ -83,7 +83,7 @@ for (const e of entries) {
   for (const m of e.content.matchAll(/\]\((\/[^)\s#]*)/g)) {
     const url = m[1].split('?')[0].replace(/\/$/, '') || '/';
     if (staticRoutes.includes(url)) continue;
-    if (/^\/(en|fr|es|de|ar)\/(topics|themes|temas|themen|mawadi)\//.test(url)) continue;
+    if (/^\/(en|fr|es|de|ar)\/(topics|themes|temas|themen|mawadi|cities|villes|ciudades|staedte|mudun)\//.test(url)) continue;
     if (!known.has(url)) err(e, `lien interne cassé ${m[1]}`);
   }
 }

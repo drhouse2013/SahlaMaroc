@@ -7,6 +7,7 @@ import { TOOLS } from '../../data/tools';
 import { CITY_PAGES, cityLabel, cityListText } from '../../data/cities';
 import { categoryPath, cityPath, entryPath, getActiveCategories, getArticles, getPages, hubPath } from '../../utils/i18n';
 import { getNews } from '../../utils/news';
+import { GLOSSARY } from '../../data/glossary';
 import { checklistsIn } from '../../utils/content';
 
 export const getStaticPaths: GetStaticPaths = () => LOCALES.map((lang) => ({ params: { lang } }));
@@ -43,9 +44,12 @@ export const GET: APIRoute = async ({ params }) => {
     ['regions', t('region.hub.title'), t('region.hub.description')],
     ['checklists', t('checklists.title'), t('checklists.description')],
     ['news', t('news.title'), t('news.description')],
+    ['glossary', t('glossary.title'), t('glossary.description')],
+    ['calendar', t('calendar.title'), t('calendar.description')],
   ];
   for (const [hub, title, desc] of hubs) items.push({ t: title, d: clip(desc), u: hubPath(lang, hub), k: 'page' });
   for (const n of await getNews(lang)) items.push({ t: n.data.title, d: clip(n.data.summary), u: `${hubPath(lang, 'news')}#n-${n.data.translationKey}`, k: 'page' });
+  for (const g of GLOSSARY) items.push({ t: g.name, d: clip(g.def[lang]), u: `${hubPath(lang, 'glossary')}#g-${g.id}`, k: 'page' });
   for (const p of pages) {
     if (TOOLS.some((tool) => tool.key === p.data.translationKey)) continue;
     items.push({ t: p.data.title, d: clip(p.data.description), u: entryPath(lang, p.data.slug), k: 'page' });

@@ -60,6 +60,8 @@ export const HUB_SLUGS = {
   regions: { en: 'regions', fr: 'regions', es: 'regiones', de: 'regionen', ar: 'jihat' },
   checklists: { en: 'checklists', fr: 'checklists', es: 'listas-de-control', de: 'checklisten', ar: 'qawaim-al-tahaqquq' },
   news: { en: 'admin-news', fr: 'nouveautes-administratives', es: 'novedades-administrativas', de: 'verwaltungs-neuigkeiten', ar: 'mustajaddat-idariya' },
+  glossary: { en: 'glossary', fr: 'glossaire', es: 'glosario', de: 'glossar', ar: 'qamus' },
+  calendar: { en: 'procedures-calendar', fr: 'calendrier-des-demarches', es: 'calendario-de-tramites', de: 'kalender-formalitaeten', ar: 'taqwim-al-ijraat' },
   search: { en: 'search', fr: 'recherche', es: 'buscar', de: 'suche', ar: 'bahth' },
   mre: { en: 'moroccans-abroad', fr: 'mre', es: 'marroquies-en-el-extranjero', de: 'auslandsmarokkaner', ar: 'maghariba-al-alam' },
   visit: { en: 'visit-morocco', fr: 'visiter-le-maroc', es: 'visitar-marruecos', de: 'marokko-besuchen', ar: 'ziyarat-al-maghrib' },

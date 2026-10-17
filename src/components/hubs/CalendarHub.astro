@@ -1,0 +1,52 @@
+---
+/** /<lang>/<calendrier> : calendrier des démarches par mois (src/data/calendar.ts), avec statut de chaque date. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../PageHero.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale, type UIKey } from '../../i18n';
+import { CALENDAR } from '../../data/calendar';
+import { allLocalesAlternates, allLocalesTargets, entryPath, getArticleByKey, homePath, hubPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const monthName = (m: number) => new Intl.DateTimeFormat(lang, { month: 'long', timeZone: 'UTC' }).format(new Date(Date.UTC(2027, m - 1, 1)));
+const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 0];
+const groups = await Promise.all(months.map(async (m) => ({
+  m,
+  title: m === 0 ? t('calendar.always') : monthName(m),
+  items: await Promise.all(CALENDAR.filter((c) => c.month === m).map(async (c) => ({ c, article: await getArticleByKey(lang, c.guide) }))),
+})));
+const groupsShown = groups.filter((g) => g.items.length > 0);
+const self = (l: Locale) => hubPath(l, 'calendar');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('calendar.title') }];
+const machine = lang !== 'fr' && lang !== 'en';
+const badge: Record<string, string> = { confirmed: 'badge badge-navy', expected: 'badge', tbc: 'badge' };
+---
+<BaseLayout lang={lang} title={t('calendar.title')} description={t('calendar.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('calendar.title'), description: t('calendar.description'), lang, items: groupsShown.map((g) => ({ name: g.title, url: `${url}#m-${g.m}` })) })]}>
+  <PageHero lang={lang} crumbs={crumbs} title={t('calendar.title')} intro={t('calendar.intro')} icon="calendar" />
+  <div class="container-page pt-8">
+    {machine && <p class="mb-6 rounded-xl border border-[var(--line)] p-4 text-sm muted">{t('machine.note')}</p>}
+    <ol class="grid gap-8">
+      {groupsShown.map((g) => (
+        <li id={`m-${g.m}`} class="scroll-mt-24">
+          <h2 class="section-title !text-2xl capitalize">{g.title}</h2>
+          <ul class="mt-4 grid gap-3">
+            {g.items.map(({ c, article }) => (
+              <li class="card p-4 sm:p-5">
+                <p class="flex flex-wrap items-center gap-2 text-sm">
+                  <span class={badge[c.status]}>{t(`calendar.status.${c.status}` as UIKey)}</span>
+                  <a href={c.src.url} rel="noopener nofollow" target="_blank" class="inline-flex items-center gap-1 text-[var(--link)] underline-offset-4 hover:underline">{t('calendar.source')} : {c.src.label}<Icon name="external" class="size-3.5" /></a>
+                </p>
+                <p class="mt-2">{c.text[lang]}</p>
+                {article && <p class="mt-3 text-sm"><a href={entryPath(lang, article.data.slug)} class="inline-flex items-center gap-1.5 font-semibold text-[var(--link)] underline-offset-4 hover:underline"><Icon name="book" class="size-3.5" />{t('calendar.guide')} : {article.data.title}</a></p>}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </div>
+</BaseLayout>
