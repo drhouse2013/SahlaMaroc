@@ -112,6 +112,8 @@
   "article.checked": "Vor Ort geprüft am",
   "article.verified": "Geprüft am",
   "article.verifiedMissing": "Datum der Quellenprüfung nicht erfasst",
+  "article.proReviewed": "Von einer Fachperson geprüft am",
+  "article.proNotReviewed": "Nicht von einer Fachperson geprüft",
   "article.summary": "Kurz gesagt",
   "article.sources": "Offizielle Quellen",
   "article.sourcesNote": "Die Stellen, bei denen Sie Regeln und Tarife dieses Ratgebers prüfen können. Verlassen Sie sich immer auf deren aktuelle Fassung.",

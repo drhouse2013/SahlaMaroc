@@ -82,3 +82,8 @@ Limites : recherche web rapide (3 requêtes), aucun forum MRE lu directement. La
 ## 15. Taxe d'habitation / taxe de services communaux pour MRE propriétaires — REJETÉE (2026-10-16)
 - Demande : bladi.net (articles taxe d'habitation MRE 2025), le360, wafir.ma, upsilon-consulting.com.
 - Raison : aucune source officielle (DGI, loi 47-06) lue ; les sources divergent sur l'abattement de 75 % (résidence principale seulement ou non), sur la TSC et sur les barèmes. Non confirmé, non chiffré. À reprendre uniquement après lecture de la loi 47-06 sur le site de la DGI.
+
+## 16. Mise à jour du 2026-10-18 (cycle automatique)
+- Idée 1 (vignette TSAV) : DÉJÀ RÉALISÉE (calculateur `VignetteCalc`, page `calcul-vignette-tsav-maroc`, barème lu à la DGI, FACTS.csv).
+- Échange de permis étranger : DÉJÀ COUVERT (`conduire-maroc-permis-etranger-echange`). Recherche : accord Maroc-Portugal de reconnaissance réciproque des permis annoncé en juin 2026 (telquel.ma, presse) ; texte officiel NARSA non lu, donc non ajouté. À reprendre si la NARSA publie le texte.
+- Aucune nouvelle idée avec source officielle exploitable ce jour (Firecrawl hors crédits, recherche limitée à la presse). Rien implémenté.

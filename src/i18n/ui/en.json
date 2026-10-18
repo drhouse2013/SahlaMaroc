@@ -112,6 +112,8 @@
   "article.checked": "Checked on the ground",
   "article.verified": "Verified on",
   "article.verifiedMissing": "Source verification date not recorded",
+  "article.proReviewed": "Reviewed by a professional on",
+  "article.proNotReviewed": "Not reviewed by a professional",
   "article.summary": "In brief",
   "article.sources": "Official sources",
   "article.sourcesNote": "The bodies to contact to check the rules and rates in this guide. Always rely on their latest version.",

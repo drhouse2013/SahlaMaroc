@@ -112,6 +112,8 @@
   "article.checked": "Vérifié sur le terrain le",
   "article.verified": "Vérifié le",
   "article.verifiedMissing": "Date de vérification des sources non renseignée",
+  "article.proReviewed": "Relue par un professionnel le",
+  "article.proNotReviewed": "Non relue par un professionnel",
   "article.summary": "En bref",
   "article.sources": "Sources officielles",
   "article.sourcesNote": "Les organismes à consulter pour vérifier les règles et tarifs de ce guide. Fiez-vous toujours à leur dernière version.",

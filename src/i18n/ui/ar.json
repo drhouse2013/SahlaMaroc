@@ -112,6 +112,8 @@
   "article.checked": "تم التحقق ميدانياً في",
   "article.verified": "تم التحقق في",
   "article.verifiedMissing": "تاريخ التحقق من المصادر غير مسجَّل",
+  "article.proReviewed": "راجعها مختص بتاريخ",
+  "article.proNotReviewed": "لم يراجعها مختص بعد",
   "article.summary": "باختصار",
   "article.sources": "المصادر الرسمية",
   "article.sourcesNote": "الجهات التي يمكن الرجوع إليها للتحقق من قواعد هذا الدليل وأسعاره. اعتمد دائماً على آخر نسخة لديها.",

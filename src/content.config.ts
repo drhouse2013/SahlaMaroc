@@ -42,6 +42,8 @@ const articles = defineCollection({
        * Ne renseigner que si la vérification a réellement eu lieu ; jamais de date « du jour » par défaut.
        */
       verifiedDate: z.coerce.date().optional(),
+      /** Date de relecture par un professionnel (fiscaliste, notaire, avocat...). Ne renseigner que si réelle. */
+      proReviewedDate: z.coerce.date().optional(),
       heroImage: image().optional(),
       /** Illustration maison utilisée si pas de photo (src/assets/illustrations/<scene>.svg) */
       illustration: z

@@ -210,3 +210,11 @@ Décisions prises sans demande de validation, conformément à la directive de c
 
 ## 2026-10-17 - Guides Coupe du monde 2030 (fr + en)
 - 5 guides enrichis (>= 900 mots, FAQ, etapes, checklist, liens villes). Source officielle lue : article FIFA du 11/12/2024 (pays hotes, matchs du centenaire ; aucune ville marocaine). Reste presse : statut « proposees » maintenu. verifiedDate retire. Aucune date de match ni prix. Pas de photo ajoutee (aucun cliche de stade libre verifie). es/de/ar non modifies.
+
+## 2026-10-18 - Cycle expert automatique
+- Aucune idée nouvelle exploitable (vignette TSAV et permis déjà couverts ; Firecrawl hors crédits). Seul docs/IDEES-EXPERT.md modifié.
+- check:content échoue (26 erreurs préexistantes, titres/descriptions trop longs dans des articles non touchés par ce cycle, notamment ar). Publication NON lancée, sans contournement. À corriger par le lot de traduction concerné.
+
+## 2026-10-18 - Statut de relecture professionnelle (E-E-A-T) + controles
+- Nouveau champ optionnel `proReviewedDate` (src/content.config.ts). ArticleLayout affiche, sur les guides des categories immobilier et money et ceux tagues douane/fiscalite/vignette/change, soit « Relue par un professionnel le <date> » soit « Non relue par un professionnel » (5 langues, cles article.proReviewed / article.proNotReviewed). Aucune date posee : aucune relecture professionnelle reelle n'a eu lieu ; a renseigner seulement apres relecture par un fiscaliste/notaire.
+- check:content etait en echec (25 erreurs longueurs titre/description et un placeholder en es/de/ar) : corrige par agent, relance des controles.
