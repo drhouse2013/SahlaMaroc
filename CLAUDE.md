@@ -30,3 +30,12 @@ Le propriétaire du site a donné l'ordre suivant, qui prime sur les habitudes d
 - **Appliquer soi-même les recommandations** formulées au fil du travail, sans attendre.
 - **Honnêteté éditoriale** : `checkedDate` (« vérifié sur le terrain ») est réservé aux vérifications réellement faites sur place ; les traductions faites par IA gardent `machineTranslated: true` tant qu'elles ne sont pas relues.
 - **Garde-fous maintenus** : jamais de push sur `master`, pas d'action destructrice hors du site, aucun secret ni identifiant dans le dépôt, pas de contournement des permissions.
+
+## Skills installés (usage automatique — `.claude/skills/`)
+Les invoquer d'office via l'outil Skill, sans attendre que l'utilisateur les nomme :
+- `karpathy-guidelines` + `ponytail` : sur TOUTE tâche de code (modif minimale, pas de sur-ingénierie, pas de refactor non demandé). `ponytail-review` avant de clore un lot de changements, `ponytail-audit`/`ponytail-debt` sur demande d'audit.
+- `impeccable` : tout travail UI/UX (design, critique, polish, responsive, a11y, motion, états vides/erreurs).
+- `ui-ux-pro-max` : choix de style, palette, typographie, patterns UI ; `ui-styling` pour l'implémentation Tailwind ; `design-system` pour les tokens (`src/styles/global.css`).
+- `brand`, `banner-design`, `design`, `slides` : uniquement pour identité visuelle, bannières, visuels, présentations.
+- Contraintes du projet prioritaires sur les skills : Astro 5 + Tailwind 4 CSS-first, `brandName(lang)`, RTL pour l'arabe, i18n fr/en/es/de/ar, `<AffiliateLink>`, `npm run build` avant push.
+- Après toute modif UI : `npm run build` ; vérification Playwright seulement si parcours utilisateur touché.
