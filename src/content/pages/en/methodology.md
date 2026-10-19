@@ -112,6 +112,8 @@ The site's photos come from Wikimedia Commons and are used under free licences (
 - **Casa-Voyageurs railway station** : calflier001, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), [source](https://commons.wikimedia.org/wiki/File:Gare_Casablanca_Voyageurs_Morroco_April_2013_(8709701559).jpg)
 - **Casablanca corniche** : Paolapezz, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Corniche,_Casablanca.jpg)
 
+- Casablanca Finance City at sunset (2025), property buying guide: Chah.salah, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg)
+
 ## Mapping
 
 The city map outline (Morocco within its national borders, including the Southern provinces) is derived from Natural Earth (public domain, naturalearthdata.com) and simplified by us; borders as represented by the Kingdom of Morocco.

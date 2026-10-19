@@ -112,6 +112,8 @@ Les photos du site proviennent de Wikimedia Commons et sont utilisées sous lice
 - **Gare de Casa-Voyageurs** : calflier001, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), [source](https://commons.wikimedia.org/wiki/File:Gare_Casablanca_Voyageurs_Morroco_April_2013_(8709701559).jpg)
 - **Corniche de Casablanca** : Paolapezz, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Corniche,_Casablanca.jpg)
 
+- Casablanca Finance City au coucher du soleil (2025), guide achat immobilier : Chah.salah, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg)
+
 ## Cartographie
 
 Le fond de carte des villes (Maroc dans ses frontières nationales, provinces du Sud incluses) provient de Natural Earth (domaine public, naturalearthdata.com), simplifié par nos soins ; frontières telles que représentées par le Royaume du Maroc.

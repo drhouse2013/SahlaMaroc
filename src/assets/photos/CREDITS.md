@@ -267,3 +267,5 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | souk-semmarine-marrakech.jpg | DimiTalen | CC0 | https://commons.wikimedia.org/wiki/File:Covered_Souk_Semmarine,_Marrakech,_2008.jpg |
 | gare-casa-voyageurs.jpg | calflier001 | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Gare_Casablanca_Voyageurs_Morroco_April_2013_(8709701559).jpg |
 | corniche-casablanca.jpg | Paolapezz | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Corniche,_Casablanca.jpg |
+
+- immo-acheter-casa-2025.jpg : Casa Finance City, coucher de soleil (2025). Auteur : Chah.salah. Licence : CC0. Source : https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg
