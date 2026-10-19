@@ -114,6 +114,8 @@ Les photos du site proviennent de Wikimedia Commons et sont utilisées sous lice
 
 - Casablanca Finance City au coucher du soleil (2025), guide achat immobilier : Chah.salah, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg)
 
+- Voitures en attente d’embarquement à Algésiras (2022), guide règle des 180 jours : Xemenendura, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg)
+
 ## Cartographie
 
 Le fond de carte des villes (Maroc dans ses frontières nationales, provinces du Sud incluses) provient de Natural Earth (domaine public, naturalearthdata.com), simplifié par nos soins ; frontières telles que représentées par le Royaume du Maroc.

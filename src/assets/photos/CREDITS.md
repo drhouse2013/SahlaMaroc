@@ -269,3 +269,4 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | corniche-casablanca.jpg | Paolapezz | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Corniche,_Casablanca.jpg |
 
 - immo-acheter-casa-2025.jpg : Casa Finance City, coucher de soleil (2025). Auteur : Chah.salah. Licence : CC0. Source : https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg
+- voiture-traversee-mre.jpg : voitures en attente d’embarquement, port d’Algésiras (2022). Auteur : Xemenendura. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg

@@ -114,6 +114,8 @@ The site's photos come from Wikimedia Commons and are used under free licences (
 
 - Casablanca Finance City at sunset (2025), property buying guide: Chah.salah, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg)
 
+- Cars waiting to board at Algeciras (2022), 180-day rule guide: Xemenendura, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg)
+
 ## Mapping
 
 The city map outline (Morocco within its national borders, including the Southern provinces) is derived from Natural Earth (public domain, naturalearthdata.com) and simplified by us; borders as represented by the Kingdom of Morocco.
