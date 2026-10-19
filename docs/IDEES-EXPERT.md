@@ -87,3 +87,13 @@ Limites : recherche web rapide (3 requêtes), aucun forum MRE lu directement. La
 - Idée 1 (vignette TSAV) : DÉJÀ RÉALISÉE (calculateur `VignetteCalc`, page `calcul-vignette-tsav-maroc`, barème lu à la DGI, FACTS.csv).
 - Échange de permis étranger : DÉJÀ COUVERT (`conduire-maroc-permis-etranger-echange`). Recherche : accord Maroc-Portugal de reconnaissance réciproque des permis annoncé en juin 2026 (telquel.ma, presse) ; texte officiel NARSA non lu, donc non ajouté. À reprendre si la NARSA publie le texte.
 - Aucune nouvelle idée avec source officielle exploitable ce jour (Firecrawl hors crédits, recherche limitée à la presse). Rien implémenté.
+
+## 17. Service militaire et MRE — RÉALISÉE le 2026-10-19
+- Demande : https://www.bladi.net/service-militaire-mre-recensement,88539.html ; https://fr.le360.ma/politique/service-militaire-obligatoire-facultatif-pour-les-mre-181133/
+- Source officielle lue : décret 2-19-46 (BO 6762), portail Adala du ministère de la Justice (texte extrait du PDF). Art. 12 (inscription volontaire MRE avec n° d'immatriculation consulaire), 16, 18, 20, 21.
+- Guide `service-militaire-maroc-mre-recensement-exemption` (5 langues ; es/de/ar machineTranslated). Non chiffré : âges, durée, sanctions (loi 44-18 non relue). tajnid.ma inaccessible : cité comme « selon la presse ».
+- Suite possible : lire la loi 44-18 (BO 6762 / Adala) pour confirmer âges et cas des MRE convoqués.
+
+## 18. Numéros d'urgence (19 / 15 / 150 / 177) — REPORTÉE (2026-10-19)
+- Demande : expat.com (forum situations d'urgence), sites touristiques.
+- Raison : aucune page officielle (ANRT, DGSN, Protection civile) trouvée ; sources secondaires contradictoires (15 = pompiers ou SAMU ; 150 ; 112 non confirmé). Laisser « à confirmer » dans les guides.

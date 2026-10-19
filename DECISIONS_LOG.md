@@ -218,3 +218,8 @@ Décisions prises sans demande de validation, conformément à la directive de c
 ## 2026-10-18 - Statut de relecture professionnelle (E-E-A-T) + controles
 - Nouveau champ optionnel `proReviewedDate` (src/content.config.ts). ArticleLayout affiche, sur les guides des categories immobilier et money et ceux tagues douane/fiscalite/vignette/change, soit « Relue par un professionnel le <date> » soit « Non relue par un professionnel » (5 langues, cles article.proReviewed / article.proNotReviewed). Aucune date posee : aucune relecture professionnelle reelle n'a eu lieu ; a renseigner seulement apres relecture par un fiscaliste/notaire.
 - check:content etait en echec (25 erreurs longueurs titre/description et un placeholder en es/de/ar) : corrige par agent, relance des controles.
+
+## 2026-10-19 - Cycle expert automatique : guide service militaire et MRE
+- Nouveau guide `service-militaire-maroc-mre-recensement-exemption` (fr, en ; es/de/ar machineTranslated), categorie demarches. Faits tires uniquement du decret 2-19-46 (BO 6762 du 21/03/2019) lu sur Adala ; verifiedDate 2026-10-19 (texte officiel relu, pas de verification terrain). Ages, duree et sanctions non chiffres (loi 44-18 non relue). 7 lignes FACTS.csv.
+- Amelioration informations : maillage depuis le guide passeport/CNIE (fr, en) vers le nouveau guide (immatriculation consulaire exigee par l'art. 12).
+- Numeros d'urgence : toujours sans source officielle, laisses « a confirmer » (IDEES-EXPERT n° 18).
