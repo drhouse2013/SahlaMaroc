@@ -270,3 +270,61 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 
 - immo-acheter-casa-2025.jpg : Casa Finance City, coucher de soleil (2025). Auteur : Chah.salah. Licence : CC0. Source : https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg
 - voiture-traversee-mre.jpg : voitures en attente d’embarquement, port d’Algésiras (2022). Auteur : Xemenendura. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg
+- chefchaouen-place-haouta-2025.jpg : Place El Haouta, Chefchaouen (2025). Auteur : Badr Rachadi. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg
+- merzouga-camp-2019.jpg : Camp du désert, Merzouga (2019). Auteur : Isabeldianamadrid. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Merzouga_desert_camp.jpg
+- essaouira-medina-2023.jpg : Médina d’Essaouira (2023). Auteur : Mounir Neddi. Licence : CC0. Source : https://commons.wikimedia.org/wiki/File:M%C3%A9dina_d%27Essaouira_(ancienne_Mogador)_8.jpg
+- fes-medina-panorama-2024.jpg : Médina de Fès (2024). Auteur : Petar Milošević. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg
+- meknes-bab-mansour-2019.jpg : Bab Mansour, Meknès (2019). Auteur : Werner100359. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg
+- ouarzazate-taourirt-2024.jpg : Kasbah de Taourirt, Ouarzazate (2024). Auteur : Petar Milošević. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg
+- oujda-bab-sidi-aissa-2019.jpg : Bab Sidi Aïssa, Oujda (2019). Auteur : Farajiibrahim. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg
+- casablanca-hassan2-corniche-2024.jpg : Mosquée Hassan II depuis la corniche, Casablanca (2024). Auteur : RIM 75. Licence : CC BY 4.0. Source : https://commons.wikimedia.org/wiki/File:%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A.jpg
+- rabat-oudayas-tour-2024.jpg : Remparts des Oudayas et tour Mohammed VI, Rabat (2024). Auteur : Petar Milošević. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Walls_of_Kasbah_of_Udayas_and_new_Mohammed_VI_Tower_(2024).jpg
+- immo-impots-casa-2025.jpg : Immeubles du boulevard Mohammed V, Casablanca (2025). Auteur : Philip Mallis. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Four-storey_white_apartment_and_commercial_buildings_on_Boulevard_Mohammed_V_in_Casablanca,_Morocco_(54875688339).jpg
+- voiture-achat-garage-casablanca.jpg : Garage de voitures Elegance Cars, Casablanca (2022). Auteur : Vd212. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Garage_Elegance_Cars_Casablanca.jpg
+- aeroport-agadir-2023.jpg : Aéroport Agadir Al Massira (2023). Auteur : Mike Peel (www.mikepeel.net). Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2023_287.jpg
+- grand-taxi-inezgane.jpg : Grand taxi à Inezgane (2020). Auteur : MustaSensei. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Grand_Taxi_Morocco_Inzgane.jpg
+- distributeur-cih.jpg : Distributeur automatique CIH Bank (2023). Auteur : Hamza Izourane. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Guichet_Automatique_Bancaire_CIH_Bank.jpg
+- toubkal-randonneurs.jpg : Randonneurs sous le Toubkal (2022). Auteur : Kurinurm. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Jebel_Toubkal_and_a_group_of_hikers.jpg
+- gare-routiere-tata.jpg : Gare routière de Tata (2022). Auteur : Grahamcole. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Bus_Station_in_Tata,_Morocco.jpg
+- chefchaouen-fontaine.jpg : Fontaine de la place El Haouta, Chefchaouen (2025). Auteur : Badr Rachadi. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Fountain-place-el-haouta-in-chefchaouen-morocco.jpg
+- merzouga-caravane.jpg : Caravane de dromadaires dans les dunes, Merzouga (2022). Auteur : Merzougaloisirs. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg
+- autoroute-marrakech-agadir.jpg : Autoroute Marrakech-Agadir (2019). Auteur : Abdeaitali. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Highway_Marrakech_Agadir_2019.jpg
+
+## Guides FR (liste 03)
+
+| Fichier | Auteur | Licence | Source |
+|---|---|---|---|
+| stades-rabat-moulay-abdellah.jpg | Reda benkhadra | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Olympic_Stadium,_Rabat_(1).jpg |
+| vols-ryanair-rabat.jpg | CAPTAIN RAJU | CC0 | https://commons.wikimedia.org/wiki/File:Ryanair_(Rabat)_in_2026.02.jpg |
+| riad-patio-dar-el-bacha.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg |
+| sante-chu-tanger.jpg | Flaspec | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:University_Hospital_Center_in_Tangier_(general_view).jpg |
+| banque-barid-casablanca.jpg | Bertrand SOUBEYRAND | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Al_barid_bank_boulevard_Ghandi_Casablanca.jpg |
+| epargne-bank-al-maghrib-rabat.jpg | auteur non indiqué | CC0 | https://commons.wikimedia.org/wiki/File:Bank_Al-Maghrib,_Rabat.jpg |
+| tram-rabat-sale.jpg | Taha ahha | CC0 | https://commons.wikimedia.org/wiki/File:Tramway_line_Rabat.jpg |
+| gare-rabat-ville.jpg | Boubloub | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg |
+| consulat-maroc-pontoise.jpg | Chabe01 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Consulat_Maroc_Pontoise_1.jpg |
+| pourboire-jemaa-terrasse.jpg | Jorge Franganillo | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Marrakech_Jemaa_el-Fna_(54269477282).jpg |
+| darija-souk-haddadine.jpg | Petar Milošević | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Oriental_hanging_lanterns._Souk_Haddadine,_Marrakech_Medina_(سوق_الحدادين_مراكش).jpg |
+| animaux-chat-chefchaouen.jpg | Buiobuione | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cats_in_the_city_of_Chefchaouen_1002118.jpg |
+| cdm-stade-ibn-batouta.jpg | KSKB1935 | Public domain | https://commons.wikimedia.org/wiki/File:Stade_Ibn_Batuta,_Tanger_2023.jpg |
+| surf-taghazout-baie.jpg | 瑞丽江的河水 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg |
+| visa-aeroport-oujda.jpg | Jakub Pietrasiak | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Aeroport_Oujda_Angads_2024.jpg |
+| retraite-plage-dakhla.jpg | Tbo47 | CC0 | https://commons.wikimedia.org/wiki/File:Dakhla,_Maroc.jpg |
+| assurance-voyage-ram.jpg | Acroterion | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg |
+| permis-autoroute-2025.jpg | Timothy A. Gonsalves | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:South_Casablanca_Agadir_Autoroute_Timlilt_Oct25_A7CR_08362.jpg |
+| construire-chantier-casa.jpg | Bengt Nyman | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Casablanca_NZ7_3857_(40167825473).jpg |
+| cdm2030-stade-moulay-abdellah.jpg | Reda benkhadra | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Moulay_Abdellah_Stadium.jpg |
+| cout-vie-etal-legumes.jpg | مصطفى ملو | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A_greengrocer_displays_vegetables_in_Morocco.jpg |
+| credit-immeubles-casa.jpg | Philip Mallis | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Four-storey_white_apartment_and_commercial_buildings_on_Boulevard_Mohammed_V_in_Casablanca,_Morocco_(54875688339).jpg |
+| artisan-poterie.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Moroccan_pottery_traditions_from_marrakech.jpg |
+| savoir-vivre-the-menthe.jpg | مصطفى ملو | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tea_and_Moroccan_sweets.jpg |
+| daam-sakane-logements.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:El_Azzouzia.jpg |
+| douane-tanger-med.jpg | Bertrand SOUBEYRAND | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Porte-conteneurs_Maersk_Congo_Tanger_med.jpg |
+| evisa-aeroport-marrakech.jpg | Anass Sedrati | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Inside_Menara_Airport.jpg |
+| ecoles-lycee.jpg | Mounir Neddi | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:1_Qualifying_High_School_Tariq_Ibn_Ziyad_(Berber_High_School).jpg |
+| envoi-argent-wafacash.jpg | Bertrand SOUBEYRAND | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Enseigne_wafacash_casablanca.jpg |
+| merzouga-caravane.jpg | cattan2011 | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Erg_Chebbi_Sahara_Desert,_Morocco.jpg |
+| essaouira-barques.jpg | Mustang Joe | CC0 | https://commons.wikimedia.org/wiki/File:Fishing_boats_of_Essaouira_-_Morocco.jpg |
+| fibre-casa-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_15.jpg |
+| fuseau-horloge.jpg | Reda benkhadra | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Clock_Bank_al-Maghrib,_Casablanca.jpg |
+| hammam-interieur.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hammam_Saffarin_DSCF6564.jpg |
