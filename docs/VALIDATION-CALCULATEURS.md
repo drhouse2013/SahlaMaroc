@@ -146,7 +146,7 @@ Référence : Recalcul manuel (somme des postes x (1+marge) ; pension - budget).
 1. **Frais d'achat, droit fixe ANCFCC** : `landRegistryFixed: 200` (ancien) dans `src/config/mre.ts` ; le tarif ANCFCC lu indique 100 DH par propriété (minimum de perception 500 DH, non codé). Surestimation de 100 DH.
 2. **Frais d'achat, notaire à 1 %** : sous-estime le barème progressif cité en commentaire (projet de décret 2.17.481, non confirmé).
 3. **Douane, résidence = 10 ans** : le texte exige « plus de dix » ans ; `checkEligibility90` accepte 10 pile (avertissement seulement) et accorde le 90 %.
-4. **Douane, valeur > 300 000 DH** : le site applique 90 % sur 300 000 et le droit commun sur l'excédent ; la lecture ADII (« dans la limite de ») est à confirmer, une autre lecture est « pas d'abattement du tout ».
-5. **Crédit** : champ vide, 0 ou négatif traité comme 0 sans message ; durée 0 forcée à 1 mois ; un taux 0 % est indistinguable d'un champ vide.
+4. **[TRANCHÉ 2026-10-21]** Guide ADII 2025 (docs/archives/guide-douane-mre-2025.txt, l. 493-496) : abattement « à hauteur maximale de 300.000 Dhs », la tranche supérieure est soumise au droit commun = lecture du site confirmée, écart de 0,41 du cas 16 = arrondi. Ancien énoncé : valeur > 300 000 DH : le site applique 90 % sur 300 000 et le droit commun sur l'excédent ; la lecture ADII (« dans la limite de ») est à confirmer, une autre lecture est « pas d'abattement du tout ».
+5. **Crédit** [CORRIGÉ 2026-10-21 : avertissement affiché si prix <= 0, apport >= prix ou durée hors 1-30] : champ vide, 0 ou négatif traité comme 0 sans message ; durée 0 forcée à 1 mois ; un taux 0 % est indistinguable d'un champ vide.
 6. **Plus-value** : concordance attendue (même formule) ; ne prouve pas les coefficients de réévaluation, qui restent une saisie utilisateur.
 7. **Retraite** : la saisie négative est refusée (cohérent) ; pas de référence officielle possible.

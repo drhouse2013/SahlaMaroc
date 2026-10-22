@@ -97,3 +97,11 @@ Limites : recherche web rapide (3 requêtes), aucun forum MRE lu directement. La
 ## 18. Numéros d'urgence (19 / 15 / 150 / 177) — REPORTÉE (2026-10-19)
 - Demande : expat.com (forum situations d'urgence), sites touristiques.
 - Raison : aucune page officielle (ANRT, DGSN, Protection civile) trouvée ; sources secondaires contradictoires (15 = pompiers ou SAMU ; 150 ; 112 non confirmé). Laisser « à confirmer » dans les guides.
+
+## 19. Cycle du 2026-10-21 — aucune idée implémentée
+- Service militaire, suite (loi 44-18 : âges, durée) : REPORTÉE. Recherche : seule la presse (Medias24, Bladi, Hespress, fiche EUAA) donne 19-25 ans / 12 mois ; texte du BO non lu, application aux MRE divergente selon les sources. Non chiffré dans le guide.
+- Déclaration de devises (seuil 100 000 DH, billets 2 000 DH) : DÉJÀ COUVERT (`douane-maroc-voyageurs-quoi-apporter`). Circulaires citées par la presse (1716 / 1743) contradictoires : rien ajouté.
+
+## 20. Cycle du 2026-10-22 — aucune idée implémentée
+- Piste : guide ADII « Marocains du Monde 2026 » (cellule conseil MRE investisseurs, MDMconseil@douane.gov.ma, citée par la presse). REPORTÉE : le guide 2026 n'a pas été lu ; à relire sur douane.gov.ma avant d'enrichir les guides douane/investissement (le guide ADII 2025 est déjà archivé et cité).
+- Marhaba 2026 (clôturée, source maroc.ma) : chiffres de presse seulement, non repris.

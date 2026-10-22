@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "ecb87cc4-8f48-4bc4-a948-25c2d487ca8d",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\Diniz\\Documents\\SahlaMaroc\\.archify\\architecture-sahlamaroc-20261019-211618\\candidate.json",
+  "output": "C:\\Users\\Diniz\\Documents\\SahlaMaroc\\docs\\architecture-sahlamaroc.html",
+  "specification": {
+    "sha256": "4e1550f027484619b320bd406febe187225770a22f8641d9074bab51c86f2e0b",
+    "bytes": 4144
+  },
+  "artifact": {
+    "sha256": "25a7c807a2200514a86774f79a50608852e0152ce9a6436cb951f9623e87cc59",
+    "bytes": 831899
+  }
+}

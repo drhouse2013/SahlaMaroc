@@ -61,7 +61,7 @@ export const CUSTOMS = {
    */
   abatement90Pct: { value: 90, status: 'official', source: 'Fiche ADII « Dédouanement d’un véhicule » (douane.gov.ma, 10/10/2026) ; circulaire 5945/311 (04/06/2019)' } satisfies CustomsParam,
   /** Plafond de la valeur à l'état neuf soumise à l'abattement : au-delà, droit commun (mêmes sources). */
-  abatement90CapMad: { value: 300000, status: 'official', source: 'Circulaire ADII 5945/311 ; Marhaba 2026 via Bladi 07/06/2026' } satisfies CustomsParam,
+  abatement90CapMad: { value: 300000, status: 'official', source: 'Guide ADII dedouanement MRE 2025 (plafond 300 000 DH, tranche superieure au droit commun) ; Circulaire ADII 5945/311' } satisfies CustomsParam,
   /** Âge minimal du bénéficiaire (ans révolus). */
   abatement90MinAge: { value: 60, status: 'official', source: 'Circulaire ADII 5945/311 ; Marhaba 2026' } satisfies CustomsParam,
   /** Résidence effective à l'étranger : « plus de dix (10) années » (strictement). */

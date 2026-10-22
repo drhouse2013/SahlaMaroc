@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\Diniz\\Documents\\SahlaMaroc\\.archify\\architecture-sahlamaroc-20261019-211618\\candidate.json",
+    "sha256": "4e1550f027484619b320bd406febe187225770a22f8641d9074bab51c86f2e0b",
+    "bytes": 4144
+  },
+  "artifact": {
+    "path": "C:\\Users\\Diniz\\Documents\\SahlaMaroc\\docs\\architecture-sahlamaroc.html",
+    "sha256": "25a7c807a2200514a86774f79a50608852e0152ce9a6436cb951f9623e87cc59",
+    "bytes": 831899
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [
+    {
+      "code": "i18n/locale-fallback",
+      "severity": "warning",
+      "message": "meta.locale \"fr\" has no bundled catalog and no usable meta.translations; the Viewer chrome and <html lang> fall back to English.",
+      "subject": {
+        "diagramType": "architecture",
+        "path": "/meta/locale"
+      },
+      "evidence": {
+        "locale": "fr",
+        "bundledLocales": [
+          "en",
+          "zh-CN",
+          "zh-TW",
+          "es",
+          "ko",
+          "ar"
+        ]
+      },
+      "supportedFixes": [
+        "Supply meta.translations for this locale.",
+        "Use a bundled locale: en, zh-CN, zh-TW, es, ko, ar."
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\Diniz\\Documents\\SahlaMaroc\\docs\\architecture-sahlamaroc.finalize.json",
+    "summaryReceipt": "C:\\Users\\Diniz\\Documents\\SahlaMaroc\\docs\\architecture-sahlamaroc.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\Diniz\\Documents\\SahlaMaroc\\docs\\architecture-sahlamaroc.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-19T21:16:19.817Z",
+    "source": "network",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 8298,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

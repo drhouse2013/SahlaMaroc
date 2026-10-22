@@ -223,3 +223,16 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Nouveau guide `service-militaire-maroc-mre-recensement-exemption` (fr, en ; es/de/ar machineTranslated), categorie demarches. Faits tires uniquement du decret 2-19-46 (BO 6762 du 21/03/2019) lu sur Adala ; verifiedDate 2026-10-19 (texte officiel relu, pas de verification terrain). Ages, duree et sanctions non chiffres (loi 44-18 non relue). 7 lignes FACTS.csv.
 - Amelioration informations : maillage depuis le guide passeport/CNIE (fr, en) vers le nouveau guide (immatriculation consulaire exigee par l'art. 12).
 - Numeros d'urgence : toujours sans source officielle, laisses « a confirmer » (IDEES-EXPERT n° 18).
+
+## 2026-10-21 - Cycle expert automatique
+- Aucune idee nouvelle avec source officielle exploitable (loi 44-18 : presse seulement ; devises deja couvertes). Seul docs/IDEES-EXPERT.md modifie (n° 19) ; aucun changement de site, donc build et publier-auto.bat non relances.
+- Controles : check:content 0 erreur (5 avertissements verifiedDate preexistants).
+
+## 2026-10-21 - Validation calculateurs : douane (plafond 300 000) et crédit
+- Douane : point 4 tranché par le texte officiel (guide ADII 2025, archive locale, l. 493-496 : abattement 90 % « à hauteur maximale de 300.000 Dhs », tranche supérieure au droit commun). Le calcul du site était correct ; source mise à jour dans src/config/customs.ts, ligne ajoutée à FACTS.csv.
+- Crédit (MortgageCalc, 5 langues) : avertissement visible si prix <= 0, apport >= prix ou durée hors 1-30 (point 5 de VALIDATION-CALCULATEURS.md). Pas de changement de formule.
+- Reste ouvert : notaire 1 % vs barème progressif (point 2, texte final non confirmé), coefficients de réévaluation plus-value.
+
+## 2026-10-22 - Cycle expert automatique
+- Aucune idée nouvelle avec source officielle lue (piste guide ADII « Marocains du Monde 2026 » notée, n° 20). Seul docs/IDEES-EXPERT.md modifié ; les changements du 2026-10-21 (douane, crédit) restaient à publier.
+- Contrôles : check:content 0 erreur, node --test 67/67, build 922 pages, check:dist 0 erreur.
