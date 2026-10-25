@@ -26,6 +26,7 @@ import VignetteCalc from '../../components/calc/VignetteCalc.astro';
 import FerryCompare from '../../components/calc/FerryCompare.astro';
 import PrayerTimes from '../../components/calc/PrayerTimes.astro';
 import RamadanTimes from '../../components/calc/RamadanTimes.astro';
+import HighwayTollCalc from '../../components/calc/HighwayTollCalc.astro';
 import Roadmap from '../../components/Roadmap.astro';
 import RoadmapStep from '../../components/RoadmapStep.astro';
 import Checklist from '../../components/Checklist.astro';
@@ -67,7 +68,7 @@ const alternates = entry ? await getEntryAlternates(entry) : {};
 const switchTargets = entry ? await getEntrySwitchTargets(entry) : {};
 
 /** Composants disponibles dans tous les fichiers MDX SANS import. */
-const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, RetirementBudget, ReturnBudget, CityCosts, CarDaysCounter, CustomsCalc, CapitalGainCalc, VignetteCalc, FxCalc, FerryCompare, PrayerTimes, RamadanTimes, Roadmap, RoadmapStep, Checklist, PdfDownload, ContactForm, Newsletter };
+const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, RetirementBudget, ReturnBudget, CityCosts, CarDaysCounter, CustomsCalc, CapitalGainCalc, VignetteCalc, FxCalc, FerryCompare, PrayerTimes, RamadanTimes, HighwayTollCalc, Roadmap, RoadmapStep, Checklist, PdfDownload, ContactForm, Newsletter };
 
 let related: Awaited<ReturnType<typeof getArticles>> = [];
 if (entry?.collection === 'articles') {

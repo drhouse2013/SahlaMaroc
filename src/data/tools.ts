@@ -39,14 +39,14 @@ export const TOOLS: Tool[] = [
     title: { en: 'Vehicle tax (vignette)', fr: 'Vignette auto (TSAV)', es: 'Vignette de vehículos (TSAV)', de: 'Kfz-Vignette (TSAV)', ar: 'الضريبة الخصوصية السنوية على السيارات (الفينيت)' },
     text: { en: 'Estimate the annual vehicle tax from fiscal horsepower and fuel.', fr: 'Estimez la taxe annuelle sur le véhicule selon la puissance fiscale et le carburant.', es: 'Estima la tasa anual del vehículo según la potencia fiscal y el combustible.', de: 'Schätzen Sie die jährliche Fahrzeugsteuer nach Steuer-PS und Kraftstoff.', ar: 'قدّر الضريبة السنوية على السيارة حسب القوة الجبائية ونوع الوقود.' },
     method: {
-      fr: 'Montant annuel lu dans le barème DGI selon la tranche de puissance fiscale (moins de 8, 8 à 10, 11 à 14, 15 CV et plus) et le carburant. En cours d’année, montant × mois restants ÷ 12, arrondi au dirham.',
+      fr: 'Montant annuel lu dans le barème DGI selon la tranche de puissance fiscale (moins de 8, 8 à 10, 11 à 14, 15 CV et plus) et le carburant. En cours d'année, montant × mois restants ÷ 12, arrondi au dirham.',
       en: 'Annual amount read from the DGI scale by fiscal horsepower band (under 8, 8 to 10, 11 to 14, 15 CV and over) and fuel. Part-year: amount × months left ÷ 12, rounded to the dirham.',
       es: 'Importe anual leído en el baremo de la DGI según la franja de potencia fiscal (menos de 8, 8 a 10, 11 a 14, 15 CV o más) y el combustible. En el año en curso, importe × meses restantes ÷ 12, redondeado al dírham.',
       de: 'Jahresbetrag aus dem DGI-Tarif nach Steuer-PS-Stufe (unter 8, 8 bis 10, 11 bis 14, ab 15 CV) und Kraftstoff. Im laufenden Jahr: Betrag × verbleibende Monate ÷ 12, auf den Dirham gerundet.',
       ar: 'المبلغ السنوي من تعريفة المديرية العامة للضرائب حسب شريحة القوة الجبائية (أقل من 8، من 8 إلى 10، من 11 إلى 14، 15 حصاناً فأكثر) ونوع الوقود. في سنة الشروع: المبلغ × الأشهر المتبقية ÷ 12، مقرَّب إلى الدرهم.',
     },
     assumptions: {
-      fr: ['Barème des véhicules de 3 000 kg au plus ; exonérations (transport public, utilitaires de plus de 3 000 kg, etc.) non traitées', 'Moteur électrique ou double motorisation et pick-up gasoil de particulier : tarif essence, d’après la fiche DGI', 'Paiement en janvier ; la DGI reste seule compétente'],
+      fr: ['Barème des véhicules de 3 000 kg au plus ; exonérations (transport public, utilitaires de plus de 3 000 kg, etc.) non traitées', 'Moteur électrique ou double motorisation et pick-up gasoil de particulier : tarif essence, d'après la fiche DGI', 'Paiement en janvier ; la DGI reste seule compétente'],
       en: ['Scale for vehicles up to 3,000 kg; exemptions (public transport, utility vehicles over 3,000 kg, etc.) not handled', 'Electric or dual engine and diesel pick-up owned by an individual: petrol rate, per the DGI sheet', 'Payable in January; the DGI alone decides'],
       es: ['Baremo de vehículos de hasta 3.000 kg; exenciones (transporte público, utilitarios de más de 3.000 kg, etc.) no tratadas', 'Motor eléctrico o doble motorización y pick-up diésel de particular: tarifa de gasolina, según la ficha de la DGI', 'Pago en enero; solo la DGI decide'],
       de: ['Tarif für Fahrzeuge bis 3.000 kg; Befreiungen (öffentlicher Verkehr, Nutzfahrzeuge über 3.000 kg usw.) nicht berücksichtigt', 'Elektro- oder Doppelantrieb und Diesel-Pick-up von Privatpersonen: Benzintarif laut DGI-Merkblatt', 'Zahlbar im Januar; allein die DGI entscheidet'],
@@ -336,6 +336,25 @@ export const TOOLS: Tool[] = [
       es: ['Estimaciones de costes fechadas, un coeficiente por ciudad', 'Una vivienda por hogar; el resto es por persona', 'No son precios medidos para una vivienda concreta'],
       de: ['Datierte Kostenschätzungen, ein Faktor je Stadt', 'Eine Wohnung je Haushalt; der Rest pro Person', 'Keine erhobenen Preise für eine bestimmte Wohnung'],
       ar: ['تقديرات تكاليف مؤرخة، معامل لكل مدينة', 'سكن واحد لكل أسرة؛ والباقي للفرد', 'ليست أسعاراً مسجلة لسكن بعينه'],
+    },
+  },
+  {
+    key: 'calc-highway-toll', icon: 'car', audience: 'mre', guideKey: 'ferry-guide', checked: '2026-10-15', sources: ['adm'],
+    title: { en: 'Morocco highway toll calculator', fr: 'Frais d\'autoroute Maroc (péages)', es: 'Calculadora de peajes de autopista Marruecos', de: 'Marokko-Autobahngebührenrechner', ar: 'حاسبة رسوم الطرق السريعة بالمغرب' },
+    text: { en: 'City-to-city toll from the ADM grid, by vehicle class.', fr: 'Péage de ville à ville selon la grille ADM, par classe de véhicule.', es: 'Peaje de ciudad a ciudad según la tarifa ADM, por clase de vehículo.', de: 'Maut von Stadt zu Stadt nach dem ADM-Tarif, nach Fahrzeugklasse.', ar: 'رسوم الطريق السيار من مدينة إلى مدينة حسب تعريفة ADM وفئة المركبة.' },
+    method: {
+      fr: 'Tarif lu dans la grille officielle ADM pour le trajet et la classe de véhicule choisis. Aucun calcul d\'itinéraire : le montant est celui publié par ADM pour la liaison directe.',
+      en: 'Rate read from the official ADM grid for the chosen route and vehicle class. No route calculation: the amount is the one ADM publishes for the direct connection.',
+      es: 'Tarifa leída en la tabla oficial de ADM para el trayecto y la clase de vehículo elegidos. Sin cálculo de itinerario: el importe es el publicado por ADM para el enlace directo.',
+      de: 'Tarif aus der offiziellen ADM-Tabelle für die gewählte Strecke und Fahrzeugklasse. Keine Routenberechnung: der Betrag ist der von ADM veröffentlichte für die Direktverbindung.',
+      ar: 'التعريفة من الجدول الرسمي لـ ADM للمسار وفئة المركبة المختارين. لا حساب للطريق: المبلغ هو ما تنشره ADM للربط المباشر.',
+    },
+    assumptions: {
+      fr: ['Tarifs tirés de la grille tarifaire ADM (oct. 2026) ; les mises à jour de la grille ADM ne sont pas automatiques', '3 classes : légers (< 3,5 T), moyens (3,5–12 T), lourds (> 12 T)', 'Liaisons directes publiées uniquement ; certaines combinaisons de villes ne figurent pas dans la grille'],
+      en: ['Rates from the ADM tariff grid (Oct. 2026); ADM grid updates are not automatic', '3 classes: light (< 3.5 T), medium (3.5–12 T), heavy (> 12 T)', 'Published direct connections only; some city combinations are not in the grid'],
+      es: ['Tarifas de la tabla ADM (oct. 2026); las actualizaciones de la tabla ADM no son automáticas', '3 clases: ligeros (< 3,5 T), medios (3,5–12 T), pesados (> 12 T)', 'Solo enlaces directos publicados; algunas combinaciones de ciudades no figuran en la tabla'],
+      de: ['Tarife aus der ADM-Tariftabelle (Okt. 2026); Aktualisierungen der ADM-Tabelle erfolgen nicht automatisch', '3 Klassen: leicht (< 3,5 T), mittel (3,5–12 T), schwer (> 12 T)', 'Nur veröffentlichte Direktverbindungen; manche Stadtkombinationen fehlen in der Tabelle'],
+      ar: ['التعريفات من جدول أسعار ADM (أكتوبر 2026)؛ تحديثات جدول ADM ليست تلقائية', '3 فئات: خفيفة (< 3.5 طن)، متوسطة (3.5–12 طن)، ثقيلة (> 12 طن)', 'الروابط المباشرة المنشورة فقط؛ بعض تركيبات المدن لا تظهر في الجدول'],
     },
   },
 ];

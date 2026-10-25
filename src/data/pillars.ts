@@ -30,7 +30,7 @@ export const PILLARS: Record<CategoryId, Pillar> = {
       ar: 'كل ما تحتاجه للتحضير للعودة الصيفية إلى المغرب: عملية مرحبا، اختيار العبّارة، السيارة ذات الترقيم الأجنبي وقاعدة 180 يوماً، التأمين، الطريق السيار من طنجة المتوسط، ووثائق الأطفال والحيوانات.',
     },
     start: ['summer-checklist', 'marhaba-guide', 'ferry-guide'],
-    tools: ['calc-summer', 'calc-car-days'],
+    tools: ['calc-summer', 'calc-car-days', 'calc-highway-toll'],
     cities: ['tangier'],
     sources: ['fm5', 'douane', 'adm'],
     ymyl: true,
@@ -135,7 +135,7 @@ export const PILLARS: Record<CategoryId, Pillar> = {
 export const AUDIENCE_HUBS = {
   mre: {
     categories: ['retour', 'immobilier', 'money', 'demarches'] as CategoryId[],
-    tools: ['calc-summer', 'calc-car-days', 'calc-customs', 'calc-transfer', 'calc-property-fees', 'calc-mortgage', 'calc-retirement-budget'],
+    tools: ['calc-summer', 'calc-car-days', 'calc-customs', 'calc-transfer', 'calc-property-fees', 'calc-mortgage', 'calc-retirement-budget', 'calc-highway-toll'],
     start: ['summer-checklist', 'marhaba-guide', 'car-180-days', 'send-money', 'buy-property-abroad', 'passport-cnie'],
     cities: ['tangier', 'casablanca', 'rabat'],
   },
