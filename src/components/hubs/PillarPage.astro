@@ -1,7 +1,7 @@
 ---
 /** Page pilier d'un thème : /<lang>/themes/<thème>. Introduction, départ conseillé, outils, villes, tous les guides, sources officielles. */
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHero from '../PageHero.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
 import ArticleCard from '../ArticleCard.astro';
 import ToolGrid from '../ToolGrid.astro';
 import CityGrid from '../home/CityGrid.astro';
@@ -38,59 +38,190 @@ const description = pillar.intro[lang].length <= 160 ? pillar.intro[lang] : pill
 ---
 <BaseLayout lang={lang} title={t('category.title', { topic: label })} description={description} alternates={alternates} switchTargets={switchTargets}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: label, description: pillar.intro[lang], lang, items: articles.map((a) => ({ name: a.data.title, url: absoluteUrl(`/${lang}/${a.data.slug}`, Astro.site) })) })]}>
-  <PageHero lang={lang} crumbs={crumbs} title={label} intro={pillar.intro[lang]} icon={CATEGORY_ICON[id]} meta={t('category.count', { n: articles.length })} />
 
-  <div class="container-page pt-8">
-    {pillar.ymyl && (
-      <div class="alert alert-warn">
-        <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" />
-        <p class="text-sm"><strong>{t('article.ymyl.title')}.</strong> {t('article.ymyl.text')}</p>
+  <!-- Wrapper thématique : active les CSS variables --cat-accent / --cat-soft / --cat-glow -->
+  <div data-category={id}>
+
+    <!-- ═══ HERO IMMERSIF ═══ -->
+    <header class="pillar-hero">
+      <!-- Décorations géométriques -->
+      <div class="pillar-hero__deco" aria-hidden="true">
+        <svg class="pillar-hero__star pillar-hero__star--1" viewBox="0 0 64 64" width="64" height="64"><path d="M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <svg class="pillar-hero__star pillar-hero__star--2" viewBox="0 0 40 40" width="40" height="40"><path d="M20 4l4.6 11.4L36 20l-11.4 4.6L20 36l-4.6-11.4L4 20l11.4-4.6z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        <svg class="pillar-hero__star pillar-hero__star--3" viewBox="0 0 32 32" width="32" height="32"><path d="M16 3l3.7 9.3L29 16l-9.3 3.7L16 29l-3.7-9.3L3 16l9.3-3.7z" fill="none" stroke="currentColor" stroke-width="1"/></svg>
       </div>
-    )}
 
-    {start.length > 0 && (
-      <section class="section !pt-10" aria-labelledby="start">
-        <h2 id="start" class="section-title !text-2xl">{t('pillar.start')}</h2>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{start.map((a) => <ArticleCard article={a} />)}</div>
-      </section>
-    )}
+      <div class="container-page relative">
+        <Breadcrumbs items={crumbs} lang={lang} />
 
-    {pillar.tools.length > 0 && (
-      <section class="section !pt-10" aria-labelledby="tools">
-        <h2 id="tools" class="section-title !text-2xl">{t('pillar.tools')}</h2>
-        <div class="mt-6"><ToolGrid lang={lang} keys={pillar.tools} compact /></div>
-      </section>
-    )}
+        <div class="pillar-hero__content">
+          <!-- Icône avec anneau lumineux -->
+          <div class="pillar-hero__icon-wrap">
+            <span class="pillar-hero__icon">
+              <Icon name={CATEGORY_ICON[id]} class="size-8 sm:size-10" />
+            </span>
+          </div>
 
-    {rest.length > 0 && (
-      <section class="section !pt-10" aria-labelledby="all">
-        <h2 id="all" class="section-title !text-2xl">{t('pillar.all')}</h2>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{rest.map((a) => <ArticleCard article={a} />)}</div>
-      </section>
-    )}
-    {articles.length === 0 && <p class="mt-6 muted">{t('category.empty')}</p>}
+          <h1 class="pillar-hero__title">{label}</h1>
+          {pillar.intro[lang] && <p class="pillar-hero__intro">{pillar.intro[lang]}</p>}
 
-    {pillar.cities.length > 0 && (
-      <section class="section !pt-10" aria-labelledby="cities">
-        <h2 id="cities" class="section-title !text-2xl">{t('pillar.cities')}</h2>
-        <div class="mt-6"><CityGrid lang={lang} ids={pillar.cities} showHeading={false} /></div>
-      </section>
-    )}
+          <!-- Barre de stats -->
+          <div class="pillar-hero__stats">
+            <div class="pillar-hero__stat">
+              <span class="pillar-hero__stat-num">{articles.length}</span>
+              <span class="pillar-hero__stat-label">{t('category.count', { n: articles.length })}</span>
+            </div>
+            {pillar.tools.length > 0 && (
+              <div class="pillar-hero__stat">
+                <span class="pillar-hero__stat-num">{pillar.tools.length}</span>
+                <span class="pillar-hero__stat-label">{t('pillar.tools')}</span>
+              </div>
+            )}
+            {sources.length > 0 && (
+              <div class="pillar-hero__stat">
+                <span class="pillar-hero__stat-num">{sources.length}</span>
+                <span class="pillar-hero__stat-label">{t('pillar.sources')}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </header>
 
-    {sources.length > 0 && (
-      <section class="section !pt-10" aria-labelledby="sources">
-        <h2 id="sources" class="section-title !text-2xl">{t('pillar.sources')}</h2>
-        <p class="section-sub">{t('article.sourcesNote')}</p>
-        <ul class="mt-4 grid gap-2 sm:grid-cols-2">{sources.map((s) => <li><a href={s.url} target="_blank" rel="noopener noreferrer" class="link inline-flex items-center gap-1.5">{s.name[lang] ?? s.name.en}<Icon name="external" class="size-3.5" /></a></li>)}</ul>
-      </section>
-    )}
+    <div class="container-page pt-8 pb-16">
+      {pillar.ymyl && (
+        <div class="alert alert-warn reveal">
+          <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" />
+          <p class="text-sm"><strong>{t('article.ymyl.title')}.</strong> {t('article.ymyl.text')}</p>
+        </div>
+      )}
 
-    {others.length > 0 && (
-      <section class="section !pt-10" aria-labelledby="others">
-        <h2 id="others" class="section-title !text-2xl">{t('pillar.other')}</h2>
-        <ul class="mt-5 flex flex-wrap gap-2">{others.map((o) => <li><a href={categoryPath(lang, o)} class="badge badge-navy min-h-9 px-3 text-sm hover:brightness-95"><Icon name={CATEGORY_ICON[o]} class="size-4" />{CATEGORIES[o].label[lang]}</a></li>)}</ul>
-      </section>
-    )}
-    <AdSlot type="banner" lang={lang} />
+      <!-- ═══ SECTION : PAR OÙ COMMENCER ═══ -->
+      {start.length > 0 && (
+        <section class="pillar-section reveal" aria-labelledby="start">
+          <div class="pillar-section__header">
+            <span class="pillar-section__number" aria-hidden="true">01</span>
+            <div>
+              <h2 id="start" class="pillar-section__title">{t('pillar.start')}</h2>
+              <p class="pillar-section__sub">{t('pillar.start')}</p>
+            </div>
+          </div>
+          <div class="pillar-section__divider" aria-hidden="true"></div>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {start.map((a, i) => (
+              <div class:list={['reveal', i === 0 && 'reveal-d1', i === 1 && 'reveal-d2', i === 2 && 'reveal-d3']}>
+                <ArticleCard article={a} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- ═══ SECTION : OUTILS ═══ -->
+      {pillar.tools.length > 0 && (
+        <section class="pillar-section reveal" aria-labelledby="tools">
+          <div class="pillar-section__header">
+            <span class="pillar-section__number" aria-hidden="true">02</span>
+            <div>
+              <h2 id="tools" class="pillar-section__title">{t('pillar.tools')}</h2>
+            </div>
+          </div>
+          <div class="pillar-section__divider" aria-hidden="true"></div>
+          <div class="mt-8"><ToolGrid lang={lang} keys={pillar.tools} compact /></div>
+        </section>
+      )}
+
+      <!-- ═══ SECTION : TOUS LES GUIDES ═══ -->
+      {rest.length > 0 && (
+        <section class="pillar-section reveal" aria-labelledby="all">
+          <div class="pillar-section__header">
+            <span class="pillar-section__number" aria-hidden="true">{pillar.tools.length > 0 ? '03' : '02'}</span>
+            <div>
+              <h2 id="all" class="pillar-section__title">{t('pillar.all')}</h2>
+            </div>
+          </div>
+          <div class="pillar-section__divider" aria-hidden="true"></div>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((a, i) => (
+              <div class:list={['reveal', `reveal-d${(i % 3) + 1}`]}>
+                <ArticleCard article={a} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      {articles.length === 0 && <p class="mt-6 muted">{t('category.empty')}</p>}
+
+      <!-- ═══ SECTION : VILLES ═══ -->
+      {pillar.cities.length > 0 && (
+        <section class="pillar-section reveal" aria-labelledby="cities">
+          <div class="pillar-section__header">
+            <span class="pillar-section__number" aria-hidden="true">
+              {pillar.tools.length > 0 && rest.length > 0 ? '04' : pillar.tools.length > 0 || rest.length > 0 ? '03' : '02'}
+            </span>
+            <div>
+              <h2 id="cities" class="pillar-section__title">{t('pillar.cities')}</h2>
+            </div>
+          </div>
+          <div class="pillar-section__divider" aria-hidden="true"></div>
+          <div class="mt-8"><CityGrid lang={lang} ids={pillar.cities} showHeading={false} /></div>
+        </section>
+      )}
+
+      <!-- ═══ SECTION : SOURCES OFFICIELLES ═══ -->
+      {sources.length > 0 && (
+        <section class="pillar-section reveal" aria-labelledby="sources">
+          <div class="pillar-section__header">
+            <Icon name="external" class="size-5 text-[var(--cat-accent)]" />
+            <div>
+              <h2 id="sources" class="pillar-section__title">{t('pillar.sources')}</h2>
+              <p class="pillar-section__sub">{t('article.sourcesNote')}</p>
+            </div>
+          </div>
+          <div class="pillar-section__divider" aria-hidden="true"></div>
+          <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+            {sources.map((s, i) => (
+              <li class:list={['reveal', `reveal-d${(i % 3) + 1}`]}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" class="pillar-source-card">
+                  <Icon name="external" class="size-4 shrink-0 text-[var(--cat-accent)]" />
+                  <span>{s.name[lang] ?? s.name.en}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <!-- ═══ SECTION : AUTRES CATÉGORIES ═══ -->
+      {others.length > 0 && (
+        <section class="pillar-section reveal" aria-labelledby="others">
+          <h2 id="others" class="pillar-section__title">{t('pillar.other')}</h2>
+          <ul class="mt-6 flex flex-wrap gap-3">
+            {others.map((o, i) => (
+              <li class:list={['reveal', `reveal-d${(i % 3) + 1}`]}>
+                <a href={categoryPath(lang, o)} class="pillar-cat-badge" data-category={o}>
+                  <Icon name={CATEGORY_ICON[o]} class="size-4" />
+                  {CATEGORIES[o].label[lang]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <AdSlot type="banner" lang={lang} />
+    </div>
   </div>
 </BaseLayout>
+
+<!-- Scroll reveal : IntersectionObserver léger (< 0.5 KB) -->
+<script>
+  if (typeof IntersectionObserver !== 'undefined' && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+  }
+</script>
