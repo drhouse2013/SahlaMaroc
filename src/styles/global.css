@@ -234,6 +234,21 @@
 .prose p, .prose li { overflow-wrap: break-word; }
 .prose :where(h2, h3) { scroll-margin-top: 6rem; }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   MOTION TOKENS (transitions.dev) — global animation system
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --duration-micro: 80ms;
+  --duration-quick: 150ms;
+  --duration-fast: 250ms;
+  --duration-medium: 350ms;
+  --duration-slow: 400ms;
+  --duration-very-slow: 500ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
@@ -256,6 +271,11 @@
 
 /* Verre dépoli de l'en-tête collant (touches modernes) */
 body > header.sticky, header.sticky.top-0 { background-color: var(--glass) !important; -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); box-shadow: 0 1px 0 var(--line), 0 8px 24px -18px rgb(16 44 76 / .25); }
+
+/* Header scroll-shrink : réduit la hauteur lors du défilement */
+header.sticky.is-scrolled { --header-h: 3.5rem; }
+header.sticky.is-scrolled .container-page { height: var(--header-h); }
+
 .hero-aura { position: relative; isolation: isolate; }
 .hero-aura::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(60% 60% at 85% 20%, rgb(201 162 74 / .18), transparent 70%), radial-gradient(50% 50% at 5% 90%, rgb(47 75 216 / .08), transparent 70%); }
 .hero-photo { transition: transform 1.2s var(--ease-out); }
@@ -263,15 +283,201 @@ body > header.sticky, header.sticky.top-0 { background-color: var(--glass) !impo
 .hero-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 55%, rgb(11 31 54 / .35)); }
 @media (prefers-reduced-motion: no-preference) {
   .card, .btn, .icon-tile { will-change: auto; }
-  .icon-tile { transition: transform .35s var(--ease-out); }
+  .icon-tile { transition: transform .35s var(--ease-smooth-out); }
   .card-hover:hover .icon-tile { transform: scale(1.08) rotate(-3deg); }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════════════
+   ENHANCED CARD & BUTTON EFFECTS
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Shimmer line on card hover */
+@media (prefers-reduced-motion: no-preference) {
+  .card-hover { position: relative; overflow: hidden; }
+  .card-hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    inset-inline-start: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(201 162 74 / .06), transparent);
+    transition: inset-inline-start .6s var(--ease-smooth-out);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .card-hover:hover::after { inset-inline-start: 100%; }
+}
+
+/* Section title accent bar */
+.section-title { position: relative; }
+
+/* Gradient accent on section titles (opt-in via .section-title--accent) */
+.section-title--accent::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: .5rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-terracotta-600), var(--color-gold-500));
+}
+.dark .section-title--accent::after {
+  background: linear-gradient(90deg, var(--color-terracotta-300), var(--color-saffron-400));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PAGE HERO V2 — immersif avec étoiles décoratives et lueur
+   Utilisé par PageHero.astro pour tous les hubs
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--surface-2);
+  background-image:
+    radial-gradient(ellipse 70% 55% at 80% 15%, rgb(201 162 74 / .12), transparent 65%),
+    radial-gradient(ellipse 45% 45% at 10% 85%, rgb(47 75 216 / .06), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23163a63' stroke-opacity='.06' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+.dark .page-hero {
+  background-color: var(--surface);
+  background-image:
+    radial-gradient(ellipse 70% 55% at 80% 15%, rgb(201 162 74 / .08), transparent 65%),
+    radial-gradient(ellipse 45% 45% at 10% 85%, rgb(47 75 216 / .05), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23f3ece0' stroke-opacity='.05' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+/* Étoiles décoratives flottantes (page hero) */
+.page-hero__deco {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--color-gold-500);
+  opacity: .12;
+}
+.dark .page-hero__deco { opacity: .08; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero__star { position: absolute; }
+  .page-hero__star--1 { top: 10%; inset-inline-end: 8%; animation: pillar-float 8s ease-in-out infinite; }
+  .page-hero__star--2 { top: 60%; inset-inline-end: 20%; animation: pillar-float-alt 10s ease-in-out infinite 1.5s; }
+  .page-hero__star--3 { top: 35%; inset-inline-start: 5%; animation: pillar-float 12s ease-in-out infinite 3s; }
+}
+
+/* Page hero icon with glow ring */
+.page-hero__icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  color: var(--color-navy-700);
+  box-shadow:
+    0 0 0 3px rgb(22 58 99 / .1),
+    0 0 20px -4px rgb(201 162 74 / .15),
+    var(--shadow-sm);
+  transition: transform .4s var(--ease-smooth-out), box-shadow .4s var(--ease-smooth-out);
+}
+.dark .page-hero__icon { background: var(--surface-3); color: var(--color-navy-100); }
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero__icon:hover {
+    transform: scale(1.08) rotate(-4deg);
+    box-shadow:
+      0 0 0 5px rgb(22 58 99 / .12),
+      0 0 30px -4px rgb(201 162 74 / .2),
+      var(--shadow-md);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   HOME HERO V2 — dégradé radial premium
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--surface-2);
+  background-image:
+    radial-gradient(ellipse 80% 65% at 85% 10%, rgb(201 162 74 / .16), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 5% 90%, rgb(47 75 216 / .08), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgb(200 85 61 / .04), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23163a63' stroke-opacity='.06' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+.dark .home-hero {
+  background-color: var(--surface);
+  background-image:
+    radial-gradient(ellipse 80% 65% at 85% 10%, rgb(201 162 74 / .1), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 5% 90%, rgb(47 75 216 / .06), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgb(200 85 61 / .03), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23f3ece0' stroke-opacity='.05' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+/* Floating decorative stars for home hero */
+.home-hero__deco {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--color-gold-500);
+  opacity: .14;
+}
+.dark .home-hero__deco { opacity: .08; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FOOTER V2 — gradient band + hover glow
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.footer-glow {
+  position: relative;
+}
+.footer-glow::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-terracotta-500), var(--color-gold-500), var(--color-majorelle-500), var(--color-emerald-moroccan-500));
+  opacity: .7;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   STAGGER REVEAL — cascade d'entrée pour grilles et listes
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.stagger-reveal > * {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.stagger-reveal.is-visible > * {
+  animation: reveal-up .5s var(--ease-smooth-out) both;
+}
+.stagger-reveal.is-visible > *:nth-child(1) { animation-delay: 0s; }
+.stagger-reveal.is-visible > *:nth-child(2) { animation-delay: .06s; }
+.stagger-reveal.is-visible > *:nth-child(3) { animation-delay: .12s; }
+.stagger-reveal.is-visible > *:nth-child(4) { animation-delay: .18s; }
+.stagger-reveal.is-visible > *:nth-child(5) { animation-delay: .24s; }
+.stagger-reveal.is-visible > *:nth-child(6) { animation-delay: .3s; }
+.stagger-reveal.is-visible > *:nth-child(7) { animation-delay: .36s; }
+.stagger-reveal.is-visible > *:nth-child(8) { animation-delay: .42s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-reveal > * { opacity: 1; transform: none; }
+  .stagger-reveal.is-visible > * { animation: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
    CATEGORY THEMES — identité visuelle par rubrique
    Chaque [data-category] pose --cat-accent, --cat-soft, --cat-glow
    utilisés par le header, le badge, le drop-cap et les décorations.
-   ═══════════════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════════════ */
 
 [data-category="retour"] {
   --cat-accent: var(--color-terracotta-600);
@@ -436,9 +642,9 @@ body > header.sticky, header.sticky.top-0 { background-color: var(--glass) !impo
   .article-cover:hover { transform: scale(1.03); }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════════════
    SCROLL REVEAL — fade-in au défilement via IntersectionObserver
-   ═══════════════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════════════ */
 
 @keyframes reveal-up {
   from { opacity: 0; transform: translateY(20px); }
@@ -456,10 +662,10 @@ body > header.sticky, header.sticky.top-0 { background-color: var(--glass) !impo
   .reveal.is-visible { animation: none; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════════════
    PILLAR PAGE — Hero immersif et sections thématiques
    Utilise --cat-accent, --cat-soft, --cat-glow posés par [data-category].
-   ═══════════════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════════════ */
 
 /* --- Hero --- */
 .pillar-hero {
