@@ -40,7 +40,7 @@ const why = [
 <BaseLayout lang={lang} title={t('site.tagline')} alternates={allLocalesAlternates(homePath)} switchTargets={allLocalesTargets(homePath)} jsonLd={[websiteJsonLd(lang, Astro.site, t('site.description')), organizationJsonLd(Astro.site)]}>
   <Hero lang={lang} />
 
-  <section class="container-page section" aria-labelledby="tools-title">
+  <section class="container-page section reveal" aria-labelledby="tools-title">
     <div class="flex flex-wrap items-end justify-between gap-4">
       <div>
         <h2 id="tools-title" class="section-title">{t('home.tools.title')}</h2>
@@ -48,13 +48,13 @@ const why = [
       </div>
       {toolUrl && <a href={toolUrl} class="btn btn-ghost btn-sm">{t('common.seeAll')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>}
     </div>
-    <div class="mt-8"><ToolGrid lang={lang} /></div>
+    <div class="mt-8 stagger-reveal"><ToolGrid lang={lang} /></div>
   </section>
 
-  <section class="container-page section" aria-labelledby="why-title">
+  <section class="container-page section reveal" aria-labelledby="why-title">
     <h2 id="why-title" class="section-title">{t('home.why.title')}</h2>
     <p class="section-sub">{t('home.why.sub')}</p>
-    <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 stagger-reveal">
       {why.map((w) => (
         <li class="card p-5">
           <span class="icon-tile"><Icon name={w.icon} class="size-[1.35rem]" /></span>
@@ -69,14 +69,14 @@ const why = [
     <section class="container-page section" aria-labelledby="popular-title">
       <h2 id="popular-title" class="section-title">{t('home.popular')}</h2>
       <p class="section-sub">{t('home.popularSub')}</p>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{popular.map((a) => <ArticleCard article={a} />)}</div>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">{popular.map((a) => <ArticleCard article={a} />)}</div>
     </section>
   )}
 
   {active.length > 0 && (
-    <nav class="container-page section" aria-label={t('home.categories')}>
+    <nav class="container-page section reveal" aria-label={t('home.categories')}>
       <h2 class="section-title">{t('home.categories')}</h2>
-      <ul class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
+      <ul class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4 stagger-reveal">
         {active.map((id) => (
           <li class="min-w-0">
             <a href={categoryPath(lang, id)} class="card card-hover flex min-h-14 items-center gap-2 px-3 py-3 text-[0.95rem] font-medium sm:gap-3 sm:px-4">
@@ -91,7 +91,7 @@ const why = [
   <CityGrid lang={lang} />
 
   {checklists.length > 0 && (
-    <section class="container-page section" aria-labelledby="chk-title">
+    <section class="container-page section reveal" aria-labelledby="chk-title">
       <div class="card grid items-center gap-6 p-6 sm:p-9 md:grid-cols-[1fr_1fr]">
         <div>
           <span class="icon-tile"><Icon name="listChecks" class="size-[1.35rem]" /></span>
@@ -116,7 +116,7 @@ const why = [
         <h2 id="latest-title" class="section-title">{t('home.latest')}</h2>
         <a href={hubPath(lang, 'guides')} class="btn btn-ghost btn-sm">{t('nav.allGuides')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
       </div>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{latest.map((a) => <ArticleCard article={a} />)}</div>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">{latest.map((a) => <ArticleCard article={a} />)}</div>
     </section>
   )}
 

@@ -35,7 +35,7 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
       <section aria-labelledby="start-here">
         <h2 id="start-here" class="section-title !text-2xl">{t('guides.start.title')}</h2>
         <p class="mt-2 muted">{t('guides.start.intro')}</p>
-        <ul class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-journeys>
+        <ul class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 stagger-reveal" data-journeys>
           {journeys.map((j) => (
             <li class="card flex flex-col p-5">
               <span class="icon-tile size-10"><Icon name={j.icon} /></span>
