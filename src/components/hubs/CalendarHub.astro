@@ -29,7 +29,7 @@ const badge: Record<string, string> = { confirmed: 'badge badge-navy', expected:
   <PageHero lang={lang} crumbs={crumbs} title={t('calendar.title')} intro={t('calendar.intro')} icon="calendar" />
   <div class="container-page pt-8">
     {machine && <p class="mb-6 rounded-xl border border-[var(--line)] p-4 text-sm muted">{t('machine.note')}</p>}
-    <ol class="grid gap-8">
+    <ol class="grid gap-8 stagger-reveal">
       {groupsShown.map((g) => (
         <li id={`m-${g.m}`} class="scroll-mt-24">
           <h2 class="section-title !text-2xl capitalize">{g.title}</h2>

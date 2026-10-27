@@ -36,7 +36,7 @@ const others = REGIONS.filter((r) => r.id !== region.id);
     </section>
     <section class="mt-10" aria-labelledby="h-others">
       <h2 id="h-others" class="section-title !text-2xl">{t('region.others')}</h2>
-      <ul class="mt-4 flex flex-wrap gap-2">{others.map((r) => <li><a href={regionPath(lang, r.slug)} class="badge">{r.name[lang]}</a></li>)}</ul>
+      <ul class="mt-4 flex flex-wrap gap-2 stagger-reveal">{others.map((r) => <li><a href={regionPath(lang, r.slug)} class="badge">{r.name[lang]}</a></li>)}</ul>
       <p class="mt-4"><a href={hubPath(lang, 'regions')} class="btn btn-ghost btn-sm">{t('region.seeAll')}</a></p>
     </section>
     <p class="mt-8 text-xs muted">{t('region.source')}</p>

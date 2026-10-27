@@ -22,7 +22,7 @@ const list = CITY_PAGES.filter((c) => !ids || ids.includes(c.id)).slice(0, limit
       <a href={hubPath(lang, 'cities')} class="btn btn-ghost btn-sm">{t('common.seeAll')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
     </div>
   )}
-  <ul class:list={['grid gap-5 sm:grid-cols-2 lg:grid-cols-4', showHeading && 'mt-8']}>
+  <ul class:list={['grid gap-5 sm:grid-cols-2 lg:grid-cols-4 stagger-reveal', showHeading && 'mt-8']}>
     {list.map((c) => (
       <li class="group card card-hover relative flex flex-col overflow-hidden">
         {c.host2030 && <span class="badge badge-gold absolute end-3 top-3 z-10">{L.hostCity[lang]}</span>}

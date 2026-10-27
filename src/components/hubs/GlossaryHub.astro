@@ -27,7 +27,7 @@ const machine = lang !== 'fr' && lang !== 'en';
       <span class="sr-only">{t('glossary.filter')}</span>
       <input type="search" data-q class="w-full rounded-xl border border-[var(--line-strong)] bg-[var(--surface)] px-4 py-3" placeholder={t('glossary.filter.placeholder')} />
     </label>
-    <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2 stagger-reveal">
       {rows.map(({ g, article }) => (
         <li id={`g-${g.id}`} data-term data-q={norm(`${g.name} ${g.def[lang]}`)} class="card scroll-mt-24 p-5">
           <h2 class="text-lg font-semibold" dir="auto">{g.name}</h2>
