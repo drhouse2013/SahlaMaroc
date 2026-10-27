@@ -236,3 +236,8 @@ Décisions prises sans demande de validation, conformément à la directive de c
 ## 2026-10-22 - Cycle expert automatique
 - Aucune idée nouvelle avec source officielle lue (piste guide ADII « Marocains du Monde 2026 » notée, n° 20). Seul docs/IDEES-EXPERT.md modifié ; les changements du 2026-10-21 (douane, crédit) restaient à publier.
 - Contrôles : check:content 0 erreur, node --test 67/67, build 922 pages, check:dist 0 erreur.
+
+## 2026-10-27 - Cycle expert automatique : réparation des contrôles
+- Aucune idée nouvelle exploitable (Firecrawl hors crédits, n° 21 de IDEES-EXPERT.md).
+- Réparé : tools/check-content.mjs (regex cassée du contrôle FACTS.csv, variable ROOT) ; apostrophes non échappées dans src/data/tools.ts (build en échec, remplacées par ’) ; calculateur de péages : liens internes cassés en en/es/de/ar vers les vrais slugs (guide autoroute Tanger Med, guide ferry), slug ar en caractères latins (`hasibat-rusum-tariq-sayyar-maghrib`), titre es raccourci (≤ 70). FACTS.csv : champs protégés par guillemets, statuts normalisés.
+- Contrôles : check:content 0 erreur, node --test 67/67, build 927 pages, check:dist 0 erreur.

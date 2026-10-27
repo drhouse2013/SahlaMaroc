@@ -109,6 +109,13 @@ for (const field of ['title', 'description']) {
   }
 }
 
+// Registre des faits : 8 colonnes séparées par « ; » (guillemets autorisés).
+fs.readFileSync(path.join(ROOT, 'docs', 'FACTS.csv'), 'utf8').split(/\r?\n/).filter(Boolean).forEach((line, i) => {
+  let n = 0, q = false;
+  for (const ch of line) { if (ch === '"') q = !q; else if (ch === ';' && !q) n++; }
+  if (n !== 7) errors.push(`docs/FACTS.csv ligne ${i + 1}: ${n + 1} colonnes au lieu de 8 (protéger le texte entre guillemets)`);
+});
+
 for (const w of warnings) console.warn('⚠️ ', w);
 for (const x of errors) console.error('❌', x);
 console.log(`\n${entries.length} fichiers contrôlés · ${errors.length} erreur(s) · ${warnings.length} avertissement(s)`);

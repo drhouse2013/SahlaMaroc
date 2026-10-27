@@ -105,3 +105,6 @@ Limites : recherche web rapide (3 requêtes), aucun forum MRE lu directement. La
 ## 20. Cycle du 2026-10-22 — aucune idée implémentée
 - Piste : guide ADII « Marocains du Monde 2026 » (cellule conseil MRE investisseurs, MDMconseil@douane.gov.ma, citée par la presse). REPORTÉE : le guide 2026 n'a pas été lu ; à relire sur douane.gov.ma avant d'enrichir les guides douane/investissement (le guide ADII 2025 est déjà archivé et cité).
 - Marhaba 2026 (clôturée, source maroc.ma) : chiffres de presse seulement, non repris.
+
+## 21. Cycle du 2026-10-27 — aucune idée implémentée
+- Firecrawl toujours hors crédits ; loi 44-18 (service militaire) toujours introuvable en texte officiel : REPORTÉE. Aucune nouvelle idée avec source officielle lue.
