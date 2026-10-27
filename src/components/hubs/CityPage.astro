@@ -63,8 +63,13 @@ const sections = [
 ];
 ---
 <BaseLayout lang={lang} title={title} description={description} alternates={alternates} switchTargets={allLocalesTargets((l) => cityPath(l, city.slug[l]))} jsonLd={jsonLd}>
-  <div class="zellige-soft border-b border-[var(--line)]">
-    <div class="container-page grid items-center gap-8 pt-8 pb-10 md:grid-cols-[1.3fr_0.7fr]">
+  <div class="page-hero relative overflow-hidden border-b border-[var(--line)]">
+    <div class="page-hero__deco" aria-hidden="true">
+      <svg class="page-hero__star page-hero__star--1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
+      <svg class="page-hero__star page-hero__star--2" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
+      <svg class="page-hero__star page-hero__star--3" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
+    </div>
+    <div class="container-page relative grid items-center gap-8 pt-8 pb-10 md:grid-cols-[1.3fr_0.7fr]">
       <div>
         <Breadcrumbs items={crumbs} lang={lang} />
         <h1 class="mt-8 text-3xl font-semibold sm:text-[2.6rem]">{title}</h1>
@@ -99,7 +104,7 @@ const sections = [
 
       <section id="areas" class="section scroll-mt-24 !pt-10" aria-labelledby="h-areas">
         <h2 id="h-areas" class="section-title !text-2xl">{t('city.areas')}</h2>
-        <dl class="mt-4 grid gap-3 sm:grid-cols-2">
+        <dl class="mt-4 grid gap-3 sm:grid-cols-2 stagger-reveal">
           {text.areas.map((a) => <div class="card p-4"><dt class="font-semibold">{a.name}</dt><dd class="mt-1 text-sm muted">{a.text}</dd></div>)}
         </dl>
         <p class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -112,7 +117,7 @@ const sections = [
       {city.costCity && (
         <section id="budget" class="section scroll-mt-24 !pt-10" aria-labelledby="h-budget">
           <h2 id="h-budget" class="section-title !text-2xl">{t('city.budget')}</h2>
-          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+          <div class="mt-4 grid gap-4 sm:grid-cols-2 stagger-reveal">
             <div class="card p-5"><p class="font-display text-3xl font-bold tabular-nums"><bdi dir="ltr">≈ {nf.format(round(day))} MAD</bdi></p><p class="mt-1 text-sm muted">{t('city.budgetDay')}</p></div>
             <div class="card p-5"><p class="font-display text-3xl font-bold tabular-nums"><bdi dir="ltr">≈ {nf.format(round(month))} MAD</bdi></p><p class="mt-1 text-sm muted">{t('city.budgetMonth')}</p></div>
           </div>
@@ -124,7 +129,7 @@ const sections = [
       {trips.length > 0 && (
         <section id="trips" class="section scroll-mt-24 !pt-10" aria-labelledby="h-trips">
           <h2 id="h-trips" class="section-title !text-2xl">{t('city.trips')}</h2>
-          <div class="mt-5 grid gap-6 sm:grid-cols-2">{trips.map((a) => <ArticleCard article={a} />)}</div>
+          <div class="mt-5 grid gap-6 sm:grid-cols-2 stagger-reveal">{trips.map((a) => <ArticleCard article={a} />)}</div>
         </section>
       )}
 

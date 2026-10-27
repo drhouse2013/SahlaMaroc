@@ -37,8 +37,8 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
 const searchHref = hubPath(lang, 'search');
 ---
 
-<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-sand-50/90 backdrop-blur-md supports-[backdrop-filter]:bg-sand-50/80 dark:bg-night-900/90">
-  <div class="container-page flex h-16 items-center gap-2 sm:gap-3">
+<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-sand-50/90 backdrop-blur-md supports-[backdrop-filter]:bg-sand-50/80 dark:bg-night-900/90 transition-[height] duration-200">
+  <div class="container-page flex h-16 items-center gap-2 transition-[height] duration-200 sm:gap-3">
     <a href={homePath(lang)} class="flex min-w-0 shrink items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
       <Logo />
       <span class="truncate font-brand text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-gold-600 dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
@@ -120,4 +120,19 @@ const searchHref = hubPath(lang, 'search');
     if (e.key !== 'Escape') return;
     menus.forEach((m) => { if (m.open) { m.open = false; m.querySelector('summary')?.focus(); } });
   });
+
+  // Header scroll-shrink
+  const header = document.querySelector<HTMLElement>('header.sticky');
+  if (header) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          header.classList.toggle('is-scrolled', window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 </script>
