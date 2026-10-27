@@ -21,7 +21,7 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
   <PageHero lang={lang} crumbs={crumbs} title={t('checklists.title')} intro={t('checklists.intro')} icon="listChecks" meta={t('checklists.privacy')} />
   <div class="container-page pt-8">
     <PdfDownload lang={lang} source="hub" />
-    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">
       {list.map((c) => (
         <li class="group card card-hover relative flex flex-col gap-3 p-5">
           <span class="icon-tile"><Icon name="listChecks" class="size-[1.35rem]" /></span>

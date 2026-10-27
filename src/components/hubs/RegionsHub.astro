@@ -18,7 +18,7 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('region.hub.title'), description: t('region.hub.description'), lang, items: REGIONS.map((r) => ({ name: r.name[lang], url: absoluteUrl(regionPath(lang, r.slug), Astro.site) })) })]}>
   <PageHero lang={lang} crumbs={crumbs} title={t('region.hub.title')} intro={t('region.hub.intro')} icon="mapPin" />
   <div class="container-page section">
-    <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">
       {REGIONS.map((r) => (
         <li class="card card-hover relative flex flex-col p-5">
           <h2 class="text-xl font-semibold"><a href={regionPath(lang, r.slug)} class="after:absolute after:inset-0">{r.name[lang]}</a></h2>

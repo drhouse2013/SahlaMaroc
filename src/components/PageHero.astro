@@ -1,5 +1,5 @@
 ---
-/** En-tête commun des pages hub (fil d'Ariane, icône, titre, introduction). */
+/** En-tête immersif des pages hub : dégradés, étoiles flottantes, icône en halo. */
 import Breadcrumbs from './Breadcrumbs.astro';
 import Icon from './Icon.astro';
 import type { Locale } from '../i18n';
@@ -7,11 +7,16 @@ import type { IconName } from '../data/icons';
 interface Props { lang: Locale; crumbs: { name: string; href?: string }[]; title: string; intro?: string; icon?: IconName; meta?: string }
 const { lang, crumbs, title, intro, icon, meta } = Astro.props;
 ---
-<div class="zellige-soft border-b border-[var(--line)]">
-  <div class="container-page pt-8 pb-10">
+<div class="page-hero relative overflow-hidden border-b border-[var(--line)]">
+  <div class="page-hero__deco" aria-hidden="true">
+    <svg class="page-hero__star page-hero__star--1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
+    <svg class="page-hero__star page-hero__star--2" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
+    <svg class="page-hero__star page-hero__star--3" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
+  </div>
+  <div class="container-page relative pt-8 pb-10">
     <Breadcrumbs items={crumbs} lang={lang} />
-    {icon && <span class="icon-tile mt-8 size-12"><Icon name={icon} class="size-6" /></span>}
-    <h1 class:list={['text-3xl font-semibold sm:text-[2.6rem]', icon ? 'mt-4' : 'mt-8']}>{title}</h1>
+    {icon && <span class="page-hero__icon mt-8"><Icon name={icon} class="size-6" /></span>}
+    <h1 class:list={['text-3xl font-semibold sm:text-[2.6rem] tracking-tight', icon ? 'mt-4' : 'mt-8']}>{title}</h1>
     {intro && <p class="mt-4 max-w-3xl text-lg muted">{intro}</p>}
     {meta && <p class="mt-4 text-sm muted">{meta}</p>}
     <slot />
