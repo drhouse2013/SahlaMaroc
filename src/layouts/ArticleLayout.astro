@@ -300,7 +300,7 @@ const essentials = {
         <h2 id="rel-guides" class="section-title">{t('article.next')}</h2>
         <a href={categoryPath(lang, d.category)} class="btn-tertiary btn inline-flex items-center gap-1.5 font-semibold">{t('article.parentCta', { topic: cat.label[lang] })}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
       </div>
-      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{related.map((a) => <ArticleCard article={a} />)}</div>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">{related.map((a) => <ArticleCard article={a} />)}</div>
     </section>
   )}
 </div>
@@ -334,9 +334,9 @@ const essentials = {
       },
       { rootMargin: '0px 0px -60px 0px', threshold: 0.1 },
     );
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    document.querySelectorAll('.reveal, .stagger-reveal').forEach((el) => io.observe(el));
   } else {
     // Afficher directement sans animation.
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+    document.querySelectorAll('.reveal, .stagger-reveal').forEach((el) => el.classList.add('is-visible'));
   }
 </script>
