@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { CITY_PAGES } from '../data/cities';
+import { cityPath } from '../utils/i18n';
+import type { Locale } from '../i18n';
+
+type Props = HTMLAttributes<'a'>;
+const { href, ...attributes } = Astro.props;
+// Some translated articles retained the French hub segment or a city's French slug.
+// Resolve only known city links through the same routing data used by the city pages.
+const match = typeof href === 'string' && href.match(/^\/(en|fr|es|de|ar)\/(?:villes|cities|ciudades|staedte|mudun)\/([^/?#]+)(\/?(?:[?#].*)?)$/);
+const city = match && CITY_PAGES.find((c) => c.id === match[2] || Object.values(c.slug).includes(match[2]));
+const resolved = match && city ? `${cityPath(match[1] as Locale, city.slug[match[1] as Locale])}${match[3]}` : href;
+---
+<a {...attributes} href={resolved}><slot /></a>
