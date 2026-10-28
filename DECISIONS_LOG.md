@@ -241,3 +241,12 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Aucune idée nouvelle exploitable (Firecrawl hors crédits, n° 21 de IDEES-EXPERT.md).
 - Réparé : tools/check-content.mjs (regex cassée du contrôle FACTS.csv, variable ROOT) ; apostrophes non échappées dans src/data/tools.ts (build en échec, remplacées par ’) ; calculateur de péages : liens internes cassés en en/es/de/ar vers les vrais slugs (guide autoroute Tanger Med, guide ferry), slug ar en caractères latins (`hasibat-rusum-tariq-sayyar-maghrib`), titre es raccourci (≤ 70). FACTS.csv : champs protégés par guillemets, statuts normalisés.
 - Contrôles : check:content 0 erreur, node --test 67/67, build 927 pages, check:dist 0 erreur.
+
+## 2026-10-28 — Refonte éditoriale et orientation des visiteurs
+
+- Demande : refonte professionnelle, identité visuelle plus affirmée et navigation plus claire. À la demande explicite de l’utilisateur, abandon du bleu au profit de l’ivoire, du vert profond et du terracotta. Les noms des anciens tokens sont conservés pour compatibilité ; leurs valeurs changent globalement.
+- Accueil : grande photographie existante créditée, titres éditoriaux, recherche visible, raccourcis et trois parcours vers des guides existants, dans les cinq langues. Six calculateurs et huit villes en sélection ; les catalogues complets restent accessibles.
+- Identité harmonisée dans les logos, favicon et visuel de partage. En-tête ajusté pour afficher la marque entière. Cartes des guides enrichies par leur catégorie et leur description.
+- Référencement : titres et descriptions spécifiques à l’accueil dans les cinq langues, maillage interne renforcé. Préservation des URL, canonical, hreflang, sitemap et restrictions d’indexation des traductions.
+- Accessibilité : contenu visible même sans JavaScript ; les animations deviennent un enrichissement facultatif. Mise en page arabe en RTL et couleurs clair/sombre conservées.
+- Les règles administratives et les barèmes existants ne sont pas présentés comme revérifiés par cette refonte. Les dates de vérification éditoriale ne changent pas. Le contrôle de contenu signale des guides dont la vérification factuelle reste à compléter.
