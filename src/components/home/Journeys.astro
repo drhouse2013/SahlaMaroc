@@ -1,11 +1,10 @@
 ---
 import { PERSONAS, L, pick } from '../../data/home';
 import { getArticleByKey } from '../../utils/i18n';
-import { useTranslations, type Locale } from '../../i18n';
+import { type Locale } from '../../i18n';
 import Icon from '../Icon.astro';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
-const t = useTranslations(lang);
 const journeys = await Promise.all(pick(PERSONAS, lang).map(async (p) => ({ ...p, articles: (await Promise.all(p.keys.map(k => getArticleByKey(lang, k)))).filter(a => a !== null) })));
 const icons = ['ship', 'home', 'compass'] as const;
 ---

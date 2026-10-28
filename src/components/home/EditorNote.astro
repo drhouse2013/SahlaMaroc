@@ -1,0 +1,28 @@
+---
+import type { Locale } from '../../i18n';
+import { L } from '../../data/home';
+import { getPageUrl } from '../../utils/i18n';
+import { AUTHOR_NAME } from '../../utils/seo';
+import Icon from '../Icon.astro';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const about = await getPageUrl(lang, 'about');
+const words = {
+ fr: { eyebrow: 'Derrière les guides', title: 'Du Maroc, avec vous.', link: 'Faire connaissance avec Yassine' },
+ en: { eyebrow: 'Behind the guides', title: 'From Morocco, by your side.', link: 'Meet Yassine' },
+ es: { eyebrow: 'Detrás de las guías', title: 'Desde Marruecos, a tu lado.', link: 'Conoce a Yassine' },
+ de: { eyebrow: 'Hinter den Guides', title: 'Aus Marokko, an Ihrer Seite.', link: 'Yassine kennenlernen' },
+ ar: { eyebrow: 'خلف هذه الأدلة', title: 'من المغرب، إلى جانبكم.', link: 'تعرّف على ياسين' },
+}[lang];
+---
+<section class="container-page section" aria-labelledby="editor-note-title">
+  <div class="editor-note">
+    <div class="editor-note__signature" aria-hidden="true"><span>سهلة</span><span>{AUTHOR_NAME} · Casablanca</span></div>
+    <div>
+      <p class="eyebrow">{words.eyebrow}</p>
+      <h2 id="editor-note-title" class="section-title mt-3">{words.title}</h2>
+      <p class="muted mt-4 max-w-xl">{L.aboutAuthor[lang]}</p>
+      {about && <a href={about} class="btn btn-tertiary mt-5">{words.link}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>}
+    </div>
+  </div>
+</section>

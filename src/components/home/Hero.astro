@@ -7,6 +7,7 @@ import { hubPath } from '../../utils/i18n';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const copy = ({"fr":{"title":"Le Maroc, l’esprit tranquille.","intro":"Retrouver les vôtres, découvrir le pays, préparer un projet. Des guides clairs et des outils utiles pour avancer, à votre rythme.","search":"Une question sur le Maroc ?","mre":"Préparer mon retour","visit":"Découvrir le Maroc"},"en":{"title":"Morocco, with peace of mind.","intro":"Reconnect with family, discover the country or plan your next project. Clear guides and useful tools to help you along the way.","search":"A question about Morocco?","mre":"Plan my return","visit":"Discover Morocco"},"es":{"title":"Marruecos, con tranquilidad.","intro":"Reencontrarte con los tuyos, descubrir el país o preparar un proyecto. Guías claras y herramientas útiles para avanzar a tu ritmo.","search":"¿Una pregunta sobre Marruecos?","mre":"Preparar mi regreso","visit":"Descubrir Marruecos"},"de":{"title":"Marokko, mit einem guten Gefühl.","intro":"Familie wiedersehen, das Land entdecken oder ein Projekt planen. Verständliche Guides und hilfreiche Rechner begleiten Sie Schritt für Schritt.","search":"Eine Frage zu Marokko?","mre":"Meine Rückkehr planen","visit":"Marokko entdecken"},"ar":{"title":"المغرب، براحة بال.","intro":"للقاء الأحباب أو اكتشاف البلد أو التحضير لمشروع. أدلة واضحة وأدوات مفيدة ترافقكم خطوة بخطوة.","search":"لديك سؤال عن المغرب؟","mre":"أحضّر لعودتي","visit":"أكتشف المغرب"}})[lang];
 const searchUrl = hubPath(lang, 'search');
 const examples = [t('search.ex1'), t('search.ex2'), t('search.ex3')];
 ---
@@ -14,19 +15,19 @@ const examples = [t('search.ex1'), t('search.ex2'), t('search.ex3')];
   <div class="container-page editorial-hero__grid">
     <div class="editorial-hero__copy">
       <p class="eyebrow editorial-hero__eyebrow"><span aria-hidden="true"></span>{L.heroEyebrow[lang]}</p>
-      <h1 id="home-title">{t('home.hero.title')}</h1>
-      <p class="editorial-hero__intro">{t('home.hero.subtitle')}</p>
+      <h1 id="home-title">{copy.title}</h1>
+      <p class="editorial-hero__intro">{copy.intro}</p>
       <a href={searchUrl} data-search-open class="editorial-search" data-track="search_open" data-track-label="home">
         <Icon name="search" class="size-5 shrink-0" />
-        <span>{t('search.placeholder')}</span>
+        <span>{copy.search}</span>
         <span class="editorial-search__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-5 rtl:-scale-x-100" /></span>
       </a>
       <ul class="editorial-examples" aria-label={t('search.examples')}>
         {examples.map((e) => <li><a href={`${searchUrl}?q=${encodeURIComponent(e)}`}>{e}<span aria-hidden="true">↗</span></a></li>)}
       </ul>
       <div class="editorial-hero__actions">
-        <a href={hubPath(lang, 'mre')} class="btn btn-primary">{t('home.path.mre')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
-        <a href={hubPath(lang, 'visit')} class="btn btn-ghost">{t('home.path.visit')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+        <a href={hubPath(lang, 'mre')} class="btn btn-primary">{copy.mre}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+        <a href={hubPath(lang, 'visit')} class="btn btn-ghost">{copy.visit}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
       </div>
     </div>
     <div class="editorial-hero__visual">
