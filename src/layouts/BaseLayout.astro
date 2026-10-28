@@ -66,7 +66,9 @@ const description = seo.description ?? t('site.description');
     <!-- Thème appliqué avant le premier rendu (évite le flash) -->
     <script is:inline>
       (function () {
-        document.documentElement.classList.remove('dark');
+        var chosen = null;
+        try { chosen = localStorage.getItem('theme'); } catch (e) {}
+        document.documentElement.classList.toggle('dark', chosen === 'dark');
       })();
     </script>
 
