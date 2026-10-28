@@ -18,7 +18,7 @@
     "check:content": "node tools/check-content.mjs",
     "check:dist": "node tools/check-dist.mjs",
     "test:e2e": "playwright test",
-    "test:unit": "node --test tools/test-fx.mjs tools/test-vignette.mjs tools/test-returnbudget.mjs tools/test-retirement.mjs tools/test-ramadan.mjs tools/test-prayer.mjs tools/test-customs.mjs tools/test-costofliving.mjs tools/test-capitalgain.mjs"
+    "test:unit": "node --test tools/test-fx.mjs tools/test-vignette.mjs tools/test-returnbudget.mjs tools/test-retirement.mjs tools/test-ramadan.mjs tools/test-prayer.mjs tools/test-customs.mjs tools/test-costofliving.mjs tools/test-capitalgain.mjs tools/test-theme.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.1",

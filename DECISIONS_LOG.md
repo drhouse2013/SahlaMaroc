@@ -267,3 +267,10 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Accueil recomposé : nouvelle accroche, trois photographies de destinations (Marrakech, Chefchaouen, Essaouira), vrai formulaire de recherche, parcours de projets, sélection d’outils, grande mise en avant éditoriale et liste de guides, quatre autres destinations, checklists et présentation de l’auteur. Suppression des longues séries répétitives et du bandeau de chiffres de l’accueil.
 - Titres sans empattement, en-tête blanc simplifié, cartes plus sobres. Photos réelles créditées pour les cartes de guides sans couverture spécifique. Les images de couverture explicitement fournies restent conservées.
 - Fond blanc également appliqué à la newsletter de l’accueil et à la présentation de l’auteur. Le site reste statique et multilingue ; les URL, les outils et les contrôles de sécurité sont conservés.
+
+## 2026-10-28 — Thème automatique du système
+
+- À la demande de l’utilisateur : le mode initial suit désormais `prefers-color-scheme` et réagit aux changements du système sans rechargement.
+- Le sélecteur propose Système, Clair et Sombre dans les cinq langues. Un choix manuel reste possible et l’option Système permet de réactiver l’automatisme.
+- Nouvelle clé locale `sahla-theme-preference` : les anciennes sélections binaires ne bloquent pas le nouveau comportement automatique. La préférence se synchronise entre onglets ; un stockage indisponible ne bloque pas l’affichage.
+- Le thème est appliqué avant le premier rendu ; la couleur de l’interface du navigateur est adaptée. Tests de comportement ajoutés aux contrôles automatiques.
