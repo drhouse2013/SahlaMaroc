@@ -3,6 +3,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/home/Hero.astro';
 import Journeys from '../../components/home/Journeys.astro';
+import EditorNote from '../../components/home/EditorNote.astro';
 import CityGrid from '../../components/home/CityGrid.astro';
 import FactsBand from '../../components/home/FactsBand.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
@@ -123,6 +124,7 @@ const why = [
     </section>
   )}
 
+  <EditorNote lang={lang} />
   <Newsletter lang={lang} />
   <div class="container-page"><AdSlot type="banner" lang={lang} /></div>
 </BaseLayout>
