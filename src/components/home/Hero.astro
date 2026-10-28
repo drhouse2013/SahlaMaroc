@@ -1,66 +1,43 @@
 ---
-/**
- * Hero V2 : promesse, deux parcours (MRE / visiteur), recherche visible avec exemples.
- * La recherche est un lien-bouton : avec JavaScript il ouvre la fenêtre de recherche, sans JavaScript
- * il mène à la page de recherche. Aucune image lourde : illustration SVG légère en arche.
- */
 import CityImage from '../CityImage.astro';
 import Icon from '../Icon.astro';
 import { useTranslations, type Locale } from '../../i18n';
-import { L, pick, FACTS } from '../../data/home';
+import { L } from '../../data/home';
 import { hubPath } from '../../utils/i18n';
-
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const searchUrl = hubPath(lang, 'search');
-const examples = [t('search.ex1'), t('search.ex2'), t('search.ex3'), t('search.ex4'), t('search.ex5')];
-const paths = [
-  { id: 'mre', icon: 'plane' as const, title: t('home.path.mre'), text: t('home.path.mreText'), href: hubPath(lang, 'mre'), tint: 'bg-terracotta-50 dark:bg-terracotta-700/20' },
-  { id: 'visit', icon: 'compass' as const, title: t('home.path.visit'), text: t('home.path.visitText'), href: hubPath(lang, 'visit'), tint: 'bg-emerald-moroccan-100 dark:bg-emerald-moroccan-600/20' },
-];
+const examples = [t('search.ex1'), t('search.ex2'), t('search.ex3')];
 ---
-<section class="home-hero relative overflow-hidden border-b border-[var(--line)]">
-  <div class="home-hero__deco" aria-hidden="true">
-    <svg class="page-hero__star page-hero__star--1" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
-    <svg class="page-hero__star page-hero__star--2" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
-    <svg class="page-hero__star page-hero__star--3" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
-  </div>
-  <div class="container-page relative grid items-center gap-8 pt-6 pb-12 md:gap-12 md:pt-16 md:pb-24 lg:grid-cols-[1.25fr_0.75fr]">
-    <div>
-      <p class="eyebrow text-emerald-moroccan-600 dark:text-emerald-moroccan-100">{L.heroEyebrow[lang]}</p>
-      <h1 class="mt-4 text-[2.25rem] leading-[1.08] font-bold tracking-tight sm:text-6xl">{t('home.hero.title')}</h1>
-      <p class="mt-5 max-w-xl text-lg leading-relaxed muted">{t('home.hero.subtitle')}</p>
-
-      <a href={searchUrl} data-search-open class="card card-hover mt-8 flex min-h-14 max-w-xl items-center gap-3 px-4 text-start" data-track="search_open" data-track-label="home">
-        <Icon name="search" class="size-5 shrink-0 muted" />
-        <span class="muted">{t('search.placeholder')}</span>
-        <span class="kbd ms-auto hidden sm:inline" aria-hidden="true">/</span>
+<section class="editorial-hero" aria-labelledby="home-title">
+  <div class="container-page editorial-hero__grid">
+    <div class="editorial-hero__copy">
+      <p class="eyebrow editorial-hero__eyebrow"><span aria-hidden="true"></span>{L.heroEyebrow[lang]}</p>
+      <h1 id="home-title">{t('home.hero.title')}</h1>
+      <p class="editorial-hero__intro">{t('home.hero.subtitle')}</p>
+      <a href={searchUrl} data-search-open class="editorial-search" data-track="search_open" data-track-label="home">
+        <Icon name="search" class="size-5 shrink-0" />
+        <span>{t('search.placeholder')}</span>
+        <span class="editorial-search__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-5 rtl:-scale-x-100" /></span>
       </a>
-      <ul class="mt-3 flex max-w-xl flex-wrap gap-2" aria-label={t('search.examples')}>
-        {examples.map((e) => <li><a href={`${searchUrl}?q=${encodeURIComponent(e)}`} class="badge badge-navy min-h-9 px-3 text-sm hover:brightness-95">{e}</a></li>)}
+      <ul class="editorial-examples" aria-label={t('search.examples')}>
+        {examples.map((e) => <li><a href={`${searchUrl}?q=${encodeURIComponent(e)}`}>{e}<span aria-hidden="true">↗</span></a></li>)}
       </ul>
-
-      <div class="mt-8 grid max-w-2xl gap-4 sm:grid-cols-2">
-        {paths.map((p) => (
-          <a href={p.href} class:list={['group card card-hover flex items-start gap-4 p-5', p.tint]} data-track="path_click" data-track-label={p.id}>
-            <span class="icon-tile"><Icon name={p.icon} class="size-[1.35rem]" /></span>
-            <span class="min-w-0">
-              <span class="flex items-center gap-1.5 text-lg font-semibold">{p.title}<Icon name="arrowRight" class="size-4 transition group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" /></span>
-              <span class="mt-1 block text-sm muted">{p.text}</span>
-            </span>
-          </a>
-        ))}
+      <div class="editorial-hero__actions">
+        <a href={hubPath(lang, 'mre')} class="btn btn-primary">{t('home.path.mre')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+        <a href={hubPath(lang, 'visit')} class="btn btn-ghost">{t('home.path.visit')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
       </div>
     </div>
-    <div class="relative mx-auto w-full max-w-sm max-lg:order-first max-lg:max-w-none">
-      <div class="arch hero-photo relative aspect-[16/9] border-[6px] sm:aspect-[2/1] lg:aspect-[4/5] lg:border-[10px] border-white shadow-2xl shadow-terracotta-700/20 dark:border-night-800">
-        <CityImage scene="home-hero" fallback="marrakech" lang={lang} width={640} sizes="(min-width:1024px) 400px, 100vw" eager />
-      </div>
-      <div class="card absolute start-3 bottom-3 hidden max-w-[14rem] sm:block lg:-start-8 lg:bottom-14 px-4 py-3 shadow-xl">
-        <p class="font-display text-xl font-bold text-majorelle-600 dark:text-majorelle-100"><bdi dir="ltr">{FACTS[lang][3].value}</bdi></p>
-        <p class="text-xs muted">{FACTS[lang][3].label}</p>
-      </div>
+    <div class="editorial-hero__visual">
+      <div class="editorial-hero__photo"><CityImage scene="home-hero" fallback="marrakech" lang={lang} width={720} sizes="(min-width:1024px) 48vw, 100vw" eager /></div>
+      <a href={hubPath(lang, 'cities')} class="editorial-hero__caption"><Icon name="compass" class="size-5" /><span>{t('home.cities.title')}</span><span aria-hidden="true">↗</span></a>
+      <span class="editorial-hero__vertical" aria-hidden="true">MAROC · MOROCCO · المغرب</span>
     </div>
   </div>
+  <nav class="editorial-shortcuts container-page" aria-label={t('home.categories')}>
+    <a href={hubPath(lang, 'guides')}><Icon name="compass" />{t('nav.allGuides')}<span aria-hidden="true">↗</span></a>
+    <a href={hubPath(lang, 'cities')}><Icon name="plane" />{t('nav.cities')}<span aria-hidden="true">↗</span></a>
+    <a href={hubPath(lang, 'checklists')}><Icon name="listChecks" />{t('nav.checklists')}<span aria-hidden="true">↗</span></a>
+  </nav>
 </section>
