@@ -2,6 +2,7 @@
 /** Accueil localisé : /en, /fr, /es, /de, /ar */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/home/Hero.astro';
+import Journeys from '../../components/home/Journeys.astro';
 import CityGrid from '../../components/home/CityGrid.astro';
 import FactsBand from '../../components/home/FactsBand.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
@@ -21,6 +22,7 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Locale;
 const t = useTranslations(lang);
+const homeSeo: Record<Locale, [string, string]> = {"fr":["Maroc : guides MRE, voyages et calculateurs gratuits","Préparez votre retour ou votre voyage au Maroc : guides pratiques, ferries, démarches, immobilier et calculateurs gratuits pour MRE et voyageurs."],"en":["Morocco travel guides, MRE advice & free calculators","Plan your Morocco trip or return home with practical guides, ferry information, property advice and free calculators for MREs and visitors."],"es":["Marruecos: guías, diáspora y calculadoras gratuitas","Prepara tu viaje o regreso a Marruecos: guías prácticas, ferris, trámites, vivienda y calculadoras gratuitas para la diáspora y los visitantes."],"de":["Marokko: Reiseführer, MRE-Tipps & kostenlose Rechner","Planen Sie Ihre Reise oder Rückkehr nach Marokko: praktische Guides, Fähren, Formalitäten, Immobilien und kostenlose Rechner für MRE und Besucher."],"ar":["المغرب: أدلة عملية لمغاربة العالم والزوار وحاسبات مجانية","خطط لرحلتك أو عودتك إلى المغرب مع أدلة عملية حول العبّارات والإجراءات والعقار وحاسبات مجانية لمغاربة العالم والزوار."]};
 const articles = await getArticles(lang);
 const toolUrl = await getPageUrl(lang, 'calculators');
 const active = await getActiveCategories(lang);
@@ -37,8 +39,9 @@ const why = [
 ] as const;
 ---
 
-<BaseLayout lang={lang} title={t('site.tagline')} alternates={allLocalesAlternates(homePath)} switchTargets={allLocalesTargets(homePath)} jsonLd={[websiteJsonLd(lang, Astro.site, t('site.description')), organizationJsonLd(Astro.site)]}>
+<BaseLayout lang={lang} title={homeSeo[lang][0]} description={homeSeo[lang][1]} alternates={allLocalesAlternates(homePath)} switchTargets={allLocalesTargets(homePath)} jsonLd={[websiteJsonLd(lang, Astro.site, t('site.description')), organizationJsonLd(Astro.site)]}>
   <Hero lang={lang} />
+  <Journeys lang={lang} />
 
   <section class="container-page section reveal" aria-labelledby="tools-title">
     <div class="flex flex-wrap items-end justify-between gap-4">
@@ -48,7 +51,7 @@ const why = [
       </div>
       {toolUrl && <a href={toolUrl} class="btn btn-ghost btn-sm">{t('common.seeAll')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>}
     </div>
-    <div class="mt-8 stagger-reveal"><ToolGrid lang={lang} /></div>
+    <div class="mt-8 stagger-reveal"><ToolGrid lang={lang} keys={['calc-property-fees', 'calc-mortgage', 'calc-transfer', 'calc-summer', 'calc-car-days', 'calc-ferry-compare']} /></div>
   </section>
 
   <section class="container-page section reveal" aria-labelledby="why-title">
@@ -88,7 +91,7 @@ const why = [
     </nav>
   )}
 
-  <CityGrid lang={lang} />
+  <CityGrid lang={lang} limit={8} />
 
   {checklists.length > 0 && (
     <section class="container-page section reveal" aria-labelledby="chk-title">
