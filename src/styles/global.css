@@ -999,3 +999,12 @@ html:not([lang^="ar"]) .journey-card h3 { font-size: 1.65rem; }
 .editorial-hero__caption:hover { color: var(--accent); }
 .editorial-hero__vertical { inset-inline-end: auto; right: -1.5rem; }
 :dir(rtl) .editorial-hero__vertical { right: auto; left: -1.5rem; }
+.editor-note { display: grid; grid-template-columns: .8fr 1.4fr; align-items: center; gap: 3rem; padding: 3rem; background: var(--surface-3); border-radius: 1rem; }
+.editor-note__signature { display: grid; place-items: center; gap: .8rem; padding: 1.5rem; color: var(--accent); border-inline-end: 1px solid var(--line-strong); }
+.editor-note__signature > :first-child { font-family: var(--font-brand); font-size: 4rem; line-height: 1.5; transform: rotate(-6deg); }
+.editor-note__signature > :last-child { color: var(--muted); font-size: .75rem; }
+.editor-note .eyebrow { color: var(--accent); }
+@media (max-width: 639px) {
+ .editor-note { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+ .editor-note__signature { border-inline-end: 0; border-bottom: 1px solid var(--line-strong); padding: 0 0 1.5rem; }
+}
