@@ -52,8 +52,7 @@ const description = seo.description ?? t('site.description');
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="google-site-verification" content="WYCTZCgbChnFf2QffNqOmXH0864UscD392U7WB8QJXw" />
-    <meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0f1626" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/logo.png" />
@@ -67,16 +66,13 @@ const description = seo.description ?? t('site.description');
     <!-- Thème appliqué avant le premier rendu (évite le flash) -->
     <script is:inline>
       (function () {
-        var s = null;
-        try { s = localStorage.getItem('theme'); } catch (e) {}
-        if (s === 'dark' || (!s && matchMedia('(prefers-color-scheme: dark)').matches))
-          document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('dark');
       })();
     </script>
 
     {UMAMI_WEBSITE_ID && <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={UMAMI_WEBSITE_ID}></script>}
   </head>
-  <body class="min-h-screen bg-sand-50 pb-[calc(3.5rem+env(safe-area-inset-bottom))] font-sans text-ink-900 antialiased lg:pb-0 dark:bg-night-900 dark:text-sand-100">
+  <body class="min-h-screen bg-white pb-[calc(3.5rem+env(safe-area-inset-bottom))] font-sans text-ink-900 antialiased lg:pb-0">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-navy-700 focus:shadow-lg">{t('nav.skip')}</a>
     <Header lang={lang} switchTargets={switchTargets ?? alternates} />
     <main id="main" tabindex="-1" class="outline-none">
