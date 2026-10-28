@@ -5,16 +5,14 @@ import Hero from '../../components/home/Hero.astro';
 import Journeys from '../../components/home/Journeys.astro';
 import EditorNote from '../../components/home/EditorNote.astro';
 import CityGrid from '../../components/home/CityGrid.astro';
-import FactsBand from '../../components/home/FactsBand.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import ToolGrid from '../../components/ToolGrid.astro';
 import Newsletter from '../../components/Newsletter.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import Icon from '../../components/Icon.astro';
 import { LOCALES, useTranslations, type Locale } from '../../i18n';
-import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
 import { allChecklists } from '../../utils/content';
-import { allLocalesAlternates, allLocalesTargets, categoryPath, getActiveCategories, getArticleByKey, getArticles, getPageUrl, homePath, hubPath } from '../../utils/i18n';
+import { allLocalesAlternates, allLocalesTargets, getArticleByKey, getPageUrl, homePath, hubPath } from '../../utils/i18n';
 import { organizationJsonLd, websiteJsonLd } from '../../utils/seo';
 
 export function getStaticPaths() {
@@ -24,107 +22,29 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as Locale;
 const t = useTranslations(lang);
 const homeSeo: Record<Locale, [string, string]> = {"fr":["Maroc : guides MRE, voyages et calculateurs gratuits","Préparez votre retour ou votre voyage au Maroc : guides pratiques, ferries, démarches, immobilier et calculateurs gratuits pour MRE et voyageurs."],"en":["Morocco travel guides, MRE advice & free calculators","Plan your Morocco trip or return home with practical guides, ferry information, property advice and free calculators for MREs and visitors."],"es":["Marruecos: guías, diáspora y calculadoras gratuitas","Prepara tu viaje o regreso a Marruecos: guías prácticas, ferris, trámites, vivienda y calculadoras gratuitas para la diáspora y los visitantes."],"de":["Marokko: Reiseführer, MRE-Tipps & kostenlose Rechner","Planen Sie Ihre Reise oder Rückkehr nach Marokko: praktische Guides, Fähren, Formalitäten, Immobilien und kostenlose Rechner für MRE und Besucher."],"ar":["المغرب: أدلة عملية لمغاربة العالم والزوار وحاسبات مجانية","خطط لرحلتك أو عودتك إلى المغرب مع أدلة عملية حول العبّارات والإجراءات والعقار وحاسبات مجانية لمغاربة العالم والزوار."]};
-const articles = await getArticles(lang);
 const toolUrl = await getPageUrl(lang, 'calculators');
-const active = await getActiveCategories(lang);
 const POPULAR = ['marhaba-guide', 'car-180-days', 'send-money', 'buy-property-abroad', 'e-visa', 'sim-esim-morocco'];
 const popular = (await Promise.all(POPULAR.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
-const latest = articles.slice(0, 6);
 const checklists = (await allChecklists(lang)).slice(0, 3);
 const checklistsUrl = hubPath(lang, 'checklists');
-const why = [
-  { icon: 'lightbulb', title: t('home.why.1.title'), text: t('home.why.1.text') },
-  { icon: 'shield', title: t('home.why.2.title'), text: t('home.why.2.text') },
-  { icon: 'refresh', title: t('home.why.3.title'), text: t('home.why.3.text') },
-  { icon: 'users', title: t('home.why.4.title'), text: t('home.why.4.text') },
-] as const;
 ---
 
 <BaseLayout lang={lang} title={homeSeo[lang][0]} description={homeSeo[lang][1]} alternates={allLocalesAlternates(homePath)} switchTargets={allLocalesTargets(homePath)} jsonLd={[websiteJsonLd(lang, Astro.site, t('site.description')), organizationJsonLd(Astro.site)]}>
-  <Hero lang={lang} />
-  <Journeys lang={lang} />
-
-  <section class="container-page section reveal" aria-labelledby="tools-title">
-    <div class="flex flex-wrap items-end justify-between gap-4">
-      <div>
-        <h2 id="tools-title" class="section-title">{t('home.tools.title')}</h2>
-        <p class="section-sub">{t('home.tools.sub')}</p>
-      </div>
-      {toolUrl && <a href={toolUrl} class="btn btn-ghost btn-sm">{t('common.seeAll')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>}
-    </div>
-    <div class="mt-8 stagger-reveal"><ToolGrid lang={lang} keys={['calc-property-fees', 'calc-mortgage', 'calc-transfer', 'calc-summer', 'calc-car-days', 'calc-ferry-compare']} /></div>
-  </section>
-
-  <section class="container-page section reveal" aria-labelledby="why-title">
-    <h2 id="why-title" class="section-title">{t('home.why.title')}</h2>
-    <p class="section-sub">{t('home.why.sub')}</p>
-    <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 stagger-reveal">
-      {why.map((w) => (
-        <li class="card p-5">
-          <span class="icon-tile"><Icon name={w.icon} class="size-[1.35rem]" /></span>
-          <h3 class="mt-4 text-lg font-semibold">{w.title}</h3>
-          <p class="mt-1.5 text-sm muted">{w.text}</p>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  {popular.length > 0 && (
-    <section class="container-page section" aria-labelledby="popular-title">
-      <h2 id="popular-title" class="section-title">{t('home.popular')}</h2>
-      <p class="section-sub">{t('home.popularSub')}</p>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">{popular.map((a) => <ArticleCard article={a} />)}</div>
+  <div class="home-redesign">
+    <Hero lang={lang} />
+    <Journeys lang={lang} />
+    <section class="container-page section new-tools-section" aria-labelledby="tools-title">
+      <div class="new-section-head"><div><p class="eyebrow">{t('nav.tools')}</p><h2 id="tools-title" class="section-title mt-3">{t('home.tools.title')}</h2><p class="section-sub">{t('home.tools.sub')}</p></div>{toolUrl && <a href={toolUrl} class="new-text-link">{t('common.seeAll')}<span aria-hidden="true">↗</span></a>}</div>
+      <div class="mt-8"><ToolGrid lang={lang} keys={['calc-property-fees', 'calc-mortgage', 'calc-transfer', 'calc-summer', 'calc-car-days', 'calc-ferry-compare']} /></div>
     </section>
-  )}
-
-  {active.length > 0 && (
-    <nav class="container-page section reveal" aria-label={t('home.categories')}>
-      <h2 class="section-title">{t('home.categories')}</h2>
-      <ul class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4 stagger-reveal">
-        {active.map((id) => (
-          <li class="min-w-0">
-            <a href={categoryPath(lang, id)} class="card card-hover flex min-h-14 items-center gap-2 px-3 py-3 text-[0.95rem] font-medium sm:gap-3 sm:px-4">
-              <span class="icon-tile size-8 shrink-0 sm:size-10"><Icon name={CATEGORY_ICON[id]} /></span><span class="min-w-0 [overflow-wrap:anywhere]">{CATEGORIES[id].label[lang]}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  )}
-
-  <CityGrid lang={lang} limit={8} />
-
-  {checklists.length > 0 && (
-    <section class="container-page section reveal" aria-labelledby="chk-title">
-      <div class="card grid items-center gap-6 p-6 sm:p-9 md:grid-cols-[1fr_1fr]">
-        <div>
-          <span class="icon-tile"><Icon name="listChecks" class="size-[1.35rem]" /></span>
-          <h2 id="chk-title" class="mt-4 text-2xl font-semibold sm:text-3xl">{t('home.checklists.title')}</h2>
-          <p class="mt-2 muted">{t('home.checklists.text')}</p>
-          <a href={checklistsUrl} class="btn btn-primary mt-6">{t('home.checklists.cta')}</a>
-        </div>
-        <ul class="grid gap-2">
-          {checklists.map((c) => (
-            <li><a href={`/${lang}/${c.article.data.slug}#checklist-${c.id}`} class="flex items-center justify-between gap-3 rounded-2xl border border-[var(--line)] px-4 py-3 hover:bg-[var(--surface-3)]"><span class="font-medium">{c.title}</span><span class="text-xs muted">{t('checklists.items', { n: c.items })}</span></a></li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  )}
-
-  <FactsBand lang={lang} />
-
-  {latest.length > 0 && (
-    <section class="container-page section" aria-labelledby="latest-title">
-      <div class="flex flex-wrap items-end justify-between gap-4">
-        <h2 id="latest-title" class="section-title">{t('home.latest')}</h2>
-        <a href={hubPath(lang, 'guides')} class="btn btn-ghost btn-sm">{t('nav.allGuides')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
-      </div>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">{latest.map((a) => <ArticleCard article={a} />)}</div>
-    </section>
-  )}
-
-  <EditorNote lang={lang} />
-  <Newsletter lang={lang} />
-  <div class="container-page"><AdSlot type="banner" lang={lang} /></div>
+    {popular.length > 0 && <section class="container-page section" aria-labelledby="popular-title">
+      <div class="new-section-head"><div><p class="eyebrow">{t('nav.guides')}</p><h2 id="popular-title" class="section-title mt-3">{t('home.popular')}</h2><p class="section-sub">{t('home.popularSub')}</p></div><a href={hubPath(lang,'guides')} class="new-text-link">{t('nav.allGuides')}<span aria-hidden="true">↗</span></a></div>
+      <div class="new-guide-feature"><ArticleCard article={popular[0]} /><div class="new-guide-list">{popular.slice(1).map(a=><ArticleCard article={a} size="sm" />)}</div></div>
+    </section>}
+    <CityGrid lang={lang} ids={['casablanca','rabat','fes','taghazout']} limit={4} />
+    {checklists.length > 0 && <section class="container-page section" aria-labelledby="chk-title"><div class="new-checklists"><div><p class="eyebrow">{t('nav.checklists')}</p><h2 id="chk-title" class="section-title mt-3">{t('home.checklists.title')}</h2><p class="section-sub">{t('home.checklists.text')}</p><a href={checklistsUrl} class="btn btn-primary mt-6">{t('home.checklists.cta')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a></div><ul>{checklists.map(c=><li><a href={`/${lang}/${c.article.data.slug}#checklist-${c.id}`}><Icon name="listChecks" class="size-5 shrink-0" /><span>{c.title}</span><span class="muted">{t('checklists.items',{n:c.items})}</span></a></li>)}</ul></div></section>}
+    <EditorNote lang={lang} />
+    <Newsletter lang={lang} />
+    <div class="container-page"><AdSlot type="banner" lang={lang} /></div>
+  </div>
 </BaseLayout>
