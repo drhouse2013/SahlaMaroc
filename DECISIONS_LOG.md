@@ -260,3 +260,10 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - À la demande de l’utilisateur : textes d’accueil plus naturels autour de la famille, des voyages et des projets ; présence éditoriale de Yassine fondée sur la page À propos existante. Aucun témoignage ni portrait inventé.
 - Références : https://docs.astro.build/en/guides/upgrade-to/v7/ ; https://github.com/withastro/astro/security/advisories/GHSA-26w7-cxv4-gfx2.
 - Audit complet après correction ciblée du parseur PostCSS 6.1.5 : zéro vulnérabilité connue, y compris dans les outils de développement.
+
+## 2026-10-28 — Nouvelle direction demandée : blanc et refonte complète de l’accueil
+
+- L’utilisateur juge la première refonte trop proche de l’original et demande explicitement un fond blanc. Le fond clair est blanc. Après précision de l’utilisateur, le choix clair/sombre et ses commandes sont conservés : blanc par défaut, choix explicite mémorisé. Les nouvelles sections disposent de couleurs adaptées aux deux modes.
+- Accueil recomposé : nouvelle accroche, trois photographies de destinations (Marrakech, Chefchaouen, Essaouira), vrai formulaire de recherche, parcours de projets, sélection d’outils, grande mise en avant éditoriale et liste de guides, quatre autres destinations, checklists et présentation de l’auteur. Suppression des longues séries répétitives et du bandeau de chiffres de l’accueil.
+- Titres sans empattement, en-tête blanc simplifié, cartes plus sobres. Photos réelles créditées pour les cartes de guides sans couverture spécifique. Les images de couverture explicitement fournies restent conservées.
+- Fond blanc également appliqué à la newsletter de l’accueil et à la présentation de l’auteur. Le site reste statique et multilingue ; les URL, les outils et les contrôles de sécurité sont conservés.
