@@ -1,18 +1,16 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Icon from './Icon.astro';
-import CityImage from './CityImage.astro';
+import GuideVisual from './GuideVisual.astro';
 import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { entryPath } from '../utils/i18n';
-import { illustration } from '../utils/illustrations';
 
 interface Props { article: CollectionEntry<'articles'>; size?: 'sm' | 'md' | 'lg'; headingLevel?: 'h2' | 'h3' }
 const { article, size = 'md', headingLevel = 'h3' } = Astro.props;
 const d = article.data;
 const lg = size === 'lg';
 const H = headingLevel;
-const coverScene = {retour:'tangier',immobilier:'casablanca',money:'rabat',demarches:'fes',arrival:'casablanca',tours:'chefchaouen',stay:'marrakech',living:'essaouira'} as const;
+const read = {fr:'Lire le guide',en:'Read the guide',es:'Leer la guía',de:'Guide lesen',ar:'قراءة الدليل'}[d.lang];
 ---
 
 {size === 'sm' ? (
@@ -24,15 +22,8 @@ const coverScene = {retour:'tangier',immobilier:'casablanca',money:'rabat',demar
   </article>
 ) : (
   <article class:list={['group card card-hover relative flex h-full overflow-hidden', lg ? 'flex-col md:flex-row' : 'flex-col']}>
-    <div class:list={['relative overflow-hidden bg-sand-100 dark:bg-night-700', lg ? 'aspect-[16/10] md:aspect-auto md:w-1/2' : 'aspect-[16/9]']}>
-      {d.heroImage ? <Image
-        src={d.heroImage ?? illustration(d.illustration)}
-        alt={d.heroAlt ?? ''}
-        width={lg ? 900 : 640}
-        loading="lazy"
-        decoding="async"
-        class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-      /> : <CityImage scene={coverScene[d.category]} lang={d.lang} width={lg ? 900 : 640} /> }
+    <div class:list={['relative overflow-hidden border-b border-[var(--border)]', lg ? 'md:w-1/2 md:shrink-0 md:border-e md:border-b-0' : '']}>
+      <GuideVisual article={article} large={lg} />
     </div>
     <div class:list={['flex flex-1 flex-col justify-center', lg ? 'p-6 md:p-9' : 'p-5']}>
       <p class="eyebrow mb-3 text-[var(--accent)]">{CATEGORIES[d.category].label[d.lang]}</p>
@@ -40,6 +31,7 @@ const coverScene = {retour:'tangier',immobilier:'casablanca',money:'rabat',demar
         <a href={entryPath(d.lang, d.slug)} class="after:absolute after:inset-0 group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{d.title}</a>
       </H>
       <p class="mt-3 line-clamp-3 text-sm leading-relaxed muted">{d.description}</p>
+      <p class="mt-auto flex items-center justify-between gap-3 pt-6 text-sm font-semibold" aria-hidden="true">{read}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></p>
     </div>
   </article>
 )}
