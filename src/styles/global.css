@@ -452,10 +452,7 @@ header.sticky.is-scrolled .container-page { height: var(--header-h); }
    STAGGER REVEAL — cascade d'entrée pour grilles et listes
    ═══════════════════════════════════════════════════════════════════════ */
 
-.stagger-reveal > * {
-  opacity: 0;
-  transform: translateY(16px);
-}
+.stagger-reveal > * { opacity: 1; transform: none; }
 .stagger-reveal.is-visible > * {
   animation: reveal-up .5s var(--ease-smooth-out) both;
 }
