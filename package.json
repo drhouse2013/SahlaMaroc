@@ -5,7 +5,7 @@
   "private": true,
   "description": "SahlaMaroc — le Maroc simple et pratique : guides et calculateurs pour les MRE et les visiteurs",
   "engines": {
-    "node": ">=20.3.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -17,28 +17,31 @@
     "predev": "node tools/raster.mjs",
     "check:content": "node tools/check-content.mjs",
     "check:dist": "node tools/check-dist.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:unit": "node --test tools/test-fx.mjs tools/test-vignette.mjs tools/test-returnbudget.mjs tools/test-retirement.mjs tools/test-ramadan.mjs tools/test-prayer.mjs tools/test-customs.mjs tools/test-costofliving.mjs tools/test-capitalgain.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/mdx": "^8.1.1",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/sitemap": "^3.7.4",
     "@fontsource-variable/marhey": "^5.3.0",
     "@fontsource-variable/readex-pro": "^5.3.0",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "~5.18.2",
-    "gsap": "^3.15.0",
-    "sharp": "^0.34.0",
-    "tailwindcss": "^4.3.3"
+    "astro": "~7.4.2",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "@astrojs/markdown-remark": "^7.3.4"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.12",
     "@playwright/test": "^1.64.1",
     "@tailwindcss/typography": "^0.5.20",
     "gray-matter": "^4.0.3",
     "typescript": "^5.9.0"
   },
   "overrides": {
-    "vite": "^6.4.3"
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "^6.1.5"
+    }
   }
 }

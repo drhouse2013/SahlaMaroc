@@ -3,9 +3,9 @@
 Site statique de guides pratiques + calculateurs pour les MRE (Marocains du monde) et les visiteurs du Maroc. Monétisation : AdSense + affiliation.
 
 ## Stack
-- Astro 5, TypeScript, Tailwind CSS 4 (CSS-first, `src/styles/global.css`), MDX.
+- Astro 7, TypeScript, Tailwind CSS 4 (CSS-first, `src/styles/global.css`), MDX.
 - i18n maison : fr, en, es, de, ar (RTL). Langues indexées : fr, en (`site.config.mjs`).
-- `package.json` force `vite ^6.4.3` (overrides) — ne pas retirer.
+- Node.js 24 minimum. Utiliser `npm ci` avec le verrou suivi. Astro 7 utilise Vite 8 : ne pas réintroduire l’ancien override Vite 6 (migration de sécurité du 28/10/2026).
 
 ## Commandes
 - `npm install` puis `npm run dev` (http://localhost:4321)
@@ -37,5 +37,5 @@ Les invoquer d'office via l'outil Skill, sans attendre que l'utilisateur les nom
 - `impeccable` : tout travail UI/UX (design, critique, polish, responsive, a11y, motion, états vides/erreurs).
 - `ui-ux-pro-max` : choix de style, palette, typographie, patterns UI ; `ui-styling` pour l'implémentation Tailwind ; `design-system` pour les tokens (`src/styles/global.css`).
 - `brand`, `banner-design`, `design`, `slides` : uniquement pour identité visuelle, bannières, visuels, présentations.
-- Contraintes du projet prioritaires sur les skills : Astro 5 + Tailwind 4 CSS-first, `brandName(lang)`, RTL pour l'arabe, i18n fr/en/es/de/ar, `<AffiliateLink>`, `npm run build` avant push.
+- Contraintes du projet prioritaires sur les skills : Astro 7 + Tailwind 4 CSS-first, `brandName(lang)`, RTL pour l'arabe, i18n fr/en/es/de/ar, `<AffiliateLink>`, `npm run build` avant push.
 - Après toute modif UI : `npm run build` ; vérification Playwright seulement si parcours utilisateur touché.

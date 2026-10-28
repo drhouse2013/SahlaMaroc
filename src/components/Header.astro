@@ -39,14 +39,14 @@ const searchHref = hubPath(lang, 'search');
 
 <header class="sticky top-0 z-40 border-b border-[var(--line)] bg-sand-50/90 backdrop-blur-md supports-[backdrop-filter]:bg-sand-50/80 dark:bg-night-900/90 transition-[height] duration-200">
   <div class="container-page flex h-16 items-center gap-2 transition-[height] duration-200 sm:gap-3">
-    <a href={homePath(lang)} class="flex min-w-0 shrink items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
-      <Logo />
-      <span class="truncate font-brand text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-gold-600 dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
+    <a href={homePath(lang)} class="flex min-w-0 shrink-0 items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
+      <Logo class="h-8 w-7 sm:h-9 sm:w-8" />
+      <span class="truncate font-brand text-sm min-[360px]:text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-gold-600 dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
     </a>
 
-    <nav class="ms-4 hidden items-center gap-0.5 text-[0.94rem] font-medium lg:flex" aria-label={t('nav.main')}>
+    <nav class="ms-2 hidden items-center gap-0 text-[0.82rem] font-medium lg:flex" aria-label={t('nav.main')}>
       <details class="group relative" data-nav-menu>
-        <summary class="flex min-h-10 cursor-pointer list-none items-center gap-1 rounded-full px-3 hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden">
+        <summary class="flex min-h-10 cursor-pointer list-none items-center gap-1 rounded-full px-2 hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden">
           {t('nav.guides')}
           <Icon name="chevronDown" class="size-4 transition group-open:rotate-180" />
         </summary>
@@ -78,9 +78,9 @@ const searchHref = hubPath(lang, 'search');
     </nav>
 
     <div class="ms-auto flex items-center gap-0.5 sm:gap-1">
-      <a href={searchHref} data-search-open class="flex min-h-10 items-center gap-2 rounded-full px-2.5 text-sm hover:bg-sand-100 sm:border sm:border-[var(--line-strong)] sm:px-3 dark:hover:bg-white/10" aria-label={t('nav.search')}>
+      <a href={searchHref} data-search-open class="flex min-h-10 items-center gap-2 rounded-full px-2 text-sm hover:bg-sand-100 sm:border sm:border-[var(--line-strong)] sm:px-3 dark:hover:bg-white/10" aria-label={t('nav.search')}>
         <Icon name="search" class="size-5 sm:size-4" />
-        <span class="hidden sm:inline muted">{t('nav.search')}</span>
+        <span class="hidden xl:inline muted">{t('nav.search')}</span>
         <kbd class="kbd hidden xl:inline-grid" aria-hidden="true">/</kbd>
       </a>
       <LanguageSwitcher lang={lang} targets={switchTargets} />
@@ -136,3 +136,4 @@ const searchHref = hubPath(lang, 'search');
     }, { passive: true });
   }
 </script>
+

@@ -241,3 +241,22 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Aucune idée nouvelle exploitable (Firecrawl hors crédits, n° 21 de IDEES-EXPERT.md).
 - Réparé : tools/check-content.mjs (regex cassée du contrôle FACTS.csv, variable ROOT) ; apostrophes non échappées dans src/data/tools.ts (build en échec, remplacées par ’) ; calculateur de péages : liens internes cassés en en/es/de/ar vers les vrais slugs (guide autoroute Tanger Med, guide ferry), slug ar en caractères latins (`hasibat-rusum-tariq-sayyar-maghrib`), titre es raccourci (≤ 70). FACTS.csv : champs protégés par guillemets, statuts normalisés.
 - Contrôles : check:content 0 erreur, node --test 67/67, build 927 pages, check:dist 0 erreur.
+
+## 2026-10-28 — Refonte éditoriale et orientation des visiteurs
+
+- Demande : refonte professionnelle, identité visuelle plus affirmée et navigation plus claire. À la demande explicite de l’utilisateur, abandon du bleu au profit de l’ivoire, du vert profond et du terracotta. Les noms des anciens tokens sont conservés pour compatibilité ; leurs valeurs changent globalement.
+- Accueil : grande photographie existante créditée, titres éditoriaux, recherche visible, raccourcis et trois parcours vers des guides existants, dans les cinq langues. Six calculateurs et huit villes en sélection ; les catalogues complets restent accessibles.
+- Identité harmonisée dans les logos, favicon et visuel de partage. En-tête ajusté pour afficher la marque entière. Cartes des guides enrichies par leur catégorie et leur description.
+- Référencement : titres et descriptions spécifiques à l’accueil dans les cinq langues, maillage interne renforcé. Préservation des URL, canonical, hreflang, sitemap et restrictions d’indexation des traductions.
+- Accessibilité : contenu visible même sans JavaScript ; les animations deviennent un enrichissement facultatif. Mise en page arabe en RTL et couleurs clair/sombre conservées.
+- Les règles administratives et les barèmes existants ne sont pas présentés comme revérifiés par cette refonte. Les dates de vérification éditoriale ne changent pas. Le contrôle de contenu signale des guides dont la vérification factuelle reste à compléter.
+
+## 2026-10-28 — Sécurité, contrôles continus et ton éditorial
+
+- Audit npm de la pile initiale : 6 dépendances signalées, dont Astro classé critique et Sharp classé élevé. Migration vers Astro 7.4.2, MDX 8.1.1 et Sharp 0.35.5, avec Node.js 24 minimum. L’ancien override Vite 6 est supprimé car incompatible avec Vite 8 requis par Astro 7 ; la chaîne Markdown unified est conservée explicitement pour limiter les changements de rendu.
+- Après migration : audit npm des dépendances de production à zéro vulnérabilité connue ; les 67 tests de calcul passent. Suppression de GSAP, aucune utilisation détectée dans src/.
+- Suivi du verrou package-lock.json pour des installations reproductibles. Contrôles GitHub Actions à permissions de lecture : tests, contenu, compilation, sitemap et audit npm. Actions officielles épinglées par SHA. Dependabot prépare des propositions de mise à jour sans fusion automatique.
+- CSP de base appliquée pour les objets, les URL de base et l’encadrement, tout en conservant la politique détaillée en mode rapport pour les services externes.
+- À la demande de l’utilisateur : textes d’accueil plus naturels autour de la famille, des voyages et des projets ; présence éditoriale de Yassine fondée sur la page À propos existante. Aucun témoignage ni portrait inventé.
+- Références : https://docs.astro.build/en/guides/upgrade-to/v7/ ; https://github.com/withastro/astro/security/advisories/GHSA-26w7-cxv4-gfx2.
+- Audit complet après correction ciblée du parseur PostCSS 6.1.5 : zéro vulnérabilité connue, y compris dans les outils de développement.
