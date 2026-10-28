@@ -23,11 +23,9 @@ const cats = await getActiveCategories(lang);
 const path = Astro.url.pathname;
 const nav = [
   { href: hubPath(lang, 'cities'), label: t('nav.cities') },
-  { href: hubPath(lang, 'regions'), label: t('nav.regions') },
   { href: toolUrl, label: t('nav.tools') },
   { href: hubPath(lang, 'checklists'), label: t('nav.checklists') },
   { href: hubPath(lang, 'mre'), label: t('nav.mre') },
-  { href: hubPath(lang, 'news'), label: t('nav.news') },
 ];
 const more = [
   { href: hubPath(lang, 'glossary'), label: t('nav.glossary') },
@@ -37,11 +35,11 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
 const searchHref = hubPath(lang, 'search');
 ---
 
-<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-sand-50/90 backdrop-blur-md supports-[backdrop-filter]:bg-sand-50/80 dark:bg-night-900/90 transition-[height] duration-200">
-  <div class="container-page flex h-16 items-center gap-2 transition-[height] duration-200 sm:gap-3">
+<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--surface-2)] transition-[height] duration-200">
+  <div class="container-page flex h-18 items-center gap-2 transition-[height] duration-200 sm:gap-3">
     <a href={homePath(lang)} class="flex min-w-0 shrink-0 items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
       <Logo class="h-8 w-7 sm:h-9 sm:w-8" />
-      <span class="truncate font-brand text-sm min-[360px]:text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-gold-600 dark:text-saffron-400">{brand.split(' ')[1]}</span></span>
+      <span class="truncate font-sans text-sm min-[360px]:text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-navy-700 dark:text-sand-50">{brand.split(' ')[1]}</span></span>
     </a>
 
     <nav class="ms-2 hidden items-center gap-0 text-[0.82rem] font-medium lg:flex" aria-label={t('nav.main')}>
@@ -136,4 +134,3 @@ const searchHref = hubPath(lang, 'search');
     }, { passive: true });
   }
 </script>
-

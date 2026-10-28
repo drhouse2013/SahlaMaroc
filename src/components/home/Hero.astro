@@ -2,43 +2,41 @@
 import CityImage from '../CityImage.astro';
 import Icon from '../Icon.astro';
 import { useTranslations, type Locale } from '../../i18n';
-import { L } from '../../data/home';
-import { hubPath } from '../../utils/i18n';
+import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { hubPath, cityPath } from '../../utils/i18n';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const copy = ({"fr":{"title":"Le Maroc, l’esprit tranquille.","intro":"Retrouver les vôtres, découvrir le pays, préparer un projet. Des guides clairs et des outils utiles pour avancer, à votre rythme.","search":"Une question sur le Maroc ?","mre":"Préparer mon retour","visit":"Découvrir le Maroc"},"en":{"title":"Morocco, with peace of mind.","intro":"Reconnect with family, discover the country or plan your next project. Clear guides and useful tools to help you along the way.","search":"A question about Morocco?","mre":"Plan my return","visit":"Discover Morocco"},"es":{"title":"Marruecos, con tranquilidad.","intro":"Reencontrarte con los tuyos, descubrir el país o preparar un proyecto. Guías claras y herramientas útiles para avanzar a tu ritmo.","search":"¿Una pregunta sobre Marruecos?","mre":"Preparar mi regreso","visit":"Descubrir Marruecos"},"de":{"title":"Marokko, mit einem guten Gefühl.","intro":"Familie wiedersehen, das Land entdecken oder ein Projekt planen. Verständliche Guides und hilfreiche Rechner begleiten Sie Schritt für Schritt.","search":"Eine Frage zu Marokko?","mre":"Meine Rückkehr planen","visit":"Marokko entdecken"},"ar":{"title":"المغرب، براحة بال.","intro":"للقاء الأحباب أو اكتشاف البلد أو التحضير لمشروع. أدلة واضحة وأدوات مفيدة ترافقكم خطوة بخطوة.","search":"لديك سؤال عن المغرب؟","mre":"أحضّر لعودتي","visit":"أكتشف المغرب"}})[lang];
+const copy = {
+ fr: { eyebrow: 'Le guide des MRE et des voyageurs', title: 'Le Maroc, à votre façon.', intro: 'Un retour en famille, un premier voyage, un projet de vie. Trouvez les bons repères pour préparer la suite, simplement.', cta: 'Préparer mon projet', other: 'Explorer les destinations', search: 'On commence par quoi ?', placeholder: 'Une ville, une démarche, une envie…', free: 'Guides pratiques et outils gratuits' },
+ en: { eyebrow: 'The guide for MREs and travellers', title: 'Morocco, your way.', intro: 'A family reunion, a first trip, a new chapter. Find the practical advice you need to plan what comes next.', cta: 'Plan my project', other: 'Explore destinations', search: 'Where shall we start?', placeholder: 'A city, a question, an idea…', free: 'Practical guides and free tools' },
+ es: { eyebrow: 'La guía para la diáspora y los viajeros', title: 'Marruecos, a tu manera.', intro: 'Un regreso en familia, un primer viaje, un nuevo proyecto. Encuentra la información práctica para preparar lo que viene.', cta: 'Preparar mi proyecto', other: 'Explorar destinos', search: '¿Por dónde empezamos?', placeholder: 'Una ciudad, una pregunta, una idea…', free: 'Guías prácticas y herramientas gratuitas' },
+ de: { eyebrow: 'Der Guide für MRE und Reisende', title: 'Marokko, auf Ihre Art.', intro: 'Ein Wiedersehen mit der Familie, die erste Reise, ein neues Kapitel. Finden Sie die praktischen Informationen für Ihre nächsten Schritte.', cta: 'Mein Projekt planen', other: 'Reiseziele entdecken', search: 'Wo fangen wir an?', placeholder: 'Eine Stadt, eine Frage, eine Idee…', free: 'Praktische Guides und kostenlose Rechner' },
+ ar: { eyebrow: 'دليل مغاربة العالم والمسافرين', title: 'المغرب، على طريقتكم.', intro: 'عودة إلى الأهل أو رحلة أولى أو مشروع جديد. معلومات عملية تساعدكم على التحضير للخطوة القادمة بكل بساطة.', cta: 'أحضّر لمشروعي', other: 'أكتشف الوجهات', search: 'من أين نبدأ؟', placeholder: 'مدينة، سؤال، فكرة…', free: 'أدلة عملية وأدوات مجانية' },
+}[lang];
+const photos = ['marrakech', 'chefchaouen', 'essaouira'].map(id => CITY_PAGES.find(c => c.id === id)!);
 const searchUrl = hubPath(lang, 'search');
-const examples = [t('search.ex1'), t('search.ex2'), t('search.ex3')];
 ---
-<section class="editorial-hero" aria-labelledby="home-title">
-  <div class="container-page editorial-hero__grid">
-    <div class="editorial-hero__copy">
-      <p class="eyebrow editorial-hero__eyebrow"><span aria-hidden="true"></span>{L.heroEyebrow[lang]}</p>
-      <h1 id="home-title">{copy.title}</h1>
-      <p class="editorial-hero__intro">{copy.intro}</p>
-      <a href={searchUrl} data-search-open class="editorial-search" data-track="search_open" data-track-label="home">
-        <Icon name="search" class="size-5 shrink-0" />
-        <span>{copy.search}</span>
-        <span class="editorial-search__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-5 rtl:-scale-x-100" /></span>
-      </a>
-      <ul class="editorial-examples" aria-label={t('search.examples')}>
-        {examples.map((e) => <li><a href={`${searchUrl}?q=${encodeURIComponent(e)}`}>{e}<span aria-hidden="true">↗</span></a></li>)}
-      </ul>
-      <div class="editorial-hero__actions">
-        <a href={hubPath(lang, 'mre')} class="btn btn-primary">{copy.mre}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
-        <a href={hubPath(lang, 'visit')} class="btn btn-ghost">{copy.visit}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+<section class="new-home-hero" aria-labelledby="home-title">
+  <div class="container-page">
+    <div class="new-hero-grid">
+      <div class="new-hero-copy">
+        <p class="eyebrow"><span aria-hidden="true"></span>{copy.eyebrow}</p>
+        <h1 id="home-title">{copy.title}</h1>
+        <p class="new-hero-intro">{copy.intro}</p>
+        <div class="new-hero-actions"><a href="#journey-title" class="btn btn-primary">{copy.cta}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a><a href={hubPath(lang, 'cities')} class="new-text-link">{copy.other}<span aria-hidden="true">↗</span></a></div>
+        <p class="new-hero-reassurance"><Icon name="check" class="size-4" />{copy.free}</p>
+      </div>
+      <div class="new-photo-grid">
+        {photos.map((c,i) => <a href={cityPath(lang,c.slug[lang])} class:list={['new-destination-photo',i===0 && 'new-destination-photo--main']}>
+          <CityImage scene={c.id} lang={lang} width={i===0?720:480} sizes={i===0?'(min-width:768px) 30vw, 65vw':'(min-width:768px) 20vw, 35vw'} eager />
+          <span class="new-photo-name">{cityLabel(c.id,lang)}<span aria-hidden="true">↗</span></span>
+        </a>)}
       </div>
     </div>
-    <div class="editorial-hero__visual">
-      <div class="editorial-hero__photo"><CityImage scene="home-hero" fallback="marrakech" lang={lang} width={720} sizes="(min-width:1024px) 48vw, 100vw" eager /></div>
-      <a href={hubPath(lang, 'cities')} class="editorial-hero__caption"><Icon name="compass" class="size-5" /><span>{t('home.cities.title')}</span><span aria-hidden="true">↗</span></a>
-      <span class="editorial-hero__vertical" aria-hidden="true">MAROC · MOROCCO · المغرب</span>
-    </div>
+    <form class="new-home-search" action={searchUrl} method="get">
+      <label for="home-query">{copy.search}</label>
+      <div><Icon name="search" class="size-5 shrink-0" /><input id="home-query" name="q" type="search" placeholder={copy.placeholder} required /><button class="btn btn-primary" type="submit">{t('nav.search')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></button></div>
+    </form>
   </div>
-  <nav class="editorial-shortcuts container-page" aria-label={t('home.categories')}>
-    <a href={hubPath(lang, 'guides')}><Icon name="compass" />{t('nav.allGuides')}<span aria-hidden="true">↗</span></a>
-    <a href={hubPath(lang, 'cities')}><Icon name="plane" />{t('nav.cities')}<span aria-hidden="true">↗</span></a>
-    <a href={hubPath(lang, 'checklists')}><Icon name="listChecks" />{t('nav.checklists')}<span aria-hidden="true">↗</span></a>
-  </nav>
 </section>

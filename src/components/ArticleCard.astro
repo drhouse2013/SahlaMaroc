@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Icon from './Icon.astro';
+import CityImage from './CityImage.astro';
 import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { entryPath } from '../utils/i18n';
 import { illustration } from '../utils/illustrations';
@@ -11,6 +12,7 @@ const { article, size = 'md', headingLevel = 'h3' } = Astro.props;
 const d = article.data;
 const lg = size === 'lg';
 const H = headingLevel;
+const coverScene = {retour:'tangier',immobilier:'casablanca',money:'rabat',demarches:'fes',arrival:'casablanca',tours:'chefchaouen',stay:'marrakech',living:'essaouira'} as const;
 ---
 
 {size === 'sm' ? (
@@ -22,15 +24,15 @@ const H = headingLevel;
   </article>
 ) : (
   <article class:list={['group card card-hover relative flex h-full overflow-hidden', lg ? 'flex-col md:flex-row' : 'flex-col']}>
-    <div class:list={['overflow-hidden bg-sand-100 dark:bg-night-700', lg ? 'aspect-[16/10] md:aspect-auto md:w-1/2' : 'aspect-[16/9]']}>
-      <Image
+    <div class:list={['relative overflow-hidden bg-sand-100 dark:bg-night-700', lg ? 'aspect-[16/10] md:aspect-auto md:w-1/2' : 'aspect-[16/9]']}>
+      {d.heroImage ? <Image
         src={d.heroImage ?? illustration(d.illustration)}
         alt={d.heroAlt ?? ''}
         width={lg ? 900 : 640}
         loading="lazy"
         decoding="async"
         class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-      />
+      /> : <CityImage scene={coverScene[d.category]} lang={d.lang} width={lg ? 900 : 640} /> }
     </div>
     <div class:list={['flex flex-1 flex-col justify-center', lg ? 'p-6 md:p-9' : 'p-5']}>
       <p class="eyebrow mb-3 text-[var(--accent)]">{CATEGORIES[d.category].label[d.lang]}</p>
