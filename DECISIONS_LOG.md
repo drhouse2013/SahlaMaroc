@@ -250,3 +250,13 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Référencement : titres et descriptions spécifiques à l’accueil dans les cinq langues, maillage interne renforcé. Préservation des URL, canonical, hreflang, sitemap et restrictions d’indexation des traductions.
 - Accessibilité : contenu visible même sans JavaScript ; les animations deviennent un enrichissement facultatif. Mise en page arabe en RTL et couleurs clair/sombre conservées.
 - Les règles administratives et les barèmes existants ne sont pas présentés comme revérifiés par cette refonte. Les dates de vérification éditoriale ne changent pas. Le contrôle de contenu signale des guides dont la vérification factuelle reste à compléter.
+
+## 2026-10-28 — Sécurité, contrôles continus et ton éditorial
+
+- Audit npm de la pile initiale : 6 dépendances signalées, dont Astro classé critique et Sharp classé élevé. Migration vers Astro 7.4.2, MDX 8.1.1 et Sharp 0.35.5, avec Node.js 24 minimum. L’ancien override Vite 6 est supprimé car incompatible avec Vite 8 requis par Astro 7 ; la chaîne Markdown unified est conservée explicitement pour limiter les changements de rendu.
+- Après migration : audit npm des dépendances de production à zéro vulnérabilité connue ; les 67 tests de calcul passent. Suppression de GSAP, aucune utilisation détectée dans src/.
+- Suivi du verrou package-lock.json pour des installations reproductibles. Contrôles GitHub Actions à permissions de lecture : tests, contenu, compilation, sitemap et audit npm. Actions officielles épinglées par SHA. Dependabot prépare des propositions de mise à jour sans fusion automatique.
+- CSP de base appliquée pour les objets, les URL de base et l’encadrement, tout en conservant la politique détaillée en mode rapport pour les services externes.
+- À la demande de l’utilisateur : textes d’accueil plus naturels autour de la famille, des voyages et des projets ; présence éditoriale de Yassine fondée sur la page À propos existante. Aucun témoignage ni portrait inventé.
+- Références : https://docs.astro.build/en/guides/upgrade-to/v7/ ; https://github.com/withastro/astro/security/advisories/GHSA-26w7-cxv4-gfx2.
+- Audit complet après correction ciblée du parseur PostCSS 6.1.5 : zéro vulnérabilité connue, y compris dans les outils de développement.

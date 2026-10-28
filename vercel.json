@@ -5,30 +5,95 @@
   "outputDirectory": "dist",
   "trailingSlash": false,
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.sahlamaroc.com" }], "destination": "https://sahlamaroc.com/:path*", "permanent": true },
-    { "source": "/:path*", "has": [{ "type": "host", "value": "sahlamorocco.com" }], "destination": "https://sahlamaroc.com/:path*", "permanent": true },
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.sahlamorocco.com" }], "destination": "https://sahlamaroc.com/:path*", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sahlamaroc.com"
+        }
+      ],
+      "destination": "https://sahlamaroc.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "sahlamorocco.com"
+        }
+      ],
+      "destination": "https://sahlamaroc.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sahlamorocco.com"
+        }
+      ],
+      "destination": "https://sahlamaroc.com/:path*",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/_astro/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
-        { "key": "Content-Security-Policy-Report-Only", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net https://assets.mailerlite.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloud.umami.is https://api-gateway.umami.dev https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net https://*.sibforms.com https://*.mailerlite.com https://buttondown.com; frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.sibforms.com https://buttondown.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://*.sibforms.com https://*.mailerlite.com https://buttondown.com" },
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net https://assets.mailerlite.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloud.umami.is https://api-gateway.umami.dev https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net https://*.sibforms.com https://*.mailerlite.com https://buttondown.com; frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.sibforms.com https://buttondown.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://*.sibforms.com https://*.mailerlite.com https://buttondown.com"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "object-src 'none'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+        }
       ]
     },
     {
       "source": "/:lang/search-index.json",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
     }
   ]
 }

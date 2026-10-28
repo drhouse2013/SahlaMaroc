@@ -10,6 +10,7 @@
  */
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import { unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { SITE_URL, INDEXABLE_LOCALES } from './site.config.mjs';
@@ -90,6 +91,7 @@ export default defineConfig({
   // <Image /> applique loading="lazy" + decoding="async" par défaut ; le cadrage est géré en CSS (object-cover).
 
   markdown: {
+    processor: unified(),
     shikiConfig: { theme: 'github-dark' },
   },
 

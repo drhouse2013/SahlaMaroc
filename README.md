@@ -4,11 +4,14 @@ Guides clairs et calculateurs gratuits pour les **Marocains du monde (MRE)** et 
 retour au bled (Marhaba, ferries, voiture), argent et transferts, immobilier (frais, crédit, Daam Sakane),
 voyage, et cap sur la Coupe du monde 2030.
 
-Stack : Astro 5 · TypeScript · Tailwind CSS 4 · MDX · i18n (fr, en, es, de, ar + RTL) · 100 % statique.
+Stack : Astro 7 · TypeScript · Tailwind CSS 4 · MDX · i18n (fr, en, es, de, ar + RTL) · 100 % statique.
 
 ## Démarrer
+
+Node.js 24 ou plus récent est nécessaire. Les dépendances sont verrouillées dans `package-lock.json`.
+
 ```bash
-npm install
+npm ci
 npm run dev        # http://localhost:4321  (génère aussi og-default.png et logo.png)
 npm run build      # vérification TypeScript + build statique dans dist/
 ```
@@ -51,3 +54,7 @@ src/i18n/                # langues, rubriques, UI JSON, script de traduction
 tools/                   # illustrations.py (scènes SVG), raster.mjs (PNG au build)
 docs/PLAN.md             # stratégie et feuille de route
 ```
+
+## Vérifications automatiques
+
+`npm run test:unit`, `npm run check:content`, `npm run build` puis `npm run check:dist`. GitHub Actions exécute ces contrôles sur chaque proposition et sur les branches principales. Dependabot propose les mises à jour ; aucune mise à jour n’est fusionnée automatiquement.
