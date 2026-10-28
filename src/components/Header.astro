@@ -6,6 +6,7 @@
  * - La recherche est un lien vers /<lang>/recherche, transformé en fenêtre instantanée par SearchDialog.
  */
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import Logo from './Logo.astro';
 import Icon from './Icon.astro';
 import { brandName } from '../utils/seo';
@@ -34,11 +35,11 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
 const searchHref = hubPath(lang, 'search');
 ---
 
-<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-white transition-[height] duration-200">
+<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--surface-2)] transition-[height] duration-200">
   <div class="container-page flex h-18 items-center gap-2 transition-[height] duration-200 sm:gap-3">
     <a href={homePath(lang)} class="flex min-w-0 shrink-0 items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
       <Logo class="h-8 w-7 sm:h-9 sm:w-8" />
-      <span class="truncate font-sans text-sm min-[360px]:text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-navy-700">{brand.split(' ')[1]}</span></span>
+      <span class="truncate font-sans text-sm min-[360px]:text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-navy-700 dark:text-sand-50">{brand.split(' ')[1]}</span></span>
     </a>
 
     <nav class="ms-2 hidden items-center gap-0 text-[0.82rem] font-medium lg:flex" aria-label={t('nav.main')}>
@@ -81,6 +82,7 @@ const searchHref = hubPath(lang, 'search');
         <kbd class="kbd hidden xl:inline-grid" aria-hidden="true">/</kbd>
       </a>
       <LanguageSwitcher lang={lang} targets={switchTargets} />
+      <ThemeToggle lang={lang} class="hidden sm:grid" />
       <details class="relative lg:hidden" data-nav-menu>
         <summary class="grid size-10 cursor-pointer list-none place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden" aria-label={t('nav.menu')}>
           <Icon name="menu" class="size-6" />
@@ -99,6 +101,7 @@ const searchHref = hubPath(lang, 'search');
               ))}
             </ul>
             <hr class="my-2 border-[var(--line)] sm:hidden" />
+            <div class="sm:hidden"><ThemeToggle lang={lang} row /></div>
           </nav>
         </div>
       </details>
