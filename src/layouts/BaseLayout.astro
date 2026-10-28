@@ -64,11 +64,40 @@ const description = seo.description ?? t('site.description');
     <SEO lang={lang} alternates={alternates} description={description} {...seo} noindex={noindex} />
 
     <!-- Thème appliqué avant le premier rendu (évite le flash) -->
-    <script is:inline>
+    <script is:inline data-theme-init>
       (function () {
-        var chosen = null;
-        try { chosen = localStorage.getItem('theme'); } catch (e) {}
-        document.documentElement.classList.toggle('dark', chosen === 'dark');
+        var key = 'sahla-theme-preference';
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+        function readPreference() {
+          try {
+            var saved = localStorage.getItem(key);
+            if (saved === 'light' || saved === 'dark') return saved;
+          } catch (e) {}
+          return 'system';
+        }
+        var preference = readPreference();
+        function applyTheme() {
+          var dark = preference === 'dark' || (preference === 'system' && media.matches);
+          document.documentElement.classList.toggle('dark', dark);
+          document.documentElement.dataset.themePreference = preference;
+          var color = document.querySelector('meta[name="theme-color"]');
+          if (color) color.setAttribute('content', dark ? '#1a2a23' : '#ffffff');
+          document.querySelectorAll('[data-theme-select]').forEach(function (select) { select.value = preference; });
+          document.dispatchEvent(new Event('sahla:theme-applied'));
+        }
+        document.addEventListener('sahla:theme-change', function (event) {
+          if (['system', 'light', 'dark'].indexOf(event.detail) === -1) return;
+          preference = event.detail;
+          try { localStorage.setItem(key, preference); } catch (e) {}
+          applyTheme();
+        });
+        media.addEventListener('change', applyTheme);
+        window.addEventListener('storage', function (event) {
+          if (event.key !== key && event.key !== null) return;
+          preference = readPreference();
+          applyTheme();
+        });
+        applyTheme();
       })();
     </script>
 
