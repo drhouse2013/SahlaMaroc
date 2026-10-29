@@ -1,0 +1,146 @@
+{
+  "tanger-tetouan-al-hoceima": {
+    "file": "tanger-tetouan-al-hoceima.jpg",
+    "alt": {
+      "fr": "Phare du cap Spartel, près de Tanger",
+      "en": "Cape Spartel lighthouse near Tangier",
+      "es": "Faro del cabo Espartel, cerca de Tánger",
+      "de": "Leuchtturm am Kap Spartel bei Tanger",
+      "ar": "منارة رأس سبارطيل قرب طنجة"
+    },
+    "credit": "Diego Delso, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Faro_del_cabo_Espartel,_Marruecos,_2015-12-11,_DD_02.JPG"
+  },
+  "oriental": {
+    "file": "oriental.jpg",
+    "alt": {
+      "fr": "Grotte du Chameau et cascade des gorges de Zegzel, province de Berkane",
+      "en": "Camel Cave and waterfall in the Zegzel gorges, Berkane province",
+      "es": "Cueva del Camello y cascada en las gargantas de Zegzel, provincia de Berkane",
+      "de": "Kamelhöhle und Wasserfall in der Zegzel-Schlucht, Provinz Berkane",
+      "ar": "كهف الجمل وشلال في مضايق زكزل بإقليم بركان"
+    },
+    "credit": "Brahim FARAJI, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grotte_du_chameau,_Zegzel_-_Province_de_Berkane.jpg"
+  },
+  "fes-meknes": {
+    "file": "fes-meknes.jpg",
+    "alt": {
+      "fr": "Arc de triomphe de Caracalla, site romain de Volubilis",
+      "en": "Arch of Caracalla, Roman site of Volubilis",
+      "es": "Arco de Caracalla, sitio romano de Volúbilis",
+      "de": "Caracalla-Bogen, römische Stätte Volubilis",
+      "ar": "قوس كركلا في موقع وليلي الأثري الروماني"
+    },
+    "credit": "Mohamed Bourazza, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg"
+  },
+  "rabat-sale-kenitra": {
+    "file": "rabat-sale-kenitra.jpg",
+    "alt": {
+      "fr": "Porte principale de la nécropole de Chellah, Rabat",
+      "en": "Main gate of the Chellah necropolis, Rabat",
+      "es": "Puerta principal de la necrópolis de Chellah, Rabat",
+      "de": "Haupttor der Nekropole Chellah, Rabat",
+      "ar": "الباب الرئيسي لموقع شالة بالرباط"
+    },
+    "credit": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract., CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Main_Gate_Chellah_Rabat_Nov25_A7CR_08921.jpg"
+  },
+  "beni-mellal-khenifra": {
+    "file": "beni-mellal-khenifra.jpg",
+    "alt": {
+      "fr": "Cascades d'Ouzoud, province d'Azilal",
+      "en": "Ouzoud Falls, Azilal province",
+      "es": "Cascadas de Ouzoud, provincia de Azilal",
+      "de": "Ouzoud-Wasserfälle, Provinz Azilal",
+      "ar": "شلالات أوزود بإقليم أزيلال"
+    },
+    "credit": "YnsThm, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg"
+  },
+  "casablanca-settat": {
+    "file": "casablanca-settat.jpg",
+    "alt": {
+      "fr": "Mosquée Hassan II et son minaret, Casablanca",
+      "en": "Hassan II Mosque and its minaret, Casablanca",
+      "es": "Mezquita Hassan II y su minarete, Casablanca",
+      "de": "Hassan-II-Moschee mit Minarett, Casablanca",
+      "ar": "مسجد الحسن الثاني ومئذنته في الدار البيضاء"
+    },
+    "credit": "Dahbi fatima zahrae, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_and_Its_Minaret_in_Casablanca,_Morocco_2.jpg"
+  },
+  "marrakech-safi": {
+    "file": "marrakech-safi.jpg",
+    "alt": {
+      "fr": "Étals illuminés de la place Jemaa el-Fna le soir, Marrakech",
+      "en": "Lit-up food stalls on Jemaa el-Fna square in the evening, Marrakech",
+      "es": "Puestos iluminados de la plaza Jemaa el-Fna al anochecer, Marrakech",
+      "de": "Beleuchtete Stände auf dem Platz Jemaa el-Fna am Abend, Marrakesch",
+      "ar": "أكشاك مضاءة بساحة جامع الفنا مساءً في مراكش"
+    },
+    "credit": "Houssain tork, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jemaa_el-Fna_square_is_a_major_place_of_cultural_exchanges.jpg"
+  },
+  "draa-tafilalet": {
+    "file": "draa-tafilalet.jpg",
+    "alt": {
+      "fr": "Ksar d'Aït Benhaddou, province de Ouarzazate",
+      "en": "Ksar of Aït Benhaddou, Ouarzazate province",
+      "es": "Ksar de Ait Benhaddou, provincia de Uarzazate",
+      "de": "Ksar Aït Benhaddou, Provinz Ouarzazate",
+      "ar": "قصر آيت بنحدو بإقليم ورزازات"
+    },
+    "credit": "Petar Milošević, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg"
+  },
+  "souss-massa": {
+    "file": "souss-massa.jpg",
+    "alt": {
+      "fr": "Kasbah d'Agadir Oufella dominant la ville",
+      "en": "Agadir Oufella kasbah overlooking the city",
+      "es": "Alcazaba de Agadir Oufella sobre la ciudad",
+      "de": "Kasbah Agadir Oufella über der Stadt",
+      "ar": "قصبة أكادير أوفلا المطلة على المدينة"
+    },
+    "credit": "Mwintirew, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kasbah_of_Agadir_Oufella.jpg"
+  },
+  "guelmim-oued-noun": {
+    "file": "guelmim-oued-noun.jpg",
+    "alt": {
+      "fr": "Arche de pierre de la plage de Legzira, province de Sidi Ifni",
+      "en": "Stone arch on Legzira beach, Sidi Ifni province",
+      "es": "Arco de piedra de la playa de Legzira, provincia de Sidi Ifni",
+      "de": "Felsbogen am Strand von Legzira, Provinz Sidi Ifni",
+      "ar": "القوس الصخري بشاطئ لقزيرة بإقليم سيدي إفني"
+    },
+    "credit": "Roy Egloff, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:MA.GN.Sidi-Ifni_Legzira-Beach_Stone-Arch_756_16x9-R_5120x2880.jpg"
+  },
+  "laayoune-sakia-el-hamra": {
+    "file": "laayoune-sakia-el-hamra.jpg",
+    "alt": {
+      "fr": "Coupoles et minaret d'une mosquée de Laâyoune",
+      "en": "Domes and minaret of a mosque in Laayoune",
+      "es": "Cúpulas y minarete de una mezquita de El Aaiún",
+      "de": "Kuppeln und Minarett einer Moschee in Laâyoune",
+      "ar": "قباب ومئذنة مسجد بمدينة العيون"
+    },
+    "credit": "cingularite, CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Laayoune_Coupoles.jpg"
+  },
+  "dakhla-oued-ed-dahab": {
+    "file": "dakhla-oued-ed-dahab.jpg",
+    "alt": {
+      "fr": "Dunes blanches de la lagune de Dakhla",
+      "en": "White dunes by the Dakhla lagoon",
+      "es": "Dunas blancas junto a la laguna de Dajla",
+      "de": "Weiße Dünen an der Lagune von Dakhla",
+      "ar": "الكثبان البيضاء بجوار خليج الداخلة"
+    },
+    "credit": "Houssain tork, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:D%C3%A9sert_de_Dakhla_(dunes_blanches).jpg"
+  }
+}

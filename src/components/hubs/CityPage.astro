@@ -1,7 +1,6 @@
 ---
 /** Page ville : /<lang>/villes/<ville>. Textes issus de src/data/cities.ts, budget issu du calculateur (estimation datée). */
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../Breadcrumbs.astro';
 import ArticleCard from '../ArticleCard.astro';
 import AffiliateLink from '../AffiliateLink.astro';
 import AdSlot from '../AdSlot.astro';
@@ -13,7 +12,10 @@ import { BASE, CITY_FACTOR, COSTS_LAST_UPDATED } from '../../config/costs';
 import { LOCALES, isIndexable } from '../../i18n/config';
 import { allLocalesTargets, cityPath, getArticleByKey, getPageUrl, homePath, hubPath, type Alternates } from '../../utils/i18n';
 import { formatDate } from '../../utils/date';
-import CityImage from '../CityImage.astro';
+import PlaceHero from '../PlaceHero.astro';
+import { getPhoto } from '../../utils/photos';
+import { illustration } from '../../utils/illustrations';
+import type { Scene } from '../../data/home';
 import SpotsGallery from '../SpotsGallery.astro';
 import { SPOTS } from '../../data/spots';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd } from '../../utils/seo';
@@ -55,40 +57,20 @@ const jsonLd = [
 ];
 const spots = SPOTS[id] ?? [];
 const sections = [
-  { id: 'why', label: t('city.why') },
-  ...(spots.length ? [{ id: 'spots', label: t('city.spots') }] : []), { id: 'access', label: t('city.access') }, { id: 'areas', label: t('city.areas') },
+  { id: 'why', label: t('city.why') }, { id: 'access', label: t('city.access') }, { id: 'areas', label: t('city.areas') },
   ...(city.costCity ? [{ id: 'budget', label: t('city.budget') }] : []),
+  ...(spots.length ? [{ id: 'spots', label: t('city.spots') }] : []),
   ...(trips.length ? [{ id: 'trips', label: t('city.trips') }] : []),
   ...(text.faq.length ? [{ id: 'faq', label: t('city.faq') }] : []),
 ];
 ---
 <BaseLayout lang={lang} title={title} description={description} alternates={alternates} switchTargets={allLocalesTargets((l) => cityPath(l, city.slug[l]))} jsonLd={jsonLd}>
-  <div class="page-hero relative overflow-hidden border-b border-[var(--line)]">
-    <div class="page-hero__deco" aria-hidden="true">
-      <svg class="page-hero__star page-hero__star--1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
-      <svg class="page-hero__star page-hero__star--2" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
-      <svg class="page-hero__star page-hero__star--3" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9h9l-7.5 5.5L19.5 24 12 18l-7.5 6 3-9.5L0 9h9z"/></svg>
-    </div>
-    <div class="container-page relative grid items-center gap-8 pt-8 pb-10 md:grid-cols-[1.3fr_0.7fr]">
-      <div>
-        <Breadcrumbs items={crumbs} lang={lang} />
-        <h1 class="mt-8 text-3xl font-semibold sm:text-[2.6rem]">{title}</h1>
-        {city.host2030 && <p class="mt-3"><span class="badge badge-gold">{t('city.host')}</span></p>}
-        <p class="mt-4 max-w-2xl text-lg muted">{text.intro}</p>
-      </div>
-      <div class="arch relative hidden aspect-[4/3] md:block"><CityImage scene={city.id} lang={lang} width={520} sizes="(min-width:1024px) 520px, 45vw" eager /></div>
-    </div>
-  </div>
+  <PlaceHero lang={lang} crumbs={crumbs} title={title} intro={text.intro} photo={getPhoto(city.id, lang)} fallback={illustration(city.id as Scene)}>
+    {city.host2030 && <p class="mt-3"><span class="badge badge-gold">{t('city.host')}</span></p>}
+  </PlaceHero>
 
   <div class="container-page grid gap-10 pt-8 lg:grid-cols-[1fr_16rem]">
     <div class="min-w-0">
-      {spots.length > 0 && (
-        <section id="spots" class="scroll-mt-24 pb-10" aria-labelledby="h-spots">
-          <h2 id="h-spots" class="section-title !text-2xl">{t('city.spots')} <span class="muted font-normal">({spots.length})</span></h2>
-          <SpotsGallery lang={lang} cityId={id} spots={spots} />
-        </section>
-      )}
-
       <section id="why" class="scroll-mt-24" aria-labelledby="h-why">
         <h2 id="h-why" class="section-title !text-2xl">{t('city.why')}</h2>
         <ul class="mt-4 grid gap-2">{text.why.map((w) => <li class="flex gap-2"><Icon name="check" class="mt-1 size-4 shrink-0 text-emerald-moroccan-500" />{w}</li>)}</ul>
@@ -123,6 +105,13 @@ const sections = [
           </div>
           <p class="alert alert-warn mt-4 text-sm"><Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" /><span>{t('city.budgetNote', { date: formatDate(new Date(COSTS_LAST_UPDATED), lang) })}</span></p>
           {budgetUrl && <a href={budgetUrl} class="btn btn-ghost btn-sm mt-4">{t('city.budgetCta')}</a>}
+        </section>
+      )}
+
+      {spots.length > 0 && (
+        <section id="spots" class="section scroll-mt-24 !pt-10" aria-labelledby="h-spots">
+          <h2 id="h-spots" class="section-title !text-2xl">{t('city.spots')} <span class="muted font-normal">({spots.length})</span></h2>
+          <SpotsGallery lang={lang} cityId={id} spots={spots} />
         </section>
       )}
 

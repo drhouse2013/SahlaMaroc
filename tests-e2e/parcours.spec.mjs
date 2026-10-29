@@ -63,6 +63,8 @@ test('recherche', async ({ page }) => {
 test('newsletter : champ piège et e-mail invalide', async ({ page }) => {
   await page.goto('/fr');
   const form = page.locator('form[data-newsletter]').first();
+  // Règle actuelle : sans fournisseur ni endpoint, pas de formulaire (téléchargement PDF direct, voir DECISIONS_LOG).
+  test.skip((await form.count()) === 0, 'newsletter non configurée : formulaire volontairement absent');
   await form.scrollIntoViewIfNeeded();
   await form.locator('input[type="email"]').fill('pas-un-email');
   await form.locator('button[type="submit"]').click();

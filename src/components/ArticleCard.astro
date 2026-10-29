@@ -5,15 +5,25 @@ import GuideVisual from './GuideVisual.astro';
 import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { entryPath } from '../utils/i18n';
 
-interface Props { article: CollectionEntry<'articles'>; size?: 'sm' | 'md' | 'lg'; headingLevel?: 'h2' | 'h3' }
-const { article, size = 'md', headingLevel = 'h3' } = Astro.props;
+/** row : ligne de liste éditoriale (sans visuel, filet géré par le parent `.row-list`). */
+interface Props { article: CollectionEntry<'articles'>; size?: 'sm' | 'md' | 'lg' | 'row'; headingLevel?: 'h2' | 'h3'; showCategory?: boolean }
+const { article, size = 'md', headingLevel = 'h3', showCategory = true } = Astro.props;
 const d = article.data;
 const lg = size === 'lg';
 const H = headingLevel;
 const read = {fr:'Lire le guide',en:'Read the guide',es:'Leer la guía',de:'Guide lesen',ar:'قراءة الدليل'}[d.lang];
 ---
 
-{size === 'sm' ? (
+{size === 'row' ? (
+  <article class="group relative grid grid-cols-[1fr_auto] items-start gap-4 py-5">
+    <div class="min-w-0">
+      {showCategory && <p class="eyebrow mb-2 text-[var(--accent)]">{CATEGORIES[d.category].label[d.lang]}</p>}
+      <H class="text-xl leading-snug"><a href={entryPath(d.lang, d.slug)} class="after:absolute after:inset-0 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{d.title}</a></H>
+      <p class="mt-2 line-clamp-2 text-[0.95rem] leading-relaxed muted">{d.description}</p>
+    </div>
+    <Icon name="arrowRight" class="mt-1 size-5 text-[var(--muted)] transition-colors group-hover:text-[var(--link)] rtl:-scale-x-100" />
+  </article>
+) : size === 'sm' ? (
   <article class="group relative flex gap-3 rounded-2xl p-3 transition hover:bg-[var(--surface-3)]">
     <span class="icon-tile size-10"><Icon name={CATEGORY_ICON[d.category]} /></span>
     <div class="min-w-0">

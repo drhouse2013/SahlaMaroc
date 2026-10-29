@@ -35,14 +35,14 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
 const searchHref = hubPath(lang, 'search');
 ---
 
-<header class="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--surface-2)] transition-[height] duration-200">
-  <div class="container-page flex h-18 items-center gap-2 transition-[height] duration-200 sm:gap-3">
+<header class="site-header sticky top-0 z-40">
+  <div class="container-page flex h-16 items-center gap-2 sm:gap-3 lg:h-18">
     <a href={homePath(lang)} class="flex min-w-0 shrink-0 items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
       <Logo class="h-8 w-7 sm:h-9 sm:w-8" />
-      <span class="truncate font-sans text-sm min-[360px]:text-base font-bold tracking-tight text-navy-700 min-[400px]:text-lg sm:text-xl dark:text-sand-50" dir="ltr">Sahla <span class="text-navy-700 dark:text-sand-50">{brand.split(' ')[1]}</span></span>
+      <span class="brand-word truncate text-base text-[var(--brand)] min-[400px]:text-lg sm:text-xl" dir="ltr">Sahla <span class="italic text-[var(--accent)]">{brand.split(' ')[1]}</span></span>
     </a>
 
-    <nav class="ms-2 hidden items-center gap-0 text-[0.82rem] font-medium lg:flex" aria-label={t('nav.main')}>
+    <nav class="ms-2 hidden items-center gap-0 text-[0.9rem] font-semibold lg:flex" aria-label={t('nav.main')}>
       <details class="group relative" data-nav-menu>
         <summary class="flex min-h-10 cursor-pointer list-none items-center gap-1 rounded-full px-2 hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden">
           {t('nav.guides')}
@@ -88,7 +88,7 @@ const searchHref = hubPath(lang, 'search');
         <summary class="grid size-10 cursor-pointer list-none place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden" aria-label={t('nav.menu')}>
           <Icon name="menu" class="size-6" />
         </summary>
-        <div class="card fixed inset-x-3 top-[4.25rem] z-50 max-h-[calc(100dvh-5.5rem)] overflow-y-auto p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in sm:absolute sm:inset-x-auto sm:end-0 sm:top-auto sm:mt-2 sm:w-80">
+        <div class="card fixed inset-x-3 top-[4.5rem] z-50 max-h-[calc(100dvh-5.5rem)] overflow-y-auto p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in sm:absolute sm:inset-x-auto sm:end-0 sm:top-auto sm:mt-2 sm:w-80">
           <nav aria-label={t('nav.main')}>
             <a href={hubPath(lang, 'mre')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="ship" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.mre')}</a>
             <a href={hubPath(lang, 'visit')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="compass" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.visit')}</a>

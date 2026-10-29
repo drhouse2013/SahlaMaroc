@@ -4,9 +4,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/home/Hero.astro';
 import Journeys from '../../components/home/Journeys.astro';
 import EditorNote from '../../components/home/EditorNote.astro';
-import CityGrid from '../../components/home/CityGrid.astro';
+import Destinations from '../../components/home/Destinations.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
-import ToolGrid from '../../components/ToolGrid.astro';
+import { TOOLS } from '../../data/tools';
 import Newsletter from '../../components/Newsletter.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import Icon from '../../components/Icon.astro';
@@ -32,22 +32,28 @@ const checklists = checklistKeys.flatMap(key => {
   return item ? [item] : [];
 });
 const checklistsUrl = hubPath(lang, 'checklists');
+const TOOL_KEYS = ['calc-property-fees', 'calc-mortgage', 'calc-transfer', 'calc-summer', 'calc-car-days', 'calc-ferry-compare'];
+const tools = (await Promise.all(TOOLS.filter((x) => TOOL_KEYS.includes(x.key)).map(async (x) => ({ ...x, href: await getPageUrl(lang, x.key) })))).filter((x) => x.href);
 ---
 
 <BaseLayout lang={lang} title={homeSeo[lang][0]} description={homeSeo[lang][1]} alternates={allLocalesAlternates(homePath)} switchTargets={allLocalesTargets(homePath)} jsonLd={[websiteJsonLd(lang, Astro.site, t('site.description')), organizationJsonLd(Astro.site)]}>
-  <div class="home-redesign">
+  <div class="home-page">
     <Hero lang={lang} />
     <Journeys lang={lang} />
-    <section class="container-page section new-tools-section" aria-labelledby="tools-title">
-      <div class="new-section-head"><div><p class="eyebrow">{t('nav.tools')}</p><h2 id="tools-title" class="section-title mt-3">{t('home.tools.title')}</h2><p class="section-sub">{t('home.tools.sub')}</p></div>{toolUrl && <a href={toolUrl} class="new-text-link">{t('common.seeAll')}<span aria-hidden="true">↗</span></a>}</div>
-      <div class="mt-8"><ToolGrid lang={lang} keys={['calc-property-fees', 'calc-mortgage', 'calc-transfer', 'calc-summer', 'calc-car-days', 'calc-ferry-compare']} /></div>
-    </section>
     {popular.length > 0 && <section class="container-page section" aria-labelledby="popular-title">
-      <div class="new-section-head"><div><p class="eyebrow">{t('nav.guides')}</p><h2 id="popular-title" class="section-title mt-3">{t('home.popular')}</h2><p class="section-sub">{t('home.popularSub')}</p></div><a href={hubPath(lang,'guides')} class="new-text-link">{t('nav.allGuides')}<span aria-hidden="true">↗</span></a></div>
-      <div class="new-guide-feature"><ArticleCard article={popular[0]} /><div class="new-guide-list">{popular.slice(1).map(a=><ArticleCard article={a} size="sm" />)}</div></div>
+      <div class="section-head"><div><p class="eyebrow text-[var(--accent)]">{t('nav.guides')}</p><h2 id="popular-title" class="section-title mt-3">{t('home.popular')}</h2><p class="section-sub">{t('home.popularSub')}</p></div><a href={hubPath(lang,'guides')} class="text-link">{t('nav.allGuides')}</a></div>
+      <div class="guide-feature"><ArticleCard article={popular[0]} /><div class="guide-list">{popular.slice(1).map(a=><ArticleCard article={a} size="sm" />)}</div></div>
     </section>}
-    <CityGrid lang={lang} ids={['casablanca','rabat','fes','taghazout']} limit={4} />
-    {checklists.length > 0 && <section class="container-page section" aria-labelledby="chk-title"><div class="new-checklists"><div><p class="eyebrow">{t('nav.checklists')}</p><h2 id="chk-title" class="section-title mt-3">{t('home.checklists.title')}</h2><p class="section-sub">{t('home.checklists.text')}</p><a href={checklistsUrl} class="btn btn-primary mt-6">{t('home.checklists.cta')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a></div><ul>{checklists.map(c=><li><a href={`/${lang}/${c.article.data.slug}#checklist-${c.id}`}><Icon name="listChecks" class="size-5 shrink-0" /><span>{c.title}</span><span class="muted">{t('checklists.items',{n:c.items})}</span></a></li>)}</ul></div></section>}
+    <Destinations lang={lang} />
+    <section class="tools-band" aria-labelledby="tools-title">
+      <div class="container-page">
+        <div class="section-head"><div><p class="eyebrow">{t('nav.tools')}</p><h2 id="tools-title" class="section-title mt-3">{t('home.tools.title')}</h2><p class="section-sub">{t('home.tools.sub')}</p></div>{toolUrl && <a href={toolUrl} class="text-link">{t('common.seeAll')}</a>}</div>
+        <ul class="tool-list">
+          {tools.map((x) => <li><a href={x.href} data-track="tool_click" data-track-label={x.key}><Icon name={x.icon} class="size-6" /><span><span class="tool-list__title">{x.title[lang]}</span><span class="tool-list__text">{x.text[lang]}</span></span><Icon name="arrowRight" class="size-5 rtl:-scale-x-100" /></a></li>)}
+        </ul>
+      </div>
+    </section>
+    {checklists.length > 0 && <section class="container-page section" aria-labelledby="chk-title"><div class="checklists"><div><p class="eyebrow text-[var(--accent)]">{t('nav.checklists')}</p><h2 id="chk-title" class="section-title mt-3">{t('home.checklists.title')}</h2><p class="section-sub">{t('home.checklists.text')}</p><a href={checklistsUrl} class="btn btn-secondary mt-6">{t('home.checklists.cta')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a></div><ul>{checklists.map(c=><li><a href={`/${lang}/${c.article.data.slug}#checklist-${c.id}`}><Icon name="listChecks" class="size-5 shrink-0" /><span>{c.title}</span><span class="muted">{t('checklists.items',{n:c.items})}</span></a></li>)}</ul></div></section>}
     <EditorNote lang={lang} />
     <Newsletter lang={lang} />
     <div class="container-page"><AdSlot type="banner" lang={lang} /></div>

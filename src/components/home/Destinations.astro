@@ -1,0 +1,35 @@
+---
+/** Accueil : mosaïque de destinations (vraies photos du manifeste, crédit conservé). */
+import CityImage from '../CityImage.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { cityPath, hubPath } from '../../utils/i18n';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const ids = ['marrakech', 'chefchaouen', 'fes', 'essaouira'];
+const list = ids.map((id) => CITY_PAGES.find((c) => c.id === id)).filter((c) => c !== undefined);
+---
+<section class="container-page section" aria-labelledby="cities-title">
+  <div class="section-head">
+    <div>
+      <h2 id="cities-title" class="section-title">{t('home.cities.title')}</h2>
+      <p class="section-sub">{t('home.cities.sub', { n: CITY_PAGES.length })}</p>
+    </div>
+    <a href={hubPath(lang, 'cities')} class="text-link">{t('common.seeAll')}</a>
+  </div>
+  <ul class="dest-grid">
+    {list.map((c, i) => (
+      <li class="contents">
+        <a href={cityPath(lang, c.slug[lang])} class="dest group">
+          <CityImage scene={c.id} lang={lang} width={i === 0 ? 900 : 640} sizes={i === 0 ? '(min-width:768px) 40vw, 100vw' : '(min-width:768px) 30vw, 100vw'} />
+          <div class="dest__label">
+            <h3>{cityLabel(c.id, lang)}</h3>
+            <p class="line-clamp-2">{c.text[lang].intro}</p>
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

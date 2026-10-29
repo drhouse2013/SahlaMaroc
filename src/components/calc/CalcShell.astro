@@ -13,7 +13,7 @@ const { id, note } = Astro.props;
 const lang = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(lang);
 ---
-<div class="calc not-prose my-8 overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow-md)]" data-calc={id} data-msg-invalid={t('calc.invalid')} data-msg-date={t('calc.invalidDate')}>
+<div class="calc not-prose my-8 overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow-sm)]" data-calc={id} data-msg-invalid={t('calc.invalid')} data-msg-date={t('calc.invalidDate')}>
   <div class="grid md:grid-cols-[1.1fr_0.9fr]">
     <form class="grid content-start gap-4 p-5 sm:grid-cols-2 sm:p-6" onsubmit="return false" novalidate>
       <slot name="form" />
@@ -27,13 +27,13 @@ const t = useTranslations(lang);
 </div>
 
 <style is:global>
-  .calc label { display: grid; gap: 0.35rem; font-size: 0.875rem; font-weight: 500; align-content: start; }
+  .calc label { display: grid; gap: 0.35rem; font-size: 0.9rem; font-weight: 600; align-content: start; }
   .calc input:not([type="checkbox"]), .calc select {
-    width: 100%; min-height: 2.75rem; border-radius: 0.8rem; border: 1px solid var(--line-strong); background: var(--surface);
+    width: 100%; min-height: 2.75rem; border-radius: .5rem; border: 1px solid var(--line-strong); background: var(--surface);
     padding: 0.55rem 0.8rem; font: inherit; color: var(--text); font-variant-numeric: tabular-nums;
   }
   .calc input:focus-visible, .calc select:focus-visible, .calc button:focus-visible, .calc a:focus-visible, .calc summary:focus-visible {
-    outline: 3px solid var(--color-majorelle-500); outline-offset: 2px; border-color: var(--color-majorelle-500); box-shadow: 0 0 0 5px rgb(47 75 216 / .25);
+    outline: 2px solid var(--focus); outline-offset: 2px; border-color: var(--focus); box-shadow: none;
   }
   .calc-result :focus-visible { outline-color: #fff; box-shadow: none; }
   .calc button, .calc summary, .calc a.btn, .calc [role="button"] { min-height: 2.75rem; min-width: 2.75rem; }
@@ -44,7 +44,7 @@ const t = useTranslations(lang);
   .calc .calc-err { font-size: .78rem; font-weight: 500; color: var(--color-terracotta-600); }
   .dark .calc .calc-err { color: var(--color-terracotta-300); }
   .calc .full { grid-column: 1 / -1; }
-  .calc .big { font-size: clamp(1.9rem, 1.5rem + 1.5vw, 2.4rem); line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .calc .big { font-family: var(--font-display); font-size: clamp(2rem, 1.5rem + 1.8vw, 2.75rem); line-height: 1.1; font-weight: 560; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
   .calc dl { display: grid; gap: 0.5rem; margin-top: 1.25rem; font-size: 0.9rem; }
   .calc dl div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid rgb(255 255 255 / 0.16); padding-bottom: 0.4rem; }
   .calc dt { color: rgb(255 255 255 / .82); }

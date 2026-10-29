@@ -21,16 +21,18 @@
     "test:unit": "node --test tools/test-fx.mjs tools/test-vignette.mjs tools/test-returnbudget.mjs tools/test-retirement.mjs tools/test-ramadan.mjs tools/test-prayer.mjs tools/test-customs.mjs tools/test-costofliving.mjs tools/test-capitalgain.mjs tools/test-theme.mjs"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.4",
     "@astrojs/mdx": "^8.1.1",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
     "@fontsource-variable/marhey": "^5.3.0",
     "@fontsource-variable/readex-pro": "^5.3.0",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "~7.4.2",
     "sharp": "^0.35.5",
-    "tailwindcss": "^4.3.3",
-    "@astrojs/markdown-remark": "^7.3.4"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",

@@ -15,6 +15,7 @@ const t = useTranslations(lang);
 const articles = await getArticles(lang);
 const cats = await getActiveCategories(lang);
 const norm = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const q = (a: (typeof articles)[number]) => norm(`${a.data.title} ${a.data.description} ${a.data.tags.join(' ')}`);
 const journeys = (await Promise.all(JOURNEYS.map(async (j) => ({
   ...j,
   guides: (await Promise.all(j.steps.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null),
@@ -33,16 +34,16 @@ const intro = {
 <BaseLayout lang={lang} title={t('guides.title')} description={t('guides.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('guides.title'), description: t('guides.description'), lang, items: articles.map((a) => ({ name: a.data.title, url: absoluteUrl(`/${lang}/${a.data.slug}`, Astro.site) })) })]}>
   <div data-guides-hub data-lang={lang} data-tpl={t('guides.results')}>
-  <header class="border-b border-[var(--line)] bg-[var(--surface)]">
+  <header class="hub-head">
     <div class="container-page py-9 md:py-14">
       <Breadcrumbs items={crumbs} lang={lang} />
       <div class="mt-7 grid items-end gap-8 md:grid-cols-[1.2fr_1fr] md:gap-14">
         <div>
           <p class="eyebrow text-[var(--accent)]">{t('category.count', { n: articles.length })}</p>
-          <h1 class="mt-4 max-w-xl text-4xl leading-[1.06] font-semibold tracking-tight md:text-5xl">{intro[0]}</h1>
+          <h1 class="mt-4 max-w-xl">{intro[0]}</h1>
           <p class="mt-5 max-w-lg text-lg leading-relaxed muted">{intro[1]}</p>
         </div>
-        <form action="#all-guides" class="rounded-2xl border border-[var(--line)] bg-[var(--surface-2)] p-6" data-search-form data-js-only hidden>
+        <form action="#all-guides" class="card p-6" data-search-form data-js-only hidden>
           <label for="guides-q" class="block text-lg font-semibold">{intro[2]}</label>
           <div class="relative mt-4">
             <Icon name="search" class="pointer-events-none absolute start-4 top-1/2 size-5 -translate-y-1/2 muted" />
@@ -62,13 +63,13 @@ const intro = {
       <section aria-labelledby="start-here" data-guided-start>
         <h2 id="start-here" class="section-title !text-2xl">{t('guides.start.title')}</h2>
         <p class="mt-2 muted">{t('guides.start.intro')}</p>
-        <ul class="mt-6 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-4" data-journeys>
+        <ul class="mt-8 grid items-start gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4" data-journeys>
           {journeys.map((j) => (
             <li>
-              <details class="card p-5">
+              <details class="border-t-2 border-[var(--text)] pt-4">
                 <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                  <span class="flex items-center justify-between gap-3"><span class="icon-tile size-10"><Icon name={j.icon} /></span><Icon name="chevronDown" class="size-4 muted" /></span>
-                  <h3 class="mt-3 text-lg leading-snug font-semibold">{t(`journey.${j.id}.title` as 'journey.buy.title')}</h3>
+                  <span class="flex items-center justify-between gap-3"><Icon name={j.icon} class="size-6 text-[var(--accent)]" /><Icon name="chevronDown" class="size-4 muted" /></span>
+                  <h3 class="mt-3 text-xl leading-snug">{t(`journey.${j.id}.title` as 'journey.buy.title')}</h3>
                   <p class="mt-2 text-sm leading-relaxed muted">{t(`journey.${j.id}.desc` as 'journey.buy.desc')}</p>
                   <p class="mt-4 text-xs font-medium muted">{t('journey.steps', { n: j.guides.length })}</p>
                 </summary>
@@ -105,7 +106,7 @@ const intro = {
               <h2 id={`cat-${id}`} class="section-title !text-2xl">{CATEGORIES[id].label[lang]}</h2>
               <a href={categoryPath(lang, id)} class="btn btn-tertiary">{t('pillar.all')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
             </div>
-            <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{list.map((a) => <div data-guide data-q={norm(`${a.data.title} ${a.data.description} ${a.data.tags.join(' ')}`)}><ArticleCard article={a} headingLevel="h3" /></div>)}</div>
+            <div class="feature-list mt-6">{list.slice(0, 1).map((a) => <div data-guide data-q={q(a)}><ArticleCard article={a} headingLevel="h3" /></div>)}<div class="row-list">{list.slice(1).map((a) => <div data-guide data-q={q(a)}><ArticleCard article={a} size="row" headingLevel="h3" showCategory={false} /></div>)}</div></div>
           </section>
         );
       })}

@@ -29,13 +29,13 @@ const badge: Record<string, string> = { confirmed: 'badge badge-navy', expected:
   <PageHero lang={lang} crumbs={crumbs} title={t('calendar.title')} intro={t('calendar.intro')} icon="calendar" />
   <div class="container-page pt-8">
     {machine && <p class="mb-6 rounded-xl border border-[var(--line)] p-4 text-sm muted">{t('machine.note')}</p>}
-    <ol class="grid gap-8 stagger-reveal">
+    <ol class="grid stagger-reveal">
       {groupsShown.map((g) => (
-        <li id={`m-${g.m}`} class="scroll-mt-24">
-          <h2 class="section-title !text-2xl capitalize">{g.title}</h2>
-          <ul class="mt-4 grid gap-3">
+        <li id={`m-${g.m}`} class="scroll-mt-24 grid gap-x-10 gap-y-3 border-t-2 border-[var(--text)] py-6 md:grid-cols-[12rem_1fr]">
+          <h2 class="text-[length:var(--step-4)] capitalize">{g.title}</h2>
+          <ul class="grid">
             {g.items.map(({ c, article }) => (
-              <li class="card p-4 sm:p-5">
+              <li class="border-t border-[var(--line)] py-4 first:border-t-0 first:pt-1">
                 <p class="flex flex-wrap items-center gap-2 text-sm">
                   <span class={badge[c.status]}>{t(`calendar.status.${c.status}` as UIKey)}</span>
                   <a href={c.src.url} rel="noopener nofollow" target="_blank" class="inline-flex items-center gap-1 text-[var(--link)] underline-offset-4 hover:underline">{t('calendar.source')} : {c.src.label}<Icon name="external" class="size-3.5" /></a>

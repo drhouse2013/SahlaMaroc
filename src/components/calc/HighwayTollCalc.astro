@@ -113,7 +113,7 @@ const cfg = JSON.stringify({
 });
 ---
 
-<div data-highway-toll-wrap>
+<div data-highway-toll-wrap data-cfg={cfg}>
 <CalcShell id="highway-toll" note={T.note}>
   <Fragment slot="form">
     <label class="full">{T.from}
@@ -208,12 +208,12 @@ const cfg = JSON.stringify({
   }
 </style>
 
-<script define:vars={{ cfg }}>
+<script>
+  // @ts-nocheck
   import { calculateToll, getAvailableDestinationCities } from '../../utils/highway-toll.mjs';
 
-  const config = JSON.parse(cfg);
-
   document.querySelectorAll('[data-highway-toll-wrap]').forEach((wrap) => {
+    const config = JSON.parse(wrap.dataset.cfg);
     const root = wrap.querySelector('[data-calc="highway-toll"]');
     const fromSelect = root.querySelector('select[name="from"]');
     const toSelect = root.querySelector('select[name="to"]');

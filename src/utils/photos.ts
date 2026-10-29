@@ -30,3 +30,15 @@ export function getSpotPhoto(cityId: string, spotId: string, lang: Locale): City
   if (!e || !hit) return null;
   return { src: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit, source: e.source };
 }
+
+/** Photos de régions : src/assets/photos/regions/<région>.jpg + manifest.json ({"<id région>": entrée}). Optionnelles. */
+const regionFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/regions/*.{jpg,jpeg,png,webp,avif}', { eager: true });
+const regionManifests = import.meta.glob<{ default: Record<string, Entry> }>('../assets/photos/regions/manifest.json', { eager: true });
+const regionManifest: Record<string, Entry> = Object.values(regionManifests)[0]?.default ?? {};
+
+export function getRegionPhoto(regionId: string, lang: Locale): CityPhoto | null {
+  const e = regionManifest[regionId];
+  const hit = e && regionFiles[`../assets/photos/regions/${e.file}`];
+  if (!e || !hit) return null;
+  return { src: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit, source: e.source };
+}

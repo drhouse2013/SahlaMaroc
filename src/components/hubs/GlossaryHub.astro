@@ -25,21 +25,21 @@ const machine = lang !== 'fr' && lang !== 'en';
     {machine && <p class="mb-6 rounded-xl border border-[var(--line)] p-4 text-sm muted">{t('machine.note')}</p>}
     <label class="block max-w-xl">
       <span class="sr-only">{t('glossary.filter')}</span>
-      <input type="search" data-q class="w-full rounded-xl border border-[var(--line-strong)] bg-[var(--surface)] px-4 py-3" placeholder={t('glossary.filter.placeholder')} />
+      <input type="search" data-q class="input" placeholder={t('glossary.filter.placeholder')} />
     </label>
-    <ul class="mt-6 grid gap-4 sm:grid-cols-2 stagger-reveal">
+    <ul class="mt-8 border-t border-[var(--line)] stagger-reveal">
       {rows.map(({ g, article }) => (
-        <li id={`g-${g.id}`} data-term data-q={norm(`${g.name} ${g.def[lang]}`)} class="card scroll-mt-24 p-5">
-          <h2 class="text-lg font-semibold" dir="auto">{g.name}</h2>
-          <p class="mt-2">{g.def[lang]}</p>
+        <li id={`g-${g.id}`} data-term data-q={norm(`${g.name} ${g.def[lang]}`)} class="scroll-mt-24 grid gap-x-10 gap-y-2 border-b border-[var(--line)] py-6 md:grid-cols-[14rem_1fr]">
+          <h2 class="text-[length:var(--step-3)]" dir="auto">{g.name}</h2><div class="min-w-0">
+          <p class="max-w-[65ch] text-[1.05rem] leading-relaxed">{g.def[lang]}</p>
           <p class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <a href={GLOSSARY_SOURCES[g.src].url} rel="noopener nofollow" target="_blank" class="inline-flex items-center gap-1.5 text-[var(--link)] underline-offset-4 hover:underline">{t('glossary.source')} : {GLOSSARY_SOURCES[g.src].label}<Icon name="external" class="size-3.5" /></a>
             {article && <a href={entryPath(lang, article.data.slug)} class="inline-flex items-center gap-1.5 font-semibold text-[var(--link)] underline-offset-4 hover:underline"><Icon name="book" class="size-3.5" />{t('glossary.guide')} : {article.data.title}</a>}
-          </p>
+          </p></div>
         </li>
       ))}
     </ul>
-    <p class="mt-6 hidden muted" data-empty>{t('glossary.empty')}</p>
+    <p class="mt-6 muted" data-empty hidden>{t('glossary.empty')}</p>
     <p class="mt-8 text-sm muted">{t('glossary.note')}</p>
   </div>
 </BaseLayout>

@@ -13,22 +13,18 @@ const list = await Promise.all(
   TOOLS.filter((x) => (!audience || x.audience === audience) && (!keys || keys.includes(x.key)) && x.key !== exclude).map(async (x) => ({ ...x, href: await getPageUrl(lang, x.key) })),
 );
 ---
-<ul class:list={['not-prose grid gap-4', compact ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3']}>
+<ul class:list={['not-prose grid border-t border-[var(--line)]', compact ? 'sm:grid-cols-2 sm:gap-x-8' : 'md:grid-cols-2 md:gap-x-12']}>
   {list.filter((x) => x.href).map((x) => (
-    <li class="min-w-0">
-      <a href={x.href} class="group card card-hover flex h-full flex-col gap-4 p-5" data-track="tool_click" data-track-label={x.key}>
-        <span class="flex items-start gap-4">
-          <span class="icon-tile"><Icon name={x.icon} class="size-[1.35rem]" /></span>
-          <span class="min-w-0">
-            <span class="block text-[1.05rem] leading-snug font-semibold [overflow-wrap:anywhere] group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{x.title[lang]}</span>
-            <span class="mt-1 block text-sm muted">{x.text[lang]}</span>
-          </span>
+    <li class="min-w-0 border-b border-[var(--line)]">
+      <a href={x.href} class="group grid grid-cols-[auto_1fr_auto] items-start gap-4 py-5" data-track="tool_click" data-track-label={x.key}>
+        <Icon name={x.icon} class="mt-0.5 size-6 text-[var(--accent)]" />
+        <span class="min-w-0">
+          <span class="block font-[family-name:var(--font-display)] text-[length:var(--step-2)] leading-snug [overflow-wrap:anywhere] group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4 rtl:font-[family-name:var(--font-arabic)]">{x.title[lang]}</span>
+          <span class="mt-1 block text-sm muted">{x.text[lang]}</span>
         </span>
-        {!compact && (
-          <span class="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--link)]">
-            {t('common.calculate')}<Icon name="arrowRight" class="size-4 transition group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
-          </span>
-        )}
+        <span class="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--link)]">
+          {!compact && <span class="hidden sm:inline">{t('common.calculate')}</span>}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" />
+        </span>
       </a>
     </li>
   ))}

@@ -41,13 +41,13 @@ const legal = [
 const col = 'text-[var(--muted)] hover:text-[var(--brand)] hover:underline underline-offset-4';
 ---
 
-<footer class="mt-24 border-t border-[var(--line)] bg-[var(--surface-2)] text-[var(--brand)] sm:mt-28">
-  <div class="footer-glow" aria-hidden="true"></div>
-  <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+<footer class="site-footer mt-24 sm:mt-28">
+  <div class="zellige-band" aria-hidden="true"></div>
+  <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
     <div class="sm:col-span-2 lg:col-span-1">
       <a href={homePath(lang)} class="inline-flex items-center gap-2.5 rounded-lg">
         <Logo class="h-11 w-10" />
-        <span class="font-sans text-2xl font-bold" dir="ltr">Sahla <span class="text-[var(--brand)]">{brand.split(' ')[1]}</span></span>
+        <span class="font-display text-2xl font-semibold" dir="ltr">Sahla <span class="italic text-[var(--accent)]">{brand.split(' ')[1]}</span></span>
       </a>
       <p class="mt-4 max-w-xs text-sm text-[var(--muted)]">{t('footer.tagline')}</p>
       <p class="eyebrow mt-8 text-[var(--brand)]">{t('footer.languages')}</p>

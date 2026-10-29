@@ -26,7 +26,7 @@ const list = CITY_PAGES.filter((c) => !ids || ids.includes(c.id)).slice(0, limit
     {list.map((c) => (
       <li class="group card card-hover relative flex flex-col overflow-hidden">
         {c.host2030 && <span class="badge badge-gold absolute end-3 top-3 z-10">{L.hostCity[lang]}</span>}
-        <div class="arch relative mx-4 mt-4 aspect-[4/3] overflow-hidden">
+        <div class="relative aspect-[4/3] overflow-hidden">
           <CityImage scene={c.id} lang={lang} width={480} sizes="(min-width:1024px) 280px, (min-width:640px) 45vw, 90vw" />
         </div>
         <div class="flex flex-1 flex-col p-5 pt-4">

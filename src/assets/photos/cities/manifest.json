@@ -262,5 +262,125 @@
     },
     "credit": "Meryem BOURAS, CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg"
+  },
+  "guelmim": {
+    "file": "guelmim.jpg",
+    "alt": {
+      "fr": "Porte ouest de la ville, Guelmim",
+      "en": "West gate of the city, Guelmim",
+      "es": "Puerta occidental de la ciudad, Guelmim",
+      "de": "Westliches Stadttor von Guelmim",
+      "ar": "البوابة الغربية لمدينة كلميم"
+    },
+    "credit": "Mhobl, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg"
+  },
+  "tiznit": {
+    "file": "tiznit.jpg",
+    "alt": {
+      "fr": "Remparts de la médina de Tiznit et kasbah Aghnaj",
+      "en": "Ramparts of the Tiznit medina and Aghnaj kasbah",
+      "es": "Murallas de la medina de Tiznit y alcazaba de Aghnaj",
+      "de": "Stadtmauern der Medina von Tiznit und Kasbah Aghnaj",
+      "ar": "أسوار مدينة تيزنيت وقصبة أغناج"
+    },
+    "credit": "Anass Sedrati, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kasbah_Aghnaj_Tiznit.jpg"
+  },
+  "sidi-ifni": {
+    "file": "sidi-ifni.jpg",
+    "alt": {
+      "fr": "Hôtel de ville de style art déco, Sidi Ifni",
+      "en": "Art deco town hall, Sidi Ifni",
+      "es": "Ayuntamiento art déco, Sidi Ifni",
+      "de": "Rathaus im Art-déco-Stil, Sidi Ifni",
+      "ar": "دار الجماعة بطراز الآرت ديكو في سيدي إفني"
+    },
+    "credit": "Anass Sedrati, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg"
+  },
+  "taroudant": {
+    "file": "taroudant.jpg",
+    "alt": {
+      "fr": "Remparts de Taroudant bordés de palmiers",
+      "en": "Palm-lined ramparts of Taroudant",
+      "es": "Murallas de Taroudant bordeadas de palmeras",
+      "de": "Von Palmen gesäumte Stadtmauern von Taroudant",
+      "ar": "أسوار تارودانت تحفها النخيل"
+    },
+    "credit": "Hamza Izourane, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls.jpg"
+  },
+  "zagora": {
+    "file": "zagora.jpg",
+    "alt": {
+      "fr": "Panneau « Tombouctou 52 jours » à Zagora",
+      "en": "The « Timbuktu 52 days » sign in Zagora",
+      "es": "Cartel « Tombuctú 52 días » en Zagora",
+      "de": "Schild « Timbuktu 52 Tage » in Zagora",
+      "ar": "لافتة « تمبكتو 52 يوما » في زاكورة"
+    },
+    "credit": "tifoultoute, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zagora_panneau.jpg"
+  },
+  "errachidia": {
+    "file": "errachidia.jpg",
+    "alt": {
+      "fr": "Palmeraie de la vallée du Ziz, province d'Errachidia",
+      "en": "Palm grove in the Ziz valley, Errachidia province",
+      "es": "Palmeral del valle del Ziz, provincia de Errachidia",
+      "de": "Palmenhain im Ziz-Tal, Provinz Errachidia",
+      "ar": "واحة نخيل في وادي زيز، إقليم الراشيدية"
+    },
+    "credit": "Ben Bender, CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg"
+  },
+  "ifrane": {
+    "file": "ifrane.jpg",
+    "alt": {
+      "fr": "Le lion de pierre d'Ifrane",
+      "en": "The stone lion of Ifrane",
+      "es": "El león de piedra de Ifrane",
+      "de": "Der steinerne Löwe von Ifrane",
+      "ar": "أسد إفران الحجري"
+    },
+    "credit": "Bernard Gagnon, CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ifrane_lion.jpg"
+  },
+  "asilah": {
+    "file": "asilah.jpg",
+    "alt": {
+      "fr": "Remparts de la médina d'Asilah au bord de l'Atlantique",
+      "en": "Ramparts of the Asilah medina on the Atlantic coast",
+      "es": "Murallas de la medina de Arcila junto al Atlántico",
+      "de": "Stadtmauer der Medina von Asilah am Atlantik",
+      "ar": "أسوار مدينة أصيلة العتيقة على المحيط الأطلسي"
+    },
+    "credit": "RACHID BAYA, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_ramparts_of_the_Old_Medina_of_Asilah.jpg"
+  },
+  "larache": {
+    "file": "larache.jpg",
+    "alt": {
+      "fr": "Vue sur la ville de Larache",
+      "en": "View over the town of Larache",
+      "es": "Vista de la ciudad de Larache",
+      "de": "Blick auf die Stadt Larache",
+      "ar": "إطلالة على مدينة العرائش"
+    },
+    "credit": "Fr Maxim Massalitin from Rabat, Maroc, CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ville_de_Larache_(14161718379).jpg"
+  },
+  "kenitra": {
+    "file": "kenitra.jpg",
+    "alt": {
+      "fr": "Façade de la gare de Kénitra",
+      "en": "Facade of Kenitra railway station",
+      "es": "Fachada de la estación de Kenitra",
+      "de": "Fassade des Bahnhofs von Kenitra",
+      "ar": "واجهة محطة القنيطرة"
+    },
+    "credit": "Zakiman0, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gare_de_train_(TGV)._KENITRA._Maroc.jpg"
   }
 }

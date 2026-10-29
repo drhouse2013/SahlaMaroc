@@ -108,3 +108,6 @@ Limites : recherche web rapide (3 requêtes), aucun forum MRE lu directement. La
 
 ## 21. Cycle du 2026-10-27 — aucune idée implémentée
 - Firecrawl toujours hors crédits ; loi 44-18 (service militaire) toujours introuvable en texte officiel : REPORTÉE. Aucune nouvelle idée avec source officielle lue.
+
+## 22. Cycle du 2026-10-29 — aucune idée implémentée
+- Guide ADII « Marocains du Monde 2026 » (n° 20) : REPORTÉE. douane.gov.ma inaccessible (connexion refusée à l'outil fetch) ; la recherche ne renvoie que de la presse (Le360, Medias24, SNRTnews : relèvement de l'abattement de retour définitif, circulaire Marhaba du 06/06/2026), sans montant lu à la source. Rien chiffré.

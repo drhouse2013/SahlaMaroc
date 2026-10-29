@@ -103,51 +103,45 @@ const essentials = {
 <BaseLayout lang={lang} title={d.title} description={d.description} alternates={alternates} switchTargets={switchTargets} image={imageUrl} imageAlt={d.heroAlt} type="article" noindex={d.machineTranslated} jsonLd={jsonLd} publishedTime={d.pubDate} modifiedTime={d.updatedDate}>
 <div data-category={d.category}>
   <header class="article-header">
-    <div class="container-page grid items-center gap-8 pt-8 pb-10 md:grid-cols-[1.15fr_1fr] md:gap-12 md:pb-14">
-      <div class="min-w-0">
-        <Breadcrumbs items={crumbs} lang={lang} />
-        <a href={categoryPath(lang, d.category)} class="badge badge-cat mt-6">
+    <div class="container-page pt-8 pb-8 md:pb-10">
+      <Breadcrumbs items={crumbs} lang={lang} />
+      <div class="mt-6 max-w-4xl">
+        <a href={categoryPath(lang, d.category)} class="badge badge-cat">
           <Icon name={CATEGORY_ICON[d.category]} class="size-3.5" />{cat.label[lang]}
         </a>
-        <h1 class="mt-4 text-[2rem] leading-[1.12] font-semibold sm:text-5xl">{d.title}</h1>
-        <p class="mt-5 max-w-2xl text-lg leading-relaxed muted">{d.description}</p>
-        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm muted">
-          <span class="flex items-center gap-2">
-            <span class="grid size-8 place-items-center rounded-full bg-navy-700 text-sm font-semibold text-white" aria-hidden="true">{d.author.charAt(0)}</span>
-            {aboutUrl ? <a href={aboutUrl} class="font-semibold text-[var(--text)] hover:underline">{d.author}</a> : <strong class="text-[var(--text)]">{d.author}</strong>}
-          </span>
-          <span class="inline-flex items-center gap-1.5"><Icon name="calendar" class="size-4" />
-            {d.updatedDate
-              ? <span>{t('article.updated')} <time datetime={d.updatedDate.toISOString()}>{formatDate(d.updatedDate, lang)}</time></span>
-              : <span>{t('article.published')} <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate, lang)}</time></span>}
-          </span>
-          <span class="inline-flex items-center gap-1.5"><Icon name="clock" class="size-4" />{t('article.readingTime', { n: minutes })}</span>
-          {d.verifiedDate
-            ? <span class="badge badge-emerald" data-verified><Icon name="checkCircle" class="size-4" />{t('article.verified')} <time datetime={d.verifiedDate.toISOString()}>{formatDate(d.verifiedDate, lang)}</time></span>
-            : <span class="inline-flex items-center gap-1.5" data-verified-missing><Icon name="clock" class="size-4" />{t('article.verifiedMissing')}</span>}
-          {proSensitive && (d.proReviewedDate
-            ? <span class="badge badge-emerald" data-pro-reviewed><Icon name="checkCircle" class="size-4" />{t('article.proReviewed')} <time datetime={d.proReviewedDate.toISOString()}>{formatDate(d.proReviewedDate, lang)}</time></span>
-            : <span class="inline-flex items-center gap-1.5" data-pro-missing><Icon name="clock" class="size-4" />{t('article.proNotReviewed')}</span>)}
-          {d.checkedDate && <span class="inline-flex items-center gap-1.5 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100"><Icon name="checkCircle" class="size-4" />{t('article.checked')} {formatDate(d.checkedDate, lang)}</span>}
-        </div>
-        <div class="mt-5 flex flex-wrap items-center gap-2 no-print" role="group" aria-label={t('article.share')} data-article-actions>
+        <h1 class="article-title mt-4">{d.title}</h1>
+        <p class="article-lede mt-5">{d.description}</p>
+      </div>
+      <div class="article-meta mt-7 max-w-4xl">
+        <span class="flex items-center gap-2">
+          <span class="grid size-8 place-items-center rounded-full bg-navy-700 text-sm font-semibold text-white" aria-hidden="true">{d.author.charAt(0)}</span>
+          {aboutUrl ? <a href={aboutUrl} class="font-semibold text-[var(--text)] hover:underline">{d.author}</a> : <strong class="text-[var(--text)]">{d.author}</strong>}
+        </span>
+        <span class="inline-flex items-center gap-1.5"><Icon name="calendar" class="size-4" />
+          {d.updatedDate
+            ? <span>{t('article.updated')} <time datetime={d.updatedDate.toISOString()}>{formatDate(d.updatedDate, lang)}</time></span>
+            : <span>{t('article.published')} <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate, lang)}</time></span>}
+        </span>
+        <span class="inline-flex items-center gap-1.5"><Icon name="clock" class="size-4" />{t('article.readingTime', { n: minutes })}</span>
+        {d.verifiedDate
+          ? <span class="badge badge-emerald" data-verified><Icon name="checkCircle" class="size-4" />{t('article.verified')} <time datetime={d.verifiedDate.toISOString()}>{formatDate(d.verifiedDate, lang)}</time></span>
+          : <span class="inline-flex items-center gap-1.5" data-verified-missing><Icon name="clock" class="size-4" />{t('article.verifiedMissing')}</span>}
+        {proSensitive && (d.proReviewedDate
+          ? <span class="badge badge-emerald" data-pro-reviewed><Icon name="checkCircle" class="size-4" />{t('article.proReviewed')} <time datetime={d.proReviewedDate.toISOString()}>{formatDate(d.proReviewedDate, lang)}</time></span>
+          : <span class="inline-flex items-center gap-1.5" data-pro-missing><Icon name="clock" class="size-4" />{t('article.proNotReviewed')}</span>)}
+        {d.checkedDate && <span class="inline-flex items-center gap-1.5 font-medium text-emerald-moroccan-600 dark:text-emerald-moroccan-100"><Icon name="checkCircle" class="size-4" />{t('article.checked')} {formatDate(d.checkedDate, lang)}</span>}
+        <span class="flex flex-wrap items-center gap-2 no-print sm:ms-auto" role="group" aria-label={t('article.share')} data-article-actions>
           <a href={waUrl} target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" data-track="share_whatsapp"><Icon name="send" class="size-4" />{t('article.share.whatsapp')}</a>
           <button type="button" class="btn btn-ghost btn-sm" data-copy={url} data-done={t('article.share.copied')} hidden><Icon name="link" class="size-4" /><span aria-live="polite">{t('article.share.copy')}</span></button>
           <button type="button" class="btn btn-ghost btn-sm" data-print hidden><Icon name="printer" class="size-4" />{t('article.print')}</button>
-        </div>
+        </span>
       </div>
-      <div class="min-w-0 no-print">
-        <div class="article-cover overflow-hidden rounded-2xl border border-[var(--line)]"><GuideVisual article={entry} large eager /></div>
-        {toc.length > 0 && <nav class="mt-4 hidden rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-5 md:block" aria-label={t('article.onThisPage')} data-guide-shortcuts>
-          <p class="eyebrow muted">{t('article.onThisPage')}</p>
-          <ul class="mt-3 grid gap-3 text-sm">{toc.slice(0, 3).map((h) => <li><a href={`#${h.slug}`} class="flex items-start justify-between gap-4 hover:underline"><span>{h.text}</span><Icon name="arrowRight" class="mt-0.5 size-4 shrink-0 rtl:-scale-x-100" /></a></li>)}</ul>
-        </nav>}
-      </div>
+      <div class="article-cover mt-8 overflow-hidden rounded-xl border border-[var(--line)] no-print"><GuideVisual article={entry} large eager /></div>
     </div>
   </header>
 
   <div class="container-page grid gap-12 pt-8 lg:grid-cols-[minmax(0,1fr)_17.5rem]">
-    <article class="min-w-0" data-article={d.translationKey}>
+    <article class="min-w-0 max-w-[68ch] lg:max-w-none" data-article={d.translationKey}>
       {ymyl && (
         <div class="alert alert-info not-prose">
           <Icon name="shield" class="mt-0.5 size-5 shrink-0 text-navy-700 dark:text-navy-100" />
@@ -157,13 +151,13 @@ const essentials = {
       {hasAffiliate && <div class="mt-3"><Disclosure lang={lang} /></div>}
 
       {brief.length > 0 && (
-        <section class="reveal card not-prose mt-6 p-5" aria-labelledby="brief-title" data-brief>
+        <section class="reveal article-brief not-prose mt-6" aria-labelledby="brief-title" data-brief>
           <h2 id="brief-title" class="eyebrow muted">{t('article.brief.title')}</h2>
           <dl class="mt-3 grid gap-4 sm:grid-cols-3">
             {brief.map((b) => (
               <div class="min-w-0">
-                <dt class="flex items-center gap-1.5 text-sm font-semibold"><Icon name={b.icon} class="size-4 text-terracotta-600 dark:text-terracotta-300" />{t(`article.brief.${b.k}`)}</dt>
-                <dd class="mt-1 text-sm [overflow-wrap:anywhere]">{b.v}</dd>
+                <dt class="flex items-center gap-1.5"><Icon name={b.icon} class="size-4 text-terracotta-600 dark:text-terracotta-300" />{t(`article.brief.${b.k}`)}</dt>
+                <dd class="[overflow-wrap:anywhere]">{b.v}</dd>
               </div>
             ))}
           </dl>
@@ -171,7 +165,7 @@ const essentials = {
       )}
 
       {toc.length >= 3 && (
-        <nav class="reveal card mt-6 p-5 text-sm lg:hidden" aria-label={t('article.onThisPage')}>
+        <nav class="reveal mt-6 border-b border-[var(--line)] pb-5 text-[0.95rem] lg:hidden" aria-label={t('article.onThisPage')}>
           <p class="eyebrow muted">{t('article.onThisPage')}</p>
           <ol class="mt-3 list-decimal space-y-1.5 ps-5 marker:text-[var(--muted)]">{toc.map((h) => <li><a href={`#${h.slug}`} class="hover:underline">{h.text}</a></li>)}</ol>
         </nav>
@@ -183,18 +177,18 @@ const essentials = {
         </p>
       )}
 
-      <div class="prose prose-lg mt-6 max-w-[70ch] dark:prose-invert prose-headings:font-semibold prose-a:text-[var(--link)] prose-a:underline-offset-2 prose-strong:text-[var(--text)] prose-th:text-start prose-img:rounded-2xl">
+      <div class="article-body prose prose-lg mt-8 dark:prose-invert prose-a:text-[var(--link)] prose-a:underline-offset-2 prose-strong:text-[var(--text)] prose-th:text-start prose-img:rounded-2xl">
         <slot />
       </div>
 
       {faq.length > 0 && (
         <section class="reveal not-prose mt-12" aria-labelledby="faq-title" data-faq>
-          <h2 id="faq-title" class="text-2xl font-semibold">{t('article.faq')}</h2>
-          <div class="mt-4 grid gap-3">
+          <h2 id="faq-title" class="text-[length:var(--step-4)]">{t('article.faq')}</h2>
+          <div class="faq-list mt-5">
             {faq.map((f) => (
-              <div class="card p-5">
-                <h3 class="font-semibold">{f.q}</h3>
-                <p class="mt-2 text-[0.95rem] leading-relaxed">{f.a}</p>
+              <div>
+                <h3>{f.q}</h3>
+                <p>{f.a}</p>
               </div>
             ))}
           </div>
@@ -245,14 +239,14 @@ const essentials = {
 
       {tools.length > 0 && (
         <section class="reveal mt-12" aria-labelledby="rel-tools">
-          <h2 id="rel-tools" class="text-xl font-semibold">{t('article.relatedTools')}</h2>
+          <h2 id="rel-tools" class="text-[length:var(--step-3)]">{t('article.relatedTools')}</h2>
           <div class="mt-4"><ToolGrid lang={lang} keys={tools.map((x) => x.key)} compact /></div>
         </section>
       )}
 
       {cities.length > 0 && (
         <section class="reveal mt-10" aria-labelledby="rel-cities">
-          <h2 id="rel-cities" class="text-xl font-semibold">{t('article.relatedCities')}</h2>
+          <h2 id="rel-cities" class="text-[length:var(--step-3)]">{t('article.relatedCities')}</h2>
           <ul class="mt-4 flex flex-wrap gap-2">
             {cities.map((c) => <li><a href={cityPath(lang, c.slug[lang])} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="mapPin" class="size-4" />{cityLabel(c.id, lang)}</a></li>)}
           </ul>
@@ -261,7 +255,7 @@ const essentials = {
 
       {news.length > 0 && (
         <section class="reveal mt-10" aria-labelledby="rel-news">
-          <h2 id="rel-news" class="text-xl font-semibold">{t('news.related')}</h2>
+          <h2 id="rel-news" class="text-[length:var(--step-3)]">{t('news.related')}</h2>
           <ul class="mt-4 grid gap-2">
             {news.map((n) => <li><a href={`${hubPath(lang, 'news')}#n-${n.data.translationKey}`} class="card card-hover flex items-center gap-3 p-4 font-medium"><Icon name="stamp" class="size-5 shrink-0 text-navy-600 dark:text-navy-300" />{n.data.title}</a></li>)}
           </ul>
@@ -302,7 +296,7 @@ const essentials = {
         <h2 id="rel-guides" class="section-title">{t('article.next')}</h2>
         <a href={categoryPath(lang, d.category)} class="btn-tertiary btn inline-flex items-center gap-1.5 font-semibold">{t('article.parentCta', { topic: cat.label[lang] })}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
       </div>
-      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">{related.map((a) => <ArticleCard article={a} />)}</div>
+      <div class="feature-list mt-6"><ArticleCard article={related[0]} /><div class="row-list">{related.slice(1).map((a) => <ArticleCard article={a} size="row" />)}</div></div>
     </section>
   )}
 </div>

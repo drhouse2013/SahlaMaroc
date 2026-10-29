@@ -103,16 +103,12 @@ const description = pillar.intro[lang].length <= 160 ? pillar.intro[lang] : pill
             <span class="pillar-section__number" aria-hidden="true">01</span>
             <div>
               <h2 id="start" class="pillar-section__title">{t('pillar.start')}</h2>
-              <p class="pillar-section__sub">{t('pillar.start')}</p>
             </div>
           </div>
           <div class="pillar-section__divider" aria-hidden="true"></div>
-          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {start.map((a, i) => (
-              <div class:list={['reveal', i === 0 && 'reveal-d1', i === 1 && 'reveal-d2', i === 2 && 'reveal-d3']}>
-                <ArticleCard article={a} />
-              </div>
-            ))}
+          <div class="feature-list mt-8">
+            <ArticleCard article={start[0]} />
+            <div class="row-list">{start.slice(1).map((a) => <ArticleCard article={a} size="row" showCategory={false} />)}</div>
           </div>
         </section>
       )}
@@ -141,12 +137,9 @@ const description = pillar.intro[lang].length <= 160 ? pillar.intro[lang] : pill
             </div>
           </div>
           <div class="pillar-section__divider" aria-hidden="true"></div>
-          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((a, i) => (
-              <div class:list={['reveal', `reveal-d${(i % 3) + 1}`]}>
-                <ArticleCard article={a} />
-              </div>
-            ))}
+          <div class="mt-4 grid gap-x-12 md:grid-cols-2">
+            <div class="row-list">{rest.filter((_, i) => i % 2 === 0).map((a) => <ArticleCard article={a} size="row" showCategory={false} />)}</div>
+            <div class="row-list border-t border-[var(--line)] md:border-t-0">{rest.filter((_, i) => i % 2 === 1).map((a) => <ArticleCard article={a} size="row" showCategory={false} />)}</div>
           </div>
         </section>
       )}
