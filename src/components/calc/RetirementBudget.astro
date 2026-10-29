@@ -9,7 +9,7 @@ import Icon from '../Icon.astro';
 import CalcShell from './CalcShell.astro';
 import { type Locale, LOCALE_META } from '../../i18n';
 import { BASE, CITIES, CITY_FACTOR, CITY_LABEL, COSTS_LAST_UPDATED } from '../../config/costs';
-import { EUR_TO_MAD, EUR_TO_MAD_DATE } from '../../config/site';
+import { EUR_TO_MAD, EUR_RATE_CONTEXT } from '../../config/site';
 import { formatDate } from '../../utils/date';
 import { entryPath, getArticleByKey } from '../../utils/i18n';
 import { EXAMPLE_CONTINGENCY_PCT } from '../../utils/retirement.mjs';
@@ -95,7 +95,7 @@ const T = {
 
 const guide = await getArticleByKey(lang, 'retire-in-morocco');
 const rateTxt = new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 2 }).format(EUR_TO_MAD);
-const note = T.note(rateTxt, formatDate(new Date(EUR_TO_MAD_DATE), lang), formatDate(new Date(COSTS_LAST_UPDATED), lang));
+const note = T.note(rateTxt, EUR_RATE_CONTEXT[lang], formatDate(new Date(COSTS_LAST_UPDATED), lang));
 const cfg = JSON.stringify({
   rate: EUR_TO_MAD, base: BASE, factors: CITY_FACTOR, locale: LOCALE_META[lang].intl, contingency: EXAMPLE_CONTINGENCY_PCT,
   hint: { costs: T.hintCosts, example: T.hintExample, own: T.hintOwn },

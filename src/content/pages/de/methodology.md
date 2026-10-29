@@ -38,3 +38,19 @@ Französisch und Englisch werden vom Autor geschrieben und gepflegt. Die spanisc
 ## Fehler gefunden?
 
 Siehe [Korrekturen](/de/korrekturen) oder schreiben Sie uns über die [Kontaktseite](/de/kontakt?type=correction).
+
+
+## Fotos der Guides
+
+Die Fotomaterialien von Wikimedia Commons sind unten mit Urhebern und Lizenzen aufgeführt. Ergänzte Symbolfotos für die Guides tragen ebenfalls Urheber- und Lizenzlinks auf ihren Titelbildern.
+
+- [Jakub Żerdzicki](https://unsplash.com/photos/a-person-holding-a-bunch-of-keys-in-their-hand-Ebj87ehFNNU) — [Unsplash](https://unsplash.com/license).
+- [Guille B](https://unsplash.com/photos/a-man-in-a-suit-signing-a-document-with-a-pen-xYnominUM0I) — [Unsplash](https://unsplash.com/license).
+- [Mediamodifier](https://unsplash.com/photos/black-calculator-beside-black-pen-on-white-printer-paper-I3HPUolh5hA) — [Unsplash](https://unsplash.com/license).
+- [Ivan Kazlouskij](https://unsplash.com/photos/a-bunch-of-car-keys-sitting-on-the-center-console-of-a-car-b-e-mUl_q68) — [Unsplash](https://unsplash.com/license).
+- [Marissa Grootes](https://unsplash.com/photos/open-suitcase-with-travel-essentials-and-hat-TVllFyGaLEA) — [Unsplash](https://unsplash.com/license).
+- [Mees Hofland](https://unsplash.com/photos/moroccan-flag-hangs-on-a-clay-building-in-desert-landscape-xNs31EGSq2M) — [Unsplash](https://unsplash.com/license).
+- [Luigi Ritchie](https://unsplash.com/photos/close-up-of-elderly-hands-clasped-together-EljMmcGmeGA) — [Unsplash](https://unsplash.com/license).
+- [Bertrand SOUBEYRAND](https://commons.wikimedia.org/wiki/File:Le_cruise-ferry_Excellent_de_GNV_dans_le_port_de_Tanger_MED_au_Maroc_le_30-10-2023.jpg) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+- [Orlysi](https://commons.wikimedia.org/wiki/File:MOROCCAN_TILES_ZELLIGE.jpg) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Hintergrund: in Fès fotografierter Zellige. Verkleinert, in WebP umgewandelt, beschnitten und für die Darstellung abgeschwächt; Bearbeitung unter derselben Lizenz.

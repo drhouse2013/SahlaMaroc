@@ -1,0 +1,224 @@
+{
+  "marhaba-guide": {
+    "file": "marhaba-port.jpg",
+    "credit": "HrAd",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG"
+  },
+  "car-180-days": {
+    "file": "voiture-traversee-mre.jpg",
+    "credit": "Xemenendura",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg"
+  },
+  "motorway": {
+    "file": "autoroute-marrakech-agadir.jpg",
+    "credit": "Abdeaitali",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Highway_Marrakech_Agadir_2019.jpg"
+  },
+  "cheap-flights-europe-morocco": {
+    "file": "vols-ryanair-rabat.jpg",
+    "credit": "CAPTAIN RAJU",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ryanair_(Rabat)_in_2026.02.jpg"
+  },
+  "casablanca-airport": {
+    "file": "aeroport-casablanca.jpg",
+    "credit": "Sharon Hahn Darlin",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Interior.jpg"
+  },
+  "marrakech-airport": {
+    "file": "aeroport-marrakech.jpg",
+    "credit": "Kevinbeets1995",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Marrakech_Airport.jpg"
+  },
+  "airports": {
+    "file": "aeroport-agadir-2023.jpg",
+    "credit": "Mike Peel (www.mikepeel.net)",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2023_287.jpg"
+  },
+  "transport-apps": {
+    "file": "grand-taxi-inezgane.jpg",
+    "credit": "MustaSensei",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_Taxi_Morocco_Inzgane.jpg"
+  },
+  "cash-atms": {
+    "file": "distributeur-cih.jpg",
+    "credit": "Hamza Izourane",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Guichet_Automatique_Bancaire_CIH_Bank.jpg"
+  },
+  "toubkal": {
+    "file": "toubkal-randonneurs.jpg",
+    "credit": "Kurinurm",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jebel_Toubkal_and_a_group_of_hikers.jpg"
+  },
+  "ctm-supratours": {
+    "file": "bus-ctm-arret.jpg",
+    "credit": "Bisel91",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:CTM_Bus%27_stop.jpg"
+  },
+  "buy-car-morocco-mre": {
+    "file": "voiture-achat-garage-casablanca.jpg",
+    "credit": "Vd212",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Garage_Elegance_Cars_Casablanca.jpg"
+  },
+  "amo-health-return-mre": {
+    "file": "sante-chu-tanger.jpg",
+    "credit": "Flaspec",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:University_Hospital_Center_in_Tangier_(general_view).jpg"
+  },
+  "travel-insurance-compare-mre": {
+    "file": "assurance-voyage-ram.jpg",
+    "credit": "Acroterion",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg"
+  },
+  "repatriation-insurance-mre": {
+    "file": "assurance-voyage-ram.jpg",
+    "credit": "Acroterion",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg"
+  },
+  "build-house": {
+    "file": "construire-chantier-casa.jpg",
+    "credit": "Bengt Nyman",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_NZ7_3857_(40167825473).jpg"
+  },
+  "daam-sakane": {
+    "file": "daam-sakane-logements.jpg",
+    "credit": "Ideophagous",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:El_Azzouzia.jpg"
+  },
+  "moroccan-food": {
+    "file": "cuisine-tajine.jpg",
+    "credit": "Marco Almbauer",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Moroccan_tajine_with_meat.jpg"
+  },
+  "etiquette": {
+    "file": "savoir-vivre-the-menthe.jpg",
+    "credit": "مصطفى ملو",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tea_and_Moroccan_sweets.jpg"
+  },
+  "cost-of-living": {
+    "file": "cout-vie-etal-legumes.jpg",
+    "credit": "مصطفى ملو",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_greengrocer_displays_vegetables_in_Morocco.jpg"
+  },
+  "business-auto-entrepreneur-mre": {
+    "file": "artisan-poterie.jpg",
+    "credit": "Houssain tork",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Moroccan_pottery_traditions_from_marrakech.jpg"
+  },
+  "international-schools": {
+    "file": "ecoles-lycee.jpg",
+    "credit": "Mounir Neddi",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1_Qualifying_High_School_Tariq_Ibn_Ziyad_(Berber_High_School).jpg"
+  },
+  "return-morocco-with-children": {
+    "file": "ecoles-lycee.jpg",
+    "credit": "Mounir Neddi",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1_Qualifying_High_School_Tariq_Ibn_Ziyad_(Berber_High_School).jpg"
+  },
+  "health-travellers": {
+    "file": "sante-chu-tanger.jpg",
+    "credit": "Flaspec",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:University_Hospital_Center_in_Tangier_(general_view).jpg"
+  },
+  "internet-coworking": {
+    "file": "fibre-casa-cfc.jpg",
+    "credit": "AyourAchtouk",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_15.jpg"
+  },
+  "hammam": {
+    "file": "hammam-interieur.jpg",
+    "credit": "R Prazeres",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hammam_Saffarin_DSCF6564.jpg"
+  },
+  "time-zone": {
+    "file": "fuseau-horloge.jpg",
+    "credit": "Reda benkhadra",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Clock_Bank_al-Maghrib,_Casablanca.jpg"
+  },
+  "passport-cnie": {
+    "file": "consulat-maroc-pontoise.jpg",
+    "credit": "Chabe01",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Consulat_Maroc_Pontoise_1.jpg"
+  },
+  "darija-phrases": {
+    "file": "darija-souk-haddadine.jpg",
+    "credit": "Petar Milošević",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oriental_hanging_lanterns._Souk_Haddadine,_Marrakech_Medina_(سوق_الحدادين_مراكش).jpg"
+  },
+  "tipping": {
+    "file": "pourboire-jemaa-terrasse.jpg",
+    "credit": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Marrakech_Jemaa_el-Fna_(54269477282).jpg"
+  },
+  "trains": {
+    "file": "train-al-boraq.jpg",
+    "credit": "SpreeTom",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Al_Boraq_Tangier.jpg"
+  },
+  "tram-brt": {
+    "file": "tram-rabat-sale.jpg",
+    "credit": "Taha ahha",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tramway_line_Rabat.jpg"
+  },
+  "world-cup-2030": {
+    "file": "cdm2030-stade-moulay-abdellah.jpg",
+    "credit": "Reda benkhadra",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Moulay_Abdellah_Stadium.jpg"
+  },
+  "world-cup-2030-stadiums": {
+    "file": "cdm2030-stade-moulay-abdellah.jpg",
+    "credit": "Reda benkhadra",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Moulay_Abdellah_Stadium.jpg"
+  },
+  "world-cup-2030-trip-planning": {
+    "file": "cdm-stade-ibn-batouta.jpg",
+    "credit": "KSKB1935",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Stade_Ibn_Batuta,_Tanger_2023.jpg"
+  },
+  "world-cup-2030-transport": {
+    "file": "gare-rabat-ville.jpg",
+    "credit": "Boubloub",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg"
+  },
+  "riad-or-hotel": {
+    "file": "riad-patio-dar-el-bacha.jpg",
+    "credit": "R Prazeres",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg"
+  }
+}

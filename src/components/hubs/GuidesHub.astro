@@ -1,7 +1,7 @@
 ---
 /** /<lang>/guides : parcours « Commencer ici », puis tous les guides avec filtre par thème et recherche locale. */
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHero from '../PageHero.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
 import ArticleCard from '../ArticleCard.astro';
 import Icon from '../Icon.astro';
 import { useTranslations, type Locale } from '../../i18n';
@@ -22,45 +22,71 @@ const journeys = (await Promise.all(JOURNEYS.map(async (j) => ({
 const self = (l: Locale) => hubPath(l, 'guides');
 const url = absoluteUrl(self(lang), Astro.site);
 const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('guides.title') }];
+const intro = {
+  fr: ['Préparez votre projet au Maroc.', 'Un retour au pays, un achat, un voyage ? Commencez par ce que vous préparez.', 'Quel sujet vous intéresse ?'],
+  en: ['Plan your next step in Morocco.', 'Returning home, buying a property or planning a trip? Start with your project.', 'What would you like help with?'],
+  es: ['Prepara tu proyecto en Marruecos.', '¿Volver al país, comprar una vivienda o viajar? Empieza por tu proyecto.', '¿Qué tema te interesa?'],
+  de: ['Plane deinen nächsten Schritt in Marokko.', 'Heimkehr, Immobilienkauf oder Reise? Beginne mit deinem Vorhaben.', 'Welches Thema interessiert dich?'],
+  ar: ['حضّر مشروعك في المغرب.', 'عودة إلى البلاد، شراء عقار أم رحلة؟ ابدأ بما تخطّط له.', 'ما الموضوع الذي يهمّك؟'],
+}[lang];
 ---
 <BaseLayout lang={lang} title={t('guides.title')} description={t('guides.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('guides.title'), description: t('guides.description'), lang, items: articles.map((a) => ({ name: a.data.title, url: absoluteUrl(`/${lang}/${a.data.slug}`, Astro.site) })) })]}>
-  <PageHero lang={lang} crumbs={crumbs} title={t('guides.title')} intro={t('guides.intro')} icon="book" meta={t('category.count', { n: articles.length })} />
+  <div data-guides-hub data-lang={lang} data-tpl={t('guides.results')}>
+  <header class="border-b border-[var(--line)] bg-[var(--surface)]">
+    <div class="container-page py-9 md:py-14">
+      <Breadcrumbs items={crumbs} lang={lang} />
+      <div class="mt-7 grid items-end gap-8 md:grid-cols-[1.2fr_1fr] md:gap-14">
+        <div>
+          <p class="eyebrow text-[var(--accent)]">{t('category.count', { n: articles.length })}</p>
+          <h1 class="mt-4 max-w-xl text-4xl leading-[1.06] font-semibold tracking-tight md:text-5xl">{intro[0]}</h1>
+          <p class="mt-5 max-w-lg text-lg leading-relaxed muted">{intro[1]}</p>
+        </div>
+        <form action="#all-guides" class="rounded-2xl border border-[var(--line)] bg-[var(--surface-2)] p-6" data-search-form data-js-only hidden>
+          <label for="guides-q" class="block text-lg font-semibold">{intro[2]}</label>
+          <div class="relative mt-4">
+            <Icon name="search" class="pointer-events-none absolute start-4 top-1/2 size-5 -translate-y-1/2 muted" />
+            <input id="guides-q" type="search" aria-label={t('guides.search.label')} autocomplete="off" enterkeyhint="search" placeholder={t('guides.search.placeholder')} class="input ps-12" data-search aria-controls="all-guides" />
+          </div>
+          <button type="submit" class="mt-4 inline-flex min-h-10 items-center gap-3 text-sm font-semibold hover:underline"><span data-search-count>{t('nav.allGuides')}</span><Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></button>
+        </form>
+      </div>
+    </div>
+  </header>
   <div class="container-page pt-8">
-    <ul class="mb-8 flex flex-wrap gap-3">
+    <ul class="mb-8 flex flex-wrap gap-3" data-guide-help>
       <li><a href={hubPath(lang, 'glossary')} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="book" class="size-4" />{t('glossary.title')}</a></li>
       <li><a href={hubPath(lang, 'calendar')} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="calendar" class="size-4" />{t('calendar.title')}</a></li>
     </ul>
     {journeys.length > 0 && (
-      <section aria-labelledby="start-here">
+      <section aria-labelledby="start-here" data-guided-start>
         <h2 id="start-here" class="section-title !text-2xl">{t('guides.start.title')}</h2>
         <p class="mt-2 muted">{t('guides.start.intro')}</p>
-        <ul class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 stagger-reveal" data-journeys>
+        <ul class="mt-6 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-4" data-journeys>
           {journeys.map((j) => (
-            <li class="card flex flex-col p-5">
-              <span class="icon-tile size-10"><Icon name={j.icon} /></span>
-              <h3 class="mt-3 text-lg leading-snug font-semibold">{t(`journey.${j.id}.title` as 'journey.buy.title')}</h3>
-              <p class="mt-1 text-sm muted">{t(`journey.${j.id}.desc` as 'journey.buy.desc')}</p>
-              <ol class="mt-4 grid gap-2 text-sm">
+            <li>
+              <details class="card p-5">
+                <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <span class="flex items-center justify-between gap-3"><span class="icon-tile size-10"><Icon name={j.icon} /></span><Icon name="chevronDown" class="size-4 muted" /></span>
+                  <h3 class="mt-3 text-lg leading-snug font-semibold">{t(`journey.${j.id}.title` as 'journey.buy.title')}</h3>
+                  <p class="mt-2 text-sm leading-relaxed muted">{t(`journey.${j.id}.desc` as 'journey.buy.desc')}</p>
+                  <p class="mt-4 text-xs font-medium muted">{t('journey.steps', { n: j.guides.length })}</p>
+                </summary>
+              <ol class="mt-4 grid gap-3 border-t border-[var(--line)] pt-4 text-sm">
                 {j.guides.map((a, i) => (
                   <li class="flex gap-2"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[var(--surface-3)] text-[0.7rem] font-semibold" aria-hidden="true">{i + 1}</span><a href={entryPath(lang, a.data.slug)} class="link min-w-0 [overflow-wrap:anywhere]">{a.data.title}</a></li>
                 ))}
               </ol>
-              <p class="mt-auto pt-4 text-xs muted">{t('journey.steps', { n: j.guides.length })}</p>
+              </details>
             </li>
           ))}
         </ul>
       </section>
     )}
 
-    <div class="section !pt-12" data-guides-hub data-lang={lang} data-tpl={t('guides.results')}>
+    <div class="section !pt-12 scroll-mt-24" id="all-guides">
       <h2 class="section-title !text-2xl">{t('nav.allGuides')}</h2>
       <div class="mt-5 grid gap-4">
-        <div class="relative max-w-xl" data-js-only hidden>
-          <label for="guides-q" class="sr-only">{t('guides.search.label')}</label>
-          <Icon name="search" class="pointer-events-none absolute start-4 top-1/2 size-5 -translate-y-1/2 muted" />
-          <input id="guides-q" type="search" autocomplete="off" enterkeyhint="search" placeholder={t('guides.search.placeholder')} class="input ps-12" data-search />
-        </div>
         <ul class="flex flex-wrap gap-2" aria-label={t('guides.filter.label')} data-fallback>
           {cats.map((id) => <li><a href={categoryPath(lang, id)} class="chip"><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</a></li>)}
         </ul>
@@ -84,6 +110,7 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
         );
       })}
     </div>
+  </div>
   </div>
 </BaseLayout>
 <script>
@@ -123,6 +150,9 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
       sections.forEach((s) => (s.hidden = !s.querySelector('[data-guide]:not([hidden])')));
       empty.hidden = shown > 0;
       status.textContent = msg(shown);
+      const summary = root.querySelector<HTMLElement>('[data-search-count]');
+      if (summary) summary.textContent = msg(shown);
+      root.querySelectorAll<HTMLElement>('[data-guided-start], [data-guide-help]').forEach((el) => { el.hidden = words.length > 0; });
     };
     chips.forEach((b) => b.addEventListener('click', () => {
       cat = b.dataset.cat || '';
@@ -130,6 +160,10 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
       apply();
     }));
     q.addEventListener('input', apply);
+    root.querySelector('[data-search-form]')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      root.querySelector('#all-guides')?.scrollIntoView({ block: 'start' });
+    });
     root.querySelector('[data-reset]')?.addEventListener('click', () => { q.value = ''; chips[0].click(); q.focus(); });
     apply();
   }

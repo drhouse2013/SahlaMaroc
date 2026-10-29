@@ -49,6 +49,7 @@ test.describe('page guide', () => {
   test('partage, impression et navigation de parcours', async ({ page }) => {
     await page.goto('/fr/guides');
     const first = page.locator('[data-journeys] > li').first().locator('ol a').first();
+    await page.locator('[data-journeys] > li').first().locator('summary').click();
     const href = await first.getAttribute('href');
     await page.goto(href);
     const wa = page.locator('[data-article-actions] a[href^="https://wa.me/"]');

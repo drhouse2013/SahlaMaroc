@@ -49,6 +49,7 @@ const searchHref = hubPath(lang, 'search');
           <Icon name="chevronDown" class="size-4 transition group-open:rotate-180" />
         </summary>
         <div class="card absolute start-0 z-50 mt-2 grid w-[34rem] grid-cols-[1fr_1.3fr] gap-2 p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in">
+          <a href={hubPath(lang, 'guides')} class="col-span-full flex min-h-11 items-center justify-between gap-3 rounded-xl border border-[var(--line)] bg-[var(--surface-3)] px-4 py-3 font-semibold hover:underline">{t('nav.allGuides')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
           <div class="rounded-2xl bg-sand-50 p-2 dark:bg-white/5">
             <p class="eyebrow px-2 pt-1 pb-2 muted">{t('nav.byAudience')}</p>
             <a href={hubPath(lang, 'mre')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
@@ -92,7 +93,7 @@ const searchHref = hubPath(lang, 'search');
             <a href={hubPath(lang, 'mre')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="ship" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.mre')}</a>
             <a href={hubPath(lang, 'visit')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="compass" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.visit')}</a>
             <hr class="my-2 border-[var(--line)]" />
-            {[...nav, ...more].map((n) => <a href={n.href} class="block rounded-xl px-3 py-2.5 hover:bg-sand-100 dark:hover:bg-white/10" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>)}
+            {[{ href: hubPath(lang, 'guides'), label: t('nav.allGuides') }, ...nav, ...more].map((n) => <a href={n.href} class="block rounded-xl px-3 py-2.5 hover:bg-sand-100 dark:hover:bg-white/10" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>)}
             <hr class="my-2 border-[var(--line)]" />
             <p class="eyebrow px-3 pt-1 pb-1 muted">{t('nav.byTopic')}</p>
             <ul class="grid gap-0.5">

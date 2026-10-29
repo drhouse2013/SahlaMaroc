@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import { CATEGORIES } from '../i18n/categories';
+import { guideVisual } from '../utils/guideVisual';
+import { getPhoto } from '../utils/photos';
+import { getGuidePhoto } from '../utils/guidePhotos';
+
+interface Props { article: CollectionEntry<'articles'>; large?: boolean; eager?: boolean }
+const { article, large = false, eager = false } = Astro.props;
+const d = article.data;
+const visual = guideVisual(d.translationKey, d.category, d.title);
+const photo = getGuidePhoto(d.translationKey, d.category, d.lang) ?? (visual.destination ? getPhoto(visual.destination, d.lang) : null);
+const cc = photo?.credit?.match(/, (CC (BY(?:-SA)?) ([\d.]+))$/);
+const licence = photo && 'license' in photo && typeof photo.license === 'string' ? photo.license : cc?.[1];
+const licenceUrl = photo && 'licenseUrl' in photo && typeof photo.licenseUrl === 'string' ? photo.licenseUrl : cc ? `https://creativecommons.org/licenses/${cc[2].toLowerCase()}/${cc[3]}/` : null;
+const photographer = cc ? photo?.credit?.slice(0, cc.index) : photo?.credit;
+const label = { fr: 'Le guide pratique', en: 'The practical guide', es: 'La guía práctica', de: 'Der praktische Guide', ar: 'الدليل العملي' }[d.lang];
+---
+<div class:list={['guide-visual', large && 'guide-visual--large', photo && 'guide-visual--photo']} data-category={d.category} data-guide-visual={d.translationKey}>
+  {photo ? (
+    <div class="guide-visual__photo"><Image src={photo.src} alt={photo.alt} width={large ? 900 : 640} widths={large ? [480, 900, 1400] : [360, 640, 900]} sizes={large ? '(min-width: 768px) 42vw, 90vw' : '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw'} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} class="h-full w-full object-cover" /></div>
+  ) : (
+    <div class="guide-visual__drawing" aria-hidden="true">
+      <span class="guide-visual__orbit"></span>
+      <div class="guide-visual__symbol"><Icon name={visual.icon} class="size-full" strokeWidth={1.15} /></div>
+      <span class="guide-visual__companion"><Icon name={visual.companion} class="size-full" strokeWidth={1.5} /></span>
+    </div>
+  )}
+  <div class="guide-visual__copy" aria-hidden="true">
+    <span class="guide-visual__label">{label}</span>
+    <p class="guide-visual__title" dir="auto">{visual.title}</p>
+    <span class="guide-visual__category">{CATEGORIES[d.category].label[d.lang]}</span>
+  </div>
+  {photo?.credit && <p class="guide-visual__credit" dir="auto"><a href={photo.source} target="_blank" rel="noopener noreferrer" class="hover:underline">© {photographer}</a>{licenceUrl && <> · <a href={licenceUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">{licence}</a></>}</p>}
+</div>
+<style>
+  .guide-visual { position: relative; isolation: isolate; container-type: inline-size; width: 100%; height: 100%; min-height: 13rem; overflow: hidden; background: var(--cat-soft); color: var(--text); }
+  .guide-visual::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(120deg, var(--surface), transparent 90%); }
+  .guide-visual__copy { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 13rem; height: 100%; width: 72%; padding: 1.6rem; }
+  .guide-visual__label { font-size: .61rem; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; color: var(--cat-accent); }
+  .guide-visual__title { margin-block: auto; padding-block: 1.2rem; font-size: clamp(1.25rem, 6.3cqi, 2rem); line-height: 1.15; font-weight: 650; letter-spacing: -.045em; overflow-wrap: anywhere; text-wrap: balance; }
+  .guide-visual__category { font-size: .63rem; line-height: 1.4; color: var(--muted); }
+  .guide-visual__drawing { position: absolute; inset: 0; color: var(--cat-accent); }
+  .guide-visual__orbit { position: absolute; width: 72%; aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--cat-accent) 18%, transparent); border-radius: 50%; inset-inline-end: -32%; top: 5%; }
+  .guide-visual__symbol { position: absolute; width: 27%; aspect-ratio: 1; inset-inline-end: 3%; top: 30%; transform: rotate(-9deg); }
+  .guide-visual__companion { position: absolute; width: 12%; aspect-ratio: 1; inset-inline-end: 7%; top: 66%; padding: .4rem; border-radius: .6rem; background: var(--surface); border: 1px solid var(--line); transform: rotate(8deg); }
+  .guide-visual--large .guide-visual__copy { min-height: clamp(14rem, 65cqi, 20rem); padding: 2rem; }
+  .guide-visual--large .guide-visual__title { font-size: clamp(1.7rem, 7cqi, 3rem); }
+  .guide-visual--large .guide-visual__label { font-size: .7rem; }
+  .guide-visual--large .guide-visual__category { font-size: .75rem; }
+  .guide-visual__photo { position: absolute; inset: 0; }
+  .guide-visual--photo .guide-visual__copy { color: white; width: 100%; padding-block-end: 2.5rem; background: linear-gradient(90deg, rgb(10 24 22 / .88), rgb(10 24 22 / .58)); }
+  .guide-visual--photo .guide-visual__title { max-width: 85%; text-shadow: 0 1px 8px rgb(0 0 0 / .2); }
+  .guide-visual--photo .guide-visual__label, .guide-visual--photo .guide-visual__category { color: white; }
+  .guide-visual__credit { position: absolute; z-index: 10; inset-inline: 0; bottom: 0; padding: .3rem .6rem; font-size: .6rem; line-height: 1.35; text-align: end; color: white; background: rgb(0 0 0 / .65); }
+  :global([dir="rtl"]) .guide-visual--photo .guide-visual__copy { background: linear-gradient(270deg, rgb(10 24 22 / .88), rgb(10 24 22 / .58)); }
+  :global([dir="rtl"]) .guide-visual__title { letter-spacing: 0; }
+  @media (prefers-reduced-motion: no-preference) { .guide-visual__symbol { transition: transform .3s ease; } :global(.group:hover) .guide-visual__symbol { transform: rotate(0deg) translateY(-3px); } }
+  @media print { .guide-visual { display: none; } }
+</style>

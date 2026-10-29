@@ -23,6 +23,14 @@ const privacy = await getPageUrl(lang, 'privacy');
 const pdfUrl = checklistPdfPath(lang);
 const hasPdf = checklistPdfExists(lang);
 const target = newsletterProviderTarget(lang);
+const canSubscribe = Boolean(target?.url || NEWSLETTER_ENDPOINT);
+const directCopy = {
+  fr: ['Votre départ, sans rien oublier.', 'Gardez la checklist à portée de main : documents, trajet et préparatifs réunis dans un PDF gratuit.'],
+  en: ['Ready for your departure.', 'Keep your checklist handy: documents, travel and preparations together in a free PDF.'],
+  es: ['Prepara tu salida sin olvidos.', 'Documentos, viaje y preparativos reunidos en una lista PDF gratuita para tenerla a mano.'],
+  de: ['Gut vorbereitet abreisen.', 'Dokumente, Anreise und Vorbereitungen in einer kostenlosen PDF-Checkliste zum Mitnehmen.'],
+  ar: ['استعدّوا للانطلاق دون نسيان شيء.', 'احتفظوا بقائمة الاستعداد: الوثائق والطريق والتحضيرات في ملف PDF مجاني.'],
+}[lang];
 const msgs = { sending: t('newsletter.sending'), pending: t('newsletter.pending'), success: t('newsletter.success'), mailto: t('newsletter.mailto'), error: t('newsletter.error'), invalid: t('newsletter.invalid'), subject: t('newsletter.title') };
 ---
 <section class="container-page section" aria-labelledby="nl-title">
@@ -31,16 +39,16 @@ const msgs = { sending: t('newsletter.sending'), pending: t('newsletter.pending'
     <div class="relative grid gap-8 md:grid-cols-[1.1fr_1fr] md:items-center md:pe-24">
       <div>
         <span class="icon-tile bg-white/10 text-gold-300"><Icon name="mail" /></span>
-        <h2 id="nl-title" class="mt-4 text-2xl font-semibold sm:text-3xl">{t('newsletter.title')}</h2>
-        <p class="mt-3 text-white/80">{t('newsletter.text')}</p>
-        {hasPdf && <div class="mt-5 rounded-2xl border border-white/20 bg-white/5 p-4 text-sm">
+        <h2 id="nl-title" class="mt-4 text-2xl font-semibold sm:text-3xl">{canSubscribe ? t('newsletter.title') : directCopy[0]}</h2>
+        <p class="mt-3 text-white/80">{canSubscribe ? t('newsletter.text') : directCopy[1]}</p>
+        {canSubscribe && hasPdf && <div class="mt-5 rounded-2xl border border-white/20 bg-white/5 p-4 text-sm">
           <p class="font-semibold text-gold-300">{t('newsletter.pdfBadge')}</p>
           <p class="mt-1 font-medium">{t('newsletter.pdfTitle')}</p>
           <p class="mt-1 text-white/80">{t('newsletter.pdfText')}</p>
           <p class="mt-2 text-white/80">{t('newsletter.pdfDirect')} <a href={pdfUrl} download class="font-semibold underline underline-offset-2 hover:text-white" data-track="checklist_pdf_download" data-track-label={`newsletter-direct:${lang}`}>{t('newsletter.pdfDownload')}</a></p>
         </div>}
       </div>
-      <form class="grid gap-3" data-newsletter data-endpoint={target?.url ?? NEWSLETTER_ENDPOINT ?? ''} data-provider={target?.provider ?? ''} data-email={CONTACT_EMAIL} data-lang={lang} data-msgs={JSON.stringify(msgs)} novalidate>
+      {canSubscribe ? <form class="grid gap-3" data-newsletter data-endpoint={target?.url ?? NEWSLETTER_ENDPOINT ?? ''} data-provider={target?.provider ?? ''} data-email={CONTACT_EMAIL} data-lang={lang} data-msgs={JSON.stringify(msgs)} novalidate>
         <label for="nl-email" class="text-sm font-medium text-white/90">{t('newsletter.email')}</label>
         <div class="flex flex-col gap-3 sm:flex-row">
           <input id="nl-email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder={t('newsletter.placeholder')} class="input !border-white/20 !bg-white !text-ink-900" aria-describedby="nl-msg nl-privacy" />
@@ -51,7 +59,12 @@ const msgs = { sending: t('newsletter.sending'), pending: t('newsletter.pending'
         {hasPdf && <p class="hidden text-sm font-medium text-white" data-pdf-gift role="status">{t('newsletter.pdfThanks')} <a href={pdfUrl} download class="font-semibold text-gold-300 underline underline-offset-2" data-track="checklist_pdf_download" data-track-label={`newsletter-gift:${lang}`}>{t('newsletter.pdfDownload')}</a></p>}
         {hasPdf && <p class="text-xs text-white/70">{t('newsletter.pdfNoGate')}</p>}
         <p id="nl-privacy" class="text-xs text-white/70">{t('newsletter.privacy')} {privacy && <a href={privacy} class="underline underline-offset-2 hover:text-white">{t('newsletter.privacyLink')}</a>}</p>
-      </form>
+      </form> : hasPdf && <div class="rounded-2xl border border-[var(--line)] bg-[var(--surface-3)] p-6">
+        <p class="font-semibold">{t('newsletter.pdfTitle')}</p>
+        <p class="mt-2 text-sm">{t('newsletter.pdfNoGate')}</p>
+        <a href={pdfUrl} download class="btn btn-primary mt-5" data-track="checklist_pdf_download" data-track-label={`direct:${lang}`}><Icon name="file" class="size-4" />{t('newsletter.pdfDownload')}</a>
+      </div>}
+
     </div>
   </div>
 </section>

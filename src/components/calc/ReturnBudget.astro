@@ -10,7 +10,7 @@ import { type Locale, LOCALE_META } from '../../i18n';
 import { CITIES, CITY_LABEL } from '../../config/costs';
 import { monthlyStart, RETURN_BUDGET_LAST_CHECKED, COSTS_LAST_UPDATED } from '../../config/return-budget';
 import { CUSTOMS_VALUES as V, CUSTOMS_LAST_CHECKED } from '../../config/customs';
-import { EUR_TO_MAD, EUR_TO_MAD_DATE } from '../../config/site';
+import { EUR_TO_MAD, EUR_RATE_CONTEXT } from '../../config/site';
 import { formatDate } from '../../utils/date';
 import { entryPath, getArticleByKey } from '../../utils/i18n';
 
@@ -81,7 +81,7 @@ const T = {
 const guide = await getArticleByKey(lang, 'permanent-return');
 const rateTxt = new Intl.NumberFormat(LOCALE_META[lang].intl, { maximumFractionDigits: 2 }).format(EUR_TO_MAD);
 const fd = (d: string) => formatDate(new Date(d), lang);
-const note = T.note(rateTxt, fd(EUR_TO_MAD_DATE), fd(COSTS_LAST_UPDATED), fd(CUSTOMS_LAST_CHECKED), fd(RETURN_BUDGET_LAST_CHECKED));
+const note = T.note(rateTxt, EUR_RATE_CONTEXT[lang], fd(COSTS_LAST_UPDATED), fd(CUSTOMS_LAST_CHECKED), fd(RETURN_BUDGET_LAST_CHECKED));
 const starts = Object.fromEntries(CITIES.flatMap((c) => (['budget', 'mid', 'comfort'] as const).map((s) => [`${c}:${s}`, monthlyStart(c, s)])));
 const cfg = JSON.stringify({ rate: EUR_TO_MAD, starts, customs: V, locale: LOCALE_META[lang].intl, txt: { invalid: T.invalid, blocked: T.blocked, not90: T.not90 } });
 const monthly = ['housing', 'food', 'transport', 'leisure', 'mobile'] as const;

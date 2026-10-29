@@ -328,3 +328,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | fibre-casa-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_15.jpg |
 | fuseau-horloge.jpg | Reda benkhadra | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Clock_Bank_al-Maghrib,_Casablanca.jpg |
 | hammam-interieur.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hammam_Saffarin_DSCF6564.jpg |
+
+## Décor marocain
+
+`public/images/moroccan-zellige.webp` : [Orlysi](https://commons.wikimedia.org/wiki/File:MOROCCAN_TILES_ZELLIGE.jpg) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Décor de fond : zellige photographié à Fès. Photo redimensionnée, convertie en WebP, recadrée et atténuée à l’affichage ; adaptation sous la même licence.

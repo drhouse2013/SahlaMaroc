@@ -6,16 +6,16 @@ import type { Scene } from '../data/home';
 import { illustration } from '../utils/illustrations';
 import { getPhoto, photoCreditLabel } from '../utils/photos';
 
-interface Props { scene: Scene | 'home-hero'; lang: Locale; width?: number; widths?: number[]; sizes?: string; eager?: boolean; fallback?: Scene }
-const { scene, lang, width = 520, widths, sizes, eager = false, fallback } = Astro.props;
+interface Props { scene: Scene | 'home-hero'; lang: Locale; width?: number; widths?: number[]; sizes?: string; eager?: boolean; priority?: boolean; fallback?: Scene }
+const { scene, lang, width = 520, widths, sizes, eager = false, priority = eager, fallback } = Astro.props;
 const photo = getPhoto(scene, lang);
 const cls = 'h-full w-full object-cover transition duration-500 group-hover:scale-105';
 ---
 {photo ? (
   <>
-    <Image src={photo.src} alt={photo.alt} width={width} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} />
+    <Image src={photo.src} alt={photo.alt} width={width} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
     {photo.credit && <span dir="auto" class="absolute inset-x-0 bottom-0 truncate bg-black/55 px-2 py-0.5 text-center text-[0.65rem] leading-tight text-white/90">{photoCreditLabel(lang, photo.credit)}</span>}
   </>
 ) : (
-  <Image src={illustration((fallback ?? scene) as Scene)} alt="" width={width} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} />
+  <Image src={illustration((fallback ?? scene) as Scene)} alt="" width={width} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
 )}

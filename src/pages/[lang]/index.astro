@@ -25,7 +25,12 @@ const homeSeo: Record<Locale, [string, string]> = {"fr":["Maroc : guides MRE, vo
 const toolUrl = await getPageUrl(lang, 'calculators');
 const POPULAR = ['marhaba-guide', 'car-180-days', 'send-money', 'buy-property-abroad', 'e-visa', 'sim-esim-morocco'];
 const popular = (await Promise.all(POPULAR.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
-const checklists = (await allChecklists(lang)).slice(0, 3);
+const availableChecklists = await allChecklists(lang);
+const checklistKeys = ['summer-checklist', 'buy-property-abroad', 'kids-pets'];
+const checklists = checklistKeys.flatMap(key => {
+  const item = availableChecklists.find(c => c.article.data.translationKey === key);
+  return item ? [item] : [];
+});
 const checklistsUrl = hubPath(lang, 'checklists');
 ---
 

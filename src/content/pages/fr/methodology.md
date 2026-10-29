@@ -41,7 +41,7 @@ Voir nos [corrections](/fr/corrections-et-mises-a-jour) ou écrivez-nous via la 
 
 ## Crédits photos
 
-Les photos du site proviennent de Wikimedia Commons et sont utilisées sous licences libres (attribution obligatoire ; partage dans les mêmes conditions pour les licences BY-SA).
+Les ressources photographiques de Wikimedia Commons sont répertoriées ci-dessous avec leurs auteurs et licences. Les photos d’illustration ajoutées pour les guides disposent aussi de crédits et de liens de licence sur leurs couvertures.
 
 - **Dunes de Merzouga** : Bjørn Christian Tørrissen, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), [source](https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg)
 - **Ruelle de Chefchaouen** : Ekaterina Kvelidze, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg)
@@ -173,3 +173,19 @@ Les photos du site proviennent de Wikimedia Commons et sont utilisées sous lice
 ## Cartographie
 
 Le fond de carte des villes (Maroc dans ses frontières nationales, provinces du Sud incluses) provient de Natural Earth (domaine public, naturalearthdata.com), simplifié par nos soins ; frontières telles que représentées par le Royaume du Maroc.
+
+
+## Photographies des guides
+
+Les couvertures utilisent des photographies réelles, issues de Wikimedia Commons et d’Unsplash. Les photos génériques servent d’illustration. Auteurs, sources et licences sont accessibles sur les couvertures. Les fichiers sont redimensionnés et peuvent être recadrés pour leur affichage.
+
+- [Jakub Żerdzicki](https://unsplash.com/photos/a-person-holding-a-bunch-of-keys-in-their-hand-Ebj87ehFNNU) — [Unsplash](https://unsplash.com/license).
+- [Guille B](https://unsplash.com/photos/a-man-in-a-suit-signing-a-document-with-a-pen-xYnominUM0I) — [Unsplash](https://unsplash.com/license).
+- [Mediamodifier](https://unsplash.com/photos/black-calculator-beside-black-pen-on-white-printer-paper-I3HPUolh5hA) — [Unsplash](https://unsplash.com/license).
+- [Ivan Kazlouskij](https://unsplash.com/photos/a-bunch-of-car-keys-sitting-on-the-center-console-of-a-car-b-e-mUl_q68) — [Unsplash](https://unsplash.com/license).
+- [Marissa Grootes](https://unsplash.com/photos/open-suitcase-with-travel-essentials-and-hat-TVllFyGaLEA) — [Unsplash](https://unsplash.com/license).
+- [Mees Hofland](https://unsplash.com/photos/moroccan-flag-hangs-on-a-clay-building-in-desert-landscape-xNs31EGSq2M) — [Unsplash](https://unsplash.com/license).
+- [Luigi Ritchie](https://unsplash.com/photos/close-up-of-elderly-hands-clasped-together-EljMmcGmeGA) — [Unsplash](https://unsplash.com/license).
+- [Bertrand SOUBEYRAND](https://commons.wikimedia.org/wiki/File:Le_cruise-ferry_Excellent_de_GNV_dans_le_port_de_Tanger_MED_au_Maroc_le_30-10-2023.jpg) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+- [Orlysi](https://commons.wikimedia.org/wiki/File:MOROCCAN_TILES_ZELLIGE.jpg) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Décor de fond : zellige photographié à Fès. Photo redimensionnée, convertie en WebP, recadrée et atténuée à l’affichage ; adaptation sous la même licence.
