@@ -8,7 +8,6 @@ import type { IconName } from './icons';
 import { MRE_LAST_CHECKED } from '../config/mre';
 import { COSTS_LAST_UPDATED } from '../config/costs';
 import { RETURN_BUDGET_LAST_CHECKED } from '../config/return-budget';
-import { EUR_TO_MAD_DATE } from '../config/site';
 import { CUSTOMS_LAST_CHECKED } from '../config/customs';
 import { CAPITAL_GAINS_LAST_CHECKED } from '../config/capital-gains';
 import { VIGNETTE_LAST_CHECKED } from '../config/vignette';
@@ -28,7 +27,7 @@ export interface Tool {
   /** Organismes officiels (id de src/data/sources.ts) */
   sources: string[];
   /** Date de vérification des valeurs par défaut (ISO) */
-  checked: string;
+  checked?: string;
   /** Guide lié (translationKey) */
   guideKey: string;
 }
@@ -54,7 +53,7 @@ export const TOOLS: Tool[] = [
     },
   },
   {
-    key: 'calc-property-fees', icon: 'home', audience: 'mre', guideKey: 'buy-property-abroad', checked: MRE_LAST_CHECKED, sources: ['ancfcc', 'dgi', 'daamsakane'],
+    key: 'calc-property-fees', icon: 'home', audience: 'mre', guideKey: 'buy-property-abroad', sources: ['ancfcc', 'dgi', 'daamsakane'],
     title: { en: 'Property buying costs', fr: `Frais d'achat immobilier`, es: 'Gastos de compra de vivienda', de: 'Kaufnebenkosten Immobilie', ar: 'مصاريف شراء العقار' },
     text: { en: 'Registration, land registry, notary and Daam Sakane aid.', fr: 'Enregistrement, conservation foncière, notaire et aide Daam Sakane.', es: 'Registro, registro de la propiedad, notario y ayuda Daam Sakane.', de: 'Registrierung, Grundbuch, Notar und Förderung Daam Sakane.', ar: 'التسجيل، المحافظة العقارية، الموثق ودعم السكن.' },
     method: {
@@ -65,11 +64,11 @@ export const TOOLS: Tool[] = [
       ar: 'كل مصروف هو نسبة من السعر (نسب قابلة للتعديل)، مع مبلغ ثابت للمحافظة العقارية وحد أدنى لأتعاب الموثق شاملة الضريبة. يُخصم دعم السكن إذا فعّلت الخانة وكان السعر تحت السقف.',
     },
     assumptions: {
-      fr: [`Droits d'enregistrement : 4 % pour un logement (taux différent pour un terrain ou un local commercial)`, 'Conservation foncière : 1,5 % + 100 DH (minimum 500 DH)', 'Notaire : environ 1 % (minimum usuel 4 000 DH) + TVA 20 %', `Daam Sakane : 100 000 DH jusqu'à 300 000 DH, 70 000 DH jusqu'à 700 000 DH (logement neuf, première acquisition)`],
-      en: ['Registration duty: 4% for a home (a different rate applies to land or commercial premises)', 'Land registry: 1.5% + 100 MAD (minimum 500 MAD)', 'Notary: about 1% (usual minimum 4,000 MAD) + 20% VAT', 'Daam Sakane: 100,000 MAD up to 300,000 MAD, 70,000 MAD up to 700,000 MAD (new home, first purchase)'],
-      es: ['Impuesto de registro: 4 % para una vivienda (otra tasa para terrenos o locales)', 'Registro de la propiedad: 1,5 % + 100 MAD (mínimo 500 MAD)', 'Notario: alrededor del 1 % (mínimo habitual 4.000 MAD) + IVA del 20 %', 'Daam Sakane: 100.000 MAD hasta 300.000 MAD, 70.000 MAD hasta 700.000 MAD (vivienda nueva, primera compra)'],
-      de: ['Registrierungsgebühr: 4 % für Wohnimmobilien (anderer Satz für Grundstücke oder Gewerbe)', 'Grundbuch: 1,5 % + 100 MAD (mínimo 500 MAD)', 'Notar: etwa 1 % (übliches Minimum 4.000 MAD) + 20 % MwSt.', 'Daam Sakane: 100.000 MAD bis 300.000 MAD, 70.000 MAD bis 700.000 MAD (Neubau, Ersterwerb)'],
-      ar: ['رسوم التسجيل: 4% للسكن (نسبة مختلفة للأرض أو المحل التجاري)', 'المحافظة العقارية: 1.5% + 100 درهم (حد أدنى 500 درهم)', 'الموثق: حوالي 1% (حد أدنى معتاد 4000 درهم) + ضريبة 20%', 'دعم السكن: 100000 درهم حتى 300000 درهم، و70000 درهم حتى 700000 درهم (سكن جديد، أول اقتناء)'],
+      fr: [`Enregistrement : 4 % pour un local construit, y compris commercial ; 5 % pour un terrain nu ou une construction à démolir`, 'Conservation foncière : 1,5 % + 100 DH (minimum 500 DH)', 'Notaire : hypothèse de 1 % avec minimum de 4 000 DH, plus TVA 20 % ; devis à demander', `Daam Sakane : 100 000 DH jusqu'à 300 000 DH, 70 000 DH jusqu'à 700 000 DH (logement neuf, première acquisition)`],
+      en: ['Registration: 4% for built premises, including commercial; 5% for bare land or a building to demolish', 'Land registry: 1.5% + 100 MAD (minimum 500 MAD)', 'Notary: assumed 1% with MAD 4,000 minimum, plus 20% VAT; obtain a quote', 'Daam Sakane: 100,000 MAD up to 300,000 MAD, 70,000 MAD up to 700,000 MAD (new home, first purchase)'],
+      es: ['Registro: 4 % para inmuebles construidos, incluidos locales; 5 % para terrenos o edificios para demoler', 'Registro de la propiedad: 1,5 % + 100 MAD (mínimo 500 MAD)', 'Notario: hipótesis del 1 % con mínimo de 4.000 MAD, más IVA del 20 %; pide presupuesto', 'Daam Sakane: 100.000 MAD hasta 300.000 MAD, 70.000 MAD hasta 700.000 MAD (vivienda nueva, primera compra)'],
+      de: ['Registrierung: 4 % für bebaute Immobilien einschließlich Gewerbe; 5 % für unbebaute Grundstücke oder Abrissgebäude', 'Grundbuch: 1,5 % + 100 MAD (Mindestbetrag 500 MAD)', 'Notar: Annahme von 1 % mit mindestens 4.000 MAD zuzüglich 20 % MwSt.; Angebot anfordern', 'Daam Sakane: 100.000 MAD bis 300.000 MAD, 70.000 MAD bis 700.000 MAD (Neubau, Ersterwerb)'],
+      ar: ['التسجيل: 4% للعقار المبني بما فيه المحل التجاري؛ 5% للأرض العارية أو البناية المخصصة للهدم', 'المحافظة العقارية: 1.5% + 100 درهم (حد أدنى 500 درهم)', 'الموثق: افتراض 1% بحد أدنى 4000 درهم، إضافة إلى ضريبة 20%؛ اطلب عرض أتعاب', 'دعم السكن: 100000 درهم حتى 300000 درهم، و70000 درهم حتى 700000 درهم (سكن جديد، أول اقتناء)'],
     },
   },
   {
@@ -92,7 +91,7 @@ export const TOOLS: Tool[] = [
     },
   },
   {
-    key: 'calc-transfer', icon: 'send', audience: 'mre', guideKey: 'send-money', checked: EUR_TO_MAD_DATE, sources: ['bkam', 'oc'],
+    key: 'calc-transfer', icon: 'send', audience: 'mre', guideKey: 'send-money', sources: ['bkam', 'oc'],
     title: { en: 'Real cost of a money transfer', fr: `Coût réel d'un transfert d'argent`, es: 'Coste real de una transferencia', de: 'Echte Kosten einer Überweisung', ar: 'التكلفة الحقيقية للتحويل' },
     text: { en: 'Fees + hidden exchange-rate margin, in one number.', fr: 'Frais + marge cachée sur le taux, en un seul chiffre.', es: 'Comisión + margen oculto del tipo de cambio, en una sola cifra.', de: 'Gebühr + versteckte Kursmarge in einer Zahl.', ar: 'الرسوم + الهامش الخفي في سعر الصرف، في رقم واحد.' },
     method: {
@@ -111,7 +110,7 @@ export const TOOLS: Tool[] = [
     },
   },
   {
-    key: 'calc-summer', icon: 'ship', audience: 'mre', guideKey: 'marhaba-guide', checked: EUR_TO_MAD_DATE, sources: [],
+    key: 'calc-summer', icon: 'ship', audience: 'mre', guideKey: 'marhaba-guide', sources: [],
     title: { en: 'Summer-in-Morocco budget', fr: 'Budget été au bled', es: 'Presupuesto de verano en Marruecos', de: 'Sommerbudget Marokko', ar: 'ميزانية الصيف في البلاد' },
     text: { en: 'Ferry or plane, days, spending and gifts for the family.', fr: 'Ferry ou avion, durée, dépenses et cadeaux pour la famille.', es: 'Ferri o avión, días, gastos y regalos para la familia.', de: 'Fähre oder Flug, Tage, Ausgaben und Geschenke für die Familie.', ar: 'عبّارة أو طائرة، المدة، المصاريف وهدايا العائلة.' },
     method: {
@@ -244,16 +243,16 @@ export const TOOLS: Tool[] = [
     },
   },
   {
-    key: 'calc-fx', icon: 'send', audience: 'mre', guideKey: 'send-money', checked: EUR_TO_MAD_DATE, sources: ['bkam', 'oc'],
+    key: 'calc-fx', icon: 'send', audience: 'mre', guideKey: 'send-money', sources: ['bkam', 'oc'],
     title: { en: 'Euro to dirham converter', fr: 'Convertisseur euro-dirham', es: 'Conversor euro-dírham', de: 'Euro-Dirham-Rechner', ar: 'محوّل اليورو إلى الدرهم' },
-    text: { en: 'Convert euros to dirhams and back with a dated rate you can edit.', fr: 'Convertissez euros et dirhams avec un taux daté que vous pouvez modifier.', es: 'Convierte euros y dírhams con un tipo fechado que puedes modificar.', de: 'Rechne Euro und Dirham mit einem datierten, änderbaren Kurs um.', ar: 'حوّل بين اليورو والدرهم بسعر مؤرخ يمكنك تعديله.' },
+    text: {"fr":"Convertissez euros et dirhams avec votre taux ou un exemple modifiable.","en":"Convert euros and dirhams with your own rate or an editable example.","es":"Convierte euros y dírhams con tu tipo o un ejemplo editable.","de":"Rechne Euro und Dirham mit deinem Kurs oder einem änderbaren Beispiel um.","ar":"حوّل بين اليورو والدرهم بسعرك الفعلي أو بمثال قابل للتعديل."},
     method: {
-      fr: `Montant × taux (euros vers dirhams) ou montant ÷ taux (dirhams vers euros), arrondi au centime. Le taux de départ est le taux indicatif du projet à la date indiquée ; vous pouvez le remplacer par celui de votre banque.`,
-      en: 'Amount × rate (euros to dirhams) or amount ÷ rate (dirhams to euros), rounded to the cent. The starting rate is the project\'s indicative rate on the date shown; you can replace it with your bank\'s rate.',
-      es: 'Importe × tipo (euros a dírhams) o importe ÷ tipo (dírhams a euros), redondeado al céntimo. El tipo inicial es el tipo orientativo del proyecto en la fecha indicada; puedes sustituirlo por el de tu banco.',
-      de: 'Betrag × Kurs (Euro in Dirham) oder Betrag ÷ Kurs (Dirham in Euro), auf den Cent gerundet. Der Startkurs ist der Richtkurs des Projekts am angegebenen Datum; Sie können ihn durch den Kurs Ihrer Bank ersetzen.',
-      ar: 'المبلغ × السعر (من اليورو إلى الدرهم) أو المبلغ ÷ السعر (من الدرهم إلى اليورو)، مقرَّب إلى السنتيم. سعر البداية هو السعر الإرشادي للمشروع في التاريخ المبيّن؛ يمكنك تعويضه بسعر بنكك.',
-    },
+      "fr": "Montant × taux (euros vers dirhams) ou montant ÷ taux (dirhams vers euros), arrondi au centime. Le taux prérempli est un exemple de calcul ; remplacez-le par celui de votre banque ou opérateur.",
+      "en": "Amount × rate (euros to dirhams) or amount ÷ rate (dirhams to euros), rounded to the cent. The prefilled rate is a calculation example; replace it with your bank or provider rate.",
+      "es": "Importe × tipo (euros a dírhams) o importe ÷ tipo (dírhams a euros), redondeado al céntimo. El tipo inicial es un ejemplo de cálculo; sustitúyelo por el de tu banco o proveedor.",
+      "de": "Betrag × Kurs (Euro in Dirham) oder Betrag ÷ Kurs (Dirham in Euro), auf den Cent gerundet. Der voreingestellte Kurs ist ein Rechenbeispiel; ersetze ihn durch den Kurs deiner Bank oder deines Anbieters.",
+      "ar": "المبلغ × السعر (من اليورو إلى الدرهم) أو المبلغ ÷ السعر (من الدرهم إلى اليورو)، مقرباً إلى السنتيم. السعر الأولي مثال للحساب؛ عوّضه بسعر بنكك أو مزوّد الخدمة."
+},
     assumptions: {
       fr: ['Taux indicatif unique, non officiel ; ni marge bancaire ni frais de transfert', 'Le taux appliqué par votre banque ou opérateur fait foi ; cours officiels : Bank Al-Maghrib', `Aucune donnée n'est envoyée : le calcul se fait dans votre navigateur`],
       en: ['Single indicative rate, not official; no bank margin or transfer fees', 'The rate applied by your bank or provider prevails; official rates: Bank Al-Maghrib', 'No data is sent: the calculation runs in your browser'],
