@@ -12,9 +12,15 @@ export const ADSENSE_SLOTS = {
 /** Analytics respectueux de la vie privée (Umami Cloud gratuit — pas de bannière cookies nécessaire) */
 export const UMAMI_WEBSITE_ID = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID as string | undefined;
 
-/** Taux indicatif pour le calculateur (à mettre à jour mensuellement). 30/09/2026 : 1 EUR ≈ 11.0 MAD */
+/** Exemple arrondi pour les simulations : aucun relevé BAM daté ne justifie cette valeur. */
 export const EUR_TO_MAD = 11.0;
-export const EUR_TO_MAD_DATE = '2026-09-30';
+export const EUR_RATE_CONTEXT = {
+  fr: 'hypothèse de calcul, pas un cours bancaire ; utilisez votre taux réel',
+  en: 'example assumption, not a bank rate; use your actual rate',
+  es: 'hipótesis de cálculo, no un tipo bancario; usa tu tipo real',
+  de: 'Rechenbeispiel, kein Bankkurs; verwende deinen tatsächlichen Kurs',
+  ar: 'افتراض للحساب وليس سعراً بنكياً؛ استخدم سعر الصرف الفعلي',
+} as const;
 
 /**
  * Contact public. ⚠️ L'adresse @sahlamaroc.com ne fonctionnera qu'après l'achat du domaine et la

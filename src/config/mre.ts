@@ -7,11 +7,12 @@ export const MRE_LAST_CHECKED = '2026-10-16';
 
 /** Frais d'acquisition immobilière (taux usuels constatés en 2026) */
 export const PROPERTY_FEES = {
-  /** Droits d'enregistrement : logement 4 % ; terrain nu / local commercial : taux différent (souvent cité à 5 %) */
+  /** Droits d’enregistrement : locaux construits (dont commerces) 4 % ; terrain nu / construction à démolir 5 %. CGI art. 133 F-1 et G-1, rappel CNONM notaires.org.ma, relu le 28/10/2026 */
   registrationHousing: 4,
   registrationLand: 5,
   /** Conservation foncière (ANCFCC) : 1,5 % + droit fixe 100 DH par propriété, minimum de perception 500 DH
-   *  (décret n° 2.16.375, chap. II A.1, tarif lu sur ancfcc.gov.ma/media/1234/tarifs-fr.pdf, 2026-10-16) */
+   *  ANCFCC, cession totale : https://www.ancfcc.gov.ma/media/3896/tarifs-et-delais.pdf
+   *  Montants relus le 28/10/2026 ; la formalité exacte dépend du dossier. */
   landRegistry: 1.5,
   landRegistryFixed: 100,
   landRegistryMin: 500,
