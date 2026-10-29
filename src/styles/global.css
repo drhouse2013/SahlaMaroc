@@ -1029,10 +1029,16 @@ html.dark { --surface:#1a2a23; --surface-2:#111c18; --surface-3:#283c31; --text:
 html.dark { --morocco-wash: rgb(26 42 35 / .96); --hero-wash: rgb(26 42 35 / .83); }
 body { background-image: linear-gradient(var(--morocco-wash), var(--morocco-wash)), url('/images/moroccan-zellige.webp') !important; background-size: auto, 720px auto !important; }
 .home-redesign { background: transparent; }
-.new-home-hero { position: relative; isolation: isolate; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
-.new-home-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--surface) 5%, var(--morocco-wash) 45%, var(--hero-wash)), url('/images/moroccan-zellige.webp') center right / auto, 720px auto; }
+.new-home-hero { position: relative; isolation: isolate; padding: 4rem 0 1.5rem; border-bottom: 3px solid #214e40; }
+.new-home-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgb(23 62 51 / .12), rgb(23 62 51 / .12)), url('/images/moroccan-zellige.webp'); background-position: center; background-size: auto, 720px auto; }
 :lang(ar) .new-home-hero::before { transform: scaleX(-1); }
-.new-home-hero::after { content: ''; position: absolute; inset: 0 0 auto; height: 7px; background: linear-gradient(rgb(33 78 64 / .25), rgb(33 78 64 / .25)), url('/images/moroccan-zellige.webp') center 22% / auto, 360px auto; }
+.new-home-hero::after { content: ''; position: absolute; inset: 0 0 auto; height: 2.5rem; border-block: 3px solid #b98946; background: url('/images/moroccan-zellige.webp') center 22% / 360px auto; }
+.new-home-hero .new-hero-grid { gap: 2rem; padding: 1.75rem; border: 1px solid #b98946; border-radius: 1.25rem; background: var(--surface); box-shadow: 0 14px 40px rgb(16 45 38 / .2); }
+.new-home-hero .new-hero-copy { padding-block: 0; }
+.new-home-hero .new-photo-grid { grid-template-rows: 180px 180px; }
+.new-home-hero .new-destination-photo--main { margin-block: 0; border-radius: 8rem 8rem .8rem .8rem; }
+.new-home-hero .new-destination-photo--main .new-photo-name { top: auto; bottom: 1.8rem; }
+.new-home-hero .new-home-search { margin-top: 1rem; border-color: #b98946; }
 .new-hero-copy h1 { color: var(--brand); }
 .new-hero-copy .eyebrow > span { background: var(--accent); }
 .new-home-search, .new-checklists { background: var(--surface); }
@@ -1043,5 +1049,13 @@ body { background-image: linear-gradient(var(--morocco-wash), var(--morocco-wash
 [data-article] > .prose { background: var(--surface); border-radius: .75rem; padding: clamp(1rem, 2vw, 1.5rem); }
 .home-redesign .newsletter-panel .btn-primary { color: #fff; }
 @media (min-width: 1280px) { #main { max-width: 88rem; margin-inline: auto; border-inline: 1px solid var(--line); } }
-@media (max-width: 767px) { .new-home-hero::before { background-image: linear-gradient(var(--morocco-wash), var(--hero-wash)), url('/images/moroccan-zellige.webp'); } }
+@media (max-width: 767px) {
+  .new-home-hero { padding-top: 3.25rem; }
+  .new-home-hero > .container-page { padding-inline: .75rem; }
+  .new-home-hero .new-hero-grid { padding: 1.1rem; gap: 1.5rem; border-radius: 1rem; }
+  .new-home-hero .new-hero-copy h1 { font-size: clamp(2.25rem, 10vw, 3.3rem); }
+  .new-home-hero .new-hero-intro { font-size: .85rem; line-height: 1.75; }
+  .new-home-hero .new-photo-grid { grid-template-rows: 95px 95px; }
+  .new-home-hero .new-destination-photo--main { border-radius: 5rem 5rem .6rem .6rem; }
+}
 @media print { body { background: white !important; } .new-home-hero::before, .new-home-hero::after { display: none; } }
