@@ -99,6 +99,7 @@
   --step-4: clamp(1.75rem, 1.45rem + 1.3vw, 2.25rem);
   --step-5: clamp(2.125rem, 1.6rem + 2.2vw, 3rem);
   --step-6: clamp(2.5rem, 1.7rem + 3.6vw, 4rem);
+  --step-7: clamp(2.75rem, 1.6rem + 4.6vw, 5rem);
   /* Rythme */
   --section-gap: 4rem;
 }
@@ -234,7 +235,8 @@ html.dark {
   /* Lien d'action éditorial (« Tout voir ») */
   .text-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; font-size: .95rem; font-weight: 700; color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; }
   .text-link:hover { text-decoration-thickness: 2px; }
-  .section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; }
+  .section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line-strong); }
+  .tools-band .section-head { border-bottom-color: rgb(244 239 230 / .3); }
 }
 
 /* En-tête : ivoire opaque (pas de verre), filet bas */
@@ -248,7 +250,7 @@ html.dark {
 .home-hero__media > span[dir] { inset-inline-start: auto; padding-inline: .75rem; text-align: end; }
 .home-hero__panel { position: relative; margin-top: -9rem; max-width: 40rem; background: var(--surface-2); padding: 2.5rem 2.5rem 0 0; }
 :dir(rtl) .home-hero__panel { padding: 2.5rem 0 0 2.5rem; }
-.home-hero h1 { font-size: var(--step-6); font-weight: 520; line-height: 1.02; letter-spacing: -0.035em; color: var(--text); margin-top: 1rem; }
+.home-hero h1 { font-size: var(--step-7); font-weight: 520; line-height: 1.02; letter-spacing: -0.035em; color: var(--text); margin-top: 1rem; }
 .home-hero h1 em { font-style: italic; color: var(--accent); font-weight: 420; }
 :lang(ar) .home-hero h1 { line-height: 1.3; letter-spacing: 0; }
 :lang(ar) .home-hero h1 em { font-style: normal; font-weight: 600; }
@@ -266,7 +268,7 @@ html.dark {
 .needs { display: grid; gap: 2.5rem; margin-top: 3rem; }
 @media (min-width: 900px) { .needs { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
 .need { border-top: 2px solid var(--text); padding-top: 1.25rem; }
-.need__num { font-family: var(--font-display); font-size: 1rem; color: var(--accent); font-variant-numeric: lining-nums; }
+.need__num { font-family: var(--font-display); font-style: italic; font-size: var(--step-2); color: var(--accent); font-variant-numeric: lining-nums tabular-nums; }
 .need h3 { font-size: var(--step-3); margin-top: .5rem; }
 .need > p { margin-top: .5rem; color: var(--muted); }
 .need ul { margin-top: 1.25rem; }
@@ -286,8 +288,9 @@ html.dark {
 @media (min-width: 768px) { .dest-grid { grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 18rem 18rem; } .dest-grid > li:first-child > .dest { grid-row: span 2; } .dest-grid > li:nth-child(4) > .dest { grid-column: span 2; } }
 .dest { position: relative; display: block; overflow: hidden; border-radius: .75rem; min-height: 16rem; background: var(--surface-3); color: #fff; }
 .dest img { position: absolute; inset: 0; }
+.dest__num { position: absolute; top: 1rem; inset-inline-start: 1.25rem; z-index: 1; font-size: .75rem; font-weight: 700; letter-spacing: .14em; color: #fff; text-shadow: 0 1px 3px rgb(0 0 0 / .5); font-variant-numeric: tabular-nums; }
 .dest__label { position: absolute; inset-inline: 0; bottom: 0; padding: 3rem 1.25rem 2rem; background: linear-gradient(transparent, rgb(15 20 18 / .72)); }
-.dest__label h3 { font-size: var(--step-3); color: #fff; }
+.dest__label h3 { font-size: var(--step-4); color: #fff; }
 .dest__label p { margin-top: .25rem; font-size: .875rem; color: rgb(255 255 255 / .9); }
 
 /* Outils : bande vert profond, liste numérotée */
@@ -304,6 +307,13 @@ html.dark {
 :lang(ar) .tool-list__title { font-family: var(--font-arabic); }
 .tool-list__text { display: block; margin-top: .25rem; font-size: .9rem; color: rgb(244 239 230 / .78); }
 .tool-list svg { color: var(--color-terracotta-300); }
+@media (prefers-reduced-motion: no-preference) {
+  .dest img { transition: transform 600ms var(--ease-out); }
+  .dest:hover img, .dest:focus-visible img { transform: scale(1.03); }
+  .tool-list a > svg:last-child, .need li svg { transition: transform var(--dur-base) var(--ease-out); }
+  .tool-list a:hover > svg:last-child, .need li a:hover svg { transform: translateX(4px); }
+  :dir(rtl) .tool-list a:hover > svg:last-child, :dir(rtl) .need li a:hover svg { transform: translateX(-4px); }
+}
 
 /* Checklists, note de l'éditeur */
 .checklists { display: grid; gap: 2rem; }

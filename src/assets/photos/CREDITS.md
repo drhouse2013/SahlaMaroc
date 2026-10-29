@@ -89,7 +89,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/marrakech-saadian-tombs.jpg | C messier, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg |
 | spots/marrakech-el-badi.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg |
 | spots/casablanca-hassan-ii.jpg | Tinuzzo, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg |
-| spots/casablanca-old-medina.jpg | Rais67, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ancien_consulat_d%27Allemagne.JPG |
+| spots/casablanca-old-medina.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_of_Casablanca_5.jpg |
 | spots/rabat-oudayas.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg |
 | spots/rabat-hassan-tower.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg |
 | spots/rabat-chellah.jpg | Mohibsam, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Challah.jpg |
@@ -122,7 +122,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/nador-gourougou.jpg | Rachid0615 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mont_Gourougou.jpg |
 | spots/nador-corniche.jpg | Soufiane errami | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador_corniche.jpg |
 | spots/nador-city-hill.jpg | Pencil68 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador_City_Hill.jpg |
-| spots/nador-marchica.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg |
+| spots/nador-marchica.jpg | Taloubant | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg |
 | spots/tetouan-medina.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_de_Tetouan_Nov2020_054.jpg |
 | spots/tetouan-bab-okla.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg |
 | spots/tetouan-archaeological-museum.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg |
@@ -191,7 +191,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
-| spots/nador-mar-chica-beach.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg |
+| spots/nador-mar-chica-beach.jpg | ArnoldBetten | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador,_Uferpromenade_am_Mar_Chica.jpg |
 | spots/nador-kariat-arekmane.jpg | Soufiane elkadaoui | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:La_plage_de_Kariat_Arkmane.jpg |
 | spots/tetouan-royal-palace.jpg | Dickelbers | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tetouan_Morocco_%C2%A9_03.jpg |
 | spots/meknes-sidi-ben-aissa.jpg | Robert Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg |
