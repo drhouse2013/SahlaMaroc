@@ -572,19 +572,10 @@ header.sticky.is-scrolled .container-page { height: var(--header-h); }
   --cat-glow: rgb(10 92 63 / .14);
 }
 
-/* Header thématique : dégradé subtil + lueur radiale */
+/* Une base blanche lisible ; la couverture porte l'identité visuelle du sujet. */
 [data-category] .article-header {
-  background-color: var(--cat-soft);
-  background-image:
-    radial-gradient(ellipse 70% 50% at 90% 10%, var(--cat-glow), transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23214e40' stroke-opacity='.06' stroke-width='1.5'/%3E%3C/svg%3E");
-  border-bottom: 2px solid color-mix(in srgb, var(--cat-accent) 25%, transparent);
-}
-.dark [data-category] .article-header {
   background-color: var(--surface);
-  background-image:
-    radial-gradient(ellipse 70% 50% at 90% 10%, var(--cat-glow), transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 6l7 18 18 7-18 7-7 18-7-18-18-7 18-7z' fill='none' stroke='%23f3ece0' stroke-opacity='.05' stroke-width='1.5'/%3E%3C/svg%3E");
+  border-bottom: 1px solid var(--line);
 }
 
 /* Badge catégorie coloré selon le thème */
@@ -1031,3 +1022,24 @@ body { background:var(--surface) !important; color:var(--text); }
 
 html.dark { --surface:#1a2a23; --surface-2:#111c18; --surface-3:#283c31; --text:#f1eadb; --muted:#c0c9c2; --line:#ffffff18; --line-strong:#ffffff30; --brand:#e0eee4; color-scheme:dark; }
 .dark .home-redesign .eyebrow { color:#a3c7b2; }
+
+/* Moroccan material: real Fès zellige, quiet behind text, stronger at the edges.
+   Orlysi / Wikimedia Commons, CC BY-SA 4.0; credits on the methodology pages. */
+:root { --morocco-wash: rgb(255 255 255 / .95); --hero-wash: rgb(255 255 255 / .78); }
+html.dark { --morocco-wash: rgb(26 42 35 / .96); --hero-wash: rgb(26 42 35 / .83); }
+body { background-image: linear-gradient(var(--morocco-wash), var(--morocco-wash)), url('/images/moroccan-zellige.webp') !important; background-size: auto, 720px auto !important; }
+.home-redesign { background: transparent; }
+.new-home-hero { position: relative; isolation: isolate; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.new-home-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--surface) 5%, var(--morocco-wash) 45%, var(--hero-wash)), url('/images/moroccan-zellige.webp') center right / auto, 720px auto; }
+:lang(ar) .new-home-hero::before { transform: scaleX(-1); }
+.new-home-hero::after { content: ''; position: absolute; inset: 0 0 auto; height: 7px; background: linear-gradient(rgb(33 78 64 / .25), rgb(33 78 64 / .25)), url('/images/moroccan-zellige.webp') center 22% / auto, 360px auto; }
+.new-hero-copy h1 { color: var(--brand); }
+.new-hero-copy .eyebrow > span { background: var(--accent); }
+.new-home-search, .new-checklists { background: var(--surface); }
+.home-redesign .section-title::after { content: ''; display: block; width: 2rem; height: 3px; margin-top: .85rem; background: var(--accent); border-radius: 2px; }
+.new-checklists { border-top: 3px solid var(--accent); }
+.zellige-soft, .dark .zellige-soft { background-image: linear-gradient(var(--morocco-wash), var(--morocco-wash)), url('/images/moroccan-zellige.webp'); background-size: auto, 720px auto; }
+.home-redesign .newsletter-panel .btn-primary { color: #fff; }
+@media (min-width: 1280px) { #main { max-width: 88rem; margin-inline: auto; border-inline: 1px solid var(--line); } }
+@media (max-width: 767px) { .new-home-hero::before { background-image: linear-gradient(var(--morocco-wash), var(--hero-wash)), url('/images/moroccan-zellige.webp'); } }
+@media print { body { background: white !important; } .new-home-hero::before, .new-home-hero::after { display: none; } }
