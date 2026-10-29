@@ -7,6 +7,7 @@ import { render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
 import AffiliateLink from '../../components/AffiliateLink.astro';
+import ContentLink from '../../components/ContentLink.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import Callout from '../../components/Callout.astro';
 import BudgetCalculator from '../../components/BudgetCalculator.astro';
@@ -68,7 +69,7 @@ const alternates = entry ? await getEntryAlternates(entry) : {};
 const switchTargets = entry ? await getEntrySwitchTargets(entry) : {};
 
 /** Composants disponibles dans tous les fichiers MDX SANS import. */
-const components = { AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, RetirementBudget, ReturnBudget, CityCosts, CarDaysCounter, CustomsCalc, CapitalGainCalc, VignetteCalc, FxCalc, FerryCompare, PrayerTimes, RamadanTimes, HighwayTollCalc, Roadmap, RoadmapStep, Checklist, PdfDownload, ContactForm, Newsletter };
+const components = { a: ContentLink, AffiliateLink, AdSlot, Callout, BudgetCalculator, ToolGrid, PropertyFees, MortgageCalc, TransferCalc, SummerBudget, RetirementBudget, ReturnBudget, CityCosts, CarDaysCounter, CustomsCalc, CapitalGainCalc, VignetteCalc, FxCalc, FerryCompare, PrayerTimes, RamadanTimes, HighwayTollCalc, Roadmap, RoadmapStep, Checklist, PdfDownload, ContactForm, Newsletter };
 
 let related: Awaited<ReturnType<typeof getArticles>> = [];
 if (entry?.collection === 'articles') {
