@@ -274,3 +274,23 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Le sélecteur propose Système, Clair et Sombre dans les cinq langues. Un choix manuel reste possible et l’option Système permet de réactiver l’automatisme.
 - Nouvelle clé locale `sahla-theme-preference` : les anciennes sélections binaires ne bloquent pas le nouveau comportement automatique. La préférence se synchronise entre onglets ; un stockage indisponible ne bloque pas l’affichage.
 - Le thème est appliqué avant le premier rendu ; la couleur de l’interface du navigateur est adaptée. Tests de comportement ajoutés aux contrôles automatiques.
+
+## 2026-10-28 — Guides : lecture instinctive, photographies et contrôle factuel ciblé
+
+- À partir du message transmis du propriétaire, puis des précisions de l’utilisateur : miniatures lisibles et liées au titre, pages adaptées à leur sujet. Recherche placée dès l’entrée, compteur de résultats visible, parcours dépliables et masqués pendant une recherche, validation au clavier vers les résultats.
+- Couvertures éditoriales communes aux cartes et aux pages : titres explicites, photos réelles du sujet, crédits et liens de licence visibles. 37 guides disposent d’une photo spécifique issue du fonds existant ; 33 licences uniques ont été relues dans l’API Wikimedia Commons sans divergence. Huit photographies réelles supplémentaires sont livrées en WebP. Les destinations conservent leurs photographies créditées. Aucune image générée par IA n’est utilisée, conformément à la précision de l’utilisateur.
+- Pages de guides : fond clair blanc, couverture en paysage, raccourcis liés aux véritables intertitres sur ordinateur ; sommaire complet existant conservé sur mobile. Modes Système / Clair / Sombre conservés.
+- e-Visa, cinq langues : note et guide officiels relus pour les profils B et C, validité du passeport, délais moyens en jours ouvrables et montants 770 / 1 100 DH. Ajout d’un périmètre de contrôle daté ; pas de fausse date de vérification de l’ensemble du guide.
+- Calculateurs : 11 MAD/EUR requalifié en hypothèse de calcul, suppression de sa date non justifiée et des badges de vérification qu’elle alimentait. Honoraires de notaire à 1 % / minimum 4 000 DH explicitement présentés comme hypothèses ; pas de date globale de validation pour cet ensemble de paramètres.
+- Correction de classement : un local commercial construit relève du choix « local construit » à 4 %, pas du terrain nu à 5 %. Référence : CGI art. 133 F-1 / G-1, rappel publié par le Conseil national de l’Ordre des notaires. Conservation foncière 1,5 % + 100 DH / minimum 500 DH retrouvée dans le document ANCFCC ; référence de fichier corrigée.
+- Informations confirmées sans modification : retour à GMT par décret 2.26.530 ; règle générale des 180 jours ADII ; montants de base Daam Sakane ; financement immobilier MRE jusqu’à 80 % selon l’IGOC 2026. Les contrôles ne constituent pas une revue juridique complète des 96 guides français. Aucun avis, témoignage ni chiffre d’usage inventé n’a été ajouté.
+- Contrôle exhaustif des liens et ressources locaux du build : 28 cibles de villes incorrectement traduites découvertes dans les guides ES/DE/AR. Les liens de villes connus des contenus MDX passent désormais par le routage multilingue commun (composant ContentLink), y compris les slugs des villes. Le contrôle CI check:dist a été étendu à toutes les pages générées et aux ressources ; résultat local final : 927 pages, 104 362 références, zéro cible manquante.
+
+## 2026-10-29 — Identité marocaine et audit
+
+- Zellige réel de Fès (Orlysi, CC BY-SA 4.0), optimisé et crédité ; fond clair, surfaces de lecture sobres, adaptation sombre et RTL. Aucune image IA.
+- Remplacement des mentions de popularité sans données par une sélection éditoriale ; checklists de départ, achat et famille.
+- Accès explicite à tous les guides dans les menus ; téléchargement PDF direct si aucun service de newsletter n’est configuré.
+- Bordures harmonisées sur le jeton existant ; priorité réseau réservée à l’image principale, distincte de la taille des cartes.
+
+- Contrôle à 325 px enfin disponible : pas de débordement FR/AR. Sur mobile, le titre et les actions précèdent désormais les photos pour rendre le point de départ visible plus tôt.
