@@ -997,7 +997,7 @@ body { background:var(--surface) !important; color:var(--text); }
  .new-hero-actions { margin-top:1.25rem; gap:.9rem; }
  .new-hero-actions .btn { font-size:.75rem; }
  .new-hero-reassurance { margin-top:1rem; }
- .new-photo-grid { order:-1; grid-template-rows:95px 95px; gap:.6rem; }
+ .new-photo-grid { grid-template-rows:95px 95px; gap:.6rem; }
  .new-destination-photo--main { margin-top:.7rem; margin-bottom:.7rem; }
  .new-photo-name { inset-inline:.5rem; top:.5rem; font-size:.65rem; padding:.4rem .5rem; }
  .new-destination-photo > span[dir] { font-size:.5rem; }
