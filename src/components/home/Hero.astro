@@ -8,11 +8,11 @@ interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const copy = {
- fr: { eyebrow: 'Le guide des MRE et des voyageurs', title: 'Le Maroc, à votre façon.', intro: 'Un retour en famille, un premier voyage, un projet de vie. Trouvez les bons repères pour préparer la suite, simplement.', cta: 'Préparer mon projet', other: 'Explorer les destinations', search: 'On commence par quoi ?', placeholder: 'Une ville, une démarche, une envie…', free: 'Guides pratiques et outils gratuits' },
- en: { eyebrow: 'The guide for MREs and travellers', title: 'Morocco, your way.', intro: 'A family reunion, a first trip, a new chapter. Find the practical advice you need to plan what comes next.', cta: 'Plan my project', other: 'Explore destinations', search: 'Where shall we start?', placeholder: 'A city, a question, an idea…', free: 'Practical guides and free tools' },
- es: { eyebrow: 'La guía para la diáspora y los viajeros', title: 'Marruecos, a tu manera.', intro: 'Un regreso en familia, un primer viaje, un nuevo proyecto. Encuentra la información práctica para preparar lo que viene.', cta: 'Preparar mi proyecto', other: 'Explorar destinos', search: '¿Por dónde empezamos?', placeholder: 'Una ciudad, una pregunta, una idea…', free: 'Guías prácticas y herramientas gratuitas' },
- de: { eyebrow: 'Der Guide für MRE und Reisende', title: 'Marokko, auf Ihre Art.', intro: 'Ein Wiedersehen mit der Familie, die erste Reise, ein neues Kapitel. Finden Sie die praktischen Informationen für Ihre nächsten Schritte.', cta: 'Mein Projekt planen', other: 'Reiseziele entdecken', search: 'Wo fangen wir an?', placeholder: 'Eine Stadt, eine Frage, eine Idee…', free: 'Praktische Guides und kostenlose Rechner' },
- ar: { eyebrow: 'دليل مغاربة العالم والمسافرين', title: 'المغرب، على طريقتكم.', intro: 'عودة إلى الأهل أو رحلة أولى أو مشروع جديد. معلومات عملية تساعدكم على التحضير للخطوة القادمة بكل بساطة.', cta: 'أحضّر لمشروعي', other: 'أكتشف الوجهات', search: 'من أين نبدأ؟', placeholder: 'مدينة، سؤال، فكرة…', free: 'أدلة عملية وأدوات مجانية' },
+ fr: { eyebrow: 'Le guide des MRE et des voyageurs', title: 'Le Maroc, à votre façon.', intro: 'Retrouver les siens, découvrir une ville ou préparer un achat : des guides pratiques, des checklists et des calculateurs pour avancer au Maroc, étape par étape.', cta: 'Préparer mon projet', other: 'Explorer les destinations', search: 'On commence par quoi ?', placeholder: 'Une ville, une démarche, une envie…', free: 'Guides pratiques et outils gratuits' },
+ en: { eyebrow: 'The guide for MREs and travellers', title: 'Morocco, your way.', intro: 'Reunite with family, discover a city or plan a property purchase: practical guides, checklists and calculators for your next steps in Morocco.', cta: 'Plan my project', other: 'Explore destinations', search: 'Where shall we start?', placeholder: 'A city, a question, an idea…', free: 'Practical guides and free tools' },
+ es: { eyebrow: 'La guía para la diáspora y los viajeros', title: 'Marruecos, a tu manera.', intro: 'Volver a ver a los tuyos, descubrir una ciudad o preparar una compra: guías prácticas, listas y calculadoras para avanzar en Marruecos, paso a paso.', cta: 'Preparar mi proyecto', other: 'Explorar destinos', search: '¿Por dónde empezamos?', placeholder: 'Una ciudad, una pregunta, una idea…', free: 'Guías prácticas y herramientas gratuitas' },
+ de: { eyebrow: 'Der Guide für MRE und Reisende', title: 'Marokko, auf Ihre Art.', intro: 'Die Familie wiedersehen, eine Stadt entdecken oder einen Immobilienkauf planen: praktische Ratgeber, Checklisten und Rechner für Ihre nächsten Schritte in Marokko.', cta: 'Mein Projekt planen', other: 'Reiseziele entdecken', search: 'Wo fangen wir an?', placeholder: 'Eine Stadt, eine Frage, eine Idee…', free: 'Praktische Guides und kostenlose Rechner' },
+ ar: { eyebrow: 'دليل مغاربة العالم والمسافرين', title: 'المغرب، على طريقتكم.', intro: 'لقاء الأهل أو اكتشاف مدينة أو التحضير لشراء عقار: أدلة عملية وقوائم وحاسبات تساعدكم على التقدّم في المغرب، خطوة بخطوة.', cta: 'أحضّر لمشروعي', other: 'أكتشف الوجهات', search: 'من أين نبدأ؟', placeholder: 'مدينة، سؤال، فكرة…', free: 'أدلة عملية وأدوات مجانية' },
 }[lang];
 const photos = ['marrakech', 'chefchaouen', 'essaouira'].map(id => CITY_PAGES.find(c => c.id === id)!);
 const searchUrl = hubPath(lang, 'search');
@@ -29,7 +29,7 @@ const searchUrl = hubPath(lang, 'search');
       </div>
       <div class="new-photo-grid">
         {photos.map((c,i) => <a href={cityPath(lang,c.slug[lang])} class:list={['new-destination-photo',i===0 && 'new-destination-photo--main']}>
-          <CityImage scene={c.id} lang={lang} width={i===0?720:480} sizes={i===0?'(min-width:768px) 30vw, 65vw':'(min-width:768px) 20vw, 35vw'} eager />
+          <CityImage scene={c.id} lang={lang} width={i===0?720:480} sizes={i===0?'(min-width:768px) 30vw, 65vw':'(min-width:768px) 20vw, 35vw'} eager priority={i===0} />
           <span class="new-photo-name">{cityLabel(c.id,lang)}<span aria-hidden="true">↗</span></span>
         </a>)}
       </div>
