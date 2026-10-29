@@ -3,7 +3,7 @@
 Méthode : Playwright, captures pleine page 1440 et 390 px + relevé des styles calculés (h1/h2/corps). Aucune marque, aucun texte ni composition propriétaire repris : seuls des principes.
 
 ## 1. Vast Luxury (framer.elliotli.dev/template/vast-luxury)
-**Inaccessible** : HTTP 404 (« page not found »), aucune démo trouvée. Non étudiée.
+**Inaccessible, re-testé le 29/10/2026** : HTTP 404 en fetch live (maxAge 0) ; le site propose seulement « able-luxury » (autre gabarit) et une recherche web de la démo n'a renvoyé que la page auteur (elliotli.dev) et des listes, aucune démo de Vast Luxury. Non étudiée, rien d'inventé.
 
 ## 2. Far Enough (démo farenough.framer.website)
 - Hero typographique : serif léger très grand (≈148 px, interlettrage −3 %), seconde ligne en italique : contraste romain/italique comme signature.
@@ -21,9 +21,9 @@ Méthode : Playwright, captures pleine page 1440 et 390 px + relevé des styles 
 **Pour Sahla** : filet sous chaque `.section-head` ; la structure « une + liste » existe déjà. Pas de serif unique (lisibilité des guides pratiques).
 
 ## 4. Explor (démo explor.framer.website)
-- Démo accessible mais rendue par animation au défilement : capture pleine page quasi vide (contenu non stabilisé), seul le hero est lisible : titre serif 72 px sur photo de mer.
-- Principe observé : hero photo + titre display superposé.
-**Pour Sahla** : rien de neuf (hero photo déjà en place) ; leçon négative : ne pas conditionner l'affichage au JS d'animation.
+- Re-testé en défilant pas à pas (molette 450 px, 30 pas, 1440 px) : page d'un seul écran (hauteur 940 px, un seul titre) ; hero plein cadre en vidéo de cascade, titre Melodrama (serif display fin) 72 px blanc aligné à gauche, boutons verre dépoli (logo, menu, heure), carte flottante « destination » en bas à droite avec vignette et flèche, bouton son discret.
+- Principe observé : hero média + titre display superposé + une seule carte d'action.
+**Pour Sahla** : rien de neuf (hero photo déjà en place) ; leçon : un hero à une seule carte d'action reste lisible ; ne pas conditionner l'affichage au JS d'animation.
 
 ## 5. TailThemes (tailthemes.com/templates)
 - Catalogue sombre, grille 3 colonnes de cartes à vignette, méta en monospace (nombre de composants, pages), prix aligné.
