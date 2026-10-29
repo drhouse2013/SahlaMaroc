@@ -7,8 +7,8 @@ import { guideVisual } from '../utils/guideVisual';
 import { getPhoto } from '../utils/photos';
 import { getGuidePhoto } from '../utils/guidePhotos';
 
-interface Props { article: CollectionEntry<'articles'>; large?: boolean }
-const { article, large = false } = Astro.props;
+interface Props { article: CollectionEntry<'articles'>; large?: boolean; eager?: boolean }
+const { article, large = false, eager = false } = Astro.props;
 const d = article.data;
 const visual = guideVisual(d.translationKey, d.category, d.title);
 const photo = getGuidePhoto(d.translationKey, d.category, d.lang) ?? (visual.destination ? getPhoto(visual.destination, d.lang) : null);
@@ -20,7 +20,7 @@ const label = { fr: 'Le guide pratique', en: 'The practical guide', es: 'La guí
 ---
 <div class:list={['guide-visual', large && 'guide-visual--large', photo && 'guide-visual--photo']} data-category={d.category} data-guide-visual={d.translationKey}>
   {photo ? (
-    <div class="guide-visual__photo"><Image src={photo.src} alt={photo.alt} width={large ? 900 : 640} widths={large ? [480, 900, 1400] : [360, 640, 900]} sizes={large ? '(min-width: 768px) 42vw, 90vw' : '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw'} loading={large ? 'eager' : 'lazy'} fetchpriority={large ? 'high' : undefined} class="h-full w-full object-cover" /></div>
+    <div class="guide-visual__photo"><Image src={photo.src} alt={photo.alt} width={large ? 900 : 640} widths={large ? [480, 900, 1400] : [360, 640, 900]} sizes={large ? '(min-width: 768px) 42vw, 90vw' : '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw'} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} class="h-full w-full object-cover" /></div>
   ) : (
     <div class="guide-visual__drawing" aria-hidden="true">
       <span class="guide-visual__orbit"></span>
@@ -45,7 +45,7 @@ const label = { fr: 'Le guide pratique', en: 'The practical guide', es: 'La guí
   .guide-visual__drawing { position: absolute; inset: 0; color: var(--cat-accent); }
   .guide-visual__orbit { position: absolute; width: 72%; aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--cat-accent) 18%, transparent); border-radius: 50%; inset-inline-end: -32%; top: 5%; }
   .guide-visual__symbol { position: absolute; width: 27%; aspect-ratio: 1; inset-inline-end: 3%; top: 30%; transform: rotate(-9deg); }
-  .guide-visual__companion { position: absolute; width: 12%; aspect-ratio: 1; inset-inline-end: 7%; top: 66%; padding: .4rem; border-radius: .6rem; background: var(--surface); border: 1px solid var(--border); transform: rotate(8deg); }
+  .guide-visual__companion { position: absolute; width: 12%; aspect-ratio: 1; inset-inline-end: 7%; top: 66%; padding: .4rem; border-radius: .6rem; background: var(--surface); border: 1px solid var(--line); transform: rotate(8deg); }
   .guide-visual--large .guide-visual__copy { min-height: clamp(14rem, 65cqi, 20rem); padding: 2rem; }
   .guide-visual--large .guide-visual__title { font-size: clamp(1.7rem, 7cqi, 3rem); }
   .guide-visual--large .guide-visual__label { font-size: .7rem; }

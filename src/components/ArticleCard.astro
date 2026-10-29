@@ -22,7 +22,7 @@ const read = {fr:'Lire le guide',en:'Read the guide',es:'Leer la guía',de:'Guid
   </article>
 ) : (
   <article class:list={['group card card-hover relative flex h-full overflow-hidden', lg ? 'flex-col md:flex-row' : 'flex-col']}>
-    <div class:list={['relative overflow-hidden border-b border-[var(--border)]', lg ? 'md:w-1/2 md:shrink-0 md:border-e md:border-b-0' : '']}>
+    <div class:list={['relative overflow-hidden border-b border-[var(--line)]', lg ? 'md:w-1/2 md:shrink-0 md:border-e md:border-b-0' : '']}>
       <GuideVisual article={article} large={lg} />
     </div>
     <div class:list={['flex flex-1 flex-col justify-center', lg ? 'p-6 md:p-9' : 'p-5']}>
