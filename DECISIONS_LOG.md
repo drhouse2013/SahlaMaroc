@@ -294,3 +294,7 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Bordures harmonisées sur le jeton existant ; priorité réseau réservée à l’image principale, distincte de la taille des cartes.
 
 - Contrôle à 325 px enfin disponible : pas de débordement FR/AR. Sur mobile, le titre et les actions précèdent désormais les photos pour rendre le point de départ visible plus tôt.
+
+## 2026-10-29 — Zellige visible dès l’entrée
+
+À la demande de l’utilisateur, le décor de l’accueil est nettement renforcé : photographie de zellige en couleur, frise épaisse sous le menu, cadre autour du contenu et photo principale en arche. La surface de lecture reste unie, claire ou sombre selon le système. Les autres pages conservent leur décor discret. Aucune nouvelle image ni génération IA. La déclaration de fond invalide est remplacée par des propriétés séparées ; le libellé de Marrakech est placé en bas pour ne pas être coupé par l’arche. Contrôles visuels clair/sombre et mobile 390 px, compilation et scan des références locales réussis.
