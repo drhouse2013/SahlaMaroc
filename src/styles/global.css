@@ -1038,7 +1038,9 @@ body { background-image: linear-gradient(var(--morocco-wash), var(--morocco-wash
 .new-home-search, .new-checklists { background: var(--surface); }
 .home-redesign .section-title::after { content: ''; display: block; width: 2rem; height: 3px; margin-top: .85rem; background: var(--accent); border-radius: 2px; }
 .new-checklists { border-top: 3px solid var(--accent); }
-.zellige-soft, .dark .zellige-soft { background-image: linear-gradient(var(--morocco-wash), var(--morocco-wash)), url('/images/moroccan-zellige.webp'); background-size: auto, 720px auto; }
+.zellige-soft, .dark .zellige-soft, .pillar-hero, .dark .pillar-hero, .page-hero, .dark .page-hero { background-image: linear-gradient(var(--morocco-wash), var(--morocco-wash)), url('/images/moroccan-zellige.webp'); background-size: auto, 720px auto; }
+.pillar-hero__deco, .page-hero__deco { display: none; }
+[data-article] > .prose { background: var(--surface); border-radius: .75rem; padding: clamp(1rem, 2vw, 1.5rem); }
 .home-redesign .newsletter-panel .btn-primary { color: #fff; }
 @media (min-width: 1280px) { #main { max-width: 88rem; margin-inline: auto; border-inline: 1px solid var(--line); } }
 @media (max-width: 767px) { .new-home-hero::before { background-image: linear-gradient(var(--morocco-wash), var(--hero-wash)), url('/images/moroccan-zellige.webp'); } }
