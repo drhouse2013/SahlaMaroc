@@ -60,9 +60,9 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: co
         <div class="path-hero__text">
           <Breadcrumbs items={crumbs} lang={lang} />
           <PathNav lang={lang} current={id} />
-          <h1>{copy.title}</h1>
+          <h1>{hub === 'invest' ? INVEST_HUB[lang].nav : copy.title}</h1>
           <p class="path-hero__intro">{copy.intro}</p>
-          {rubrics[0] && <a href={`#r-${rubrics[0].id}`} class="btn btn-primary mt-7" data-path-start>{path.cta[lang]}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>}
+          {rubrics[0] && <a href={`#r-${rubrics[0].id}`} class="btn btn-primary mt-7" data-path-start>{rubrics[0].title}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>}
         </div>
         <div class="path-hero__media">
           <PathPhoto id={id} lang={lang} widths={[480, 720, 1080]} sizes="(min-width: 900px) 34rem, 100vw" eager priority />
