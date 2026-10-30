@@ -98,7 +98,7 @@ export const PATHS: Record<PathId, PathDef> = {
     id: 'invest', hub: 'invest', icon: 'landmark',
     title: { fr: 'Je souhaite investir', en: 'I want to invest', es: 'Quiero invertir', de: 'Ich möchte investieren', ar: 'أرغب في الاستثمار' },
     text: { fr: 'Immobilier, entreprise, fiscalité et financement : les règles avant de vous lancer.', en: 'Property, business, tax and financing: the rules before you commit.', es: 'Inmuebles, empresa, fiscalidad y financiación: las reglas antes de lanzarte.', de: 'Immobilien, Unternehmen, Steuern und Finanzierung: die Regeln, bevor Sie loslegen.', ar: 'العقار والمقاولة والضرائب والتمويل: القواعد قبل أن تبدأ.' },
-    cta: { fr: 'Explorer les opportunités', en: 'Explore the opportunities', es: 'Explorar las oportunidades', de: 'Möglichkeiten entdecken', ar: 'أستكشف الفرص' },
+    cta: { fr: 'Préparer mon projet', en: 'Plan my project', es: 'Preparar mi proyecto', de: 'Vorhaben planen', ar: 'أخطّط لمشروعي' },
     rubrics: [
       { id: 'property', guides: ['buy-property-abroad', 'build-house', 'daam-sakane'], tools: ['calc-property-fees'],
         title: { fr: 'Investissement immobilier', en: 'Property investment', es: 'Inversión inmobiliaria', de: 'Immobilieninvestition', ar: 'الاستثمار العقاري' },
@@ -130,7 +130,7 @@ export const PATHS: Record<PathId, PathDef> = {
     id: 'visit', hub: 'visit', icon: 'compass',
     title: { fr: 'Je visite le Maroc', en: 'I’m visiting Morocco', es: 'Visito Marruecos', de: 'Ich besuche Marokko', ar: 'أزور المغرب' },
     text: { fr: 'Villes, régions, hébergements, circuits et conseils pour voyager sereinement.', en: 'Cities, regions, places to stay, itineraries and tips for a smooth trip.', es: 'Ciudades, regiones, alojamiento, rutas y consejos para viajar tranquilo.', de: 'Städte, Regionen, Unterkünfte, Rundreisen und Tipps für eine entspannte Reise.', ar: 'المدن والجهات والإقامة والمسارات ونصائح لرحلة مريحة.' },
-    cta: { fr: 'Découvrir le Maroc', en: 'Discover Morocco', es: 'Descubrir Marruecos', de: 'Marokko entdecken', ar: 'أكتشف المغرب' },
+    cta: { fr: 'Préparer mon voyage', en: 'Plan my trip', es: 'Preparar mi viaje', de: 'Reise planen', ar: 'أخطّط لرحلتي' },
     rubrics: [
       { id: 'destinations', cityGrid: ['marrakech', 'fes', 'chefchaouen', 'essaouira', 'casablanca', 'tangier', 'merzouga', 'agadir'], hubs: ['cities'],
         title: { fr: 'Destinations et villes', en: 'Destinations and cities', es: 'Destinos y ciudades', de: 'Reiseziele und Städte', ar: 'الوجهات والمدن' },
