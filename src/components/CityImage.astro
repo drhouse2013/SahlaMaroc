@@ -18,7 +18,7 @@ const cls = 'h-full w-full object-cover transition duration-500 group-hover:scal
 {photo.image || isPlace ? (
   <>
     <PlaceImage photo={photo} kind={isHero ? 'hero' : 'city'} lang={lang} name={isHero ? undefined : cityLabel(scene, lang)} width={width} widths={widths} sizes={sizes} eager={eager} priority={priority} class={cls} />
-    {photo.credit && <span dir="auto" class="absolute inset-x-0 bottom-0 truncate bg-black/55 px-2 py-0.5 text-center text-[0.65rem] leading-tight text-white/90">{photoCreditLabel(lang, photo.credit)}</span>}
+    {photo.credit && <span dir="auto" class="photo-credit absolute inset-x-0 bottom-0 truncate bg-black/55 px-2 py-0.5 text-center text-[0.65rem] leading-tight text-white/90">{photoCreditLabel(lang, photo.credit)}</span>}
   </>
 ) : (
   <Image src={illustration((fallback ?? scene) as Scene)} alt="" width={width} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />

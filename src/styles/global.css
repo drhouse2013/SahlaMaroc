@@ -554,3 +554,8 @@ html.dark {
 .site-footer { --brand: #f4efe6; --muted: rgb(244 239 230 / .78); --line: rgb(244 239 230 / .16); --accent: #e9b58f; --focus: #e9b58f; background: var(--color-navy-900); color: #f4efe6; }
 .dark .site-footer { background: #0a1f1c; }
 .site-footer .eyebrow { color: var(--accent) !important; }
+
+/* Crédits photo discrets (demande du propriétaire, 30/10/2026) : presque invisibles, lisibles au survol/focus */
+.photo-credit, .path-credit, .spot-credit, .place-hero__credit, .guide-visual__credit { background: transparent !important; color: rgb(255 255 255 / .28) !important; text-shadow: none; transition: color .2s; }
+.photo-credit:hover, .path-credit:hover, .spot-credit:hover, .place-hero__credit:hover, .place-hero__credit:focus-visible, .guide-visual__credit:hover { color: rgb(255 255 255 / .85) !important; }
+.guide-visual__credit, .guide-visual__credit a { color: rgb(127 127 127 / .35) !important; }
