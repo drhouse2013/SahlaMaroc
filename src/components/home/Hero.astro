@@ -22,7 +22,7 @@ const searchUrl = hubPath(lang, 'search');
     <h1 id="home-title">{copy.title} <em>{copy.titleEm}</em></h1>
     <p class="home-hero__intro">{copy.intro}</p>
     <div class="home-paths" data-home-paths>
-      <h2 class="sr-only">{PATH_UI.paths[lang]}</h2>
+      <h2 class="home-paths__title">{PATH_UI.paths[lang]}</h2>
       <ul class="path-cards">
         {PATH_ORDER.map((id, i) => <li><PathCard id={id} lang={lang} eager priority={i === 0} /></li>)}
       </ul>
