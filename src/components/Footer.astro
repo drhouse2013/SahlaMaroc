@@ -1,6 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import { brandName } from '../utils/seo';
+import { INVEST_HUB } from '../data/paths';
 import { LOCALES, LOCALE_META, useTranslations, type Locale } from '../i18n';
 import { CATEGORIES } from '../i18n/categories';
 import { categoryPath, getActiveCategories, getPageUrl, homePath, hubPath, rssPath } from '../utils/i18n';
@@ -14,6 +15,7 @@ const active = await getActiveCategories(lang);
 
 const explore = [
   { href: hubPath(lang, 'mre'), label: t('nav.mre') },
+  { href: hubPath(lang, 'invest'), label: INVEST_HUB[lang].nav },
   { href: hubPath(lang, 'visit'), label: t('nav.visit') },
   { href: hubPath(lang, 'cities'), label: t('nav.cities') },
   { href: hubPath(lang, 'regions'), label: t('nav.regions') },

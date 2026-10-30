@@ -365,5 +365,7 @@
   "calendar.always": "Todo el año",
   "calendar.guide": "Ver la guía",
   "calendar.source": "Fuente",
-  "machine.note": "Traducción automática, aún sin revisar: ante la duda, consulte la versión francesa o inglesa."
+  "machine.note": "Traducción automática, aún sin revisar: ante la duda, consulte la versión francesa o inglesa.",
+  "photo.soon": "Foto próximamente",
+  "photo.soonFor": "Foto próximamente: {name}"
 }

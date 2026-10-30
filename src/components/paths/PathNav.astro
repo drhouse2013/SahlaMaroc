@@ -1,0 +1,19 @@
+---
+/** Bascule entre les trois parcours (page courante marquée aria-current). */
+import Icon from '../Icon.astro';
+import type { Locale } from '../../i18n';
+import { PATHS, PATH_ORDER, PATH_UI, type PathId } from '../../data/paths';
+import { hubPath } from '../../utils/i18n';
+
+interface Props { lang: Locale; current: PathId }
+const { lang, current } = Astro.props;
+---
+<nav class="path-nav" aria-label={PATH_UI.paths[lang]} data-print-hide>
+  <ul>
+    {PATH_ORDER.map((id) => (
+      <li data-path={id}>
+        <a href={hubPath(lang, PATHS[id].hub)} aria-current={id === current ? 'page' : undefined}><Icon name={PATHS[id].icon} class="size-4" />{PATHS[id].title[lang]}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

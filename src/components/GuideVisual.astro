@@ -4,14 +4,15 @@ import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import { CATEGORIES } from '../i18n/categories';
 import { guideVisual } from '../utils/guideVisual';
-import { getPhoto } from '../utils/photos';
+import { placePhoto } from '../utils/photos';
 import { getGuidePhoto } from '../utils/guidePhotos';
 
 interface Props { article: CollectionEntry<'articles'>; large?: boolean; eager?: boolean }
 const { article, large = false, eager = false } = Astro.props;
 const d = article.data;
 const visual = guideVisual(d.translationKey, d.category, d.title);
-const photo = getGuidePhoto(d.translationKey, d.category, d.lang) ?? (visual.destination ? getPhoto(visual.destination, d.lang) : null);
+const place = visual.destination ? placePhoto('city', visual.destination, d.lang) : null;
+const photo = getGuidePhoto(d.translationKey, d.category, d.lang) ?? (place?.image ? { src: place.image, alt: place.alt, credit: place.credit ?? undefined, source: place.source ?? undefined } : null);
 const cc = photo?.credit?.match(/, (CC (BY(?:-SA)?) ([\d.]+))$/);
 const licence = photo && 'license' in photo && typeof photo.license === 'string' ? photo.license : cc?.[1];
 const licenceUrl = photo && 'licenseUrl' in photo && typeof photo.licenseUrl === 'string' ? photo.licenseUrl : cc ? `https://creativecommons.org/licenses/${cc[2].toLowerCase()}/${cc[3]}/` : null;

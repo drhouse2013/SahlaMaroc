@@ -8,6 +8,7 @@ import { CITY_PAGES, cityLabel, cityListText } from '../../data/cities';
 import { categoryPath, cityPath, entryPath, getActiveCategories, getArticles, getPages, hubPath } from '../../utils/i18n';
 import { getNews } from '../../utils/news';
 import { GLOSSARY } from '../../data/glossary';
+import { INVEST_HUB } from '../../data/paths';
 import { checklistsIn } from '../../utils/content';
 
 export const getStaticPaths: GetStaticPaths = () => LOCALES.map((lang) => ({ params: { lang } }));
@@ -40,6 +41,7 @@ export const GET: APIRoute = async ({ params }) => {
   const hubs: [keyof typeof HUB_SLUGS, string, string][] = [
     ['mre', t('hub.mre.title'), t('hub.mre.description')],
     ['visit', t('hub.visit.title'), t('hub.visit.description')],
+    ['invest', INVEST_HUB[lang].title, INVEST_HUB[lang].description],
     ['cities', t('city.hub.title'), t('city.hub.description', { cities: cityListText(lang) })],
     ['regions', t('region.hub.title'), t('region.hub.description')],
     ['checklists', t('checklists.title'), t('checklists.description')],

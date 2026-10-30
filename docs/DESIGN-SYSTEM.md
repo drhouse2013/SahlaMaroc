@@ -24,7 +24,7 @@ Conteneur 72 rem, gouttières 16/24/32 px ; rythme `--section-gap` 64 px mobile 
 `.btn-primary` (vert plein, une par section), `.btn-secondary`/`.btn-ghost` (contour), `.btn-warm` (terre cuite, conversion), `.btn-tertiary`, `.text-link` ; hauteur ≥ 44 px ; focus 2 px `--focus`. `.card` (12 px, 1 px), `.chip`, `.badge-*`, `.alert-*`, `.input`. Filet zellige `.zellige-band` (8 px, photo réelle). En-tête ivoire opaque ; pied de page vert profond structuré (rôles redéfinis localement dans `.site-footer`).
 
 ## Accueil
-Hero photo plein cadre (dunes de Merzouga, crédit conservé à droite) + panneau ivoire qui chevauche ; titre « Le Maroc, *simplement.* » ; 3 besoins numérotés à filet ; une + liste de guides ; mosaïque asymétrique de 4 vraies photos de villes ; bande vert profond des calculateurs en liste ; checklists, note de l'éditeur, lettre.
+Premier écran : titre « Le Maroc, *simplement.* », chapô court, trois parcours en cartes photo + fiche (accent par parcours : terre cuite, or, vert ; voir src/data/paths.ts), recherche ; une + liste de guides ; mosaïque asymétrique de 4 vraies photos de villes ; bande vert profond des calculateurs en liste ; checklists, note de l'éditeur, lettre.
 
 ## Mouvement et impression
 150-250 ms, fondu + 8 px, survol photo scale 1,02, uniquement sous `prefers-reduced-motion: no-preference`. Impression : chrome masqué, fond blanc.

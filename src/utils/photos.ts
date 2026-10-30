@@ -1,44 +1,48 @@
-/** Photos de villes (optionnelles) : src/assets/photos/cities/ + manifest.json. Repli sur l'illustration si absentes. */
+/**
+ * Porte d'accès UNIQUE aux photos de lieux (villes, régions, lieux à visiter, héros).
+ * Données : src/assets/photos/{cities,regions,spots}/ + manifest.json. Règles : docs/IMAGES.md.
+ * `placePhoto()` renvoie toujours un objet : `status: 'verified'` (image + auteur + licence + lien source)
+ * ou `'placeholder'` (image: null) => le composant affiche <PhotoPlaceholder>, jamais une image non vérifiée.
+ */
 import type { ImageMetadata } from 'astro';
 import type { Locale } from '../i18n';
+import type { SpotKind } from '../data/spots';
+import { regionById } from '../data/regions';
+import { isVerified, type PhotoEntry } from './photoStatus';
 
-interface Entry { file: string; alt?: Partial<Record<Locale, string>>; credit?: string; source?: string }
-export interface CityPhoto { src: ImageMetadata; alt: string; credit?: string; source?: string }
+export type PlaceType = 'city' | 'hero' | 'region' | 'spot';
+/** Type de lieu : choisit l'icône du placeholder. */
+export type PlaceKind = SpotKind | 'city' | 'region' | 'hero';
+export interface PlacePhoto {
+  image: ImageMetadata | null;
+  alt: string;
+  credit: string | null;
+  source: string | null;
+  status: 'verified' | 'placeholder';
+}
 
-const files = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/cities/*.{jpg,jpeg,png,webp,avif}', { eager: true });
-const manifests = import.meta.glob<{ default: Record<string, Entry> }>('../assets/photos/cities/manifest.json', { eager: true });
-const manifest: Record<string, Entry> = Object.values(manifests)[0]?.default ?? {};
+type Dir = 'cities' | 'regions' | 'spots';
+const DIR: Record<PlaceType, Dir> = { city: 'cities', hero: 'cities', region: 'regions', spot: 'spots' };
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/{cities,regions,spots}/*.{jpg,jpeg,png,webp,avif}', { eager: true });
+const manifests = import.meta.glob<{ default: Record<string, PhotoEntry> }>('../assets/photos/{cities,regions,spots}/manifest.json', { eager: true });
+
+const PLACEHOLDER: PlacePhoto = { image: null, alt: '', credit: null, source: null, status: 'placeholder' };
+
+/**
+ * @param id ville/hero : id de CITY_PAGES (ou « home-hero ») ; région : id de région ; lieu : « ville/lieu ».
+ * Une région sans photo propre reprend la photo (vérifiée) de sa ville chef-lieu, avec l'alt de cette ville.
+ */
+export function placePhoto(type: PlaceType, id: string, lang: Locale): PlacePhoto {
+  const dir = DIR[type];
+  const e = manifests[`../assets/photos/${dir}/manifest.json`]?.default?.[id];
+  const hit = e && files[`../assets/photos/${dir}/${e.file}`];
+  if (!e || !hit || !isVerified(e)) {
+    const capital = type === 'region' ? regionById(id)?.capitalCity : undefined;
+    return capital ? placePhoto('city', capital, lang) : PLACEHOLDER;
+  }
+  return { image: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit ?? null, source: e.source ?? null, status: 'verified' };
+}
 
 const CREDIT: Record<Locale, string> = { fr: 'Photo : ', en: 'Photo: ', es: 'Foto: ', de: 'Foto: ', ar: 'صورة: ' };
 export const photoCreditLabel = (lang: Locale, credit: string) => `${CREDIT[lang] ?? CREDIT.en}${credit}`;
-
-export function getPhoto(scene: string, lang: Locale): CityPhoto | null {
-  const e = manifest[scene];
-  const hit = e && files[`../assets/photos/cities/${e.file}`];
-  if (!e || !hit) return null;
-  return { src: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit, source: e.source };
-}
-
-/** Photos de lieux à visiter : src/assets/photos/spots/<ville>-<lieu>.jpg + manifest.json ({"ville/lieu": entrée}). Optionnelles. */
-const spotFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/spots/*.{jpg,jpeg,png,webp,avif}', { eager: true });
-const spotManifests = import.meta.glob<{ default: Record<string, Entry> }>('../assets/photos/spots/manifest.json', { eager: true });
-const spotManifest: Record<string, Entry> = Object.values(spotManifests)[0]?.default ?? {};
-
-export function getSpotPhoto(cityId: string, spotId: string, lang: Locale): CityPhoto | null {
-  const e = spotManifest[`${cityId}/${spotId}`];
-  const hit = e && spotFiles[`../assets/photos/spots/${e.file}`];
-  if (!e || !hit) return null;
-  return { src: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit, source: e.source };
-}
-
-/** Photos de régions : src/assets/photos/regions/<région>.jpg + manifest.json ({"<id région>": entrée}). Optionnelles. */
-const regionFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/regions/*.{jpg,jpeg,png,webp,avif}', { eager: true });
-const regionManifests = import.meta.glob<{ default: Record<string, Entry> }>('../assets/photos/regions/manifest.json', { eager: true });
-const regionManifest: Record<string, Entry> = Object.values(regionManifests)[0]?.default ?? {};
-
-export function getRegionPhoto(regionId: string, lang: Locale): CityPhoto | null {
-  const e = regionManifest[regionId];
-  const hit = e && regionFiles[`../assets/photos/regions/${e.file}`];
-  if (!e || !hit) return null;
-  return { src: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit, source: e.source };
-}

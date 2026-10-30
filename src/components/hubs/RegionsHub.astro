@@ -3,8 +3,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../PageHero.astro';
 import Icon from '../Icon.astro';
-import { Image } from 'astro:assets';
-import { getPhoto, getRegionPhoto, photoCreditLabel } from '../../utils/photos';
+import PlaceImage from '../PlaceImage.astro';
+import { placePhoto, photoCreditLabel } from '../../utils/photos';
 import { useTranslations, type Locale } from '../../i18n';
 import { REGIONS, regionCities } from '../../data/regions';
 import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, regionPath } from '../../utils/i18n';
@@ -14,7 +14,6 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const self = (l: Locale) => hubPath(l, 'regions');
 const url = absoluteUrl(self(lang), Astro.site);
-const photoOf = (r: (typeof REGIONS)[number]) => getRegionPhoto(r.id, lang) ?? (r.capitalCity ? getPhoto(r.capitalCity, lang) : null);
 const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('nav.regions') }];
 ---
 <BaseLayout lang={lang} title={t('region.hub.title')} description={t('region.hub.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
@@ -22,9 +21,9 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t(
   <PageHero lang={lang} crumbs={crumbs} title={t('region.hub.title')} intro={t('region.hub.intro')} icon="mapPin" />
   <div class="container-page section">
     <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">
-      {REGIONS.map((r) => { const photo = photoOf(r); return (
+      {REGIONS.map((r) => { const photo = placePhoto('region', r.id, lang); return (
         <li class="group card card-hover relative flex flex-col overflow-hidden">
-          {photo && <div class="relative aspect-[3/2] overflow-hidden"><Image src={photo.src} alt="" width={480} widths={[360, 480, 720]} sizes="(min-width:1024px) 360px, (min-width:640px) 45vw, 92vw" class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />{photo.credit && <span dir="auto" class="absolute inset-x-0 bottom-0 truncate bg-black/55 px-2 py-0.5 text-end text-[0.65rem] text-white/90">{photoCreditLabel(lang, photo.credit)}</span>}</div>}
+          <div class="relative aspect-[3/2] overflow-hidden"><PlaceImage photo={photo} kind="region" lang={lang} name={r.name[lang]} decorative width={480} widths={[480, 720]} sizes="(min-width:1024px) 360px, (min-width:640px) 45vw, 92vw" class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]" />{photo.credit && <span dir="auto" class="absolute inset-x-0 bottom-0 truncate bg-black/55 px-2 py-0.5 text-end text-[0.65rem] text-white/90">{photoCreditLabel(lang, photo.credit)}</span>}</div>
           <div class="flex flex-1 flex-col p-5">
           <h2 class="text-xl font-semibold"><a href={regionPath(lang, r.slug)} class="after:absolute after:inset-0">{r.name[lang]}</a></h2>
           <p class="mt-1 text-sm muted">{t('region.capital')} : {r.capital[lang]}</p>

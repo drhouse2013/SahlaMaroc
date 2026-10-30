@@ -65,5 +65,6 @@ export const HUB_SLUGS = {
   search: { en: 'search', fr: 'recherche', es: 'buscar', de: 'suche', ar: 'bahth' },
   mre: { en: 'moroccans-abroad', fr: 'mre', es: 'marroquies-en-el-extranjero', de: 'auslandsmarokkaner', ar: 'maghariba-al-alam' },
   visit: { en: 'visit-morocco', fr: 'visiter-le-maroc', es: 'visitar-marruecos', de: 'marokko-besuchen', ar: 'ziyarat-al-maghrib' },
+  invest: { en: 'invest-in-morocco', fr: 'investir-au-maroc', es: 'invertir-en-marruecos', de: 'in-marokko-investieren', ar: 'al-istithmar-fi-al-maghrib' },
 } as const satisfies Record<string, Record<Locale, string>>;
 export type HubId = keyof typeof HUB_SLUGS;

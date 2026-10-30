@@ -1,19 +1,17 @@
 ---
-/** En-tête des pages lieu (ville, région) : photo authentique plein cadre + crédit lié à la source, puis panneau titre/intro qui la chevauche. Repli : illustration SVG ou en-tête simple. */
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+/** En-tête des pages lieu (ville, région) : photo authentique plein cadre + crédit lié à la source, puis panneau titre/intro qui la chevauche. Sans photo vérifiée : <PhotoPlaceholder>. Sans `photo` : en-tête simple. */
 import Breadcrumbs from './Breadcrumbs.astro';
+import PlaceImage from './PlaceImage.astro';
 import type { Locale } from '../i18n';
-import { photoCreditLabel, type CityPhoto } from '../utils/photos';
-interface Props { lang: Locale; crumbs: { name: string; href?: string }[]; title: string; intro?: string; meta?: string; photo?: CityPhoto | null; fallback?: ImageMetadata }
-const { lang, crumbs, title, intro, meta, photo, fallback } = Astro.props;
-const img = photo?.src ?? fallback;
+import { photoCreditLabel, type PlaceKind, type PlacePhoto } from '../utils/photos';
+interface Props { lang: Locale; crumbs: { name: string; href?: string }[]; title: string; intro?: string; meta?: string; photo?: PlacePhoto; kind?: PlaceKind; name?: string }
+const { lang, crumbs, title, intro, meta, photo, kind = 'city', name = title } = Astro.props;
 ---
 <header class="place-hero" data-place-hero>
-  {img && (
-    <div class="place-hero__media">
-      <Image src={img} alt={photo?.alt ?? ''} width={1600} widths={[640, 960, 1280, 1600, 2000]} sizes="100vw" class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
-      {photo?.credit && (
+  {photo && (
+    <div class:list={['place-hero__media', !photo.image && 'place-hero__media--ph']}>
+      <PlaceImage photo={photo} kind={kind} lang={lang} name={name} width={1600} widths={[640, 1024, 1600]} sizes="100vw" class="h-full w-full object-cover" eager />
+      {photo.credit && (
         photo.source
           ? <a href={photo.source} rel="noopener" target="_blank" dir="auto" class="place-hero__credit">{photoCreditLabel(lang, photo.credit)}</a>
           : <span dir="auto" class="place-hero__credit">{photoCreditLabel(lang, photo.credit)}</span>
@@ -21,7 +19,7 @@ const img = photo?.src ?? fallback;
     </div>
   )}
   <div class="container-page relative">
-    <div class:list={['place-hero__panel', img && 'place-hero__panel--over']}>
+    <div class:list={['place-hero__panel', photo && 'place-hero__panel--over']}>
       <Breadcrumbs items={crumbs} lang={lang} />
       <h1 class="mt-5 text-3xl font-semibold tracking-tight sm:text-[2.75rem]">{title}</h1>
       <slot />
@@ -34,6 +32,9 @@ const img = photo?.src ?? fallback;
   .place-hero { border-bottom: 1px solid var(--line); padding-bottom: 2rem; }
   .place-hero__media { position: relative; width: 100%; height: 75vw; overflow: hidden; background: var(--surface); }
   @media (min-width: 640px) { .place-hero__media { height: min(43vw, 34rem); } }
+  .place-hero__media--ph { height: 48vw; min-height: 11rem; }
+  @media (min-width: 768px) { .place-hero__media--ph :global(.photo-ph) { padding-bottom: 6rem; } }
+  @media (min-width: 640px) { .place-hero__media--ph { height: min(26vw, 20rem); } }
   .place-hero__credit { position: absolute; inset-inline-end: 0; bottom: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: rgb(0 0 0 / .6); color: #fff; font-size: .7rem; line-height: 1.2; padding: .3rem .6rem; border-start-start-radius: 8px; }
   a.place-hero__credit:hover, a.place-hero__credit:focus-visible { text-decoration: underline; }
   .place-hero__panel { padding-top: 2rem; }

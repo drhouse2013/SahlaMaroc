@@ -96,7 +96,7 @@ if (entry?.collection === 'articles') {
     hub === 'glossary' ? <GlossaryHub lang={lang} /> :
     hub === 'calendar' ? <CalendarHub lang={lang} /> :
     hub === 'search' ? <SearchPage lang={lang} /> :
-    <AudienceHub lang={lang} hub={hub as 'mre' | 'visit'} />
+    <AudienceHub lang={lang} hub={hub as 'mre' | 'invest' | 'visit'} />
   ) : entry.collection === 'articles' ? (
     <ArticleLayout entry={entry} alternates={alternates} switchTargets={switchTargets} headings={headings} minutes={readingTime(entry.body)} related={related}>
       {Content && <Content components={components} />}

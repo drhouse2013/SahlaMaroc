@@ -1,53 +1,88 @@
 ---
-/** Hubs par public : /<lang>/mre et /<lang>/visiter-le-maroc. */
+/** Pages parcours : /<lang>/mre (je rentre), /<lang>/investir-au-maroc (j'investis), /<lang>/visiter-le-maroc (je visite). */
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHero from '../PageHero.astro';
-import ArticleCard from '../ArticleCard.astro';
-import ToolGrid from '../ToolGrid.astro';
-import CityGrid from '../home/CityGrid.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
 import Newsletter from '../Newsletter.astro';
 import Icon from '../Icon.astro';
-import { useTranslations, type Locale } from '../../i18n';
-import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
-import { AUDIENCE_HUBS } from '../../data/pillars';
-import { allLocalesAlternates, allLocalesTargets, categoryPath, getActiveCategories, getArticleByKey, homePath, hubPath } from '../../utils/i18n';
+import PathPhoto from '../paths/PathPhoto.astro';
+import PathNav from '../paths/PathNav.astro';
+import PathCard from '../paths/PathCard.astro';
+import PathRubric, { type ResolvedRubric } from '../paths/PathRubric.astro';
+import { useTranslations, type HubId, type Locale } from '../../i18n';
+import { CATEGORIES } from '../../i18n/categories';
+import { INVEST_HUB, PATHS, PATH_ORDER, PATH_UI, pathOfHub, type PathHub } from '../../data/paths';
+import { TOOLS } from '../../data/tools';
+import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { REGIONS } from '../../data/regions';
+import { allLocalesAlternates, allLocalesTargets, categoryPath, cityPath, getActiveCategories, getArticleByKey, getPageUrl, homePath, hubPath, regionPath } from '../../utils/i18n';
 import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
-interface Props { lang: Locale; hub: 'mre' | 'visit' }
+
+interface Props { lang: Locale; hub: PathHub }
 const { lang, hub } = Astro.props;
 const t = useTranslations(lang);
-const cfg = AUDIENCE_HUBS[hub];
+const id = pathOfHub(hub);
+const path = PATHS[id];
+const copy = hub === 'invest' ? INVEST_HUB[lang] : { title: t(`hub.${hub}.title`), description: t(`hub.${hub}.description`), intro: t(`hub.${hub}.intro`) };
 const active = await getActiveCategories(lang);
-const cats = cfg.categories.filter((c) => active.includes(c));
-const start = (await Promise.all(cfg.start.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
+const HUB_LABEL: Partial<Record<HubId, string>> = { cities: t('nav.cities'), regions: t('nav.regions'), checklists: t('nav.checklists'), calendar: t('nav.calendar'), news: t('nav.news'), glossary: t('nav.glossary') };
+
+// Chaque lien pointe vers un contenu existant dans la langue ; une rubrique vide est omise.
+const rubrics: ResolvedRubric[] = (await Promise.all(path.rubrics.map(async (r) => {
+  const guides = (await Promise.all((r.guides ?? []).map((k) => getArticleByKey(lang, k)))).flatMap((a) => (a ? [{ href: `/${lang}/${a.data.slug}`, label: a.data.title }] : []));
+  const tools = (await Promise.all((r.tools ?? []).map(async (k) => {
+    const tool = TOOLS.find((x) => x.key === k);
+    const href = tool && (await getPageUrl(lang, k));
+    return tool && href ? [{ href, label: tool.title[lang], key: k, icon: tool.icon }] : [];
+  }))).flat();
+  const cities = (r.cities ?? []).flatMap((c) => { const city = CITY_PAGES.find((x) => x.id === c); return city ? [{ href: cityPath(lang, city.slug[lang]), label: cityLabel(c, lang) }] : []; });
+  const regions = (r.regions === 'all' ? REGIONS : REGIONS.filter((x) => r.regions?.includes(x.id))).map((x) => ({ href: regionPath(lang, x.slug), label: x.name[lang] }));
+  const faq = (await Promise.all((r.faq ?? []).map((k) => getArticleByKey(lang, k)))).flatMap((a) => { const f = a?.data.faq?.[0]; return a && f ? [{ q: f.q, a: f.a, href: `/${lang}/${a.data.slug}` }] : []; });
+  const links = [
+    ...(r.hubs ?? []).flatMap((h) => (HUB_LABEL[h] ? [{ href: hubPath(lang, h), label: HUB_LABEL[h]! }] : [])),
+    ...(r.categories ?? []).filter((c) => active.includes(c)).map((c) => ({ href: categoryPath(lang, c), label: CATEGORIES[c].label[lang] })),
+  ];
+  const cityGrid = (r.cityGrid ?? []).filter((c) => CITY_PAGES.some((x) => x.id === c));
+  const toolGrid = (r.toolGrid ?? []).filter((k) => TOOLS.some((x) => x.key === k));
+  const content = guides.length + tools.length + cities.length + regions.length + faq.length + cityGrid.length + toolGrid.length;
+  if (r.toolGrid?.length) { const all = await getPageUrl(lang, 'calculators'); if (all) links.push({ href: all, label: PATH_UI.allTools[lang] }); }
+  return content ? [{ id: r.id, title: r.title[lang], text: r.text[lang], guides, tools, cityGrid, places: [...cities, ...regions], faq, toolGrid, links }] : [];
+}))).flat();
+
 const self = (l: Locale) => hubPath(l, hub);
 const url = absoluteUrl(self(lang), Astro.site);
-const title = t(`hub.${hub}.title`);
-const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: title }];
+const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: copy.title }];
 ---
-<BaseLayout lang={lang} title={title} description={t(`hub.${hub}.description`)} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
+<BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}>
-  <PageHero lang={lang} crumbs={crumbs} title={title} intro={t(`hub.${hub}.intro`)} icon={hub === 'mre' ? 'plane' : 'compass'} />
-  <div class="container-page pt-8">
-    <nav aria-label={t('hub.topics')}>
-      <h2 class="section-title !text-2xl">{t('hub.topics')}</h2>
-      <ul class="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4 stagger-reveal">
-        {cats.map((id) => <li><a href={categoryPath(lang, id)} class="card card-hover flex min-h-14 items-center gap-2 px-3 py-3 text-[0.95rem] font-medium sm:gap-3 sm:px-4"><span class="icon-tile size-8 shrink-0 sm:size-10"><Icon name={CATEGORY_ICON[id]} /></span><span class="min-w-0 [overflow-wrap:anywhere]">{CATEGORIES[id].label[lang]}</span></a></li>)}
-      </ul>
-    </nav>
-    {start.length > 0 && (
-      <section class="section !pt-12" aria-labelledby="start">
-        <h2 id="start" class="section-title !text-2xl">{t('hub.startHere')}</h2>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-reveal">{start.map((a) => <ArticleCard article={a} />)}</div>
+  <div data-path={id} data-path-page={id}>
+    <header class="path-hero">
+      <div class="container-page path-hero__grid">
+        <div class="path-hero__text">
+          <Breadcrumbs items={crumbs} lang={lang} />
+          <PathNav lang={lang} current={id} />
+          <h1>{copy.title}</h1>
+          <p class="path-hero__intro">{copy.intro}</p>
+          {rubrics[0] && <a href={`#r-${rubrics[0].id}`} class="btn btn-primary mt-7" data-path-start>{path.cta[lang]}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>}
+        </div>
+        <div class="path-hero__media">
+          <PathPhoto id={id} lang={lang} widths={[480, 720, 1080]} sizes="(min-width: 900px) 34rem, 100vw" eager priority />
+        </div>
+      </div>
+    </header>
+
+    <div class="container-page">
+      <nav class="path-index" aria-labelledby="path-index-t" data-print-hide>
+        <h2 id="path-index-t" class="path-index__title">{PATH_UI.onPage[lang]}</h2>
+        <ul>{rubrics.map((r) => <li><a class="chip" href={`#r-${r.id}`}>{r.title}</a></li>)}</ul>
+      </nav>
+      <div class="path-rubrics">
+        {rubrics.map((r) => <PathRubric lang={lang} rubric={r} />)}
+      </div>
+      <section class="path-others" aria-labelledby="path-others-t" data-print-hide>
+        <h2 id="path-others-t" class="section-title !text-[length:var(--step-4)]">{PATH_UI.others[lang]}</h2>
+        <ul>{PATH_ORDER.filter((x) => x !== id).map((x) => <li><PathCard id={x} lang={lang} variant="row" /></li>)}</ul>
       </section>
-    )}
-    <section class="section !pt-12" aria-labelledby="tools">
-      <h2 id="tools" class="section-title !text-2xl">{t('pillar.tools')}</h2>
-      <div class="mt-6"><ToolGrid lang={lang} keys={[...cfg.tools]} compact /></div>
-    </section>
-    <section class="section !pt-12" aria-labelledby="cities">
-      <h2 id="cities" class="section-title !text-2xl">{t('pillar.cities')}</h2>
-      <div class="mt-6"><CityGrid lang={lang} ids={[...cfg.cities]} showHeading={false} /></div>
-    </section>
+    </div>
   </div>
   <Newsletter lang={lang} />
 </BaseLayout>

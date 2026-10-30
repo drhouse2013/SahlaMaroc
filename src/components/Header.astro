@@ -10,6 +10,7 @@ import ThemeToggle from './ThemeToggle.astro';
 import Logo from './Logo.astro';
 import Icon from './Icon.astro';
 import { brandName } from '../utils/seo';
+import { INVEST_HUB, PATHS } from '../data/paths';
 import { useTranslations, type Locale } from '../i18n';
 import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { categoryPath, getActiveCategories, getPageUrl, homePath, hubPath, type Alternates } from '../utils/i18n';
@@ -56,6 +57,10 @@ const searchHref = hubPath(lang, 'search');
               <span class="icon-tile size-9"><Icon name="ship" /></span>
               <span><span class="block font-semibold">{t('home.path.mre')}</span><span class="block text-xs muted">{t('home.path.mreText')}</span></span>
             </a>
+            <a href={hubPath(lang, 'invest')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
+              <span class="icon-tile size-9"><Icon name={PATHS.invest.icon} /></span>
+              <span><span class="block font-semibold">{PATHS.invest.title[lang]}</span><span class="block text-xs muted">{INVEST_HUB[lang].menu}</span></span>
+            </a>
             <a href={hubPath(lang, 'visit')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
               <span class="icon-tile size-9"><Icon name="compass" /></span>
               <span><span class="block font-semibold">{t('home.path.visit')}</span><span class="block text-xs muted">{t('home.path.visitText')}</span></span>
@@ -91,6 +96,7 @@ const searchHref = hubPath(lang, 'search');
         <div class="card fixed inset-x-3 top-[4.5rem] z-50 max-h-[calc(100dvh-5.5rem)] overflow-y-auto p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in sm:absolute sm:inset-x-auto sm:end-0 sm:top-auto sm:mt-2 sm:w-80">
           <nav aria-label={t('nav.main')}>
             <a href={hubPath(lang, 'mre')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="ship" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.mre')}</a>
+            <a href={hubPath(lang, 'invest')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name={PATHS.invest.icon} class="size-5 text-navy-600 dark:text-navy-300" />{PATHS.invest.title[lang]}</a>
             <a href={hubPath(lang, 'visit')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="compass" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.visit')}</a>
             <hr class="my-2 border-[var(--line)]" />
             {[{ href: hubPath(lang, 'guides'), label: t('nav.allGuides') }, ...nav, ...more].map((n) => <a href={n.href} class="block rounded-xl px-3 py-2.5 hover:bg-sand-100 dark:hover:bg-white/10" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>)}

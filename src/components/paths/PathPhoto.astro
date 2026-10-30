@@ -1,0 +1,17 @@
+---
+/** Photo d'un parcours + crédit. Le parent fournit cadre et taille (position: relative). */
+import { Image } from 'astro:assets';
+import type { Locale } from '../../i18n';
+import { pathPhoto, type PathId } from '../../data/paths';
+import { photoCreditLabel } from '../../utils/photos';
+
+interface Props { id: PathId; lang: Locale; widths: number[]; sizes: string; eager?: boolean; priority?: boolean }
+const { id, lang, widths, sizes, eager = false, priority = false } = Astro.props;
+const photo = pathPhoto(id, lang);
+---
+{photo && (
+  <>
+    <Image src={photo.src} alt={photo.alt} widths={widths} sizes={sizes} class="path-photo" loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+    <span class="path-credit" dir="auto">{photoCreditLabel(lang, photo.credit)}</span>
+  </>
+)}

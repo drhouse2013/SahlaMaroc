@@ -1,0 +1,15 @@
+---
+/** Image d'un lieu : <picture> avif/webp à dimensions explicites, ou <PhotoPlaceholder> si la photo n'est pas vérifiée. Le parent fournit position: relative + ratio. */
+import { Picture } from 'astro:assets';
+import type { Locale } from '../i18n';
+import type { PlaceKind, PlacePhoto } from '../utils/photos';
+import PhotoPlaceholder from './PhotoPlaceholder.astro';
+
+interface Props { photo: PlacePhoto; kind: PlaceKind; lang: Locale; name?: string; width: number; widths?: number[]; sizes?: string; eager?: boolean; priority?: boolean; decorative?: boolean; class?: string }
+const { photo, kind, lang, name, width, widths, sizes, eager = false, priority = eager, decorative = false, class: cls } = Astro.props;
+---
+{photo.image ? (
+  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+) : (
+  <PhotoPlaceholder kind={kind} lang={lang} name={name} />
+)}

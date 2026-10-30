@@ -1,37 +1,35 @@
 ---
-import CityImage from '../CityImage.astro';
+/** Premier écran de l'accueil : titre, chapô, les trois parcours, puis la recherche. */
 import Icon from '../Icon.astro';
+import PathCard from '../paths/PathCard.astro';
 import { useTranslations, type Locale } from '../../i18n';
+import { PATH_ORDER, PATH_UI } from '../../data/paths';
 import { hubPath } from '../../utils/i18n';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const copy = {
- fr: { eyebrow: 'Le guide des MRE et des voyageurs', title: 'Le Maroc,', titleEm: 'simplement.', intro: 'Retrouver les siens, découvrir une ville ou préparer un achat : des guides pratiques, des checklists et des calculateurs pour avancer au Maroc, étape par étape.', cta: 'Préparer mon projet', other: 'Explorer les destinations', search: 'On commence par quoi ?', placeholder: 'Une ville, une démarche, une envie…', free: 'Guides pratiques et outils gratuits' },
- en: { eyebrow: 'The guide for MREs and travellers', title: 'Morocco,', titleEm: 'made simple.', intro: 'Reunite with family, discover a city or plan a property purchase: practical guides, checklists and calculators for your next steps in Morocco.', cta: 'Plan my project', other: 'Explore destinations', search: 'Where shall we start?', placeholder: 'A city, a question, an idea…', free: 'Practical guides and free tools' },
- es: { eyebrow: 'La guía para la diáspora y los viajeros', title: 'Marruecos,', titleEm: 'sin complicaciones.', intro: 'Volver a ver a los tuyos, descubrir una ciudad o preparar una compra: guías prácticas, listas y calculadoras para avanzar en Marruecos, paso a paso.', cta: 'Preparar mi proyecto', other: 'Explorar destinos', search: '¿Por dónde empezamos?', placeholder: 'Una ciudad, una pregunta, una idea…', free: 'Guías prácticas y herramientas gratuitas' },
- de: { eyebrow: 'Der Guide für MRE und Reisende', title: 'Marokko,', titleEm: 'ganz einfach.', intro: 'Die Familie wiedersehen, eine Stadt entdecken oder einen Immobilienkauf planen: praktische Ratgeber, Checklisten und Rechner für Ihre nächsten Schritte in Marokko.', cta: 'Mein Projekt planen', other: 'Reiseziele entdecken', search: 'Wo fangen wir an?', placeholder: 'Eine Stadt, eine Frage, eine Idee…', free: 'Praktische Guides und kostenlose Rechner' },
- ar: { eyebrow: 'دليل مغاربة العالم والمسافرين', title: 'المغرب،', titleEm: 'ببساطة.', intro: 'لقاء الأهل أو اكتشاف مدينة أو التحضير لشراء عقار: أدلة عملية وقوائم وحاسبات تساعدكم على التقدّم في المغرب، خطوة بخطوة.', cta: 'أحضّر لمشروعي', other: 'أكتشف الوجهات', search: 'من أين نبدأ؟', placeholder: 'مدينة، سؤال، فكرة…', free: 'أدلة عملية وأدوات مجانية' },
+ fr: { title: 'Le Maroc,', titleEm: 'simplement.', intro: 'Guides pratiques, checklists et calculateurs gratuits pour avancer au Maroc, étape par étape.', search: 'Rechercher un guide', placeholder: 'Une ville, une démarche, une envie…' },
+ en: { title: 'Morocco,', titleEm: 'made simple.', intro: 'Practical guides, checklists and free calculators for your next steps in Morocco.', search: 'Search the guides', placeholder: 'A city, a question, an idea…' },
+ es: { title: 'Marruecos,', titleEm: 'sin complicaciones.', intro: 'Guías prácticas, listas y calculadoras gratuitas para avanzar en Marruecos, paso a paso.', search: 'Buscar una guía', placeholder: 'Una ciudad, una pregunta, una idea…' },
+ de: { title: 'Marokko,', titleEm: 'ganz einfach.', intro: 'Praktische Ratgeber, Checklisten und kostenlose Rechner für Ihre nächsten Schritte in Marokko.', search: 'Ratgeber durchsuchen', placeholder: 'Eine Stadt, eine Frage, eine Idee…' },
+ ar: { title: 'المغرب،', titleEm: 'ببساطة.', intro: 'أدلة عملية وقوائم تحقق وحاسبات مجانية تساعدكم على التقدّم في المغرب، خطوة بخطوة.', search: 'ابحث في الأدلة', placeholder: 'مدينة، سؤال، فكرة…' },
 }[lang];
 const searchUrl = hubPath(lang, 'search');
 ---
 <section class="home-hero" aria-labelledby="home-title">
-  <div class="home-hero__media">
-    <CityImage scene="home-hero" lang={lang} width={1600} widths={[768, 1200, 1600]} sizes="100vw" eager priority />
-  </div>
-  <div class="container-page">
-    <div class="home-hero__panel">
-      <p class="eyebrow text-[var(--accent)]">{copy.eyebrow}</p>
-      <h1 id="home-title">{copy.title} <em>{copy.titleEm}</em></h1>
-      <p class="home-hero__intro">{copy.intro}</p>
-      <div class="home-hero__actions">
-        <a href="#journey-title" class="btn btn-primary">{copy.cta}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
-        <a href={hubPath(lang, 'cities')} class="text-link">{copy.other}</a>
-      </div>
-      <form class="home-search" action={searchUrl} method="get" role="search">
-        <label for="home-query">{copy.search}</label>
-        <div><Icon name="search" class="size-5 shrink-0 muted" /><input id="home-query" name="q" type="search" placeholder={copy.placeholder} required /><button class="btn btn-primary btn-sm" type="submit">{t('nav.search')}</button></div>
-      </form>
+  <div class="container-page home-hero__grid">
+    <h1 id="home-title">{copy.title} <em>{copy.titleEm}</em></h1>
+    <p class="home-hero__intro">{copy.intro}</p>
+    <div class="home-paths" data-home-paths>
+      <h2 class="sr-only">{PATH_UI.paths[lang]}</h2>
+      <ul class="path-cards">
+        {PATH_ORDER.map((id, i) => <li><PathCard id={id} lang={lang} eager priority={i === 0} /></li>)}
+      </ul>
     </div>
+    <form class="home-search" action={searchUrl} method="get" role="search">
+      <label for="home-query">{copy.search}</label>
+      <div><Icon name="search" class="size-5 shrink-0 muted" /><input id="home-query" name="q" type="search" placeholder={copy.placeholder} required /><button class="btn btn-primary btn-sm" type="submit">{t('nav.search')}</button></div>
+    </form>
   </div>
 </section>

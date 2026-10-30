@@ -2,7 +2,7 @@
 /** Page région : /<lang>/regions/<région>. Textes issus de src/data/regions.ts, villes liées via CITY_PAGES. */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PlaceHero from '../PlaceHero.astro';
-import { getPhoto, getRegionPhoto } from '../../utils/photos';
+import { placePhoto } from '../../utils/photos';
 import CityGrid from '../home/CityGrid.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { REGIONS, regionById, regionCities } from '../../data/regions';
@@ -17,13 +17,13 @@ const name = region.name[lang];
 const cities = regionCities(region.id);
 const url = absoluteUrl(regionPath(lang, region.slug), Astro.site);
 const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('nav.regions'), href: hubPath(lang, 'regions') }, { name }];
-// Photo de la région (manifeste), sinon photo de la ville capitale si disponible.
-const photo = getRegionPhoto(region.id, lang) ?? (region.capitalCity ? getPhoto(region.capitalCity, lang) : null);
+// Photo de la région (manifeste), sinon photo de la ville chef-lieu, sinon placeholder (voir placePhoto).
+const photo = placePhoto('region', region.id, lang);
 const others = REGIONS.filter((r) => r.id !== region.id);
 ---
 <BaseLayout lang={lang} title={t('region.title', { region: name })} description={t('region.description', { region: name })} alternates={Object.fromEntries((['en', 'fr', 'es', 'de', 'ar'] as Locale[]).map((l) => [l, regionPath(l, region.slug)]))} switchTargets={allLocalesTargets((l) => regionPath(l, region.slug))}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}>
-  <PlaceHero lang={lang} crumbs={crumbs} title={t('region.title', { region: name })} intro={text.intro} meta={`${t('region.capital')} : ${region.capital[lang]}`} photo={photo} />
+  <PlaceHero lang={lang} crumbs={crumbs} title={t('region.title', { region: name })} intro={text.intro} meta={`${t('region.capital')} : ${region.capital[lang]}`} photo={photo} kind="region" name={name} />
   <div class="container-page section">
     <section aria-labelledby="h-cities">
       <h2 id="h-cities" class="section-title !text-2xl">{t('region.cities')}</h2>

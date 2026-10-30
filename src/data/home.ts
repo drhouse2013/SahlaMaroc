@@ -27,7 +27,6 @@ export const L: Record<string, Full<string>> = {
   statGuides: { en: 'guides', fr: 'guides', es: 'guías', de: 'Guides', ar: 'دليل' },
   statLangs: { en: 'languages', fr: 'langues', es: 'idiomas', de: 'Sprachen', ar: 'لغات' },
   statUpdated: { en: 'Updated', fr: 'Mis à jour', es: 'Actualizado', de: 'Aktualisiert', ar: 'آخر تحديث' },
-  personasTitle: { en: 'What brings you to Morocco?', fr: 'Qu’est-ce qui vous amène au Maroc ?', es: '¿Qué te trae a Marruecos?', de: 'Was führt dich nach Marokko?', ar: 'ما الذي يأتي بك إلى المغرب؟' },
   citiesTitle: { en: 'Morocco, city by city', fr: 'Le Maroc, ville par ville', es: 'Marruecos, ciudad a ciudad', de: 'Marokko, Stadt für Stadt', ar: 'المغرب، مدينة بمدينة' },
   citiesSub: { en: 'Eight cities, eight very different lives. Here is the short version.', fr: 'Huit villes, huit vies très différentes. Voici la version courte.', es: 'Ocho ciudades, ocho vidas muy distintas.', de: 'Acht Städte, acht sehr unterschiedliche Leben.', ar: 'ثماني مدن، ثماني حيوات مختلفة.' },
   factsTitle: { en: 'Morocco in 8 numbers', fr: 'Le Maroc en 8 chiffres', es: 'Marruecos en 8 cifras', de: 'Marokko in 8 Zahlen', ar: 'المغرب في 8 أرقام' },
@@ -42,22 +41,7 @@ export const L: Record<string, Full<string>> = {
   guides: { en: 'Guides', fr: 'Guides', es: 'Guías', de: 'Guides', ar: 'الأدلة' },
   cities: { en: 'Cities', fr: 'Villes', es: 'Ciudades', de: 'Städte', ar: 'المدن' },
   onThisPage: { en: 'On this page', fr: 'Sur cette page', es: 'En esta página', de: 'Auf dieser Seite', ar: 'في هذه الصفحة' },
-  essentials: { en: 'Before you go', fr: 'Avant de partir', es: 'Antes de ir', de: 'Vor der Reise', ar: 'قبل السفر' },
   aboutAuthor: { en: 'Lives near Casablanca. Writes the guides he wishes his foreign friends had on day one.', fr: 'Vit près de Casablanca. Écrit les guides qu’il aurait aimé donner à ses amis étrangers dès le premier jour.', es: 'Vive cerca de Casablanca.', de: 'Lebt bei Casablanca.', ar: 'يعيش قرب الدار البيضاء.' },
-};
-
-/* ---------------------------------------------------------------- profils */
-export const PERSONAS: Partial2<{ icon: string; title: string; text: string; keys: string[] }[]> = {
-  en: [
-    { icon: '⛴️', title: 'I’m going home this summer', text: 'Marhaba, ferries, your car and the family budget, without stress.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
-    { icon: '🏠', title: 'I want to invest in Morocco', text: 'Buy safely from abroad, get housing aid and send money for less.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
-    { icon: '🧳', title: 'I’m visiting Morocco', text: 'Arrival, money, the trips worth taking and where to stay.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
-  ],
-  fr: [
-    { icon: '⛴️', title: 'Je rentre au bled cet été', text: 'Marhaba, ferries, voiture et budget familial, sans stress.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
-    { icon: '🏠', title: 'Je veux investir au Maroc', text: 'Acheter sans risque à distance, l’aide au logement, envoyer de l’argent moins cher.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
-    { icon: '🧳', title: 'Je visite le Maroc', text: 'Arrivée, argent, excursions qui valent le coup et où loger.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
-  ],
 };
 
 /* ---------------------------------------------------------------- villes */
@@ -304,24 +288,7 @@ const DARIJA_I18N: Record<'es' | 'de' | 'ar', string>[] = [
 DARIJA.forEach((d, i) => Object.assign(d.meaning, DARIJA_I18N[i]));
 
 
-/* ---------------------------------------------------------------- profils & FAQ : ES / DE / AR */
-Object.assign(PERSONAS, {
-  es: [
-    { icon: '⛴️', title: 'Vuelvo a casa este verano', text: 'Marhaba, ferris, tu coche y el presupuesto familiar, sin estrés.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
-    { icon: '🏠', title: 'Quiero invertir en Marruecos', text: 'Compra segura a distancia, ayuda a la vivienda y envíos de dinero más baratos.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
-    { icon: '🧳', title: 'Visito Marruecos', text: 'Llegada, dinero, excursiones que merecen la pena y dónde alojarse.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
-  ],
-  de: [
-    { icon: '⛴️', title: 'Ich fahre diesen Sommer nach Hause', text: 'Marhaba, Fähren, dein Auto und das Familienbudget, ohne Stress.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
-    { icon: '🏠', title: 'Ich möchte in Marokko investieren', text: 'Sicher aus der Ferne kaufen, Wohnbauhilfe nutzen und günstiger Geld senden.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
-    { icon: '🧳', title: 'Ich besuche Marokko', text: 'Ankunft, Geld, lohnende Ausflüge und wo man übernachtet.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
-  ],
-  ar: [
-    { icon: '⛴️', title: 'أعود إلى البلاد هذا الصيف', text: 'مرحبا، العبّارات، سيارتك وميزانية العائلة، بدون توتر.', keys: ['marhaba-guide', 'ferry-guide', 'car-180-days'] },
-    { icon: '🏠', title: 'أريد الاستثمار في المغرب', text: 'اشترِ بأمان عن بُعد، استفد من دعم السكن وحوّل الأموال بتكلفة أقل.', keys: ['buy-property-abroad', 'daam-sakane', 'send-money'] },
-    { icon: '🧳', title: 'أزور المغرب', text: 'الوصول، المال، الرحلات التي تستحق، وأين تقيم.', keys: ['marrakech-airport', 'merzouga-tour', 'where-to-stay-marrakech'] },
-  ],
-});
+/* ---------------------------------------------------------------- FAQ : ES / DE / AR */
 
 FAQ.en.push({ q: 'What time is it in Morocco?', a: 'Morocco has been on GMT all year since 20 September 2026: 1 hour behind France and Spain in winter, 2 hours behind in summer.' });
 FAQ.fr.push({ q: 'Quelle heure est-il au Maroc ?', a: 'Le Maroc est à l’heure GMT toute l’année depuis le 20 septembre 2026 : 1 h de moins qu’en France et en Espagne en hiver, 2 h en été.' });

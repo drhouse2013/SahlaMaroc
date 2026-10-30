@@ -365,5 +365,7 @@
   "calendar.always": "Ganzjährig",
   "calendar.guide": "Zum Ratgeber",
   "calendar.source": "Quelle",
-  "machine.note": "Maschinell übersetzt, noch nicht redigiert: im Zweifel die französische oder englische Version heranziehen."
+  "machine.note": "Maschinell übersetzt, noch nicht redigiert: im Zweifel die französische oder englische Version heranziehen.",
+  "photo.soon": "Foto folgt",
+  "photo.soonFor": "Foto folgt: {name}"
 }

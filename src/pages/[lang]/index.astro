@@ -2,7 +2,6 @@
 /** Accueil localisé : /en, /fr, /es, /de, /ar */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/home/Hero.astro';
-import Journeys from '../../components/home/Journeys.astro';
 import EditorNote from '../../components/home/EditorNote.astro';
 import Destinations from '../../components/home/Destinations.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
@@ -39,7 +38,6 @@ const tools = (await Promise.all(TOOLS.filter((x) => TOOL_KEYS.includes(x.key)).
 <BaseLayout lang={lang} title={homeSeo[lang][0]} description={homeSeo[lang][1]} alternates={allLocalesAlternates(homePath)} switchTargets={allLocalesTargets(homePath)} jsonLd={[websiteJsonLd(lang, Astro.site, t('site.description')), organizationJsonLd(Astro.site)]}>
   <div class="home-page">
     <Hero lang={lang} />
-    <Journeys lang={lang} />
     {popular.length > 0 && <section class="container-page section" aria-labelledby="popular-title">
       <div class="section-head"><div><p class="eyebrow text-[var(--accent)]">{t('nav.guides')}</p><h2 id="popular-title" class="section-title mt-3">{t('home.popular')}</h2><p class="section-sub">{t('home.popularSub')}</p></div><a href={hubPath(lang,'guides')} class="text-link">{t('nav.allGuides')}</a></div>
       <div class="guide-feature"><ArticleCard article={popular[0]} /><div class="guide-list">{popular.slice(1).map(a=><ArticleCard article={a} size="sm" />)}</div></div>

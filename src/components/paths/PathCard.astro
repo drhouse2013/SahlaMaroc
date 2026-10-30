@@ -1,0 +1,23 @@
+---
+/** Carte d'un parcours (accueil : « cover » ; pages parcours : « row »). Toute la carte est cliquable via le CTA. */
+import Icon from '../Icon.astro';
+import PathPhoto from './PathPhoto.astro';
+import type { Locale } from '../../i18n';
+import { PATHS, type PathId } from '../../data/paths';
+import { hubPath } from '../../utils/i18n';
+
+interface Props { id: PathId; lang: Locale; variant?: 'cover' | 'row'; eager?: boolean; priority?: boolean; headingLevel?: 'h2' | 'h3' }
+const { id, lang, variant = 'cover', eager = false, priority = false, headingLevel = 'h3' } = Astro.props;
+const p = PATHS[id];
+const Heading = headingLevel;
+---
+<article class:list={['path-card', `path-card--${variant}`]} data-path={id} data-path-card={id}>
+  <div class="path-card__media">
+    <PathPhoto id={id} lang={lang} widths={[320, 480, 720]} sizes={variant === 'cover' ? '(min-width: 900px) 360px, 36vw' : '(min-width: 768px) 200px, 36vw'} eager={eager} priority={priority} />
+  </div>
+  <div class="path-card__body">
+    <Heading class="path-card__title">{p.title[lang]}</Heading>
+    <p class="path-card__text">{p.text[lang]}</p>
+    <a class="path-card__cta" href={hubPath(lang, p.hub)} data-path-cta={id} data-track="path_click" data-track-label={id}>{p.cta[lang]}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+  </div>
+</article>

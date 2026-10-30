@@ -130,19 +130,3 @@ export const PILLARS: Record<CategoryId, Pillar> = {
     sources: ['onmt', 'anrt'],
   },
 };
-
-/** Pages hub par public : thèmes, outils et guides de départ */
-export const AUDIENCE_HUBS = {
-  mre: {
-    categories: ['retour', 'immobilier', 'money', 'demarches'] as CategoryId[],
-    tools: ['calc-summer', 'calc-car-days', 'calc-customs', 'calc-transfer', 'calc-property-fees', 'calc-mortgage', 'calc-retirement-budget', 'calc-highway-toll'],
-    start: ['summer-checklist', 'marhaba-guide', 'car-180-days', 'send-money', 'buy-property-abroad', 'passport-cnie'],
-    cities: ['tangier', 'casablanca', 'rabat'],
-  },
-  visit: {
-    categories: ['arrival', 'tours', 'stay', 'living'] as CategoryId[],
-    tools: ['budget-calculator', 'prayer-times'],
-    start: ['e-visa', 'sim-esim-morocco', 'marrakech-airport', 'scams-safety', 'riad-or-hotel', 'merzouga-tour'],
-    cities: ['marrakech', 'fes', 'chefchaouen', 'essaouira', 'casablanca', 'taghazout'],
-  },
-} as const;

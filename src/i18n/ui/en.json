@@ -365,5 +365,7 @@
   "calendar.always": "All year round",
   "calendar.guide": "See the guide",
   "calendar.source": "Source",
-  "machine.note": "Machine-translated, not yet proofread: refer to the French or English version if in doubt."
+  "machine.note": "Machine-translated, not yet proofread: refer to the French or English version if in doubt.",
+  "photo.soon": "Photo coming soon",
+  "photo.soonFor": "Photo coming soon: {name}"
 }
