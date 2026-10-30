@@ -32,8 +32,8 @@ function page({ dark = false, saved, legacy, blocked = false } = {}) {
   };
 }
 test('sans préférence, suit le système au chargement et pendant la visite', () => {
-  const p = page({ dark: true }); assert.equal(p.dark(), true); assert.equal(p.preference(), 'system'); assert.equal(p.color(), '#0f2a26');
-  p.system(false); assert.equal(p.dark(), false); assert.equal(p.color(), '#f4efe6');
+  const p = page({ dark: true }); assert.equal(p.dark(), true); assert.equal(p.preference(), 'system'); assert.equal(p.color(), '#0f1626');
+  p.system(false); assert.equal(p.dark(), false); assert.equal(p.color(), '#fbf8f3');
   p.system(true); assert.equal(p.dark(), true); assert.deepEqual(p.selects.map(s => s.value), ['system', 'system']);
 });
 test('un choix manuel reste stable puis Système réactive le suivi', () => {
