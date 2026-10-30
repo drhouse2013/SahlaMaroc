@@ -301,6 +301,8 @@ html.dark {
   .home-paths .path-card__body { padding-inline: .875rem; }
   .home-paths .path-card__title { font-size: 1.125rem; line-height: 1.3; }
   .home-paths .path-card__cta { font-size: .875rem; }
+  .home-hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+  .home-hero__intro { font-size: .9375rem; line-height: 1.5; }
 }
 .path-nav ul { display: flex; flex-wrap: wrap; gap: .5rem; }
 .path-nav a { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.5rem; padding: .3rem .85rem; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text); font-size: .875rem; font-weight: 600; }
@@ -310,7 +312,7 @@ html.dark {
 .path-nav a[aria-current="page"] svg { color: currentColor; }
 .path-hero { padding-block: 1.5rem 2.5rem; border-bottom: 1px solid var(--line); }
 .path-hero__grid { display: grid; gap: 2rem; }
-.path-hero h1 { margin-top: 1.75rem; font-size: var(--step-6); font-weight: 520; line-height: 1.05; letter-spacing: -0.03em; }
+.path-hero h1 { margin-top: 1.75rem; font-size: var(--step-5); font-weight: 520; line-height: 1.12; letter-spacing: -0.03em; hyphens: none; }
 :lang(ar) .path-hero h1 { font-size: var(--step-5); line-height: 1.35; letter-spacing: 0; }
 .path-hero__intro { margin-top: 1rem; max-width: 36rem; font-size: var(--step-1); line-height: 1.6; color: var(--muted); }
 .path-hero__media { position: relative; overflow: hidden; aspect-ratio: 3 / 2; border-radius: .75rem; background: var(--surface-3); }
