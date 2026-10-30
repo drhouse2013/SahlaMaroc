@@ -564,3 +564,10 @@ Base conservée : main 20beff2, trois parcours, nouvelles photos, typographie Fr
 - Cartes d’accueil ajustées sur petit écran : plus de place au texte et aux appels à l’action ; recadrage photo un peu plus large sur ordinateur.
 - Filet de zellige réel à l’entrée, limité à l’accueil ; aucun nouvel asset.
 - Crédits des parcours lisibles au survol de la carte et au focus clavier, tout en gardant leur discrétion au repos souhaitée par le propriétaire.
+
+## 2026-10-30 — Clarté de l’accueil et du premier clic
+
+- Promesse de l’accueil centrée sur le retour, l’investissement et le voyage, dans les cinq langues.
+- Appels à l’action plus courts et cohérents : préparer son retour, son projet ou son voyage.
+- Sur les pages parcours, le bouton annonce la rubrique exacte qu’il ouvre ; titre investissement raccourci à l’écran, titre SEO détaillé conservé.
+- Titres et introduction plus compacts sur téléphone ; césure automatique retirée des titres de parcours. Photos, palette, contenus et thème système conservés.
