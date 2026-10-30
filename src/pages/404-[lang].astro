@@ -1,0 +1,10 @@
+---
+// Variante localisée de la 404 (chargée par 404.astro selon le préfixe de l'URL). noindex, hors sitemap.
+import NotFound from '../components/NotFound.astro';
+import { LOCALES } from '../i18n';
+export function getStaticPaths() {
+  return LOCALES.filter((l) => l !== 'en').map((lang) => ({ params: { lang }, props: { lang } }));
+}
+const { lang } = Astro.props;
+---
+<NotFound lang={lang} />

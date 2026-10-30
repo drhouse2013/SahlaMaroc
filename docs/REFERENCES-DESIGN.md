@@ -3,7 +3,7 @@
 Méthode : Playwright, captures pleine page 1440 et 390 px + relevé des styles calculés (h1/h2/corps). Aucune marque, aucun texte ni composition propriétaire repris : seuls des principes.
 
 ## 1. Vast Luxury (framer.elliotli.dev/template/vast-luxury)
-**Inaccessible, re-testé le 29/10/2026** : HTTP 404 en fetch live (maxAge 0) ; le site propose seulement « able-luxury » (autre gabarit) et une recherche web de la démo n'a renvoyé que la page auteur (elliotli.dev) et des listes, aucune démo de Vast Luxury. Non étudiée, rien d'inventé.
+**Inaccessible, re-testé le 29/10/2026** : HTTP 404 en fetch live (maxAge 0) ; le site propose seulement « able-luxury » (autre gabarit) et une recherche web de la démo n'a renvoyé que la page auteur (elliotli.dev) et des listes, aucune démo de Vast Luxury. Non étudiée, rien d'inventé. Re-recherche 30/10/2026 : seuls elliotli.dev, framer.com/@elliotli/posts et un post LinkedIn remontent, aucune URL de démo Vast Luxury ; URL essayées : framer.elliotli.dev/template/vast-luxury (404), elliotli.dev, framer.com/@elliotli/posts/.
 
 ## 2. Far Enough (démo farenough.framer.website)
 - Hero typographique : serif léger très grand (≈148 px, interlettrage −3 %), seconde ligne en italique : contraste romain/italique comme signature.

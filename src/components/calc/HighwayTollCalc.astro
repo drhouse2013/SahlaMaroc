@@ -209,17 +209,16 @@ const cfg = JSON.stringify({
 </style>
 
 <script>
-  // @ts-nocheck
   import { calculateToll, getAvailableDestinationCities } from '../../utils/highway-toll.mjs';
 
   document.querySelectorAll('[data-highway-toll-wrap]').forEach((wrap) => {
-    const config = JSON.parse(wrap.dataset.cfg);
-    const root = wrap.querySelector('[data-calc="highway-toll"]');
-    const fromSelect = root.querySelector('select[name="from"]');
-    const toSelect = root.querySelector('select[name="to"]');
+    const config = JSON.parse((wrap as HTMLElement).dataset.cfg ?? '{}');
+    const root = wrap.querySelector('[data-calc="highway-toll"]')!;
+    const fromSelect = root.querySelector<HTMLSelectElement>('select[name="from"]')!;
+    const toSelect = root.querySelector<HTMLSelectElement>('select[name="to"]')!;
     const vehicleRadios = root.querySelectorAll('input[name="vehicle"]');
-    const tollOut = root.querySelector('[data-out="toll"]');
-    const msgsOut = root.querySelector('[data-out="msgs"]');
+    const tollOut = root.querySelector('[data-out="toll"]')!;
+    const msgsOut = root.querySelector('[data-out="msgs"]')!;
     const nf = new Intl.NumberFormat(config.locale, { maximumFractionDigits: 0 });
 
     const updateDestinations = () => {
@@ -247,7 +246,7 @@ const cfg = JSON.stringify({
     const calculate = () => {
       const fromCity = fromSelect.value;
       const toCity = toSelect.value;
-      const vehicleClass = root.querySelector('input[name="vehicle"]:checked')?.value;
+      const vehicleClass = root.querySelector<HTMLInputElement>('input[name="vehicle"]:checked')?.value;
 
       msgsOut.replaceChildren();
       tollOut.textContent = '—';

@@ -1,0 +1,386 @@
+{
+ "el-jadida/sidi-bouzid": {
+  "file": "el-jadida-sidi-bouzid.jpg",
+  "alt": {
+   "fr": "Plage de Sidi Bouzid à El Jadida vue depuis les dunes",
+   "en": "Sidi Bouzid beach in El Jadida seen from the dunes",
+   "es": "Playa de Sidi Bouzid en El Jadida vista desde las dunas",
+   "de": "Der Strand von Sidi Bouzid in El Jadida von den Dünen aus",
+   "ar": "شاطئ سيدي بوزيد في الجديدة من أعلى الكثبان"
+  },
+  "credit": "Snipervga, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sidi_Bouzid_El_Jadida_.jpg"
+ },
+ "el-jadida/resistance-museum": {
+  "file": "el-jadida-resistance-museum.jpg",
+  "alt": {
+   "fr": "Façade de l'Espace de la mémoire historique de la résistance à El Jadida",
+   "en": "Façade of the Historical Memory of the Resistance space in El Jadida",
+   "es": "Fachada del Espacio de la Memoria Histórica de la Resistencia en El Jadida",
+   "de": "Fassade des Museums der historischen Erinnerung an den Widerstand in El Jadida",
+   "ar": "واجهة فضاء الذاكرة التاريخية للمقاومة بالجديدة"
+  },
+  "credit": "Reda benkhadra, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Espace_de_la_Mémoire_Historique_de_la_Résistance_et_de_la_Libération,_El_Jadida.jpg"
+ },
+ "el-jadida/lighthouse": {
+  "file": "el-jadida-lighthouse.jpg",
+  "alt": {
+   "fr": "Phare d'El Jadida dominant la cité portugaise",
+   "en": "El Jadida lighthouse rising above the Portuguese city",
+   "es": "Faro de El Jadida sobre la ciudad portuguesa",
+   "de": "Der Leuchtturm von El Jadida über der portugiesischen Stadt",
+   "ar": "منارة الجديدة تعلو المدينة البرتغالية"
+  },
+  "credit": "M.Rais, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Phare_Jadida.JPG"
+ },
+ "saidia/beach": {
+  "file": "saidia-beach.jpg",
+  "alt": {
+   "fr": "Plage de Saïdia avec le cap de l'Eau à l'horizon",
+   "en": "Saïdia beach with the Cap de l'Eau headland on the horizon",
+   "es": "Playa de Saidia con el cabo del Agua al fondo",
+   "de": "Der Strand von Saïdia mit dem Cap de l'Eau am Horizont",
+   "ar": "شاطئ السعيدية ورأس الماء في الأفق"
+  },
+  "credit": "Brahim FARAJI, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_de_Saidia_-_Province_de_Berkane.jpg"
+ },
+ "saidia/marina": {
+  "file": "saidia-marina.jpg",
+  "alt": {
+   "fr": "Marina de Saïdia de nuit, voiliers amarrés",
+   "en": "Saïdia marina at night with moored sailboats",
+   "es": "Puerto deportivo de Saidia de noche con veleros amarrados",
+   "de": "Der Yachthafen von Saïdia bei Nacht mit Segelbooten",
+   "ar": "مرسى السعيدية ليلا وقوارب شراعية راسية"
+  },
+  "credit": "Farajiibrahim, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Saidia's_Marina_by_night_-_Berkane_Morocco_by_Brahim_FARAJI.jpg"
+ },
+ "saidia/moulouya-reserve": {
+  "file": "saidia-moulouya-reserve.jpg",
+  "alt": {
+   "fr": "Embouchure de la Moulouya près de Saïdia",
+   "en": "The Moulouya river near its mouth close to Saïdia",
+   "es": "La desembocadura del río Muluya cerca de Saidia",
+   "de": "Die Mündung des Moulouya bei Saïdia",
+   "ar": "مصب ملوية قرب السعيدية"
+  },
+  "credit": "Bilal026, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Moulouya_river.jpg"
+ },
+ "guelmim/tighmert-oasis": {
+  "file": "guelmim-tighmert-oasis.jpg",
+  "alt": {
+   "fr": "Palmeraie de l'oasis de Tighmert près de Guelmim",
+   "en": "Palm grove in the Tighmert oasis near Guelmim",
+   "es": "Palmeral del oasis de Tighmert cerca de Guelmim",
+   "de": "Palmenhain der Oase Tighmert bei Guelmim",
+   "ar": "نخيل واحة تيغمرت قرب كلميم"
+  },
+  "credit": "balepc, CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Oasis_-_panoramio_(5).jpg"
+ },
+ "taroudant/arab-souk": {
+  "file": "taroudant-arab-souk.jpg",
+  "alt": {
+   "fr": "Étal d'épices et d'olives dans le souk de Taroudant",
+   "en": "Spice and olive stall in the Taroudant souk",
+   "es": "Puesto de especias y aceitunas en el zoco de Taroudant",
+   "de": "Gewürz- und Olivenstand im Souk von Taroudant",
+   "ar": "كشك توابل وزيتون في سوق تارودانت"
+  },
+  "credit": "Adville, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Taroudannt_Souk.jpg"
+ },
+ "taroudant/tannery": {
+  "file": "taroudant-tannery.jpg",
+  "alt": {
+   "fr": "Cuves de la tannerie de Taroudant",
+   "en": "Vats of the Taroudant tannery",
+   "es": "Tinas de la curtiduría de Taroudant",
+   "de": "Gerbereibecken von Taroudant",
+   "ar": "أحواض دباغة تارودانت"
+  },
+  "credit": "Julian Nyča, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Taroudannt_Gerberei.JPG"
+ },
+ "taroudant/ramparts": {
+  "file": "taroudant-ramparts.jpg",
+  "alt": {
+   "fr": "Remparts ocre de Taroudant",
+   "en": "The ochre ramparts of Taroudant",
+   "es": "Las murallas ocres de Taroudant",
+   "de": "Die ockerfarbenen Stadtmauern von Taroudant",
+   "ar": "أسوار تارودانت الحمراء"
+  },
+  "credit": "Bjørn Christian Tørrissen, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls_2011.jpg"
+ },
+ "larache/medina": {
+  "file": "larache-medina.jpg",
+  "alt": {
+   "fr": "Minaret bleu et maisons blanches de la médina de Larache",
+   "en": "Blue minaret and white houses of the Larache medina",
+   "es": "Alminar azul y casas blancas de la medina de Larache",
+   "de": "Blaues Minarett und weiße Häuser der Medina von Larache",
+   "ar": "مئذنة زرقاء وبيوت بيضاء في مدينة العرائش العتيقة"
+  },
+  "credit": "Dans, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Larache_Medina.jpg"
+ },
+ "larache/pilar-church": {
+  "file": "larache-pilar-church.jpg",
+  "alt": {
+   "fr": "Église Notre-Dame du Pilier à Larache",
+   "en": "Church of Our Lady of the Pillar in Larache",
+   "es": "Iglesia de Nuestra Señora del Pilar en Larache",
+   "de": "Kirche Unserer Lieben Frau vom Pilar in Larache",
+   "ar": "كنيسة سيدة البيلار بالعرائش"
+  },
+  "credit": "Dans, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Larache_Iglesia_Pilar.jpg"
+ },
+ "larache/lixus": {
+  "file": "larache-lixus.jpg",
+  "alt": {
+   "fr": "Colonnes romaines du site archéologique de Lixus",
+   "en": "Roman columns at the Lixus archaeological site",
+   "es": "Columnas romanas del yacimiento arqueológico de Lixus",
+   "de": "Römische Säulen in der Ausgrabungsstätte Lixus",
+   "ar": "أعمدة رومانية في موقع ليكسوس الأثري"
+  },
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ruins_at_Lixus_archaeological_site_49.jpg"
+ },
+ "larache/place-liberation": {
+  "file": "larache-place-liberation.jpg",
+  "alt": {
+   "fr": "Place de la Libération (ex-place d'Espagne) à Larache et ses palmiers",
+   "en": "Liberation Square (former Plaza de España) in Larache with palms",
+   "es": "Plaza de la Liberación (antigua Plaza de España) en Larache con palmeras",
+   "de": "Der Platz der Befreiung (ehem. Plaza de España) in Larache mit Palmen",
+   "ar": "ساحة التحرير (ساحة إسبانيا سابقا) بالعرائش ونخيلها"
+  },
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:ساحة_التحرير_أو_ساحة_إسپانيا_بالعرائش_3.jpg"
+ },
+ "larache/beach": {
+  "file": "larache-beach.jpg",
+  "alt": {
+   "fr": "Plage de Larache à marée basse",
+   "en": "Larache beach at low tide",
+   "es": "Playa de Larache con la marea baja",
+   "de": "Strand von Larache bei Ebbe",
+   "ar": "شاطئ العرائش عند الجزر"
+  },
+  "credit": "Farouk_oujjair, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_de_laarache.jpg"
+ },
+ "asilah/medina": {
+  "file": "asilah-medina.jpg",
+  "alt": {
+   "fr": "Remparts et médina blanche d'Asilah battus par les vagues",
+   "en": "Whitewashed Asilah medina and ramparts beaten by waves",
+   "es": "Medina blanca y murallas de Arcila batidas por las olas",
+   "de": "Die weiße Medina und Mauern von Asilah, von Wellen umspült",
+   "ar": "مدينة أصيلة البيضاء وأسوارها وأمواج المحيط"
+  },
+  "credit": "August Dominus, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Asilah,_Maroko.jpg"
+ },
+ "asilah/ramparts-towers": {
+  "file": "asilah-ramparts-towers.jpg",
+  "alt": {
+   "fr": "Remparts portugais d'Asilah dominant la médina",
+   "en": "Portuguese ramparts of Asilah above the medina",
+   "es": "Murallas portuguesas de Arcila sobre la medina",
+   "de": "Portugiesische Wehrmauern von Asilah über der Medina",
+   "ar": "الأسوار البرتغالية لأصيلة فوق المدينة العتيقة"
+  },
+  "credit": "RACHID BAYA, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Historic_Ramparts_of_Asilah.jpg"
+ },
+ "asilah/grand-mosque": {
+  "file": "asilah-grand-mosque.jpg",
+  "alt": {
+   "fr": "Grande mosquée d'Asilah et son minaret blanc",
+   "en": "The Grand Mosque of Asilah and its white minaret",
+   "es": "La Gran Mezquita de Arcila y su alminar blanco",
+   "de": "Die Große Moschee von Asilah mit weißem Minarett",
+   "ar": "الجامع الكبير بأصيلة ومئذنته البيضاء"
+  },
+  "credit": "ZAINEB HACHAMI, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:La_Grande_Mosquée_de_Assilah_01.jpg"
+ },
+ "ifrane/vittel-spring": {
+  "file": "ifrane-vittel-spring.jpg",
+  "alt": {
+   "fr": "Ruisseau et sous-bois du parc Aïn Vittel à Ifrane",
+   "en": "Stream and woodland of Ain Vittel park in Ifrane",
+   "es": "Arroyo y arbolado del parque Ain Vittel en Ifrane",
+   "de": "Bach und Wald im Park Aïn Vittel in Ifrane",
+   "ar": "جدول وغابة حديقة عين فيتل بإفران"
+  },
+  "credit": "Mounir Neddi, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Parc_Ain_Vittel_Ifrane1.jpg"
+ },
+ "ifrane/ras-el-ma": {
+  "file": "ifrane-ras-el-ma.jpg",
+  "alt": {
+   "fr": "Pâturage et forêt de cèdres à Ras El Ma près d'Ifrane",
+   "en": "Pasture and cedar forest at Ras El Ma near Ifrane",
+   "es": "Pasto y bosque de cedros en Ras El Ma cerca de Ifrane",
+   "de": "Weide und Zedernwald bei Ras El Ma nahe Ifrane",
+   "ar": "مرعى وغابة أرز برأس الماء قرب إفران"
+  },
+  "credit": "Zineb Rachdi El Yacoubi, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg"
+ },
+ "ifrane/akhawayn-university": {
+  "file": "ifrane-akhawayn-university.jpg",
+  "alt": {
+   "fr": "Campus de l'université Al Akhawayn à Ifrane aux toits de tuiles",
+   "en": "Al Akhawayn University campus in Ifrane with tiled roofs",
+   "es": "Campus de la Universidad Al Akhawayn en Ifrane con tejados de teja",
+   "de": "Campus der Al-Akhawayn-Universität in Ifrane mit Ziegeldächern",
+   "ar": "حرم جامعة الأخوين بإفران بسقوفه القرميدية"
+  },
+  "credit": "Anass Sedrati, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg"
+ },
+ "ifrane/cedre-gouraud": {
+  "file": "ifrane-cedre-gouraud.jpg",
+  "alt": {
+   "fr": "Le cèdre Gouraud, vieil arbre mort près d'Azrou",
+   "en": "The Gouraud cedar, an old dead tree near Azrou",
+   "es": "El cedro Gouraud, viejo árbol muerto cerca de Azrou",
+   "de": "Die Gouraud-Zeder, ein alter abgestorbener Baum bei Azrou",
+   "ar": "أرز غورو شجرة عتيقة يابسة قرب أزرو"
+  },
+  "credit": "Maxim Massalitin, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cèdre_Gouraud.jpg"
+ },
+ "ifrane/macaques": {
+  "file": "ifrane-macaques.jpg",
+  "alt": {
+   "fr": "Macaque de Barbarie dans un cèdre près d'Azrou",
+   "en": "Barbary macaque in a cedar near Azrou",
+   "es": "Macaco de Berbería en un cedro cerca de Azrou",
+   "de": "Berberaffe in einer Zeder bei Azrou",
+   "ar": "قرد ماغو فوق شجرة أرز قرب أزرو"
+  },
+  "credit": "Ayoub BAMOHAMED, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Barbary_macaque_near_Azrou.JPG"
+ },
+ "ifrane/lion-statue": {
+  "file": "ifrane-lion-statue.jpg",
+  "alt": {
+   "fr": "Lion de pierre d'Ifrane, symbole de la ville",
+   "en": "The stone lion of Ifrane, symbol of the town",
+   "es": "El león de piedra de Ifrane, símbolo de la ciudad",
+   "de": "Der steinerne Löwe von Ifrane, Wahrzeichen der Stadt",
+   "ar": "أسد إفران الحجري رمز المدينة"
+  },
+  "credit": "Bernard Gagnon, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ifrane_lion.jpg"
+ },
+ "zagora/jebel-zagora": {
+  "file": "zagora-jebel-zagora.jpg",
+  "alt": {
+   "fr": "Jbel Zagora et dromadaires au pied de la montagne",
+   "en": "Jebel Zagora with camels at the foot of the mountain",
+   "es": "Yebel Zagora con dromedarios al pie de la montaña",
+   "de": "Der Jebel Zagora mit Kamelen am Bergfuß",
+   "ar": "جبل زاكورة وجمال عند سفحه"
+  },
+  "credit": "YoTuT from United States, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mount_Zagora,_Morocco_(5422834133)_(6).jpg"
+ },
+ "zagora/tamegroute-pottery": {
+  "file": "zagora-tamegroute-pottery.jpg",
+  "alt": {
+   "fr": "Jarres de poterie verte de Tamegroute",
+   "en": "Green-glazed pottery jars of Tamegroute",
+   "es": "Vasijas de cerámica verde de Tamegroute",
+   "de": "Grün glasierte Tonkrüge aus Tamegroute",
+   "ar": "جرار فخار تمكروت الأخضر"
+  },
+  "credit": "Rosino, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tamegroute_Pottery.jpg"
+ },
+ "sidi-ifni/art-deco": {
+  "file": "sidi-ifni-art-deco.jpg",
+  "alt": {
+   "fr": "Bâtiment Art déco de l'époque espagnole à Sidi Ifni",
+   "en": "Spanish-era Art Deco building in Sidi Ifni",
+   "es": "Edificio Art Déco de la época española en Sidi Ifni",
+   "de": "Art-déco-Gebäude aus spanischer Zeit in Sidi Ifni",
+   "ar": "مبنى آرت ديكو من العهد الإسباني بسيدي إفني"
+  },
+  "credit": "Mhobl, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sidi_Ifni_-_Art_deco_,_aus_der_Zeit_der_spanischen_Besatzung.jpg"
+ },
+ "sidi-ifni/former-cathedral": {
+  "file": "sidi-ifni-former-cathedral.jpg",
+  "alt": {
+   "fr": "Entrée de l'ancienne église espagnole de Sidi Ifni",
+   "en": "Entrance of the former Spanish church of Sidi Ifni",
+   "es": "Entrada de la antigua iglesia española de Sidi Ifni",
+   "de": "Eingang der ehemaligen spanischen Kirche von Sidi Ifni",
+   "ar": "مدخل الكنيسة الإسبانية السابقة بسيدي إفني"
+  },
+  "credit": "Mhobl, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ehemalige_spanische_Kirche_von_Sidi_Ifni.jpg"
+ },
+ "sidi-ifni/lighthouse": {
+  "file": "sidi-ifni-lighthouse.jpg",
+  "alt": {
+   "fr": "Phare de Sidi Ifni aux motifs bleus",
+   "en": "The blue-patterned lighthouse of Sidi Ifni",
+   "es": "El faro de Sidi Ifni con motivos azules",
+   "de": "Der blau verzierte Leuchtturm von Sidi Ifni",
+   "ar": "منارة سيدي إفني بزخارفها الزرقاء"
+  },
+  "credit": "Vanbasten 23, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Faro_de_Sidi_Ifni.jpg"
+ },
+ "tiznit/medina-walls": {
+  "file": "tiznit-medina-walls.jpg",
+  "alt": {
+   "fr": "Porte et remparts de la médina de Tiznit (photo de 1989)",
+   "en": "Gate and ramparts of the Tiznit medina (1989 photo)",
+   "es": "Puerta y murallas de la medina de Tiznit (foto de 1989)",
+   "de": "Tor und Stadtmauer der Medina von Tiznit (Foto von 1989)",
+   "ar": "باب وأسوار مدينة تيزنيت العتيقة (صورة من 1989)"
+  },
+  "credit": "JopkeB, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tiznit_gate_and_citywall_1989.jpg"
+ },
+ "tiznit/aglou-beach": {
+  "file": "tiznit-aglou-beach.jpg",
+  "alt": {
+   "fr": "Plage d'Aglou près de Tiznit sous un ciel voilé",
+   "en": "Aglou beach near Tiznit under a hazy sky",
+   "es": "Playa de Aglou cerca de Tiznit bajo un cielo velado",
+   "de": "Der Strand von Aglou bei Tiznit unter dunstigem Himmel",
+   "ar": "شاطئ أكلو قرب تيزنيت تحت سماء ضبابية"
+  },
+  "credit": "Brahim FARAJI, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg"
+ },
+ "tiznit/souss-massa": {
+  "file": "tiznit-souss-massa.jpg",
+  "alt": {
+   "fr": "Point de vue et panneau d'information au parc national de Souss-Massa",
+   "en": "Viewpoint shelter and information sign in Souss-Massa National Park",
+   "es": "Mirador y panel informativo en el Parque Nacional Souss-Massa",
+   "de": "Aussichtspunkt und Infotafel im Nationalpark Souss-Massa",
+   "ar": "نقطة مراقبة ولوحة إرشادية بالمنتزه الوطني سوس ماسة"
+  },
+  "credit": "Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract., CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Viewpoint_Massa_Delta_Souss-Massa_Park_Oct25_A7CR_08026.jpg"
+ }
+}

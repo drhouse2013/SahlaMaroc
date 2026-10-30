@@ -1,0 +1,350 @@
+{
+ "marrakech/agdal": {
+  "file": "marrakech-agdal.jpg",
+  "alt": {
+   "fr": "Jardins de l'Agdal, Marrakech",
+   "en": "Agdal Gardens, Marrakech",
+   "es": "Jardines de la Agdal, Marrakech",
+   "de": "Agdal-Gärten, Marrakesch",
+   "ar": "حدائق أكدال, مراكش"
+  },
+  "credit": "Anaslaassibi, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agdale.jpg"
+ },
+ "marrakech/culinary-museum": {
+  "file": "marrakech-culinary-museum.jpg",
+  "alt": {
+   "fr": "Musée des arts culinaires, Marrakech",
+   "en": "Culinary Arts Museum, Marrakech",
+   "es": "Museo de Artes Culinarias, Marrakech",
+   "de": "Museum der Kochkunst, Marrakesch",
+   "ar": "متحف فنون الطبخ, مراكش"
+  },
+  "credit": "LittleT889, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Moroccan_Culinary_Arts_Museum.jpg"
+ },
+ "meknes/agdal-basin": {
+  "file": "meknes-agdal-basin.jpg",
+  "alt": {
+   "fr": "Bassin de l'Agdal, Meknès",
+   "en": "Agdal Basin, Meknes",
+   "es": "Estanque de la Agdal, Mequinez",
+   "de": "Agdal-Becken, Meknès",
+   "ar": "صهريج أكدال, مكناس"
+  },
+  "credit": "Froh Belfakir, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bassin_de_l%27Agdal_ou_Sahrij_Swani_-_Mekn%C3%A8s_02.jpg"
+ },
+ "meknes/dar-jamai": {
+  "file": "meknes-dar-jamai.jpg",
+  "alt": {
+   "fr": "Musée Dar Jamaï, Meknès",
+   "en": "Dar Jamai Museum, Meknes",
+   "es": "Museo Dar Jamai, Mequinez",
+   "de": "Dar-Jamai-Museum, Meknès",
+   "ar": "متحف دار الجامعي, مكناس"
+  },
+  "credit": "Robert Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dar_jamai_DSCF5744.jpg"
+ },
+ "agadir/marina": {
+  "file": "agadir-marina.jpg",
+  "alt": {
+   "fr": "Marina d'Agadir, Agadir",
+   "en": "Agadir Marina, Agadir",
+   "es": "Puerto deportivo de Agadir, Agadir",
+   "de": "Marina von Agadir, Agadir",
+   "ar": "مرسى أكادير, أكادير"
+  },
+  "credit": "Abdeaitali, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Panorama_Marina_Agadir_2020.jpg"
+ },
+ "al-hoceima/cala-iris": {
+  "file": "al-hoceima-cala-iris.jpg",
+  "alt": {
+   "fr": "Cala Iris, Al Hoceïma",
+   "en": "Cala Iris, Al Hoceima",
+   "es": "Cala Iris, Alhucemas",
+   "de": "Cala Iris, Al Hoceima",
+   "ar": "كالا إيريس, الحسيمة"
+  },
+  "credit": "Hafiddubled5, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_Cala_Iris.jpg"
+ },
+ "casablanca/morocco-mall": {
+  "file": "casablanca-morocco-mall.jpg",
+  "alt": {
+   "fr": "Morocco Mall, Casablanca",
+   "en": "Morocco Mall, Casablanca",
+   "es": "Morocco Mall, Casablanca",
+   "de": "Morocco Mall, Casablanca",
+   "ar": "موروكو مول, الدار البيضاء"
+  },
+  "credit": "Magharebia, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Le_Morocco_Mall_ouvre_ses_portes_%C3%A0_Casablanca_(6555301965).jpg"
+ },
+ "dakhla/lagoon": {
+  "file": "dakhla-lagoon.jpg",
+  "alt": {
+   "fr": "Baie de Dakhla, Dakhla",
+   "en": "Dakhla Bay, Dakhla",
+   "es": "Bahía de Dajla, Dajla",
+   "de": "Bucht von Dakhla, Dakhla",
+   "ar": "خليج الداخلة, الداخلة"
+  },
+  "credit": "Lärchenholz, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kitesurfing_in_Dakhla,_Western_Sahara.JPG"
+ },
+ "fes/cherratine": {
+  "file": "fes-cherratine.jpg",
+  "alt": {
+   "fr": "Médersa Cherratine, Fès",
+   "en": "Cherratine Madrasa, Fez",
+   "es": "Madrasa Cherratine, Fez",
+   "de": "Cherratine-Medrese, Fès",
+   "ar": "مدرسة الشراطين, فاس"
+  },
+  "credit": "Hajji lahcen, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B7%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3.jpg"
+ },
+ "fes/moulay-idriss-shrine": {
+  "file": "fes-moulay-idriss-shrine.jpg",
+  "alt": {
+   "fr": "Mausolée de Moulay Idriss II, Fès",
+   "en": "Moulay Idriss II Shrine, Fez",
+   "es": "Mausoleo de Moulay Idriss II, Fez",
+   "de": "Mausoleum von Moulay Idriss II., Fès",
+   "ar": "ضريح مولاي إدريس الثاني, فاس"
+  },
+  "credit": "Oumaima Loudini, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mausol%C3%A9e_Moulay_Idriss_II_F%C3%A8s.jpg"
+ },
+ "nador/charrana": {
+  "file": "nador-charrana.jpg",
+  "alt": {
+   "fr": "Plage de Charrana, Nador",
+   "en": "Charrana Beach, Nador",
+   "es": "Playa de Charrana, Nador",
+   "de": "Strand von Charrana, Nador",
+   "ar": "شاطئ شرانة, الناظور"
+  },
+  "credit": "AbdellahMJ93, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Charana_2.JPG"
+ },
+ "oujda/honor-stadium": {
+  "file": "oujda-honor-stadium.jpg",
+  "alt": {
+   "fr": "Stade d'Honneur, Oujda",
+   "en": "Honor Stadium, Oujda",
+   "es": "Estadio de Honor, Uchda",
+   "de": "Stade d’Honneur, Oujda",
+   "ar": "ملعب الشرف, وجدة"
+  },
+  "credit": "Houari bakh, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Stade_d%27honneur.jpg"
+ },
+ "rabat/mohammed-vi-tower": {
+  "file": "rabat-mohammed-vi-tower.jpg",
+  "alt": {
+   "fr": "Tour Mohammed VI, Rabat",
+   "en": "Mohammed VI Tower, Rabat",
+   "es": "Torre Mohammed VI, Rabat",
+   "de": "Mohammed-VI.-Turm, Rabat",
+   "ar": "برج محمد السادس, الرباط"
+  },
+  "credit": "Petar Milošević, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rabat,_old_and_new_(Mausoleum_of_Mohammed_V_and_new_Mohammed_VI_Tower_behind;_%D8%B6%D8%B1%D9%8A%D8%AD_%D9%85%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%AE%D8%A7%D9%85%D8%B3).jpg"
+ },
+ "rabat/royal-palace": {
+  "file": "rabat-royal-palace.jpg",
+  "alt": {
+   "fr": "Palais royal (Dar al-Makhzen), Rabat",
+   "en": "Royal Palace (Dar al-Makhzen), Rabat",
+   "es": "Palacio Real (Dar al-Majzén), Rabat",
+   "de": "Königspalast (Dar al-Makhzen), Rabat",
+   "ar": "القصر الملكي (دار المخزن), الرباط"
+  },
+  "credit": "Bernard Gagnon, Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Royal_Palace,_Rabat.jpg"
+ },
+ "rabat/sale-medina": {
+  "file": "rabat-sale-medina.jpg",
+  "alt": {
+   "fr": "Médina de Salé, Rabat",
+   "en": "Salé Medina, Rabat",
+   "es": "Medina de Salé, Rabat",
+   "de": "Medina von Salé, Rabat",
+   "ar": "مدينة سلا العتيقة, الرباط"
+  },
+  "credit": "Jorge Láscar from Australia, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sal%C3%A9_from_the_Plateforme_du_S%C3%A9maphore_(Kasbah_des_Oudais)_(5509116076).jpg"
+ },
+ "rabat/zoo": {
+  "file": "rabat-zoo.jpg",
+  "alt": {
+   "fr": "Zoo de Rabat, Rabat",
+   "en": "Rabat Zoo, Rabat",
+   "es": "Zoo de Rabat, Rabat",
+   "de": "Zoo von Rabat, Rabat",
+   "ar": "حديقة الحيوانات بالرباط, الرباط"
+  },
+  "credit": "MarwanAndrew, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rhinoceros_in_the_zoo_of_Rabat,_Morocco.jpg"
+ },
+ "taghazout/taghazout-beach": {
+  "file": "taghazout-taghazout-beach.jpg",
+  "alt": {
+   "fr": "Plage de Taghazout, Taghazout",
+   "en": "Taghazout Beach, Taghazout",
+   "es": "Playa de Taghazout, Taghazout",
+   "de": "Strand von Taghazout, Taghazout",
+   "ar": "شاطئ تغازوت, تاغزوت"
+  },
+  "credit": "Mouad aguenaou, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_plage_%22_TAGHAZOUT%22.jpg"
+ },
+ "tangier/ibn-battuta-tomb": {
+  "file": "tangier-ibn-battuta-tomb.jpg",
+  "alt": {
+   "fr": "Tombeau d'Ibn Battouta, Tanger",
+   "en": "Tomb of Ibn Battuta, Tangier",
+   "es": "Tumba de Ibn Battuta, Tánger",
+   "de": "Grab von Ibn Battuta, Tanger",
+   "ar": "ضريح ابن بطوطة, طنجة"
+  },
+  "credit": "Anass Sedrati, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Inside_Ibn_Battuta%27s_Tomb_-_Tangier.jpg"
+ },
+ "tangier/marshan-palace": {
+  "file": "tangier-marshan-palace.jpg",
+  "alt": {
+   "fr": "Palais Marshan, Tanger",
+   "en": "Marshan Palace, Tangier",
+   "es": "Palacio Marshan, Tánger",
+   "de": "Marshan-Palast, Tanger",
+   "ar": "قصر المرشان, طنجة"
+  },
+  "credit": "Boubloub, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg"
+ },
+ "tetouan/tannery": {
+  "file": "tetouan-tannery.jpg",
+  "alt": {
+   "fr": "Tannerie de Tétouan, Tétouan",
+   "en": "Tetouan Tannery, Tetouan",
+   "es": "Curtiduría de Tetuán, Tetuán",
+   "de": "Gerberei von Tétouan, Tetuan",
+   "ar": "دباغة تطوان, تطوان"
+  },
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D8%AF%D8%A7%D8%B1_%D8%A7%D9%84%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg"
+ },
+ "casablanca/habous": {
+  "file": "casablanca-habous.jpg",
+  "alt": {
+   "fr": "Quartier des Habous, Casablanca",
+   "en": "Habous Quarter, Casablanca",
+   "es": "Barrio de los Habous, Casablanca",
+   "de": "Habous-Viertel, Casablanca",
+   "ar": "حي الأحباس, الدار البيضاء"
+  },
+  "credit": "Omalihy, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Al_mohamedia_Mosque_in_Habous_district_Casablanca_the_mosque_was_built_by_Mohamed_the_fifth_king_of_morocco.jpg"
+ },
+ "casablanca/sacre-coeur": {
+  "file": "casablanca-sacre-coeur.jpg",
+  "alt": {
+   "fr": "Ancienne cathédrale du Sacré-Cœur, Casablanca",
+   "en": "Former Sacré-Cœur Cathedral, Casablanca",
+   "es": "Antigua catedral del Sagrado Corazón, Casablanca",
+   "de": "Ehemalige Sacré-Cœur-Kathedrale, Casablanca",
+   "ar": "كاتدرائية القلب المقدس السابقة, الدار البيضاء"
+  },
+  "credit": "Sandra Cohen-Rose and Colin Rose from Montreal, Canada, CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%C3%89glise_du_Sacr%C3%A9-Coeur,_Casablanca_(5507016000).jpg"
+ },
+ "al-hoceima/sfiha": {
+  "file": "al-hoceima-sfiha.jpg",
+  "alt": {
+   "fr": "Plage de Sfiha, Al Hoceïma",
+   "en": "Sfiha Beach, Al Hoceima",
+   "es": "Playa de Sfiha, Alhucemas",
+   "de": "Strand von Sfiha, Al Hoceima",
+   "ar": "شاطئ الصفيحة, الحسيمة"
+  },
+  "credit": "Sultanfouad, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sfiha_panorama.jpg"
+ },
+ "fes/tijani": {
+  "file": "fes-tijani.jpg",
+  "alt": {
+   "fr": "Mosquée et mausolée de Sidi Ahmed al-Tijani, Fès",
+   "en": "Mosque and Mausoleum of Sidi Ahmad al-Tijani, Fez",
+   "es": "Mezquita y mausoleo de Sidi Ahmed al-Tijani, Fez",
+   "de": "Moschee und Mausoleum von Sidi Ahmad al-Tijani, Fès",
+   "ar": "مسجد وضريح سيدي أحمد التيجاني, فاس"
+  },
+  "credit": "R Prazeres, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Zawiya_al-Tijani_DSCF4204.jpg"
+ },
+ "oujda/bab-el-gharbi": {
+  "file": "oujda-bab-el-gharbi.jpg",
+  "alt": {
+   "fr": "Bab El Gharbi, Oujda",
+   "en": "Bab El Gharbi, Oujda",
+   "es": "Bab El Gharbi, Uchda",
+   "de": "Bab El Gharbi, Oujda",
+   "ar": "باب الغربي, وجدة"
+  },
+  "credit": "Ghizlane BOUMACHMACHA, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Oujda_Bab_al_Gharbi,vue_2_,Ghizlane_BOUMACHMACHA.jpg"
+ },
+ "oujda/sidi-yahya": {
+  "file": "oujda-sidi-yahya.jpg",
+  "alt": {
+   "fr": "Oasis de Sidi Yahya, Oujda",
+   "en": "Sidi Yahya Oasis, Oujda",
+   "es": "Oasis de Sidi Yahya, Uchda",
+   "de": "Oase Sidi Yahya, Oujda",
+   "ar": "واحة سيدي يحيى, وجدة"
+  },
+  "credit": "Iznassen, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Oujda.sidi_yahya.jpg"
+ },
+ "rabat/marinid-madrasa": {
+  "file": "rabat-marinid-madrasa.jpg",
+  "alt": {
+   "fr": "Médersa mérinide, Rabat",
+   "en": "Marinid Madrasa, Rabat",
+   "es": "Madrasa meriní, Rabat",
+   "de": "Meriniden-Medrese, Rabat",
+   "ar": "المدرسة المرينية, الرباط"
+  },
+  "credit": "OussamaHamama, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Marinid_Medersa.jpg"
+ },
+ "nador/boucana": {
+  "file": "nador-boucana.jpg",
+  "alt": {
+   "fr": "Plage de Boucana, Nador",
+   "en": "Boucana Beach, Nador",
+   "es": "Playa de Boucana, Nador",
+   "de": "Strand von Boucana, Nador",
+   "ar": "شاطئ بوكانا, الناظور"
+  },
+  "credit": "Sapha Bouamara, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Flock_of_birds_Boukana_beach.jpg"
+ },
+ "merzouga/khamlia": {
+  "file": "merzouga-khamlia.jpg",
+  "alt": {
+   "fr": "Village de Khamlia, Merzouga",
+   "en": "Khamlia Village, Merzouga",
+   "es": "Pueblo de Khamlia, Merzouga",
+   "de": "Dorf Khamlia, Merzouga",
+   "ar": "قرية خميليا, مرزوكة"
+  },
+  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%22Bekannt_wurden_die_Gnawa_durch_ihre_rhythmusbetonte_Musik%22._01.jpg"
+ }
+}
