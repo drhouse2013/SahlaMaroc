@@ -9,11 +9,11 @@ interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const copy = {
- fr: { title: 'Le Maroc,', titleEm: 'simplement.', intro: 'Guides pratiques, checklists et calculateurs gratuits pour avancer au Maroc, étape par étape.', search: 'Rechercher un guide', placeholder: 'Une ville, une démarche, une envie…' },
- en: { title: 'Morocco,', titleEm: 'made simple.', intro: 'Practical guides, checklists and free calculators for your next steps in Morocco.', search: 'Search the guides', placeholder: 'A city, a question, an idea…' },
- es: { title: 'Marruecos,', titleEm: 'sin complicaciones.', intro: 'Guías prácticas, listas y calculadoras gratuitas para avanzar en Marruecos, paso a paso.', search: 'Buscar una guía', placeholder: 'Una ciudad, una pregunta, una idea…' },
- de: { title: 'Marokko,', titleEm: 'ganz einfach.', intro: 'Praktische Ratgeber, Checklisten und kostenlose Rechner für Ihre nächsten Schritte in Marokko.', search: 'Ratgeber durchsuchen', placeholder: 'Eine Stadt, eine Frage, eine Idee…' },
- ar: { title: 'المغرب،', titleEm: 'ببساطة.', intro: 'أدلة عملية وقوائم تحقق وحاسبات مجانية تساعدكم على التقدّم في المغرب، خطوة بخطوة.', search: 'ابحث في الأدلة', placeholder: 'مدينة، سؤال، فكرة…' },
+ fr: { title: 'Le Maroc,', titleEm: 'simplement.', intro: 'Votre retour, votre investissement ou votre voyage au Maroc, étape par étape. Guides et outils gratuits.', search: 'Rechercher un guide', placeholder: 'Une ville, une démarche, une envie…' },
+ en: { title: 'Morocco,', titleEm: 'made simple.', intro: 'Plan your return, investment or trip to Morocco, step by step. Free guides and tools.', search: 'Search the guides', placeholder: 'A city, a question, an idea…' },
+ es: { title: 'Marruecos,', titleEm: 'sin complicaciones.', intro: 'Prepara tu regreso, inversión o viaje a Marruecos, paso a paso. Guías y herramientas gratuitas.', search: 'Buscar una guía', placeholder: 'Una ciudad, una pregunta, una idea…' },
+ de: { title: 'Marokko,', titleEm: 'ganz einfach.', intro: 'Rückkehr, Investition oder Reise nach Marokko: Schritt für Schritt planen. Kostenlose Ratgeber und Rechner.', search: 'Ratgeber durchsuchen', placeholder: 'Eine Stadt, eine Frage, eine Idee…' },
+ ar: { title: 'المغرب،', titleEm: 'ببساطة.', intro: 'خطّط لعودتك أو استثمارك أو رحلتك إلى المغرب، خطوة بخطوة. أدلة وأدوات مجانية.', search: 'ابحث في الأدلة', placeholder: 'مدينة، سؤال، فكرة…' },
 }[lang];
 const searchUrl = hubPath(lang, 'search');
 ---
@@ -22,7 +22,7 @@ const searchUrl = hubPath(lang, 'search');
     <h1 id="home-title">{copy.title} <em>{copy.titleEm}</em></h1>
     <p class="home-hero__intro">{copy.intro}</p>
     <div class="home-paths" data-home-paths>
-      <h2 class="sr-only">{PATH_UI.paths[lang]}</h2>
+      <h2 class="home-paths__title">{PATH_UI.paths[lang]}</h2>
       <ul class="path-cards">
         {PATH_ORDER.map((id, i) => <li><PathCard id={id} lang={lang} eager priority={i === 0} /></li>)}
       </ul>

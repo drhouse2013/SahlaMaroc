@@ -555,3 +555,19 @@ Décisions prises sans demande de validation, conformément à la directive de c
 - Accueil : le premier écran montre trois parcours (A « Je rentre au Maroc », B « Je souhaite investir », C « Je visite le Maroc ») en cartes photo + fiche (`src/components/paths/PathCard.astro`), qui remplacent le bloc « besoins » ; chapô raccourci, recherche placée sous les parcours en mobile. Photos existantes avec crédit : port de Tanger Med (HrAd, CC BY-SA 3.0), Casablanca Finance City (AyourAchtouk, CC BY-SA 4.0), dunes de Merzouga (`placePhoto('hero', 'home-hero')`).
 - Pages parcours : URL conservées pour A (`/fr/mre`…) et C (`/fr/visiter-le-maroc`…) ; nouvelle page B via `HUB_SLUGS.invest` (`/fr/investir-au-maroc`, `/en/invest-in-morocco`, `/es/invertir-en-marruecos`, `/de/in-marokko-investieren`, `/ar/al-istithmar-fi-al-maghrib`), ajoutée à la recherche, au menu et au pied de page (sitemap automatique).
 - Composants partagés (`PathPhoto`, `PathCard`, `PathNav`, `PathRubric`) et données `src/data/paths.ts` : rubriques reliées par translationKey, ville, région ou hub existants ; rubrique vide omise ; FAQ = première question réelle des guides ; aucune promesse de rendement ni chiffre ajouté. Accent par parcours (terre cuite, or, vert majorelle). Supprimés car orphelins : `home/Journeys.astro`, `PERSONAS`, `AUDIENCE_HUBS`.
+
+## 2026-10-30 — Finition de la version actuelle du propriétaire
+
+Base conservée : main 20beff2, trois parcours, nouvelles photos, typographie Fraunces/Manrope et palette ivoire. Ancienne proposition de décor retirée après la refonte du propriétaire.
+
+- Question de choix du parcours rendue visible avec ses traductions existantes.
+- Cartes d’accueil ajustées sur petit écran : plus de place au texte et aux appels à l’action ; recadrage photo un peu plus large sur ordinateur.
+- Filet de zellige réel à l’entrée, limité à l’accueil ; aucun nouvel asset.
+- Crédits des parcours lisibles au survol de la carte et au focus clavier, tout en gardant leur discrétion au repos souhaitée par le propriétaire.
+
+## 2026-10-30 — Clarté de l’accueil et du premier clic
+
+- Promesse de l’accueil centrée sur le retour, l’investissement et le voyage, dans les cinq langues.
+- Appels à l’action plus courts et cohérents : préparer son retour, son projet ou son voyage.
+- Sur les pages parcours, le bouton annonce la rubrique exacte qu’il ouvre ; titre investissement raccourci à l’écran, titre SEO détaillé conservé.
+- Titres et introduction plus compacts sur téléphone ; césure automatique retirée des titres de parcours. Photos, palette, contenus et thème système conservés.
