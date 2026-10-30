@@ -245,7 +245,8 @@ html.dark {
 
 /* 4. Accueil --------------------------------------------------------------- */
 /* Premier écran : titre + chapô, les trois parcours, puis la recherche (à côté du titre en desktop) */
-.home-hero { padding-top: clamp(1.25rem, 3.5vw, 3rem); }
+.home-hero { position: relative; padding-top: clamp(1.25rem, 3.5vw, 3rem); }
+.home-hero::before { content: ""; position: absolute; inset: 0 0 auto; height: .5rem; background: url('/images/moroccan-zellige.webp') center / 320px auto; border-bottom: 1px solid var(--line-strong); }
 .home-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "intro" "paths" "search"; }
 @media (min-width: 900px) { .home-hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-areas: "title intro" "title search" "paths paths"; column-gap: 4rem; align-items: end; } }
 .home-hero h1 { grid-area: title; font-size: var(--step-7); font-weight: 520; line-height: 1.02; letter-spacing: -0.035em; color: var(--text); }
@@ -254,8 +255,9 @@ html.dark {
 :lang(ar) .home-hero h1 em { font-style: normal; font-weight: 600; }
 .home-hero__intro { grid-area: intro; margin-top: .75rem; font-size: var(--step-0); line-height: 1.6; color: var(--muted); max-width: 34rem; }
 .home-paths { grid-area: paths; margin-top: 1.25rem; }
+.home-paths__title { margin-bottom: .75rem; font-family: var(--font-sans); font-size: 1rem; font-weight: 700; line-height: 1.4; letter-spacing: 0; color: var(--brand); text-wrap: pretty; }
 .home-search { grid-area: search; margin-top: 1.75rem; max-width: 34rem; }
-@media (min-width: 900px) { .home-hero__intro { margin-top: 0; font-size: var(--step-1); } .home-paths { margin-top: 2.5rem; } .home-search { margin-top: 1.25rem; } }
+@media (min-width: 900px) { .home-hero__intro { margin-top: 0; font-size: var(--step-1); } .home-paths { margin-top: .75rem; } .home-search { margin-top: 1.25rem; } }
 .home-search label { display: block; font-size: .875rem; font-weight: 700; }
 .home-search > div { display: flex; align-items: center; gap: .5rem; margin-top: .5rem; padding: .25rem .25rem .25rem .9rem; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); }
 :dir(rtl) .home-search > div { padding: .25rem .9rem .25rem .25rem; }
@@ -288,12 +290,18 @@ html.dark {
 .path-card__cta svg { flex: none; color: var(--path); }
 @media (min-width: 900px) {
   .path-card--cover { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-  .path-card--cover .path-card__media { aspect-ratio: 3 / 2; min-height: 0; }
+  .path-card--cover .path-card__media { aspect-ratio: 16 / 10; min-height: 0; }
   .path-card--cover .path-card__body { gap: .5rem; padding: 1.25rem 1.5rem; }
   .path-card--cover .path-card__title { font-size: var(--step-3); }
   .path-card--cover .path-card__text { font-size: .95rem; }
 }
 .path-nav { margin-top: 1.25rem; }
+@media (max-width: 599px) {
+  .home-paths .path-card { grid-template-columns: minmax(0, 32%) minmax(0, 1fr); }
+  .home-paths .path-card__body { padding-inline: .875rem; }
+  .home-paths .path-card__title { font-size: 1.125rem; line-height: 1.3; }
+  .home-paths .path-card__cta { font-size: .875rem; }
+}
 .path-nav ul { display: flex; flex-wrap: wrap; gap: .5rem; }
 .path-nav a { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.5rem; padding: .3rem .85rem; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text); font-size: .875rem; font-weight: 600; }
 .path-nav a svg { color: var(--path); }
@@ -559,3 +567,4 @@ html.dark {
 .photo-credit, .path-credit, .spot-credit, .place-hero__credit, .guide-visual__credit { background: transparent !important; color: rgb(255 255 255 / .28) !important; text-shadow: none; transition: color .2s; }
 .photo-credit:hover, .path-credit:hover, .spot-credit:hover, .place-hero__credit:hover, .place-hero__credit:focus-visible, .guide-visual__credit:hover { color: rgb(255 255 255 / .85) !important; }
 .guide-visual__credit, .guide-visual__credit a { color: rgb(127 127 127 / .35) !important; }
+.path-card:is(:hover, :focus-within) .path-credit { background: rgb(0 0 0 / .7) !important; color: #fff !important; }
