@@ -6,8 +6,9 @@ import PathCard from '../paths/PathCard.astro';
 import PathPhoto from '../paths/PathPhoto.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { PATH_ORDER, PATH_UI } from '../../data/paths';
-import { placePhoto, photoCreditLabel } from '../../utils/photos';
+import { placePhoto } from '../../utils/photos';
 import { hubPath } from '../../utils/i18n';
+import PhotoCredit from '../PhotoCredit.astro';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -32,11 +33,7 @@ const heroPhoto = placePhoto('hero', 'home-hero', lang);
         <a class="home-hero__action" href="#parcours">{copy.action}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
       </div>
     </div>
-    {heroPhoto.credit && heroPhoto.source && (
-      <a class="home-hero__credit" href={heroPhoto.source} target="_blank" rel="noopener noreferrer" aria-label={photoCreditLabel(lang, heroPhoto.credit)}>
-        <span aria-hidden="true">i</span><span class="home-hero__credit-label">{photoCreditLabel(lang, heroPhoto.credit)}</span>
-      </a>
-    )}
+    {heroPhoto.credit && <PhotoCredit lang={lang} credit={heroPhoto.credit} source={heroPhoto.source} />}
     <figure class="home-hero__secondary" tabindex="0" aria-label={copy.inset}>
       <div class="home-hero__secondary-image"><PathPhoto id="return" lang={lang} widths={[320, 480]} sizes="(min-width: 900px) 18rem, 9rem" eager /></div>
       <figcaption>{copy.inset}</figcaption>

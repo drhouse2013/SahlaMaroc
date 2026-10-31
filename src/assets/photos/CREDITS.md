@@ -102,7 +102,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/fes-fes-el-bali.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg |
 | spots/fes-chouara.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_Touristenattraktion_trotz_des_starken_Geruchs%22._01.jpg |
 | spots/fes-bou-inania.jpg | Petar Milošević, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg |
-| spots/fes-al-attarine.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Ein_Juwel_islamischer_Architektur%22._05.jpg |
+| spots/fes-al-attarine.jpg | Jorge Franganillo | CC BY 2.0 (redimensionnée) | https://commons.wikimedia.org/wiki/File:Fez_Al-Attarine_Madrasa_%2854250005206%29.jpg |
 | spots/fes-borj-nord.jpg | R Prazeres, Public domain | https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg |
 | spots/essaouira-medina.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg |
 | spots/essaouira-skala.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg |

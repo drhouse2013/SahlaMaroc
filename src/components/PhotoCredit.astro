@@ -1,0 +1,30 @@
+---
+/** Crédit photo discret : l’auteur et la licence restent consultables à la demande. */
+import Icon from './Icon.astro';
+import type { Locale } from '../i18n';
+import { photoCreditHint, photoCreditLabel } from '../utils/photos';
+
+interface Props { lang: Locale; credit: string; source?: string | null; label?: string; class?: string }
+const { lang, credit, source, label, class: className } = Astro.props;
+const panelId = `photo-credit-${crypto.randomUUID()}`;
+---
+<div class:list={['photo-credit-control', className]}>
+  <button type="button" class="photo-credit-control__trigger" popovertarget={panelId} aria-label={photoCreditHint(lang)} title={photoCreditHint(lang)}>
+    <Icon name="info" class="size-4" />
+  </button>
+  <div id={panelId} class="photo-credit-control__panel" popover="auto" dir="auto">
+    {source
+      ? <a href={source} target="_blank" rel="noopener noreferrer">{label ?? photoCreditLabel(lang, credit)}</a>
+      : <span>{label ?? photoCreditLabel(lang, credit)}</span>}
+    <slot />
+  </div>
+</div>
+<style>
+  .photo-credit-control { position: absolute; z-index: 20; inset-inline-end: .75rem; bottom: .75rem; color: #fff; }
+  .photo-credit-control__trigger { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border: 1px solid rgb(255 255 255 / .7); border-radius: 50%; background: rgb(12 24 22 / .58); color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .photo-credit-control__trigger:hover { background: rgb(12 24 22 / .88); }
+  .photo-credit-control__trigger:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .photo-credit-control__panel[popover] { position: fixed; inset: auto .75rem .75rem auto; z-index: 100; width: min(20rem, calc(100vw - 2rem)); max-width: calc(100vw - 2rem); margin: 0; padding: .7rem .85rem; border: 1px solid rgb(255 255 255 / .2); border-radius: .75rem; background: rgb(12 24 22 / .96); color: #fff; box-shadow: 0 12px 28px rgb(0 0 0 / .24); font-size: .75rem; line-height: 1.55; overflow-wrap: anywhere; }
+  .photo-credit-control__panel a { color: inherit; text-decoration: underline; text-decoration-color: rgb(255 255 255 / .6); text-underline-offset: 2px; }
+  .photo-credit-control__panel a:hover { text-decoration-color: currentColor; }
+</style>

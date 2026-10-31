@@ -24,6 +24,14 @@ const t = useTranslations(lang);
 const city = CITY_PAGES.find((c) => c.id === id)!;
 const text = city.text[lang];
 const name = cityLabel(id, lang);
+const CITY_TONE: Record<string, 'coast' | 'desert' | 'mountain' | 'medina' | 'urban'> = {
+  'al-hoceima': 'coast', agadir: 'coast', asilah: 'coast', dakhla: 'coast', 'el-jadida': 'coast', essaouira: 'coast', larache: 'coast', nador: 'coast', saidia: 'coast', 'sidi-ifni': 'coast', taghazout: 'coast', tangier: 'coast',
+  errachidia: 'desert', guelmim: 'desert', laayoune: 'desert', merzouga: 'desert', ouarzazate: 'desert', zagora: 'desert',
+  chefchaouen: 'mountain', ifrane: 'mountain', tafraout: 'mountain',
+  fes: 'medina', marrakech: 'medina', meknes: 'medina', oujda: 'medina', rabat: 'medina', taroudant: 'medina', tetouan: 'medina', tiznit: 'medina',
+  casablanca: 'urban', kenitra: 'urban',
+};
+const cityTone = CITY_TONE[id] ?? 'urban';
 const url = absoluteUrl(cityPath(lang, city.slug[lang]), Astro.site);
 
 const alternates: Alternates = {};
@@ -63,6 +71,7 @@ const sections = [
 ];
 ---
 <BaseLayout lang={lang} title={title} description={description} alternates={alternates} switchTargets={allLocalesTargets((l) => cityPath(l, city.slug[l]))} jsonLd={jsonLd}>
+  <div class="city-page" data-city={id} data-city-tone={cityTone}>
   <PlaceHero lang={lang} crumbs={crumbs} title={title} intro={text.intro} photo={placePhoto('city', city.id, lang)} kind="city" name={name}>
     {city.host2030 && <p class="mt-3"><span class="badge badge-gold">{t('city.host')}</span></p>}
   </PlaceHero>
@@ -154,5 +163,6 @@ const sections = [
   <div class="container-page section">
     <h2 class="section-title !text-2xl">{t('city.others')}</h2>
     <div class="mt-6"><CityGrid lang={lang} ids={CITY_PAGES.filter((c) => c.id !== id).map((c) => c.id)} limit={4} showHeading={false} /></div>
+  </div>
   </div>
 </BaseLayout>

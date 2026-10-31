@@ -3,7 +3,8 @@
 import Breadcrumbs from './Breadcrumbs.astro';
 import PlaceImage from './PlaceImage.astro';
 import type { Locale } from '../i18n';
-import { photoCreditLabel, type PlaceKind, type PlacePhoto } from '../utils/photos';
+import { type PlaceKind, type PlacePhoto } from '../utils/photos';
+import PhotoCredit from './PhotoCredit.astro';
 interface Props { lang: Locale; crumbs: { name: string; href?: string }[]; title: string; intro?: string; meta?: string; photo?: PlacePhoto; kind?: PlaceKind; name?: string }
 const { lang, crumbs, title, intro, meta, photo, kind = 'city', name = title } = Astro.props;
 ---
@@ -11,11 +12,7 @@ const { lang, crumbs, title, intro, meta, photo, kind = 'city', name = title } =
   {photo && (
     <div class:list={['place-hero__media', !photo.image && 'place-hero__media--ph']}>
       <PlaceImage photo={photo} kind={kind} lang={lang} name={name} width={1600} widths={[640, 1024, 1600]} sizes="100vw" class="h-full w-full object-cover" eager />
-      {photo.credit && (
-        photo.source
-          ? <a href={photo.source} rel="noopener" target="_blank" dir="auto" class="place-hero__credit">{photoCreditLabel(lang, photo.credit)}</a>
-          : <span dir="auto" class="place-hero__credit">{photoCreditLabel(lang, photo.credit)}</span>
-      )}
+      {photo.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
     </div>
   )}
   <div class="container-page relative">
@@ -35,8 +32,6 @@ const { lang, crumbs, title, intro, meta, photo, kind = 'city', name = title } =
   .place-hero__media--ph { height: 48vw; min-height: 11rem; }
   @media (min-width: 768px) { .place-hero__media--ph :global(.photo-ph) { padding-bottom: 6rem; } }
   @media (min-width: 640px) { .place-hero__media--ph { height: min(26vw, 20rem); } }
-  .place-hero__credit { position: absolute; inset-inline-end: 0; bottom: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: rgb(0 0 0 / .6); color: #fff; font-size: .7rem; line-height: 1.2; padding: .3rem .6rem; border-start-start-radius: 8px; }
-  a.place-hero__credit:hover, a.place-hero__credit:focus-visible { text-decoration: underline; }
   .place-hero__panel { padding-top: 2rem; }
   .place-hero__panel--over { position: relative; background: var(--surface-2); border-radius: 12px 12px 0 0; padding: 1.25rem 0 0; max-width: 48rem; }
   @media (min-width: 768px) { .place-hero__panel--over { margin-top: -6rem; padding: 2rem 2rem 0; } }

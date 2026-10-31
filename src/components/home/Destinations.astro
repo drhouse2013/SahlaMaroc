@@ -22,14 +22,14 @@ const list = ids.map((id) => CITY_PAGES.find((c) => c.id === id)).filter((c) => 
   <ul class="dest-grid">
     {list.map((c, i) => (
       <li class="contents">
-        <a href={cityPath(lang, c.slug[lang])} class="dest group">
+        <article class="dest group">
           <span class="dest__num" aria-hidden="true" dir="ltr">{String(i + 1).padStart(2, '0')} / {String(list.length).padStart(2, '0')}</span>
           <CityImage scene={c.id} lang={lang} width={i === 0 ? 900 : 640} sizes={i === 0 ? '(min-width:768px) 40vw, 100vw' : '(min-width:768px) 30vw, 100vw'} />
           <div class="dest__label">
-            <h3>{cityLabel(c.id, lang)}</h3>
+            <h3><a href={cityPath(lang, c.slug[lang])}>{cityLabel(c.id, lang)}</a></h3>
             <p class="line-clamp-2">{c.text[lang].intro}</p>
           </div>
-        </a>
+        </article>
       </li>
     ))}
   </ul>
