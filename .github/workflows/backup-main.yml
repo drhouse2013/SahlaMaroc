@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: backup-main-${{ github.ref }}
+  group: backup-main-${{ github.run_id }}
   cancel-in-progress: false
 
 jobs:
