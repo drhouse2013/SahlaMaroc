@@ -41,7 +41,7 @@
     "@playwright/test": "^1.64.1",
     "@tailwindcss/typography": "^0.5.20",
     "gray-matter": "^4.0.3",
-    "typescript": "^5.9.0"
+    "typescript": "^6.0.3"
   },
   "overrides": {
     "@tailwindcss/typography": {
