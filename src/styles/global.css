@@ -411,6 +411,8 @@ html.dark {
 .dest-grid { display: grid; gap: 1rem; margin-top: 2.5rem; }
 @media (min-width: 768px) { .dest-grid { grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 18rem 18rem; } .dest-grid > li:first-child > .dest { grid-row: span 2; } .dest-grid > li:nth-child(4) > .dest { grid-column: span 2; } }
 .dest { position: relative; display: block; overflow: hidden; border-radius: .75rem; min-height: 16rem; background: var(--surface-3); color: #fff; }
+.dest__link { position: absolute; inset: 0; z-index: 2; }
+.dest__link:focus-visible { outline: 3px solid #e8d3a0; outline-offset: -5px; }
 .dest img { position: absolute; inset: 0; }
 .dest__num { position: absolute; top: 1rem; inset-inline-start: 1.25rem; z-index: 1; font-size: .75rem; font-weight: 700; letter-spacing: .14em; color: #fff; text-shadow: 0 1px 3px rgb(0 0 0 / .5); font-variant-numeric: tabular-nums; }
 .dest__label { position: absolute; inset-inline: 0; bottom: 0; padding: 3rem 1.25rem 2rem; background: linear-gradient(transparent, rgb(15 20 18 / .72)); }
