@@ -46,3 +46,5 @@ export function placePhoto(type: PlaceType, id: string, lang: Locale): PlacePhot
 
 const CREDIT: Record<Locale, string> = { fr: 'Photo : ', en: 'Photo: ', es: 'Foto: ', de: 'Foto: ', ar: 'صورة: ' };
 export const photoCreditLabel = (lang: Locale, credit: string) => `${CREDIT[lang] ?? CREDIT.en}${credit}`;
+const CREDIT_HINT: Record<Locale, string> = { fr: 'Crédit photo', en: 'Photo credit', es: 'Crédito de la foto', de: 'Bildnachweis', ar: 'بيانات الصورة' };
+export const photoCreditHint = (lang: Locale) => CREDIT_HINT[lang] ?? CREDIT_HINT.en;

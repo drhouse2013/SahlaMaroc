@@ -2,16 +2,18 @@
 /**
  * BaseLayout — squelette de toutes les pages.
  * Performance :
- * - Polices auto-hébergées : Readex Pro (texte et titres), Marhey pour le logo ;
- *   on précharge uniquement la variante Readex de la langue (latin ou arabe).
+ * - Polices auto-hébergées : Manrope (texte) + Fraunces (titres) en latin, Readex Pro en arabe ;
+ *   on précharge uniquement la police de texte de la langue (Manrope ou Readex arabe).
  * - JS minimal : thème (inline, anti-flash), menus, recherche (index chargé à la demande),
  *   chargeur AdSense différé, petit traceur d'événements (Umami, uniquement s'il est configuré).
  * - AdSense chargé seulement après interaction ou 3,5 s => n'impacte ni LCP ni TBT.
  */
 import '@fontsource-variable/readex-pro';
 import '@fontsource-variable/marhey';
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/fraunces';
 import '../styles/global.css';
-import readexLatin from '@fontsource-variable/readex-pro/files/readex-pro-latin-wght-normal.woff2?url';
+import manropeLatin from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
 import readexArabic from '@fontsource-variable/readex-pro/files/readex-pro-arabic-wght-normal.woff2?url';
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
@@ -53,13 +55,13 @@ const description = seo.description ?? t('site.description');
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="google-site-verification" content="WYCTZCgbChnFf2QffNqOmXH0864UscD392U7WB8QJXw" />
-    <meta name="theme-color" content="#fbf8f3" />
+    <meta name="theme-color" content="#f4efe6" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="alternate" type="application/rss+xml" title={t('rss.title')} href={rssPath(lang)} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="preload" href={meta.dir === 'rtl' ? readexArabic : readexLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={meta.dir === 'rtl' ? readexArabic : manropeLatin} as="font" type="font/woff2" crossorigin />
     {ADSENSE_CLIENT && <meta name="google-adsense-account" content={ADSENSE_CLIENT} />}
 
     <SEO lang={lang} alternates={alternates} description={description} {...seo} noindex={noindex} />
@@ -82,7 +84,7 @@ const description = seo.description ?? t('site.description');
           document.documentElement.classList.toggle('dark', dark);
           document.documentElement.dataset.themePreference = preference;
           var color = document.querySelector('meta[name="theme-color"]');
-          if (color) color.setAttribute('content', dark ? '#0f1626' : '#fbf8f3');
+          if (color) color.setAttribute('content', dark ? '#0f2a26' : '#f4efe6');
           document.querySelectorAll('[data-theme-select]').forEach(function (select) { select.value = preference; });
           document.dispatchEvent(new Event('sahla:theme-applied'));
         }

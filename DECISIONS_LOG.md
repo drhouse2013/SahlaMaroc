@@ -572,9 +572,9 @@ Base conservée : main 20beff2, trois parcours, nouvelles photos, typographie Fr
 - Sur les pages parcours, le bouton annonce la rubrique exacte qu’il ouvre ; titre investissement raccourci à l’écran, titre SEO détaillé conservé.
 - Titres et introduction plus compacts sur téléphone ; césure automatique retirée des titres de parcours. Photos, palette, contenus et thème système conservés.
 
-## 2026-10-30 — Retour à l’habillage historique demandé (« Aurora »)
+## 2026-10-31 — Atmosphères locales et crédits photo
 
-- Recherche dans les fichiers et l’historique : aucun thème nommé Aurora identifié. Hypothèse appliquée : retrouver l’apparence d’avant les refontes, à partir de e15fe67.
-- Palette bleu nuit/or, Readex Pro sans empattements, fonds lumineux et cartes arrondies restaurés sur les composants actuels.
-- Photos réelles, contenus récents, trois parcours, boutons clarifiés, SEO et préférence de thème système conservés. Aucun contenu ancien réintroduit et aucun thème tiers acheté ou installé.
-- Préchargement des polices et couleur du navigateur alignés sur la palette restaurée ; attentes du test de thème adaptées.
+- Pages ville : cinq accents sobres selon le caractère du lieu (littoral, désert, montagne, médina, urbain), déclinés en clair/sombre. Ils colorent les repères de navigation et les filtres sans recolorer tout le site.
+- Crédits : l’interface ne montre plus le nom d’auteur sur chaque image au repos ; un bouton d’information ouvre un panneau natif au-dessus des images recadrées ; il expose l’auteur, la licence et la source au toucher et au clavier. Les attributions obligatoires restent accessibles.
+- Destination photo : le lien vers la ville est porté par son titre afin que le contrôle du crédit reste indépendant et accessible.
+- Médersa Al Attarine, photo datée du 27/12/2024 : remplacement par une image horizontale 1600 px de Jorge Franganillo, CC BY 2.0 ; source et attribution mises à jour dans le manifeste et CREDITS.md.

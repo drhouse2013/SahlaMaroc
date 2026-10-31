@@ -5,8 +5,9 @@ import type { Locale } from '../i18n';
 import type { Scene } from '../data/home';
 import { cityById, cityLabel } from '../data/cities';
 import { illustration } from '../utils/illustrations';
-import { placePhoto, photoCreditLabel } from '../utils/photos';
+import { placePhoto } from '../utils/photos';
 import PlaceImage from './PlaceImage.astro';
+import PhotoCredit from './PhotoCredit.astro';
 
 interface Props { scene: Scene | 'home-hero'; lang: Locale; width?: number; widths?: number[]; sizes?: string; eager?: boolean; priority?: boolean; fallback?: Scene }
 const { scene, lang, width = 520, widths, sizes, eager = false, priority = eager, fallback } = Astro.props;
@@ -18,7 +19,7 @@ const cls = 'h-full w-full object-cover transition duration-500 group-hover:scal
 {photo.image || isPlace ? (
   <>
     <PlaceImage photo={photo} kind={isHero ? 'hero' : 'city'} lang={lang} name={isHero ? undefined : cityLabel(scene, lang)} width={width} widths={widths} sizes={sizes} eager={eager} priority={priority} class={cls} />
-    {photo.credit && <span dir="auto" class="photo-credit absolute inset-x-0 bottom-0 truncate bg-black/55 px-2 py-0.5 text-center text-[0.65rem] leading-tight text-white/90">{photoCreditLabel(lang, photo.credit)}</span>}
+    {photo.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
   </>
 ) : (
   <Image src={illustration((fallback ?? scene) as Scene)} alt="" width={width} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
