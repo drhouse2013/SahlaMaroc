@@ -1,7 +1,13 @@
 /**
- * Habillage historique du site (base e15fe67) adapté aux composants actuels.
- * Readex Pro, bleu nuit et or ; fonds lumineux en clair, bleu profond en sombre.
- * Les parcours, contenus récents et améliorations d’accessibilité sont conservés.
+ * Sahla Maroc — système de design (Tailwind CSS 4, configuration « CSS-first »).
+ * Direction : magazine de voyage + portail pratique. Référence : docs/DESIGN-SYSTEM.md.
+ *
+ * Couleurs : ivoire sable #F4EFE6 (fond), blanc (surfaces), encre #1B1A17, vert profond #173F38
+ * (marque, boutons, liens), terre cuite #9A5632 (texte/CTA) et #B96F47 (décor seulement), or en filets.
+ * Les anciens noms (navy, terracotta, sand, majorelle, night) sont conservés comme alias.
+ * Polices : Fraunces (titres latins), Manrope (texte), Readex Pro (arabe), Marhey (logotype).
+ * Sections : 1. jetons · 2. base · 3. composants · 4. accueil · 5. hubs/catégories (hérités, lots B/C)
+ *            6. contenu (.prose, lot B) · 7. mouvement · 8. impression.
  */
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -10,55 +16,54 @@
 
 /* 1. Jetons ---------------------------------------------------------------- */
 @theme {
-  --color-terracotta-50: #fdf3ee;
-  --color-terracotta-100: #f9e0d3;
-  --color-terracotta-300: #ec9f80;
-  --color-terracotta-500: #c8553d;
-  --color-terracotta-600: #a8432f;
-  --color-terracotta-700: #873425;
+  /* Vert profond (alias « navy » historique) */
+  --color-navy-50: #e9f0ed;
+  --color-navy-100: #d2e1db;
+  --color-navy-300: #8fb3a8;
+  --color-navy-600: #215247;
+  --color-navy-700: #173f38;
+  --color-navy-800: #10302a;
+  --color-navy-900: #0b231f;
+  --color-majorelle-50: #e9f0ed;
+  --color-majorelle-100: #d2e1db;
+  --color-majorelle-300: #9cc7b9;
+  --color-majorelle-500: #2a6b5b;
+  --color-majorelle-600: #1f5447;
+  --color-majorelle-700: #173f38;
+  --color-majorelle-900: #0f2a26;
 
-  --color-majorelle-50: #eef1ff;
-  --color-majorelle-100: #d9e0ff;
-  --color-majorelle-300: #8fa2f5;
-  --color-majorelle-500: #2f4bd8;
-  --color-majorelle-600: #1e3abf;
-  --color-majorelle-700: #172d94;
-  --color-majorelle-900: #0e1a5c;
+  /* Terre cuite : 500 = décor (jamais pour un texte < 24 px), 600 = texte/CTA (AA) */
+  --color-terracotta-50: #faf1ea;
+  --color-terracotta-100: #f3dccd;
+  --color-terracotta-300: #e9b58f;
+  --color-terracotta-500: #b96f47;
+  --color-terracotta-600: #9a5632;
+  --color-terracotta-700: #7d4426;
 
-  /* Couleurs du blason */
-  --color-navy-50: #eef3f9;
-  --color-navy-100: #d6e2ef;
-  --color-navy-300: #8fa9c6;
-  --color-navy-600: #1f4a7a;
-  --color-navy-700: #163a63;
-  --color-navy-800: #102c4c;
-  --color-navy-900: #0b1f36;
-  --color-gold-100: #f6ecd2;
-  --color-gold-300: #e2c47e;
-  --color-gold-500: #c9a24a;
-  --color-gold-600: #9a6f1e;
+  --color-gold-100: #f4ead6;
+  --color-gold-300: #dcc08a;
+  --color-gold-500: #b98946;
+  --color-gold-600: #88602e;
+  --color-saffron-400: #e8c170;
+  --color-saffron-500: #d9a94b;
+  --color-emerald-moroccan-100: #d5ece2;
+  --color-emerald-moroccan-500: #1d7a57;
+  --color-emerald-moroccan-600: #155f44;
 
-  --color-emerald-moroccan-100: #d5f0e4;
-  --color-emerald-moroccan-500: #0f8a5f;
-  --color-emerald-moroccan-600: #0b6e4b;
+  --color-sand-50: #f4efe6;
+  --color-sand-100: #ebe3d4;
+  --color-sand-200: #ddd2bd;
+  --color-ink-900: #1b1a17;
+  --color-night-900: #0f2a26;
+  --color-night-800: #15332e;
+  --color-night-700: #1e413a;
 
-  --color-saffron-400: #f4c35a;
-  --color-saffron-500: #e9b949;
-
-  --color-sand-50: #fbf8f3;
-  --color-sand-100: #f3ece0;
-  --color-sand-200: #e9dcc6;
-  --color-ink-900: #1b1a1f;
-  --color-night-900: #0f1626;
-  --color-night-800: #18223a;
-  --color-night-700: #22304d;
-
-  --font-sans: "Readex Pro Variable", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
-  --font-display: "Readex Pro Variable", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
+  --font-sans: "Manrope Variable", "Readex Pro Variable", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Fraunces Variable", "Readex Pro Variable", Georgia, "Times New Roman", serif;
   --font-arabic: "Readex Pro Variable", "Segoe UI", Tahoma, sans-serif;
   --font-brand: "Marhey Variable", "Readex Pro Variable", ui-sans-serif, system-ui, sans-serif;
 
-  --radius-arch: 999px 999px 1.5rem 1.5rem;
+  --radius-arch: 999px 999px 1.25rem 1.25rem;
 
   --animate-fade-in: fade-in .18s ease-out;
   @keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
@@ -67,21 +72,21 @@
 /* Rôles sémantiques : clair par défaut, sombre via html.dark (Système/Clair/Sombre). */
 :root {
   --surface: #ffffff;
-  --surface-2: #fbf8f3;
-  --surface-3: #f3ece0;
-  --text: #1b1a1f;
-  --muted: #565861;
-  --line: rgb(22 58 99 / .1);
-  --line-strong: rgb(22 58 99 / .24);
-  --accent: #a8432f;
-  --accent-deco: #c9a24a;
-  --brand: #163a63;
+  --surface-2: #f4efe6;
+  --surface-3: #ebe3d4;
+  --text: #1b1a17;
+  --muted: #5a554b;
+  --line: rgb(27 26 23 / .12);
+  --line-strong: rgb(27 26 23 / .24);
+  --accent: #9a5632;
+  --accent-deco: #b96f47;
+  --brand: #173f38;
   --brand-ink: #ffffff;
-  --link: #1e3abf;
-  --focus: #1e3abf;
-  --shadow-sm: 0 2px 8px -3px rgb(16 44 76 / .12);
-  --shadow-md: 0 10px 28px -12px rgb(16 44 76 / .2);
-  --shadow-lg: 0 24px 48px -20px rgb(16 44 76 / .3);
+  --link: #173f38;
+  --focus: #173f38;
+  --shadow-sm: 0 1px 2px rgb(23 63 56 / .08);
+  --shadow-md: 0 12px 28px -16px rgb(23 63 56 / .14);
+  --shadow-lg: 0 18px 40px -20px rgb(23 63 56 / .18);
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --dur-quick: 150ms;
   --dur-base: 220ms;
@@ -100,19 +105,19 @@
 }
 @media (min-width: 768px) { :root { --section-gap: 7rem; } }
 html.dark {
-  --surface: #18223a;
-  --surface-2: #0f1626;
-  --surface-3: #22304d;
-  --text: #f3ece0;
-  --muted: #c4c8d4;
-  --line: rgb(255 255 255 / .12);
-  --line-strong: rgb(255 255 255 / .26);
-  --accent: #ec9f80;
-  --accent-deco: #e2c47e;
-  --brand: #fbf8f3;
-  --brand-ink: #0f1626;
-  --link: #b5c1ff;
-  --focus: #b5c1ff;
+  --surface: #15332e;
+  --surface-2: #0f2a26;
+  --surface-3: #1e413a;
+  --text: #f4efe6;
+  --muted: #c9c1b1;
+  --line: rgb(244 239 230 / .12);
+  --line-strong: rgb(244 239 230 / .26);
+  --accent: #e9b58f;
+  --accent-deco: #e9b58f;
+  --brand: #f4efe6;
+  --brand-ink: #0f2a26;
+  --link: #e9b58f;
+  --focus: #e9b58f;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / .3);
   --shadow-md: 0 12px 28px -16px rgb(0 0 0 / .5);
   --shadow-lg: 0 18px 40px -20px rgb(0 0 0 / .6);
@@ -123,7 +128,7 @@ html.dark {
 @layer base {
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-wrap: break-word; color-scheme: light; }
   body { background: var(--surface-2); color: var(--text); line-height: 1.65; text-rendering: optimizeLegibility; font-feature-settings: "ss01"; }
-  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 650; letter-spacing: -0.02em; line-height: 1.12; text-wrap: balance; hyphens: auto; overflow-wrap: anywhere; }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -0.02em; line-height: 1.12; text-wrap: balance; hyphens: auto; overflow-wrap: anywhere; }
   h4 { font-family: var(--font-sans); font-weight: 700; letter-spacing: 0; }
   :lang(ar) body, :lang(ar) h1, :lang(ar) h2, :lang(ar) h3, :lang(ar) h4 { font-family: var(--font-arabic); }
   :lang(ar) h1, :lang(ar) h2, :lang(ar) h3, :lang(ar) h4 { font-weight: 600; letter-spacing: 0; line-height: 1.35; }
@@ -178,7 +183,7 @@ html.dark {
   .btn-sm { padding: .5rem 1rem; min-height: 2.5rem; font-size: .875rem; }
 
   /* Cartes : bordure 1 px, rayon 12 px, ombre de repos très légère */
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; box-shadow: var(--shadow-sm); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: .75rem; box-shadow: var(--shadow-sm); }
   .card :is(h1,h2,h3,h4,a,dt,dd,p,li,span) { overflow-wrap: anywhere; }
   .card a { -webkit-tap-highlight-color: transparent; }
   .card-hover { transition: box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-quick); }
@@ -236,17 +241,16 @@ html.dark {
 
 /* En-tête : ivoire opaque (pas de verre), filet bas */
 .site-header { background: var(--surface-2); border-bottom: 1px solid var(--line); }
-.site-header .brand-word { font-family: var(--font-brand); font-weight: 600; letter-spacing: -0.01em; }
+.site-header .brand-word { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
 
 /* 4. Accueil --------------------------------------------------------------- */
 /* Premier écran : titre + chapô, les trois parcours, puis la recherche (à côté du titre en desktop) */
-.home-hero { position: relative; isolation: isolate; padding-top: clamp(1.25rem, 3.5vw, 3rem); padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); background-color: var(--surface-2); background-image: radial-gradient(ellipse 80% 65% at 85% 10%, rgb(201 162 74 / .16), transparent 60%), radial-gradient(ellipse 60% 50% at 5% 90%, rgb(47 75 216 / .08), transparent 70%); }
-.dark .home-hero { background-image: radial-gradient(ellipse 80% 65% at 85% 10%, rgb(201 162 74 / .1), transparent 60%), radial-gradient(ellipse 60% 50% at 5% 90%, rgb(47 75 216 / .2), transparent 70%); }
+.home-hero { position: relative; padding-top: clamp(1.25rem, 3.5vw, 3rem); }
 .home-hero::before { content: ""; position: absolute; inset: 0 0 auto; height: .5rem; background: url('/images/moroccan-zellige.webp') center / 320px auto; border-bottom: 1px solid var(--line-strong); }
 .home-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "intro" "paths" "search"; }
 @media (min-width: 900px) { .home-hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-areas: "title intro" "title search" "paths paths"; column-gap: 4rem; align-items: end; } }
-.home-hero h1 { grid-area: title; font-size: var(--step-7); font-weight: 650; line-height: 1.02; letter-spacing: -0.035em; color: var(--text); }
-.home-hero h1 em { font-style: normal; color: var(--accent); font-weight: 650; }
+.home-hero h1 { grid-area: title; font-size: var(--step-7); font-weight: 520; line-height: 1.02; letter-spacing: -0.035em; color: var(--text); }
+.home-hero h1 em { font-style: italic; color: var(--accent); font-weight: 420; }
 :lang(ar) .home-hero h1 { line-height: 1.3; letter-spacing: 0; }
 :lang(ar) .home-hero h1 em { font-style: normal; font-weight: 600; }
 .home-hero__intro { grid-area: intro; margin-top: .75rem; font-size: var(--step-0); line-height: 1.6; color: var(--muted); max-width: 34rem; }
@@ -272,7 +276,7 @@ html.dark {
 .path-credit { position: absolute; inset-inline-end: 0; bottom: 0; z-index: 1; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: .125rem .5rem; background: rgb(0 0 0 / .55); color: rgb(255 255 255 / .92); font-size: .625rem; line-height: 1.4; }
 .path-cards { display: grid; gap: .75rem; }
 @media (min-width: 900px) { .path-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; } }
-.path-card { position: relative; display: grid; grid-template-columns: minmax(0, 36%) minmax(0, 1fr); height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 1.25rem; background: var(--surface); box-shadow: var(--shadow-sm); }
+.path-card { position: relative; display: grid; grid-template-columns: minmax(0, 36%) minmax(0, 1fr); height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: .75rem; background: var(--surface); box-shadow: var(--shadow-sm); }
 .path-card::before { content: ""; position: absolute; inset-inline: 0; top: 0; z-index: 1; height: 3px; background: var(--path); }
 .path-card:hover { box-shadow: var(--shadow-md); border-color: var(--line-strong); }
 .path-card:has(.path-card__cta:focus-visible) { outline: 2px solid var(--focus); outline-offset: 3px; }
@@ -308,7 +312,7 @@ html.dark {
 .path-nav a[aria-current="page"] svg { color: currentColor; }
 .path-hero { padding-block: 1.5rem 2.5rem; border-bottom: 1px solid var(--line); }
 .path-hero__grid { display: grid; gap: 2rem; }
-.path-hero h1 { margin-top: 1.75rem; font-size: var(--step-5); font-weight: 650; line-height: 1.12; letter-spacing: -0.03em; hyphens: none; }
+.path-hero h1 { margin-top: 1.75rem; font-size: var(--step-5); font-weight: 520; line-height: 1.12; letter-spacing: -0.03em; hyphens: none; }
 :lang(ar) .path-hero h1 { font-size: var(--step-5); line-height: 1.35; letter-spacing: 0; }
 .path-hero__intro { margin-top: 1rem; max-width: 36rem; font-size: var(--step-1); line-height: 1.6; color: var(--muted); }
 .path-hero__media { position: relative; overflow: hidden; aspect-ratio: 3 / 2; border-radius: .75rem; background: var(--surface-3); }
@@ -475,7 +479,7 @@ html.dark {
 }
 .article-body.prose { max-width: 68ch; font-size: 1.125rem; line-height: 1.75; }
 :lang(ar) .article-body.prose { line-height: 1.95; }
-.prose h2 { margin-top: 2.4em; font-size: var(--step-4); font-weight: 650; }
+.prose h2 { margin-top: 2.4em; font-size: var(--step-4); font-weight: 560; }
 .prose h3 { font-size: var(--step-2); }
 .prose h2 + * { margin-top: .9em; }
 .prose p, .prose li { overflow-wrap: break-word; }
@@ -499,7 +503,7 @@ html.dark {
 .dark .alert-ok { border-inline-start-color: #8fd4b4; }
 
 /* En-tête de guide : éditorial (titre serif, chapô, métadonnées en ligne) */
-.article-title { font-size: var(--step-6); font-weight: 650; line-height: 1.05; letter-spacing: -0.03em; }
+.article-title { font-size: var(--step-6); font-weight: 520; line-height: 1.05; letter-spacing: -0.03em; }
 :lang(ar) .article-title { font-size: var(--step-5); line-height: 1.35; letter-spacing: 0; }
 .article-lede { font-size: var(--step-2); line-height: 1.55; color: var(--muted); max-width: 40rem; }
 .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; border-top: 1px solid var(--line); padding-top: 1rem; font-size: .9rem; color: var(--muted); }
@@ -520,7 +524,7 @@ html.dark {
 .row-list > * + * { border-top: 1px solid var(--line); }
 .row-list:empty { display: none; }
 .hub-head { border-bottom: 1px solid var(--line); }
-.hub-head h1 { font-size: var(--step-6); font-weight: 650; line-height: 1.05; letter-spacing: -0.03em; }
+.hub-head h1 { font-size: var(--step-6); font-weight: 520; line-height: 1.05; letter-spacing: -0.03em; }
 :lang(ar) .hub-head h1 { font-size: var(--step-5); line-height: 1.35; letter-spacing: 0; }
 @media print { .prose table { max-height: none; overflow: visible; } .prose thead th { position: static; } }
 
@@ -558,7 +562,7 @@ html.dark {
 
 /* Pied de page : vert profond, colonnes structurées (rôles redéfinis localement) */
 .site-footer { --brand: #f4efe6; --muted: rgb(244 239 230 / .78); --line: rgb(244 239 230 / .16); --accent: #e9b58f; --focus: #e9b58f; background: var(--color-navy-900); color: #f4efe6; }
-.dark .site-footer { background: #0b1424; }
+.dark .site-footer { background: #0a1f1c; }
 .site-footer .eyebrow { color: var(--accent) !important; }
 
 /* Crédits photo discrets (demande du propriétaire, 30/10/2026) : presque invisibles, lisibles au survol/focus */
