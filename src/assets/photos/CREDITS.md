@@ -68,6 +68,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tafraout-napoleons-hat.jpg | Just Booked A Trip | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg |
 | spots/agadir-oufella.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg |
 | spots/agadir-beach.jpg | Elmschrat | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:02-beach-agadir-morocco.JPG |
+| spots/marrakech-maison-photographie.jpg | DRAGANCESTIC | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Maison_de_la_Photographie_de_Marrakech,_a_small_photography_museum.-_House_of_Photography_in_Marrakech,_Morroco.jpg |
 | spots/agadir-souk-el-had.jpg | Anass Sedrati | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg |
 | spots/agadir-amazigh-museum.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg |
 | spots/dakhla-lighthouse.jpg | Vanbasten 23 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Faro_de_Dajla.jpg |
@@ -332,3 +333,4 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 ## Décor marocain
 
 `public/images/moroccan-zellige.webp` : [Orlysi](https://commons.wikimedia.org/wiki/File:MOROCCAN_TILES_ZELLIGE.jpg) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Décor de fond : zellige photographié à Fès. Photo redimensionnée, convertie en WebP, recadrée et atténuée à l’affichage ; adaptation sous la même licence.
+
