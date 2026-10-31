@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-10-31. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 264 photos vérifiées, 75 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 263 photos vérifiées, 76 placeholders (« Photo à venir »), 0 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 220 | 75 | 0 |
+| Lieux à visiter | 295 | 219 | 76 | 0 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -74,7 +74,7 @@
 
 ## Lieux à visiter (295)
 
-### Marrakech (18/20 vérifiées)
+### Marrakech (17/20 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -94,7 +94,7 @@
 | Musée de Marrakech | `spots/marrakech-marrakech-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Museum_of_Marrakech.JPG> | vérifiée | CC BY 3.0 |
 | Musée de la Palmeraie | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée Farid Belkahia | — (« Photo à venir ») | — | — | placeholder | — |
-| Maison de la Photographie | `spots/marrakech-maison-photographie.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Maison_de_la_Photographie_de_Marrakech,_a_small_photography_museum.-_House_of_Photography_in_Marrakech,_Morroco.jpg> | vérifiée | CC BY-SA 4.0 |
+| Maison de la Photographie | `spots/marrakech-maison-photographie.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Maison_de_la_Photographie_de_Marrakech,_a_small_photography_museum_House_of_Photography_in_Marrakech,_Morroco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Mosquée Ali Ben Youssef | `spots/marrakech-ali-ben-youssef.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ben_Youssef_Mosque_(52188886638).jpg> | vérifiée | CC BY-SA 2.0 |
 | Jardins de l'Agdal | `spots/marrakech-agdal.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agdale.jpg> | vérifiée | CC BY-SA 3.0 |
 | Koubba almoravide | `spots/marrakech-almoravid-koubba.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marrakesh,_Almoravid_Koubba_(5365339756)_(2).jpg> | vérifiée | CC BY-SA 2.0 |
@@ -523,4 +523,3 @@
 | Place El Mechouar | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage d’Aglou | `spots/tiznit-aglou-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc national de Souss-Massa | `spots/tiznit-souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Viewpoint_Massa_Delta_Souss-Massa_Park_Oct25_A7CR_08026.jpg> | vérifiée | CC BY-SA 4.0 |
-
