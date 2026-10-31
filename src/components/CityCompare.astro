@@ -1,0 +1,39 @@
+---
+import type { Locale } from '../i18n';
+import { CITY_PAGES, cityLabel } from '../data/cities';
+import { cityPath } from '../utils/i18n';
+import { BASE, CITY_FACTOR, COSTS_LAST_UPDATED } from '../config/costs';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const labels = {
+ fr: ['Comparer les villes', 'Choisissez deux destinations pour comparer leur ambiance et leur budget indicatif.', 'Première ville', 'Deuxième ville', 'Ville', 'Budget par jour', 'Quand partir', 'Découvrir', 'Estimations de départ du calculateur, non relevées sur le terrain. Par personne, hébergement inclus, milieu de gamme ; hors trajet pour rejoindre la ville. Les prix varient selon la saison. Données du', 'Les deux sélections désignent la même ville : choisissez une autre destination pour comparer.'],
+ en: ['Compare cities', 'Choose two destinations to compare their character and estimated daily budget.', 'First city', 'Second city', 'City', 'Daily budget', 'When to go', 'Explore', 'Starting estimates from the calculator, not field observations. Per person, including accommodation, mid-range; travel to the city excluded. Prices vary by season. Data dated', 'Both selections refer to the same city: choose another destination to compare.'],
+ es: ['Comparar ciudades', 'Elige dos destinos para comparar su ambiente y presupuesto orientativo.', 'Primera ciudad', 'Segunda ciudad', 'Ciudad', 'Presupuesto diario', 'Cuándo ir', 'Descubrir', 'Estimaciones iniciales del calculador, no recogidas sobre el terreno. Por persona, alojamiento incluido, gama media; sin el viaje hasta la ciudad. Los precios varían según la temporada. Datos del', 'Has seleccionado la misma ciudad dos veces: elige otro destino para comparar.'],
+ de: ['Städte vergleichen', 'Wählen Sie zwei Reiseziele und vergleichen Sie Atmosphäre und geschätztes Tagesbudget.', 'Erste Stadt', 'Zweite Stadt', 'Stadt', 'Tagesbudget', 'Reisezeit', 'Entdecken', 'Ausgangsschätzungen des Rechners, keine vor Ort erhobenen Preise. Pro Person inklusive Unterkunft, mittlere Preisklasse; Anreise ausgeschlossen. Preise schwanken je nach Saison. Daten vom', 'Beide Auswahlen zeigen dieselbe Stadt: Wählen Sie ein anderes Reiseziel zum Vergleich.'],
+ ar: ['مقارنة المدن', 'اختر وجهتين لمقارنة الأجواء والميزانية اليومية التقديرية.', 'المدينة الأولى', 'المدينة الثانية', 'المدينة', 'الميزانية اليومية', 'متى تزور', 'اكتشف', 'تقديرات أولية من الحاسبة وليست أسعاراً جُمعت ميدانياً. للشخص مع الإقامة بمستوى متوسط، دون تكاليف الوصول إلى المدينة. تتغير الأسعار حسب الموسم. تاريخ البيانات', 'اخترت المدينة نفسها مرتين؛ اختر وجهة أخرى للمقارنة.'],
+}[lang];
+const cities = CITY_PAGES.filter(c => c.costCity);
+const nf = new Intl.NumberFormat(lang === 'ar' ? 'ar-MA-u-nu-latn' : lang);
+const budget = (c: typeof cities[number]) => Math.round((BASE.nightStay.mid + BASE.foodDay.mid + BASE.transportDay.mid + BASE.funDay.mid) * CITY_FACTOR[c.costCity!] / 50) * 50;
+---
+<section class="container-page section city-compare" aria-labelledby="compare-title" data-city-compare>
+ <h2 class="section-title" id="compare-title">{labels[0]}</h2><p class="section-sub">{labels[1]}</p>
+ <div class="compare-controls" data-compare-controls hidden>{[2,3].map((n,i)=><label>{labels[n]}<select class="input" data-compare-select>{cities.map(c=><option value={c.id} selected={c.id === (i === 0 ? 'fes' : 'marrakech')}>{cityLabel(c.id,lang)}</option>)}</select></label>)}</div>
+ <p role="status" aria-live="polite" data-compare-status data-duplicate={labels[9]}></p>
+ <div class="compare-scroll" tabindex="0" role="region" aria-label={labels[0]}><table><caption class="sr-only">{labels[0]}</caption><thead><tr><th scope="col">{labels[4]}</th><th scope="col">{labels[5]}</th><th scope="col">{labels[6]}</th></tr></thead><tbody>{cities.map(c=><tr data-compare-city={c.id}><th scope="row"><a href={cityPath(lang,c.slug[lang])}>{cityLabel(c.id,lang)}</a><p>{c.text[lang].why[0]}</p></th><td><bdi dir="ltr">≈ {nf.format(budget(c))} MAD</bdi></td><td>{c.text[lang].when}</td></tr>)}</tbody></table></div>
+ <p class="compare-note">{labels[8]} <time datetime={COSTS_LAST_UPDATED}>{new Intl.DateTimeFormat(lang,{dateStyle:'long'}).format(new Date(COSTS_LAST_UPDATED))}</time>.</p>
+</section>
+<style>
+ .compare-controls{display:flex;flex-wrap:wrap;gap:1rem;margin:1.5rem 0}.compare-controls[hidden]{display:none}.compare-controls label{display:grid;gap:.4rem;flex:1 1 15rem;font-size:.85rem}.compare-controls select{width:100%;min-height:44px}.compare-scroll{overflow-x:auto;margin-top:1.5rem}table{border-collapse:collapse;width:100%;min-width:44rem;text-align:start}th,td{padding:1.1rem 1rem;vertical-align:top;text-align:start;border-bottom:1px solid var(--line)}thead th{font-size:.8rem;color:var(--muted)}tbody th{min-width:12rem;width:32%;font-weight:600}tbody th a{text-decoration:underline;text-underline-offset:4px}tbody th p{font-weight:400;font-size:.85rem;color:var(--muted);margin:.5rem 0 0}td:nth-child(2){white-space:nowrap;font-variant-numeric:tabular-nums}td:last-child{min-width:15rem;font-size:.9rem;line-height:1.6}.compare-note{max-width:85ch;color:var(--muted);font-size:.8rem;line-height:1.6;margin-top:1rem}tr[hidden]{display:none}.compare-scroll:focus-visible{outline:2px solid var(--focus);outline-offset:4px}@media print{.compare-controls{display:none}.compare-scroll{overflow:visible}th,td{padding:.5rem}}
+</style>
+<script>
+document.querySelectorAll<HTMLElement>('[data-city-compare]').forEach(root=>{
+ const selects=[...root.querySelectorAll<HTMLSelectElement>('[data-compare-select]')];
+ const rows=[...root.querySelectorAll<HTMLTableRowElement>('[data-compare-city]')];
+ const body=root.querySelector('tbody');
+ const status=root.querySelector<HTMLElement>('[data-compare-status]');
+ const render=()=>{const ids=selects.map(s=>s.value);rows.forEach(row=>{row.hidden=!ids.includes(row.dataset.compareCity??'')});rows.sort((a,b)=>ids.indexOf(a.dataset.compareCity??'')-ids.indexOf(b.dataset.compareCity??'')).forEach(row=>body?.append(row));if(status)status.textContent=ids[0]===ids[1]?status.dataset.duplicate??'':''};
+ selects.forEach(s=>s.addEventListener('change',render));root.querySelector('[data-compare-controls]')?.removeAttribute('hidden');render();
+});
+</script>
+
