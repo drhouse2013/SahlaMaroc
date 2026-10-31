@@ -94,7 +94,7 @@
 | Musée de Marrakech | `spots/marrakech-marrakech-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Museum_of_Marrakech.JPG> | vérifiée | CC BY 3.0 |
 | Musée de la Palmeraie | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée Farid Belkahia | — (« Photo à venir ») | — | — | placeholder | — |
-| Maison de la Photographie | — (« Photo à venir ») | — | — | placeholder | — |
+| Maison de la Photographie | `spots/marrakech-maison-photographie.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Maison_de_la_Photographie_de_Marrakech,_a_small_photography_museum_House_of_Photography_in_Marrakech,_Morroco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Mosquée Ali Ben Youssef | `spots/marrakech-ali-ben-youssef.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ben_Youssef_Mosque_(52188886638).jpg> | vérifiée | CC BY-SA 2.0 |
 | Jardins de l'Agdal | `spots/marrakech-agdal.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agdale.jpg> | vérifiée | CC BY-SA 3.0 |
 | Koubba almoravide | `spots/marrakech-almoravid-koubba.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marrakesh,_Almoravid_Koubba_(5365339756)_(2).jpg> | vérifiée | CC BY-SA 2.0 |
