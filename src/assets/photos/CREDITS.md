@@ -162,6 +162,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/marrakech-bahia.jpg | Val Traveler | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg |
 | spots/marrakech-menara.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Menara_Garden_(Marrakech,_Moroc)_10.jpg |
 | spots/marrakech-marrakech-museum.jpg | Donar Reiskoffer | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Museum_of_Marrakech.JPG |
+| spots/marrakech-maison-photographie.jpg | DRAGANCESTIC | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Maison_de_la_Photographie_de_Marrakech,_a_small_photography_museum_House_of_Photography_in_Marrakech,_Morroco.jpg |
 | spots/marrakech-ali-ben-youssef.jpg | William John Gauthier | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Ben_Youssef_Mosque_(52188886638).jpg |
 | spots/marrakech-almoravid-koubba.jpg | Michal Osmenda | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Marrakesh,_Almoravid_Koubba_(5365339756)_(2).jpg |
 | spots/casablanca-corniche.jpg | Bertrand SOUBEYRAND | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Promenade_sur_la_Corniche_Ain_Diab_%C3%A0_Casablanca_-_photo_Bertrand_SOUBEYRAND.jpg |
