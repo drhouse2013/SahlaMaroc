@@ -37,7 +37,7 @@ const labels = Object.fromEntries(['all', ...kinds].map((k) => [k, { count: coun
     {items.map(({ s, photo }, i) => (
       <li class="spot-card card group overflow-hidden" style={`--i:${i % 6}`} data-spot={s.id} data-kind={s.kind}>
         <div class="relative aspect-[4/3] overflow-hidden bg-[var(--surface-2,rgba(128,128,128,.12))]">
-          <PlaceImage photo={photo} kind={s.kind} lang={lang} name={s.name[lang] ?? s.name.fr} width={480} widths={[480, 720]} sizes="(min-width:1280px) 280px, (min-width:640px) 45vw, 92vw" class="spot-img h-full w-full object-cover" />
+          <PlaceImage photo={photo} kind={s.kind} lang={lang} name={s.name[lang] ?? s.name.fr} width={480} widths={[480, 720, 1200]} sizes="(min-width:1280px) 280px, (min-width:640px) 45vw, 92vw" class="spot-img h-full w-full object-cover" />
           {photo.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
           <span class="spot-badge absolute start-2 top-2">{t(`spots.kind.${s.kind}`)}</span>
         </div>
@@ -70,7 +70,7 @@ const labels = Object.fromEntries(['all', ...kinds].map((k) => [k, { count: coun
   }
   @media (prefers-reduced-motion: reduce) {
     .spot-card, .spot-img, .spot-chip { transition: none; }
-    .spot-card:hover, .spot-card:hover .spot-img { transform: none; }
+    .spot-card:hover, .spot-card:focus-within, .spot-card:hover .spot-img { transform: none; }
   }
 </style>
 <script>
