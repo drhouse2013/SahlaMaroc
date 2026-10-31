@@ -282,6 +282,14 @@ html.dark {
 @keyframes home-photo-arrive { from { transform: scale(1.035); opacity: .82; } to { transform: scale(1); opacity: 1; } }
 @keyframes home-copy-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (min-width: 900px) { .home-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, .6fr); align-items: end; } .home-paths { min-width: 0; } }
+@media (min-width: 600px) and (max-width: 899px) {
+  .home-hero__visual { min-height: 43rem; }
+  .home-hero__veil { padding-block: 4rem 8rem; }
+  .home-hero__copy { padding-inline: 2rem; }
+  .home-hero h1 { font-size: clamp(3.2rem, 8vw, 5.4rem); }
+  .home-hero__intro { max-width: min(31rem, calc(100% - 12rem)); }
+  .home-hero__secondary { right: 1.25rem; bottom: 1rem; width: 11rem; }
+}
 @media (max-width: 599px) {
   .home-hero__visual { min-height: clamp(40rem, 82svh, 48rem); }
   .home-hero__veil { padding-block: 4rem 8rem; background: linear-gradient(90deg, rgb(12 33 29 / .62), rgb(12 33 29 / .12)), linear-gradient(0deg, rgb(12 33 29 / .7) 0%, transparent 68%); }
