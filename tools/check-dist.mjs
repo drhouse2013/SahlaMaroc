@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SITE_URL } from '../site.config.mjs';
 
-const DIST = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
+const DIST = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', process.argv[2] ?? 'dist');
 const files = fs.readdirSync(DIST).filter((f) => /^sitemap-\d+\.xml$/.test(f));
 if (!files.length) { console.error('❌ aucun dist/sitemap-*.xml (build requis)'); process.exit(1); }
 
