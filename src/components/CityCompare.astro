@@ -14,6 +14,8 @@ const labels = {
 }[lang];
 const cities = CITY_PAGES.filter(c => c.costCity);
 const nf = new Intl.NumberFormat(lang === 'ar' ? 'ar-MA-u-nu-latn' : lang);
+const [costYear, costMonth, costDay] = COSTS_LAST_UPDATED.split('-').map(Number);
+const costUpdatedDate = new Date(costYear, costMonth - 1, costDay);
 const budget = (c: typeof cities[number]) => Math.round((BASE.nightStay.mid + BASE.foodDay.mid + BASE.transportDay.mid + BASE.funDay.mid) * CITY_FACTOR[c.costCity!] / 50) * 50;
 ---
 <section class="container-page section city-compare" aria-labelledby="compare-title" data-city-compare>
@@ -21,7 +23,7 @@ const budget = (c: typeof cities[number]) => Math.round((BASE.nightStay.mid + BA
  <div class="compare-controls" data-compare-controls hidden>{[2,3].map((n,i)=><label>{labels[n]}<select class="input" data-compare-select>{cities.map(c=><option value={c.id} selected={c.id === (i === 0 ? 'fes' : 'marrakech')}>{cityLabel(c.id,lang)}</option>)}</select></label>)}</div>
  <p role="status" aria-live="polite" data-compare-status data-duplicate={labels[9]}></p>
  <div class="compare-scroll" tabindex="0" role="region" aria-label={labels[0]}><table><caption class="sr-only">{labels[0]}</caption><thead><tr><th scope="col">{labels[4]}</th><th scope="col">{labels[5]}</th><th scope="col">{labels[6]}</th></tr></thead><tbody>{cities.map(c=><tr data-compare-city={c.id}><th scope="row"><a href={cityPath(lang,c.slug[lang])}>{cityLabel(c.id,lang)}</a><p>{c.text[lang].why[0]}</p></th><td><bdi dir="ltr">≈ {nf.format(budget(c))} MAD</bdi></td><td>{c.text[lang].when}</td></tr>)}</tbody></table></div>
- <p class="compare-note">{labels[8]} <time datetime={COSTS_LAST_UPDATED}>{new Intl.DateTimeFormat(lang,{dateStyle:'long'}).format(new Date(COSTS_LAST_UPDATED))}</time>.</p>
+ <p class="compare-note">{labels[8]} <time datetime={COSTS_LAST_UPDATED}>{new Intl.DateTimeFormat(lang,{dateStyle:'long'}).format(costUpdatedDate)}</time>.</p>
 </section>
 <style>
  .compare-controls{display:flex;flex-wrap:wrap;gap:1rem;margin:1.5rem 0}.compare-controls[hidden]{display:none}.compare-controls label{display:grid;gap:.4rem;flex:1 1 15rem;font-size:.85rem}.compare-controls select{width:100%;min-height:44px}.compare-scroll{overflow-x:auto;margin-top:1.5rem}table{border-collapse:collapse;width:100%;min-width:44rem;text-align:start}th,td{padding:1.1rem 1rem;vertical-align:top;text-align:start;border-bottom:1px solid var(--line)}thead th{font-size:.8rem;color:var(--muted)}tbody th{min-width:12rem;width:32%;font-weight:600}tbody th a{text-decoration:underline;text-underline-offset:4px}tbody th p{font-weight:400;font-size:.85rem;color:var(--muted);margin:.5rem 0 0}td:nth-child(2){white-space:nowrap;font-variant-numeric:tabular-nums}td:last-child{min-width:15rem;font-size:.9rem;line-height:1.6}.compare-note{max-width:85ch;color:var(--muted);font-size:.8rem;line-height:1.6;margin-top:1rem}tr[hidden]{display:none}.compare-scroll:focus-visible{outline:2px solid var(--focus);outline-offset:4px}@media print{.compare-controls{display:none}.compare-scroll{overflow:visible}th,td{padding:.5rem}}
@@ -36,4 +38,3 @@ document.querySelectorAll<HTMLElement>('[data-city-compare]').forEach(root=>{
  selects.forEach(s=>s.addEventListener('change',render));root.querySelector('[data-compare-controls]')?.removeAttribute('hidden');render();
 });
 </script>
-
