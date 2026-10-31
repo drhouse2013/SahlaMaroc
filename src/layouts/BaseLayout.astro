@@ -19,6 +19,7 @@ import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileNav from '../components/MobileNav.astro';
+import TravelNotebook from '../components/TravelNotebook.astro';
 import SearchBox from '../components/SearchBox.astro';
 import { LOCALE_META, isIndexable, useTranslations, type Locale } from '../i18n';
 import { rssPath, type Alternates } from '../utils/i18n';
@@ -114,6 +115,7 @@ const description = seo.description ?? t('site.description');
     </main>
     <Footer lang={lang} />
     <MobileNav lang={lang} />
+    <TravelNotebook lang={lang} />
     <SearchBox lang={lang} mode="dialog" />
 
     <!-- Scroll reveal global (.reveal + .stagger-reveal) -->
@@ -176,3 +178,4 @@ const description = seo.description ?? t('site.description');
     </script>
   </body>
 </html>
+
