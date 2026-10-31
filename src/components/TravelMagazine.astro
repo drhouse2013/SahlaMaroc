@@ -1,0 +1,22 @@
+---
+import type { Locale } from '../i18n';
+import ArticleCard from './ArticleCard.astro';
+import { getArticleByKey } from '../utils/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const copy = {
+fr: ['Le Maroc se raconte aussi dans les détails', 'À découvrir', 'Un rituel, une table, une rencontre : trois portes pour mieux comprendre le voyage.'],
+en: ['Morocco lives in the details', 'Discover', 'A ritual, a table, a meeting: three ways to understand your journey.'],
+es: ['Marruecos se descubre en los detalles', 'Descubrir', 'Un ritual, una mesa, un encuentro: tres formas de entender el viaje.'],
+de: ['Marokko steckt auch im Detail', 'Entdecken', 'Ein Ritual, ein Essen, eine Begegnung: drei Zugänge zu Ihrer Reise.'],
+ar: ['المغرب يُروى أيضاً في التفاصيل', 'للاكتشاف', 'طقس ومائدة ولقاء: ثلاث نوافذ لفهم الرحلة بشكل أعمق.'],
+}[lang];
+const articles = (await Promise.all(['hammam', 'moroccan-food', 'etiquette'].map(key => getArticleByKey(lang, key)))).filter((article): article is NonNullable<typeof article> => !!article);
+---
+{articles.length > 0 && <section class="travel-magazine" aria-labelledby="travel-magazine-title">
+  <header><p class="eyebrow">{copy[1]}</p><h2 id="travel-magazine-title">{copy[0]}</h2><p class="muted">{copy[2]}</p></header>
+  <div class="travel-magazine__stories">{articles.map((article, index) => <div class:list={['travel-magazine__story', {'travel-magazine__story--lead': index === 0}]}><ArticleCard article={article} size={index === 0 ? 'lg' : 'md'} /></div>)}</div>
+</section>}
+<style>
+.travel-magazine{padding-block:clamp(3rem,7vw,6rem);border-bottom:1px solid var(--line)}.travel-magazine header{max-width:52rem;margin-bottom:2rem}.travel-magazine h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);line-height:1.12;margin:.8rem 0 1rem;text-wrap:balance}.travel-magazine header>p:last-child{max-width:58ch;line-height:1.7}.travel-magazine__stories{display:grid;gap:1.5rem}.travel-magazine__story{min-width:0}@media(min-width:760px){.travel-magazine__stories{grid-template-columns:repeat(2,minmax(0,1fr))}.travel-magazine__story--lead{grid-column:1/-1}}@media print{.travel-magazine{break-inside:avoid;padding-block:1rem}}
+</style>
