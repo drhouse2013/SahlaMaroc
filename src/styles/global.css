@@ -244,27 +244,60 @@ html.dark {
 .site-header .brand-word { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
 
 /* 4. Accueil --------------------------------------------------------------- */
-/* Premier écran : titre + chapô, les trois parcours, puis la recherche (à côté du titre en desktop) */
-.home-hero { position: relative; padding-top: clamp(1.25rem, 3.5vw, 3rem); }
-.home-hero::before { content: ""; position: absolute; inset: 0 0 auto; height: .5rem; background: url('/images/moroccan-zellige.webp') center / 320px auto; border-bottom: 1px solid var(--line-strong); }
-.home-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "intro" "paths" "search"; }
-@media (min-width: 900px) { .home-hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-areas: "title intro" "title search" "paths paths"; column-gap: 4rem; align-items: end; } }
-.home-hero h1 { grid-area: title; font-size: var(--step-7); font-weight: 520; line-height: 1.02; letter-spacing: -0.035em; color: var(--text); }
-.home-hero h1 em { font-style: italic; color: var(--accent); font-weight: 420; }
-:lang(ar) .home-hero h1 { line-height: 1.3; letter-spacing: 0; }
+.home-hero { position: relative; }
+.home-hero__visual { position: relative; min-height: clamp(38rem, 78svh, 52rem); overflow: hidden; isolation: isolate; background: var(--color-navy-900); }
+.home-hero__image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 54%; animation: home-photo-arrive 1.1s cubic-bezier(.22, 1, .36, 1) both; }
+.home-hero__veil { position: absolute; inset: 0; z-index: -1; display: flex; align-items: flex-end; padding-block: clamp(4rem, 10vh, 7.5rem); background: linear-gradient(90deg, rgb(12 33 29 / .76) 0%, rgb(12 33 29 / .44) 38%, rgb(12 33 29 / .08) 78%), linear-gradient(0deg, rgb(12 33 29 / .45) 0%, transparent 48%); }
+.home-hero__copy { width: 100%; padding-inline: max(1.25rem, calc((100vw - 80rem) / 2)); color: #fff; }
+.home-hero h1 { max-width: 12ch; color: #fff; font-size: clamp(3.5rem, 8.2vw, 8rem); font-weight: 520; line-height: .98; letter-spacing: -.055em; text-wrap: balance; animation: home-copy-arrive .75s .12s both; }
+.home-hero h1 em { color: #e8d3a0; font-style: italic; font-weight: 450; }
+:lang(ar) .home-hero h1 { line-height: 1.25; letter-spacing: 0; }
 :lang(ar) .home-hero h1 em { font-style: normal; font-weight: 600; }
-.home-hero__intro { grid-area: intro; margin-top: .75rem; font-size: var(--step-0); line-height: 1.6; color: var(--muted); max-width: 34rem; }
-.home-paths { grid-area: paths; margin-top: 1.25rem; }
-.home-paths__title { margin-bottom: .75rem; font-family: var(--font-sans); font-size: 1rem; font-weight: 700; line-height: 1.4; letter-spacing: 0; color: var(--brand); text-wrap: pretty; }
-.home-search { grid-area: search; margin-top: 1.75rem; max-width: 34rem; }
-@media (min-width: 900px) { .home-hero__intro { margin-top: 0; font-size: var(--step-1); } .home-paths { margin-top: .75rem; } .home-search { margin-top: 1.25rem; } }
+.home-hero__intro { max-width: 40rem; margin-top: 1.4rem; color: rgb(255 255 255 / .9); font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.7; animation: home-copy-arrive .75s .24s both; }
+.home-hero__action { display: inline-flex; align-items: center; gap: .7rem; margin-top: 1.5rem; min-height: 3.25rem; padding: .75rem 1.15rem; background: #e8d3a0; color: #132f28; font-weight: 700; transition: transform .22s, background .22s; animation: home-copy-arrive .75s .34s both; }
+.home-hero__action:hover { transform: translateY(-2px); background: #f2e4c0; }
+.home-hero__action:active { transform: translateY(1px); }
+.home-hero__action:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.home-hero__secondary { position: absolute; right: clamp(1.25rem, 5vw, 5rem); bottom: 2.25rem; z-index: 2; width: clamp(12.5rem, 19vw, 18rem); margin: 0; padding: .5rem; background: #fffdf9; color: #1b1a17; box-shadow: 0 18px 44px rgb(8 20 17 / .28); transform: rotate(1.2deg); transition: transform .25s; }
+.home-hero__secondary:hover, .home-hero__secondary:focus-visible { transform: rotate(0) translateY(-3px); outline: 2px solid #e8d3a0; outline-offset: 3px; }
+.home-hero__secondary-image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--surface-3); }
+.home-hero__secondary-image .path-photo { transition: transform .6s cubic-bezier(.22,1,.36,1); }
+.home-hero__secondary:hover .path-photo, .home-hero__secondary:focus-visible .path-photo { transform: scale(1.04); }
+.home-hero__secondary figcaption { padding: .6rem .4rem .15rem; font-size: .72rem; font-weight: 700; line-height: 1.35; }
+.home-hero__secondary .path-credit { opacity: 0; transition: opacity .2s; }
+.home-hero__secondary:hover .path-credit, .home-hero__secondary:focus-within .path-credit { opacity: 1; }
+.home-hero__credit { position: absolute; right: 1rem; top: 1rem; z-index: 3; display: flex; align-items: center; gap: .5rem; min-height: 2rem; padding: .25rem .55rem; border: 1px solid rgb(255 255 255 / .5); border-radius: 999px; background: rgb(12 33 29 / .3); color: #fff; font-size: .68rem; backdrop-filter: blur(8px); }
+.home-hero__credit > span:first-child { display: grid; width: 1.25rem; height: 1.25rem; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-family: Georgia, serif; font-style: italic; }
+.home-hero__credit-label { max-width: 0; overflow: hidden; opacity: 0; white-space: nowrap; transition: max-width .25s, opacity .2s; }
+.home-hero__credit:hover .home-hero__credit-label, .home-hero__credit:focus-visible .home-hero__credit-label { max-width: 15rem; opacity: 1; }
+.home-hero__grid { display: grid; gap: 2rem; padding-block: clamp(2.5rem, 5vw, 4.5rem); }
+.home-paths__title { margin-bottom: .9rem; font-family: var(--font-sans); font-size: 1rem; font-weight: 700; line-height: 1.4; letter-spacing: 0; color: var(--brand); text-wrap: pretty; }
+.home-search { max-width: 34rem; }
 .home-search label { display: block; font-size: .875rem; font-weight: 700; }
 .home-search > div { display: flex; align-items: center; gap: .5rem; margin-top: .5rem; padding: .25rem .25rem .25rem .9rem; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); }
 :dir(rtl) .home-search > div { padding: .25rem .9rem .25rem .25rem; }
 .home-search > div:focus-within { border-color: var(--focus); box-shadow: 0 0 0 3px rgb(23 63 56 / .15); }
 .home-search input { flex: 1; min-width: 0; min-height: 2.75rem; background: transparent; color: var(--text); outline: none; font-size: 1rem; }
 .home-search input::placeholder { color: var(--muted); }
-
+@keyframes home-photo-arrive { from { transform: scale(1.035); opacity: .82; } to { transform: scale(1); opacity: 1; } }
+@keyframes home-copy-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 900px) { .home-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, .6fr); align-items: end; } .home-paths { min-width: 0; } }
+@media (max-width: 599px) {
+  .home-hero__visual { min-height: clamp(40rem, 82svh, 48rem); }
+  .home-hero__veil { padding-block: 4rem 8rem; background: linear-gradient(90deg, rgb(12 33 29 / .62), rgb(12 33 29 / .12)), linear-gradient(0deg, rgb(12 33 29 / .7) 0%, transparent 68%); }
+  .home-hero__copy { padding-inline: 1.25rem; }
+  .home-hero h1 { max-width: 10ch; font-size: clamp(3.3rem, 15vw, 5.3rem); }
+  .home-hero__intro { max-width: 34rem; margin-top: 1rem; font-size: .98rem; line-height: 1.55; }
+  .home-hero__action { margin-top: 1.1rem; }
+  .home-hero__secondary { right: 1rem; bottom: .85rem; width: 9.25rem; padding: .3rem; }
+  .home-hero__secondary figcaption { padding: .4rem .3rem .1rem; font-size: .6rem; }
+  .home-hero__credit { top: .75rem; right: .75rem; }
+  .home-hero__grid { padding-block: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__image, .home-hero__copy > *, .home-hero__action { animation: none; }
+  .home-hero__secondary, .home-hero__secondary-image .path-photo, .home-hero__action { transition: none; }
+}
 /* Parcours (accueil + pages parcours) : un accent par parcours, photo + fiche, toute la carte cliquable */
 [data-path="return"] { --path: var(--color-terracotta-600); }
 [data-path="invest"] { --path: var(--color-gold-600); }
