@@ -1,0 +1,35 @@
+---
+import { LOCALES, type Locale } from '../i18n';
+import { CITY_PAGES, cityLabel } from '../data/cities';
+import { CITY_MAP_LAND, projectCity } from '../data/mapGeometry';
+import { cityPath } from '../utils/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const copy = {
+  fr: ['Mes villes sur la carte', 'Les pages villes enregistrées apparaissent ici. Les guides généraux restent dans la liste. Repères indicatifs, sans calcul d’itinéraire.', 'Enregistrez une page ville pour la retrouver sur la carte.', 'Villes enregistrées'],
+  en: ['My cities on the map', 'Saved city pages appear here. General guides stay in the list. Approximate locations, without route planning.', 'Save a city page to see it on the map.', 'Saved cities'],
+  es: ['Mis ciudades en el mapa', 'Aquí aparecen las páginas de ciudades guardadas. Las guías generales siguen en la lista. Ubicaciones aproximadas, sin cálculo de rutas.', 'Guarda una página de ciudad para verla en el mapa.', 'Ciudades guardadas'],
+  de: ['Meine Städte auf der Karte', 'Gespeicherte Stadtseiten erscheinen hier. Allgemeine Reiseführer bleiben in der Liste. Ungefähre Positionen, ohne Routenplanung.', 'Speichern Sie eine Stadtseite, um sie auf der Karte zu sehen.', 'Gespeicherte Städte'],
+  ar: ['مدني على الخريطة', 'تظهر هنا صفحات المدن المحفوظة. تبقى الأدلة العامة في القائمة. مواقع تقريبية دون حساب مسار التنقل.', 'احفظ صفحة مدينة لتظهر على الخريطة.', 'المدن المحفوظة'],
+}[lang];
+const cities = CITY_PAGES.flatMap(city => {
+  if (city.lat === undefined || city.lon === undefined) return [];
+  const [x, y] = projectCity(city.lat, city.lon);
+  return [{ id: city.id, name: cityLabel(city.id, lang), href: cityPath(lang, city.slug[lang]), paths: LOCALES.map(locale => cityPath(locale, city.slug[locale])), x, y }];
+});
+---
+<details class="notebook-map" data-notebook-map data-cities={JSON.stringify(cities)} hidden>
+  <summary>{copy[0]}</summary>
+  <p>{copy[1]}</p>
+  <p data-notebook-map-empty>{copy[2]}</p>
+  <div data-notebook-map-content hidden>
+    <svg viewBox="0 0 1140 1235" role="img" aria-label={copy[3]}>
+      <path d={CITY_MAP_LAND} class="notebook-map__land" />
+      <g data-notebook-map-points></g>
+    </svg>
+    <ul aria-label={copy[3]} data-notebook-map-list></ul>
+  </div>
+</details>
+<style>
+  .notebook-map{border-top:1px solid var(--line);margin-top:1rem;padding-top:.5rem}.notebook-map>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600;list-style:revert}.notebook-map p{font-size:.75rem;line-height:1.6;color:var(--muted);margin:.5rem 0}.notebook-map svg{display:block;width:100%;height:auto;max-height:18rem;margin:.75rem auto;background:var(--surface-2);border:1px solid var(--line);border-radius:6px}.notebook-map__land{fill:var(--surface-3);stroke:var(--muted);stroke-width:3}.notebook-map :global(circle){fill:var(--accent);stroke:var(--surface);stroke-width:5}.notebook-map :global([hidden]){display:none}.notebook-map ul :global(li){display:block;padding:.25rem 0}.notebook-map :global(li a){display:inline-flex;align-items:center;min-height:44px}.notebook-map summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+</style>
