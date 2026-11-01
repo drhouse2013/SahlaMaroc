@@ -1,0 +1,39 @@
+/* Palettes éditoriales : terre, végétation, pierre et littoral, sans modifier les photos. */
+.city-page[data-city="marrakech"] { --city-local-light:#8a402e; --city-local-dark:#efb298; }
+.city-page[data-city="casablanca"] { --city-local-light:#3c5b70; --city-local-dark:#b3cfdf; }
+.city-page[data-city="rabat"] { --city-local-light:#315f52; --city-local-dark:#b3d8bd; }
+.city-page[data-city="tangier"] { --city-local-light:#295d77; --city-local-dark:#a4d0e8; }
+.city-page[data-city="fes"] { --city-local-light:#74551e; --city-local-dark:#e8cb91; }
+.city-page[data-city="essaouira"] { --city-local-light:#276b70; --city-local-dark:#a0d8d6; }
+.city-page[data-city="chefchaouen"] { --city-local-light:#355d96; --city-local-dark:#aecaf0; }
+.city-page[data-city="taghazout"] { --city-local-light:#31664f; --city-local-dark:#b3d9b9; }
+.city-page[data-city="nador"] { --city-local-light:#3b646f; --city-local-dark:#b3d8df; }
+.city-page[data-city="tetouan"] { --city-local-light:#4e617a; --city-local-dark:#bdcee4; }
+.city-page[data-city="meknes"] { --city-local-light:#5a622e; --city-local-dark:#d1d7a0; }
+.city-page[data-city="ouarzazate"] { --city-local-light:#8a4c31; --city-local-dark:#e9b892; }
+.city-page[data-city="oujda"] { --city-local-light:#75602a; --city-local-dark:#dfcd9c; }
+.city-page[data-city="al-hoceima"] { --city-local-light:#216879; --city-local-dark:#a5d8e3; }
+.city-page[data-city="merzouga"] { --city-local-light:#855324; --city-local-dark:#ebc18c; }
+.city-page[data-city="tafraout"] { --city-local-light:#86534e; --city-local-dark:#e2b7b0; }
+.city-page[data-city="agadir"] { --city-local-light:#246a68; --city-local-dark:#a8dbd4; }
+.city-page[data-city="dakhla"] { --city-local-light:#176b72; --city-local-dark:#93d9df; }
+.city-page[data-city="laayoune"] { --city-local-light:#79582f; --city-local-dark:#dec69f; }
+.city-page[data-city="el-jadida"] { --city-local-light:#526569; --city-local-dark:#c0d6d6; }
+.city-page[data-city="saidia"] { --city-local-light:#2f647e; --city-local-dark:#add4e6; }
+.city-page[data-city="guelmim"] { --city-local-light:#805a36; --city-local-dark:#e6c199; }
+.city-page[data-city="tiznit"] { --city-local-light:#64605b; --city-local-dark:#d6d0c6; }
+.city-page[data-city="sidi-ifni"] { --city-local-light:#52657a; --city-local-dark:#bfd0e5; }
+.city-page[data-city="taroudant"] { --city-local-light:#8b4c3a; --city-local-dark:#e9b8a2; }
+.city-page[data-city="zagora"] { --city-local-light:#805522; --city-local-dark:#e7c18c; }
+.city-page[data-city="errachidia"] { --city-local-light:#745d35; --city-local-dark:#ddcba5; }
+.city-page[data-city="ifrane"] { --city-local-light:#365f4b; --city-local-dark:#add5bc; }
+.city-page[data-city="asilah"] { --city-local-light:#496b85; --city-local-dark:#b8d4e7; }
+.city-page[data-city="larache"] { --city-local-light:#476b62; --city-local-dark:#b7d8cb; }
+.city-page[data-city="kenitra"] { --city-local-light:#476b4c; --city-local-dark:#bdd8b6; }
+
+.city-page[data-city][data-city-tone] { --city-accent:var(--city-local-light,#315f67); --city-accent-ink:#fff; }
+.dark .city-page[data-city][data-city-tone] { --city-accent:var(--city-local-dark,#b3d8df); --city-accent-ink:#102a2c; }
+.city-page .place-hero h1 { color:var(--city-accent); }
+.city-page #why { border-inline-start:2px solid var(--city-accent); padding-inline-start:clamp(1rem,3vw,2rem); }
+.city-page #why .section-title { color:var(--city-accent); }
+@media print { .city-page .place-hero h1,.city-page #why .section-title { color:inherit; } }
