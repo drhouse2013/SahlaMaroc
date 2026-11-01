@@ -432,7 +432,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Medina_de_Tetouan_Nov2020_054.jpg"
  },
  "tetouan/bab-okla": {
-  "file": "tetouan-bab-okla.jpg",
+  "file": "tetouan-bab-okla-2024.jpg",
   "alt": {
    "fr": "Porte Bab El Okla et ses arcs en brique, médina de Tétouan",
    "en": "Bab El Okla gate with brick arches, Tetouan medina",
@@ -2145,7 +2145,8 @@
    "ar": "منارة الجديدة تعلو المدينة البرتغالية"
   },
   "credit": "M.Rais, CC BY-SA 3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Phare_Jadida.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:Phare_Jadida.JPG",
+  "verified": false
  },
  "saidia/beach": {
   "file": "saidia-beach.jpg",

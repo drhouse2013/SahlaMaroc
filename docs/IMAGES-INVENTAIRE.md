@@ -1,15 +1,15 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-10-31. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-01. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 263 photos vérifiées, 76 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 263 photos vérifiées, 75 placeholders (« Photo à venir »), 1 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 219 | 76 | 0 |
+| Lieux à visiter | 295 | 219 | 75 | 1 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -74,7 +74,7 @@
 
 ## Lieux à visiter (295)
 
-### Marrakech (17/20 vérifiées)
+### Marrakech (18/20 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -246,7 +246,7 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Médina de Tétouan | `spots/tetouan-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_de_Tetouan_Nov2020_054.jpg> | vérifiée | CC BY-SA 4.0 |
-| Musée ethnographique de Bab El Okla | `spots/tetouan-bab-okla.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
+| Musée ethnographique de Bab El Okla | `spots/tetouan-bab-okla-2024.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée archéologique | `spots/tetouan-archaeological-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée d’art moderne | `spots/tetouan-modern-art.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg> | vérifiée | CC BY-SA 4.0 |
 | Palais royal et Méchouar | `spots/tetouan-royal-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Morocco_%C2%A9_03.jpg> | vérifiée | CC BY-SA 3.0 |
@@ -382,7 +382,7 @@
 | Lagune de Laâyoune | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage de Laâyoune | `spots/laayoune-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%B4%D8%A7%D8%B7%D8%A6_%D9%81%D9%85_%D8%A7%D9%84%D9%88%D8%A7%D8%AF%D8%8C_%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
 
-### El Jadida (8/9 vérifiées)
+### El Jadida (7/9 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -393,7 +393,7 @@
 | Église de l’Assomption | `spots/el-jadida-assumption-church.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Jadida,_Morocco_%F0%9F%87%B2%F0%9F%87%A6_-_Church_of_the_Assumption_Oct_2023.jpg> | vérifiée | CC BY 2.0 |
 | Théâtre municipal | `spots/el-jadida-municipal-theatre.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Th%C3%A9%C3%A2tre_Afifi.jpg> | vérifiée | CC BY-SA 4.0 |
 | Haras d’El Jadida | — (« Photo à venir ») | — | — | placeholder | — |
-| Phare de Sidi Bouafi | `spots/el-jadida-lighthouse.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Phare_Jadida.JPG> | vérifiée | CC BY-SA 3.0 |
+| Phare de Sidi Bouafi | `spots/el-jadida-lighthouse.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Phare_Jadida.JPG> | à confirmer | CC BY-SA 3.0 ; (crédit, licence ou source incomplets) |
 | Musée de la Résistance et de l’Indépendance | `spots/el-jadida-resistance-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Espace_de_la_Mémoire_Historique_de_la_Résistance_et_de_la_Libération,_El_Jadida.jpg> | vérifiée | CC BY-SA 4.0 |
 
 ### Saidia (3/7 vérifiées)

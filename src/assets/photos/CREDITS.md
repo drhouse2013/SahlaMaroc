@@ -337,3 +337,8 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 ## Photographie hammam actualisée — 31 octobre 2026
 
 Hammam Saffarin à Fès, salle tiède (wasti), prise le 5 juillet 2026. Auteur : R Prazeres. Source : https://commons.wikimedia.org/wiki/File:Hammam_Saffarin_20260705_113805.jpg — licence CC BY-SA 4.0 : https://creativecommons.org/licenses/by-sa/4.0/. Original 3000 × 2250 px; variantes de taille et recadrage pour les miniatures du site. Fichier : `hammam-saffarin-2026.jpg`.
+
+## Corrections après audit du 1 novembre 2026
+
+- `spots/tetouan-bab-okla-2024.jpg` : original Wikimedia non modifié, 3264×2448 pixels avec orientation EXIF6 (affichage portrait), prise12novembre2024. Ideophagous, CC BY-SA4.0. Source : https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg. Le rendu adaptatif Astro assure les conversions; la copie précédente avait perdu son orientation.
+- `spots/el-jadida-lighthouse.jpg` : correspondance invalidée (`verified:false`). La fiche https://commons.wikimedia.org/wiki/File:Phare_Jadida.JPG décrit une mosquée à l’intérieur de la forteresse et ne représente pas le phare Sidi Bouafi annoncé. Image non affichée en attente d’une photographie récente du lieu exact.
