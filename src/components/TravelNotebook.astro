@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../i18n';
+import NotebookMap from './NotebookMap.astro';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const words = {
@@ -28,6 +29,7 @@ ar:['تنزيل نصوص الأدلة','نسخة مؤرخة من نصوص الأ
 <summary><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 4.75A2.75 2.75 0 0 1 7.75 2H20v17H7.75A2.75 2.75 0 0 0 5 21.75v-17Z"/><path d="M5 5h12M5 21.75A2.75 2.75 0 0 1 7.75 19H20"/></svg><span class="notebook__title">{words[0]}</span><span class="notebook__count" data-notebook-count aria-hidden="true">0</span></summary>
 <div class="notebook__panel"><h1 class="notebook__print-title">{words[0]}</h1><p class="notebook__privacy">{words[5]}</p><button type="button" class="btn btn-primary btn-sm" data-notebook-save aria-pressed="false">{words[1]}</button><p role="status" aria-live="polite" data-notebook-status></p><ul data-notebook-list></ul><p data-notebook-empty>{words[4]}</p><div class="notebook__actions"><button class="btn btn-secondary btn-sm" type="button" data-notebook-share>{words[6]}</button><button class="btn btn-ghost btn-sm" type="button" data-notebook-export>{words[11]}</button><button class="btn btn-ghost btn-sm" type="button" data-notebook-offline>{offline[0]}</button><button class="btn btn-ghost btn-sm" type="button" data-notebook-print>{words[12]}</button></div></div>
 <div class="notebook__download" hidden><button class="btn btn-ghost btn-sm" type="button" data-notebook-guides disabled>{guides[0]}</button><p>{guides[1]}</p></div>
+<NotebookMap lang={lang} />
 </details>
 <style>
 .notebook__download{border-top:1px solid var(--line);margin-top:1rem;padding-top:1rem}.notebook__download p{font-size:.75rem;line-height:1.6;color:var(--muted);margin:.6rem 0 0}
@@ -35,6 +37,7 @@ ar:['تنزيل نصوص الأدلة','نسخة مؤرخة من نصوص الأ
 </style>
 <script>
 import { buildOfflineGuides } from '../utils/offlineGuides';
+import { savedNotebookCities, type NotebookCity } from '../utils/notebookCities';
 type SavedPage={path:string;title:string};
 document.querySelectorAll<HTMLDetailsElement>('[data-notebook]').forEach(root=>{
 const words=JSON.parse(root.dataset.words??'[]') as string[],key='sahla-notebook-v1',path=location.pathname,canSave=/^\/(en|fr|es|de|ar)(\/|$)/.test(path);
@@ -44,7 +47,7 @@ const valid=(item:unknown):item is SavedPage=>{if(!item||typeof item!=='object')
 const read=()=>{if(!persist)return entries;try{const stored:unknown=JSON.parse(localStorage.getItem(key)??'[]');return Array.isArray(stored)?stored.filter(valid).slice(0,100):[]}catch{persist=false;return entries}};
 entries=read();
 const write=()=>{try{localStorage.setItem(key,JSON.stringify(entries))}catch{persist=false}if(!persist)status.textContent=words[9]};
-const render=()=>{const active=entries.some(x=>x.path===path);save.hidden=!canSave;save.textContent=words[active?2:1];save.setAttribute('aria-pressed',String(active));root.querySelector('[data-notebook-count]')!.textContent=String(entries.length);root.querySelector<HTMLElement>('[data-notebook-empty]')!.hidden=entries.length>0;root.querySelector<HTMLButtonElement>('[data-notebook-export]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-print]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-offline]')!.disabled=!entries.length;list.replaceChildren();entries.forEach(entry=>{const li=document.createElement('li'),a=document.createElement('a'),remove=document.createElement('button');a.href=entry.path;a.textContent=entry.title;remove.type='button';remove.textContent=words[3];remove.setAttribute('aria-label',`${words[3]} : ${entry.title}`);remove.addEventListener('click',()=>{entries=read().filter(x=>x.path!==entry.path);write();render()});li.append(a,remove);list.append(li)});updateGuideButton()};
+const render=()=>{const active=entries.some(x=>x.path===path);save.hidden=!canSave;save.textContent=words[active?2:1];save.setAttribute('aria-pressed',String(active));root.querySelector('[data-notebook-count]')!.textContent=String(entries.length);root.querySelector<HTMLElement>('[data-notebook-empty]')!.hidden=entries.length>0;root.querySelector<HTMLButtonElement>('[data-notebook-export]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-print]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-offline]')!.disabled=!entries.length;list.replaceChildren();entries.forEach(entry=>{const li=document.createElement('li'),a=document.createElement('a'),remove=document.createElement('button');a.href=entry.path;a.textContent=entry.title;remove.type='button';remove.textContent=words[3];remove.setAttribute('aria-label',`${words[3]} : ${entry.title}`);remove.addEventListener('click',()=>{entries=read().filter(x=>x.path!==entry.path);write();render()});li.append(a,remove);list.append(li)});updateGuideButton();updateMap()};
 save.addEventListener('click',()=>{entries=read();if(entries.some(x=>x.path===path))entries=entries.filter(x=>x.path!==path);else entries=[{path,title:document.querySelector('h1')?.textContent?.trim().slice(0,200)||document.title},...entries].slice(0,100);write();render()});
 window.addEventListener('storage',event=>{if(event.key===key||event.key===null){entries=read();render()}});
 root.querySelector('[data-notebook-share]')?.addEventListener('click',async()=>{const url=new URL(path,location.origin).href;try{if(navigator.share)await navigator.share({title:document.title,url});else{await navigator.clipboard.writeText(url);status.textContent=words[7]}}catch(e){if(!(e instanceof DOMException&&e.name==='AbortError'))status.textContent=words[8]}});
@@ -65,6 +68,22 @@ const guideButton=root.querySelector<HTMLButtonElement>('[data-notebook-guides]'
 const downloadPanel=root.querySelector<HTMLDivElement>('.notebook__download')!;
 root.querySelector('.notebook__panel')!.append(downloadPanel);downloadPanel.hidden=false;
 const updateGuideButton=()=>{guideButton.disabled=!entries.length||guideButton.dataset.busy==='true'};
+const mapRoot=root.querySelector<HTMLDetailsElement>('[data-notebook-map]')!;
+const cityCatalog=JSON.parse(mapRoot.dataset.cities??'[]') as NotebookCity[];
+const mapSvg=mapRoot.querySelector('svg')!,mapTitle=mapSvg.getAttribute('aria-label')??'';
+root.querySelector('.notebook__panel')!.append(mapRoot);mapRoot.hidden=false;
+const updateMap=()=>{
+  const cities=savedNotebookCities(entries,cityCatalog);
+  mapRoot.querySelector<HTMLElement>('[data-notebook-map-empty]')!.hidden=cities.length>0;
+  mapRoot.querySelector<HTMLElement>('[data-notebook-map-content]')!.hidden=!cities.length;
+  const points=mapRoot.querySelector('[data-notebook-map-points]')!,cityList=mapRoot.querySelector('[data-notebook-map-list]')!;
+  points.replaceChildren();cityList.replaceChildren();mapSvg.setAttribute('aria-label',`${mapTitle}${cities.length?' : '+cities.map(city=>city.name).join(', '):''}`);
+  for(const city of cities){
+    const point=document.createElementNS('http://www.w3.org/2000/svg','circle'),title=document.createElementNS('http://www.w3.org/2000/svg','title');
+    point.setAttribute('cx',String(city.x));point.setAttribute('cy',String(city.y));point.setAttribute('r','18');point.setAttribute('aria-hidden','true');title.textContent=city.name;point.append(title);points.append(point);
+    const item=document.createElement('li'),link=document.createElement('a');link.href=city.href;link.textContent=city.name;item.append(link);cityList.append(item);
+  }
+};
 
 guideButton.addEventListener('click',async()=>{
   guideButton.dataset.busy='true';updateGuideButton();
