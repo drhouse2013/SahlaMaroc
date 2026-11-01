@@ -20,7 +20,7 @@
     "images:inventory": "node tools/images-inventory.mjs",
     "images:candidates": "node tools/fetch-place-photos.mjs",
     "test:e2e": "playwright test",
-    "test:unit": "node --test tools/test-fx.mjs tools/test-vignette.mjs tools/test-returnbudget.mjs tools/test-retirement.mjs tools/test-ramadan.mjs tools/test-prayer.mjs tools/test-customs.mjs tools/test-costofliving.mjs tools/test-capitalgain.mjs tools/test-theme.mjs"
+    "test:unit": "node --test tools/test-fx.mjs tools/test-vignette.mjs tools/test-returnbudget.mjs tools/test-retirement.mjs tools/test-ramadan.mjs tools/test-prayer.mjs tools/test-customs.mjs tools/test-costofliving.mjs tools/test-capitalgain.mjs tools/test-theme.mjs tools/test-offline-guides.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.4",
