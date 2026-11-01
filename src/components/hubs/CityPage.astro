@@ -64,7 +64,10 @@ const jsonLd = [
   ...(text.faq.length ? [faqJsonLd(text.faq)] : []),
 ];
 const spots = SPOTS[id] ?? [];
+const stayCity = id === 'fes' || id === 'marrakech' || id === 'essaouira' ? id : undefined;
+const stayLabel = { fr: 'Séjour proposé', en: 'Suggested stay', es: 'Estancia propuesta', de: 'Reisevorschlag', ar: 'إقامة مقترحة' }[lang];
 const sections = [
+  ...(stayCity ? [{ id: 'stay-plan', label: stayLabel }] : []),
   { id: 'why', label: t('city.why') }, { id: 'access', label: t('city.access') }, { id: 'areas', label: t('city.areas') },
   ...(city.costCity ? [{ id: 'budget', label: t('city.budget') }] : []),
   ...(spots.length ? [{ id: 'spots', label: t('city.spots') }] : []),
@@ -77,7 +80,7 @@ const sections = [
   <PlaceHero lang={lang} crumbs={crumbs} title={title} intro={text.intro} photo={placePhoto('city', city.id, lang)} kind="city" name={name}>
     {city.host2030 && <p class="mt-3"><span class="badge badge-gold">{t('city.host')}</span></p>}
   </PlaceHero>
-  {(id === 'fes' || id === 'marrakech') && <CityStay lang={lang} city={id} />}
+  {stayCity && <CityStay lang={lang} city={stayCity} />}
 
   <div class="container-page grid gap-10 pt-8 lg:grid-cols-[1fr_16rem]">
     <div class="min-w-0">
