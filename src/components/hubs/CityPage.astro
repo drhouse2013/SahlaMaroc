@@ -16,7 +16,7 @@ import { formatDate } from '../../utils/date';
 import PlaceHero from '../PlaceHero.astro';
 import { placePhoto } from '../../utils/photos';
 import SpotsGallery from '../SpotsGallery.astro';
-import FesStay from '../FesStay.astro';
+import CityStay from '../CityStay.astro';
 import { SPOTS } from '../../data/spots';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd } from '../../utils/seo';
 
@@ -77,7 +77,7 @@ const sections = [
   <PlaceHero lang={lang} crumbs={crumbs} title={title} intro={text.intro} photo={placePhoto('city', city.id, lang)} kind="city" name={name}>
     {city.host2030 && <p class="mt-3"><span class="badge badge-gold">{t('city.host')}</span></p>}
   </PlaceHero>
-  {id === 'fes' && <FesStay lang={lang} />}
+  {(id === 'fes' || id === 'marrakech') && <CityStay lang={lang} city={id} />}
 
   <div class="container-page grid gap-10 pt-8 lg:grid-cols-[1fr_16rem]">
     <div class="min-w-0">
