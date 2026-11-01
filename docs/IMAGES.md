@@ -31,6 +31,10 @@ Aucun composant n'importe `src/assets/photos/` ni ne construit d'URL d'image de 
 3. Vérifier visuellement que la photo montre le lieu exact. Doute : ne pas ajouter ; le placeholder reste.
 4. `npm run images:inventory`, mettre à jour `IMAGE_CREDITS.md`, puis `npm run build`.
 
+## Cadrage du sujet
+
+Une entrée de manifeste peut préciser `"focalPoint": [50, 0]` : coordonnées horizontale et verticale de 0 à 100, en pourcentage CSS. `PlaceImage` applique ce point aux cadrages adaptatifs du hero, des cartes et des galeries. Sans valeur, le centrage habituel est conservé. Vérifier chaque réglage sur bureau et mobile; ce cadrage ne modifie pas le fichier source. Casablanca privilégie le haut pour conserver le sommet du minaret Hassan II.
+
 ## Formats et poids
 
 Sortie avif + webp (repli `<img>` webp). L'avif est lent à encoder (environ 1 s par variante), mais le cache d'Astro (`node_modules/.astro`) évite de le refaire. Hero : `widths` 640/1024/1600 ; cartes : 480/720.

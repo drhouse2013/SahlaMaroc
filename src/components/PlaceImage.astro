@@ -9,7 +9,7 @@ interface Props { photo: PlacePhoto; kind: PlaceKind; lang: Locale; name?: strin
 const { photo, kind, lang, name, width, widths, sizes, eager = false, priority = eager, decorative = false, class: cls } = Astro.props;
 ---
 {photo.image ? (
-  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} style={photo.focalPoint ? { objectPosition: `${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` } : undefined} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
 ) : (
   <PhotoPlaceholder kind={kind} lang={lang} name={name} />
 )}

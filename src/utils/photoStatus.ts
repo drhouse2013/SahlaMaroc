@@ -1,5 +1,5 @@
 /** Règle de vérification d'une entrée de manifeste photo : partagée par le site (photos.ts) et les scripts tools/. */
-export interface PhotoEntry { file: string; alt?: Partial<Record<string, string>>; credit?: string; source?: string; verified?: boolean }
+export interface PhotoEntry { file: string; alt?: Partial<Record<string, string>>; credit?: string; source?: string; verified?: boolean; focalPoint?: [number, number] }
 
 const LICENSE_RE = /(CC BY(?:-SA)? \d\.\d|CC0(?: 1\.0)?|Public domain|Unsplash License|Pexels License)/i;
 
