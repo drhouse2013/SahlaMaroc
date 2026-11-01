@@ -33,6 +33,9 @@ export const SOURCES: Record<string, OfficialSource> = {
 
 /** Organismes à afficher pour un guide précis (prioritaires sur ceux du thème) */
 export const ARTICLE_SOURCES: Record<string, string[]> = {
+  hammam: ['onmt'],
+  'moroccan-food': ['onmt'],
+  etiquette: ['onmt'],
   'e-visa': ['acces', 'diplomatie'],
   'visa-90-days': ['acces', 'dgsn'],
   'residence-permit': ['dgsn'],

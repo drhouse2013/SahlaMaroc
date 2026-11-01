@@ -333,3 +333,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 ## Décor marocain
 
 `public/images/moroccan-zellige.webp` : [Orlysi](https://commons.wikimedia.org/wiki/File:MOROCCAN_TILES_ZELLIGE.jpg) — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Décor de fond : zellige photographié à Fès. Photo redimensionnée, convertie en WebP, recadrée et atténuée à l’affichage ; adaptation sous la même licence.
+
+## Photographie hammam actualisée — 31 octobre 2026
+
+Hammam Saffarin à Fès, salle tiède (wasti), prise le 5 juillet 2026. Auteur : R Prazeres. Source : https://commons.wikimedia.org/wiki/File:Hammam_Saffarin_20260705_113805.jpg — licence CC BY-SA 4.0 : https://creativecommons.org/licenses/by-sa/4.0/. Original 3000 × 2250 px; variantes de taille et recadrage pour les miniatures du site. Fichier : `hammam-saffarin-2026.jpg`.
