@@ -90,6 +90,9 @@ const id = `search-input-${mode}`;
     document.querySelectorAll('[data-search-open]').forEach((el) => el.addEventListener('click', open));
     dialog.querySelector('[data-search-close]')?.addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !e.isComposing) { e.preventDefault(); dialog.close(); }
+    });
     document.addEventListener('keydown', (e) => {
       const tag = (e.target as HTMLElement).tagName;
       const typing = /INPUT|TEXTAREA|SELECT/.test(tag) || (e.target as HTMLElement).isContentEditable;
