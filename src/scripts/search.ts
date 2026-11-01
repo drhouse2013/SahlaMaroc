@@ -29,7 +29,7 @@ const GROUPS = [
   'aeroport airport aeropuerto flughafen مطار',
   'argent money dinero geld مال transfert transfer envoi envoyer send senden enviar تحويل',
   'immobilier property vivienda immobilie immobilien عقار logement appartement piso wohnung achat buy kaufen comprar شراء',
-  'visa evisa e visa visado visum تاشيره',
+  'visa evisa visado visum تاشيره',
   'impot impots tax taxes impuesto steuer steuern ضريبه ضرائب fiscalite',
   'train tren zug قطار boraq oncf tgv',
   'bus autocar autobus ctm supratours حافله',
@@ -60,7 +60,7 @@ function expand(token: string): string[] {
 }
 
 interface Prepared extends SearchItem { _t: string; _d: string; _x: string }
-const prepare = (items: SearchItem[]): Prepared[] =>
+export const prepare = (items: SearchItem[]): Prepared[] =>
   items.map((i) => ({ ...i, _t: ' ' + strip(i.t), _d: ' ' + strip(i.d), _x: ' ' + strip(`${i.x ?? ''} ${i.c ?? ''}`) }));
 
 export function search(items: Prepared[], query: string, limit = 24): Prepared[] {
