@@ -31,7 +31,7 @@
 | Essaouira | `cities/essaouira.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Chefchaouen | `cities/chefchaouen.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg> | vérifiée | CC BY-SA 4.0 |
 | Taghazout | `cities/taghazout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fishing_boats_in_Taghazout.jpg> | vérifiée | CC BY-SA 4.0 |
-| Nador | `cities/nador.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg> | vérifiée | CC BY-SA 4.0 |
+| Nador | `cities/nador-corniche-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tétouan | `cities/tetouan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> | vérifiée | CC BY-SA 4.0 |
 | Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg> | vérifiée | CC BY-SA 4.0 |
 | Ouarzazate | `cities/ouarzazate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> | vérifiée | CC BY-SA 4.0 |

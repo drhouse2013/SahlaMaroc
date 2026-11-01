@@ -100,16 +100,20 @@
     "source": "https://commons.wikimedia.org/wiki/File:Fishing_boats_in_Taghazout.jpg"
   },
   "nador": {
-    "file": "nador.jpg",
+    "file": "nador-corniche-2026.jpg",
     "alt": {
-      "fr": "Lagune de Marchica au coucher du soleil, près de Nador",
-      "en": "Marchica lagoon at sunset, near Nador",
-      "es": "Laguna de Marchica al atardecer, cerca de Nador",
-      "de": "Marchica-Lagune bei Sonnenuntergang nahe Nador",
-      "ar": "بحيرة مارشيكا عند الغروب قرب الناظور"
+      "fr": "Une barque sur la lagune de Marchica vue depuis la corniche de Nador, septembre 2026",
+      "en": "A small boat on Marchica lagoon seen from Nador corniche, September 2026",
+      "es": "Una barca en la laguna de Marchica vista desde la cornisa de Nador, septiembre 2026",
+      "de": "Ein Boot auf der Marchica-Lagune, gesehen von der Uferpromenade in Nador, September 2026",
+      "ar": "قارب على بحيرة مارتشيكا من كورنيش الناظور، سبتمبر 2026"
     },
-    "credit": "Houssain tork, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg"
+    "credit": "SALHI Kaouthar, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg",
+    "focalPoint": [
+      50,
+      72
+    ]
   },
   "tetouan": {
     "file": "tetouan.jpg",
