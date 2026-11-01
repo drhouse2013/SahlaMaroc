@@ -1,0 +1,24 @@
+---
+import type { Locale } from '../i18n';
+import { SOURCES } from '../data/sources';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const copy = {
+  fr: { eyebrow: 'Les bons interlocuteurs', title: 'Préparer la suite, à la source.', intro: 'Les portails officiels pour organiser vos déplacements et vos formalités.', labels: ['Trains et Al Boraq', 'Aéroports du Maroc', 'Portail e-Visa', 'Explorer le Maroc'], link: 'Consulter le site officiel', note: 'Liens externes. Consultez directement ces organismes pour les informations et démarches à jour.' },
+  en: { eyebrow: 'Useful contacts', title: 'Plan your next step at the source.', intro: 'Official portals for your transport and travel formalities.', labels: ['Trains and Al Boraq', 'Moroccan airports', 'e-Visa portal', 'Explore Morocco'], link: 'Visit the official website', note: 'External links. Check directly with these organisations for current information and procedures.' },
+  es: { eyebrow: 'Contactos útiles', title: 'Prepare el siguiente paso en la fuente.', intro: 'Portales oficiales para organizar sus desplazamientos y trámites.', labels: ['Trenes y Al Boraq', 'Aeropuertos de Marruecos', 'Portal e-Visa', 'Descubrir Marruecos'], link: 'Consultar el sitio oficial', note: 'Enlaces externos. Consulte directamente estos organismos para conocer la información y los trámites vigentes.' },
+  de: { eyebrow: 'Nützliche Anlaufstellen', title: 'Den nächsten Schritt an der Quelle planen.', intro: 'Offizielle Portale für Ihre Fahrten und Reiseformalitäten.', labels: ['Züge und Al Boraq', 'Marokkos Flughäfen', 'E-Visum-Portal', 'Marokko entdecken'], link: 'Offizielle Website besuchen', note: 'Externe Links. Aktuelle Informationen und Verfahren finden Sie direkt bei diesen Organisationen.' },
+  ar: { eyebrow: 'جهات مفيدة', title: 'خطوتك التالية تبدأ من المصدر.', intro: 'بوابات رسمية لتنظيم التنقل وإجراءات السفر.', labels: ['القطارات والبراق', 'مطارات المغرب', 'بوابة التأشيرة الإلكترونية', 'اكتشف المغرب'], link: 'زيارة الموقع الرسمي', note: 'روابط خارجية. راجع هذه الجهات مباشرة للاطلاع على أحدث المعلومات والإجراءات.' },
+}[lang];
+const services = ['oncf', 'onda', 'acces', 'onmt'].map((key, i) => ({ ...SOURCES[key], label: copy.labels[i], index: String(i + 1).padStart(2, '0') }));
+---
+<section class="official-services" aria-labelledby="official-services-title">
+  <header><p class="eyebrow">{copy.eyebrow}</p><h2 id="official-services-title">{copy.title}</h2><p>{copy.intro}</p></header>
+  <ul>{services.map(service => <li><a href={service.url} rel="external"><span class="official-services__number" aria-hidden="true">{service.index}</span><span class="official-services__body"><strong>{service.label}</strong><span>{service.name[lang] ?? service.name.en}</span><span class="official-services__action">{copy.link} <span aria-hidden="true">↗</span></span></span></a></li>)}</ul>
+  <p class="official-services__note">{copy.note}</p>
+</section>
+<style>
+  .official-services{padding-block:clamp(3rem,7vw,6rem);border-block:1px solid var(--line)}
+  header{max-width:50rem;margin-bottom:2.5rem}h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);line-height:1.15;text-wrap:balance;margin:.8rem 0 1rem}header>p:last-child{line-height:1.7;color:var(--muted)}
+  ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 3rem;list-style:none;padding:0;margin:0}li{border-top:1px solid var(--line)}a{display:flex;gap:1.25rem;padding-block:1.5rem;text-decoration:none;color:inherit;min-height:44px}a:focus-visible{outline:2px solid currentColor;outline-offset:5px}.official-services__number{font-size:.75rem;opacity:.6;padding-top:.4rem}.official-services__body{display:grid;gap:.5rem}strong{font-size:1.35rem;font-weight:600}.official-services__body>span{line-height:1.6;font-size:.9rem}.official-services__action{font-weight:600;text-decoration:underline;text-underline-offset:.3em}.official-services__action>span{display:inline-block;transition:transform .2s}a:hover .official-services__action>span{transform:translate(2px,-2px)}.official-services__note{font-size:.8rem;line-height:1.7;max-width:75ch;opacity:.7;margin-top:1.5rem}@media(max-width:650px){ul{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){.official-services__action>span{transition:none}a:hover .official-services__action>span{transform:none}}
+</style>

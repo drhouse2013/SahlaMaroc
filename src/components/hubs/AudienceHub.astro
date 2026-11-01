@@ -3,6 +3,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import Newsletter from '../Newsletter.astro';
+import OfficialTravelServices from '../OfficialTravelServices.astro';
 import TravelMagazine from '../TravelMagazine.astro';
 import Icon from '../Icon.astro';
 import PathPhoto from '../paths/PathPhoto.astro';
@@ -80,6 +81,7 @@ const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: co
       <div class="path-rubrics">
         {rubrics.map((r) => <PathRubric lang={lang} rubric={r} />)}
       </div>
+      {hub === 'visit' && <OfficialTravelServices lang={lang} />}
       <section class="path-others" aria-labelledby="path-others-t" data-print-hide>
         <h2 id="path-others-t" class="section-title !text-[length:var(--step-4)]">{PATH_UI.others[lang]}</h2>
         <ul>{PATH_ORDER.filter((x) => x !== id).map((x) => <li><PathCard id={x} lang={lang} variant="row" /></li>)}</ul>
