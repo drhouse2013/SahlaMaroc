@@ -21,7 +21,11 @@
       "ar": "مئذنة مسجد الحسن الثاني من خلال قوس، الدار البيضاء"
     },
     "credit": "OussamaHamama, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg",
+    "focalPoint": [
+      50,
+      0
+    ]
   },
   "rabat": {
     "file": "rabat.jpg",
