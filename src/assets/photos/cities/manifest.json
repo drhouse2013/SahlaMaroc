@@ -1,15 +1,19 @@
 {
   "marrakech": {
-    "file": "marrakech.jpg",
+    "file": "marrakech-jemaa-night-2026.jpg",
     "alt": {
-      "fr": "Minaret de la Koutoubia au coucher du soleil, Marrakech",
-      "en": "Koutoubia minaret at sunset, Marrakech",
-      "es": "Minarete de la Kutubía al atardecer, Marrakech",
-      "de": "Koutoubia-Minarett bei Sonnenuntergang, Marrakesch",
-      "ar": "مئذنة الكتبية عند الغروب في مراكش"
+      "fr": "Jemaa el-Fna animée la nuit, avec la Koutoubia illuminée en arrière-plan, Marrakech",
+      "en": "Jemaa el-Fna at night, with the illuminated Koutoubia in the background, Marrakech",
+      "es": "Jemaa el-Fna de noche, con la Kutubía iluminada al fondo, Marrakech",
+      "de": "Jemaa el-Fna bei Nacht mit der beleuchteten Koutoubia im Hintergrund, Marrakesch",
+      "ar": "ساحة جامع الفنا ليلاً وصومعة الكتبية مضاءة في الخلفية، مراكش"
     },
-    "credit": "Misa.stefanovic.07, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:A01_-_Marrakech,_Koutoubia.jpg"
+    "credit": "Dahbi fatima zahrae, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg",
+    "focalPoint": [
+      50,
+      62
+    ]
   },
   "casablanca": {
     "file": "casablanca.jpg",

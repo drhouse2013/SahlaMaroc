@@ -1,6 +1,6 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-01. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-02. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
 **Total : 339 lieux, 263 photos vérifiées, 75 placeholders (« Photo à venir »), 1 à confirmer.**
 
@@ -23,7 +23,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Marrakech | `cities/marrakech.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:A01_-_Marrakech,_Koutoubia.jpg> | vérifiée | CC BY-SA 4.0 |
+| Marrakech | `cities/marrakech-jemaa-night-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg> | vérifiée | CC BY-SA 4.0 |
 | Casablanca | `cities/casablanca.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> | vérifiée | CC BY-SA 4.0 |
 | Rabat | `cities/rabat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Oudayas,_Rabat,_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tanger | `cities/tangier.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg> | vérifiée | CC BY-SA 4.0 |

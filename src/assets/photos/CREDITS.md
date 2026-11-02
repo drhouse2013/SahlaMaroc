@@ -346,3 +346,7 @@ Hammam Saffarin à Fès, salle tiède (wasti), prise le 5 juillet 2026. Auteur :
 ## Nador — corniche, septembre 2026
 
 - `cities/nador-corniche-2026.jpg` : SALHI Kaouthar, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg. Prise du23septembre2026 à17h50 selon la fiche source; original2268×4032, conservé sans modification. Recadrage adaptatif CSS avec point focal50%72% pour garder la barque et la lagune dans le hero et la miniature.
+
+## Marrakech — Jemaa el-Fna, octobre 2026
+
+- `cities/marrakech-jemaa-night-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Source : https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg. Date déclarée : 13 octobre 2026. Original 3072×4080 conservé sans modification; variantes Astro AVIF/WebP et recadrage CSS 50%62% pour privilégier la place et garder la Koutoubia. Adaptations sous la même licence.
