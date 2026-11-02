@@ -49,11 +49,19 @@ const valid=(item:unknown):item is SavedPage=>{if(!item||typeof item!=='object')
 const read=()=>{if(!persist)return entries;try{const stored:unknown=JSON.parse(localStorage.getItem(key)??'[]');return Array.isArray(stored)?stored.filter(valid).slice(0,100):[]}catch{persist=false;return entries}};
 entries=read();
 const write=()=>{try{localStorage.setItem(key,JSON.stringify(entries))}catch{persist=false}if(!persist)status.textContent=words[9]};
-const render=()=>{const prepared=root.querySelector<HTMLAnchorElement>('[data-notebook-pdf-ready]');if(prepared&&prepared.dataset.snapshot!==JSON.stringify(entries)){URL.revokeObjectURL(prepared.href);status.textContent=''}root.querySelector<HTMLButtonElement>('[data-notebook-pdf]')!.disabled=!entries.length||root.querySelector<HTMLButtonElement>('[data-notebook-pdf]')!.dataset.busy==='true';const active=entries.some(x=>x.path===path);save.hidden=!canSave;save.textContent=words[active?2:1];save.setAttribute('aria-pressed',String(active));root.querySelector('[data-notebook-count]')!.textContent=String(entries.length);root.querySelector<HTMLElement>('[data-notebook-empty]')!.hidden=entries.length>0;root.querySelector<HTMLButtonElement>('[data-notebook-export]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-print]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-offline]')!.disabled=!entries.length;list.replaceChildren();entries.forEach(entry=>{const li=document.createElement('li'),a=document.createElement('a'),remove=document.createElement('button');a.href=new URL(entry.path,location.origin).href;a.textContent=entry.title;remove.type='button';remove.textContent=words[3];remove.setAttribute('aria-label',`${words[3]} : ${entry.title}`);remove.addEventListener('click',()=>{entries=read().filter(x=>x.path!==entry.path);write();render()});li.append(a,remove);list.append(li)});updateGuideButton();updateMap()};
+let downloadUrl:string|undefined;
+const clearDownload=()=>{if(downloadUrl)URL.revokeObjectURL(downloadUrl);downloadUrl=undefined;root.querySelector('[data-notebook-file-ready]')?.remove()};
+window.addEventListener('pagehide',clearDownload);
+const offerDownload=(blob:Blob,filename:string,label:string,pages:SavedPage[],message='')=>{
+  clearDownload();downloadUrl=URL.createObjectURL(blob);
+  const link=document.createElement('a');link.href=downloadUrl;link.download=filename;link.textContent=label;link.className='underline underline-offset-4';link.dataset.notebookFileReady='';link.dataset.snapshot=JSON.stringify(pages);
+  status.textContent=message?message+' ':'';status.append(link);link.click();
+};
+const render=()=>{const file=root.querySelector<HTMLAnchorElement>('[data-notebook-file-ready]');if(file&&file.dataset.snapshot!==JSON.stringify(entries)){clearDownload();status.textContent=''}const prepared=root.querySelector<HTMLAnchorElement>('[data-notebook-pdf-ready]');if(prepared&&prepared.dataset.snapshot!==JSON.stringify(entries)){URL.revokeObjectURL(prepared.href);status.textContent=''}root.querySelector<HTMLButtonElement>('[data-notebook-pdf]')!.disabled=!entries.length||root.querySelector<HTMLButtonElement>('[data-notebook-pdf]')!.dataset.busy==='true';const active=entries.some(x=>x.path===path);save.hidden=!canSave;save.textContent=words[active?2:1];save.setAttribute('aria-pressed',String(active));root.querySelector('[data-notebook-count]')!.textContent=String(entries.length);root.querySelector<HTMLElement>('[data-notebook-empty]')!.hidden=entries.length>0;root.querySelector<HTMLButtonElement>('[data-notebook-export]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-print]')!.disabled=!entries.length;root.querySelector<HTMLButtonElement>('[data-notebook-offline]')!.disabled=!entries.length;list.replaceChildren();entries.forEach(entry=>{const li=document.createElement('li'),a=document.createElement('a'),remove=document.createElement('button');a.href=new URL(entry.path,location.origin).href;a.textContent=entry.title;remove.type='button';remove.textContent=words[3];remove.setAttribute('aria-label',`${words[3]} : ${entry.title}`);remove.addEventListener('click',()=>{entries=read().filter(x=>x.path!==entry.path);write();render()});li.append(a,remove);list.append(li)});updateGuideButton();updateMap()};
 save.addEventListener('click',()=>{entries=read();if(entries.some(x=>x.path===path))entries=entries.filter(x=>x.path!==path);else entries=[{path,title:document.querySelector('h1')?.textContent?.trim().slice(0,200)||document.title},...entries].slice(0,100);write();render()});
 window.addEventListener('storage',event=>{if(event.key===key||event.key===null){entries=read();render()}});
 root.querySelector('[data-notebook-share]')?.addEventListener('click',async()=>{const url=new URL(path,location.origin).href;try{if(navigator.share)await navigator.share({title:document.title,url});else{await navigator.clipboard.writeText(url);status.textContent=words[7]}}catch(e){if(!(e instanceof DOMException&&e.name==='AbortError'))status.textContent=words[8]}});
-root.querySelector('[data-notebook-export]')?.addEventListener('click',()=>{const data=entries.map(x=>({title:x.title,url:new URL(x.path,location.origin).href}));const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='sahla-maroc-carnet.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+root.querySelector('[data-notebook-export]')?.addEventListener('click',()=>{if(!entries.length)return;const pages=[...entries],data=pages.map(x=>({title:x.title,url:new URL(x.path,location.origin).href}));offerDownload(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),'sahla-maroc-carnet.json',words[11],pages)});
 root.querySelector('[data-notebook-offline]')?.addEventListener('click',()=>{
 if(!entries.length)return;
 const labels=JSON.parse(root.dataset.offline??'[]') as string[];
@@ -61,8 +69,7 @@ const escape=(value:string)=>value.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&
 const locale=root.dataset.locale??'fr';
 const rows=entries.map(entry=>`<li><a href="${escape(new URL(entry.path,location.origin).href)}">${escape(entry.title)}</a><small>${escape(new URL(entry.path,location.origin).href)}</small></li>`).join('');
 const html=`<!doctype html><html lang="${escape(locale)}" dir="${locale==='ar'?'rtl':'ltr'}"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(words[0])} — Sahla Maroc</title><style>body{margin:0;background:#f5f1e8;color:#153d34;font:17px/1.6 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:48px 24px}h1{font:2.5rem/1.15 Georgia,serif}ol{padding-inline-start:24px}li{padding:20px 0;border-bottom:1px solid #c9d3c8}a{color:inherit;font-weight:600}small{display:block;overflow-wrap:anywhere;color:#53665e;margin-top:8px}@media print{body{background:white}li{break-inside:avoid}}</style><main><p>Sahla Maroc</p><h1>${escape(words[0])}</h1><p>${escape(labels[1])}</p><ol>${rows}</ol></main></html>`;
-const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));
-const link=document.createElement('a');link.href=url;link.download='sahla-maroc-carnet.html';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+offerDownload(new Blob([html],{type:'text/html;charset=utf-8'}),'sahla-maroc-carnet.html',labels[0],[...entries]);
 });
 root.querySelector('[data-notebook-print]')?.addEventListener('click',()=>{if(!entries.length)return;root.open=true;document.body.classList.add('notebook-printing');const cleanup=()=>{document.body.classList.remove('notebook-printing');window.removeEventListener('afterprint',cleanup)};window.addEventListener('afterprint',cleanup);window.print();setTimeout(cleanup,60000)});
 const pdfLabels=JSON.parse(root.dataset.pdf??'[]') as string[];
@@ -111,12 +118,10 @@ const updateMap=()=>{
 guideButton.addEventListener('click',async()=>{
   guideButton.dataset.busy='true';updateGuideButton();
   try{
-    const result=await buildOfflineGuides([...read()],root.dataset.locale??'fr',guideLabels,(done,total)=>{status.textContent=`${guideLabels[2]} ${done}/${total}`});
-    const url=URL.createObjectURL(new Blob([result.html],{type:'text/html;charset=utf-8'}));
-    const link=document.createElement('a');link.href=url;link.download='sahla-maroc-guides.html';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
-    status.textContent=`${guideLabels[3]} ${result.count}. ${result.skipped?`${guideLabels[6]} : ${result.skipped}.`:''}`;
+    const pages=[...read()];const result=await buildOfflineGuides(pages,root.dataset.locale??'fr',guideLabels,(done,total)=>{status.textContent=`${guideLabels[2]} ${done}/${total}`});
+    offerDownload(new Blob([result.html],{type:'text/html;charset=utf-8'}),'sahla-maroc-guides.html',guideLabels[0],pages,`${guideLabels[3]} ${result.count}. ${result.skipped?`${guideLabels[6]} : ${result.skipped}.`:''}`);
   }catch(error){status.textContent=error instanceof Error&&error.message===guideLabels[5]?guideLabels[5]:guideLabels[4]}
-  finally{delete guideButton.dataset.busy;updateGuideButton()}
+  finally{delete guideButton.dataset.busy;render()}
 });
 render();updateGuideButton();if(!persist)status.textContent=words[9];root.hidden=false;
 });
