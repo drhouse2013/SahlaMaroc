@@ -240,7 +240,7 @@ export const CITY_PAGES: CityPage[] = [
         intro: 'La capitale est verte, propre et agréable à pied : tramway, plage, médina tranquille et grands monuments. Plus calme que Marrakech ou Casablanca, c\'est une très bonne base pour les couples, les familles et les longs séjours.',
         why: ['La Kasbah des Oudayas, la Tour Hassan et le mausolée Mohammed V', 'Une ville à taille humaine, avec tramway entre Rabat et Salé', 'À environ 1 h 20 de Tanger en TGV Al Boraq'],
         when: 'Le climat océanique est doux toute l\'année ; le printemps et l\'automne sont particulièrement agréables pour marcher.',
-        access: "La gare Rabat-Ville est sur la ligne du TGV Al Boraq (environ 1 h 20 depuis Tanger) et des trains vers Casablanca. L'aéroport Rabat-Salé est proche du centre, et le tramway relie Rabat, Salé, la gare et la médina.",
+        access: "Le TGV Al Boraq dessert Rabat-Agdal, et non Rabat-Ville. Vérifiez la gare et les horaires sur votre billet ONCF avant de rejoindre votre hébergement. L'aéroport Rabat-Salé est proche du centre, et le tramway relie Rabat et Salé, avec un arrêt à Rabat-Ville.",
         areas: [
           { name: 'Médina et Oudayas', text: 'Ruelles bleues et blanches, riads et maisons d\'hôtes.' },
           { name: 'Hassan', text: 'Le quartier historique, grands hôtels proches des monuments.' },
@@ -255,7 +255,7 @@ export const CITY_PAGES: CityPage[] = [
         intro: 'The capital is green, clean and walkable: a tram, a beach, a quiet medina and major monuments. Calmer than Marrakech or Casablanca, it is a great base for couples, families and long stays.',
         why: ['The Kasbah of the Udayas, Hassan Tower and the Mohammed V Mausoleum', 'A human-scale city with a tram between Rabat and Salé', 'About 1 h 20 from Tangier on the Al Boraq high-speed train'],
         when: 'The ocean climate is mild all year; spring and autumn are especially pleasant for walking.',
-        access: 'Rabat-Ville station is on the Al Boraq high-speed line (about 1 h 20 from Tangier) and has trains to Casablanca. Rabat-Salé airport is close to the centre, and the tram links Rabat, Salé, the station and the medina.',
+        access: 'Al Boraq high-speed trains stop at Rabat-Agdal, not Rabat-Ville. Check the station and times on your ONCF ticket before travelling to your accommodation. Rabat-Salé airport is close to the centre, and the tram links Rabat and Salé, with a stop at Rabat-Ville.',
         areas: [
           { name: 'Medina & Udayas', text: 'Blue-and-white lanes, riads and guesthouses.' },
           { name: 'Hassan', text: 'The historic district, big hotels close to the monuments.' },
@@ -270,7 +270,7 @@ export const CITY_PAGES: CityPage[] = [
         intro: 'La capital es verde, limpia y agradable para pasear: tranvía, playa, una medina tranquila y grandes monumentos. Más tranquila que Marrakech o Casablanca, es una muy buena base para parejas, familias y estancias largas.',
         why: ['La Kasbah de los Udayas, la Torre Hassan y el mausoleo Mohammed V', 'Una ciudad a escala humana, con tranvía entre Rabat y Salé', 'A unos 1 h 20 de Tánger en el tren de alta velocidad Al Boraq'],
         when: 'El clima oceánico es suave todo el año; la primavera y el otoño son especialmente agradables para caminar.',
-        access: 'La estación Rabat-Ville está en la línea de alta velocidad Al Boraq (unos 1 h 20 desde Tánger) y tiene trenes a Casablanca. El aeropuerto Rabat-Salé está cerca del centro, y el tranvía une Rabat, Salé, la estación y la medina.',
+        access: 'Los trenes de alta velocidad Al Boraq paran en Rabat-Agdal, no en Rabat-Ville. Comprueba la estación y los horarios en tu billete ONCF antes de ir al alojamiento. El aeropuerto Rabat-Salé está cerca del centro y el tranvía une Rabat y Salé, con una parada en Rabat-Ville.',
         areas: [
           { name: 'Medina y Udayas', text: 'Callejuelas azules y blancas, riads y casas de huéspedes.' },
           { name: 'Hassan', text: 'El barrio histórico, grandes hoteles cerca de los monumentos.' },
@@ -285,7 +285,7 @@ export const CITY_PAGES: CityPage[] = [
         intro: 'Die Hauptstadt ist grün, sauber und gut zu Fuß zu erkunden: Straßenbahn, Strand, eine ruhige Medina und große Monumente. Ruhiger als Marrakesch oder Casablanca – eine sehr gute Basis für Paare, Familien und lange Aufenthalte.',
         why: ['Die Kasbah der Udayas, der Hassan-Turm und das Mausoleum Mohammed V.', 'Eine Stadt im menschlichen Maßstab, mit Straßenbahn zwischen Rabat und Salé', 'Etwa 1 Std. 20 Min. von Tanger mit dem Schnellzug Al Boraq'],
         when: 'Das Meeresklima ist ganzjährig mild; Frühling und Herbst sind zum Spazieren besonders angenehm.',
-        access: 'Der Bahnhof Rabat-Ville liegt an der Schnellfahrstrecke Al Boraq (etwa 1 Std. 20 Min. ab Tanger) und hat Züge nach Casablanca. Der Flughafen Rabat-Salé liegt nah am Zentrum, die Straßenbahn verbindet Rabat, Salé, Bahnhof und Medina.',
+        access: 'Die Al-Boraq-Schnellzüge halten in Rabat-Agdal, nicht in Rabat-Ville. Prüfen Sie Bahnhof und Zeiten auf Ihrer ONCF-Fahrkarte, bevor Sie zur Unterkunft fahren. Der Flughafen Rabat-Salé liegt nah am Zentrum; die Straßenbahn verbindet Rabat und Salé mit einem Halt in Rabat-Ville.',
         areas: [
           { name: 'Medina & Udayas', text: 'Blau-weiße Gassen, Riads und Gästehäuser.' },
           { name: 'Hassan', text: 'Das historische Viertel, große Hotels nahe den Monumenten.' },
@@ -300,7 +300,7 @@ export const CITY_PAGES: CityPage[] = [
         intro: 'العاصمة خضراء ونظيفة ويسهل التجول فيها مشياً: ترامواي، شاطئ، مدينة عتيقة هادئة ومعالم كبرى. أهدأ من مراكش والدار البيضاء، وهي قاعدة ممتازة للأزواج والعائلات والإقامات الطويلة.',
         why: ['قصبة الأوداية وصومعة حسان وضريح محمد الخامس', 'مدينة على مقاس الإنسان، مع ترامواي بين الرباط وسلا', 'على بعد حوالي ساعة و20 دقيقة من طنجة بقطار البراق'],
         when: 'المناخ المحيطي معتدل طوال السنة، والربيع والخريف ممتعان بشكل خاص للتجول.',
-        access: 'محطة الرباط المدينة على خط البراق (حوالي ساعة و20 دقيقة من طنجة) وفيها قطارات نحو الدار البيضاء. مطار الرباط سلا قريب من الوسط، والترامواي يربط الرباط وسلا والمحطة والمدينة العتيقة.',
+        access: 'يتوقف قطار البراق في محطة الرباط أكدال، وليس الرباط المدينة. تحقّق من المحطة والمواعيد في تذكرة المكتب الوطني للسكك الحديدية قبل التوجه إلى مكان إقامتك. مطار الرباط سلا قريب من الوسط، ويربط الترامواي الرباط وسلا مع توقف عند محطة الرباط المدينة.',
         areas: [
           { name: 'المدينة العتيقة والأوداية', text: 'أزقة زرقاء وبيضاء، رياضات ودور ضيافة.' },
           { name: 'حسان', text: 'الحي التاريخي، فنادق كبرى قرب المعالم.' },
