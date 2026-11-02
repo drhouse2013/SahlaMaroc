@@ -103,7 +103,7 @@ const sections = [
           {text.areas.map((a) => <div class="card p-4"><dt class="font-semibold">{a.name}</dt><dd class="mt-1 text-sm muted">{a.text}</dd></div>)}
         </dl>
         <p class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
-          {stayGuide && <a href={`/${lang}/${stayGuide.data.slug}`} class="btn btn-secondary btn-sm">{t('city.stayGuide')}</a>}
+          {stayGuide && <a href={`/${lang}/${stayGuide.data.slug}`} class="btn btn-secondary btn-sm" data-city-stay-guide>{stayGuide.data.title}</a>}
           <AffiliateLink provider="booking" query={city.bookingQuery} class="inline-flex items-center gap-1.5">{t('city.book')}<Icon name="external" class="size-3.5" /></AffiliateLink>
         </p>
         <p class="mt-2 text-xs muted">{t('disclosure.short')}</p>
