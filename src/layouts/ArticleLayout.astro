@@ -317,22 +317,5 @@ const essentials = {
     } catch { window.prompt('', b.dataset.copy || location.href); }
   });
 
-  // Scroll reveal : anime les éléments .reveal à leur entrée dans le viewport.
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-visible');
-            io.unobserve(e.target);
-          }
-        }
-      },
-      { rootMargin: '0px 0px -60px 0px', threshold: 0.1 },
-    );
-    document.querySelectorAll('.reveal, .stagger-reveal').forEach((el) => io.observe(el));
-  } else {
-    // Afficher directement sans animation.
-    document.querySelectorAll('.reveal, .stagger-reveal').forEach((el) => el.classList.add('is-visible'));
-  }
+  // Entry motion is managed once by BaseLayout, including individual cards.
 </script>
