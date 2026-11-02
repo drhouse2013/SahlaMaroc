@@ -186,6 +186,7 @@
   "city.map.title": "Carte des villes",
   "city.map.hint": "Touchez ou sélectionnez une ville pour voir son budget indicatif et accéder à sa page. Positions approximatives.",
   "city.map.aria": "Carte simplifiée du Maroc avec les villes du site",
+  "city.map.select": "Choisir une ville",
   "flag.morocco": "Drapeau du Maroc",
   "city.others": "Autres villes",
   "checklists.title": "Checklists interactives",

@@ -186,6 +186,7 @@
   "city.map.title": "Mapa de las ciudades",
   "city.map.hint": "Toque o seleccione una ciudad para ver su presupuesto indicativo y abrir su página. Posiciones aproximadas.",
   "city.map.aria": "Mapa simplificado de Marruecos con las ciudades del sitio",
+  "city.map.select": "Elegir una ciudad",
   "flag.morocco": "Bandera de Marruecos",
   "city.others": "Otras ciudades",
   "checklists.title": "Listas interactivas",
