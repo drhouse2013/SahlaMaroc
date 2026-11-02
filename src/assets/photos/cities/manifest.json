@@ -374,14 +374,18 @@
   "larache": {
     "file": "larache.jpg",
     "alt": {
-      "fr": "Vue sur la ville de Larache",
-      "en": "View over the town of Larache",
-      "es": "Vista de la ciudad de Larache",
-      "de": "Blick auf die Stadt Larache",
-      "ar": "إطلالة على مدينة العرائش"
+      "fr": "Palmiers et portail orné sur la place de la Libération, Larache",
+      "en": "Palms and an ornate gateway on Liberation Square, Larache",
+      "es": "Palmeras y un portal decorado en la plaza de la Liberación, Larache",
+      "de": "Palmen und ein verziertes Tor am Platz der Befreiung in Larache",
+      "ar": "نخيل وبوابة مزخرفة في ساحة التحرير بالعرائش"
     },
-    "credit": "Fr Maxim Massalitin from Rabat, Maroc, CC BY-SA 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Ville_de_Larache_(14161718379).jpg"
+    "credit": "Ideophagous, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg",
+    "focalPoint": [
+      50,
+      70
+    ]
   },
   "kenitra": {
     "file": "kenitra.jpg",

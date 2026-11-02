@@ -363,3 +363,7 @@ Les photographies restent celles déjà créditées dans le manifeste. Aucun cha
 - `spots/rabat-hassan-tower.jpg` : original 5906 × 2881, Holger Uwe Schmitt, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg). SHA-256 : d8659b230206708ea7245ce6bcdfa27b4ead2e07df6d4f31f8cb8cf96c79902f. Original conservé sans modification ; versions AVIF/WebP générées par Astro.
 
 Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour Hassan : date déclarée 22 décembre 2023, ancien fichier 1400 × 683 ; cadrage CSS 75 % 50 % pour conserver la tour dans les formats de carte.
+
+## Larache — place de la Libération, novembre 2024
+
+- `cities/larache.jpg` et `spots/larache-place-liberation.jpg` : Ideophagous, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). [Source](https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg). Date déclarée : 7 novembre 2024. Original 4080 × 3060 conservé à l’octet, SHA-256 802ed1a87ff881bede0c7bd731b2d38c3113d4451ba1ec5dfa8d6e672930aae1. La photo de la place déjà présente en miniature est rétablie en HD et devient le visuel de la ville, à la place de la vue de 2014. Conversions AVIF/WebP par Astro ; cadrage du visuel ville en CSS 50 % 70 %.
