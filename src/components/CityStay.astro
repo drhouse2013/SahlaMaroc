@@ -1,9 +1,10 @@
 ---
 import type { Locale } from '../i18n';
+import { TAFRAOUT_STAY } from '../data/tafraout-stay';
 import PlaceImage from './PlaceImage.astro';
 import PhotoCredit from './PhotoCredit.astro';
 import { placePhoto } from '../utils/photos';
-interface Props { lang: Locale; city: 'fes' | 'marrakech' | 'essaouira' | 'rabat' }
+interface Props { lang: Locale; city: 'fes' | 'marrakech' | 'essaouira' | 'rabat' | 'tafraout' }
 const { lang, city } = Astro.props;
 const shared = {
   fr: { title: 'Trois jours, à votre rythme', intro: 'Une proposition pour alterner médina, architecture et jardins. Adaptez les étapes à vos envies et aux conditions de visite.', day: 'Jour', titles: ['Prendre ses repères', 'Regarder les détails', 'Faire une pause au jardin'], texts: ['Commencez par Bab Boujloud et découvrez la médina, sans chercher à tout voir dès le premier jour.', 'Consacrez cette journée à la médersa Al Attarine et aux métiers de la médina. Gardez du temps pour les pauses et les détours.', 'Terminez par Jnan Sbil, puis retrouvez les ruelles ou les lieux que vous souhaitez revoir.'], map: 'Repérer le lieu sur la carte', note: 'Parcours éditorial proposé, sans réservation incluse. Vérifiez les conditions d’accès, les horaires et les tarifs auprès des lieux avant de partir.', source: 'Découvrir Fès avec l’Office national marocain du tourisme', budget: 'Préparer mon budget', places: 'Explorer tous les lieux' },
@@ -33,7 +34,7 @@ const rabat = {
   de: { title: 'Zwei Tage in der Hauptstadt', intro: 'Ein Vorschlag mit Medina, Oudayas und bedeutenden Bauwerken, mit Zeit für Gärten und Pausen.', titles: ['Medina und Oudayas', 'Vom Hassan-Turm zur Chellah'], texts: ['Erkunden Sie die Medina und gehen Sie anschließend zur Kasbah der Oudayas. Nehmen Sie sich Zeit für Tore, Gassen und Gärten, bevor Sie eine Pause mit Blick auf den Bouregreg einlegen.', 'Beginnen Sie auf der Esplanade des Hassan-Turms. Fahren oder gehen Sie danach in Ihrem eigenen Tempo zur Chellah: Es handelt sich um zwei getrennte Orte. Prüfen Sie die Besuchsbedingungen vor dem Aufbruch.'], source: 'Rabat beim marokkanischen Fremdenverkehrsamt entdecken' },
   ar: { title: 'يومان في العاصمة', intro: 'مسار لاكتشاف المدينة العتيقة والأوداية والمعالم الكبرى، مع وقت للحدائق والاستراحة.', titles: ['المدينة العتيقة والأوداية', 'من صومعة حسان إلى شالة'], texts: ['تجوّل في المدينة العتيقة ثم اتجه إلى قصبة الأوداية. خذ وقتك لتأمّل الأبواب والأزقة والحدائق، ثم استرح أمام أبي رقراق.', 'ابدأ من ساحة صومعة حسان، ثم انتقل إلى شالة بالوسيلة المناسبة لإيقاعك، فهما موقعان منفصلان. تحقّق من شروط الزيارة قبل الانطلاق.'], source: 'اكتشف الرباط مع المكتب الوطني المغربي للسياحة' },
 }[lang];
-const copy = city === 'rabat' ? { ...shared, ...rabat } : city === 'essaouira' ? { ...shared, ...essaouira } : city === 'marrakech' ? { ...shared, ...marrakech } : shared;
+const copy = city === 'tafraout' ? { ...shared, ...TAFRAOUT_STAY[lang] } : city === 'rabat' ? { ...shared, ...rabat } : city === 'essaouira' ? { ...shared, ...essaouira } : city === 'marrakech' ? { ...shared, ...marrakech } : shared;
 const preparation = {
   fr: { title: 'Avant de partir', note: 'Cochez vos préparatifs pour cette visite. Les cases sont temporaires et ne sont pas enregistrées.', items: ['Confirmer les horaires et les conditions de visite auprès des lieux.', 'Repérer le point de rendez-vous avec votre hébergement.', 'Prévoir des chaussures confortables et de l’eau.', 'Adapter le budget et les pauses au rythme du groupe.'] },
   en: { title: 'Before you set off', note: 'Tick your preparations for this visit. Checkboxes are temporary and are not saved.', items: ['Confirm opening hours and visiting conditions with each venue.', 'Locate the meeting point with your accommodation.', 'Bring comfortable shoes and water.', 'Adapt the budget and breaks to your group’s pace.'] },
@@ -42,9 +43,12 @@ const preparation = {
   ar: { title: 'قبل الانطلاق', note: 'حدّد التحضيرات المنجزة لهذه الزيارة. الاختيارات مؤقتة ولا تُحفظ.', items: ['تأكيد مواعيد وشروط الزيارة لدى كل موقع.', 'تحديد نقطة اللقاء مع مكان الإقامة.', 'إحضار أحذية مريحة وماء.', 'تكييف الميزانية والاستراحات مع إيقاع المجموعة.'] },
 }[lang];
 const coastalPreparation = { fr: 'Prévoir une couche coupe-vent et des chaussures adaptées à la marche.', en: 'Bring a windproof layer and shoes suitable for walking.', es: 'Lleva una prenda cortavientos y calzado adecuado para caminar.', de: 'Eine winddichte Schicht und geeignete Schuhe zum Gehen mitnehmen.', ar: 'إحضار لباس يحمي من الرياح وحذاء مناسب للمشي.' }[lang];
-const preparationItems = preparation.items.map((item, i) => city === 'essaouira' && i === 2 ? coastalPreparation : item);
-const sourceUrl = `https://www.visitmorocco.com/fr/voyage/${city === 'essaouira' ? 'essaouira-mogador' : city}`;
-const stops = (city === 'rabat' ? [
+const preparationItems = preparation.items.map((item, i) => city === 'tafraout' && i === 0 ? TAFRAOUT_STAY[lang].preparation : city === 'essaouira' && i === 2 ? coastalPreparation : item);
+const sourceUrl = city === 'tafraout' ? 'https://www.visitmorocco.com/sites/default/files/atoms/files/def_maroc_trek_0810_251026_ok_vf.pdf' : `https://www.visitmorocco.com/fr/voyage/${city === 'essaouira' ? 'essaouira-mogador' : city}`;
+const stops = (city === 'tafraout' ? [
+  { id: 'painted-rocks', query: 'Painted Rocks Tafraout Morocco', name: TAFRAOUT_STAY[lang].titles[0] },
+  { id: 'ammeln-valley', query: 'Ammeln Valley Tafraout Morocco', name: TAFRAOUT_STAY[lang].titles[1] },
+] : city === 'rabat' ? [
   { id: 'oudayas', query: 'Kasbah des Oudayas Rabat Morocco', name: { fr: 'Oudayas · Rabat', en: 'Oudayas · Rabat', es: 'Udayas · Rabat', de: 'Oudayas · Rabat', ar: 'الأوداية · الرباط' }[lang] },
   { id: 'hassan-tower', query: 'Hassan Tower Rabat Morocco', name: { fr: 'Tour Hassan · Rabat', en: 'Hassan Tower · Rabat', es: 'Torre Hassan · Rabat', de: 'Hassan-Turm · Rabat', ar: 'صومعة حسان · الرباط' }[lang] },
 ] : city === 'essaouira' ? [
