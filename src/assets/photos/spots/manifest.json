@@ -117,7 +117,11 @@
    "ar": "صومعة حسان غير المكتملة فوق ساحة الأعمدة بالرباط"
   },
   "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg",
+  "focalPoint": [
+   75,
+   50
+  ]
  },
  "rabat/chellah": {
   "file": "rabat-chellah.jpg",

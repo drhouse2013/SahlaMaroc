@@ -354,3 +354,12 @@ Hammam Saffarin à Fès, salle tiède (wasti), prise le 5 juillet 2026. Auteur :
 ## Fès — Chouara, avril 2026
 
 - `spots/fes-chouara-2026.jpg` : Mustang Joe (Joe deSousa), CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Source : https://commons.wikimedia.org/wiki/File:Tanning_hides_in_Fes,_Morocco.jpg. Fiche Wikimedia : catégorie Chouara Tannery, position34.066061,-4.971027, date déclarée14avril2026 à13:16:13; licence Flickr contrôlée par FlickreviewR2 le1mai2026. Original5296×3535 conservé sans modification. Conversions AVIF/WebP par Astro et cadrage CSS60%50%. Remplace la petite image1185×929 de la galerie.
+
+## Originaux HD rétablis — 2 novembre 2026
+
+Les photographies restent celles déjà créditées dans le manifeste. Aucun changement de date de prise de vue.
+
+- `spots/fes-cherratine.jpg` : original 4208 × 1888, Hajji lahcen, CC0. [Source](https://commons.wikimedia.org/wiki/File:%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B7%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3.jpg). SHA-256 : 9990cf46715589b67b659db111aafd85019f7cfc8e0caf012ce0f6f02d448e86. Original conservé sans modification ; versions AVIF/WebP générées par Astro.
+- `spots/rabat-hassan-tower.jpg` : original 5906 × 2881, Holger Uwe Schmitt, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg). SHA-256 : d8659b230206708ea7245ce6bcdfa27b4ead2e07df6d4f31f8cb8cf96c79902f. Original conservé sans modification ; versions AVIF/WebP générées par Astro.
+
+Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour Hassan : date déclarée 22 décembre 2023, ancien fichier 1400 × 683 ; cadrage CSS 75 % 50 % pour conserver la tour dans les formats de carte.
