@@ -11,6 +11,8 @@ export interface OfficialSource {
 }
 
 export const SOURCES: Record<string, OfficialSource> = {
+  'unesco-couscous': { url: 'https://www.unesco.org/en/articles/unescos-inscription-couscous-traditions-example-international-cultural-cooperation', name: { fr: 'UNESCO — savoirs et pratiques du couscous', en: 'UNESCO — couscous knowledge and practices', es: 'UNESCO — saberes y prácticas del cuscús', de: 'UNESCO — Wissen und Praktiken rund um Couscous', ar: 'اليونسكو — معارف وممارسات الكسكس' } },
+  'who-food': { url: 'https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food/', name: { fr: 'OMS — hygiène alimentaire', en: 'WHO — food hygiene', es: 'OMS — higiene alimentaria', de: 'WHO — Lebensmittelhygiene', ar: 'منظمة الصحة العالمية — النظافة الغذائية' } },
   fm5: { url: 'https://www.fm5.ma', name: { fr: 'Fondation Mohammed V pour la Solidarité (opération Marhaba)', en: 'Mohammed V Foundation for Solidarity (Operation Marhaba)', es: 'Fundación Mohammed V para la Solidaridad (Operación Marhaba)', de: 'Stiftung Mohammed V. für Solidarität (Operation Marhaba)', ar: 'مؤسسة محمد الخامس للتضامن (عملية مرحبا)' } },
   douane: { url: 'https://www.douane.gov.ma', name: { fr: 'Administration des Douanes et Impôts Indirects (ADII)', en: 'Moroccan Customs (ADII)', es: 'Aduanas de Marruecos (ADII)', de: 'Marokkanischer Zoll (ADII)', ar: 'إدارة الجمارك والضرائب غير المباشرة' } },
   adm: { url: 'https://www.adm.co.ma', name: { fr: 'Autoroutes du Maroc (ADM)', en: 'Autoroutes du Maroc (ADM, motorways)', es: 'Autoroutes du Maroc (ADM, autopistas)', de: 'Autoroutes du Maroc (ADM, Autobahnen)', ar: 'الشركة الوطنية للطرق السيارة بالمغرب' } },
@@ -34,7 +36,7 @@ export const SOURCES: Record<string, OfficialSource> = {
 /** Organismes à afficher pour un guide précis (prioritaires sur ceux du thème) */
 export const ARTICLE_SOURCES: Record<string, string[]> = {
   hammam: ['onmt'],
-  'moroccan-food': ['onmt'],
+  'moroccan-food': ['onmt', 'unesco-couscous', 'who-food'],
   etiquette: ['onmt'],
   'e-visa': ['acces', 'diplomatie'],
   'visa-90-days': ['acces', 'dgsn'],
