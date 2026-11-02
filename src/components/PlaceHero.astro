@@ -34,5 +34,11 @@ const { lang, crumbs, title, intro, meta, photo, kind = 'city', name = title } =
   @media (min-width: 640px) { .place-hero__media--ph { height: min(26vw, 20rem); } }
   .place-hero__panel { padding-top: 2rem; }
   .place-hero__panel--over { position: relative; background: var(--surface-2); border-radius: 12px 12px 0 0; padding: 1.25rem 0 0; max-width: 48rem; }
+  @keyframes destination-photo-arrive { from { transform: scale(1.025); } to { transform: scale(1); } }
+  @keyframes destination-title-arrive { from { opacity: .7; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .place-hero__media :global(img) { animation: destination-photo-arrive 1s cubic-bezier(.22,1,.36,1); }
+    .place-hero__panel { animation: destination-title-arrive .5s cubic-bezier(.22,1,.36,1); }
+  }
   @media (min-width: 768px) { .place-hero__panel--over { margin-top: -6rem; padding: 2rem 2rem 0; } }
 </style>
