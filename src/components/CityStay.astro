@@ -4,8 +4,8 @@ import { TAFRAOUT_STAY } from '../data/tafraout-stay';
 import PlaceImage from './PlaceImage.astro';
 import PhotoCredit from './PhotoCredit.astro';
 import { placePhoto } from '../utils/photos';
-interface Props { lang: Locale; city: 'fes' | 'marrakech' | 'essaouira' | 'rabat' | 'tafraout' }
-const { lang, city } = Astro.props;
+interface Props { lang: Locale; city: 'fes' | 'marrakech' | 'essaouira' | 'rabat' | 'tafraout'; budgetHref?: string }
+const { lang, city, budgetHref } = Astro.props;
 const shared = {
   fr: { title: 'Trois jours, à votre rythme', intro: 'Une proposition pour alterner médina, architecture et jardins. Adaptez les étapes à vos envies et aux conditions de visite.', day: 'Jour', titles: ['Prendre ses repères', 'Regarder les détails', 'Faire une pause au jardin'], texts: ['Commencez par Bab Boujloud et découvrez la médina, sans chercher à tout voir dès le premier jour.', 'Consacrez cette journée à la médersa Al Attarine et aux métiers de la médina. Gardez du temps pour les pauses et les détours.', 'Terminez par Jnan Sbil, puis retrouvez les ruelles ou les lieux que vous souhaitez revoir.'], map: 'Repérer le lieu sur la carte', note: 'Parcours éditorial proposé, sans réservation incluse. Vérifiez les conditions d’accès, les horaires et les tarifs auprès des lieux avant de partir.', source: 'Découvrir Fès avec l’Office national marocain du tourisme', budget: 'Préparer mon budget', places: 'Explorer tous les lieux' },
   en: { title: 'Three days, at your own pace', intro: 'A suggested stay combining the medina, architecture and gardens. Adapt each day to your interests and visiting conditions.', day: 'Day', titles: ['Find your bearings', 'Look at the details', 'Take a garden break'], texts: ['Start at Bab Boujloud and explore the medina without trying to see everything on your first day.', 'Set aside this day for Al Attarine Madrasa and the medina’s crafts. Leave room for breaks and detours.', 'Finish with Jnan Sbil, then return to the lanes or places you would like to see again.'], map: 'Find this place on the map', note: 'Suggested editorial itinerary; reservations are not included. Check access, opening hours and prices with each venue before visiting.', source: 'Explore Fez with the Moroccan National Tourist Office', budget: 'Plan my budget', places: 'Explore all places' },
@@ -73,7 +73,7 @@ const featuredStop = stops[city === 'essaouira' ? 0 : 1];
   </div>
   <fieldset class="city-stay__preparation"><legend>{preparation.title}</legend><p>{preparation.note}</p><div>{preparationItems.map(item => <label><input type="checkbox" /><span>{item}</span></label>)}</div></fieldset>
   <p class="city-stay__note">{copy.note}</p>
-  <p class="city-stay__links"><a href="#budget">{copy.budget}</a><a href="#spots">{copy.places}</a><a href={sourceUrl} target="_blank" rel="noopener noreferrer">{copy.source} ↗</a></p>
+  <p class="city-stay__links">{budgetHref && <a href={budgetHref}>{copy.budget}</a>}<a href="#spots">{copy.places}</a><a href={sourceUrl} target="_blank" rel="noopener noreferrer">{copy.source} ↗</a></p>
 </section>
 <style>
   .city-stay__extra-stop{display:inline-block;margin-inline-start:1.25rem}
