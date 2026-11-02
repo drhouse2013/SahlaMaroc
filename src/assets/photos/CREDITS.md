@@ -350,3 +350,7 @@ Hammam Saffarin à Fès, salle tiède (wasti), prise le 5 juillet 2026. Auteur :
 ## Marrakech — Jemaa el-Fna, octobre 2026
 
 - `cities/marrakech-jemaa-night-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Source : https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg. Date déclarée : 13 octobre 2026. Original 3072×4080 conservé sans modification; variantes Astro AVIF/WebP et recadrage CSS 50%62% pour privilégier la place et garder la Koutoubia. Adaptations sous la même licence.
+
+## Fès — Chouara, avril 2026
+
+- `spots/fes-chouara-2026.jpg` : Mustang Joe (Joe deSousa), CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Source : https://commons.wikimedia.org/wiki/File:Tanning_hides_in_Fes,_Morocco.jpg. Fiche Wikimedia : catégorie Chouara Tannery, position34.066061,-4.971027, date déclarée14avril2026 à13:16:13; licence Flickr contrôlée par FlickreviewR2 le1mai2026. Original5296×3535 conservé sans modification. Conversions AVIF/WebP par Astro et cadrage CSS60%50%. Remplace la petite image1185×929 de la galerie.

@@ -216,16 +216,20 @@
   "source": "https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg"
  },
  "fes/chouara": {
-  "file": "fes-chouara.jpg",
+  "file": "fes-chouara-2026.jpg",
   "alt": {
-   "fr": "Cuves de teinture des tanneries Chouara vues depuis les terrasses, Fès",
-   "en": "Dye vats of the Chouara tanneries seen from the terraces, Fes",
-   "es": "Cubas de teñido de las curtidurías Chouara vistas desde las terrazas, Fez",
-   "de": "Färbebecken der Gerbereien Chouara von den Terrassen aus, Fès",
-   "ar": "أحواض الصباغة في دباغة الشوارة من المدرجات بفاس"
+   "fr": "Artisan au travail parmi les bassins clairs des tanneries Chouara, Fès",
+   "en": "Leather worker among the pale vats at Chouara Tannery, Fez",
+   "es": "Artesano trabajando entre las cubas claras de las curtidurías Chouara, Fez",
+   "de": "Gerber bei der Arbeit zwischen hellen Becken der Chouara-Gerberei in Fès",
+   "ar": "حرفي يعمل بين الأحواض الفاتحة في دباغة الشوارة بفاس"
   },
-  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%22Eine_Touristenattraktion_trotz_des_starken_Geruchs%22._01.jpg"
+  "credit": "Mustang Joe, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tanning_hides_in_Fes,_Morocco.jpg",
+  "focalPoint": [
+   60,
+   50
+  ]
  },
  "fes/bou-inania": {
   "file": "fes-bou-inania.jpg",

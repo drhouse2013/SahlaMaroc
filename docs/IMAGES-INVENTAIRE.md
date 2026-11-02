@@ -170,7 +170,7 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Médina de Fès el-Bali | `spots/fes-fes-el-bali.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg> | vérifiée | CC BY-SA 4.0 |
-| Tanneries Chouara | `spots/fes-chouara.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Eine_Touristenattraktion_trotz_des_starken_Geruchs%22._01.jpg> | vérifiée | CC BY-SA 4.0 |
+| Tanneries Chouara | `spots/fes-chouara-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tanning_hides_in_Fes,_Morocco.jpg> | vérifiée | CC0 |
 | Médersa Bou Inania | `spots/fes-bou-inania.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg> | vérifiée | CC BY-SA 4.0 |
 | Médersa Al Attarine | `spots/fes-al-attarine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fez_Al-Attarine_Madrasa_%2854250005206%29.jpg> | vérifiée | CC BY 2.0 |
 | Borj Nord | `spots/fes-borj-nord.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg> | vérifiée | Public domain |
