@@ -38,7 +38,7 @@ const { lang, crumbs, title, intro, meta, photo, kind = 'city', name = title } =
   @keyframes destination-title-arrive { from { opacity: .7; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   @media screen and (prefers-reduced-motion: no-preference) {
     .place-hero__media :global(img) { animation: destination-photo-arrive 1s cubic-bezier(.22,1,.36,1); }
-    .place-hero__panel { animation: destination-title-arrive .5s cubic-bezier(.22,1,.36,1); }
+    .place-hero__panel { animation: destination-title-arrive .5s .12s cubic-bezier(.22,1,.36,1) both; }
   }
   @media (min-width: 768px) { .place-hero__panel--over { margin-top: -6rem; padding: 2rem 2rem 0; } }
 </style>
