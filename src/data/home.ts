@@ -255,6 +255,22 @@ export const CITY_NAMES: Record<string, Partial<Record<Locale, string>>> = {
   oujda: { es: 'Uchda', ar: 'وجدة' },
   'al-hoceima': { fr: 'Al Hoceïma', es: 'Alhucemas', de: 'Al Hoceïma', ar: 'الحسيمة' },
   merzouga: { ar: 'مرزوكة' },
+  agadir: { ar: 'أكادير' },
+  dakhla: { ar: 'الداخلة' },
+  laayoune: { ar: 'العيون' },
+  'el-jadida': { ar: 'الجديدة' },
+  saidia: { ar: 'السعيدية' },
+  tafraout: { ar: 'تافراوت' },
+  guelmim: { ar: 'كلميم' },
+  tiznit: { ar: 'تزنيت' },
+  'sidi-ifni': { ar: 'سيدي إفني' },
+  taroudant: { ar: 'تارودانت' },
+  zagora: { ar: 'زاكورة' },
+  errachidia: { ar: 'الرشيدية' },
+  ifrane: { ar: 'إفران' },
+  asilah: { ar: 'أصيلة' },
+  larache: { ar: 'العرائش' },
+  kenitra: { ar: 'القنيطرة' },
 };
 export const cityName = (c: City, lang: Locale) => CITY_NAMES[c.id]?.[lang] ?? c.name;
 
