@@ -11,6 +11,9 @@ export interface OfficialSource {
 }
 
 export const SOURCES: Record<string, OfficialSource> = {
+  'france-morocco-advice': { url: 'https://www.diplomatie.gouv.fr/fr/information-par-pays/maroc/conseils-aux-voyageurs-informations-utiles', name: { fr: 'France Diplomatie — Maroc, informations utiles', en: 'France Diplomatie — Morocco travel information', es: 'France Diplomatie — información para viajar a Marruecos', de: 'France Diplomatie — Reiseinformationen für Marokko', ar: 'الخارجية الفرنسية — معلومات السفر إلى المغرب' } },
+  'fcdo-morocco-advice': { url: 'https://www.gov.uk/foreign-travel-advice/morocco/safety-and-security', name: { fr: 'FCDO — Maroc, lois et coutumes', en: 'FCDO — Morocco, laws and customs', es: 'FCDO — Marruecos, leyes y costumbres', de: 'FCDO — Marokko, Gesetze und Bräuche', ar: 'الخارجية البريطانية — القوانين والعادات في المغرب' } },
+  'canada-morocco-advice': { url: 'https://voyage.gc.ca/destinations/maroc', name: { fr: 'Canada — conseils aux voyageurs, Maroc', en: 'Canada — Morocco travel advice', es: 'Canadá — consejos de viaje para Marruecos', de: 'Kanada — Reisehinweise für Marokko', ar: 'كندا — إرشادات السفر إلى المغرب' } },
   'unesco-couscous': { url: 'https://www.unesco.org/en/articles/unescos-inscription-couscous-traditions-example-international-cultural-cooperation', name: { fr: 'UNESCO — savoirs et pratiques du couscous', en: 'UNESCO — couscous knowledge and practices', es: 'UNESCO — saberes y prácticas del cuscús', de: 'UNESCO — Wissen und Praktiken rund um Couscous', ar: 'اليونسكو — معارف وممارسات الكسكس' } },
   'who-food': { url: 'https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food/', name: { fr: 'OMS — hygiène alimentaire', en: 'WHO — food hygiene', es: 'OMS — higiene alimentaria', de: 'WHO — Lebensmittelhygiene', ar: 'منظمة الصحة العالمية — النظافة الغذائية' } },
   fm5: { url: 'https://www.fm5.ma', name: { fr: 'Fondation Mohammed V pour la Solidarité (opération Marhaba)', en: 'Mohammed V Foundation for Solidarity (Operation Marhaba)', es: 'Fundación Mohammed V para la Solidaridad (Operación Marhaba)', de: 'Stiftung Mohammed V. für Solidarität (Operation Marhaba)', ar: 'مؤسسة محمد الخامس للتضامن (عملية مرحبا)' } },
@@ -37,7 +40,7 @@ export const SOURCES: Record<string, OfficialSource> = {
 export const ARTICLE_SOURCES: Record<string, string[]> = {
   hammam: ['onmt'],
   'moroccan-food': ['onmt', 'unesco-couscous', 'who-food'],
-  etiquette: ['onmt'],
+  etiquette: ['france-morocco-advice', 'fcdo-morocco-advice', 'canada-morocco-advice', 'onmt'],
   'e-visa': ['acces', 'diplomatie'],
   'visa-90-days': ['acces', 'dgsn'],
   'residence-permit': ['dgsn'],
