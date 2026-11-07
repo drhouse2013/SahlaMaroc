@@ -2146,15 +2146,15 @@
  "el-jadida/lighthouse": {
   "file": "el-jadida-lighthouse.jpg",
   "alt": {
-   "fr": "Phare d'El Jadida dominant la cité portugaise",
-   "en": "El Jadida lighthouse rising above the Portuguese city",
-   "es": "Faro de El Jadida sobre la ciudad portuguesa",
-   "de": "Der Leuchtturm von El Jadida über der portugiesischen Stadt",
-   "ar": "منارة الجديدة تعلو المدينة البرتغالية"
+   "fr": "Le phare Sidi Bouafi d’El Jadida, photographié en octobre 2026",
+   "en": "Sidi Bouafi Lighthouse in El Jadida, photographed in October 2026",
+   "es": "Faro Sidi Bouafi de El Jadida, fotografiado en octubre de 2026",
+   "de": "Leuchtturm Sidi Bouafi in El Jadida, aufgenommen im Oktober 2026",
+   "ar": "منارة سيدي بوعافي في الجديدة، صُوّرت في أكتوبر 2026"
   },
-  "credit": "M.Rais, CC BY-SA 3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Phare_Jadida.JPG",
-  "verified": false
+  "credit": "Xpelli, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sidi_Bouafi_Lighthouse_tower,_El_Jadida,_Morocco_-_Oct_2026.jpg",
+  "focalPoint": [50, 18]
  },
  "saidia/beach": {
   "file": "saidia-beach.jpg",
