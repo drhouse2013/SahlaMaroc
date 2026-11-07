@@ -682,14 +682,15 @@
  "tafraout/painted-rocks": {
   "file": "tafraout-painted-rocks.jpg",
   "alt": {
-   "fr": "Rochers peints en bleu de Jean Verame dans la vallée de Tafraout",
-   "en": "Blue painted rocks by Jean Verame in the Tafraout valley",
-   "es": "Rocas pintadas de azul por Jean Verame en el valle de Tafraout",
-   "de": "Blau bemalte Felsen von Jean Verame im Tal von Tafraout",
-   "ar": "صخور مطلية بالأزرق للفنان جان فيرام في وادي تافراوت"
+   "fr": "Rochers bleus et roses peints par Jean Verame dans la vallée de Tafraout à l'aube",
+   "en": "Blue and pink rocks painted by Jean Verame in the Tafraout valley at dawn",
+   "es": "Rocas azules y rosas pintadas por Jean Verame en el valle de Tafraout al amanecer",
+   "de": "Von Jean Verame blau und rosa bemalte Felsen im Tal von Tafraout im Morgengrauen",
+   "ar": "صخور زرقاء ووردية رسمها جان فيرام في وادي تافراوت عند الفجر"
   },
-  "credit": "Simohnt, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Colored_Rocks_1.jpg"
+  "credit": "Cesar.mx22, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Painted_Rocks_Trafraoute.jpg",
+  "focalPoint": [50, 72]
  },
  "tafraout/napoleons-hat": {
   "file": "tafraout-napoleons-hat.jpg",
