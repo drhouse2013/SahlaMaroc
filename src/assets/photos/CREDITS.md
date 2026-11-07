@@ -4,6 +4,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
+| taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
 | merzouga-dunes.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg |
 | chefchaouen-ruelle.jpg | Ekaterina Kvelidze | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg |
 | essaouira-remparts.jpg | Ahmed.magdy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Citadel.jpg |
@@ -384,4 +385,3 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 ## Ifrane — lac Aïn Ifrane, avril 2025
 
 - `cities/ifrane-lake-2025.jpg` : RACHID BAYA, CC0 1.0. [Source](https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg). Prise de vue déclarée le 27 avril 2025, original 4080×2296 conservé sans modification. SHA-256 : `6AA2B43A34E2B26069C907916143338C406726E3458A4E8A600A939FEED10BD1`. Remplace la vue de rue d'Ifrane de 2023 ; Astro génère les formats AVIF/WebP.
-
