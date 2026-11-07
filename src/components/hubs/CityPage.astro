@@ -64,7 +64,7 @@ const jsonLd = [
   ...(text.faq.length ? [faqJsonLd(text.faq)] : []),
 ];
 const spots = SPOTS[id] ?? [];
-const stayCity = id === 'fes' || id === 'marrakech' || id === 'essaouira' || id === 'rabat' || id === 'tafraout' || id === 'tangier' || id === 'casablanca' || id === 'chefchaouen' || id === 'dakhla' ? id : undefined;
+const stayCity = id === 'fes' || id === 'marrakech' || id === 'essaouira' || id === 'rabat' || id === 'tafraout' || id === 'tangier' || id === 'casablanca' || id === 'chefchaouen' || id === 'dakhla' || id === 'agadir' ? id : undefined;
 const stayLabel = { fr: 'Séjour proposé', en: 'Suggested stay', es: 'Estancia propuesta', de: 'Reisevorschlag', ar: 'إقامة مقترحة' }[lang];
 const sections = [
   ...(stayCity ? [{ id: 'stay-plan', label: stayLabel }] : []),

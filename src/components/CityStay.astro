@@ -4,11 +4,12 @@ import { CHEFCHAOUEN_STAY } from '../data/chefchaouen-stay';
 import { TAFRAOUT_STAY } from '../data/tafraout-stay';
 import { ATLANTIC_CITY_STAYS } from '../data/atlantic-city-stays';
 import { DAKHLA_STAY } from '../data/dakhla-stay';
+import { AGADIR_STAY } from '../data/agadir-stay';
 import { SPOTS } from '../data/spots';
 import PlaceImage from './PlaceImage.astro';
 import PhotoCredit from './PhotoCredit.astro';
 import { placePhoto } from '../utils/photos';
-interface Props { lang: Locale; city: 'fes' | 'marrakech' | 'essaouira' | 'rabat' | 'tafraout' | 'tangier' | 'casablanca' | 'chefchaouen' | 'dakhla'; budgetHref?: string }
+interface Props { lang: Locale; city: 'fes' | 'marrakech' | 'essaouira' | 'rabat' | 'tafraout' | 'tangier' | 'casablanca' | 'chefchaouen' | 'dakhla' | 'agadir'; budgetHref?: string }
 const { lang, city, budgetHref } = Astro.props;
 const shared = {
   fr: { title: 'Trois jours, à votre rythme', intro: 'Une proposition pour alterner médina, architecture et jardins. Adaptez les étapes à vos envies et aux conditions de visite.', day: 'Jour', titles: ['Prendre ses repères', 'Regarder les détails', 'Faire une pause au jardin'], texts: ['Commencez par Bab Boujloud et découvrez la médina, sans chercher à tout voir dès le premier jour.', 'Consacrez cette journée à la médersa Al Attarine et aux métiers de la médina. Gardez du temps pour les pauses et les détours.', 'Terminez par Jnan Sbil, puis retrouvez les ruelles ou les lieux que vous souhaitez revoir.'], map: 'Repérer le lieu sur la carte', note: 'Parcours éditorial proposé, sans réservation incluse. Vérifiez les conditions d’accès, les horaires et les tarifs auprès des lieux avant de partir.', source: 'Découvrir Fès avec l’Office national marocain du tourisme', budget: 'Préparer mon budget', places: 'Explorer tous les lieux' },
@@ -39,7 +40,7 @@ const rabat = {
   ar: { title: 'يومان في العاصمة', intro: 'مسار لاكتشاف المدينة العتيقة والأوداية والمعالم الكبرى، مع وقت للحدائق والاستراحة.', titles: ['المدينة العتيقة والأوداية', 'من صومعة حسان إلى شالة'], texts: ['تجوّل في المدينة العتيقة ثم اتجه إلى قصبة الأوداية. خذ وقتك لتأمّل الأبواب والأزقة والحدائق، ثم استرح أمام أبي رقراق.', 'ابدأ من ساحة صومعة حسان، ثم انتقل إلى شالة بالوسيلة المناسبة لإيقاعك، فهما موقعان منفصلان. تحقّق من شروط الزيارة قبل الانطلاق.'], source: 'اكتشف الرباط مع المكتب الوطني المغربي للسياحة' },
 }[lang];
 const atlantic = city === 'tangier' || city === 'casablanca' ? ATLANTIC_CITY_STAYS[city][lang] : undefined;
-const copy = city === 'chefchaouen' ? { ...shared, ...CHEFCHAOUEN_STAY[lang] } : atlantic ? { ...shared, ...atlantic } : city === 'tafraout' ? { ...shared, ...TAFRAOUT_STAY[lang] } : city === 'dakhla' ? { ...shared, ...DAKHLA_STAY[lang] } : city === 'rabat' ? { ...shared, ...rabat } : city === 'essaouira' ? { ...shared, ...essaouira } : city === 'marrakech' ? { ...shared, ...marrakech } : shared;
+const copy = city === 'chefchaouen' ? { ...shared, ...CHEFCHAOUEN_STAY[lang] } : atlantic ? { ...shared, ...atlantic } : city === 'tafraout' ? { ...shared, ...TAFRAOUT_STAY[lang] } : city === 'dakhla' ? { ...shared, ...DAKHLA_STAY[lang] } : city === 'agadir' ? { ...shared, ...AGADIR_STAY[lang] } : city === 'rabat' ? { ...shared, ...rabat } : city === 'essaouira' ? { ...shared, ...essaouira } : city === 'marrakech' ? { ...shared, ...marrakech } : shared;
 const preparation = {
   fr: { title: 'Avant de partir', note: 'Cochez vos préparatifs pour cette visite. Les cases sont temporaires et ne sont pas enregistrées.', items: ['Confirmer les horaires et les conditions de visite auprès des lieux.', 'Repérer le point de rendez-vous avec votre hébergement.', 'Prévoir des chaussures confortables et de l’eau.', 'Adapter le budget et les pauses au rythme du groupe.'] },
   en: { title: 'Before you set off', note: 'Tick your preparations for this visit. Checkboxes are temporary and are not saved.', items: ['Confirm opening hours and visiting conditions with each venue.', 'Locate the meeting point with your accommodation.', 'Bring comfortable shoes and water.', 'Adapt the budget and breaks to your group’s pace.'] },
@@ -48,8 +49,8 @@ const preparation = {
   ar: { title: 'قبل الانطلاق', note: 'حدّد التحضيرات المنجزة لهذه الزيارة. الاختيارات مؤقتة ولا تُحفظ.', items: ['تأكيد مواعيد وشروط الزيارة لدى كل موقع.', 'تحديد نقطة اللقاء مع مكان الإقامة.', 'إحضار أحذية مريحة وماء.', 'تكييف الميزانية والاستراحات مع إيقاع المجموعة.'] },
 }[lang];
 const coastalPreparation = { fr: 'Prévoir une couche coupe-vent et des chaussures adaptées à la marche.', en: 'Bring a windproof layer and shoes suitable for walking.', es: 'Lleva una prenda cortavientos y calzado adecuado para caminar.', de: 'Eine winddichte Schicht und geeignete Schuhe zum Gehen mitnehmen.', ar: 'إحضار لباس يحمي من الرياح وحذاء مناسب للمشي.' }[lang];
-const preparationItems = preparation.items.map((item, i) => city === 'chefchaouen' && i === 0 ? CHEFCHAOUEN_STAY[lang].preparation : atlantic && i === 0 ? atlantic.preparation : city === 'tafraout' && i === 0 ? TAFRAOUT_STAY[lang].preparation : city === 'dakhla' && i === 0 ? DAKHLA_STAY[lang].preparation : city === 'essaouira' && i === 2 ? coastalPreparation : item);
-const sourceUrl = city === 'tafraout' ? 'https://www.visitmorocco.com/sites/default/files/atoms/files/def_maroc_trek_0810_251026_ok_vf.pdf' : `https://www.visitmorocco.com/fr/voyage/${city === 'tangier' ? 'tanger' : city === 'essaouira' ? 'essaouira-mogador' : city}`;
+const preparationItems = preparation.items.map((item, i) => city === 'chefchaouen' && i === 0 ? CHEFCHAOUEN_STAY[lang].preparation : atlantic && i === 0 ? atlantic.preparation : city === 'tafraout' && i === 0 ? TAFRAOUT_STAY[lang].preparation : city === 'dakhla' && i === 0 ? DAKHLA_STAY[lang].preparation : city === 'agadir' && i === 0 ? AGADIR_STAY[lang].preparation : city === 'essaouira' && i === 2 ? coastalPreparation : item);
+const sourceUrl = city === 'tafraout' ? 'https://www.visitmorocco.com/sites/default/files/atoms/files/def_maroc_trek_0810_251026_ok_vf.pdf' : `https://www.visitmorocco.com/fr/voyage/${city === 'tangier' ? 'tanger' : city === 'essaouira' ? 'essaouira-mogador' : city === 'agadir' ? 'agadir-taghazout' : city}`;
 const atlanticStops = city === 'tangier' ? [
   { id: 'kasbah-museum', query: 'Kasbah Museum Tangier Morocco' },
   { id: 'hercules-caves', query: 'Hercules Caves Tangier Morocco' },
@@ -58,7 +59,10 @@ const atlanticStops = city === 'tangier' ? [
   { id: 'habous', query: 'Quartier Habous Casablanca Morocco' },
 ] : undefined;
 const chefchaouenStops = city === 'chefchaouen' ? [{ id: 'kasbah', query: 'Kasbah Chefchaouen Morocco' }, { id: 'ras-el-ma', query: 'Ras El Ma Chefchaouen Morocco' }].map(stop => ({ ...stop, name: SPOTS.chefchaouen.find(spot => spot.id === stop.id)!.name[lang] })) : undefined;
-const stops = (chefchaouenStops ? chefchaouenStops : atlanticStops ? atlanticStops.map(stop => ({ ...stop, name: SPOTS[city]?.find(spot => spot.id === stop.id)?.name[lang] ?? stop.id })) : city === 'dakhla' ? [
+const stops = (chefchaouenStops ? chefchaouenStops : atlanticStops ? atlanticStops.map(stop => ({ ...stop, name: SPOTS[city]?.find(spot => spot.id === stop.id)?.name[lang] ?? stop.id })) : city === 'agadir' ? [
+  { id: 'oufella', query: 'Agadir Oufella Kasbah Morocco', name: SPOTS.agadir.find(spot => spot.id === 'oufella')!.name[lang] },
+  { id: 'souk-el-had', query: 'Souk El Had Agadir Morocco', name: SPOTS.agadir.find(spot => spot.id === 'souk-el-had')!.name[lang] },
+] : city === 'dakhla' ? [
   { id: 'lagoon', query: 'Dakhla lagoon Morocco', name: SPOTS.dakhla.find(spot => spot.id === 'lagoon')!.name[lang] },
   { id: 'dragon-island', query: 'Dragon Island Dakhla Morocco', name: SPOTS.dakhla.find(spot => spot.id === 'dragon-island')!.name[lang] },
 ] : city === 'tafraout' ? [
@@ -79,13 +83,13 @@ const stops = (chefchaouenStops ? chefchaouenStops : atlanticStops ? atlanticSto
   { id: 'al-attarine', query: 'Al Attarine Madrasa Fes Morocco', name: 'Al Attarine' },
   { id: 'jnan-sbil', query: 'Jnan Sbil Fes Morocco', name: 'Jnan Sbil' },
 ]).map((s) => ({ ...s, photo: placePhoto('spot', `${city}/${s.id}`, lang) }));
-const featuredStop = stops[city === 'essaouira' ? 0 : 1];
+const featuredStop = stops[city === 'essaouira' || city === 'agadir' ? 0 : 1];
 ---
 <section id="stay-plan" class="city-stay container-page section scroll-mt-24" data-stay-city={city} aria-labelledby="stay-plan-title">
   <div class="city-stay__head reveal"><h2 id="stay-plan-title" class="section-title">{copy.title}</h2><p class="section-sub">{copy.intro}</p></div>
   <div class="city-stay__layout">
     <figure class="city-stay__photo reveal"><PlaceImage photo={featuredStop.photo} kind="monument" lang={lang} width={900} widths={[480, 900, 1200]} sizes="(min-width:900px) 42vw, 92vw" class="city-stay__image" />{featuredStop.photo.credit && <PhotoCredit lang={lang} credit={featuredStop.photo.credit} source={featuredStop.photo.source} />}<figcaption>{featuredStop.name}</figcaption></figure>
-    <ol class="city-stay__days reveal">{stops.map((stop, i) => <li><details open={city === 'essaouira' || i === 0}><summary><span class="city-stay__day">{copy.day} {i + 1}</span><span>{copy.titles[i]}</span></summary><div class="city-stay__body"><p>{copy.texts[i]}</p><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stop.query)}`} target="_blank" rel="noopener noreferrer">{copy.map} ↗</a>{city === 'rabat' && i === 1 && <a class="city-stay__extra-stop" href="https://www.google.com/maps/search/?api=1&query=Chellah%20Rabat%20Morocco" target="_blank" rel="noopener noreferrer">{lang === 'ar' ? 'شالة' : 'Chellah'} ↗</a>}</div></details></li>)}</ol>
+  <ol class="city-stay__days reveal">{stops.map((stop, i) => <li><details open={city === 'essaouira' || i === 0}><summary><span class="city-stay__day">{copy.day} {i + 1}</span><span>{copy.titles[i]}</span></summary><div class="city-stay__body"><p>{copy.texts[i]}</p><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stop.query)}`} target="_blank" rel="noopener noreferrer">{copy.map} ↗</a>{city === 'rabat' && i === 1 && <a class="city-stay__extra-stop" href="https://www.google.com/maps/search/?api=1&query=Chellah%20Rabat%20Morocco" target="_blank" rel="noopener noreferrer">{lang === 'ar' ? 'شالة' : 'Chellah'} ↗</a>}{city === 'agadir' && i === 1 && <a class="city-stay__extra-stop" href="https://www.google.com/maps/search/?api=1&query=Agadir+Beach+Morocco" target="_blank" rel="noopener noreferrer">{SPOTS.agadir.find(spot => spot.id === 'beach')!.name[lang]} ↗</a>}</div></details></li>)}</ol>
   </div>
   <fieldset class="city-stay__preparation"><legend>{preparation.title}</legend><p>{preparation.note}</p><div>{preparationItems.map(item => <label><input type="checkbox" /><span>{item}</span></label>)}</div></fieldset>
   <p class="city-stay__note">{copy.note}</p>
