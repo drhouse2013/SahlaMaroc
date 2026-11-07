@@ -161,7 +161,7 @@ Aucune.
 | src/assets/photos/cities/casablanca.jpg | 1600 × 1067 | 203 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/chefchaouen.jpg | 1600 × 1064 | 229 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/dakhla.jpg | 4124 × 1657 | 2463 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cities/el-jadida.jpg | 1600 × 1200 | 240 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/cities/el-jadida.jpg | 5686 × 7581 | 5876 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/errachidia.jpg | 1600 × 1074 | 169 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/essaouira.jpg | 1600 × 1042 | 211 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/fes.jpg | 1400 × 821 | 249 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -329,7 +329,7 @@ Aucune.
 | src/assets/photos/spots/el-jadida-cistern.jpg | 1400 × 1000 | 183 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/el-jadida-deauville-plage.jpg | 1400 × 788 | 130 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/el-jadida-lighthouse.jpg | 1872 × 4000 | 1299 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/spots/el-jadida-mazagan.jpg | 1400 × 937 | 174 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/el-jadida-mazagan.jpg | 5686 × 7581 | 5876 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/el-jadida-municipal-theatre.jpg | 1400 × 788 | 188 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/el-jadida-resistance-museum.jpg | 1400 × 788 | 82 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/el-jadida-sidi-bouzid.jpg | 1400 × 787 | 146 | recadrage 16:9 sous 1600 px : héro à examiner |

@@ -1,6 +1,6 @@
 # Dates déclarées des photographies
 
-Relevé du 2026-11-07 via `node tools/audit-photo-dates.mjs`. 304 entrées des manifestes villes, régions, lieux et guides ; 295 sources Wikimedia uniques interrogées.
+Relevé du 2026-11-07 via `node tools/audit-photo-dates.mjs`. 304 entrées des manifestes villes, régions, lieux et guides ; 294 sources Wikimedia uniques interrogées.
 
 Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli sur DateTime, le nom du fichier ou la date de mise en ligne. Ce sont des déclarations de la source : elles ne prouvent pas à elles seules la date réelle, la netteté, le lieu ou les droits. Les autres hébergeurs et les dates absentes nécessitent une vérification manuelle. Les anciens fichiers non référencés et les photos de repli codées dans guidePhotos.ts ne font pas partie de ce relevé.
 
@@ -26,7 +26,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | cities/agadir | 5 November 2023 (according to Exif data) | DateTimeOriginal | 4624 × 3472 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg> |
 | cities/dakhla | 24 November 2024 (according to Exif data) | DateTimeOriginal | 4124 × 1657 | CC0 | <https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg> |
 | cities/laayoune | 2023-07-30 21:53:09 | DateTimeOriginal | 5280 × 2970 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg> |
-| cities/el-jadida | 2017-01-01 | DateTimeOriginal | 4128 × 3096 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg> |
+| cities/el-jadida | 2026-10-31 11:52:18 | DateTimeOriginal | 5686 × 7581 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg> |
 | cities/saidia | 2015-05-09 18:54:34 | DateTimeOriginal | 3264 × 1836 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg> |
 | cities/guelmim | 2018-01-16 15:26:07 | DateTimeOriginal | 5130 × 2553 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg> |
 | cities/tiznit | 2023-11-08 15:20:29 | DateTimeOriginal | 8000 × 6000 | CC0 | <https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg> |
@@ -116,7 +116,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | spots/dakhla/mount-carmel-church | 2022-10-24 | DateTimeOriginal | 4032 × 2268 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Dakhla_kathKirche_20221024_181750.jpg> |
 | spots/laayoune/cathedral | 2011-04-12 | DateTimeOriginal | 3456 × 2592 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Laayoune_Cathedral_2011.jpg> |
 | spots/laayoune/beach | 2018-10-30 | DateTimeOriginal | 5184 × 3456 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%D8%B4%D8%A7%D8%B7%D8%A6_%D9%81%D9%85_%D8%A7%D9%84%D9%88%D8%A7%D8%AF%D8%8C_%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86.jpg> |
-| spots/el-jadida/mazagan | 2012-03-25 | DateTimeOriginal | 3872 × 2592 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Forteresse_Jadida_03.JPG> |
+| spots/el-jadida/mazagan | 2026-10-31 11:52:18 | DateTimeOriginal | 5686 × 7581 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg> |
 | spots/el-jadida/cistern | 2018-09-11 15:08:19 | DateTimeOriginal | 3977 × 2840 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Water_reflection_Portuguese_Cistern.jpg> |
 | spots/marrakech/souks | Taken on 10 November 2012 | DateTimeOriginal | 3741 × 2471 | CC BY 3.0 | <https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg> |
 | spots/marrakech/tanneries | 2006-08-05 14:17 | DateTimeOriginal | 1632 × 1224 | CC BY-SA 2.0 | <https://commons.wikimedia.org/wiki/File:Marrakech_tanneries_(2846868933).jpg> |
