@@ -195,8 +195,8 @@
 | Île de Mogador | `spots/essaouira-mogador-island.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg> | vérifiée | CC BY-SA 4.0 |
 | Diabat | — (« Photo à venir ») | — | — | placeholder | — |
 | Dar Sultan | — (« Photo à venir ») | — | — | placeholder | — |
-| Port d’Essaouira | `spots/essaouira-fishing-port.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fishing_boats_in_the_port_of_Essaouira,_2008.jpg> | vérifiée | CC0 |
-| Plage d’Essaouira | `spots/essaouira-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_beach_02.jpg> | vérifiée | CC BY-SA 4.0 |
+| Port d’Essaouira | `spots/essaouira-fishing-port.jpg` | Wikimedia Commons (16 mai 2024, 5 760 × 3 840 px) | <https://commons.wikimedia.org/wiki/File:Fishing_Boats_at_Port_of_Essaouira_Sqala.jpg> | vérifiée | CC BY-SA 4.0 |
+| Plage d’Essaouira | `spots/essaouira-beach.jpg` | Wikimedia Commons (19 avril 2026, 5 788 × 3 864 px) | <https://commons.wikimedia.org/wiki/File:Essaouira_coast,_Morocco.jpg> | vérifiée | CC0 1.0 |
 | Place Moulay Hassan | `spots/essaouira-place-moulay-hassan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Place_Moulay_El_Hassan,_Essaouira_(2901935426).jpg> | vérifiée | CC BY-SA 2.0 |
 | Oasis d’Aïn Hajar | — (« Photo à venir ») | — | — | placeholder | — |
 | Sidi Kaouki | `spots/essaouira-sidi-kaouki.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Beach,_Sidi_Kaouki,_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -342,7 +342,7 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Kasbah d’Agadir Oufella | `spots/agadir-oufella.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg> | vérifiée | CC BY-SA 4.0 |
-| Plage et promenade d’Agadir | `spots/agadir-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:02-beach-agadir-morocco.JPG> | vérifiée | CC BY-SA 3.0 |
+| Plage d’Agadir et tour de sauveteur | `spots/agadir-beach.jpg` | Wikimedia Commons (13 janvier 2025, 3 024 × 3 165 px) | <https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg> | vérifiée | CC BY 4.0 |
 | Souk El Had | `spots/agadir-souk-el-had.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée Mémoire d’Agadir | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée du patrimoine amazigh | `spots/agadir-amazigh-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -523,3 +523,4 @@
 | Place El Mechouar | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage d’Aglou | `spots/tiznit-aglou-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc national de Souss-Massa | `spots/tiznit-souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Viewpoint_Massa_Delta_Souss-Massa_Park_Oct25_A7CR_08026.jpg> | vérifiée | CC BY-SA 4.0 |
+

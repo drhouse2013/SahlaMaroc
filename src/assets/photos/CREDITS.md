@@ -68,7 +68,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tafraout-painted-rocks.jpg | Simohnt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Colored_Rocks_1.jpg |
 | spots/tafraout-napoleons-hat.jpg | Just Booked A Trip | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg |
 | spots/agadir-oufella.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg |
-| spots/agadir-beach.jpg | Elmschrat | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:02-beach-agadir-morocco.JPG |
+| spots/agadir-beach.jpg | Fmc2026 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg (prise de vue du 13 janvier 2025, 3 024 × 3 165 px) |
 | spots/agadir-souk-el-had.jpg | Anass Sedrati | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg |
 | spots/agadir-amazigh-museum.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg |
 | spots/dakhla-lighthouse.jpg | Vanbasten 23 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Faro_de_Dajla.jpg |
@@ -235,8 +235,8 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/fes-dar-batha.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_Batha_DSCF2801.jpg |
 | spots/fes-jnan-sbil.jpg | just_a_cheeseburger | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Jnan_Sbil_(Bou_Jeloud_Gardens),_Fes_(8952352159).jpg |
 | spots/fes-glaoui-palace.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_Glaoui_Fes_DSCF4279.jpg |
-| spots/essaouira-fishing-port.jpg | DimiTalen | CC0 | https://commons.wikimedia.org/wiki/File:Fishing_boats_in_the_port_of_Essaouira,_2008.jpg |
-| spots/essaouira-beach.jpg | Adam Harangozó | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_beach_02.jpg |
+| spots/essaouira-fishing-port.jpg | ErnestK91 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fishing_Boats_at_Port_of_Essaouira_Sqala.jpg |
+| spots/essaouira-beach.jpg | Mustang Joe | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Essaouira_coast,_Morocco.jpg (prise de vue du 19 avril 2026, 5 788 × 3 864 px) |
 | spots/essaouira-place-moulay-hassan.jpg | mwanasimba from La Réunion | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Place_Moulay_El_Hassan,_Essaouira_(2901935426).jpg |
 | spots/essaouira-sidi-kaouki.jpg | Goldfinchshuffle | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Beach,_Sidi_Kaouki,_Morocco.jpg |
 | spots/chefchaouen-grand-mosque.jpg | cat_collector | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_(23479090035).jpg |
@@ -384,3 +384,4 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 ## Ifrane — lac Aïn Ifrane, avril 2025
 
 - `cities/ifrane-lake-2025.jpg` : RACHID BAYA, CC0 1.0. [Source](https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg). Prise de vue déclarée le 27 avril 2025, original 4080×2296 conservé sans modification. SHA-256 : `6AA2B43A34E2B26069C907916143338C406726E3458A4E8A600A939FEED10BD1`. Remplace la vue de rue d'Ifrane de 2023 ; Astro génère les formats AVIF/WebP.
+
