@@ -37,7 +37,7 @@
 | Ouarzazate | `cities/ouarzazate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> | vérifiée | CC BY-SA 4.0 |
 | Oujda | `cities/oujda.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Al Hoceïma | `cities/al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> | vérifiée | CC BY-SA 4.0 |
-| Merzouga | `cities/merzouga.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Les_dunes_de_Merzouga_(Une_caravane_de_chameaux_).jpg> | vérifiée | CC BY-SA 4.0 |
+| Merzouga | `cities/merzouga.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg> | vérifiée | CC0 |
 | Tafraout | `cities/tafraout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg> | vérifiée | CC BY 3.0 |
 | Agadir | `cities/agadir.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg> | vérifiée | CC BY-SA 4.0 |
 | Dakhla | `cities/dakhla.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg> | vérifiée | CC0 1.0 |

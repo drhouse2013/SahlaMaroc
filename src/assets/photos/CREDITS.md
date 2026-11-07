@@ -398,3 +398,8 @@ Originaux Wikimedia récupérés sans modification pour éviter la perte de dét
 ## Taroudant — remparts, octobre 2026
 
 - `cities/taroudant.jpg` et `spots/taroudant-ramparts.jpg` : JBPedia, CC BY-SA 4.0. Prise déclarée le 10 octobre 2026 à 12:26:29 ; original 4160 × 1968 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg. Versions et recadrages Astro sous la même licence. Remplace les vues de ville de 2016 et des remparts de 2011.
+
+
+## Merzouga — dunes, avril 2026
+
+- `cities/merzouga.jpg` : Mustang Joe, CC0 1.0. Date déclarée : 15 avril 2026, 19:27:13. Original 6016 × 4016 conservé sans modification ; conversions et recadrages par Astro. Source : https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg. Remplace la vue de 2019.

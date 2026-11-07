@@ -182,14 +182,14 @@
   "merzouga": {
     "file": "merzouga.jpg",
     "alt": {
-      "fr": "Caravane de dromadaires dans les dunes de Merzouga",
-      "en": "Camel caravan in the Merzouga dunes",
-      "es": "Caravana de dromedarios en las dunas de Merzouga",
-      "de": "Kamelkarawane in den Dünen von Merzouga",
-      "ar": "قافلة جمال في كثبان مرزوكة"
+      "fr": "Dunes de Merzouga aux crêtes dorées et aux ombres profondes",
+      "en": "Merzouga dunes with golden ridges and deep shadows",
+      "es": "Dunas de Merzouga con crestas doradas y sombras profundas",
+      "de": "Dünen von Merzouga mit goldenen Kämmen und tiefen Schatten",
+      "ar": "كثبان مرزوكة بقمم ذهبية وظلال عميقة"
     },
-    "credit": "Houssain tork, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Les_dunes_de_Merzouga_(Une_caravane_de_chameaux_).jpg"
+    "credit": "Mustang Joe, CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg"
   },
   "home-hero": {
     "file": "home-hero.jpg",

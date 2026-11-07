@@ -174,7 +174,7 @@ Aucune.
 | src/assets/photos/cities/marrakech-jemaa-night-2026.jpg | 3072 × 4080 | 3517 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/marrakech.jpg | 1600 × 1067 | 196 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/meknes.jpg | 1600 × 1067 | 216 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cities/merzouga.jpg | 1600 × 900 | 149 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/cities/merzouga.jpg | 6016 × 4016 | 9880 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/nador-corniche-2026.jpg | 2268 × 4032 | 1128 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/nador.jpg | 1600 × 1067 | 241 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/ouarzazate.jpg | 1600 × 1044 | 233 | dimensions suffisantes ; cadrage à vérifier |
