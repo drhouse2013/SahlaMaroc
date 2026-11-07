@@ -523,4 +523,3 @@
 | Place El Mechouar | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage d’Aglou | `spots/tiznit-aglou-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc national de Souss-Massa | `spots/tiznit-souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Viewpoint_Massa_Delta_Souss-Massa_Park_Oct25_A7CR_08026.jpg> | vérifiée | CC BY-SA 4.0 |
-

@@ -2,7 +2,7 @@
 
 Généré par `node tools/audit-image-quality.mjs` le 2026-11-07.
 
-**493 fichiers examinés**, dont 111 vectoriels ; 4 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
+**493 fichiers examinés**, dont 111 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
 
 Périmètre : toutes les images de `src/assets` et `public`, y compris les images non utilisées et les variantes déjà générées. Les sorties `dist` et les dépendances sont exclues. Les dimensions tiennent compte de la rotation EXIF. Seules les photographies de `src/assets/photos` sont soumises aux seuils : largeur disponible après recadrage 4:3 pour les cartes (720 px) et 16:9 pour les héros (1600 px). Les seuils repèrent les sources à examiner : le rôle réel, le ratio et le cadrage doivent être contrôlés dans les pages. Une grande dimension ne prouve ni la netteté, ni la date, ni le lieu, ni la licence. Les fichiers ICO sont signalés si le décodeur ne les lit pas.
 
@@ -10,10 +10,6 @@ Périmètre : toutes les images de `src/assets` et `public`, y compris les image
 
 | Fichier | Dimensions orientées | Poids Ko | Revue à prévoir |
 |---|---:|---:|---|
-| src/assets/photos/cdm-stade-ibn-batouta.jpg | 1600 × 536 | 133 | recadrage 4:3 sous 720 px : carte à examiner |
-| src/assets/photos/spots/agadir-marina.jpg | 1400 × 515 | 116 | recadrage 4:3 sous 720 px : carte à examiner |
-| src/assets/photos/spots/al-hoceima-cala-iris.jpg | 1400 × 394 | 59 | recadrage 4:3 sous 720 px : carte à examiner |
-| src/assets/photos/spots/al-hoceima-sfiha.jpg | 1400 × 281 | 53 | recadrage 4:3 sous 720 px : carte à examiner |
 
 ## Références manquantes
 
@@ -154,7 +150,7 @@ Aucune.
 | src/assets/photos/casablanca-hassan2-corniche-2024.jpg | 1600 × 720 | 139 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/casablanca-hassan2.jpg | 1600 × 1064 | 173 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cascades-ouzoud.jpg | 1600 × 1068 | 233 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cdm-stade-ibn-batouta.jpg | 1600 × 536 | 133 | recadrage 4:3 sous 720 px : carte à examiner |
+| src/assets/photos/cdm-stade-ibn-batouta.jpg | 2048 × 686 | 211 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/cdm2030-stade-moulay-abdellah.jpg | 1600 × 1067 | 234 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/chefchaouen-fontaine.jpg | 1600 × 1064 | 242 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/chefchaouen-place-haouta-2025.jpg | 1600 × 1064 | 239 | dimensions suffisantes ; cadrage à vérifier |
@@ -282,7 +278,7 @@ Aucune.
 | src/assets/photos/spots/agadir-coco-polizzi-medina.jpg | 1400 × 1050 | 165 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-crocodile-park.jpg | 1400 × 788 | 168 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-ibn-zaidoun-garden.jpg | 1440 × 1080 | 343 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/agadir-marina.jpg | 1400 × 515 | 116 | recadrage 4:3 sous 720 px : carte à examiner |
+| src/assets/photos/spots/agadir-marina.jpg | 4381 × 1611 | 3413 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/agadir-mohammed-v-mosque.jpg | 1400 × 933 | 108 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-olhao-garden.jpg | 1400 × 930 | 181 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-oufella.jpg | 1400 × 1050 | 189 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -290,10 +286,10 @@ Aucune.
 | src/assets/photos/spots/agadir-souk-el-had.jpg | 1400 × 1400 | 191 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-valley-of-birds.jpg | 1400 × 930 | 187 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/al-hoceima-alhucemas-islands.jpg | 1400 × 655 | 177 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/al-hoceima-cala-iris.jpg | 1400 × 394 | 59 | recadrage 4:3 sous 720 px : carte à examiner |
+| src/assets/photos/spots/al-hoceima-cala-iris.jpg | 11550 × 3255 | 8397 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/al-hoceima-national-park.jpg | 1400 × 1050 | 190 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/al-hoceima-quemado.jpg | 1400 × 681 | 197 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/al-hoceima-sfiha.jpg | 1400 × 281 | 53 | recadrage 4:3 sous 720 px : carte à examiner |
+| src/assets/photos/spots/al-hoceima-sfiha.jpg | 9168 × 1840 | 6568 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/asilah-grand-mosque.jpg | 1400 × 1123 | 126 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/asilah-medina.jpg | 1400 × 1050 | 181 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/asilah-murals.jpg | 1400 × 934 | 155 | recadrage 16:9 sous 1600 px : héro à examiner |

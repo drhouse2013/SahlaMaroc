@@ -385,3 +385,11 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 ## Ifrane — lac Aïn Ifrane, avril 2025
 
 - `cities/ifrane-lake-2025.jpg` : RACHID BAYA, CC0 1.0. [Source](https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg). Prise de vue déclarée le 27 avril 2025, original 4080×2296 conservé sans modification. SHA-256 : `6AA2B43A34E2B26069C907916143338C406726E3458A4E8A600A939FEED10BD1`. Remplace la vue de rue d'Ifrane de 2023 ; Astro génère les formats AVIF/WebP.
+
+## Originaux panoramiques rétablis — 7 novembre 2026
+
+Originaux Wikimedia récupérés sans modification pour éviter la perte de détails des copies réduites. Les auteurs, licences, lieux et dates de prise de vue restent ceux des sources déjà créditées. Les conversions et recadrages sont produits par Astro.
+- src/assets/photos/spots/agadir-marina.jpg — SHA-256 : C1F1CEE0F59246246F859C756C775A13B9764BD1ECA813CF318F46B762838E10
+- src/assets/photos/spots/al-hoceima-cala-iris.jpg — SHA-256 : 4BB0078DDA40294CAE0EDFA28E77D27577A98853A0D599F72AA17DAC29ED251E
+- src/assets/photos/spots/al-hoceima-sfiha.jpg — SHA-256 : AA5272AAF663F3A225F21B7F7B6D4071187991AF8BE5AAD035D153D96725B34E
+- src/assets/photos/cdm-stade-ibn-batouta.jpg — SHA-256 : DF8C7027311044FE0B2E88E1E6946AE9115DB61E3E338555A28BE37D2AF2D8F6
