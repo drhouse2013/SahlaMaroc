@@ -109,7 +109,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/essaouira-skala.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg |
 | spots/essaouira-mogador-island.jpg | Christian Pirkl, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg |
 | spots/chefchaouen-kasbah.jpg | Emilien Lebourgeois, Public domain | https://commons.wikimedia.org/wiki/File:20230914_12h3632EX_Chefchaouen_Kasbah_(53256409248).jpg |
-| spots/chefchaouen-outa-el-hammam.jpg | Badr Rachadi, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen-the-blue-city-of-morocco-with-the-mountain-view-in-the-backrgound.jpg |
+| spots/chefchaouen-outa-el-hammam.jpg | Dennis Sylvester Hurd, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_(55312834484).jpg |
 | spots/chefchaouen-ras-el-ma.jpg | YoTuT from United States, CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen,_Morocco_(5409596611)_(4).jpg |
 | spots/chefchaouen-spanish-mosque.jpg | Emilien Lebourgeois, Public domain | https://commons.wikimedia.org/wiki/File:20230914_14h1617Em_Chefchaouen_(53255237732).jpg |
 
