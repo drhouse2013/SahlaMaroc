@@ -1,6 +1,6 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-02. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-07. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
 **Total : 339 lieux, 263 photos vérifiées, 75 placeholders (« Photo à venir »), 1 à confirmer.**
 
@@ -518,7 +518,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Médina et remparts de Tiznit | `spots/tiznit-medina-walls.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tiznit_gate_and_citywall_1989.jpg> | vérifiée | CC BY-SA 4.0 |
+| Médina et remparts de Tiznit | `spots/tiznit-medina-walls.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Ait_jerrar_Tiznit.jpg> | vérifiée | CC0 1.0 |
 | Source bleue (Aïn Akdim) | — (« Photo à venir ») | — | — | placeholder | — |
 | Place El Mechouar | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage d’Aglou | `spots/tiznit-aglou-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg> | vérifiée | CC BY-SA 4.0 |

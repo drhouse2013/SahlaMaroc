@@ -367,3 +367,7 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 ## Larache — place de la Libération, novembre 2024
 
 - `cities/larache.jpg` et `spots/larache-place-liberation.jpg` : Ideophagous, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). [Source](https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg). Date déclarée : 7 novembre 2024. Original 4080 × 3060 conservé à l’octet, SHA-256 802ed1a87ff881bede0c7bd731b2d38c3113d4451ba1ec5dfa8d6e672930aae1. La photo de la place déjà présente en miniature est rétablie en HD et devient le visuel de la ville, à la place de la vue de 2014. Conversions AVIF/WebP par Astro ; cadrage du visuel ville en CSS 50 % 70 %.
+
+## Tiznit — Bab Aït Jerrar, novembre 2023
+
+- `spots/tiznit-medina-walls.jpg` : Rachidourkia, CC0 1.0. Source : https://commons.wikimedia.org/wiki/File:Bab_Ait_jerrar_Tiznit.jpg. Prise de vue déclarée le 8 novembre 2023, original 6000×8000 conservé sans modification.
