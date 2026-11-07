@@ -48,7 +48,7 @@
 | Tiznit | `cities/tiznit.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg> | vérifiée | CC0 1.0 |
 | Sidi Ifni | `cities/sidi-ifni.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg> | vérifiée | CC BY-SA 4.0 |
 | Taroudant | `cities/taroudant.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls.jpg> | vérifiée | CC BY-SA 4.0 |
-| Zagora | `cities/zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_56-2.jpg> | vérifiée | CC BY-SA 4.0 |
+| Zagora | `cities/zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Errachidia | `cities/errachidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg> | vérifiée | CC BY-SA 3.0 |
 | Ifrane | `cities/ifrane-lake-2025.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg> | vérifiée | CC0 1.0 |
 | Asilah | `cities/asilah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_ramparts_of_the_Old_Medina_of_Asilah.jpg> | vérifiée | CC BY-SA 4.0 |
