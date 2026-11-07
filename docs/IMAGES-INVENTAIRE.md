@@ -206,7 +206,7 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Kasbah de Chefchaouen | `spots/chefchaouen-kasbah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:20230914_12h3632EX_Chefchaouen_Kasbah_(53256409248).jpg> | vérifiée | Public domain |
-| Place Outa el-Hammam | `spots/chefchaouen-outa-el-hammam.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen-the-blue-city-of-morocco-with-the-mountain-view-in-the-backrgound.jpg> | vérifiée | CC BY-SA 4.0 |
+| Place Outa el-Hammam | `spots/chefchaouen-outa-el-hammam.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen_(55312834484).jpg> | vérifiée | CC BY 4.0 |
 | Ras el-Ma | `spots/chefchaouen-ras-el-ma.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen,_Morocco_(5409596611)_(4).jpg> | vérifiée | CC BY 2.0 |
 | Mosquée espagnole | `spots/chefchaouen-spanish-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:20230914_14h1617Em_Chefchaouen_(53255237732).jpg> | vérifiée | Public domain |
 | Grande mosquée de Chefchaouen | `spots/chefchaouen-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen_(23479090035).jpg> | vérifiée | CC BY 2.0 |
