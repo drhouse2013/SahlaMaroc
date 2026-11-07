@@ -290,14 +290,18 @@
   "tiznit": {
     "file": "tiznit.jpg",
     "alt": {
-      "fr": "Remparts de la médina de Tiznit et kasbah Aghnaj",
-      "en": "Ramparts of the Tiznit medina and Aghnaj kasbah",
-      "es": "Murallas de la medina de Tiznit y alcazaba de Aghnaj",
-      "de": "Stadtmauern der Medina von Tiznit und Kasbah Aghnaj",
-      "ar": "أسوار مدينة تيزنيت وقصبة أغناج"
+      "fr": "Grande mosquée de Tiznit et son minaret ocre, photographiés en novembre 2023",
+      "en": "Grand Mosque of Tiznit and its ochre minaret, photographed in November 2023",
+      "es": "Gran Mezquita de Tiznit y su minarete ocre, fotografiados en noviembre de 2023",
+      "de": "Große Moschee von Tiznit mit ockerfarbenem Minarett, fotografiert im November 2023",
+      "ar": "المسجد الكبير في تيزنيت ومئذنته ذات اللون المغري، صُوّرا في نوفمبر 2023"
     },
-    "credit": "Anass Sedrati, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Kasbah_Aghnaj_Tiznit.jpg"
+    "credit": "Rachidourkia, CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg",
+    "focalPoint": [
+      50,
+      18
+    ]
   },
   "sidi-ifni": {
     "file": "sidi-ifni.jpg",

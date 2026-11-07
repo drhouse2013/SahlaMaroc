@@ -56,6 +56,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | cities/laayoune.jpg | Zakaria Taberkant / Commune of Laayoune | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg |
 | cities/el-jadida.jpg | Mathew Koshy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg |
 | cities/saidia.jpg | Meryem BOURAS | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg |
+| cities/tiznit.jpg | Rachidourkia | CC0 1.0 | https://commons.wikimedia.org/wiki/File:%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1_%D8%AA%D9%8A%D8%B2%D9%86%D9%8A%D8%AA.jpg (photo du 8 novembre 2023, original 8 000 × 6 000 px ; SHA-256 `1D2850E3330456007F9E138F59C9F418CD920FA7DC2DDFF72CF06BCAB225AA8B`) |
 
 
 ## Photos des lieux (groupe 3)
