@@ -393,3 +393,8 @@ Originaux Wikimedia récupérés sans modification pour éviter la perte de dét
 - src/assets/photos/spots/al-hoceima-cala-iris.jpg — SHA-256 : 4BB0078DDA40294CAE0EDFA28E77D27577A98853A0D599F72AA17DAC29ED251E
 - src/assets/photos/spots/al-hoceima-sfiha.jpg — SHA-256 : AA5272AAF663F3A225F21B7F7B6D4071187991AF8BE5AAD035D153D96725B34E
 - src/assets/photos/cdm-stade-ibn-batouta.jpg — SHA-256 : DF8C7027311044FE0B2E88E1E6946AE9115DB61E3E338555A28BE37D2AF2D8F6
+
+
+## Taroudant — remparts, octobre 2026
+
+- `cities/taroudant.jpg` et `spots/taroudant-ramparts.jpg` : JBPedia, CC BY-SA 4.0. Prise déclarée le 10 octobre 2026 à 12:26:29 ; original 4160 × 1968 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg. Versions et recadrages Astro sous la même licence. Remplace les vues de ville de 2016 et des remparts de 2011.

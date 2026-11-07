@@ -1,6 +1,6 @@
 # Dates déclarées des photographies
 
-Relevé du 2026-11-07 via `node tools/audit-photo-dates.mjs`. 304 entrées des manifestes villes, régions, lieux et guides ; 296 sources Wikimedia uniques interrogées.
+Relevé du 2026-11-07 via `node tools/audit-photo-dates.mjs`. 304 entrées des manifestes villes, régions, lieux et guides ; 295 sources Wikimedia uniques interrogées.
 
 Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli sur DateTime, le nom du fichier ou la date de mise en ligne. Ce sont des déclarations de la source : elles ne prouvent pas à elles seules la date réelle, la netteté, le lieu ou les droits. Les autres hébergeurs et les dates absentes nécessitent une vérification manuelle. Les anciens fichiers non référencés et les photos de repli codées dans guidePhotos.ts ne font pas partie de ce relevé.
 
@@ -31,7 +31,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | cities/guelmim | 2018-01-16 15:26:07 | DateTimeOriginal | 5130 × 2553 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg> |
 | cities/tiznit | 2023-11-08 15:20:29 | DateTimeOriginal | 8000 × 6000 | CC0 | <https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg> |
 | cities/sidi-ifni | 2023-11-09 17:45:10 | DateTimeOriginal | 4032 × 3024 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg> |
-| cities/taroudant | 2016-09-24 19:44:26 | DateTimeOriginal | 5184 × 3456 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls.jpg> |
+| cities/taroudant | 2026-10-10 12:26:29 | DateTimeOriginal | 4160 × 1968 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> |
 | cities/zagora | 2026-03-21 14:12:32 | DateTimeOriginal | 3024 × 4032 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg> |
 | cities/errachidia | Taken on 23 September 2012 | DateTimeOriginal | 2048 × 1375 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg> |
 | cities/ifrane | 2025-04-27 16:21:52 | DateTimeOriginal | 4080 × 2296 | CC0 | <https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg> |
@@ -236,7 +236,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | spots/guelmim/tighmert-oasis | Taken on 7 February 2012 | DateTimeOriginal | 4000 × 2664 | CC BY 3.0 | <https://commons.wikimedia.org/wiki/File:Oasis_-_panoramio_(5).jpg> |
 | spots/taroudant/arab-souk | 2025-03-13 12:23:00 | DateTimeOriginal | 3024 × 4032 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Taroudannt_Souk.jpg> |
 | spots/taroudant/tannery | 2013-03-08 09:34:19 | DateTimeOriginal | 2500 × 1667 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Taroudannt_Gerberei.JPG> |
-| spots/taroudant/ramparts | 2011-04-17 | DateTimeOriginal | 3455 × 1891 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls_2011.jpg> |
+| spots/taroudant/ramparts | 2026-10-10 12:26:29 | DateTimeOriginal | 4160 × 1968 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> |
 | spots/larache/medina | à vérifier | — | 3072 × 2304 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Larache_Medina.jpg> |
 | spots/larache/pilar-church | à vérifier | — | 2304 × 3072 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Larache_Iglesia_Pilar.jpg> |
 | spots/larache/lixus | 7 November 2024 (according to Exif data) | DateTimeOriginal | 3264 × 2448 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ruins_at_Lixus_archaeological_site_49.jpg> |

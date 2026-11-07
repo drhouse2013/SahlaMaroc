@@ -47,7 +47,7 @@
 | Guelmim | `cities/guelmim.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tiznit | `cities/tiznit.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg> | vérifiée | CC0 1.0 |
 | Sidi Ifni | `cities/sidi-ifni.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg> | vérifiée | CC BY-SA 4.0 |
-| Taroudant | `cities/taroudant.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls.jpg> | vérifiée | CC BY-SA 4.0 |
+| Taroudant | `cities/taroudant.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> | vérifiée | CC BY-SA 4.0 |
 | Zagora | `cities/zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Errachidia | `cities/errachidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg> | vérifiée | CC BY-SA 3.0 |
 | Ifrane | `cities/ifrane-lake-2025.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg> | vérifiée | CC0 1.0 |
@@ -446,7 +446,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Remparts de Taroudant | `spots/taroudant-ramparts.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls_2011.jpg> | vérifiée | CC BY-SA 3.0 |
+| Remparts de Taroudant | `spots/taroudant-ramparts.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> | vérifiée | CC BY-SA 4.0 |
 | Souk arabe (Kissaria) | `spots/taroudant-arab-souk.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudannt_Souk.jpg> | vérifiée | CC BY-SA 4.0 |
 | Souk berbère (Jnane Jamaa) | — (« Photo à venir ») | — | — | placeholder | — |
 | Tannerie de Taroudant | `spots/taroudant-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudannt_Gerberei.JPG> | vérifiée | CC BY-SA 3.0 |
