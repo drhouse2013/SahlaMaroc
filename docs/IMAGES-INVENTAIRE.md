@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-07. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 264 photos vérifiées, 75 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 265 photos vérifiées, 74 placeholders (« Photo à venir »), 0 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 220 | 75 | 0 |
+| Lieux à visiter | 295 | 221 | 74 | 0 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -216,11 +216,11 @@
 | Écomusée du parc de Talassemtane | — (« Photo à venir ») | — | — | placeholder | — |
 | Colline de l'hôtel Atlas | — (« Photo à venir ») | — | — | placeholder | — |
 
-### Taghazout (3/6 vérifiées)
+### Taghazout (4/6 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Anchor Point | — (« Photo à venir ») | — | — | placeholder | — |
+| Anchor Point | `spots/taghazout-anchor-point.jpg` | Unsplash | <https://unsplash.com/photos/a-person-standing-on-a-rock-watching-a-wave-LH_ribmaYRo> | vérifiée | Unsplash License |
 | Hash Point | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage Panorama | `spots/taghazout-panorama.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_beach_at_Taghazout.jpg> | vérifiée | CC BY 2.0 |
 | Paradise Valley | `spots/taghazout-paradise-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_Paradise_Valley.jpg> | vérifiée | CC BY-SA 4.0 |
