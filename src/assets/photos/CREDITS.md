@@ -375,3 +375,7 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 ## Zagora — panneau de Tombouctou, mars 2026
 
 - `spots/zagora-timbuktu-sign-2026.jpg` : Cesar.mx22, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:Zagora_City.jpg). Prise de vue déclarée le 21 mars 2026, original 4000×6000 conservé sans modification ; cadrage adaptatif centré à 72 % verticalement. Versions AVIF/WebP produites par Astro.
+
+## Ifrane — lac Aïn Ifrane, avril 2025
+
+- `cities/ifrane-lake-2025.jpg` : RACHID BAYA, CC0 1.0. [Source](https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg). Prise de vue déclarée le 27 avril 2025, original 4080×2296 conservé sans modification. SHA-256 : `6AA2B43A34E2B26069C907916143338C406726E3458A4E8A600A939FEED10BD1`. Remplace la vue de rue d'Ifrane de 2023 ; Astro génère les formats AVIF/WebP.

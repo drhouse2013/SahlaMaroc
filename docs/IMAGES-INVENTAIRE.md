@@ -50,7 +50,7 @@
 | Taroudant | `cities/taroudant.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls.jpg> | vérifiée | CC BY-SA 4.0 |
 | Zagora | `cities/zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_56-2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Errachidia | `cities/errachidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg> | vérifiée | CC BY-SA 3.0 |
-| Ifrane | `cities/ifrane.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Street_in_Ifrane_-_2023.jpg> | vérifiée | CC BY-SA 4.0 |
+| Ifrane | `cities/ifrane-lake-2025.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg> | vérifiée | CC0 1.0 |
 | Asilah | `cities/asilah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_ramparts_of_the_Old_Medina_of_Asilah.jpg> | vérifiée | CC BY-SA 4.0 |
 | Larache | `cities/larache.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg> | vérifiée | CC BY-SA 4.0 |
 | Kenitra | `cities/kenitra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Gare_de_train_(TGV)._KENITRA._Maroc.jpg> | vérifiée | CC BY-SA 4.0 |
