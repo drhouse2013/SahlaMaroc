@@ -371,3 +371,7 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 ## Tiznit — Bab Aït Jerrar, novembre 2023
 
 - `spots/tiznit-medina-walls.jpg` : Rachidourkia, CC0 1.0. Source : https://commons.wikimedia.org/wiki/File:Bab_Ait_jerrar_Tiznit.jpg. Prise de vue déclarée le 8 novembre 2023, original 6000×8000 conservé sans modification.
+
+## Zagora — panneau de Tombouctou, mars 2026
+
+- `spots/zagora-timbuktu-sign-2026.jpg` : Cesar.mx22, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:Zagora_City.jpg). Prise de vue déclarée le 21 mars 2026, original 4000×6000 conservé sans modification ; cadrage adaptatif centré à 72 % verticalement. Versions AVIF/WebP produites par Astro.

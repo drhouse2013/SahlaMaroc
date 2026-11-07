@@ -2565,16 +2565,17 @@
   "source": "https://commons.wikimedia.org/wiki/File:Asilah_(36493700570).jpg"
  },
  "zagora/timbuktu-sign": {
-  "file": "zagora-timbuktu-sign.jpg",
+  "file": "zagora-timbuktu-sign-2026.jpg",
   "alt": {
-   "fr": "Panneau de Zagora indiquant « Tombouctou 52 jours », avec un chameau et un chamelier",
-   "en": "Zagora sign reading “Timbuktu 52 days”, with a camel and a cameleer",
-   "es": "Cartel de Zagora con la inscripción «Tombuctú 52 días», con un camello y un caravanero",
-   "de": "Schild in Zagora mit der Aufschrift „Timbuktu 52 Tage“, mit Kamel und Kameltreiber",
-   "ar": "لوحة في زاكورة تحمل عبارة «تمبكتو 52 يوماً»، عليها جمل ومرافق قافلة"
+   "fr": "Portail en pisé à Zagora, avec le panneau « Tombouctou 52 jours »",
+   "en": "Earthen gateway in Zagora with the “Timbuktu 52 days” sign",
+   "es": "Portal de tierra en Zagora con el cartel «Tombuctú 52 días»",
+   "de": "Tor aus Stampflehm in Zagora mit dem Schild „Timbuktu 52 Tage“",
+   "ar": "بوابة من التراب المدكوك في زاكورة وعليها لافتة «تمبكتو 52 يوماً»"
   },
-  "credit": "ComQuat, CC0",
-  "source": "https://commons.wikimedia.org/wiki/File:Sign_Timbuktu_52_Days.jpg"
+  "credit": "Cesar.mx22, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Zagora_City.jpg",
+  "focalPoint": [50, 72]
  },
  "sidi-ifni/legzira": {
   "file": "sidi-ifni-legzira.jpg",

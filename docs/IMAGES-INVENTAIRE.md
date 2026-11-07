@@ -25,7 +25,7 @@
 |---|---|---|---|---|---|
 | Marrakech | `cities/marrakech-jemaa-night-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg> | vérifiée | CC BY-SA 4.0 |
 | Casablanca | `cities/casablanca.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> | vérifiée | CC BY-SA 4.0 |
-| Rabat | `cities/rabat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Oudayas,_Rabat,_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
+| Rabat | `cities/rabat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_des_Oudayas_%C3%A0_Rabat.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tanger | `cities/tangier.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg> | vérifiée | CC BY-SA 4.0 |
 | Fès | `cities/fes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Essaouira | `cities/essaouira.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -40,7 +40,7 @@
 | Merzouga | `cities/merzouga.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Les_dunes_de_Merzouga_(Une_caravane_de_chameaux_).jpg> | vérifiée | CC BY-SA 4.0 |
 | Tafraout | `cities/tafraout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg> | vérifiée | CC BY 3.0 |
 | Agadir | `cities/agadir.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg> | vérifiée | CC BY-SA 4.0 |
-| Dakhla | `cities/dakhla.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kitesurfing_in_Dakhla,_Western_Sahara.JPG> | vérifiée | CC BY-SA 4.0 |
+| Dakhla | `cities/dakhla.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg> | vérifiée | CC0 1.0 |
 | Laayoune | `cities/laayoune.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg> | vérifiée | CC BY-SA 4.0 |
 | El Jadida | `cities/el-jadida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg> | vérifiée | CC BY-SA 4.0 |
 | Saidia | `cities/saidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -496,7 +496,7 @@
 |---|---|---|---|---|---|
 | Palmeraie de Zagora | — (« Photo à venir ») | — | — | placeholder | — |
 | Jebel Zagora | `spots/zagora-jebel-zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mount_Zagora,_Morocco_(5422834133)_(6).jpg> | vérifiée | CC BY 2.0 |
-| Panneau de Tombouctou | `spots/zagora-timbuktu-sign.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sign_Timbuktu_52_Days.jpg> | vérifiée | CC0 |
+| Panneau de Tombouctou | `spots/zagora-timbuktu-sign-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_City.jpg> | vérifiée | CC BY-SA 4.0 |
 | Bibliothèque de Tamegroute | — (« Photo à venir ») | — | — | placeholder | — |
 | Poterie verte de Tamegroute | `spots/zagora-tamegroute-pottery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tamegroute_Pottery.jpg> | vérifiée | CC BY-SA 2.0 |
 | Ksar Tissergate | — (« Photo à venir ») | — | — | placeholder | — |
