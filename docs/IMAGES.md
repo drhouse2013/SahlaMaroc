@@ -64,3 +64,8 @@ npm run images:inventory    # régénère docs/IMAGES-INVENTAIRE.md
 npm run images:candidates   # candidats Unsplash/Pexels (si clés)
 npm run check:content && npm run build
 ```
+
+
+## Recherche Wikimedia sans clé
+
+Wikimedia Commons est désormais actif par défaut dans images:candidates. Utiliser node tools/fetch-place-photos.mjs --commons-only --limit 73 --per 3 pour examiner les lieux sans photo, sans clé externe. --no-commons conserve le mode Unsplash/Pexels seul. Chaque candidat comporte la date déclarée DateTimeOriginal, la licence et les dimensions, sans intégration automatique. Les recherches par nom français et ville peuvent aussi retrouver des homonymes : confirmer le lieu dans la description, les coordonnées et la photographie. Aucune date de publication ne remplace une date de prise de vue manquante.
