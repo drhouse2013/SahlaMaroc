@@ -331,7 +331,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Rochers peints | `spots/tafraout-painted-rocks.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Colored_Rocks_1.jpg> | vérifiée | CC BY-SA 4.0 |
+| Rochers peints | `spots/tafraout-painted-rocks.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Painted_Rocks_Trafraoute.jpg> | vérifiée | CC BY-SA 4.0 |
 | Chapeau de Napoléon | `spots/tafraout-napoleons-hat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg> | vérifiée | CC BY 2.0 |
 | Gorges d’Aït Mansour | — (« Photo à venir ») | — | — | placeholder | — |
 | Agard Oudad | — (« Photo à venir ») | — | — | placeholder | — |
