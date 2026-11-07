@@ -330,14 +330,18 @@
   "zagora": {
     "file": "zagora.jpg",
     "alt": {
-      "fr": "Avenue bordée de palmiers au centre de Zagora (2016)",
-      "en": "Palm-lined avenue in central Zagora (2016)",
-      "es": "Avenida con palmeras en el centro de Zagora (2016)",
-      "de": "Palmengesäumte Allee im Zentrum von Zagora (2016)",
-      "ar": "شارع تصطف فيه النخيل وسط زاكورة (2016)"
+      "fr": "Mosquée aux façades ocre et au minaret orné, Zagora",
+      "en": "Ochre mosque with an ornate minaret in Zagora",
+      "es": "Mezquita ocre con minarete decorado en Zagora",
+      "de": "Ockerfarbene Moschee mit verziertem Minarett in Zagora",
+      "ar": "مسجد بواجهات بلون المغرة ومئذنة مزخرفة في زاكورة"
     },
-    "credit": "Stegop, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Zagora_56-2.jpg"
+    "credit": "Cesar.mx22, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg",
+    "focalPoint": [
+      50,
+      68
+    ]
   },
   "errachidia": {
     "file": "errachidia.jpg",
