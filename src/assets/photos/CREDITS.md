@@ -41,7 +41,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | cities/fes.jpg | Petar Milošević | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg |
 | cities/essaouira.jpg | Christinagrabelusshaikh | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg |
 | cities/chefchaouen.jpg | Badr Rachadi | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg |
-| cities/taghazout.jpg | Hamza Izourane | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fishing_boats_in_Taghazout.jpg |
+| cities/taghazout.jpg | 瑞丽江的河水 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg |
 | cities/nador.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg |
 | cities/tetouan.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg |
 | cities/meknes.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg |
