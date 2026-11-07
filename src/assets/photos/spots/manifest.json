@@ -719,14 +719,14 @@
  "agadir/beach": {
   "file": "agadir-beach.jpg",
   "alt": {
-   "fr": "Plage et promenade du front de mer d'Agadir",
-   "en": "Agadir beach and seafront promenade",
-   "es": "Playa y paseo marítimo de Agadir",
-   "de": "Strand und Strandpromenade von Agadir",
-   "ar": "شاطئ ومنتزه الواجهة البحرية في أكادير"
+   "fr": "Tour de sauveteur en bois sur la plage d’Agadir, face à l’Atlantique",
+   "en": "Wooden lifeguard tower on Agadir beach facing the Atlantic",
+   "es": "Torre de salvavidas de madera en la playa de Agadir frente al Atlántico",
+   "de": "Hölzerner Rettungsturm am Strand von Agadir mit Blick auf den Atlantik",
+   "ar": "برج إنقاذ خشبي على شاطئ أكادير مقابل المحيط الأطلسي"
   },
-  "credit": "Elmschrat, CC BY-SA 3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:02-beach-agadir-morocco.JPG"
+  "credit": "Fmc2026, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg"
  },
  "agadir/souk-el-had": {
   "file": "agadir-souk-el-had.jpg",
@@ -1379,26 +1379,26 @@
  "essaouira/fishing-port": {
   "file": "essaouira-fishing-port.jpg",
   "alt": {
-   "fr": "Barques bleues du port de pêche d’Essaouira",
-   "en": "Blue boats in Essaouira’s fishing port",
-   "es": "Barcas azules del puerto pesquero de Esauira",
-   "de": "Blaue Boote im Fischereihafen von Essaouira",
-   "ar": "قوارب زرقاء في ميناء الصيد بالصويرة"
+   "fr": "Barques de pêche bleues amarrées devant les arches de la sqala du port d’Essaouira",
+   "en": "Blue fishing boats moored in front of the arches at Essaouira's port sqala",
+   "es": "Barcas pesqueras azules amarradas ante los arcos de la sqala del puerto de Esauira",
+   "de": "Blaue Fischerboote vor den Bögen der Sqala am Hafen von Essaouira",
+   "ar": "قوارب صيد زرقاء راسية أمام أقواس السقالة بميناء الصويرة"
   },
-  "credit": "DimiTalen, CC0",
-  "source": "https://commons.wikimedia.org/wiki/File:Fishing_boats_in_the_port_of_Essaouira,_2008.jpg"
+  "credit": "ErnestK91, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Fishing_Boats_at_Port_of_Essaouira_Sqala.jpg"
  },
  "essaouira/beach": {
   "file": "essaouira-beach.jpg",
   "alt": {
-   "fr": "Grande plage de sable d’Essaouira sous un ciel nuageux",
-   "en": "The wide sandy beach of Essaouira under cloudy skies",
-   "es": "La amplia playa de arena de Esauira bajo un cielo nublado",
-   "de": "Der weite Sandstrand von Essaouira unter bewölktem Himmel",
-   "ar": "شاطئ الصويرة الرملي الواسع تحت سماء غائمة"
+   "fr": "Dromadaire sur la plage d’Essaouira, l’Atlantique et la médina en arrière-plan",
+   "en": "Camel on Essaouira beach, with the Atlantic and medina in the background",
+   "es": "Dromedario en la playa de Esauira, con el Atlántico y la medina al fondo",
+   "de": "Dromedar am Strand von Essaouira, Atlantik und Medina im Hintergrund",
+   "ar": "جمل على شاطئ الصويرة وخلفه المحيط الأطلسي والمدينة العتيقة"
   },
-  "credit": "Adam Harangozó, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Essaouira_beach_02.jpg"
+  "credit": "Mustang Joe, CC0 1.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Essaouira_coast,_Morocco.jpg"
  },
  "essaouira/place-moulay-hassan": {
   "file": "essaouira-place-moulay-hassan.jpg",
