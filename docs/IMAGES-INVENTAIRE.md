@@ -42,7 +42,7 @@
 | Agadir | `cities/agadir.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg> | vérifiée | CC BY-SA 4.0 |
 | Dakhla | `cities/dakhla.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg> | vérifiée | CC0 1.0 |
 | Laayoune | `cities/laayoune.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg> | vérifiée | CC BY-SA 4.0 |
-| El Jadida | `cities/el-jadida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg> | vérifiée | CC BY-SA 4.0 |
+| El Jadida | `cities/el-jadida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Saidia | `cities/saidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg> | vérifiée | CC BY-SA 4.0 |
 | Guelmim | `cities/guelmim.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tiznit | `cities/tiznit.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg> | vérifiée | CC0 1.0 |
@@ -386,7 +386,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Cité portugaise de Mazagan | `spots/el-jadida-mazagan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Forteresse_Jadida_03.JPG> | vérifiée | CC BY-SA 3.0 |
+| Cité portugaise de Mazagan | `spots/el-jadida-mazagan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Citerne portugaise | `spots/el-jadida-cistern.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Water_reflection_Portuguese_Cistern.jpg> | vérifiée | CC BY-SA 4.0 |
 | Plage de Deauville | `spots/el-jadida-deauville-plage.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Jadida_Beach.jpg> | vérifiée | CC BY-SA 4.0 |
 | Plage de Sidi Bouzid | `spots/el-jadida-sidi-bouzid.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Bouzid_El_Jadida_.jpg> | vérifiée | CC BY-SA 4.0 |

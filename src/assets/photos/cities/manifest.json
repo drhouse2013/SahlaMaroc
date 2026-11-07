@@ -254,14 +254,18 @@
   "el-jadida": {
     "file": "el-jadida.jpg",
     "alt": {
-      "fr": "Voûtes et reflet dans la citerne portugaise d'El Jadida",
-      "en": "Vaults and reflection in the Portuguese Cistern of El Jadida",
-      "es": "Bóvedas y reflejo en la cisterna portuguesa de El Jadida",
-      "de": "Gewölbe und Spiegelung in der portugiesischen Zisterne von El Jadida",
-      "ar": "أقواس وانعكاس في الصهريج البرتغالي بالجديدة"
+      "fr": "Port et remparts de Mazagan vus à travers une arche de pierre, El Jadida",
+      "en": "Mazagan port and ramparts seen through a stone arch, El Jadida",
+      "es": "Puerto y murallas de Mazagán vistos a través de un arco de piedra, El Jadida",
+      "de": "Hafen und Stadtmauern von Mazagan durch einen Steinbogen gesehen, El Jadida",
+      "ar": "ميناء وأسوار مازغان من خلال قوس حجري في الجديدة"
     },
-    "credit": "Mathew Koshy, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg"
+    "credit": "Xpelli, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg",
+    "focalPoint": [
+      50,
+      30
+    ]
   },
   "saidia": {
     "file": "saidia.jpg",

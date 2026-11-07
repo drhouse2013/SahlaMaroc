@@ -403,3 +403,8 @@ Originaux Wikimedia récupérés sans modification pour éviter la perte de dét
 ## Merzouga — dunes, avril 2026
 
 - `cities/merzouga.jpg` : Mustang Joe, CC0 1.0. Date déclarée : 15 avril 2026, 19:27:13. Original 6016 × 4016 conservé sans modification ; conversions et recadrages par Astro. Source : https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg. Remplace la vue de 2019.
+
+
+## El Jadida — Mazagan, octobre 2026
+
+- `cities/el-jadida.jpg` et `spots/el-jadida-mazagan.jpg` : Xpelli, CC BY-SA 4.0. Date déclarée : 31 octobre 2026, 11:52:18. Original 5686 × 7581 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg. Conversions Astro et recadrage CSS 50 % / 30 % sous la même licence. Remplace les vues de ville de 2017 et de Mazagan de 2012.

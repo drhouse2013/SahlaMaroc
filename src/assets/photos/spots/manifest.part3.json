@@ -146,14 +146,18 @@
  "el-jadida/mazagan": {
   "file": "el-jadida-mazagan.jpg",
   "alt": {
-   "fr": "Remparts et bastion de la cité portugaise de Mazagan",
-   "en": "Ramparts and bastion of the Portuguese city of Mazagan",
-   "es": "Murallas y baluarte de la ciudad portuguesa de Mazagán",
-   "de": "Mauern und Bastion der portugiesischen Stadt Mazagan",
-   "ar": "أسوار وبرج المدينة البرتغالية مازغان"
+   "fr": "Port et remparts de Mazagan vus à travers une arche de pierre, El Jadida",
+   "en": "Mazagan port and ramparts seen through a stone arch, El Jadida",
+   "es": "Puerto y murallas de Mazagán vistos a través de un arco de piedra, El Jadida",
+   "de": "Hafen und Stadtmauern von Mazagan durch einen Steinbogen gesehen, El Jadida",
+   "ar": "ميناء وأسوار مازغان من خلال قوس حجري في الجديدة"
   },
-  "credit": "M. Rais, CC BY-SA 3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Forteresse_Jadida_03.JPG"
+  "credit": "Xpelli, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg",
+  "focalPoint": [
+   50,
+   30
+  ]
  },
  "el-jadida/cistern": {
   "file": "el-jadida-cistern.jpg",
