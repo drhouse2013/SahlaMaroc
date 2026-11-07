@@ -52,7 +52,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | cities/home-hero.jpg | Merzougaloisirs | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg |
 | cities/tafraout.jpg | Marek Ślusarczyk (Tupungato) | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg |
 | cities/agadir.jpg | Francesc Fort | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg |
-| cities/dakhla.jpg | Lärchenholz | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kitesurfing_in_Dakhla,_Western_Sahara.JPG |
+| cities/dakhla.jpg | Tbo47 | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg (photo du 24 novembre 2024, 4 124 × 1 657 px) |
 | cities/laayoune.jpg | Zakaria Taberkant / Commune of Laayoune | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg |
 | cities/el-jadida.jpg | Mathew Koshy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg |
 | cities/saidia.jpg | Meryem BOURAS | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg |
