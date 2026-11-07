@@ -36,7 +36,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 |---|---|---|---|
 | cities/marrakech.jpg | Misa.stefanovic.07 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A01_-_Marrakech,_Koutoubia.jpg |
 | cities/casablanca.jpg | OussamaHamama | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg |
-| cities/rabat.jpg | Bikerhiker75 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Oudayas,_Rabat,_Morocco.jpg |
+| cities/rabat.jpg | TheUmpteenthPostwoman | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_des_Oudayas_%C3%A0_Rabat.jpg (photo du 25 juillet 2025, 4 032 × 3 024 px) |
 | cities/tangier.jpg | Herbert wie | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg |
 | cities/fes.jpg | Petar Milošević | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg |
 | cities/essaouira.jpg | Christinagrabelusshaikh | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg |
