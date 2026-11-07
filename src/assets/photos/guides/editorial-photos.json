@@ -220,5 +220,18 @@
     "credit": "R Prazeres",
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg"
+  },
+  "taghazout-surf": {
+    "file": "taghazout-surf-2026.jpg",
+    "credit": "Desert Morocco Adventure Tours",
+    "license": "Pexels",
+    "source": "https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/",
+    "alt": {
+      "fr": "Deux surfeurs avancent sur la même vague à Taghazout",
+      "en": "Two surfers ride the same wave in Taghazout",
+      "es": "Dos surfistas cabalgan la misma ola en Taghazout",
+      "de": "Zwei Surfer reiten in Taghazout dieselbe Welle",
+      "ar": "راكبان للأمواج يركبان الموجة نفسها في تغازوت"
+    }
   }
 }
