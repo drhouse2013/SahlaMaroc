@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-07. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 265 photos vérifiées, 74 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 266 photos vérifiées, 73 placeholders (« Photo à venir »), 0 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 221 | 74 | 0 |
+| Lieux à visiter | 295 | 222 | 73 | 0 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -337,7 +337,7 @@
 | Agard Oudad | — (« Photo à venir ») | — | — | placeholder | — |
 | Vallée des Ammeln | `spots/tafraout-ammeln-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Valley_of_Ammeln.jpg> | vérifiée | CC BY-SA 4.0 |
 
-### Agadir (12/18 vérifiées)
+### Agadir (13/18 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -348,7 +348,7 @@
 | Musée du patrimoine amazigh | `spots/agadir-amazigh-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc aux crocodiles | `spots/agadir-crocodile-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Excursion_Crocoparc_Agadir_(33434626570).jpg> | vérifiée | CC BY 2.0 |
 | Vallée des Oiseaux | `spots/agadir-valley-of-birds.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_18-39-49.JPG> | vérifiée | CC0 |
-| Jardin Ibn Zaydoun | — (« Photo à venir ») | — | — | placeholder | — |
+| Jardin Ibn Zaydoun | `spots/agadir-ibn-zaidoun-garden.jpg` | Wikimedia Commons (25 août 2025, 4 000 × 3 000 px) | <https://commons.wikimedia.org/wiki/File:حديقة_ابن_زيدون_أكادير.jpg> | vérifiée | CC0 1.0 |
 | Mosquée Mohammed V | `spots/agadir-mohammed-v-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mohammed_V_Moschee_20111014_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Jardin d'Olhão (Jardin du Portugal) | `spots/agadir-olhao-garden.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_28.01.2011_15-12-35.JPG> | vérifiée | CC0 |
 | Marina d'Agadir | `spots/agadir-marina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_Marina_Agadir_2020.jpg> | vérifiée | CC BY-SA 4.0 |

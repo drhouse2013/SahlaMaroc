@@ -57,6 +57,7 @@ Les ressources photographiques de Wikimedia Commons sont répertoriées ci-desso
 - **Tanneries de Fès**: Andrzej Szkopiński, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), [source](https://commons.wikimedia.org/wiki/File:Fes_El_Bali,_Fes,_Morocco_-_panoramio_(2).jpg)
 - **Grand Socco, Tanger**: Shbbkr, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Tangier_-_Grand_Socco_-_20200906181817.jpg)
 - **Front de mer d'Agadir**: Ideophagous, [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:Plage_d'Agadir_-_from_Dunes_d'Or_hotel_1.jpg)
+- **Portail du jardin Ibn Zaydoun à Agadir (25 août 2025)** : Kadimi hasna, [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/), [source](https://commons.wikimedia.org/wiki/File:حديقة_ابن_زيدون_أكادير.jpg)
 - **Bab Mansour, Meknès**: Steven Lek, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Bab_Mansour_Meknes_2018_1.jpg)
 - **Kasbah de Taourirt, Ouarzazate**: Bjørn Christian Tørrissen, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), [source](https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_in_Ouarzazate_2011.jpg)
 - **Médina de Tétouan**: Ideophagous, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [source](https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg)
