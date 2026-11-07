@@ -45,7 +45,7 @@
 | El Jadida | `cities/el-jadida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg> | vérifiée | CC BY-SA 4.0 |
 | Saidia | `cities/saidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg> | vérifiée | CC BY-SA 4.0 |
 | Guelmim | `cities/guelmim.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg> | vérifiée | CC BY-SA 4.0 |
-| Tiznit | `cities/tiznit.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_Aghnaj_Tiznit.jpg> | vérifiée | CC BY-SA 4.0 |
+| Tiznit | `cities/tiznit.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg> | vérifiée | CC0 1.0 |
 | Sidi Ifni | `cities/sidi-ifni.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg> | vérifiée | CC BY-SA 4.0 |
 | Taroudant | `cities/taroudant.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls.jpg> | vérifiée | CC BY-SA 4.0 |
 | Zagora | `cities/zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_56-2.jpg> | vérifiée | CC BY-SA 4.0 |
