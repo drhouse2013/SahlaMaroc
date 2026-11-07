@@ -185,7 +185,7 @@ Aucune.
 | src/assets/photos/cities/tafraout.jpg | 1600 × 1067 | 242 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/taghazout.jpg | 1920 × 1440 | 1032 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/tangier.jpg | 1600 × 1200 | 239 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cities/taroudant.jpg | 1600 × 1067 | 228 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/cities/taroudant.jpg | 4160 × 1968 | 1908 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/tetouan.jpg | 1600 × 1200 | 221 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/tiznit.jpg | 8000 × 6000 | 6865 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/zagora.jpg | 3024 × 4032 | 2085 | dimensions suffisantes ; cadrage à vérifier |
@@ -480,7 +480,7 @@ Aucune.
 | src/assets/photos/spots/tangier-sidi-bou-abib.jpg | 1400 × 778 | 120 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tangier-st-andrews.jpg | 1400 × 1050 | 173 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/taroudant-arab-souk.jpg | 1400 × 1867 | 186 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/taroudant-ramparts.jpg | 1400 × 766 | 128 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/taroudant-ramparts.jpg | 4160 × 1968 | 1908 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/taroudant-tannery.jpg | 1400 × 933 | 170 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/taroudant-tiout-palm-grove.jpg | 1400 × 1050 | 185 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tetouan-archaeological-museum.jpg | 1400 × 1050 | 183 | recadrage 16:9 sous 1600 px : héro à examiner |
