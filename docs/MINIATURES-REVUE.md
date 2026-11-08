@@ -1,0 +1,74 @@
+# Revue visuelle des miniatures 4:3
+
+## Méthode
+
+Planches de contrôle générées par `tools/prepare-thumbnail-review.mjs` à partir des originaux, avec la même gravité discrète que PlaceImage. Ces planches contrôlent le cadrage des fichiers ; elles ne prouvent pas le rendu responsive des pages ni la date et la licence des sources. Le premier jeu contient 224 entrées du manifeste spots, pas les 268 images de tous les groupes. Les images de villes et régions doivent être contrôlées séparément.
+
+## Planche 01 — inspectée le 8 novembre 2026
+
+12 miniatures inspectées : Jemaa el-Fna, Koutoubia, Majorelle, Ben Youssef, tombeaux saadiens, El Badi, Hassan II, ancienne médina de Casablanca, Oudayas, tour Hassan, Chellah et médina de Rabat.
+
+- Les sujets principaux restent lisibles dans les douze cadrages.
+- Koutoubia : sommet du minaret très proche du bord supérieur ; examiner l’original avant de retenir le cadrage définitif.
+- Ben Youssef : partie basse de la cour hors champ ; examiner un cadrage moins serré si la carte doit représenter la cour entière.
+- Les dix autres cadrages ne présentent pas de coupe gênante manifeste à cette taille. Contrôle sur page encore requis.
+
+Les 18 autres planches restent à inspecter. Aucun jalon global déclaré terminé.
+
+## Corrections après inspection des originaux
+
+Koutoubia : ancrage nord [50,20], le sommet du minaret retrouve une marge visible. Ben Youssef : ancrage sud [50,80], la porte centrale est désormais entière avec moins de ciel. Planche 01 régénérée et inspectée ; corrections confirmées sur les dérivés 320×240. Vérification sur page encore requise.
+
+## Planches 02 et 03 — inspectées le 8 novembre 2026
+
+24 cadrages supplémentaires inspectés (Tanger, Fès, Essaouira, Chefchaouen, Taghazout, Nador et médina de Tétouan).
+
+- Planche 02 : sujets lisibles sur les douze miniatures ; vues de détails assumées pour la kasbah de Tanger, Bou Inania et Al Attarine. Ces vues ne doivent pas être décrites comme des façades complètes.
+- Planche 03 : médina de Tétouan, sommet du minaret coupé, original à examiner et ancrage à corriger si possible. Île de Mogador : exposition sombre et sujet lointain, candidate de renouvellement à rechercher ; ne pas éclaircir artificiellement sans revoir l’original. Les dix autres cadrages restent lisibles à cette taille.
+
+Total inspecté : 36 miniatures sur les 224 de ce jeu ; 16 planches restent à examiner. Rendu sur page encore requis.
+
+## Planches 04 et 05
+
+24 cadrages inspectés : sujets lisibles. Centre d’art moderne de Tétouan : tour latérale partiellement coupée, façade centrale lisible ; alternative plus large à examiner. Médina d’Oujda : vue de détail architecturale, ne pas présenter comme un panorama. Total : 60/224.
+
+Tétouan médina : original inspecté, ancrage nord [50,20] appliqué ; dérivé 640×480 inspecté et sommet du minaret conservé. Le bas du bâtiment sort du champ, cadrage consacré au minaret. Contrôle sur page restant.
+
+## Planches 06 et 07 — inspectées le 8 novembre 2026
+
+24 miniatures supplémentaires examinées ; total 84/224.
+
+- Planche 06 : onze sujets lisibles. Plage de Laâyoune : ciel dominant et lumière grise ; rechercher une vue côtière plus représentative pour le renouvellement. Le phare de Dakhla reste entier.
+- Planche 07 : compositions lisibles, avec vues de détail pour musée de Marrakech et Mahkama du Pacha. Mosquée Ali Ben Youssef : sommet du minaret très proche du bord, original à examiner. Corniche de Casablanca : la promenade est visible mais la mer peu représentée ; envisager une vue plus clairement côtière. Aucun de ces constats ne valide l’actualité des prises de vue.
+
+## Planches 08 à 12 — inspectées le 8 novembre 2026
+
+60 miniatures supplémentaires ; total 144/224.
+
+- 08 : Twin Center, tour gauche coupée en haut ; original et cadrage à examiner. Les onze autres sujets restent lisibles, le tramway devant la poste fait partie de la scène.
+- 09 : sujets lisibles ; cap Malabata très lointain, alternative rapprochée souhaitable. Mosquée des Andalous : détail de portail assumé.
+- 10 : Quaraouiyine, contre-jour marqué ; remplacement à envisager. Dar Batha : partie supérieure des arcades coupée, original à examiner. Les dix autres sujets sont lisibles.
+- 11 : Bouzaâfar, sommet du minaret coupé ; correction à étudier. Musée du cinéma : objet de collection en gros plan, pas une vue du bâtiment. Autres cadrages lisibles.
+- 12 : plage de Dakhla, ombre du photographe au premier plan ; remplacement souhaitable. Kasbah Mahdiyya : contre-jour et poteau central, remplacement souhaitable. Les dix autres cadrages restent lisibles.
+
+Ces observations ne constituent pas une vérification des lieux, licences ou dates. Contrôle sur page restant.
+
+## Planches 13 à 19 — inspectées le 8 novembre 2026
+
+Les 80 dernières miniatures du jeu ont été inspectées : total 224/224.
+
+- 13 : Agdal Marrakech sombre et ciel dominant ; Cala Iris voilée/surexposée, à renouveler. Autres sujets lisibles.
+- 14 : photo de plage de Taghazout avec petite intrusion colorée au bord supérieur gauche, original à examiner ; zoo, animal volontairement cadré en détail. Autres compositions lisibles.
+- 15 : tannerie de Tétouan avec intrusion probable de doigt au bord supérieur, original à examiner. Musée de la Résistance d’El Jadida sombre et sommet de tour serré. Autres sujets lisibles.
+- 16 : église du Pilar, tour coupée en haut ; original à examiner. Plage de Larache grise et peu caractéristique, renouvellement souhaitable. Autres sujets lisibles.
+- 17 : cèdre Gouraud, sommet des branches coupé ; original à examiner. Photo du parc d’Ifrane : camps et forêt conservés. Autres sujets lisibles.
+- 18 : ancienne cathédrale de Sidi Ifni et panneau de Tombouctou, parties hautes coupées ; palmeraie de Tiout masquée par une rambarde ; Khamlia très poussiéreuse ; ces quatre vues doivent être revues ou remplacées. Autres sujets lisibles, phare de Sidi Ifni à lumière sombre.
+- 19 : jardin Olhão vu derrière une grille et jardin Ibn Zaidoun depuis l’entrée, vues plus immersives souhaitables ; Borj Belkari sombre avec véhicule devant, renouvellement souhaitable. Autres cadrages lisibles.
+
+Première passe visuelle des 224 photos de lieux terminée. Les défauts consignés restent ouverts ; les villes/régions, les autres images éditoriales et le rendu dans les pages restent à contrôler. Le jalon « toutes les miniatures finalisées » reste non terminé.
+
+## Reprise des alertes après originaux
+
+Twin Center : original inspecté, sommet conservé dans le fichier 4:3 ; alerte de coupe retirée, marge serrée uniquement. Pilar : original portrait inspecté et ancrage nord [50,20] appliqué ; sommet et croix conservés dans le dérivé 640×480 inspecté, bas de façade hors champ. Ancienne cathédrale de Sidi Ifni : original portrait, un simple déplacement ferait perdre la porte ; conserver provisoirement la vue de détail et rechercher un original plus large pour une façade complète.
+
+Bouzaâfar : original inspecté ; ancrage nord [50,20] appliqué et dérivé 640×480 contrôlé. Sommet du minaret conservé, marge limitée par l’original. Cinq corrections de cadrage préparées au total ; rendu sur page restant.

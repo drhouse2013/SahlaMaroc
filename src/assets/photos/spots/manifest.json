@@ -12,6 +12,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg"
  },
  "marrakech/koutoubia": {
+  "focalPoint": [50, 20],
   "file": "marrakech-koutoubia.jpg",
   "alt": {
    "fr": "Minaret et façade de la mosquée de la Koutoubia à Marrakech",
@@ -36,6 +37,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG"
  },
  "marrakech/ben-youssef": {
+  "focalPoint": [50, 80],
   "file": "marrakech-ben-youssef.jpg",
   "alt": {
    "fr": "Cour intérieure et façade en bois sculpté de la médersa Ben Youssef à Marrakech",
@@ -428,6 +430,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg"
  },
  "tetouan/medina": {
+  "focalPoint": [50, 20],
   "file": "tetouan-medina.jpg",
   "alt": {
    "fr": "Minaret de la mosquée Al-Ayoun dans la médina de Tétouan",
@@ -1453,6 +1456,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg"
  },
  "chefchaouen/bouzafar-mosque": {
+  "focalPoint": [50, 20],
   "file": "chefchaouen-bouzafar-mosque.jpg",
   "alt": {
    "fr": "Mosquée blanche sur la colline de Chefchaouen",
@@ -2270,6 +2274,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Larache_Medina.jpg"
  },
  "larache/pilar-church": {
+  "focalPoint": [50, 20],
   "file": "larache-pilar-church.jpg",
   "alt": {
    "fr": "Église Notre-Dame du Pilier à Larache",
