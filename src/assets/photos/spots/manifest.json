@@ -12,6 +12,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg"
  },
  "marrakech/koutoubia": {
+  "focalPoint": [50, 20],
   "file": "marrakech-koutoubia.jpg",
   "alt": {
    "fr": "Minaret et façade de la mosquée de la Koutoubia à Marrakech",
@@ -36,6 +37,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG"
  },
  "marrakech/ben-youssef": {
+  "focalPoint": [50, 80],
   "file": "marrakech-ben-youssef.jpg",
   "alt": {
    "fr": "Cour intérieure et façade en bois sculpté de la médersa Ben Youssef à Marrakech",
@@ -428,6 +430,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg"
  },
  "tetouan/medina": {
+  "focalPoint": [50, 20],
   "file": "tetouan-medina.jpg",
   "alt": {
    "fr": "Minaret de la mosquée Al-Ayoun dans la médina de Tétouan",
@@ -2376,6 +2379,19 @@
   },
   "credit": "Zineb Rachdi El Yacoubi, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg"
+ },
+ "ifrane/national-park": {
+  "file": "ifrane-national-park.jpg",
+  "alt": {
+   "fr": "Campements nomades au pied d’une forêt de cèdres dans le parc national d’Ifrane, près de Michlifen",
+   "en": "Nomadic camps beneath a cedar forest in Ifrane National Park, near Michlifen",
+   "es": "Campamentos nómadas al pie de un bosque de cedros en el Parque Nacional de Ifrane, cerca de Michlifen",
+   "de": "Nomadische Lager am Fuß eines Zedernwaldes im Nationalpark Ifrane, nahe Michlifen",
+   "ar": "مخيّمات بدوية عند سفح غابة أرز في منتزه إفران الوطني قرب ميشليفن"
+  },
+  "credit": "Reda benkhadra (version recadrée et optimisée), CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg",
+  "focalPoint": [50, 82]
  },
  "ifrane/akhawayn-university": {
   "file": "ifrane-akhawayn-university.jpg",
