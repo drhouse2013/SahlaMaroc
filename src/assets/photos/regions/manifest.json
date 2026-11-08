@@ -62,14 +62,18 @@
   "casablanca-settat": {
     "file": "casablanca-settat.jpg",
     "alt": {
-      "fr": "Mosquée Hassan II et son minaret, Casablanca",
-      "en": "Hassan II Mosque and its minaret, Casablanca",
-      "es": "Mezquita Hassan II y su minarete, Casablanca",
-      "de": "Hassan-II-Moschee mit Minarett, Casablanca",
-      "ar": "مسجد الحسن الثاني ومئذنته في الدار البيضاء"
+      "fr": "Minaret de la mosquée Hassan II vu à travers une arche, Casablanca",
+      "en": "Hassan II Mosque minaret seen through an arch, Casablanca",
+      "es": "Minarete de la mezquita Hassan II visto a través de un arco, Casablanca",
+      "de": "Minarett der Hassan-II-Moschee durch einen Bogen, Casablanca",
+      "ar": "مئذنة مسجد الحسن الثاني من خلال قوس، الدار البيضاء"
     },
-    "credit": "Dahbi fatima zahrae, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_and_Its_Minaret_in_Casablanca,_Morocco_2.jpg"
+    "credit": "OussamaHamama, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg",
+    "focalPoint": [
+      50,
+      0
+    ]
   },
   "marrakech-safi": {
     "file": "marrakech-safi.jpg",
