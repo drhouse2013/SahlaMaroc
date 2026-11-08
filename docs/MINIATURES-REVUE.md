@@ -66,3 +66,7 @@ Les 80 dernières miniatures du jeu ont été inspectées : total 224/224.
 - 19 : jardin Olhão vu derrière une grille et jardin Ibn Zaidoun depuis l’entrée, vues plus immersives souhaitables ; Borj Belkari sombre avec véhicule devant, renouvellement souhaitable. Autres cadrages lisibles.
 
 Première passe visuelle des 224 photos de lieux terminée. Les défauts consignés restent ouverts ; les villes/régions, les autres images éditoriales et le rendu dans les pages restent à contrôler. Le jalon « toutes les miniatures finalisées » reste non terminé.
+
+## Reprise des alertes après originaux
+
+Twin Center : original inspecté, sommet conservé dans le fichier 4:3 ; alerte de coupe retirée, marge serrée uniquement. Pilar : original portrait inspecté et ancrage nord [50,20] appliqué ; sommet et croix conservés dans le dérivé 640×480 inspecté, bas de façade hors champ. Ancienne cathédrale de Sidi Ifni : original portrait, un simple déplacement ferait perdre la porte ; conserver provisoirement la vue de détail et rechercher un original plus large pour une façade complète.
