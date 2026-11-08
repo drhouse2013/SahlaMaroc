@@ -388,10 +388,10 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 
 ## Originaux panoramiques rétablis — 7 novembre 2026
 
-Originaux Wikimedia récupérés sans modification pour éviter la perte de détails des copies réduites. Les auteurs, licences, lieux et dates de prise de vue restent ceux des sources déjà créditées. Les conversions et recadrages sont produits par Astro.
+Originaux Wikimedia récupérés pour éviter la perte de détails des copies réduites. Les originaux d’Agadir Marina, Cala Iris et du stade Ibn Batouta restent inchangés. Le panorama de Sfiha avait un flux JPEG incomplet, avec son marqueur de fin absent, que Sharp ne pouvait pas décoder. Une copie haute qualité a été réencodée avec FFmpeg en conservant 9 168 × 1 840 px ; l’original reste dans l’historique Git à 4fec6b1. Auteur, licence et source ne changent pas. Les conversions et recadrages sont produits par Astro.
 - src/assets/photos/spots/agadir-marina.jpg — SHA-256 : C1F1CEE0F59246246F859C756C775A13B9764BD1ECA813CF318F46B762838E10
 - src/assets/photos/spots/al-hoceima-cala-iris.jpg — SHA-256 : 4BB0078DDA40294CAE0EDFA28E77D27577A98853A0D599F72AA17DAC29ED251E
-- src/assets/photos/spots/al-hoceima-sfiha.jpg — SHA-256 : AA5272AAF663F3A225F21B7F7B6D4071187991AF8BE5AAD035D153D96725B34E
+- src/assets/photos/spots/al-hoceima-sfiha.jpg — SHA-256 : 3B86D97EA0E1F1CFEAC18201F384728C5A61205A9F1AB6B31084B42FBB228722
 - src/assets/photos/cdm-stade-ibn-batouta.jpg — SHA-256 : DF8C7027311044FE0B2E88E1E6946AE9115DB61E3E338555A28BE37D2AF2D8F6
 
 
