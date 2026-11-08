@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Recherche de CANDIDATS de photos (Wikimedia Commons / Unsplash / Pexels) pour les lieux sans photo vérifiée.
+ * Recherche de CANDIDATS de photos (Wikimedia Commons / Openverse / Unsplash / Pexels) pour les lieux sans photo vérifiée.
  * Outil de build uniquement : jamais importé par le frontend, aucune clé n'atteint le navigateur, aucune image n'est
  * téléchargée ni intégrée. Sortie : docs/IMAGES-CANDIDATS.md, à valider visuellement (voir docs/IMAGES.md).
  *
- * Usage : node tools/fetch-place-photos.mjs [--limit 20] [--per 3] [--only ville/lieu] [--commons-only|--no-commons]
+ * Usage : node tools/fetch-place-photos.mjs [--limit 20] [--per 3] [--only ville/lieu] [--commons-only|--no-commons|--no-openverse] [--query "variante locale" --only ville/lieu] [--output docs/rapport.md]
  * Clés (facultatives) : UNSPLASH_ACCESS_KEY, PEXELS_API_KEY dans l'environnement ou .env.local / .env (valeurs jamais affichées).
  */
 import fs from 'node:fs';
@@ -28,16 +28,22 @@ const commons = !process.argv.includes('--no-commons');
 const commonsOnly = process.argv.includes('--commons-only');
 const unsplash = commonsOnly ? '' : process.env.UNSPLASH_ACCESS_KEY || '';
 const pexels = commonsOnly ? '' : process.env.PEXELS_API_KEY || '';
-if (!commons && !unsplash && !pexels) {
-  console.log('Aucune clé UNSPLASH_ACCESS_KEY ni PEXELS_API_KEY (environnement, .env.local, .env) : rien à faire. Voir docs/IMAGES.md.');
+const openverse = !commonsOnly && !process.argv.includes('--no-openverse');
+if (!commons && !openverse && !unsplash && !pexels) {
+  console.log('Aucun fournisseur actif. Retirer --no-commons et/ou --no-openverse, ou fournir une clé Unsplash/Pexels.');
   process.exit(0);
 }
-console.log(`Fournisseurs actifs : ${[commons && 'Wikimedia Commons', unsplash && 'Unsplash', pexels && 'Pexels'].filter(Boolean).join(', ')}`);
+console.log(`Fournisseurs actifs : ${[commons && 'Wikimedia Commons', openverse && 'Openverse', unsplash && 'Unsplash', pexels && 'Pexels'].filter(Boolean).join(', ')}`);
 
 // 2) Lieux sans photo vérifiée (même règle que le site).
 const arg = (n, d) => { const i = process.argv.indexOf(`--${n}`); return i > 0 ? process.argv[i + 1] : d; };
 const limit = Number(arg('limit', 20)), per = Number(arg('per', 3)), only = arg('only', '');
 if (!Number.isInteger(limit) || limit < 1 || limit > 500 || !Number.isInteger(per) || per < 1 || per > 20) throw new Error('--limit doit être entre 1 et 500 ; --per entre 1 et 20.');
+const queryOverride = arg('query', '').trim();
+if (queryOverride && !only) throw new Error('--query exige --only pour conserver un lieu précis.');
+const output = path.resolve(ROOT, arg('output', 'docs/IMAGES-CANDIDATS.md'));
+const relativeOutput = path.relative(path.join(ROOT, 'docs'), output);
+if (relativeOutput.startsWith('..') || path.isAbsolute(relativeOutput) || !output.endsWith('.md')) throw new Error('--output doit être un fichier Markdown dans docs/.');
 const jiti = createJiti(import.meta.url);
 const { SPOTS } = await jiti.import('../src/data/spots.ts');
 const { cityLabel } = await jiti.import('../src/data/cities.ts');
@@ -69,7 +75,7 @@ const searchPexels = async (q) => {
 };
 const plain = (s) => String(s ?? '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 const searchCommons = async (target) => {
-  const query = `${target.name} ${target.city}`;
+  const query = queryOverride || `${target.name} ${target.city}`;
   const params = new URLSearchParams({ action: 'query', format: 'json', generator: 'search', gsrsearch: query, gsrnamespace: '6', gsrlimit: String(per), prop: 'imageinfo', iiprop: 'url|extmetadata|size', iiurlwidth: '480' });
   const j = await get(`https://commons.wikimedia.org/w/api.php?${params}`, { 'User-Agent': 'SahlaMarocPhotoCandidates/1.0 (manual editorial review)' }, 'Wikimedia Commons');
   if (j?.error) throw new Error(`Wikimedia Commons : ${j.error.code}`);
@@ -78,14 +84,40 @@ const searchCommons = async (target) => {
     return { provider: 'Wikimedia Commons', author: plain(m?.Artist?.value), page: i?.descriptionurl ?? '', thumb: i?.thumburl ?? '', desc: plain(m?.ImageDescription?.value).slice(0, 400), date: plain(m?.DateTimeOriginal?.value), license: plain(m?.LicenseShortName?.value), dimensions: i ? `${i.width} × ${i.height}` : '' };
   }).filter(p => p.page && p.thumb);
 };
+const searchOpenverse = async (query) => {
+  const params = new URLSearchParams({
+    q: query,
+    license: 'cc0,by,by-sa',
+    size: 'large',
+    page_size: String(per),
+  });
+  const j = await get(`https://api.openverse.org/v1/images/?${params}`, { 'User-Agent': 'SahlaMarocPhotoCandidates/1.0 (manual editorial review)' }, 'Openverse');
+  return (j?.results ?? []).map((p) => ({
+    provider: `Openverse (${p.source || 'source à vérifier'})`,
+    author: p.creator || '?',
+    authorUrl: p.creator_url || '',
+    page: p.foreign_landing_url || p.detail_url || '',
+    thumb: p.thumbnail || '',
+    desc: p.title || '',
+    date: p.date_created || '',
+    license: p.license_version ? `CC ${p.license?.toUpperCase()} ${p.license_version}` : `CC ${p.license?.toUpperCase() || 'à vérifier'}`,
+    dimensions: p.width && p.height ? `${p.width} × ${p.height}` : '',
+  })).filter((p) => p.page && p.thumb);
+};
 
 const found = [];
 for (const t of targets) {
   if (stop) break;
   const hits = [];
   if (commons && !stop) hits.push(...await searchCommons(t));
-  if (unsplash && !stop) hits.push(...await searchUnsplash(t.query));
-  if (pexels && !stop) hits.push(...await searchPexels(t.query));
+  if (openverse && !stop) {
+    const openverseHits = await searchOpenverse(queryOverride || t.query);
+    const seen = new Set(hits.map((h) => h.page));
+    hits.push(...openverseHits.filter((h) => !seen.has(h.page)));
+    await sleep(1500);
+  }
+  if (unsplash && !stop) hits.push(...await searchUnsplash(queryOverride || t.query));
+  if (pexels && !stop) hits.push(...await searchPexels(queryOverride || t.query));
   if (stop) break;
   found.push({ ...t, hits });
   console.log(`${found.length}/${targets.length} : ${t.key} (${hits.length} candidat(s))`);
@@ -95,14 +127,15 @@ for (const t of targets) {
 // 4) Rapport à valider à la main.
 const cell = (s) => String(s).replace(/\|/g, '/').replace(/\s+/g, ' ').trim();
 const md = ['# Candidats photos à valider', '',
-  `> Généré par \`node tools/fetch-place-photos.mjs\` le ${new Date().toISOString().slice(0, 10)}. **Aucune de ces photos n'est intégrée.** Pour chaque lieu : ouvrir la page de la photo, vérifier visuellement qu'elle montre le lieu EXACT (pas un autre lieu ni une scène générique), relever photographe + licence + lien, télécharger depuis la page publique, puis ajouter l'entrée au manifeste (voir \`docs/IMAGES.md\`). Sans certitude : laisser le placeholder « Photo à venir ». Wikimedia indique la date déclarée DateTimeOriginal, la licence et les dimensions originales ; ces métadonnées ne prouvent pas le lieu exact. Fournisseurs : Wikimedia Commons, Unsplash et Pexels.`, ''];
+  `> Généré par \`node tools/fetch-place-photos.mjs\` le ${new Date().toISOString().slice(0, 10)}. **Aucune de ces photos n'est intégrée.** Pour chaque lieu : ouvrir la page source, vérifier visuellement le lieu EXACT (pas un autre lieu ni une scène générique), confirmer photographe, licence et dimensions sur la source d'origine, puis ajouter l'entrée au manifeste (voir \`docs/IMAGES.md\`). Sans certitude : laisser le placeholder « Photo à venir ». Les dates, licences et descriptions indexées peuvent être absentes ou inexactes ; elles ne prouvent pas le lieu exact ni les droits. Fournisseurs : Wikimedia Commons, Openverse, Unsplash et Pexels.`, ''];
 for (const f of found) {
-  md.push(`### ${f.city} : ${f.name} (\`${f.key}\`)`, '', `Recherche Wikimedia : \`${cell(f.name)} ${cell(f.city)}\`. Requête Unsplash/Pexels : \`${f.query}\`.`, '');
+  md.push(`### ${f.city} : ${f.name} (\`${f.key}\`)`, '', `Requêtes : Wikimedia « ${cell(queryOverride || `${f.name} ${f.city}`)} » ; Openverse/Unsplash/Pexels « ${cell(queryOverride || f.query)} ».`, '');
   if (!f.hits.length) { md.push('Aucun candidat.', ''); continue; }
   md.push('| Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |', '|---|---|---|---|---|---|---|---|---|');
   for (const h of f.hits) md.push(`| ${h.provider} | ${h.authorUrl ? `[${cell(h.author)}](${h.authorUrl})` : cell(h.author)} | ${cell(h.date || 'à vérifier')} | ${cell(h.license || 'à vérifier')} | ${h.dimensions || '—'} | <${h.page}> | [aperçu](${h.thumb}) | ${cell(h.desc) || '—'} | [ ] |`);
   md.push('');
 }
 if (stop) md.push(`> Recherche interrompue : ${stop}`, '');
-fs.writeFileSync(path.join(ROOT, 'docs/IMAGES-CANDIDATS.md'), md.join('\n'));
-console.log(`docs/IMAGES-CANDIDATS.md écrit (${found.length} lieu(x), ${found.reduce((n, f) => n + f.hits.length, 0)} candidat(s)).${stop ? ' ' + stop : ''}`);
+fs.mkdirSync(path.dirname(output), { recursive: true });
+fs.writeFileSync(output, md.join('\n'));
+console.log(`${path.relative(ROOT, output)} écrit (${found.length} lieu(x), ${found.reduce((n, f) => n + f.hits.length, 0)} candidat(s)).${stop ? ' ' + stop : ''}`);
