@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-08. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 267 photos vérifiées, 72 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 268 photos vérifiées, 71 placeholders (« Photo à venir »), 0 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 223 | 72 | 0 |
+| Lieux à visiter | 295 | 224 | 71 | 0 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -477,7 +477,7 @@
 | Grande mosquée d’Asilah | `spots/asilah-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:La_Grande_Mosquée_de_Assilah_01.jpg> | vérifiée | CC BY-SA 4.0 |
 | Fresques murales | `spots/asilah-murals.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Asilah_(36493700570).jpg> | vérifiée | CC BY 2.0 |
 
-### Ifrane (6/8 vérifiées)
+### Ifrane (7/8 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -485,7 +485,7 @@
 | Statue du lion | `spots/ifrane-lion-statue.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ifrane_lion.jpg> | vérifiée | CC BY-SA 3.0 |
 | Source Vittel | `spots/ifrane-vittel-spring.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Parc_Ain_Vittel_Ifrane1.jpg> | vérifiée | CC BY-SA 4.0 |
 | Cèdre Gouraud (Arz Goro) | `spots/ifrane-cedre-gouraud.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cèdre_Gouraud.jpg> | vérifiée | CC BY-SA 2.0 |
-| Parc national d’Ifrane | — (« Photo à venir ») | — | — | placeholder | — |
+| Parc national d’Ifrane | `spots/ifrane-national-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg> | vérifiée | CC BY-SA 4.0 |
 | Macaques de Barbarie | `spots/ifrane-macaques.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Barbary_macaque_near_Azrou.JPG> | vérifiée | CC BY-SA 4.0 |
 | Ras el Ma | `spots/ifrane-ras-el-ma.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg> | vérifiée | CC BY-SA 4.0 |
 | Université Al Akhawayn | `spots/ifrane-akhawayn-university.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg> | vérifiée | CC BY-SA 4.0 |

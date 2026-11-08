@@ -2377,6 +2377,19 @@
   "credit": "Zineb Rachdi El Yacoubi, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg"
  },
+ "ifrane/national-park": {
+  "file": "ifrane-national-park.jpg",
+  "alt": {
+   "fr": "Campements nomades au pied d’une forêt de cèdres dans le parc national d’Ifrane, près de Michlifen",
+   "en": "Nomadic camps beneath a cedar forest in Ifrane National Park, near Michlifen",
+   "es": "Campamentos nómadas al pie de un bosque de cedros en el Parque Nacional de Ifrane, cerca de Michlifen",
+   "de": "Nomadische Lager am Fuß eines Zedernwaldes im Nationalpark Ifrane, nahe Michlifen",
+   "ar": "مخيّمات بدوية عند سفح غابة أرز في منتزه إفران الوطني قرب ميشليفن"
+  },
+  "credit": "Reda benkhadra (version recadrée et optimisée), CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg",
+  "focalPoint": [50, 82]
+ },
  "ifrane/akhawayn-university": {
   "file": "ifrane-akhawayn-university.jpg",
   "alt": {
