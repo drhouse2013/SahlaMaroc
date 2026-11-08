@@ -45,3 +45,10 @@ La candidate « Fenêtre du bastion de la Kasbah de Kénitra » a été inspect�
 - Aïn Hajar : [Ain hjer Essaouira.jpg](https://commons.wikimedia.org/wiki/File:Ain_hjer_Essaouira.jpg), original 5312 × 2988, licence CC BY-SA 4.0 et dépôt par Usacin en octobre 2017. Source trop ancienne pour satisfaire la demande de renouvellement récent ; aucune intégration. La catégorie Nature of Essaouira fournit aussi les variantes « 3ayn l7jar » et « Ain hjer » pour la suite de recherche.
 - Diabat : la [catégorie du lieu](https://commons.wikimedia.org/wiki/Category:Diabat) comporte six fichiers, dont des prises de 2009 et 2014. Aucun cliché récent confirmé dans cette sélection ; poursuivre ailleurs.
 - Dar Sultan : exclure la catégorie « Dar Esoultane » située à Tlemcen, en Algérie, même si elle contient des photographies de 2024. Elle ne représente pas les ruines de Diabat.
+
+## Revue complémentaire — Tétouan et Meknès
+
+- Riad Al Ochak : https://commons.wikimedia.org/wiki/File:Riad_al_ochak.jpg — original 1024×768, date déclarée 2007 et EXIF 2006 ; ne satisfait pas le renouvellement récent.
+- Prison Qara : catégorie exacte https://commons.wikimedia.org/wiki/Category:Qara_Prison (15 fichiers). Trois candidats HD contrôlés : Prison_Qara_Meknes.jpg (28 septembre 2019), سجن_قارا.jpg (5 septembre 2019), 810_0649_copy.jpg (date déclarée 2020 mais EXIF juin 2019). Aucun de ces trois fichiers ne satisfait le renouvellement récent. Les autres fichiers de la catégorie restent à examiner.
+
+La catégorie Qara Prison a maintenant été parcourue intégralement par l’API Wikimedia : 15 fichiers, dates déclarées de 2013 à 2020, aucun cliché de 2023–2026. Relevé reproductible : `docs/QARA-PHOTO-DATES.json`. Ce constat porte sur cette catégorie uniquement et ne prouve pas l’absence de photos récentes ailleurs. Ne pas reprendre la description non sourcée des « centaines de kilomètres » présente sur une fiche photo.
