@@ -108,7 +108,7 @@ Aucun candidat.
 
 Recherche Wikimedia : `Kasbah du mont Dersa Tétouan`. Requête Unsplash/Pexels : `Kasbah on Mount Dersa Tetouan Morocco`.
 
-Aucun candidat.
+**Intégrée après recherche ciblée, le 8 novembre 2026 :** [ancienne caserne des Regulares sur le mont Dersa](https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg). Auteur : Dahbi fatima zahrae ; CC BY-SA 4.0 ; prise déclarée le 4 octobre 2026 ; original 1868 × 3901 px. La description Wikimedia confirme les anciennes casernes au sommet du mont Dersa ; le cadrage 4:3 a été vérifié visuellement. La copie locale de 960 × 2005 px est la réduction Wikimedia, enregistrée sous `src/assets/photos/spots/tetouan-dersa-kasbah-2026.jpg`.
 
 ### Tétouan : Musée du patrimoine religieux (`tetouan/religious-heritage-museum`)
 
@@ -494,3 +494,4 @@ Aucun candidat.
 Recherche Wikimedia : `Place El Mechouar Tiznit`. Requête Unsplash/Pexels : `El Mechouar Square Tiznit Morocco`.
 
 Aucun candidat.
+
