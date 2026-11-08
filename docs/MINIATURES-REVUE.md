@@ -70,3 +70,5 @@ Première passe visuelle des 224 photos de lieux terminée. Les défauts consign
 ## Reprise des alertes après originaux
 
 Twin Center : original inspecté, sommet conservé dans le fichier 4:3 ; alerte de coupe retirée, marge serrée uniquement. Pilar : original portrait inspecté et ancrage nord [50,20] appliqué ; sommet et croix conservés dans le dérivé 640×480 inspecté, bas de façade hors champ. Ancienne cathédrale de Sidi Ifni : original portrait, un simple déplacement ferait perdre la porte ; conserver provisoirement la vue de détail et rechercher un original plus large pour une façade complète.
+
+Bouzaâfar : original inspecté ; ancrage nord [50,20] appliqué et dérivé 640×480 contrôlé. Sommet du minaret conservé, marge limitée par l’original. Cinq corrections de cadrage préparées au total ; rendu sur page restant.

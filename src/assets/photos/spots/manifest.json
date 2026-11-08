@@ -1456,6 +1456,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg"
  },
  "chefchaouen/bouzafar-mosque": {
+  "focalPoint": [50, 20],
   "file": "chefchaouen-bouzafar-mosque.jpg",
   "alt": {
    "fr": "Mosquée blanche sur la colline de Chefchaouen",
