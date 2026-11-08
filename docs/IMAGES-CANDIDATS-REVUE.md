@@ -28,3 +28,9 @@ Le brief demande des photos récentes, HD et du lieu exact. Un résultat de mote
 Pour les autres lieux, la requête précise du relevé n'a retourné aucun candidat. Cela ne prouve pas l'absence de photographies disponibles. Il faut poursuivre avec les variantes de noms, les sources officielles dotées d'autorisations explicites, les bibliothèques réutilisables et les photographies du propriétaire si elles existent.
 
 Les candidats restent des données de tiers non approuvées. Les licences et les descriptions sont rapportées par leurs sources ; leur publication dans ce dossier n'accorde aucune autorisation supplémentaire.
+
+## Mise à jour du 8 novembre 2026
+
+Un second passage sur 72 lieux sans photo a produit 44 candidats distincts. La page source Wikimedia du premier candidat « Nomad camps in the Ifrane National Park » confirme l'auteur Reda benkhadra, la prise de vue du 3 juin 2023, l'original 5 184 × 3 456 px et la licence CC BY-SA 4.0. Elle décrit des camps près de Michlifen, dans le parc national d'Ifrane. Voir la [fiche source](https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park.jpg).
+
+Ces éléments règlent les questions de date déclarée, d'auteur et de provenance, mais ne remplacent pas l'inspection visuelle du fichier original et de son cadrage. L'image reste donc non approuvée et n'a pas été intégrée ; le placeholder du parc doit rester en place jusqu'à cette vérification.
