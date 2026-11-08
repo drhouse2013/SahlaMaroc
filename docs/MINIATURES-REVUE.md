@@ -72,3 +72,12 @@ Première passe visuelle des 224 photos de lieux terminée. Les défauts consign
 Twin Center : original inspecté, sommet conservé dans le fichier 4:3 ; alerte de coupe retirée, marge serrée uniquement. Pilar : original portrait inspecté et ancrage nord [50,20] appliqué ; sommet et croix conservés dans le dérivé 640×480 inspecté, bas de façade hors champ. Ancienne cathédrale de Sidi Ifni : original portrait, un simple déplacement ferait perdre la porte ; conserver provisoirement la vue de détail et rechercher un original plus large pour une façade complète.
 
 Bouzaâfar : original inspecté ; ancrage nord [50,20] appliqué et dérivé 640×480 contrôlé. Sommet du minaret conservé, marge limitée par l’original. Cinq corrections de cadrage préparées au total ; rendu sur page restant.
+
+## Villes et régions — première passe 4:3
+
+32 images de villes/héro et 12 régions inspectées. Total des trois groupes : 268/268 miniatures ; les autres visuels éditoriaux ne sont pas inclus.
+
+- Villes : Nador sombre avec promenade dominante ; Agadir en contre-jour ; Kénitra voilée ; Errachidia peu contrastée. Renouvellement à examiner. Les 28 autres compositions restent lisibles à cette taille. Les panoramas et le héro doivent aussi être contrôlés au format large réel.
+- Régions : Casablanca-Settat, sommet du minaret coupé ; correction nécessaire. Fès-Meknès, partie haute de l’arc serrée ; original à examiner. Les dix autres sujets restent lisibles, Marrakech-Safi est une scène de nuit volontaire.
+
+L’outil accepte désormais `cities`, `regions` ou `spots` et utilise la règle isVerified partagée avec le site. Première passe visuelle achevée, corrections et validation des pages encore ouvertes.
