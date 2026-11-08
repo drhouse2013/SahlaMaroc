@@ -1,6 +1,6 @@
 # Dates déclarées des photographies
 
-Relevé du 2026-11-07 via `node tools/audit-photo-dates.mjs`. 304 entrées des manifestes villes, régions, lieux et guides ; 294 sources Wikimedia uniques interrogées.
+Relevé du 2026-11-08 via `node tools/audit-photo-dates.mjs`. 305 entrées des manifestes villes, régions, lieux et guides ; 295 sources Wikimedia uniques interrogées.
 
 Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli sur DateTime, le nom du fichier ou la date de mise en ligne. Ce sont des déclarations de la source : elles ne prouvent pas à elles seules la date réelle, la netteté, le lieu ou les droits. Les autres hébergeurs et les dates absentes nécessitent une vérification manuelle. Les anciens fichiers non référencés et les photos de repli codées dans guidePhotos.ts ne font pas partie de ce relevé.
 
@@ -58,9 +58,9 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | spots/marrakech/el-badi | 2025-01-25 09:57:45 | DateTimeOriginal | 5792 × 3865 | CC BY 4.0 | <https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg> |
 | spots/casablanca/hassan-ii | 2026-02-10 17:01:10 | DateTimeOriginal | 10622 × 8078 | CC BY 4.0 | <https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg> |
 | spots/casablanca/old-medina | 26 November 2024 (according to Exif data) | DateTimeOriginal | 4080 × 3060 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Medina_of_Casablanca_5.jpg> |
-| spots/rabat/oudayas | 2023-12-22 16:01:13 | DateTimeOriginal | 5906 × 3625 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg> |
-| spots/rabat/hassan-tower | 2023-12-22 13:06:06 | DateTimeOriginal | 5906 × 2881 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg> |
-| spots/rabat/chellah | 2013-08-16 17:56:15 | DateTimeOriginal | 2560 × 1920 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Challah.jpg> |
+| spots/rabat/oudayas | 2026-10-30 09:57:19 | DateTimeOriginal | 3899 × 2602 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg> |
+| spots/rabat/hassan-tower | 2026-10-28 08:49:52 | DateTimeOriginal | 4032 × 2839 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg> |
+| spots/rabat/chellah | 2025-04-19 16:48:37 | DateTimeOriginal | 3986 × 3000 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg> |
 | spots/rabat/medina | 2020-10-02 17:01 | DateTimeOriginal | 5310 × 3540 | CC BY 2.0 | <https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg> |
 | spots/tangier/medina | Taken on 15 July 2015 | DateTimeOriginal | 5472 × 3648 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Ancien_Medina,_Tangier,_Morocco_-_panoramio_(11).jpg> |
 | spots/tangier/kasbah-museum | 2020-01-15 13:10:47 | DateTimeOriginal | 3006 × 4209 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Kasbah_de_Tanger_2.jpg> |
@@ -272,6 +272,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | spots/meknes/borj-belkari | 2018-03-21 10:53 | DateTimeOriginal | 1616 × 1079 | CC BY-SA 2.0 | <https://commons.wikimedia.org/wiki/File:Meknes_51DSC_0326_(42737841031).jpg> |
 | spots/errachidia/ziz-valley | 2017-04-12 17:05:10 | DateTimeOriginal | 4862 × 2657 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ziz_Valley_in_the_desert_of_Morocco.jpg> |
 | spots/oujda/grand-mosque | à vérifier | — | 1899 × 2304 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Oujda.jamaa_lkbir.JPG> |
+| spots/tetouan/dersa-kasbah | 2026-10-04 16:26:44 | DateTimeOriginal | 1868 × 3901 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> |
 | guides/marhaba-guide | 2011-05-02 | DateTimeOriginal | 3531 × 2364 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG> |
 | guides/car-180-days | 30 June 2022 (according to Exif data) | DateTimeOriginal | 4000 × 1929 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg> |
 | guides/motorway | 2019-10-03 11:30:38 | DateTimeOriginal | 4608 × 2240 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Highway_Marrakech_Agadir_2019.jpg> |

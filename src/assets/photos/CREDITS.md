@@ -92,9 +92,9 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/marrakech-el-badi.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg |
 | spots/casablanca-hassan-ii.jpg | Tinuzzo, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg |
 | spots/casablanca-old-medina.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_of_Casablanca_5.jpg |
-| spots/rabat-oudayas.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg |
-| spots/rabat-hassan-tower.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg |
-| spots/rabat-chellah.jpg | Mohibsam, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Challah.jpg |
+| spots/rabat-oudayas.jpg | Aemazy, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg |
+| spots/rabat-hassan-tower.jpg | Aemazy, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg |
+| spots/rabat-chellah.jpg | BusinkaSalima, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg |
 | spots/rabat-medina.jpg | U.S. Secretary of Defense, CC BY 2.0 | https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg |
 | spots/tangier-medina.jpg | logopop, CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ancien_Medina,_Tangier,_Morocco_-_panoramio_(11).jpg |
 | spots/tangier-kasbah-museum.jpg | ZAINEB HACHAMI, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_de_Tanger_2.jpg |
@@ -363,7 +363,7 @@ Hammam Saffarin à Fès, salle tiède (wasti), prise le 5 juillet 2026. Auteur :
 Les photographies restent celles déjà créditées dans le manifeste. Aucun changement de date de prise de vue.
 
 - `spots/fes-cherratine.jpg` : original 4208 × 1888, Hajji lahcen, CC0. [Source](https://commons.wikimedia.org/wiki/File:%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B7%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3.jpg). SHA-256 : 9990cf46715589b67b659db111aafd85019f7cfc8e0caf012ce0f6f02d448e86. Original conservé sans modification ; versions AVIF/WebP générées par Astro.
-- `spots/rabat-hassan-tower.jpg` : original 5906 × 2881, Holger Uwe Schmitt, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg). SHA-256 : d8659b230206708ea7245ce6bcdfa27b4ead2e07df6d4f31f8cb8cf96c79902f. Original conservé sans modification ; versions AVIF/WebP générées par Astro.
+- `spots/rabat-hassan-tower.jpg` : original 4032 × 2839, Aemazy, CC BY-SA 4.0 ; prise déclarée le 28 octobre 2026. [Source](https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg). Original conservé sans modification ; versions AVIF/WebP générées par Astro.
 
 Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour Hassan : date déclarée 22 décembre 2023, ancien fichier 1400 × 683 ; cadrage CSS 75 % 50 % pour conserver la tour dans les formats de carte.
 
@@ -414,3 +414,11 @@ Originaux Wikimedia récupérés pour éviter la perte de détails des copies r�
 
 - `cities/el-jadida.jpg` et `spots/el-jadida-mazagan.jpg` : Xpelli, CC BY-SA 4.0. Date déclarée : 31 octobre 2026, 11:52:18. Original 5686 × 7581 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg. Conversions Astro et recadrage CSS 50 % / 30 % sous la même licence. Remplace les vues de ville de 2017 et de Mazagan de 2012.
 
+
+## Rabat — visuels récents, octobre 2026
+
+- `spots/rabat-oudayas.jpg` : Aemazy, CC BY-SA 4.0 ; prise déclarée le 30 octobre 2026 ; original 3 899 × 2 602 px. [Source](https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg). SHA-256 : ce32b534e2edc59a8b8c803eddedcba7b059b93d584dc859233881e5f324c616.
+- `spots/rabat-hassan-tower.jpg` : Aemazy, CC BY-SA 4.0 ; prise déclarée le 28 octobre 2026 ; original 4 032 × 2 839 px. [Source](https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg). SHA-256 : 2ba53ff7c4b62f2823c419fe681c6a228560d4d57d0218a66e39b0d707cf149f.
+- `spots/rabat-chellah.jpg` : BusinkaSalima, CC BY-SA 4.0 ; prise déclarée le 19 avril 2025 ; original 3 986 × 3 000 px. [Source](https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg). SHA-256 : 6271cc040ee8c01c4b6509437e15519312a244e6a4bb3f1168de162ebbc77541.
+
+Les originaux sont conservés tels que publiés ; Astro produit les variantes AVIF/WebP et leurs recadrages sous la licence respective.
