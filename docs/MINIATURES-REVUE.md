@@ -40,3 +40,29 @@ Tétouan médina : original inspecté, ancrage nord [50,20] appliqué ; dérivé
 
 - Planche 06 : onze sujets lisibles. Plage de Laâyoune : ciel dominant et lumière grise ; rechercher une vue côtière plus représentative pour le renouvellement. Le phare de Dakhla reste entier.
 - Planche 07 : compositions lisibles, avec vues de détail pour musée de Marrakech et Mahkama du Pacha. Mosquée Ali Ben Youssef : sommet du minaret très proche du bord, original à examiner. Corniche de Casablanca : la promenade est visible mais la mer peu représentée ; envisager une vue plus clairement côtière. Aucun de ces constats ne valide l’actualité des prises de vue.
+
+## Planches 08 à 12 — inspectées le 8 novembre 2026
+
+60 miniatures supplémentaires ; total 144/224.
+
+- 08 : Twin Center, tour gauche coupée en haut ; original et cadrage à examiner. Les onze autres sujets restent lisibles, le tramway devant la poste fait partie de la scène.
+- 09 : sujets lisibles ; cap Malabata très lointain, alternative rapprochée souhaitable. Mosquée des Andalous : détail de portail assumé.
+- 10 : Quaraouiyine, contre-jour marqué ; remplacement à envisager. Dar Batha : partie supérieure des arcades coupée, original à examiner. Les dix autres sujets sont lisibles.
+- 11 : Bouzaâfar, sommet du minaret coupé ; correction à étudier. Musée du cinéma : objet de collection en gros plan, pas une vue du bâtiment. Autres cadrages lisibles.
+- 12 : plage de Dakhla, ombre du photographe au premier plan ; remplacement souhaitable. Kasbah Mahdiyya : contre-jour et poteau central, remplacement souhaitable. Les dix autres cadrages restent lisibles.
+
+Ces observations ne constituent pas une vérification des lieux, licences ou dates. Contrôle sur page restant.
+
+## Planches 13 à 19 — inspectées le 8 novembre 2026
+
+Les 80 dernières miniatures du jeu ont été inspectées : total 224/224.
+
+- 13 : Agdal Marrakech sombre et ciel dominant ; Cala Iris voilée/surexposée, à renouveler. Autres sujets lisibles.
+- 14 : photo de plage de Taghazout avec petite intrusion colorée au bord supérieur gauche, original à examiner ; zoo, animal volontairement cadré en détail. Autres compositions lisibles.
+- 15 : tannerie de Tétouan avec intrusion probable de doigt au bord supérieur, original à examiner. Musée de la Résistance d’El Jadida sombre et sommet de tour serré. Autres sujets lisibles.
+- 16 : église du Pilar, tour coupée en haut ; original à examiner. Plage de Larache grise et peu caractéristique, renouvellement souhaitable. Autres sujets lisibles.
+- 17 : cèdre Gouraud, sommet des branches coupé ; original à examiner. Photo du parc d’Ifrane : camps et forêt conservés. Autres sujets lisibles.
+- 18 : ancienne cathédrale de Sidi Ifni et panneau de Tombouctou, parties hautes coupées ; palmeraie de Tiout masquée par une rambarde ; Khamlia très poussiéreuse ; ces quatre vues doivent être revues ou remplacées. Autres sujets lisibles, phare de Sidi Ifni à lumière sombre.
+- 19 : jardin Olhão vu derrière une grille et jardin Ibn Zaidoun depuis l’entrée, vues plus immersives souhaitables ; Borj Belkari sombre avec véhicule devant, renouvellement souhaitable. Autres cadrages lisibles.
+
+Première passe visuelle des 224 photos de lieux terminée. Les défauts consignés restent ouverts ; les villes/régions, les autres images éditoriales et le rendu dans les pages restent à contrôler. Le jalon « toutes les miniatures finalisées » reste non terminé.
