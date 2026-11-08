@@ -422,3 +422,7 @@ Originaux Wikimedia récupérés pour éviter la perte de détails des copies r�
 - `spots/rabat-chellah.jpg` : BusinkaSalima, CC BY-SA 4.0 ; prise déclarée le 19 avril 2025 ; original 3 986 × 3 000 px. [Source](https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg). SHA-256 : 6271cc040ee8c01c4b6509437e15519312a244e6a4bb3f1168de162ebbc77541.
 
 Les originaux sont conservés tels que publiés ; Astro produit les variantes AVIF/WebP et leurs recadrages sous la licence respective.
+
+## Parc national d’Ifrane — juin 2023
+
+- `spots/ifrane-national-park.jpg` : Reda benkhadra, CC BY-SA 4.0 ; prise déclarée le 3 juin 2023 ; original 5 184 × 3 176 px, optimisé à 1 600 × 980 px pour le dépôt. [Source](https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg). La page source situe les campements près de Michlifen, dans le parc ; photo contrôlée visuellement et choisie après comparaison des deux cadrages. L’attribution visible précise « version recadrée et optimisée ». Ancrage focal bas-centre pour garder les campements dans les recadrages panoramiques. Les EXIF ne sont pas copiées dans le dérivé. SHA-256 du dérivé : `F906A7BB4ABC9E97BF4D1B8EFBC0724299261635E9F72C1090277ADDC66A6FA6`.
