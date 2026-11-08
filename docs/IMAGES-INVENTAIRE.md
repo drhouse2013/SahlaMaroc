@@ -1,525 +1,78 @@
-# Inventaire des images de lieux
-
-> GÃ©nÃ©rÃ© par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-08. Ne pas Ã©diter Ã  la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. RÃ¨gles : `docs/IMAGES.md`.
-
-**Total : 339 lieux, 267 photos vÃ©rifiÃ©es, 72 placeholders (Â« Photo Ã  venir Â»), 0 Ã  confirmer.**
-
-| Type | Lieux | VÃ©rifiÃ©es | Placeholders | Ã€ confirmer |
-|---|---|---|---|---|
-| Hero accueil | 1 | 1 | 0 | 0 |
-| Villes | 31 | 31 | 0 | 0 |
-| RÃ©gions | 12 | 12 | 0 | 0 |
-| Lieux Ã  visiter | 295 | 223 | 72 | 0 |
-
-**Statuts.** *vÃ©rifiÃ©e* : fichier prÃ©sent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichÃ©e. *placeholder* : aucune photo, le site affiche Â« Photo Ã  venir Â». *Ã  confirmer* : entrÃ©e de manifeste incomplÃ¨te ou `"verified": false` ; non affichÃ©e (placeholder) tant que non corrigÃ©e. Licences relevÃ©es lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revÃ©rifiÃ©es une Ã  une ici.
-
-## Hero accueil (1)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Accueil (hero) | `cities/home-hero.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-## Villes (31)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Marrakech | `cities/marrakech-jemaa-night-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Casablanca | `cities/casablanca.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Rabat | `cities/rabat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_des_Oudayas_%C3%A0_Rabat.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tanger | `cities/tangier.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| FÃ¨s | `cities/fes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Essaouira | `cities/essaouira.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Chefchaouen | `cities/chefchaouen.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Taghazout | `cities/taghazout.jpg` | Wikimedia Commons (2 fÃ©vrier 2026, 5 712 Ã— 4 284 px) | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Nador | `cities/nador-corniche-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| TÃ©touan | `cities/tetouan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MeknÃ¨s | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ouarzazate | `cities/ouarzazate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Oujda | `cities/oujda.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Al HoceÃ¯ma | `cities/al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Merzouga | `cities/merzouga.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg> | vÃ©rifiÃ©e | CC0 |
-| Tafraout | `cities/tafraout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg> | vÃ©rifiÃ©e | CC BY 3.0 |
-| Agadir | `cities/agadir.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Dakhla | `cities/dakhla.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg> | vÃ©rifiÃ©e | CC0 1.0 |
-| Laayoune | `cities/laayoune.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| El Jadida | `cities/el-jadida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_SÃ©bastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Saidia | `cities/saidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Guelmim | `cities/guelmim.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tiznit | `cities/tiznit.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ù…Ø³Ø¬Ø¯_Ø§Ù„ÙƒØ¨ÙŠØ±_ØªÙŠØ²Ù†ÙŠØª.jpg> | vÃ©rifiÃ©e | CC0 1.0 |
-| Sidi Ifni | `cities/sidi-ifni.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Taroudant | `cities/taroudant.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Zagora | `cities/zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Errachidia | `cities/errachidia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Ifrane | `cities/ifrane-lake-2025.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ø¨Ø­ÙŠØ±Ø©_Ø¹ÙŠÙ†_Ø¥ÙØ±Ø§Ù†.jpg> | vÃ©rifiÃ©e | CC0 1.0 |
-| Asilah | `cities/asilah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_ramparts_of_the_Old_Medina_of_Asilah.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Larache | `cities/larache.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Kenitra | `cities/kenitra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Gare_de_train_(TGV)._KENITRA._Maroc.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-## RÃ©gions (12)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Tanger-TÃ©touan-Al HoceÃ¯ma | `regions/tanger-tetouan-al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Faro_del_cabo_Espartel,_Marruecos,_2015-12-11,_DD_02.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| L'Oriental | `regions/oriental.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Grotte_du_chameau,_Zegzel_-_Province_de_Berkane.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| FÃ¨s-MeknÃ¨s | `regions/fes-meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Rabat-SalÃ©-KÃ©nitra | `regions/rabat-sale-kenitra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Main_Gate_Chellah_Rabat_Nov25_A7CR_08921.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| BÃ©ni Mellal-KhÃ©nifra | `regions/beni-mellal-khenifra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Casablanca-Settat | `regions/casablanca-settat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_and_Its_Minaret_in_Casablanca,_Morocco_2.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Marrakech-Safi | `regions/marrakech-safi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Jemaa_el-Fna_square_is_a_major_place_of_cultural_exchanges.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| DrÃ¢a-Tafilalet | `regions/draa-tafilalet.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Souss-Massa | `regions/souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_Agadir_Oufella.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Guelmim-Oued Noun | `regions/guelmim-oued-noun.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:MA.GN.Sidi-Ifni_Legzira-Beach_Stone-Arch_756_16x9-R_5120x2880.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| LaÃ¢youne-Sakia El Hamra | `regions/laayoune-sakia-el-hamra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Laayoune_Coupoles.jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| Dakhla-Oued Ed Dahab | `regions/dakhla-oued-ed-dahab.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:D%C3%A9sert_de_Dakhla_(dunes_blanches).jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-## Lieux Ã  visiter (295)
-
-### Marrakech (18/20 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Place Jemaa el-Fna | `spots/marrakech-jemaa-el-fna.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| MosquÃ©e de la Koutoubia | `spots/marrakech-koutoubia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kutubiyya_Mosque,_Marrakesh,_Morocco,_20250124_1834_7027.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| Jardin Majorelle | `spots/marrakech-majorelle.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MÃ©dersa Ben Youssef | `spots/marrakech-ben-youssef.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tombeaux saadiens | `spots/marrakech-saadian-tombs.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Palais El Badi | `spots/marrakech-el-badi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| Souks de la mÃ©dina | `spots/marrakech-souks.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg> | vÃ©rifiÃ©e | CC BY 3.0 |
-| Tanneries | `spots/marrakech-tanneries.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marrakech_tanneries_(2846868933).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| MusÃ©e des arts culinaires | `spots/marrakech-culinary-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Moroccan_Culinary_Arts_Museum.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| MusÃ©e Yves Saint Laurent | `spots/marrakech-ysl-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Architetti_studio_ko,_museo_YSL_a_Marrakech.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| MusÃ©e Dar Si SaÃ¯d | `spots/marrakech-dar-si-said.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Dar_Si_Said_1489.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Palais de la Bahia | `spots/marrakech-bahia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Jardins de la Menara | `spots/marrakech-menara.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Menara_Garden_(Marrakech,_Moroc)_10.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e de Marrakech | `spots/marrakech-marrakech-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Museum_of_Marrakech.JPG> | vÃ©rifiÃ©e | CC BY 3.0 |
-| MusÃ©e de la Palmeraie | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| MusÃ©e Farid Belkahia | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Maison de la Photographie | `spots/marrakech-maison-photographie.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Maison_de_la_Photographie_de_Marrakech,_a_small_photography_museum_House_of_Photography_in_Marrakech,_Morroco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MosquÃ©e Ali Ben Youssef | `spots/marrakech-ali-ben-youssef.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ben_Youssef_Mosque_(52188886638).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| Jardins de l'Agdal | `spots/marrakech-agdal.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agdale.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Koubba almoravide | `spots/marrakech-almoravid-koubba.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marrakesh,_Almoravid_Koubba_(5365339756)_(2).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-
-### Casablanca (17/17 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MosquÃ©e Hassan II | `spots/casablanca-hassan-ii.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| La Corniche | `spots/casablanca-corniche.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Promenade_sur_la_Corniche_Ain_Diab_%C3%A0_Casablanca_-_photo_Bertrand_SOUBEYRAND.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ancienne mÃ©dina | `spots/casablanca-old-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_of_Casablanca_5.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Quartier des Habous | `spots/casablanca-habous.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_mohamedia_Mosque_in_Habous_district_Casablanca_the_mosque_was_built_by_Mohamed_the_fifth_king_of_morocco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Mahkama du Pacha | `spots/casablanca-mahkama-pacha.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mahkama_du_Pacha_ou_Palais_du_M%C3%A9chouar.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Ancienne cathÃ©drale du SacrÃ©-CÅ“ur | `spots/casablanca-sacre-coeur.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%C3%89glise_du_Sacr%C3%A9-Coeur,_Casablanca_(5507016000).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| MarchÃ© central | `spots/casablanca-marche-central.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CE%AE_%CE%91%CE%B3%CE%BF%CF%81%CE%AC_%CE%9A%CE%B1%CE%B6%CE%B1%CE%BC%CF%80%CE%BB%CE%AC%CE%BD%CE%BA%CE%B1_1821.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Place Mohammed V | `spots/casablanca-mohammed-v-square.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Place_Mohammed_V_-_Casablanca_-_2022.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e Abderrahman Slaoui | `spots/casablanca-slaoui-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_gen%C3%A8se_2.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Villa des Arts | `spots/casablanca-villa-des-arts.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Villa_des_arts_Casablanca_02.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Poste centrale | `spots/casablanca-poste-centrale.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:20190814_CASABLANCA_69.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Twin Center | `spots/casablanca-twin-center.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ma%C3%A2rif,_Morocco_-_panoramio_(7).jpg> | vÃ©rifiÃ©e | CC BY 3.0 |
-| Morocco Mall | `spots/casablanca-morocco-mall.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Mall.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Phare d'El Hank | `spots/casablanca-el-hank-lighthouse.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Le_phare_d'El_Hank,_Casablanca,_Maroc.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Rickâ€™s CafÃ© | `spots/casablanca-ricks-cafe.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Rick%C2%B4s_Cafe_01.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Stade Mohammed V | `spots/casablanca-stade-mohammed-v.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mohammed_V_stadium.jpg> | vÃ©rifiÃ©e | CC0 |
-| Casa art dÃ©co | `spots/casablanca-art-deco.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Immeuble_Art_d%C3%A9co.jpg> | vÃ©rifiÃ©e | CC0 |
-
-### Rabat (17/17 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Kasbah des Oudayas | `spots/rabat-oudayas.jpg` | Wikimedia Commons (30 octobre 2026, 3 899 Ã— 2 602 px) | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tour Hassan et mausolÃ©e Mohammed V | `spots/rabat-hassan-tower.jpg` | Wikimedia Commons (28 octobre 2026, 4 032 Ã— 2 839 px) | <https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Chellah | `spots/rabat-chellah.jpg` | Wikimedia Commons (19 avril 2025, 3 986 Ã— 3 000 px) | <https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MÃ©dina de Rabat | `spots/rabat-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| MusÃ©e de l'histoire et des civilisations | `spots/rabat-history-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l'histoire,_Rabat_(2).jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| CathÃ©drale Saint-Pierre | `spots/rabat-st-peters.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-Pierre_de_Rabat.JPG> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Palais royal (Dar al-Makhzen) | `spots/rabat-royal-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Royal_Palace,_Rabat.jpg> | vÃ©rifiÃ©e | Public domain |
-| Bab er-Rouah | `spots/rabat-bab-rouah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D8%AD.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Zoo de Rabat | `spots/rabat-zoo.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Rhinoceros_in_the_zoo_of_Rabat,_Morocco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MÃ©dina de SalÃ© | `spots/rabat-sale-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sal%C3%A9_from_the_Plateforme_du_S%C3%A9maphore_(Kasbah_des_Oudais)_(5509116076).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| MÃ©dersa mÃ©rinide | `spots/rabat-marinid-madrasa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Marinid_Medersa.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e Mohammed VI d'art moderne et contemporain | `spots/rabat-mmvi-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Rabat_Mohammed_VI_Museum.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tour Mohammed VI | `spots/rabat-mohammed-vi-tower.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Rabat,_old_and_new_(Mausoleum_of_Mohammed_V_and_new_Mohammed_VI_Tower_behind;_%D8%B6%D8%B1%D9%8A%D8%AD_%D9%85%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%AE%D8%A7%D9%85%D8%B3).jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e de Bank Al-Maghrib | `spots/rabat-currency-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Rabat_Bank_Museum.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Porte Bab El-Had | `spots/rabat-bab-el-had.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_El_Had.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| MusÃ©e des Oudayas | `spots/rabat-oudayas-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:MUS%C3%89E_NATIONAL_DE_LA_PARURE.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Rabat | `spots/rabat-rabat-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_de_Rabat_v.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Tanger (15/17 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MÃ©dina de Tanger | `spots/tangier-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ancien_Medina,_Tangier,_Morocco_-_panoramio_(11).jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| MusÃ©e de la Kasbah | `spots/tangier-kasbah-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_de_Tanger_2.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e de la LÃ©gation amÃ©ricaine | `spots/tangier-american-legation.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:American_Legation_Tangier_3.jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Grand Socco | `spots/tangier-grand-socco.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tanger_-_Marktfrauen_am_Grand_Socco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Grottes dâ€™Hercule | `spots/tangier-hercules-caves.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cuevas_de_H%C3%A9rcules,_Cabo_Espartel,_Marruecos,_2015-12-11,_DD_10-12_HDR.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Grande mosquÃ©e de Tanger | `spots/tangier-great-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:La_Gran_Mezquita_Tanger.Morocco_-_panoramio.jpg> | vÃ©rifiÃ©e | CC BY 3.0 |
-| Petit Socco | `spots/tangier-petit-socco.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Petit_Socco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tombeau d'Ibn Battouta | `spots/tangier-ibn-battuta-tomb.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Inside_Ibn_Battuta%27s_Tomb_-_Tangier.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ã‰glise de l'ImmaculÃ©e-Conception | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| MosquÃ©e Sidi Bou Abib | `spots/tangier-sidi-bou-abib.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plaza_del_9_de_abril_de_1947,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_28.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ã‰glise Saint-AndrÃ© | `spots/tangier-st-andrews.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Church_of_St_Andrew,_Tangier.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Jardins de la Mendoubia | `spots/tangier-mendoubia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Mendoubia.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e d'art contemporain | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plaza de Toros | `spots/tangier-plaza-de-toros.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:PlazaTorosTanger.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Cap Malabata | `spots/tangier-cap-malabata.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cape_Malabata_Lighthouse.jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Palais Marshan | `spots/tangier-marshan-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Gran Teatro Cervantes | `spots/tangier-cervantes-theatre.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Gran_Teatro_Cervantes,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_50.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### FÃ¨s (16/16 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MÃ©dina de FÃ¨s el-Bali | `spots/fes-fes-el-bali.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tanneries Chouara | `spots/fes-chouara-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tanning_hides_in_Fes,_Morocco.jpg> | vÃ©rifiÃ©e | CC0 |
-| MÃ©dersa Bou Inania | `spots/fes-bou-inania.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MÃ©dersa Al Attarine | `spots/fes-al-attarine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fez_Al-Attarine_Madrasa_%2854250005206%29.jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Borj Nord | `spots/fes-borj-nord.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg> | vÃ©rifiÃ©e | Public domain |
-| MosquÃ©e des Andalous | `spots/fes-andalusian-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Andalous_mosque_portal.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Borj Sud | `spots/fes-borj-sud.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Borj_sud1.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Tombeaux mÃ©rinides | `spots/fes-merenid-tombs.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marinid_Tombs_in_April_2016_1.jpg> | vÃ©rifiÃ©e | CC0 |
-| MosquÃ©e et bibliothÃ¨que Al Quaraouiyine | `spots/fes-quaraouiyine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3_(83359).jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MausolÃ©e de Moulay Idriss II | `spots/fes-moulay-idriss-shrine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mausol%C3%A9e_Moulay_Idriss_II_F%C3%A8s.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MosquÃ©e et mausolÃ©e de Sidi Ahmed al-Tijani | `spots/fes-tijani.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zawiya_al-Tijani_DSCF4204.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e Nejjarine | `spots/fes-nejjarine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fondouk_el-Nejjarine_(Old_name-_Fes_(5364129707)).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| MusÃ©e Dar Batha | `spots/fes-dar-batha.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Dar_Batha_DSCF2801.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Jardin Jnan Sbil | `spots/fes-jnan-sbil.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Jnan_Sbil_(Bou_Jeloud_Gardens),_Fes_(8952352159).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| MÃ©dersa Cherratine | `spots/fes-cherratine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B7%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3.jpg> | vÃ©rifiÃ©e | CC0 |
-| Palais Glaoui | `spots/fes-glaoui-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Dar_Glaoui_Fes_DSCF4279.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Essaouira (7/10 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MÃ©dina dâ€™Essaouira | `spots/essaouira-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Remparts et Skala | `spots/essaouira-skala.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ãle de Mogador | `spots/essaouira-mogador-island.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Diabat | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Dar Sultan | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Port dâ€™Essaouira | `spots/essaouira-fishing-port.jpg` | Wikimedia Commons (16 mai 2024, 5 760 Ã— 3 840 px) | <https://commons.wikimedia.org/wiki/File:Fishing_Boats_at_Port_of_Essaouira_Sqala.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage dâ€™Essaouira | `spots/essaouira-beach.jpg` | Wikimedia Commons (19 avril 2026, 5 788 Ã— 3 864 px) | <https://commons.wikimedia.org/wiki/File:Essaouira_coast,_Morocco.jpg> | vÃ©rifiÃ©e | CC0 1.0 |
-| Place Moulay Hassan | `spots/essaouira-place-moulay-hassan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Place_Moulay_El_Hassan,_Essaouira_(2901935426).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| Oasis dâ€™AÃ¯n Hajar | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Sidi Kaouki | `spots/essaouira-sidi-kaouki.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Beach,_Sidi_Kaouki,_Morocco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Chefchaouen (7/10 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Kasbah de Chefchaouen | `spots/chefchaouen-kasbah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:20230914_12h3632EX_Chefchaouen_Kasbah_(53256409248).jpg> | vÃ©rifiÃ©e | Public domain |
-| Place Outa el-Hammam | `spots/chefchaouen-outa-el-hammam.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen_(55312834484).jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| Ras el-Ma | `spots/chefchaouen-ras-el-ma.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen,_Morocco_(5409596611)_(4).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| MosquÃ©e espagnole | `spots/chefchaouen-spanish-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:20230914_14h1617Em_Chefchaouen_(53255237732).jpg> | vÃ©rifiÃ©e | Public domain |
-| Grande mosquÃ©e de Chefchaouen | `spots/chefchaouen-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen_(23479090035).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Quartier Souiqa | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Place El Haouta | `spots/chefchaouen-el-haouta.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MosquÃ©e Bouzafar | `spots/chefchaouen-bouzafar-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Spanish_mosque_IMG_6179.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ã‰comusÃ©e du parc de Talassemtane | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Colline de l'hÃ´tel Atlas | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Taghazout (4/6 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Anchor Point | `spots/taghazout-anchor-point.jpg` | Unsplash | <https://unsplash.com/photos/a-person-standing-on-a-rock-watching-a-wave-LH_ribmaYRo> | vÃ©rifiÃ©e | Unsplash License |
-| Hash Point | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage Panorama | `spots/taghazout-panorama.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_beach_at_Taghazout.jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Paradise Valley | `spots/taghazout-paradise-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_Paradise_Valley.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Taghazout | `spots/taghazout-taghazout-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_plage_%22_TAGHAZOUT%22.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Imouran (rocher des Diables) | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Nador (8/9 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Mont Gourougou | `spots/nador-gourougou.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mont_Gourougou.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Corniche de Nador | `spots/nador-corniche.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Nador_corniche.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Colline de la ville | `spots/nador-city-hill.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Nador_City_Hill.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Lagune de Marchica | `spots/nador-marchica.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de la Marchica | `spots/nador-mar-chica-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Nador,_Uferpromenade_am_Mar_Chica.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Kariat Arekmane | `spots/nador-kariat-arekmane.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:La_plage_de_Kariat_Arkmane.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Boucana | `spots/nador-boucana.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Flock_of_birds_Boukana_beach.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Charrana | `spots/nador-charrana.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Charana_2.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Golf dâ€™Atalayoun | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### TÃ©touan (6/12 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MÃ©dina de TÃ©touan | `spots/tetouan-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_de_Tetouan_Nov2020_054.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e ethnographique de Bab El Okla | `spots/tetouan-bab-okla-2024.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e archÃ©ologique | `spots/tetouan-archaeological-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e dâ€™art moderne | `spots/tetouan-modern-art.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Palais royal et MÃ©chouar | `spots/tetouan-royal-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Morocco_%C2%A9_03.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Jardin Riad Al Ochak | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Kasbah du mont Dersa | `spots/tetouan-dersa-kasbah-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e du patrimoine religieux | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| MusÃ©e Dar El Oddi | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Tannerie de TÃ©touan | `spots/tetouan-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%AF%D8%A7%D8%B1_%D8%A7%D9%84%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Avenue Mohammed V | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Quartier de lâ€™Ensanche | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### MeknÃ¨s (9/12 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Bab Mansour | `spots/meknes-bab-mansour.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Mansour_Meknes_2018_2.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Place Lahdim | `spots/meknes-lahdim.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_06.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MausolÃ©e de Moulay IsmaÃ¯l | `spots/meknes-moulay-ismail.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mausoleum-Moulay-Ismail-2-CTH.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MÃ©dersa Bou Inania | `spots/meknes-bou-inania.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bou_Inania_-_courtyard_through_arch.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Heri es-Souani | `spots/meknes-heri-souani.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_6_(39069702785).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Prison Kara | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Palais Al-Mansour | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Bassin de l'Agdal | `spots/meknes-agdal-basin.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bassin_de_l%27Agdal_ou_Sahrij_Swani_-_Mekn%C3%A8s_02.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e Dar JamaÃ¯ | `spots/meknes-dar-jamai.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Dar_jamai_DSCF5744.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e Borj Belkari | `spots/meknes-borj-belkari.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_51DSC_0326_(42737841031).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| MusÃ©e de MeknÃ¨s | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| MausolÃ©e de Sidi Ben AÃ¯ssa | `spots/meknes-sidi-ben-aissa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Ouarzazate (8/8 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Kasbah de Taourirt | `spots/ouarzazate-taourirt.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_26bDSC_0353_(39988264510).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| AÃ¯t Ben Haddou | `spots/ouarzazate-ait-benhaddou.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:A%C3%AFt_Benhaddou_100.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e du cinÃ©ma | `spots/ouarzazate-cinema-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Pathe_Projector_Ouarzazate.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Atlas Studios | `spots/ouarzazate-atlas-studios.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Atlas_Corporation_Studios-Ouarzazate.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Oasis de Fint | `spots/ouarzazate-fint-oasis.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oasis_de_Fint,_Uarzazat_02.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Centrale solaire de Ouarzazate | `spots/ouarzazate-solar-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Noor_1_and_2_-_Ouarzazate_Solar_Power_Station_(48962353822).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| CLA Studios | `spots/ouarzazate-cla-studios.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cla_Studios.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Place principale dâ€™Ouarzazate | `spots/ouarzazate-main-square.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_2014-11-15_(15844367616).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-
-### Oujda (8/11 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MÃ©dina dâ€™Oujda | `spots/oujda-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Bab Sidi Abdelwahab | `spots/oujda-bab-sidi-abdelwahab.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda.baba_sidi_abdel_wahab.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Parc Lalla AÃ¯cha | `spots/oujda-lalla-aicha.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:PARC_lala_Aicha_%C3%A0_Oujda_03.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Parc Lalla Meryem | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| ForÃªt de Sidi Maafa | `spots/oujda-sidi-maafa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Maafa_01.png> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Stade d'Honneur | `spots/oujda-honor-stadium.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Stade_d%27honneur.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Grande mosquÃ©e dâ€™Oujda | `spots/oujda-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda.jamaa_lkbir.JPG> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| MÃ©dersa mÃ©rinide | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Casbah dâ€™Oujda | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Bab El Gharbi | `spots/oujda-bab-el-gharbi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda_Bab_al_Gharbi,vue_2_,Ghizlane_BOUMACHMACHA.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Oasis de Sidi Yahya | `spots/oujda-sidi-yahya.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda.sidi_yahya.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-
-### Al HoceÃ¯ma (5/9 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Parc national dâ€™Al HoceÃ¯ma | `spots/al-hoceima-national-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Alhucemas_(9).JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| BelvÃ©dÃ¨re de Moroviejo | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage Quemado | `spots/al-hoceima-quemado.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ãles dâ€™Al HoceÃ¯ma | `spots/al-hoceima-alhucemas-islands.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Pe%C3%B1%C3%B3n_de_Alhucemas_desde_la_costa_marroqu%C3%AD.jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| Cala Iris | `spots/al-hoceima-cala-iris.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_Cala_Iris.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Sfiha | `spots/al-hoceima-sfiha.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sfiha_panorama.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Cala Bonita | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage de Tala Youssef | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Site archÃ©ologique dâ€™Al Mazamma | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Merzouga (4/4 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Erg Chebbi | `spots/merzouga-erg-chebbi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Erg_Chebbi_in_the_evening_light.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| La grande dune | `spots/merzouga-grand-dune.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Erg_Chebbi_sunset.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Lac Dayet Srji | `spots/merzouga-dayet-srji.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Merzouga_Lake_(12383277085).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Village de Khamlia | `spots/merzouga-khamlia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Khamlia_village.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Tafraout (3/5 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Rochers peints | `spots/tafraout-painted-rocks.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Painted_Rocks_Trafraoute.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Chapeau de NapolÃ©on | `spots/tafraout-napoleons-hat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Gorges dâ€™AÃ¯t Mansour | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Agard Oudad | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| VallÃ©e des Ammeln | `spots/tafraout-ammeln-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Valley_of_Ammeln.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Agadir (13/18 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Kasbah dâ€™Agadir Oufella | `spots/agadir-oufella.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage dâ€™Agadir et tour de sauveteur | `spots/agadir-beach.jpg` | Wikimedia Commons (13 janvier 2025, 3 024 Ã— 3 165 px) | <https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg> | vÃ©rifiÃ©e | CC BY 4.0 |
-| Souk El Had | `spots/agadir-souk-el-had.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e MÃ©moire dâ€™Agadir | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| MusÃ©e du patrimoine amazigh | `spots/agadir-amazigh-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Parc aux crocodiles | `spots/agadir-crocodile-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Excursion_Crocoparc_Agadir_(33434626570).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| VallÃ©e des Oiseaux | `spots/agadir-valley-of-birds.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_18-39-49.JPG> | vÃ©rifiÃ©e | CC0 |
-| Jardin Ibn Zaydoun | `spots/agadir-ibn-zaidoun-garden.jpg` | Wikimedia Commons (25 aoÃ»t 2025, 4 000 Ã— 3 000 px) | <https://commons.wikimedia.org/wiki/File:Ø­Ø¯ÙŠÙ‚Ø©_Ø§Ø¨Ù†_Ø²ÙŠØ¯ÙˆÙ†_Ø£ÙƒØ§Ø¯ÙŠØ±.jpg> | vÃ©rifiÃ©e | CC0 1.0 |
-| MosquÃ©e Mohammed V | `spots/agadir-mohammed-v-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mohammed_V_Moschee_20111014_2.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Jardin d'OlhÃ£o (Jardin du Portugal) | `spots/agadir-olhao-garden.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_28.01.2011_15-12-35.JPG> | vÃ©rifiÃ©e | CC0 |
-| Marina d'Agadir | `spots/agadir-marina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_Marina_Agadir_2020.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MosquÃ©e Loubnane | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Mur du souvenir | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| MÃ©dina de Coco Polizzi | `spots/agadir-coco-polizzi-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:M%C3%A9dina_Polizzi_Agadir_1.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e municipal Bert Flint | `spots/agadir-bert-flint-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_17-52-06.JPG> | vÃ©rifiÃ©e | CC0 |
-| ThÃ©Ã¢tre de plein air | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Poste centrale dâ€™Agadir | `spots/agadir-poste-centrale.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir,_Morocco_-_Main_Post_Office.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ã‰glise protestante | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Dakhla (6/8 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Baie de Dakhla | `spots/dakhla-lagoon.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kitesurfing_in_Dakhla,_Western_Sahara.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Phare de Dakhla | `spots/dakhla-lighthouse.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Faro_de_Dajla.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ã‰glise Notre-Dame-du-Mont-Carmel | `spots/dakhla-mount-carmel-church.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Dakhla_kathKirche_20221024_181750.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| La Sarga | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Parc national de Dakhla | `spots/dakhla-national-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:A_big_male_Addax_showing_as_the_power_of_his_horns.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ãle du Dragon | `spots/dakhla-dragon-island.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Windsurfer_in_front_of_Dragon_Island_at_Dakhla,_March_2009.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Port de pÃªche de Dakhla | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage de Dakhla | `spots/dakhla-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_pr%C3%A8s_de_Dakhla_2.jpg> | vÃ©rifiÃ©e | CC0 |
-
-### Laayoune (2/4 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| CathÃ©drale Saint-FranÃ§ois-dâ€™Assise | `spots/laayoune-cathedral.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Laayoune_Cathedral_2011.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| MosquÃ©e Al-Zawiya | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Lagune de LaÃ¢youne | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage de LaÃ¢youne | `spots/laayoune-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%B4%D8%A7%D8%B7%D8%A6_%D9%81%D9%85_%D8%A7%D9%84%D9%88%D8%A7%D8%AF%D8%8C_%D8%A7%D9%84%D8%B9%D9%8A%D9%88%D9%86.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### El Jadida (8/9 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| CitÃ© portugaise de Mazagan | `spots/el-jadida-mazagan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_SÃ©bastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Citerne portugaise | `spots/el-jadida-cistern.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Water_reflection_Portuguese_Cistern.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Deauville | `spots/el-jadida-deauville-plage.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Jadida_Beach.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Sidi Bouzid | `spots/el-jadida-sidi-bouzid.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Bouzid_El_Jadida_.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ã‰glise de lâ€™Assomption | `spots/el-jadida-assumption-church.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Jadida,_Morocco_%F0%9F%87%B2%F0%9F%87%A6_-_Church_of_the_Assumption_Oct_2023.jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| ThÃ©Ã¢tre municipal | `spots/el-jadida-municipal-theatre.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Th%C3%A9%C3%A2tre_Afifi.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Haras dâ€™El Jadida | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Phare de Sidi Bouafi | `spots/el-jadida-lighthouse.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Bouafi_Lighthouse_tower,_El_Jadida,_Morocco_-_Oct_2026.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| MusÃ©e de la RÃ©sistance et de lâ€™IndÃ©pendance | `spots/el-jadida-resistance-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Espace_de_la_MÃ©moire_Historique_de_la_RÃ©sistance_et_de_la_LibÃ©ration,_El_Jadida.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Saidia (3/7 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Vieille ville de SaÃ¯dia | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Corniche de SaÃ¯dia | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Casbah de SaÃ¯dia | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage de MÃ©diterrania-SaÃ¯dia | `spots/saidia-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_de_Saidia_-_Province_de_Berkane.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Marina de SaÃ¯dia | `spots/saidia-marina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Saidia's_Marina_by_night_-_Berkane_Morocco_by_Brahim_FARAJI.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| RÃ©serve naturelle de la Moulouya | `spots/saidia-moulouya-reserve.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Moulouya_river.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Plage sauvage entre le Kiss et la Moulouya | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Kenitra (5/8 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Kasbah de Mehdia | `spots/kenitra-kasbah-mahdiyya.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Rampart_of_Mehdya_Castle.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| ForÃªt de la MaÃ¢mora | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Merja Zerga | `spots/kenitra-merja-zerga.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Lagune_Bleu_Moulay_Bousselham.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Plage de Mehdia | `spots/kenitra-mehdia-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_de_Mehdia.JPG> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Taxi Beach | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Merja de Sidi Boughaba | `spots/kenitra-sidi-boughaba.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:NW_Central_Sidi_Boughaba_Lake_Kenitra_Nov25_A7CR_08995.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Site de Thamusida | `spots/kenitra-thamusida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Thamusida,_Mauretania_Tingitana,_Morocco_(25394792208).jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| Kasbah de KÃ©nitra | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Errachidia (1/5 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Source bleue de Meski | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Barrage Hassan Addakhil | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| VallÃ©e du Ziz | `spots/errachidia-ziz-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ziz_Valley_in_the_desert_of_Morocco.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Oasis de Walad Chaker | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Oasis de Kelmima | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Guelmim (1/6 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Oasis dâ€™Asrir | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Zriouila | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Oasis de Tighmert | `spots/guelmim-tighmert-oasis.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oasis_-_panoramio_(5).jpg> | vÃ©rifiÃ©e | CC BY 3.0 |
-| Abaynou | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage Blanche | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Souk de Guelmim | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Taroudant (4/6 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Remparts de Taroudant | `spots/taroudant-ramparts.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Souk arabe (Kissaria) | `spots/taroudant-arab-souk.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudannt_Souk.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Souk berbÃ¨re (Jnane Jamaa) | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Tannerie de Taroudant | `spots/taroudant-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudannt_Gerberei.JPG> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Cigognes de la porte est | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Palmeraie de Tiout | `spots/taroudant-tiout-palm-grove.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oasis_Tiout,_Taroudant_province,_Morocco_-_%D9%85%D9%86%D8%B8%D8%B1%D9%86_%D9%81%D9%8A_%D9%85%D9%86%D8%B7%D9%82%D8%A9_%D8%AA%D9%8A%D9%88%D8%AA_%D9%86%D9%88%D8%A7%D8%AD%D9%8A_%D8%AA%D8%A7%D8%B1%D9%88%D8%AF%D8%A7%D9%86%D8%AA.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Larache (6/9 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Kasbah de Larache | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| MÃ©dina de Larache | `spots/larache-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Larache_Medina.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Ã‰glise Nuestra SeÃ±ora del Pilar | `spots/larache-pilar-church.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Larache_Iglesia_Pilar.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| ChÃ¢teau des cigognes | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Ruines de Lixus | `spots/larache-lixus.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ruins_at_Lixus_archaeological_site_49.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Place de la LibÃ©ration | `spots/larache-place-liberation.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ø³Ø§Ø­Ø©_Ø§Ù„ØªØ­Ø±ÙŠØ±_Ø£Ùˆ_Ø³Ø§Ø­Ø©_Ø¥Ø³Ù¾Ø§Ù†ÙŠØ§_Ø¨Ø§Ù„Ø¹Ø±Ø§Ø¦Ø´_3.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Port de pÃªche de Larache | `spots/larache-port.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Traditional_port.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Balcon AtlÃ¡ntico | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage de Larache | `spots/larache-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_de_laarache.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-
-### Asilah (5/5 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MÃ©dina dâ€™Asilah | `spots/asilah-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Asilah,_Maroko.jpg> | vÃ©rifiÃ©e | CC0 |
-| Remparts et bastions | `spots/asilah-ramparts-towers.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Historic_Ramparts_of_Asilah.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Palais de RaÃ¯ssouli | `spots/asilah-raissouli-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Assilah_08.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Grande mosquÃ©e dâ€™Asilah | `spots/asilah-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:La_Grande_MosquÃ©e_de_Assilah_01.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Fresques murales | `spots/asilah-murals.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Asilah_(36493700570).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-
-### Ifrane (6/8 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Centre-ville dâ€™Ifrane | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Statue du lion | `spots/ifrane-lion-statue.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ifrane_lion.jpg> | vÃ©rifiÃ©e | CC BY-SA 3.0 |
-| Source Vittel | `spots/ifrane-vittel-spring.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Parc_Ain_Vittel_Ifrane1.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| CÃ¨dre Gouraud (Arz Goro) | `spots/ifrane-cedre-gouraud.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:CÃ¨dre_Gouraud.jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| Parc national dâ€™Ifrane | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Macaques de Barbarie | `spots/ifrane-macaques.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Barbary_macaque_near_Azrou.JPG> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ras el Ma | `spots/ifrane-ras-el-ma.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| UniversitÃ© Al Akhawayn | `spots/ifrane-akhawayn-university.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-
-### Zagora (3/6 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Palmeraie de Zagora | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Jebel Zagora | `spots/zagora-jebel-zagora.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mount_Zagora,_Morocco_(5422834133)_(6).jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-| Panneau de Tombouctou | `spots/zagora-timbuktu-sign-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_City.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| BibliothÃ¨que de Tamegroute | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Poterie verte de Tamegroute | `spots/zagora-tamegroute-pottery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tamegroute_Pottery.jpg> | vÃ©rifiÃ©e | CC BY-SA 2.0 |
-| Ksar Tissergate | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-
-### Sidi Ifni (4/8 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| Architecture art dÃ©co | `spots/sidi-ifni-art-deco.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Ifni_-_Art_deco_,_aus_der_Zeit_der_spanischen_Besatzung.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Ancienne amirautÃ© | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Ancienne cathÃ©drale | `spots/sidi-ifni-former-cathedral.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ehemalige_spanische_Kirche_von_Sidi_Ifni.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Phare de Sidi Ifni | `spots/sidi-ifni-lighthouse.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Faro_de_Sidi_Ifni.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Palais du gouverneur | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Rue Sidi Mohammed | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| CÃ¢ble marin de lâ€™ancien port | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage de Legzira | `spots/sidi-ifni-legzira.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Legzira_beach2.jpg> | vÃ©rifiÃ©e | CC BY 2.0 |
-
-### Tiznit (3/5 vÃ©rifiÃ©es)
-
-| Lieu | Image actuelle | Source | URL | Statut | Licence / note |
-|---|---|---|---|---|---|
-| MÃ©dina et remparts de Tiznit | `spots/tiznit-medina-walls.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Ait_jerrar_Tiznit.jpg> | vÃ©rifiÃ©e | CC0 1.0 |
-| Source bleue (AÃ¯n Akdim) | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Place El Mechouar | â€” (Â« Photo Ã  venir Â») | â€” | â€” | placeholder | â€” |
-| Plage dâ€™Aglou | `spots/tiznit-aglou-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
-| Parc national de Souss-Massa | `spots/tiznit-souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Viewpoint_Massa_Delta_Souss-Massa_Park_Oct25_A7CR_08026.jpg> | vÃ©rifiÃ©e | CC BY-SA 4.0 |
+YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíÛ]tí:-jZ.¶›­–)Ş³R2–çfVçF—&RFW2–ÖvW2FRÆ–WW€ £â|:–ì:—,:’"æöFRFööÇ2ö–ÖvW2Ö–çfVçF÷'’æÖ§6†çÒ'Vâ–ÖvW3¦–çfVçF÷'–’ÆR##bÓÓ‚âæR2:–F—FW":ÆÖ–â¢ÖöF–f–W"ÆW2Öæ–fW7FW2†7&2ö76WG2÷†÷F÷2ò¢öÖæ–fW7Bæ§6öæ’V—2&VÆæ6W"â,:†vÆW2¢Fö72ô”ÔtU2æÖFà ¢¢¥F÷FÂ¢33’Æ–WW‚Â#cr†÷F÷2l:—&–fœ:–W2Âs"Æ6V†öÆFW'2Œ*²†÷Fò:fVæ—"+²’Â:6öæf—&ÖW"â¢  §ÂG—RÂÆ–WW‚Âl:—&–fœ:–W2ÂÆ6V†öÆFW'2Â86öæf—&ÖW"À§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§Â†W&ò67VV–ÂÂÂÂÂÀ§Âf–ÆÆW2Â3Â3ÂÂÀ§Â,:–v–öç2Â"Â"ÂÂÀ§ÂÆ–WW‚:f—6—FW"Â#“RÂ##2Âs"ÂÀ ¢¢¥7FGWG2â¢¢§l:—&–fœ:–R¢¢f–6†–W",:—6VçBÂWFWW"²Æ–6Væ6R&V6öæçVR„42%’Â42%’Õ4Â43ÂFöÖ–æRV&Æ–2ÂVç7Æ6‚õW†VÇ2Æ–6Vç6R’WBÆ–Vâ6÷W&6R‡GG2²6WVÆR6WGFR†÷FòW7Bff–6Œ:–Râ§Æ6V†öÆFW"¢¢V7VæR†÷FòÂÆR6—FRff–6†R*²†÷Fò:fVæ—"+²â¬:6öæf—&ÖW"¢¢VçG,:–RFRÖæ–fW7FR–æ6ö×Ì:‡FR÷R'fW&–f–VB#¢fÇ6V²æöâff–6Œ:–R‡Æ6V†öÆFW"’FçBVRæöâ6÷'&–|:–RâÆ–6Væ6W2&VÆWl:–W2Æ÷'2FRÂv¦÷WBFW2†÷F÷2‡fö—"”ÔtUô5$TD•E2æÖF’Âæöâ&Wl:—&–fœ:–W2VæR:VæR–6’à ¢22†W&ò67VV–Âƒ §ÂÆ–WRÂ–ÖvR7GVVÆÆRÂ6÷W&6RÂU$ÂÂ7FGWBÂÆ–6Væ6Ròæ÷FRÀ§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§Â67VV–Â††W&ò’Â6—F–W2ö†öÖRÖ†W&òæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤6fÆ–W%öFUö6†ÖVW…öU÷76vUöFç5÷VæUöGVæUöFU÷6&ÆUöUôÖ&ö2æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ ¢22f–ÆÆW2ƒ3 §ÂÆ–WRÂ–ÖvR7GVVÆÆRÂ6÷W&6RÂU$ÂÂ7FGWBÂÆ–6Væ6Ròæ÷FRÀ§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§ÂÖ'&¶V6‚Â6—F–W2öÖ'&¶V6‚Ö¦VÖÖæ–v‡BÓ##bæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤æ–v‡Eõæ÷&Öööeô¦VÖöVÂÔfæõ7V&UöæEô¶÷WF÷V&–ôÖ–æ&WEö–åôÖ'&¶V6‚æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â66&Ææ6Â6—F–W2ö66&Ææ6æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥v†—7W'5ööeôvöÆEòÕô†76åô”•ôÖ÷7VUöEôGW6²æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â&&BÂ6—F–W2÷&&Bæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤¶6&…öFW5ô÷VF–5òT32Tõ&&Bæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂFævW"Â6—F–W2÷Fæv–W"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥æ÷&ÖõFævW%ô&•õFæv–W%ôÖ&ö¶¶òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Âl:‡2Â6—F–W2öfW2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖVF–æööeôfW2ÅôÖ&ö66òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂW76÷V—&Â6—F–W2öW76÷V—&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤W76÷V—&õ&×'G5òÕôfV''V'•ó##bæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â6†Vf6†÷VVâÂ6—F–W2ö6†Vf6†÷VVâæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤6†Vf6†÷VVâÖ&ÇVRÖ6—G’ÖGW&–ær×F†W7Vç6WBæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂFv†¦÷WBÂ6—F–W2÷Fv†¦÷WBæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥Fv†¦÷WEöÆÆW•òÕó##bÓ"Ó%ó"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂæF÷"Â6—F–W2öæF÷"Ö6÷&æ–6†RÓ##bæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤6÷&æ–6†UôæF÷%ó#2Ó’Ó##bæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂL:—F÷VâÂ6—F–W2÷FWF÷Vâæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥FWF÷VåôöÆEôÖVF–æ÷7G&VWG5óBæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÖV¶ì:‡2Â6—F–W2öÖV¶æW2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖV¶æW5òƒ##•ó"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â÷V'¦¦FRÂ6—F–W2ö÷V'¦¦FRæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤·6%ööeõF÷W&—'BÅô÷V'¦¦FRÅôÖ÷&ö66õò‚TC’Sƒ"TC‚T#RTC‚T‚TC‚T•òTC‚TTC‚TrTC’Sƒ‚TC‚T#TC’S„TC‚T#TC‚TÅòTS"T#RS”2TS"T#BT#TS"T#RTTS"T#RS“BTS"T#RSƒ’TS"T#RS“BTS"T#RS”2’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â÷V¦FÂ6—F–W2ö÷V¦Fæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤&%õ6–F•ô—76ô÷V¦Fô'&†–Õôd$¤•ó"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÂ†ö6\:öÖÂ6—F–W2öÂÖ†ö6V–Öæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Åô†ö6V–ÖõVVÖFòæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÖW'¦÷VvÂ6—F–W2öÖW'¦÷Vvæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥F†UôÖW'¦÷VvöGVæW5ööeôÖ÷&ö66òæ§sâÂl:—&–fœ:–RÂ43À§ÂFg&÷WBÂ6—F–W2÷Fg&÷WBæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤w&–7VÇGW&Å÷FW'&6W5ö–åôçF’ÔFÆ5öÖ÷VçF–ç5öæV%õFg&÷WFRÅôÖ÷&ö66òæ§sâÂl:—&–fœ:–RÂ42%’2ãÀ§ÂvF—"Â6—F–W2övF—"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥v–¶—f–'&æ6UôvF—%óRæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂF¶†ÆÂ6—F–W2öF¶†Ææ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥ÆvUõ³#UôF¶†Ææ§sâÂl:—&–fœ:–RÂ43ãÀ§ÂÆ–÷VæRÂ6—F–W2öÆ–÷VæRæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤W&–Å÷†÷Föw&…ööeôÆ–÷VæUóæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂVÂ¦F–FÂ6—F–W2öVÂÖ¦F–Fæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤g&ÖVE÷f–Wuööe÷F†U÷&×'G5öæE÷÷'Eög&öÕô&7F–öåõ6–çEõ<:–&7F–Våö&Æ6öç’Åõ÷'GVwVW6Uô6—G•ööeôÖ¦våòÕôö7Eó##bæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â6–F–Â6—F–W2÷6–F–æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥6–F–öÖ&–æö&V6‚æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂwVVÆÖ–ÒÂ6—F–W2öwVVÆÖ–Òæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥vW7FÆ–6†W5õ7FGGF÷%÷föåôwVVÆÖ–Õö–åôÖ&ö¶¶òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂF—¦æ—BÂ6—F–W2÷F—¦æ—Bæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS­˜]‹=ŠÍŠõıŠ}˜M˜=Š˜­‹ıŠ­˜­‹-˜m˜­Š¢æ§sâÂl:—&–fœ:–RÂ43ãÀ§Â6–F’–fæ’Â6—F–W2÷6–F’Ö–fæ’æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥6–F•ô–fæ•ô6öÖ×VæUô†÷W6Ræ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂF&÷VFçBÂ6—F–W2÷F&÷VFçBæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤öæUööe÷F†U÷F÷vW'5ööe÷F†UõF&÷VFçE÷vÆÂæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â¦v÷&Â6—F–W2÷¦v÷&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥¦v÷&ô6—G•ó"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂW'&6†–F–Â6—F–W2öW'&6†–F–æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤W'&6†–F–õ&÷f–æ6RÅôÖ÷&ö66õòÕ÷æ÷&Ö–õòƒ’æ§sâÂl:—&–fœ:–RÂ42%’Õ42ãÀ§Â–g&æRÂ6—F–W2ö–g&æRÖÆ¶RÓ##Ræ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS­ŠŠİ˜­‹Š•ı‹˜­˜eıŠ]˜‹Š}˜bæ§sâÂl:—&–fœ:–RÂ43ãÀ§Â6–Æ‚Â6—F–W2ö6–Æ‚æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥F†U÷&×'G5ööe÷F†UôöÆEôÖVF–æööeô6–Æ‚æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÆ&6†RÂ6—F–W2öÆ&6†Ræ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¢TC‚T#2TC‚TrTC‚TBTC‚T•òTC‚TrTC’SƒBTC‚TTC‚TBTC‚T#TC’S„TC‚T#òTC‚T2TC’Sƒ…òTC‚T#2TC‚TrTC‚TBTC‚T•òTC‚TRTC‚T#2TC’T$RTC‚TrTC’SƒbTC’S„TC‚TuòTC‚T‚TC‚TrTC’SƒBTC‚T#’TC‚T#TC‚TrTC‚TbTC‚T#Eó2æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â¶Væ—G&Â6—F–W2ö¶Væ—G&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤v&UöFU÷G&–åò…Dub’åô´Tä•E$åôÖ&ö2æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ ¢22,:–v–öç2ƒ" §ÂÆ–WRÂ–ÖvR7GVVÆÆRÂ6÷W&6RÂU$ÂÂ7FGWBÂÆ–6Væ6Ròæ÷FRÀ§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§ÂFævW"ÕL:—F÷VâÔÂ†ö6\:öÖÂ&Vv–öç2÷FævW"×FWF÷VâÖÂÖ†ö6V–Öæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤f&õöFVÅö6&õôW7'FVÂÅôÖ''VV6÷2Åó#RÓ"ÓÅôDEó"ä¥sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÂt÷&–VçFÂÂ&Vv–öç2ö÷&–VçFÂæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤w&÷GFUöGUö6†ÖVRÅõ¦Vw¦VÅòÕõ&÷f–æ6UöFUô&W&¶æRæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Âl:‡2ÔÖV¶ì:‡2Â&Vv–öç2öfW2ÖÖV¶æW2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥föÇV&–Æ—5ô÷VÆ–Æ’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â&&BÕ6Ì:’Ô¼:–æ—G&Â&Vv–öç2÷&&B×6ÆRÖ¶Væ—G&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö–åôvFUô6†VÆÆ…õ&&Eôæ÷c#Uôt5%óƒ“#æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â,:–æ’ÖVÆÆÂÔ¶Œ:–æ–g&Â&Vv–öç2ö&Væ’ÖÖVÆÆÂÖ¶†Væ–g&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤÷W¦÷VE÷vFW&fÅô¦–ÆÂÔÖ÷&ö66òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â66&Ææ6Õ6WGFBÂ&Vv–öç2ö66&Ææ6×6WGFBæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤†76åô”•ôÖ÷7VUöæEô—G5ôÖ–æ&WEö–åô66&Ææ6ÅôÖ÷&ö66õó"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÖ'&¶V6‚Õ6f’Â&Vv–öç2öÖ'&¶V6‚×6f’æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤¦VÖöVÂÔfæ÷7V&Uö—5ööÖ¦÷%÷Æ6Uööeö7VÇGW&ÅöW†6†ævW2æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂG,:&ÕFf–ÆÆWBÂ&Vv–öç2öG&×Ff–ÆÆWBæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤·6%ôT32TgEô&Væ†FF÷RÅôÖ&ö66õò‚TC‚T2TC’S„TC‚TòTC‚T‚TC’SƒeòTC‚TBTC‚TbTC’Sƒ‚TC‚S„5òTC‚TrTC’SƒBTC’SƒRTC‚T$TC‚T#TC‚T‚ÅòTS"T#BT#TS"T#RT"TS"T#RS”5òTS"T#RSƒ2TS"T#BT#TS"T#BT#rTS"T#BT#rTS"T#RS“2’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â6÷W72ÔÖ76Â&Vv–öç2÷6÷W72ÖÖ76æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤¶6&…ööeôvF—%ô÷VfVÆÆæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂwVVÆÖ–ÒÔ÷VVBæ÷VâÂ&Vv–öç2öwVVÆÖ–ÒÖ÷VVBÖæ÷Vâæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ôätâå6–F’Ô–fæ•ôÆVw¦—&Ô&V6…õ7FöæRÔ&6…ósSeógƒ’Õ%óS#ƒ#ƒƒæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÆ:'–÷VæRÕ6¶–VÂ†×&Â&Vv–öç2öÆ–÷VæR×6¶–ÖVÂÖ†×&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Æ–÷VæUô6÷WöÆW2æ§sâÂl:—&–fœ:–RÂ42%’Õ4"ãÀ§ÂF¶†ÆÔ÷VVBVBF†"Â&Vv–öç2öF¶†ÆÖ÷VVBÖVBÖF†"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤BT32T—6W'EöFUôF¶†Æò†GVæW5ö&Ææ6†W2’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ ¢22Æ–WW‚:f—6—FW"ƒ#“R ¢222Ö'&¶V6‚ƒ‚ó#l:—&–fœ:–W2 §ÂÆ–WRÂ–ÖvR7GVVÆÆRÂ6÷W&6RÂU$ÂÂ7FGWBÂÆ–6Væ6Ròæ÷FRÀ§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§ÂÆ6R¦VÖVÂÔfæÂ7÷G2öÖ'&¶V6‚Ö¦VÖÖVÂÖfææ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤¦ÖôVÅôfæÅôÖ'&¶W6‚ÅôÖ÷&ö66òÅó##S#EóƒEósræ§sâÂl:—&–fœ:–RÂ42%’BãÀ§ÂÖ÷7\:–RFRÆ¶÷WF÷V&–Â7÷G2öÖ'&¶V6‚Ö¶÷WF÷V&–æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤·WGV&——–ôÖ÷7VRÅôÖ'&¶W6‚ÅôÖ÷&ö66òÅó##S#Eóƒ3Eós#ræ§sâÂl:—&–fœ:–RÂ42%’BãÀ§Â¦&F–âÖ¦÷&VÆÆRÂ7÷G2öÖ'&¶V6‚ÖÖ¦÷&VÆÆRæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÆUö¦&F–åöFW5öÖ¦÷&VÆÆUóbä¥sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÜ:–FW'6&Vâ–÷W76VbÂ7÷G2öÖ'&¶V6‚Ö&Vâ×–÷W76Vbæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖVFW'6ô&Våõ–÷W76VeôÖG&6ôÖ'&¶W6…óBæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂFöÖ&VW‚6F–Vç2Â7÷G2öÖ'&¶V6‚×6F–â×FöÖ'2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¢T4RS”2T4RT#T4bSƒRT4bSƒ2T4bSƒ’T4RT$"T4RT#RT4RTbT4RT$eòT4bSƒBT4bSƒ’T4RT$EòT4RT2T4RT#T4RT#T4RT$BT4bSƒBT4RTeóc’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÆ—2VÂ&F’Â7÷G2öÖ'&¶V6‚ÖVÂÖ&F’æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤VÅô&F•õÆ6RÅôÖ'&¶W6‚ÅôÖ÷&ö66òÅó##S#Uó“Suós#æ§sâÂl:—&–fœ:–RÂ42%’BãÀ§Â6÷V·2FRÆÜ:–F–æÂ7÷G2öÖ'&¶V6‚×6÷V·2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖVF–æ÷6÷V²ÅôÖ'&¶V6‚ÅôÖ÷&ö66õòÕ÷æ÷&Ö–õòƒ2’æ§sâÂl:—&–fœ:–RÂ42%’2ãÀ§ÂFææW&–W2Â7÷G2öÖ'&¶V6‚×FææW&–W2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö'&¶V6…÷FææW&–W5òƒ#ƒCcƒcƒ“32’æ§sâÂl:—&–fœ:–RÂ42%’Õ4"ãÀ§Â×W<:–RFW2'G27VÆ–æ—&W2Â7÷G2öÖ'&¶V6‚Ö7VÆ–æ'’Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö÷&ö66åô7VÆ–æ'•ô'G5ô×W6WVÒæ§sâÂl:—&–fœ:–RÂ42%’BãÀ§Â×W<:–R—fW26–çBÆW&VçBÂ7÷G2öÖ'&¶V6‚×—6ÂÖ×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤&6†—FWGF•÷7GVF–õö¶òÅö×W6Võõ•4ÅöôÖ'&¶V6‚æ§sâÂl:—&–fœ:–RÂ42%’BãÀ§Â×W<:–RF"6’6:öBÂ7÷G2öÖ'&¶V6‚ÖF"×6’×6–Bæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤F%õ6•õ6–EóCƒ’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÆ—2FRÆ&†–Â7÷G2öÖ'&¶V6‚Ö&†–æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤&†–õÆ6UöÆ&vUö6÷W'Bæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â¦&F–ç2FRÆÖVæ&Â7÷G2öÖ'&¶V6‚ÖÖVæ&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖVæ&ôv&FVåò„Ö'&¶V6‚ÅôÖ÷&ö2•óæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â×W<:–RFRÖ'&¶V6‚Â7÷G2öÖ'&¶V6‚ÖÖ'&¶V6‚Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤×W6WVÕööeôÖ'&¶V6‚ä¥sâÂl:—&–fœ:–RÂ42%’2ãÀ§Â×W<:–RFRÆÆÖW&–RÂ(	BŒ*²†÷Fò:fVæ—"+²’Â(	BÂ(	BÂÆ6V†öÆFW"Â(	BÀ§Â×W<:–Rf&–B&VÆ¶†–Â(	BŒ*²†÷Fò:fVæ—"+²’Â(	BÂ(	BÂÆ6V†öÆFW"Â(	BÀ§ÂÖ—6öâFRÆ†÷Föw&†–RÂ7÷G2öÖ'&¶V6‚ÖÖ—6öâ×†÷Föw&†–Ræ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö—6öåöFUöÆõ†÷Föw&†–UöFUôÖ'&¶V6‚Åö÷6ÖÆÅ÷†÷Föw&‡•ö×W6WVÕô†÷W6Uööeõ†÷Föw&‡•ö–åôÖ'&¶V6‚ÅôÖ÷'&ö6òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÖ÷7\:–RÆ’&Vâ–÷W76VbÂ7÷G2öÖ'&¶V6‚ÖÆ’Ö&Vâ×–÷W76Vbæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤&Våõ–÷W76VeôÖ÷7VUòƒS#ƒƒƒƒcc3‚’æ§sâÂl:—&–fœ:–RÂ42%’Õ4"ãÀ§Â¦&F–ç2FRÂtvFÂÂ7÷G2öÖ'&¶V6‚ÖvFÂæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤vFÆRæ§sâÂl:—&–fœ:–RÂ42%’Õ42ãÀ§Â¶÷V&&ÆÖ÷&f–FRÂ7÷G2öÖ'&¶V6‚ÖÆÖ÷&f–BÖ¶÷V&&æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö'&¶W6‚ÅôÆÖ÷&f–Eô¶÷V&&òƒS3cS33“sSb•òƒ"’æ§sâÂl:—&–fœ:–RÂ42%’Õ4"ãÀ ¢22266&Ææ6ƒrórl:—&–fœ:–W2 §ÂÆ–WRÂ–ÖvR7GVVÆÆRÂ6÷W&6RÂU$ÂÂ7FGWBÂÆ–6Væ6Ròæ÷FRÀ§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§ÂÖ÷7\:–R†76â”’Â7÷G2ö66&Ææ6Ö†76âÖ–’æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤†76åô”•ôÖ÷7VUòÕövVæW&Åög&Ö–ærÅô66&Ææ6ÅôÖ÷&ö66òæ§sâÂl:—&–fœ:–RÂ42%’BãÀ§ÂÆ6÷&æ–6†RÂ7÷G2ö66&Ææ6Ö6÷&æ–6†Ræ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥&öÖVæFU÷7W%öÆô6÷&æ–6†Uô–åôF–%òT32Tô66&Ææ6òÕ÷†÷Fõô&W'G&æEõ4õT$U•$äBæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Âæ6–VææRÜ:–F–æÂ7÷G2ö66&Ææ6ÖöÆBÖÖVF–ææ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖVF–æööeô66&Ææ6óRæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂV'F–W"FW2†&÷W2Â7÷G2ö66&Ææ6Ö†&÷W2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÅöÖö†ÖVF–ôÖ÷7VUö–åô†&÷W5öF—7G&–7Eô66&Ææ6÷F†UöÖ÷7VU÷v5ö'V–ÇEö'•ôÖö†ÖVE÷F†Uöf–gF…ö¶–æuööeöÖ÷&ö66òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÖ†¶ÖGR6†Â7÷G2ö66&Ææ6ÖÖ†¶Ö×6†æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö†¶ÖöGUõ6†ö÷UõÆ—5öGUôÒT32T–6†÷V"æ§sâÂl:—&–fœ:–RÂ42%’Õ42ãÀ§Âæ6–VææR6FŒ:–G&ÆRGR67,:’Ô<Y7W"Â7÷G2ö66&Ææ6×67&RÖ6öWW"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¢T32Sƒ–vÆ—6UöGUõ67"T32T’Ô6öWW"Åô66&Ææ6òƒSSsc’æ§sâÂl:—&–fœ:–RÂ42%’Õ4"ãÀ§ÂÖ&6Œ:’6VçG&ÂÂ7÷G2ö66&Ææ6ÖÖ&6†RÖ6VçG&Âæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¢T4RS”T4RT#RT4RT$BT4bSƒBT4bSƒT4RT#’T4RT$T4RTUòT4RS“T4RT#2T4RT$bT4bSƒT4RT5òT4RS”T4RT#T4RT#bT4RT#T4RT$2T4bSƒT4RT$"T4RT2T4RT$BT4RT$T4RT#óƒ#æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÆ6RÖö†ÖÖVBbÂ7÷G2ö66&Ææ6ÖÖö†ÖÖVB×b×7V&Ræ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥Æ6UôÖö†ÖÖVEõeòÕô66&Ææ6òÕó##"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â×W<:–R&FW'&†Öâ6Æ÷V’Â7÷G2ö66&Ææ6×6Æ÷V’Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤×W2T32T–UövVâT32T‡6Uó"æ§sâÂl:—&–fœ:–RÂ42%’Õ42ãÀ§Âf–ÆÆFW2'G2Â7÷G2ö66&Ææ6×f–ÆÆÖFW2Ö'G2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥f–ÆÆöFW5ö'G5ô66&Ææ6ó"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â÷7FR6VçG&ÆRÂ7÷G2ö66&Ææ6×÷7FRÖ6VçG&ÆRæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS£#“ƒEô44$Ää4óc’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂGv–â6VçFW"Â7÷G2ö66&Ææ6×Gv–âÖ6VçFW"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖT32T'&–bÅôÖ÷&ö66õòÕ÷æ÷&Ö–õòƒr’æ§sâÂl:—&–fœ:–RÂ42%’2ãÀ§ÂÖ÷&ö66òÖÆÂÂ7÷G2ö66&Ææ6ÖÖ÷&ö66òÖÖÆÂæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö÷&ö66õôÖÆÂæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â†&RBtVÂ†æ²Â7÷G2ö66&Ææ6ÖVÂÖ†æ²ÖÆ–v‡F†÷W6Ræ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÆU÷†&UöBtVÅô†æ²Åô66&Ææ6ÅôÖ&ö2æ§sâÂl:—&–fœ:–RÂ42%’Õ42ãÀ§Â&–6¾(	—26l:’Â7÷G2ö66&Ææ6×&–6·2Ö6fRæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥&–6²T3"T#G5ô6fUóæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â7FFRÖö†ÖÖVBbÂ7÷G2ö66&Ææ6×7FFRÖÖö†ÖÖVB×bæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Öö†ÖÖVEõe÷7FF—VÒæ§sâÂl:—&–fœ:–RÂ43À§Â66'BL:–6òÂ7÷G2ö66&Ææ6Ö'BÖFV6òæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤–ÖÖWV&ÆUô'EöBT32T–6òæ§sâÂl:—&–fœ:–RÂ43À ¢222&&Bƒrórl:—&–fœ:–W2 §ÂÆ–WRÂ–ÖvR7GVVÆÆRÂ6÷W&6RÂU$ÂÂ7FGWBÂÆ–6Væ6Ròæ÷FRÀ§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§Â¶6&‚FW2÷VF–2Â7÷G2÷&&BÖ÷VF–2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤¶6&…ööe÷F†UõVF–2Åõ&&EòÕô&%ô÷VF–òS#e÷&×'G2æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂF÷W"†76âWBÖW6öÌ:–RÖö†ÖÖVBbÂ7÷G2÷&&BÖ†76â×F÷vW"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤†76åõF÷vW"Åõ&&EòÕ÷f–Wuög&öÕöv&FVå÷FW'&6Ræ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â6†VÆÆ‚Â7÷G2÷&&BÖ6†VÆÆ‚æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö–åövFUööeô6†VÆÆ‚Åõ&&Bæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÜ:–F–æFR&&BÂ7÷G2÷&&BÖÖVF–ææ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS£#"ÔBÔ$ãc#BÓ#òƒSC“c#sScb’æ§sâÂl:—&–fœ:–RÂ42%’"ãÀ§Â×W<:–RFRÂv†—7Fö—&RWBFW26—f–Æ—6F–öç2Â7÷G2÷&&BÖ†—7F÷'’Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤×W2T32T–UöFUöÂv†—7Fö—&RÅõ&&Eòƒ"’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â6FŒ:–G&ÆR6–çBÕ–W'&RÂ7÷G2÷&&B×7B×WFW'2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤6F‚T32T–G&ÆUõ6–çBÕ–W'&UöFUõ&&Bä¥sâÂl:—&–fœ:–RÂ42%’Õ42ãÀ§ÂÆ—2&÷–Â„F"ÂÔÖ¶‡¦Vâ’Â7÷G2÷&&B×&÷–Â×Æ6Ræ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥&÷–ÅõÆ6RÅõ&&Bæ§sâÂl:—&–fœ:–RÂV&Æ–2FöÖ–âÀ§Â&"W"Õ&÷V‚Â7÷G2÷&&BÖ&"×&÷V‚æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¢TC‚T‚TC‚TrTC‚T…òTC‚TrTC’SƒBTC‚T#TC’Sƒ‚TC‚TrTC‚TBæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â¦öòFR&&BÂ7÷G2÷&&B×¦öòæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥&†–æö6W&÷5ö–å÷F†U÷¦öõööeõ&&BÅôÖ÷&ö66òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÜ:–F–æFR6Ì:’Â7÷G2÷&&B×6ÆRÖÖVF–ææ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥6ÂT32T•ög&öÕ÷F†UõÆFVf÷&ÖUöGUõ2T32T–Ö†÷&Uò„¶6&…öFW5ô÷VF—2•òƒSS“csb’æ§sâÂl:—&–fœ:–RÂ42%’"ãÀ§ÂÜ:–FW'6Ü:—&–æ–FRÂ7÷G2÷&&BÖÖ&–æ–BÖÖG&6æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥F†UôÖ&–æ–EôÖVFW'6æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â×W<:–RÖö†ÖÖVBd’Bv'BÖöFW&æRWB6öçFV×÷&–âÂ7÷G2÷&&BÖÖ×f’Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥&&EôÖö†ÖÖVEõd•ô×W6WVÒæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂF÷W"Öö†ÖÖVBd’Â7÷G2÷&&BÖÖö†ÖÖVB×f’×F÷vW"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥&&BÅööÆEöæEöæWuò„ÖW6öÆWVÕööeôÖö†ÖÖVEõeöæEöæWuôÖö†ÖÖVEõd•õF÷vW%ö&V†–æCµòTC‚T#bTC‚T#TC’S„TC‚TEòTC’SƒRTC‚TBTC’SƒRTC‚TeòTC‚TrTC’SƒBTC‚TRTC‚TrTC’SƒRTC‚T#2’æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â×W<:–RFR&æ²ÂÔÖv‡&–"Â7÷G2÷&&BÖ7W'&Væ7’Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö÷&ö66õõ&&Eô&æµô×W6WVÒæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â÷'FR&"VÂÔ†BÂ7÷G2÷&&BÖ&"ÖVÂÖ†Bæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤&%ôVÅô†Bæ§sâÂl:—&–fœ:–RÂ42%’BãÀ§Â×W<:–RFW2÷VF–2Â7÷G2÷&&BÖ÷VF–2Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÕU2T32Sƒ”UôäD”ôäÅôDUôÄõ%U$Ræ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂÆvRFR&&BÂ7÷G2÷&&B×&&BÖ&V6‚æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥ÆvUöFUõ&&E÷bæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ ¢222FævW"ƒRórl:—&–fœ:–W2 §ÂÆ–WRÂ–ÖvR7GVVÆÆRÂ6÷W&6RÂU$ÂÂ7FGWBÂÆ–6Væ6Ròæ÷FRÀ§ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×ÂÒÒ×À§ÂÜ:–F–æFRFævW"Â7÷G2÷Fæv–W"ÖÖVF–ææ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤æ6–VåôÖVF–æÅõFæv–W"ÅôÖ÷&ö66õòÕ÷æ÷&Ö–õòƒ’æ§sâÂl:—&–fœ:–RÂ42%’Õ42ãÀ§Â×W<:–RFRÆ¶6&‚Â7÷G2÷Fæv–W"Ö¶6&‚Ö×W6WVÒæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤¶6&…öFUõFævW%ó"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â×W<:–RFRÆÌ:–vF–öâÜ:—&–6–æRÂ7÷G2÷Fæv–W"ÖÖW&–6âÖÆVvF–öâæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤ÖW&–6åôÆVvF–öåõFæv–W%ó2æ§sâÂl:—&–fœ:–RÂ42%’"ãÀ§Âw&æB6ö66òÂ7÷G2÷Fæv–W"Öw&æB×6ö66òæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥FævW%òÕôÖ&·Fg&VVåöÕôw&æEõ6ö66òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Âw&÷GFW2N(	”†W&7VÆRÂ7÷G2÷Fæv–W"Ö†W&7VÆW2Ö6fW2æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤7VWf5öFUô‚T32T—&7VÆW2Åô6&õôW7'FVÂÅôÖ''VV6÷2Åó#RÓ"ÓÅôDEóÓ%ô„E"ä¥sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Âw&æFRÖ÷7\:–RFRFævW"Â7÷G2÷Fæv–W"Öw&VBÖÖ÷7VRæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Æôw&åôÖW§V—FõFævW"äÖ÷&ö66õòÕ÷æ÷&Ö–òæ§sâÂl:—&–fœ:–RÂ42%’2ãÀ§ÂWF—B6ö66òÂ7÷G2÷Fæv–W"×WF—B×6ö66òæ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤Ö÷&ö66õõFæv–W%õWF—Eõ6ö66òæ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§ÂFöÖ&VRBt–&â&GF÷WFÂ7÷G2÷Fæv–W"Ö–&âÖ&GGWF×FöÖ"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¤–ç6–FUô–&åô&GGWFS#w5õFöÖ%òÕõFæv–W"æ§sâÂl:—&–fœ:–RÂ42%’Õ4BãÀ§Â8–vÆ—6RFRÂt–ÖÖ7VÌ:–RÔ6öæ6WF–öâÂ(	BŒ*²†÷Fò:fVæ—"+²’Â(	BÂ(	BÂÆ6V†öÆFW"Â(	BÀ§ÂÖ÷7\:–R6–F’&÷R&–"Â7÷G2÷Fæv–W"×6–F’Ö&÷RÖ&–"æ§vÂv–¶–ÖVF–6öÖÖöç2ÂÆ‡GG3¢òö6öÖÖöç2çv–¶–ÖVF–æ÷&r÷v–¶’ôf–ÆS¥Æ¦öFVÅó•öFUö'&–ÅöFUó“CrÅõBT3>µÓ»h‘éì¶»§q«^wpê\š[šYH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸØ\Ø˜Z8 &SİZ™H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ˜Xˆ[Ú\˜šHÜİËÛİZ™KX˜X‹Y[YÚ\˜šKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“İZ™WĞ˜X—Ø[ÑÚ\˜šKYWÌ—ËÚ^›[™WĞ“ÕSPPÒPPÒKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸØ\Ú\ÈHÚYHXZXHÜİËÛİZ™K\ÚYK^XZXKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“İZ™KœÚYWŞXZXKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒ‚ˆÈÈÈ[ØÙpëÛXH
+KÎH°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_Ÿ\˜È˜][Û˜[8 &P[ØÙpëÛXHÜİËØ[ZØÙZ[XK[˜][Û˜[\\šËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N[XÙ[X\×ÊJK’”Ïˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ™[°êY0ê™HH[Ü›İšYZ›È8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙH]Y[XYÈÜİËØ[ZØÙZ[XK\]Y[XYËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N[ÒØÙZ[XWÔ]Y[XYËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ0ã›\È8 &P[ØÙpëÛXHÜİËØ[ZØÙZ[XKX[XÙ[X\ËZ\Û[™ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”IPÌÉPŒIPÌÉPŒÛ—ÙWĞ[XÙ[X\×Ù\ÙWÛWØÛÜİWÛX\œ›Ü]IPÌÉPQšœÏˆ°ê\šYšpêYHĞÈ–KTĞH‹ŒŸØ[H\š\ÈÜİËØ[ZØÙZ[XKXØ[KZ\š\ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”[›Ü‰PÌÉPL[ZXØWÙWĞØ[WÒ\š\ËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸYÙHHÙšZHÜİËØ[ZØÙZ[XK\ÙšZKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”ÙšZWÜ[›Ü˜[XKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸØ[H›Ûš]H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙHH[H[İ\ÜÙYˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸÚ]H\˜Ú0ê[ÛÙÚ\]YH8 &P[X^˜[[XH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %‚ˆÈÈÈY\›İYØH
+Í°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_Ÿ\™ÈÚX˜šHÜİËÛY\›İYØKY\™ËXÚX˜šKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘\™×ĞÚX˜šWÚ[—İWÙ]™[š[™×ÛYÚšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸHÜ˜[™H[™HÜİËÛY\›İYØKYÜ˜[™Y[™KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘\™×ĞÚX˜šWÜİ[œÙ]šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸXÈ^Y]ÜššHÜİËÛY\›İYØKY^Y]\ÜššKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“Y\›İYØWÓZÙWÊLŒÎÌÍÌJKšœÏˆ°ê\šYšpêYHĞÈ–H‹ŒŸš[YÙHHÚ[[XHÜİËÛY\›İYØKZÚ[[XKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N’Ú[[XWİš[YÙKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒ‚ˆÈÈÈYœ˜[İ]
+ËÍH°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_Ÿ›ØÚ\œÈZ[ÈÜİËİYœ˜[İ]\Z[Y\›ØÚÜËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”Z[YÔ›ØÚÜ×Õ˜Yœ˜[İ]KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸÚ\X]HH˜\Û0ê[ÛˆÜİËİYœ˜[İ][˜\Û[ÛœËZ]šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“˜\Û[Û‰LÜ×Ò]	L×Û™X\—ÕYœ˜[İ]KšœÏˆ°ê\šYšpêYHĞÈ–H‹ŒŸÛÜ™Ù\È8 &PpëİX[œÛİ\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYØ\™İYY8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ˜[0êYH\È[[Y[ˆÜİËİYœ˜[İ]X[[Y[‹]˜[^KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•˜[^WÛÙ—Ğ[[Y[‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒ‚ˆÈÈÈYØY\ˆ
+LËÌN°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸØ\Ø˜Z8 &PYØY\ˆİY™[HÜİËØYØY\‹[İY™[KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”™[›İ˜]YİØ[×ËWÒØ\Ø˜ZÛÙ—ĞYØY\—ÓİY™[KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸYÙH]›ÛY[˜YH8 &PYØY\ˆÜİËØYØY\‹X™XXÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[NYØY\—ÔYÙKšœÏˆ°ê\šYšpêYHĞÈ–HŒŸÛİZÈ[YÜİËØYØY\‹\ÛİZËY[ZYšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”ÛİZ×Ñ[ÒYÑ[˜[˜ÙKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ]\ğêYHpê[[Ú\™H8 &PYØY\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ]\ğêYHH]š[[Ú[™H[X^šYÚÜİËØYØY\‹X[X^šYÚ[]\Ù][KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[NZ[[™×Ğ[X^šYÚĞİ[\™WÓ]\Ù][WĞYØY\‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ\˜È]^Ü›ØÛÙ[\ÈÜİËØYØY\‹XÜ›ØÛÙ[K\\šËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘^İ\œÚ[Û—ĞÜ›ØÛÜ\˜×ĞYØY\—ÊÌÍÍŒMÌ
+KšœÏˆ°ê\šYšpêYHĞÈ–H‹ŒŸ˜[0êYH\ÈÚ\ÙX]^ÜİËØYØY\‹]˜[^K[Ù‹Xš\™ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[NYØY\—ÌËŒKŒŒLWÌNLÎKMK’”Ïˆ°ê\šYšpêYHĞÌŸ˜\™[ˆX›ˆ˜^Yİ[ˆÜİËØYØY\‹ZX›‹^˜ZYİ[‹YØ\™[‹šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N¶+v+öb¶`¶*Wö)ö*6a—ö,¶b¶+öb6a—ö(ö`ö)ö+öb¶,KšœÏˆ°ê\šYšpêYHĞÌKŒŸ[ÜÜ]pêYH[Ú[[YYˆÜİËØYØY\‹[[Ú[[YY]‹[[ÜÜ]YKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“[Ú[[YYÕ—Ó[ÜØÚYWÌŒLLLMÌ‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ˜\™[ˆ	ÓÛ0èÛÈ
+˜\™[ˆHÜYØ[
+HÜİËØYØY\‹[Û[ËYØ\™[‹šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[NYØY\—ÌŒKŒŒLWÌMKLL‹LÍK’”Ïˆ°ê\šYšpêYHĞÌŸX\š[˜H	ĞYØY\ˆÜİËØYØY\‹[X\š[˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”[›Ü˜[XWÓX\š[˜WĞYØY\—ÌŒŒšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ[ÜÜ]pêYHİX›˜[™H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ]\ˆHÛİ]™[š\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸpêY[˜HHÛØÛÈÛ^šHÜİËØYØY\‹XÛØÛË\Û^šK[YY[˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“IPÌÉPNY[˜WÔÛ^šWĞYØY\—ÌKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ]\ğêYH][šXÚ\[™\›[ÜİËØYØY\‹X™\Y›[[]\Ù][KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[NYØY\—ÌËŒKŒŒLWÌMËML‹L‹’”Ïˆ°ê\šYšpêYHĞÌŸ0êpè™HHZ[ˆZ\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸÜİHÙ[˜[H8 &PYØY\ˆÜİËØYØY\‹\ÜİKXÙ[˜[KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[NYØY\‹Ó[Ü›ØØÛ×ËWÓXZ[—ÔÜİÓÙ™šXÙKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ0âYÛ\ÙH›İ\İ[H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %‚ˆÈÈÈZÚH
+‹Î°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_Ÿ˜ZYHHZÚHÜİËÙZÚK[YÛÛÛ‹šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N’Ú]\İ\™š[™×Ú[—ÑZÚKÕÙ\İ\›—ÔØZ\˜K’”Ïˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ\™HHZÚHÜİËÙZÚK[YÚİ\ÙKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘˜\›×ÙWÑZ›KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ0âYÛ\ÙH›İ™KQ[YKYKS[ÛPØ\›Y[ÜİËÙZÚK[[İ[XØ\›Y[XÚ\˜ÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘ZÚWÚØ]Ú\˜ÚWÌŒŒŒLÌNMÍLšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸHØ\™ØH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ\˜È˜][Û˜[HZÚHÜİËÙZÚK[˜][Û˜[\\šËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[NWØšY×ÛX[WĞY^ÜÚİÚ[™×Ø\×İWÜİÙ\—ÛÙ—Ú\×ÚÜ›œËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ0ã›HH˜YÛÛˆÜİËÙZÚKY˜YÛÛ‹Z\Û[™šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•Ú[™İ\™™\—Ú[—Ùœ›ÛÛÙ—Ñ˜YÛÛ—Ò\Û[™Ø]ÑZÚKÓX\˜ÚÌŒKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸÜH0ê˜ÚHHZÚH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙHHZÚHÜİËÙZÚKX™XXÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”YÙWÜ‰PÌÉPN×ÙWÑZÚWÌ‹šœÏˆ°ê\šYšpêYHĞÌ‚ˆÈÈÈX^[İ[™H
+‹Í°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸØ]0êY˜[HØZ[Qœ˜[°éÛÚ\ËY8 &P\ÜÚ\ÙHÜİËÛX^[İ[™KXØ]Y˜[šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“X^[İ[™WĞØ]Y˜[ÌŒLKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸ[ÜÜ]pêYH[V˜]Ú^XH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYİ[™HHpè[İ[™H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙHHpè[İ[™HÜİËÛX^[İ[™KX™XXÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‰Q	P	Q	PMÉQ	PÉQ	PM—ÉQINIQINWÉQ	PMÉQIN	QIN	Q	PMÉQ	PQ‰Q	N×ÉQ	PMÉQIN	Q	PIQINIQIN	QIN‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒ‚ˆÈÈÈ[˜YYH
+ÎH°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸÚ]0êHÜYØZ\ÙHHX^˜YØ[ˆÜİËÙ[Z˜YYK[X^˜YØ[‹šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘œ˜[YYİšY]×ÛÙ—İWÜ˜[\\×Ø[™ÜÜÙœ›ÛWĞ˜\İ[Û—ÔØZ[ÔğêX˜\İY[—Ø˜[ÛÛKÔÜYİY\ÙWĞÚ]WÛÙ—ÓX^˜YØ[—ËWÓØİÌŒ‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸÚ]\›™HÜYØZ\ÙHÜİËÙ[Z˜YYKXÚ\İ\›‹šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•Ø]\—Ü™Y›Xİ[Û—ÔÜYİY\ÙWĞÚ\İ\›‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸYÙHHX]]š[HÜİËÙ[Z˜YYKYX]]š[K\YÙKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘[Ò˜YYWĞ™XXÚšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸYÙHHÚYH›İ^šYÜİËÙ[Z˜YYK\ÚYKX›İ^šYšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”ÚYWĞ›İ^šYÑ[Ò˜YYWËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ0âYÛ\ÙHH8 &P\ÜÛÛ\[ÛˆÜİËÙ[Z˜YYKX\Üİ[\[Û‹XÚ\˜ÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘[Ò˜YYKÓ[Ü›ØØÛ×ÉQŒ	NQ‰NÉPŒ‰QŒ	NQ‰NÉPM—ËWĞÚ\˜ÚÛÙ—İWĞ\Üİ[\[Û—ÓØİÌŒŒËšœÏˆ°ê\šYšpêYHĞÈ–H‹ŒŸ0êpè™H][šXÚ\[ÜİËÙ[Z˜YYK[][šXÚ\[]X]™KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•	PÌÉPNIPÌÉPL™WĞYšYšKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ\˜\È8 &Q[˜YYH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ\™HHÚYH›İXYšHÜİËÙ[Z˜YYK[YÚİ\ÙKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”ÚYWĞ›İXYšWÓYÚİ\ÙWİİÙ\‹Ñ[Ò˜YYKÓ[Ü›ØØÛ×ËWÓØİÌŒ‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ]\ğêYHHH°ê\Ú\İ[˜ÙH]H8 &R[™0ê\[™[˜ÙHÜİËÙ[Z˜YYK\™\Ú\İ[˜ÙK[]\Ù][KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘\ÜXÙWÙWÛWÓpê[[Ú\™WÒ\İÜš\]YWÙWÛWÔ°ê\Ú\İ[˜ÙWÙ]ÙWÛWÓX°ê\˜][Û‹Ñ[Ò˜YYKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒ‚ˆÈÈÈØZYXH
+ËÍÈ°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸšYZ[Hš[HHØpëÙXH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸÛÜ›šXÚHHØpëÙXH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸØ\Ø˜ZHØpëÙXH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙHHpêY]\œ˜[šXKTØpëÙXHÜİËÜØZYXKX™XXÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”YÙWÙWÔØZYXWËWÔ›İš[˜ÙWÙWĞ™\šØ[™KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸX\š[˜HHØpëÙXHÜİËÜØZYXK[X\š[˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”ØZYXIÜ×ÓX\š[˜WØWÛšYÚËWĞ™\šØ[™WÓ[Ü›ØØÛ×ØWĞœ˜Z[WÑTR’KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ°ê\Ù\™H˜]\™[HHH[İ[İ^XHÜİËÜØZYXK[[İ[İ^XK\™\Ù\™KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“[İ[İ^XWÜš]™\‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸYÙHØ]]˜YÙH[™HHÚ\ÜÈ]H[İ[İ^XH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %‚ˆÈÈÈÙ[š]˜H
+KÎ°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸØ\Ø˜ZHYZXHÜİËÚÙ[š]˜KZØ\Ø˜Z[XZ^^XKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•WÔ˜[\\ÛÙ—ÓYZXWĞØ\İKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ›Ü°êHHXpè›[Ü˜H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸY\š˜H™\™ØHÜİËÚÙ[š]˜K[Y\š˜K^™\™ØKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“Yİ[™WĞ›]WÓ[İ[^WĞ›İ\ÜÙ[[KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸYÙHHYZXHÜİËÚÙ[š]˜K[YZXKX™XXÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”YÙWÙWÓYZXK’”Ïˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸ^H™XXÚ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸY\š˜HHÚYH›İYÚX˜HÜİËÚÙ[š]˜K\ÚYKX›İYÚX˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“•×ĞÙ[˜[ÔÚYWĞ›İYÚX˜WÓZÙWÒÙ[š]˜WÓ›İŒWĞMĞÔ—ÌNMKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸÚ]HH[]\ÚYHÜİËÚÙ[š]˜K][]\ÚYKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•[]\ÚYKÓX]\™][šXWÕ[™Ú][˜KÓ[Ü›ØØÛ×ÊLÎMÎLŒŒ
+KšœÏˆ°ê\šYšpêYHĞÈ–KTĞH‹ŒŸØ\Ø˜ZHğê[š]˜H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %‚ˆÈÈÈ\œ˜XÚYXH
+KÍH°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸÛİ\˜ÙH›]YHHY\ÚÚH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ˜\œ˜YÙH\ÜØ[ˆYZÚ[8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ˜[0êYHHš^ˆÜİËÙ\œ˜XÚYXK^š^‹]˜[^KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N–š^—Õ˜[^WÚ[—İWÙ\Ù\ÛÙ—Ó[Ü›ØØÛËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸØ\Ú\ÈHØ[YÚZÙ\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸØ\Ú\ÈHÙ[Z[XH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %‚ˆÈÈÈİY[Z[H
+KÍˆ°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸØ\Ú\È8 &P\Üš\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿœš[İZ[H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸØ\Ú\ÈHYÚY\ÜİËÙİY[Z[K]YÚY\[Ø\Ú\ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“Ø\Ú\×ËWÜ[›Ü˜[Z[×ÊJKšœÏˆ°ê\šYšpêYHĞÈ–HËŒŸX˜^[›İH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙH›[˜ÚH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸÛİZÈHİY[Z[H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %‚ˆÈÈÈ\›İY[
+Íˆ°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_Ÿ™[\\ÈH\›İY[ÜİËİ\›İY[\˜[\\ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“Û™WÛÙ—İWİİÙ\œ×ÛÙ—İWÕ\›İY[İØ[šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸÛİZÈ\˜X™H
+Ú\ÜØ\šXJHÜİËİ\›İY[X\˜X‹\ÛİZËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•\›İY[›ÔÛİZËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸÛİZÈ™\˜°ê™H
+›˜[™H˜[XXJH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ[›™\šYHH\›İY[ÜİËİ\›İY[][›™\KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•\›İY[›ÑÙ\˜™\™ZK’”Ïˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸÚYÛÙÛ™\ÈHHÜH\İ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ[Y\˜ZYHH[İ]ÜİËİ\›İY[][İ]\[KYÜ›İ™KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“Ø\Ú\×Õ[İ]Õ\›İY[Ü›İš[˜ÙKÓ[Ü›ØØÛ×ËWÉQINIQIN‰Q	P	Q	PŒIQIN—ÉQINIQINWÉQINIQIN‰Q	PÉQIN‰Q	PNWÉQ	PPIQINIQIN	Q	PPWÉQIN‰QIN	Q	PMÉQ	PQ	QINWÉQ	PPIQ	PMÉQ	PŒIQIN	Q	PQ‰Q	PMÉQIN‰Q	PPKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒ‚ˆÈÈÈ\˜XÚH
+‹ÎH°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸØ\Ø˜ZH\˜XÚH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸpêY[˜HH\˜XÚHÜİËÛ\˜XÚK[YY[˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“\˜XÚWÓYY[˜KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸ0âYÛ\ÙHY\İ˜HÙpì[Ü˜H[[\ˆÜİËÛ\˜XÚK\[\‹XÚ\˜ÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“\˜XÚWÒYÛ\ÚXWÔ[\‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸÚ0èX]H\ÈÚYÛÙÛ™\È8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸZ[™\ÈH^\ÈÜİËÛ\˜XÚK[^\ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”Z[œ×Ø]Ó^\×Ø\˜ÚY[ÛÙÚXØ[ÜÚ]WÍKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸXÙHHHX°ê\˜][ÛˆÜİËÛ\˜XÚK\XÙK[X™\˜][Û‹šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N¶,ö)ö+v*Wö)öa6*¶+v,vb¶,Wö(öbö,ö)ö+v*Wö)v,öo¶)öa¶b¶)×ö*6)öa6.v,v)ö)¶-ÌËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸÜH0ê˜ÚHH\˜XÚHÜİËÛ\˜XÚK\ÜšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•˜Y][Û˜[ÜÜšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ˜[ÛÛˆ]0è[XÛÈ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙHH\˜XÚHÜİËÛ\˜XÚKX™XXÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”YÙWÙWÛX\˜XÚKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒ‚ˆÈÈÈ\Ú[Z
+KÍH°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸpêY[˜H8 &P\Ú[ZÜİËØ\Ú[Z[YY[˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N\Ú[ZÓX\›ÚÛËšœÏˆ°ê\šYšpêYHĞÌŸ™[\\È]˜\İ[ÛœÈÜİËØ\Ú[Z\˜[\\Ë]İÙ\œËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•WÒ\İÜšX×Ô˜[\\×ÛÙ—Ğ\Ú[ZšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ[Z\ÈH˜pëÜÜÛİ[HÜİËØ\Ú[Z\˜Z\ÜÛİ[K\[XÙKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N\ÜÚ[ZÌšœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸÜ˜[™H[ÜÜ]pêYH8 &P\Ú[ZÜİËØ\Ú[ZYÜ˜[™[[ÜÜ]YKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“WÑÜ˜[™WÓ[ÜÜ]pêYWÙWĞ\ÜÚ[ZÌKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸœ™\Ü]Y\È]\˜[\ÈÜİËØ\Ú[Z[]\˜[ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N\Ú[ZÊÍLÍÌMÌ
+KšœÏˆ°ê\šYšpêYHĞÈ–H‹Œ‚ˆÈÈÈYœ˜[™H
+‹Î°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸÙ[™K]š[H8 &RYœ˜[™H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿİ]YHH[ÛˆÜİËÚYœ˜[™K[[Û‹\İ]YKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N’Yœ˜[™WÛ[Û‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHËŒŸÛİ\˜ÙHš][ÜİËÚYœ˜[™K]š][\Üš[™ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”\˜×ĞZ[—Õš][ÒYœ˜[™LKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸğê™HÛİ\˜]Y
+\ˆÛÜ›ÊHÜİËÚYœ˜[™KXÙY™KYÛİ\˜]YšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[Nğê™WÑÛİ\˜]YšœÏˆ°ê\šYšpêYHĞÈ–KTĞH‹ŒŸ\˜È˜][Û˜[8 &RYœ˜[™H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸXXØ\]Y\ÈH˜\˜˜\šYHÜİËÚYœ˜[™K[XXØ\]Y\ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N˜\˜˜\WÛXXØ\]YWÛ™X\—Ğ^œ›İK’”Ïˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ˜\È[XHÜİËÚYœ˜[™K\˜\ËY[[XKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”˜\×Ñ[ÓXKÒYœ˜[™KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ[š]™\œÚ]0êH[ZÚ]Ø^[ˆÜİËÚYœ˜[™KXZÚ]Ø^[‹][š]™\œÚ]KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N[ĞZÚ]Ø^[—Õ[š]™\œÚ]WĞØ[\\×ËWÒYœ˜[™WÌKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒ‚ˆÈÈÈ˜YÛÜ˜H
+ËÍˆ°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_Ÿ[Y\˜ZYHH˜YÛÜ˜H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ™X™[˜YÛÜ˜HÜİËŞ˜YÛÜ˜KZ™X™[^˜YÛÜ˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“[İ[Ö˜YÛÜ˜KÓ[Ü›ØØÛ×ÊMŒÍLÌÊWÊŠKšœÏˆ°ê\šYšpêYHĞÈ–H‹ŒŸ[›™X]HHÛX›İXİİHÜİËŞ˜YÛÜ˜K][XZİK\ÚYÛ‹LŒ‹šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N–˜YÛÜ˜WĞÚ]KšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸšX›[İ0ê]YHH[YYÜ›İ]H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿİ\šYH™\HH[YYÜ›İ]HÜİËŞ˜YÛÜ˜K][YYÜ›İ]K\İ\KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•[YYÜ›İ]WÔİ\KšœÏˆ°ê\šYšpêYHĞÈ–KTĞH‹ŒŸÜØ\ˆ\ÜÙ\™Ø]H8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %‚ˆÈÈÈÚYHY›šH
+Î°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_Ÿ\˜Ú]Xİ\™H\0êXÛÈÜİËÜÚYKZY›šKX\YXÛËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”ÚYWÒY›šWËWĞ\ÙXÛ×ËØ]\×Ù\—Ö™Z]Ù\—ÜÜ[š\ØÚ[—Ğ™\Ø][™ËšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ[˜ÚY[›™H[Z\˜]]0êH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿ[˜ÚY[›™HØ]0êY˜[HÜİËÜÚYKZY›šKY›Ü›Y\‹XØ]Y˜[šœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘Z[X[YÙWÜÜ[š\ØÚWÒÚ\˜ÚWİ›Û—ÔÚYWÒY›šKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ\™HHÚYHY›šHÜİËÜÚYKZY›šK[YÚİ\ÙKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N‘˜\›×ÙWÔÚYWÒY›šKšœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ[Z\ÈHÛİ]™\›™]\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYHÚYH[Ú[[YY8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %Ÿğè˜›HX\š[ˆH8 &X[˜ÚY[ˆÜ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙHHYŞš\˜HÜİËÜÚYKZY›šK[YŞš\˜KšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N“YŞš\˜WØ™XXÚ‹šœÏˆ°ê\šYšpêYHĞÈ–H‹Œ‚ˆÈÈÈ^›š]
+ËÍH°ê\šYšpêY\ÊB‚ŸY]H[XYÙHXİY[HÛİ\˜ÙHT“İ]]XÙ[˜ÙHÈ›İHŸKK_KK_KK_KK_KK_KK_ŸpêY[˜H]™[\\ÈH^›š]ÜİËİ^›š][YY[˜K]Ø[ËšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N˜X—ĞZ]Ú™\œ˜\—Õ^›š]šœÏˆ°ê\šYšpêYHĞÌKŒŸÛİ\˜ÙH›]YH
+pëÛˆZÙ[JH8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸXÙH[YXÚİX\ˆ8 %
+0ªÈİÈ0è™[š\ˆ0®ÊH8 %8 %XÙZÛ\ˆ8 %ŸYÙH8 &PYÛİHÜİËİ^›š]XYÛİKX™XXÚšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N”YÙWĞYÛİWËWÔ›İš[˜ÙWÙWÕ^›š]šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒŸ\˜È˜][Û˜[HÛİ\ÜËSX\ÜØHÜİËİ^›š]\Ûİ\ÜË[X\ÜØKšœØÚZÚ[YYXHÛÛ[[ÛœÈÎ‹ËØÛÛ[[ÛœËÚZÚ[YYXK›Ü™ËİÚZÚKÑš[N•šY]ÜÚ[ÓX\ÜØWÑ[WÔÛİ\ÜËSX\ÜØWÔ\š×ÓØİWĞMĞÔ—Ì‹šœÏˆ°ê\šYšpêYHĞÈ–KTĞHŒ
