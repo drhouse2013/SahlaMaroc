@@ -98,42 +98,42 @@
  "rabat/oudayas": {
   "file": "rabat-oudayas.jpg",
   "alt": {
-   "fr": "Remparts de la kasbah des Oudayas et barques de pêche sur le Bouregreg, Rabat",
-   "en": "Walls of the Kasbah of the Udayas and fishing boats on the Bouregreg, Rabat",
-   "es": "Murallas de la kasba de los Udayas y barcas de pesca en el Bu Regreg, Rabat",
-   "de": "Mauern der Kasbah der Oudaya und Fischerboote am Bou Regreg, Rabat",
-   "ar": "أسوار قصبة الأوداية وقوارب الصيد على نهر أبي رقراق بالرباط"
+   "fr": "Porte Bab Oudaïa et remparts de la kasbah des Oudayas, bordés de palmiers, Rabat",
+   "en": "Bab Oudaia Gate and palm-lined ramparts of the Kasbah of the Udayas, Rabat",
+   "es": "Puerta Bab Oudaïa y murallas de la kasba de los Udayas, bordeadas de palmeras, Rabat",
+   "de": "Bab-Oudaia-Tor und palmengesäumte Mauern der Kasbah der Oudaya, Rabat",
+   "ar": "باب الأوداية وأسوار قصبة الأوداية المحاطة بأشجار النخيل في الرباط"
   },
-  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg"
+  "credit": "Aemazy, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg"
  },
  "rabat/hassan-tower": {
   "file": "rabat-hassan-tower.jpg",
   "alt": {
-   "fr": "Tour Hassan inachevée dominant l'esplanade de colonnes à Rabat",
-   "en": "The unfinished Hassan Tower above its field of columns in Rabat",
-   "es": "La torre Hassan inacabada sobre la explanada de columnas en Rabat",
-   "de": "Der unvollendete Hassan-Turm über dem Säulenfeld in Rabat",
-   "ar": "صومعة حسان غير المكتملة فوق ساحة الأعمدة بالرباط"
+   "fr": "Tour Hassan de couleur ocre encadrée par les palmiers sous une lumière dorée, Rabat",
+   "en": "The ochre Hassan Tower framed by palm trees in warm golden light, Rabat",
+   "es": "La torre Hassan ocre, enmarcada por palmeras bajo una luz dorada, Rabat",
+   "de": "Der ockerfarbene Hassan-Turm, von Palmen umrahmt und in warmes goldenes Licht getaucht, Rabat",
+   "ar": "صومعة حسان بلونها المغري محاطة بأشجار النخيل تحت ضوء ذهبي دافئ في الرباط"
   },
-  "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg",
+  "credit": "Aemazy, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg",
   "focalPoint": [
-   75,
+   50,
    50
   ]
  },
  "rabat/chellah": {
   "file": "rabat-chellah.jpg",
   "alt": {
-   "fr": "Porte monumentale à tours crénelées de la nécropole du Chellah, Rabat",
-   "en": "Monumental gate with crenellated towers at the Chellah necropolis, Rabat",
-   "es": "Monumental puerta con torres almenadas de la necrópolis de Chellah, Rabat",
-   "de": "Monumentales Tor mit Zinnentürmen der Nekropole Chellah, Rabat",
-   "ar": "البوابة الضخمة ذات الأبراج المسننة في موقع شالة بالرباط"
+   "fr": "Porte monumentale du site de Chellah, flanquée de deux hautes tours crénelées, Rabat",
+   "en": "The monumental entrance gate to Chellah, flanked by two tall crenellated towers, Rabat",
+   "es": "Puerta monumental de Chellah, flanqueada por dos altas torres almenadas, Rabat",
+   "de": "Das monumentale Tor von Chellah, flankiert von zwei hohen Zinnentürmen, Rabat",
+   "ar": "البوابة الرئيسية الأثرية لشالة بين برجين عاليين مسننين في الرباط"
   },
-  "credit": "Mohibsam, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Challah.jpg"
+  "credit": "BusinkaSalima, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg"
  },
  "rabat/medina": {
   "file": "rabat-medina.jpg",
@@ -2692,4 +2692,3 @@
   "focalPoint": [50, 40]
  }
 }
-
