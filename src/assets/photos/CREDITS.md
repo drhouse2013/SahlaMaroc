@@ -197,6 +197,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/nador-mar-chica-beach.jpg | ArnoldBetten | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador,_Uferpromenade_am_Mar_Chica.jpg |
 | spots/nador-kariat-arekmane.jpg | Soufiane elkadaoui | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:La_plage_de_Kariat_Arkmane.jpg |
 | spots/tetouan-royal-palace.jpg | Dickelbers | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tetouan_Morocco_%C2%A9_03.jpg |
+| spots/tetouan-dersa-kasbah-2026.jpg | Dahbi fatima zahrae | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg |
 | spots/meknes-sidi-ben-aissa.jpg | Robert Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg |
 | spots/ouarzazate-cinema-museum.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Pathe_Projector_Ouarzazate.jpg |
 | spots/ouarzazate-solar-park.jpg | Richard Allaway | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Noor_1_and_2_-_Ouarzazate_Solar_Power_Station_(48962353822).jpg |
@@ -394,6 +395,10 @@ Originaux Wikimedia récupérés pour éviter la perte de détails des copies r�
 - src/assets/photos/spots/al-hoceima-sfiha.jpg — SHA-256 : 3B86D97EA0E1F1CFEAC18201F384728C5A61205A9F1AB6B31084B42FBB228722
 - src/assets/photos/cdm-stade-ibn-batouta.jpg — SHA-256 : DF8C7027311044FE0B2E88E1E6946AE9115DB61E3E338555A28BE37D2AF2D8F6
 
+## Tétouan — kasbah du mont Dersa, octobre 2026
+
+- `spots/tetouan-dersa-kasbah-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg). Prise déclarée le 4 octobre 2026 ; original 1868 × 3901 px. L’asset local est la réduction Wikimedia 960 × 2005 px, suffisante pour le recadrage 4:3 jusqu’à 480 × 360. Point focal [50, 40]. Variantes Astro sous CC BY-SA 4.0.
+
 
 ## Taroudant — remparts, octobre 2026
 
@@ -408,3 +413,4 @@ Originaux Wikimedia récupérés pour éviter la perte de détails des copies r�
 ## El Jadida — Mazagan, octobre 2026
 
 - `cities/el-jadida.jpg` et `spots/el-jadida-mazagan.jpg` : Xpelli, CC BY-SA 4.0. Date déclarée : 31 octobre 2026, 11:52:18. Original 5686 × 7581 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg. Conversions Astro et recadrage CSS 50 % / 30 % sous la même licence. Remplace les vues de ville de 2017 et de Mazagan de 2012.
+
