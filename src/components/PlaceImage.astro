@@ -7,9 +7,15 @@ import PhotoPlaceholder from './PhotoPlaceholder.astro';
 
 interface Props { photo: PlacePhoto; kind: PlaceKind; lang: Locale; name?: string; width: number; height?: number; widths?: number[]; sizes?: string; eager?: boolean; priority?: boolean; decorative?: boolean; class?: string }
 const { photo, kind, lang, name, width, height, widths, sizes, eager = false, priority = eager, decorative = false, class: cls } = Astro.props;
+const focalGravity = photo.focalPoint && (() => {
+  const [x, y] = photo.focalPoint!;
+  const horizontal = x < 33 ? 'west' : x > 67 ? 'east' : '';
+  const vertical = y < 33 ? 'north' : y > 67 ? 'south' : '';
+  return `${vertical}${horizontal}` || 'centre';
+})();
 ---
 {photo.image ? (
-  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} height={height} fit={height ? 'cover' : undefined} position={photo.focalPoint ? `${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` : undefined} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} height={height} fit={height ? 'cover' : undefined} position={height ? focalGravity : undefined} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} style={!height && photo.focalPoint ? { objectPosition: `${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` } : undefined} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
 ) : (
   <PhotoPlaceholder kind={kind} lang={lang} name={name} />
 )}
