@@ -109,3 +109,7 @@ Trois prises du 2 février 2026 (Taghazout Beach - 2026-02-02 01/02/03.jpg), aut
 Panorama_beach_at_Taghazout.jpg : source primaire consultée, date de prise 24 mars 2013, Heather Cowper, CC BY2.0 avec attribution Heatheronhertravels.com. Non retenue pour renouvellement récent. Actions 42838094942 du lot tannerie terminé success.
 
 Contrôle mobile Tétouan du 10 novembre, viewport 390×844 : liste des douze lieux dépliée, nouvelle photo de tannerie entière dans sa carte, texte lisible, bouton crédit activé ; attribution Rachidourkia et CC BY-SA4.0 lisible dans la fenêtre. Aucun débordement horizontal visible dans cette section. Viewport rétabli après contrôle. Validation limitée à cette carte et cette section.
+
+## Nador — recherche de renouvellement
+
+Source Corniche,_Nador.jpg (SALHI Kaouthar, prise déclarée 6 octobre 2026) inspectée via aperçu original : ciel et chaussée dominants, lumière sombre ; non retenue pour remplacer la miniature. Source actuelle nador-corniche-2026.jpg déjà datée septembre 2026 ; le défaut est la composition/lumière, pas son ancienneté. Chercher une vue large de la ville et de Marchica plutôt qu’une autre vue verticale de promenade.
