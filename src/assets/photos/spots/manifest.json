@@ -12,7 +12,10 @@
   "source": "https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg"
  },
  "marrakech/koutoubia": {
-  "focalPoint": [50, 20],
+  "focalPoint": [
+   50,
+   20
+  ],
   "file": "marrakech-koutoubia.jpg",
   "alt": {
    "fr": "Minaret et façade de la mosquée de la Koutoubia à Marrakech",
@@ -37,7 +40,10 @@
   "source": "https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG"
  },
  "marrakech/ben-youssef": {
-  "focalPoint": [50, 80],
+  "focalPoint": [
+   50,
+   80
+  ],
   "file": "marrakech-ben-youssef.jpg",
   "alt": {
    "fr": "Cour intérieure et façade en bois sculpté de la médersa Ben Youssef à Marrakech",
@@ -430,7 +436,10 @@
   "source": "https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg"
  },
  "tetouan/medina": {
-  "focalPoint": [50, 20],
+  "focalPoint": [
+   50,
+   20
+  ],
   "file": "tetouan-medina.jpg",
   "alt": {
    "fr": "Minaret de la mosquée Al-Ayoun dans la médina de Tétouan",
@@ -693,7 +702,10 @@
   },
   "credit": "Cesar.mx22, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Painted_Rocks_Trafraoute.jpg",
-  "focalPoint": [50, 72]
+  "focalPoint": [
+   50,
+   72
+  ]
  },
  "tafraout/napoleons-hat": {
   "file": "tafraout-napoleons-hat.jpg",
@@ -1456,7 +1468,10 @@
   "source": "https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg"
  },
  "chefchaouen/bouzafar-mosque": {
-  "focalPoint": [50, 20],
+  "focalPoint": [
+   50,
+   20
+  ],
   "file": "chefchaouen-bouzafar-mosque.jpg",
   "alt": {
    "fr": "Mosquée blanche sur la colline de Chefchaouen",
@@ -2035,14 +2050,14 @@
  "tetouan/tannery": {
   "file": "tetouan-tannery.jpg",
   "alt": {
-   "fr": "Tannerie de Tétouan, Tétouan",
-   "en": "Tetouan Tannery, Tetouan",
-   "es": "Curtiduría de Tetuán, Tetuán",
-   "de": "Gerberei von Tétouan, Tetuan",
-   "ar": "دباغة تطوان, تطوان"
+   "fr": "Bassins de la tannerie et maisons de la médina de Tétouan",
+   "en": "Tannery vats and houses in the medina of Tetouan",
+   "es": "Cubas de la curtiduría y casas de la medina de Tetuán",
+   "de": "Gerbereibecken und Häuser in der Medina von Tetouan",
+   "ar": "أحواض الدباغة ومنازل المدينة العتيقة بتطوان"
   },
-  "credit": "Ideophagous, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%D8%AF%D8%A7%D8%B1_%D8%A7%D9%84%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg"
+  "credit": "Rachidourkia (version optimisée), CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg"
  },
  "casablanca/habous": {
   "file": "casablanca-habous.jpg",
@@ -2175,7 +2190,10 @@
   },
   "credit": "Xpelli, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Sidi_Bouafi_Lighthouse_tower,_El_Jadida,_Morocco_-_Oct_2026.jpg",
-  "focalPoint": [50, 18]
+  "focalPoint": [
+   50,
+   18
+  ]
  },
  "saidia/beach": {
   "file": "saidia-beach.jpg",
@@ -2274,7 +2292,10 @@
   "source": "https://commons.wikimedia.org/wiki/File:Larache_Medina.jpg"
  },
  "larache/pilar-church": {
-  "focalPoint": [50, 20],
+  "focalPoint": [
+   50,
+   20
+  ],
   "file": "larache-pilar-church.jpg",
   "alt": {
    "fr": "Église Notre-Dame du Pilier à Larache",
@@ -2393,7 +2414,10 @@
   },
   "credit": "Reda benkhadra (version recadrée et optimisée), CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg",
-  "focalPoint": [50, 82]
+  "focalPoint": [
+   50,
+   82
+  ]
  },
  "ifrane/akhawayn-university": {
   "file": "ifrane-akhawayn-university.jpg",
@@ -2408,6 +2432,10 @@
   "source": "https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg"
  },
  "ifrane/cedre-gouraud": {
+  "focalPoint": [
+   50,
+   20
+  ],
   "file": "ifrane-cedre-gouraud.jpg",
   "alt": {
    "fr": "Le cèdre Gouraud, vieil arbre mort près d'Azrou",
@@ -2610,7 +2638,10 @@
   },
   "credit": "Cesar.mx22, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Zagora_City.jpg",
-  "focalPoint": [50, 72]
+  "focalPoint": [
+   50,
+   72
+  ]
  },
  "sidi-ifni/legzira": {
   "file": "sidi-ifni-legzira.jpg",
@@ -2707,6 +2738,9 @@
   },
   "credit": "Dahbi fatima zahrae, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg",
-  "focalPoint": [50, 40]
+  "focalPoint": [
+   50,
+   40
+  ]
  }
 }
