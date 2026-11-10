@@ -81,3 +81,9 @@ Bouzaâfar : original inspecté ; ancrage nord [50,20] appliqué et dérivé 640
 - Régions : Casablanca-Settat, sommet du minaret coupé ; correction nécessaire. Fès-Meknès, partie haute de l’arc serrée ; original à examiner. Les dix autres sujets restent lisibles, Marrakech-Safi est une scène de nuit volontaire.
 
 L’outil accepte désormais `cities`, `regions` ou `spots` et utilise la règle isVerified partagée avec le site. Première passe visuelle achevée, corrections et validation des pages encore ouvertes.
+
+Casablanca-Settat : le minaret est déjà coupé dans l’original régional, donc un déplacement ne peut le restaurer. Remplacement par la photographie de Casablanca déjà présente dans le manifeste villes (OussamaHamama, CC BY-SA 4.0), original inspecté avec minaret entier, source et textes alternatifs en cinq langues repris. Focalisation nord conservée. Aucun nouveau cliché récent revendiqué.
+
+## Contrôle navigateur — 10 novembre 2026
+
+Serveur statique de la dernière construction accessible sur 127.0.0.1:4349 (HTTP 200). Page /fr/villes/marrakech/#spots inspectée dans le navigateur : sommet de Koutoubia conservé avec marge ; porte de Ben Youssef visible dans la carte. Deux captures de page inspectées, grille et crédits discrets présents. Contrôle ordinateur uniquement ; autres villes et mobile restant à vérifier. Actions et Vercel du commit 223dcf5 success confirmés.
