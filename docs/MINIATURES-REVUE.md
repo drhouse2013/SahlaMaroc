@@ -95,3 +95,7 @@ Ali Ben Youssef : sommet présent dans l’original et dans la miniature, marge 
 ## Originaux avec intrusion au bord — 10 novembre
 
 Tannerie de Tétouan et plage de Taghazout : originaux inspectés, intrusion de doigt confirmée dans le fichier source. Les deux fichiers sont déjà en 4:3 ; un simple ancrage ne peut retirer le défaut au même ratio. Prévoir une autre prise de vue ou un recadrage explicite documenté ; ne pas déclarer ces deux miniatures finalisées. Taghazout : avant-plan dominé par un toit, une nouvelle vue de plage serait préférable.
+
+Candidate de remplacement précise trouvée : https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg — Rachidourkia, prise déclarée le 12 novembre 2024, 8000×6000, CC BY-SA 4.0, coordonnées 35.572474/-5.368319 dans la tannerie. Source primaire consultée ; inspection visuelle et intégration encore requises. La fiche Tannery_in_Fez,_Morocco.jpg présente une contradiction de ville et ne doit pas servir de remplacement sans résolution.
+
+Tannerie : candidate Rachidourkia inspectée visuellement puis intégrée localement, bassins lisibles sans intrusion au bord. Original 8000×6000, dérivé 1600×1200 ; crédit, licence et cinq textes alternatifs actualisés. Build et rendu sur page à contrôler.
