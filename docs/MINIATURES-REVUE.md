@@ -101,3 +101,7 @@ Candidate de remplacement précise trouvée : https://commons.wikimedia.org/wiki
 Tannerie : candidate Rachidourkia inspectée visuellement puis intégrée localement, bassins lisibles sans intrusion au bord. Original 8000×6000, dérivé 1600×1200 ; crédit, licence et cinq textes alternatifs actualisés. Build et rendu sur page à contrôler.
 
 Tannerie : contrôle navigateur ordinateur du 10 novembre sur /fr/villes/tetouan/#spots, liste dépliée. Nouvelle miniature visible, bassins et maisons lisibles ; bouton crédit ouvert, Rachidourkia (version optimisée), CC BY-SA 4.0 affiché. Build terminé exit0 et check:dist 936 pages/110647 références/0 erreur. Contrôle mobile restant.
+
+## Taghazout — sélection récente du 10 novembre
+
+Trois prises du 2 février 2026 (Taghazout Beach - 2026-02-02 01/02/03.jpg), auteur 瑞丽江的河水, CC BY-SA 4.0, originaux 5712×4284. Source 01 consultée directement ; métadonnées API de 02 et 03 enregistrées dans outputs. Trois vues inspectées : 01 panneau central, 02 plage/ciel gris sans sujet fort, 03 surfeurs lisibles mais lumière grise et grande plage vide. Non retenues pour le remplacement premium ; continuer avec d’autres prises et photographes. La photo actuelle avec intrusion reste un défaut ouvert, aucune retouche artificielle ajoutée.
