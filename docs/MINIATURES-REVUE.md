@@ -91,3 +91,7 @@ Serveur statique de la dernière construction accessible sur 127.0.0.1:4349 (HTT
 ## Reprise du 10 novembre — originaux
 
 Ali Ben Youssef : sommet présent dans l’original et dans la miniature, marge serrée uniquement ; aucune modification nécessaire. Dar Batha : arcades déjà coupées dans l’original 4:3, impossible à réparer par ancrage ; conserver provisoirement comme détail de sol/fontaine, rechercher une vue plus large. Cèdre Gouraud : ancrage nord [50,20] appliqué après inspection original et dérivé 640×480 ; branches sommitales conservées, base hors champ. Pour montrer l’arbre entier au format 4:3, une nouvelle prise de vue plus large sera nécessaire.
+
+## Originaux avec intrusion au bord — 10 novembre
+
+Tannerie de Tétouan et plage de Taghazout : originaux inspectés, intrusion de doigt confirmée dans le fichier source. Les deux fichiers sont déjà en 4:3 ; un simple ancrage ne peut retirer le défaut au même ratio. Prévoir une autre prise de vue ou un recadrage explicite documenté ; ne pas déclarer ces deux miniatures finalisées. Taghazout : avant-plan dominé par un toit, une nouvelle vue de plage serait préférable.
