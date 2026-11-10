@@ -23,6 +23,18 @@ for (const [lang, root] of Object.entries(roots)) {
   }
 }
 const groups = Object.groupBy(rows, row => row.city);
+// Compare generated pages to the actual city-page itinerary declaration so a missing route cannot silently pass.
+const cityPage = fs.readFileSync('src/components/hubs/CityPage.astro', 'utf8');
+const declaration = cityPage.split('\n').find(line => line.startsWith('const stayCity ='));
+if (!declaration) throw new Error('City itinerary declaration not found');
+const expected = [...declaration.matchAll(/id === '([^']+)'/g)].map(match => match[1]);
+if (!expected.length) throw new Error('No expected city itineraries found');
+for (const city of expected) {
+  if (!groups[city]) errors.push({ city, message: 'Expected itinerary missing from generated pages' });
+}
+for (const city of Object.keys(groups)) {
+  if (!expected.includes(city)) errors.push({ city, message: 'Unexpected generated itinerary' });
+}
 for (const [city, translations] of Object.entries(groups)) {
   if (translations.length !== Object.keys(roots).length) errors.push({ city, translations: translations.length });
 }
