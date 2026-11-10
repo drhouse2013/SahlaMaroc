@@ -140,3 +140,11 @@ Sources : https://commons.wikimedia.org/wiki/File:Taghazout_village_.jpg ; https
 - **Bilan** : aucun des trois placeholders de Zagora ne peut être remplacé par une image répondant à la fois à la fraîcheur, à la qualité et aux droits. Le compteur reste inchangé. Continuer avec des prises récentes vérifiables ou une autorisation directe du photographe.
 
 Sources primaires : https://www.pexels.com/photo/palm-trees-on-the-desert-11387356/ ; https://www.flickr.com/photos/quanito/53759394408 ; https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg ; https://commons.wikimedia.org/wiki/File:Zaouia_Naciria,_Tamegroute,_79-1.jpg ; https://commons.wikimedia.org/wiki/File:Traditional_Earthen_Buildings_of_Tamegroute,_Morocco_(2025).jpg.
+
+
+## Forêt de la Maâmora — panorama récent vérifié puis écarté (10 novembre 2026)
+
+- Candidat Commons examiné : [Maamora Forest in Bouknadel - Morocco.jpg](https://commons.wikimedia.org/wiki/File:Maamora_Forest_in_Bouknadel_-_Morocco.jpg), Anass Sedrati, prise le 21 novembre 2024, 4 030 × 1 427 px, CC BY-SA 4.0. Géolocalisation publiée : 34.138333, -6.726917.
+- Le lieu est exact, la licence permet la réutilisation avec attribution et partage à l’identique, et la résolution suffit. Après inspection de l’original, le cadrage 4:3 fait ressortir le lampadaire, les fils aériens et le bord de route ; la scène ne donne pas une miniature assez soignée pour le site.
+- Candidat écarté pour la présentation, non pour les droits. Aucun fichier ni manifeste modifié ; le placeholder de la Forêt de la Maâmora reste ouvert jusqu’à une meilleure vue.
+- Empreinte SHA-256 de la copie de contrôle : `6b6bff967ac7717cba98f7febd92f616468715e2cdfff578dcf58882af1cd37e`.
