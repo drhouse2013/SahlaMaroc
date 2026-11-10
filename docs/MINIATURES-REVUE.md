@@ -87,3 +87,7 @@ Casablanca-Settat : le minaret est déjà coupé dans l’original régional, do
 ## Contrôle navigateur — 10 novembre 2026
 
 Serveur statique de la dernière construction accessible sur 127.0.0.1:4349 (HTTP 200). Page /fr/villes/marrakech/#spots inspectée dans le navigateur : sommet de Koutoubia conservé avec marge ; porte de Ben Youssef visible dans la carte. Deux captures de page inspectées, grille et crédits discrets présents. Contrôle ordinateur uniquement ; autres villes et mobile restant à vérifier. Actions et Vercel du commit 223dcf5 success confirmés.
+
+## Reprise du 10 novembre — originaux
+
+Ali Ben Youssef : sommet présent dans l’original et dans la miniature, marge serrée uniquement ; aucune modification nécessaire. Dar Batha : arcades déjà coupées dans l’original 4:3, impossible à réparer par ancrage ; conserver provisoirement comme détail de sol/fontaine, rechercher une vue plus large. Cèdre Gouraud : ancrage nord [50,20] appliqué après inspection original et dérivé 640×480 ; branches sommitales conservées, base hors champ. Pour montrer l’arbre entier au format 4:3, une nouvelle prise de vue plus large sera nécessaire.

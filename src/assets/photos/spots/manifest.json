@@ -2408,6 +2408,7 @@
   "source": "https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg"
  },
  "ifrane/cedre-gouraud": {
+  "focalPoint": [50, 20],
   "file": "ifrane-cedre-gouraud.jpg",
   "alt": {
    "fr": "Le cèdre Gouraud, vieil arbre mort près d'Azrou",
