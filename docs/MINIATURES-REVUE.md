@@ -99,3 +99,5 @@ Tannerie de Tétouan et plage de Taghazout : originaux inspectés, intrusion de 
 Candidate de remplacement précise trouvée : https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg — Rachidourkia, prise déclarée le 12 novembre 2024, 8000×6000, CC BY-SA 4.0, coordonnées 35.572474/-5.368319 dans la tannerie. Source primaire consultée ; inspection visuelle et intégration encore requises. La fiche Tannery_in_Fez,_Morocco.jpg présente une contradiction de ville et ne doit pas servir de remplacement sans résolution.
 
 Tannerie : candidate Rachidourkia inspectée visuellement puis intégrée localement, bassins lisibles sans intrusion au bord. Original 8000×6000, dérivé 1600×1200 ; crédit, licence et cinq textes alternatifs actualisés. Build et rendu sur page à contrôler.
+
+Tannerie : contrôle navigateur ordinateur du 10 novembre sur /fr/villes/tetouan/#spots, liste dépliée. Nouvelle miniature visible, bassins et maisons lisibles ; bouton crédit ouvert, Rachidourkia (version optimisée), CC BY-SA 4.0 affiché. Build terminé exit0 et check:dist 936 pages/110647 références/0 erreur. Contrôle mobile restant.
