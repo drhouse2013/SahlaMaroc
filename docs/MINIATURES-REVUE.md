@@ -131,3 +131,12 @@ Build local : 936 pages, Astro 0 erreur/0 avertissement ; contrôle de sortie : 
 - Aucun visuel ajouté et aucun placeholder retiré. Continuer à rechercher une photo récente, de résolution suffisante et sous licence explicite, ou une image autorisée par son photographe.
 
 Sources : https://commons.wikimedia.org/wiki/File:Taghazout_village_.jpg ; https://commons.wikimedia.org/wiki/File:Surf_berbere_cafe_on_hash_point.jpg ; https://www.flickr.com/photos/69845378@N00/4153955319/ ; https://www.taghazoutbay.ma/fr/nos-experiences/dcouverte/imouran-rocher-du-diable.
+
+## Zagora — recherche ciblée des lieux sans photo (10 novembre 2026)
+
+- **Palmeraie de Zagora** : la page Pexels de Moussa Idrissi décrit une palmeraie de Zagora et donne une définition de 3 008 × 2 000 px sous licence Pexels, mais ses métadonnées indiquent une prise le 19 mai 2007. Non retenue comme vue récente. La photo Flickr de Pascal VU prise le 23 mai 2024 identifie explicitement une palmeraie de Zagora, mais la page indique « All rights reserved » ; aucun téléchargement ni usage.
+- **Ksar Tissergate** : « Ksar-tissergate-zagora-maroc.jpg » de Lalla-ltcia est géolocalisée au Ksar et publiée sous CC BY-SA 4.0, mais l’original ne fait que 960 × 640 px et date du 4 janvier 2023. Inspection visuelle faite : les croisillons de bois prennent une grande partie des bords et masquent le sujet ; non retenue comme miniature premium.
+- **Bibliothèque de Tamegroute / Zaouia Naciria** : les candidates précises de Stegop (2016, jusqu’à 1 900 × 1 069 px, CC BY-SA 4.0, attribution Jose Mario Pires) sont exactes et réutilisables mais anciennes. Une page 2025 de bâtiments traditionnels à Tamegroute ne fournit qu’un original de 799 × 533 px et attribue l’auteur à « Unknown author » ; provenance insuffisante. Aucune n’est intégrée.
+- **Bilan** : aucun des trois placeholders de Zagora ne peut être remplacé par une image répondant à la fois à la fraîcheur, à la qualité et aux droits. Le compteur reste inchangé. Continuer avec des prises récentes vérifiables ou une autorisation directe du photographe.
+
+Sources primaires : https://www.pexels.com/photo/palm-trees-on-the-desert-11387356/ ; https://www.flickr.com/photos/quanito/53759394408 ; https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg ; https://commons.wikimedia.org/wiki/File:Zaouia_Naciria,_Tamegroute,_79-1.jpg ; https://commons.wikimedia.org/wiki/File:Traditional_Earthen_Buildings_of_Tamegroute,_Morocco_(2025).jpg.
