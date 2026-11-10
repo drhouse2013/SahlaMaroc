@@ -109,3 +109,10 @@ Trois prises du 2 février 2026 (Taghazout Beach - 2026-02-02 01/02/03.jpg), aut
 Panorama_beach_at_Taghazout.jpg : source primaire consultée, date de prise 24 mars 2013, Heather Cowper, CC BY2.0 avec attribution Heatheronhertravels.com. Non retenue pour renouvellement récent. Actions 42838094942 du lot tannerie terminé success.
 
 Contrôle mobile Tétouan du 10 novembre, viewport 390×844 : liste des douze lieux dépliée, nouvelle photo de tannerie entière dans sa carte, texte lisible, bouton crédit activé ; attribution Rachidourkia et CC BY-SA4.0 lisible dans la fenêtre. Aucun débordement horizontal visible dans cette section. Viewport rétabli après contrôle. Validation limitée à cette carte et cette section.
+
+
+## Nador — alternatives de hero inspectées le 10 novembre 2026
+
+La candidate Corniche,_Nador.jpg (SALHI Kaouthar, prise déclarée le 6 octobre 2026) a été inspectée : format portrait, ciel et chaussée dominants, lumière sombre ; non retenue. Corniche Nador 23-09-2026.jpg (même photographe, 2 268 × 4 032, CC BY-SA 4.0) a été inspectée dans son original et dans le bandeau actuel : barque et lagune lisibles au recadrage large, mais la composition d’origine laisse peu de latitude. Cette photo récente reste donc le meilleur visuel de ville disponible.
+
+Le panorama « Marchica nador.jpg » (Taloubant, 5 709 × 4 036, CC BY-SA 4.0, août 2024) est lumineux et large, mais il illustre la lagune depuis la dune, pas une nouvelle vue urbaine. Il correspond à la photo déjà utilisée pour le lieu « Lagune de Marchica » ; ne pas le dupliquer en hero. « Marchica Lighthouse in Nador (Club).jpg » (Matthew Explorer, août 2025, CC0) a été inspecté : portrait, ciel gris et rambarde dominante, non adapté au hero. Sources : https://commons.wikimedia.org/wiki/File:Corniche,_Nador.jpg ; https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg ; https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg ; https://commons.wikimedia.org/wiki/File:Marchica_Lighthouse_in_Nador_(Club).jpg.
