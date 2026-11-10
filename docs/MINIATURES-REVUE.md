@@ -123,3 +123,11 @@ Le panorama « Marchica nador.jpg » (Taloubant, 5 709 × 4 036, CC BY-SA 4.0, a
 « Taghazout coast - 2026-02-02 05.jpg » remplace l’ancienne image de plage dont la toiture occupait le premier plan. Original inspecté : 5 712 × 4 284, prise déclarée le 2 février 2026, auteur 瑞丽江的河水, licence CC BY-SA 4.0. Dérivé recadré en 4:3 et optimisé en JPEG 1 600 × 1 200. Le manifeste principal affiche l’alt descriptif dans les cinq langues et l’attribution « recadrée et optimisée ». Source : https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg.
 
 Build local : 936 pages, Astro 0 erreur/0 avertissement ; contrôle de sortie : 110 647 références, 0 erreur. Carte et crédit photo vérifiés dans le navigateur sur ordinateur et mobile 390 × 844. Le contrôle confirme uniquement cette carte et son attribution ; les autres défauts de la revue restent ouverts.
+
+## Taghazout — recherche des deux lieux sans photo (10 novembre 2026)
+
+- **Hash Point** : « Taghazout village .jpg » de Jimbobbailey312 montre le littoral devant le village et identifie Hash Point dans sa description. L’original ne fait que 1 280 × 720 et date du 26 janvier 2016 ; la vue ne met pas en scène le surf. Non retenu pour un renouvellement premium récent. « Surf berbere cafe on hash point.jpg » date aussi de 2016 et ne fait que 640 × 640 ; non retenu.
+- **Imouran / Devil’s Rock** : la photo libre de Dale Harvey est précisément identifiée comme Devil’s Rock, mais la prise date du 26 novembre 2009. Non retenue comme visuel récent. La page officielle Taghazout Bay montre le lieu, mais ne donne pas de licence ou d’autorisation de réutilisation ; l’image n’est pas copiée.
+- Aucun visuel ajouté et aucun placeholder retiré. Continuer à rechercher une photo récente, de résolution suffisante et sous licence explicite, ou une image autorisée par son photographe.
+
+Sources : https://commons.wikimedia.org/wiki/File:Taghazout_village_.jpg ; https://commons.wikimedia.org/wiki/File:Surf_berbere_cafe_on_hash_point.jpg ; https://www.flickr.com/photos/69845378@N00/4153955319/ ; https://www.taghazoutbay.ma/fr/nos-experiences/dcouverte/imouran-rocher-du-diable.
