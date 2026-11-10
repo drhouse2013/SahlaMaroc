@@ -426,3 +426,8 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 ## Parc national d’Ifrane — juin 2023
 
 - `spots/ifrane-national-park.jpg` : Reda benkhadra, CC BY-SA 4.0 ; prise déclarée le 3 juin 2023 ; original 5 184 × 3 176 px, optimisé à 1 600 × 980 px pour le dépôt. [Source](https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg). La page source situe les campements près de Michlifen, dans le parc ; photo contrôlée visuellement et choisie après comparaison des deux cadrages. L’attribution visible précise « version recadrée et optimisée ». Ancrage focal bas-centre pour garder les campements dans les recadrages panoramiques. Les EXIF ne sont pas copiées dans le dérivé. SHA-256 du dérivé : `F906A7BB4ABC9E97BF4D1B8EFBC0724299261635E9F72C1090277ADDC66A6FA6`.
+
+
+## Renouvellement de la plage de Taghazout — 10 novembre 2026
+
+- `spots/taghazout-taghazout-beach.jpg` : 瑞丽江的河水, CC BY-SA 4.0. Prise déclarée le 2 février 2026, 5 712 × 4 284. Source : https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg. Dérivé 1 600 × 1 200, recadrage et optimisation JPEG documentés ; l’attribution et la licence figurent dans le crédit discret de la page.

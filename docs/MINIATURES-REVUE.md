@@ -116,3 +116,10 @@ Contrôle mobile Tétouan du 10 novembre, viewport 390×844 : liste des douze li
 La candidate Corniche,_Nador.jpg (SALHI Kaouthar, prise déclarée le 6 octobre 2026) a été inspectée : format portrait, ciel et chaussée dominants, lumière sombre ; non retenue. Corniche Nador 23-09-2026.jpg (même photographe, 2 268 × 4 032, CC BY-SA 4.0) a été inspectée dans son original et dans le bandeau actuel : barque et lagune lisibles au recadrage large, mais la composition d’origine laisse peu de latitude. Cette photo récente reste donc le meilleur visuel de ville disponible.
 
 Le panorama « Marchica nador.jpg » (Taloubant, 5 709 × 4 036, CC BY-SA 4.0, août 2024) est lumineux et large, mais il illustre la lagune depuis la dune, pas une nouvelle vue urbaine. Il correspond à la photo déjà utilisée pour le lieu « Lagune de Marchica » ; ne pas le dupliquer en hero. « Marchica Lighthouse in Nador (Club).jpg » (Matthew Explorer, août 2025, CC0) a été inspecté : portrait, ciel gris et rambarde dominante, non adapté au hero. Sources : https://commons.wikimedia.org/wiki/File:Corniche,_Nador.jpg ; https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg ; https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg ; https://commons.wikimedia.org/wiki/File:Marchica_Lighthouse_in_Nador_(Club).jpg.
+
+
+## Taghazout — remplacement visuel validé le 10 novembre 2026
+
+« Taghazout coast - 2026-02-02 05.jpg » remplace l’ancienne image de plage dont la toiture occupait le premier plan. Original inspecté : 5 712 × 4 284, prise déclarée le 2 février 2026, auteur 瑞丽江的河水, licence CC BY-SA 4.0. Dérivé recadré en 4:3 et optimisé en JPEG 1 600 × 1 200. Le manifeste principal affiche l’alt descriptif dans les cinq langues et l’attribution « recadrée et optimisée ». Source : https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg.
+
+Build local : 936 pages, Astro 0 erreur/0 avertissement ; contrôle de sortie : 110 647 références, 0 erreur. Carte et crédit photo vérifiés dans le navigateur sur ordinateur et mobile 390 × 844. Le contrôle confirme uniquement cette carte et son attribution ; les autres défauts de la revue restent ouverts.
