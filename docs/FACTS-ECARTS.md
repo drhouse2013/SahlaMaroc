@@ -1,12 +1,12 @@
 # Ecarts constatés (2026-10-16, mise à jour 2026-11-11)
 
-**Corrigés le 2026-10-16 :** écarts 1, 2 (guides loyers fr/en/es/de/ar) et 6 (décret 2.26.530 lu au BO n° 7521).
+**Corrigés le 2026-11-11 :** écarts 1 et 2 (guides loyers fr/en/es/de/ar) réexaminés à la lumière du CGI 2026 et de la loi de finances 2026 ; écart 6 (décret 2.26.530 lu au BO n° 7521).
 
 Sources lues : guide fiscal MRE 2026 (mre.gov.ma, copie `docs/archives/guide-fiscal-mre-2026.txt`), guide ADII MRE 2025, IGOC 2026, daamsakane.ma, Accès Maroc, CLEISS.
 
 ## Divergents
-1. **impots-vente-location-bien-maroc-mre** — « option pour un taux de 20 % sans abattement » : le guide fiscal 2026 ne prévoit le taux libératoire de 20 % que pour les loyers soumis à retenue à la source (locataire personne morale ou professionnel au réel/simplifié). Le texte du guide laisse croire à une option générale.
-2. **impots-vente-location-bien-maroc-mre** — « retenue à la source de 5 % à partir du 1er juillet 2026 » : le guide fiscal 2026 lu indique 10 % (< 120 000 DH) et 15 % (>= 120 000 DH). Le 5 % n'est retrouvé dans aucune source officielle lue : à vérifier (loi de finances 2026, texte) avant de le maintenir.
+1. **impots-vente-location-bien-maroc-mre** — CORRIGÉ le 2026-11-11 : le taux libératoire de 20 % est limité aux revenus fonciers soumis à retenue à la source (CGI 2026, art. 64-IV ; Guide fiscal MRE 2026, p. 15). Les cinq éditions précisent désormais cette condition.
+2. **impots-vente-location-bien-maroc-mre** — CORRIGÉ le 2026-11-11 : les taux de 10 % et 15 % du Guide fiscal MRE 2026 concernent les revenus fonciers imposés chez une personne physique ; la loi de finances 2026 prévoit séparément une retenue de 5 % hors TVA pour certains loyers servis à des sociétés soumises à l'IS ou à des personnes physiques au RNR/RNS, avec une entrée en vigueur progressive selon le payeur (CGI 2026, art. 15 ter, 19 et 73 ; synthèse officielle LF 2026, p. 44-45). Les cinq versions distinguent désormais ces régimes au lieu de présenter le 5 % comme un taux général applicable aux loyers privés.
 
 ## Nuances à surveiller
 3. **voiture-mre-maroc-regle-180-jours** — le guide ADII 2025 dit 180 jours par année civile ; la circulaire ADII 6568/311 et la page douane disent « six mois » par année civile (continus ou fractionnés). Concordant en pratique, mais la prorogation après le 1er décembre (6 mois supplémentaires sur l'année suivante) n'est pas mentionnée dans le guide.
@@ -24,4 +24,3 @@ Aucun `verifiedDate` posé : les 13 guides restants (acheter voiture, aéroports
 12. **assurance-maladie-amo-retour** — principe AMO Achamil/Tadamon confirmé (CNSS, CLEISS) ; montants de cotisation (144-1 164 DH évoqués par des sites tiers), seuils RSU et cas des MRE non trouvés sur cnss.ma.
 13. **ferry-maroc-guide** — aucun programme de compagnie lu (durées, tarifs, 3 h avant) : reste non confirmé.
 14. Assurances voyage, carte de séjour, e-visa, visa 90 jours, permis, crédit MRE, envoyer de l'argent : non revérifiés dans ce lot (sources MAECI/DGSN, Bank Al-Maghrib, Office des changes non lues).
-
