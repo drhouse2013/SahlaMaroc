@@ -28,8 +28,19 @@ Lecture intégrale des titres, introductions, journées, sources et préparatifs
 | Saïdia | 5 | Corniche puis marina ; accès public, mer et services saisonniers à vérifier. |
 | Taroudant | 5 | Remparts/médina puis souks ; promenade adaptée à la chaleur, ateliers à confirmer. |
 | Ifrane | 5 | Centre puis parc national ; routes, accès et accompagnement à confirmer, neige/eau/faune non garanties. |
+| Larache | 5 | Médina/port puis Lixus ; zones portuaires, ouverture, transport et terrain à confirmer. |
+| Kénitra | 5 | Mehdia puis réserve de Sidi Boughaba ; accès autorisés et observations animalières non garanties. |
+| Errachidia | 5 | Vallée du Ziz puis Meski ; propriétés privées, débit, accès et baignade conditionnels. |
+| Tiznit | 5 | Remparts/médina puis Méchouar et argent ; visite d’atelier sur accord. Source ONMT consultée pour l’artisanat d’argent de Tiznit. |
+| Guelmim | 5 | Asrir puis Tighmert ; étapes proches, champs privés et palmeraies traités avec prudence. |
+| Sidi Ifni | 5 | Centre puis Legzira ; marées, falaise, accès et transport à confirmer ; aucune baignade ou marche sous les arches proposée. |
+| Laâyoune | 5 | Cathédrale vue de l’espace public puis lagune ; brochure historique utilisée sans garantie d’accès actuel. |
+| Fès | 5 | Bab Boujloud/médina, Al Attarine puis Jnan Sbil ; accès et horaires renvoyés aux lieux. |
+| Marrakech | 5 | Jemaa el-Fna/souks, El Badi puis Ménara ; pauses et chaleur prises en compte. Formulations FR/ES clarifiées pour ne pas suggérer de réservation. |
+| Essaouira | 5 | Skala/médina puis port/front de mer ; zones publiques, vent et rythme conservés. |
+| Rabat | 5 | Médina/Oudayas puis tour Hassan et Chellah ; sites distincts et déplacement précisés. |
 
-Ces 100 versions ne présentent pas de divergence de programme ou de promesse de réservation repérée dans cette passe. Les textes sont des propositions éditoriales, pas des programmes vendus. Cette relecture linguistique ne constitue pas une nouvelle vérification des horaires, tarifs, accès ou informations géographiques auprès de chaque lieu.
+Ces 155 versions (31 villes) ne présentent pas de divergence de programme ou de promesse de réservation repérée dans cette passe. Les textes sont des propositions éditoriales, pas des programmes vendus. Les corrections apportées clarifient le nom de la citerne d’El Jadida en arabe et enlèvent deux formulations ambiguës sur une promenade à Marrakech. Cette relecture linguistique ne constitue pas une nouvelle vérification exhaustive des horaires, tarifs et accès auprès de chaque lieu.
 
 ## Contrôles du rendu et du fonctionnement
 
@@ -43,7 +54,7 @@ Ces 100 versions ne présentent pas de divergence de programme ou de promesse de
 
 ## Restant
 
-Relire les 11 autres villes dans les cinq langues, terminer la passe des variantes de rendu et des thèmes, puis confirmer la validation globale. Les photos anciennes et les lieux sans image du site restent traités dans l’atelier Signature visuelle.
+Terminer la passe des variantes de rendu et des thèmes, puis confirmer la validation globale. Les photos anciennes et les lieux sans image du site restent traités dans l’atelier Signature visuelle.
 
 La PR reste en brouillon ; la publication finale de l’ensemble des ateliers n’est pas effectuée.
 
