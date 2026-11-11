@@ -446,3 +446,7 @@ Les fichiers originaux sont conservés tels que publiés. Astro produit les vari
 
 - `spots/kenitra-kasbah.jpg` : Fauve, CC BY 4.0 ; prise déclarée le 6 mars 2023 ; original 3 120 × 4 160 px. Recadrage centré en 3 120 × 2 340 px pour conserver l’arc, le Sebou et les remparts, puis conversion JPEG qualité 88. Source : https://commons.wikimedia.org/wiki/File:Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg.
 - `spots/zagora-tissergate.jpg` : Lalla-ltcia, CC BY-SA 4.0 ; prise déclarée le 4 janvier 2023 ; original 960 × 640 px. Composition vérifiée visuellement ; dimensions conservées. Source : https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg.
+
+## Couverture de ville — Errachidia
+
+- `cities/errachidia.jpg` : HSTG1, CC BY-SA 4.0 ; panorama de la ville pris le 5 janvier 2018, original 1 200 × 800 px. Recadrage responsive centré légèrement vers le bas pour préserver quartiers, palmiers et reliefs. Source : https://commons.wikimedia.org/wiki/File:Errachidia_north_view.jpg. Cette vue remplace une image de la province qui ne représentait pas clairement la ville ; son ancienneté est consignée et un renouvellement récent reste souhaitable.

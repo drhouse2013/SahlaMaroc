@@ -350,14 +350,18 @@
   "errachidia": {
     "file": "errachidia.jpg",
     "alt": {
-      "fr": "Palmeraie de la vallée du Ziz, province d'Errachidia",
-      "en": "Palm grove in the Ziz valley, Errachidia province",
-      "es": "Palmeral del valle del Ziz, provincia de Errachidia",
-      "de": "Palmenhain im Ziz-Tal, Provinz Errachidia",
-      "ar": "واحة نخيل في وادي زيز، إقليم الراشيدية"
+      "fr": "Vue de la ville d’Errachidia avec les palmiers et les reliefs de l’Atlas en arrière-plan",
+      "en": "View across Errachidia, with palm trees and Atlas foothills in the background",
+      "es": "Vista de Errachidia, con palmeras y las estribaciones del Atlas al fondo",
+      "de": "Blick über Errachidia mit Palmen und dem Atlasgebirge im Hintergrund",
+      "ar": "منظر لمدينة الرشيدية مع أشجار النخيل وسفوح الأطلس في الخلفية"
     },
-    "credit": "Ben Bender, CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg"
+    "credit": "HSTG1, CC BY-SA 4.0 (recadrée et optimisée)",
+    "source": "https://commons.wikimedia.org/wiki/File:Errachidia_north_view.jpg",
+    "focalPoint": [
+      50,
+      55
+    ]
   },
   "ifrane": {
     "file": "ifrane-lake-2025.jpg",

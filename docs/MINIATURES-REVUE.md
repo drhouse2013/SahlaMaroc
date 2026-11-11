@@ -131,3 +131,14 @@ Sources : https://commons.wikimedia.org/wiki/File:Taghazout_village_.jpg ; https
 - Couvertures d’Al Hoceima (plage de la ville, prise déclarée en janvier 2024, CC0) et de Tafraout (vue de la ville dans l’Anti-Atlas, décembre 2023, CC BY-SA 4.0) inspectées en grand format. Elles remplacent respectivement une plage ancienne et des terrasses agricoles peu représentatives.
 - Kasbah de Kénitra : fenêtre du bastion, Sebou et remparts visibles. Cadrage 4:3 contrôlé après recadrage centré ; prise déclarée en mars 2023, CC BY 4.0.
 - Ksar Tissergate : bâtiments du ksar bien reconnaissables, prise de janvier 2023, CC BY-SA 4.0. Le fichier source de 960 × 640 px est moins défini que souhaité, mais adapté à la vignette et constitue une illustration exacte plutôt qu’un visuel générique.
+
+## Couvertures des villes et régions — contrôle visuel du 11 novembre 2026
+
+Les 32 couvertures de ville (dont le hero d’accueil) et les 12 couvertures de région ont été réunies en quatre planches et inspectées à la taille d’une miniature. Les sujets restent reconnaissables dans la plupart des cadrages. Ce contrôle porte sur le cadrage et la lisibilité, pas sur la date, les droits ou la conformité de chaque prise.
+
+- **Meknès** : la couverture actuelle est douce et peu définie. La candidate `Meknes City.jpg` (prise déclarée le 1er février 2025, 4 000 × 6 000, CC BY-SA 4.0) a été inspectée ; son cadrage vertical met surtout en avant un minaret et un grand ciel. Elle n’est pas retenue sans recadrage convaincant ni confirmation visuelle du monument.
+- **Nador** : la couverture actuelle est correcte mais très vide au premier plan. `Nador City Hill.jpg` (prise déclarée le 3 mars 2024, 4 624 × 3 472, CC BY-SA 4.0) montre une vue panoramique exacte, mais les chaussures du photographe occupent le premier plan ; candidate écartée.
+- **Errachidia** : l’image précédente provenait d’une page intitulée « Errachidia Province » et ne montrait pas clairement la ville. Elle a été remplacée par « Errachidia north view.jpg », panorama identifiable de la ville (5 janvier 2018, 1 200 × 800, HSTG1, CC BY-SA 4.0), recadré avec un point focal préservant les quartiers et les montagnes. La photo est plus exacte mais ne satisfait pas encore le souhait d’une prise récente haute définition ; continuer à chercher une meilleure vue.
+- Une candidate nommée « Errachidia city.jpg » a été inspectée et écartée : elle montre surtout une palmeraie et une ligne d’horizon, sans vue urbaine identifiable.
+
+Les planches de contrôle sont archivées dans `outputs/miniatures-revue-cities/` et `outputs/miniatures-revue-regions/`. Le jalon global reste ouvert : plusieurs couvertures demandent une source plus nette ou mieux représentative, et les lieux sans photo exacte restent volontairement en placeholder.
