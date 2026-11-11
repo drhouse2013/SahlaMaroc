@@ -1,4 +1,4 @@
-# Ecarts constatés (2026-10-16)
+# Ecarts constatés (2026-10-16, mise à jour 2026-11-11)
 
 **Corrigés le 2026-10-16 :** écarts 1, 2 (guides loyers fr/en/es/de/ar) et 6 (décret 2.26.530 lu au BO n° 7521).
 
@@ -14,7 +14,7 @@ Sources lues : guide fiscal MRE 2026 (mre.gov.ma, copie `docs/archives/guide-fis
 5. **ferry-maroc-guide** — durée « 1 h 30 à 2 h 30 » : seul 1 h 30 est confirmé (Baleària). Durées des autres lignes non vérifiées.
 6. **fuseau-horaire / ferry / marhaba** — retour à GMT le 20/09/2026 (décret 2.26.530) CONFIRMÉ : décret 2.26.530 du 25/06/2026, BO n° 7521 du 29/06/2026 (sgg.gov.ma), abroge le décret 2.18.855 de 2018.
 7. **operation-marhaba-guide-pratique** — « +1,8 % vs 2025 » non retrouvé ; 4,1 millions relayé par médias uniquement.
-8. **impots-mre-maroc-ce-quil-faut-declarer** — critère des 183 jours non retrouvé dans le guide fiscal MRE ; à confirmer au CGI (art. 23).
+8. **impots-mre-maroc-ce-quil-faut-declarer** — CORRIGÉ le 2026-11-11 : le critère de plus de 183 jours, continus ou discontinus, sur toute période de 365 jours est repris de l’article 23 du CGI 2026 officiel ([PDF du ministère de l’Économie et des Finances](https://www.finances.gov.ma/Publication/dgi/2025/CGI-2026-FR.pdf), p. 58). Le guide des MRE n’était pas la source de ce critère ; les éditions française et anglaise renvoient maintenant directement au CGI.
 9. **envoyer-argent-maroc** — 89,2 Mds DH (8 mois 2026) : bulletin Office des changes non lu.
 
 ## Passe verifiedDate (2026-10-16, 2e lot)
@@ -24,3 +24,4 @@ Aucun `verifiedDate` posé : les 13 guides restants (acheter voiture, aéroports
 12. **assurance-maladie-amo-retour** — principe AMO Achamil/Tadamon confirmé (CNSS, CLEISS) ; montants de cotisation (144-1 164 DH évoqués par des sites tiers), seuils RSU et cas des MRE non trouvés sur cnss.ma.
 13. **ferry-maroc-guide** — aucun programme de compagnie lu (durées, tarifs, 3 h avant) : reste non confirmé.
 14. Assurances voyage, carte de séjour, e-visa, visa 90 jours, permis, crédit MRE, envoyer de l'argent : non revérifiés dans ce lot (sources MAECI/DGSN, Bank Al-Maghrib, Office des changes non lues).
+
