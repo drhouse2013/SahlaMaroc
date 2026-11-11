@@ -139,6 +139,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/ouarzazate-atlas-studios.jpg | Yair Haklai | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Atlas_Corporation_Studios-Ouarzazate.jpg |
 | spots/ouarzazate-fint-oasis.jpg | Fraguando | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Oasis_de_Fint,_Uarzazat_02.jpg |
 | spots/oujda-medina.jpg | Farajiibrahim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg |
+| spots/oujda-bab-el-gharbi.jpg | Elomariamine | CC0 1.0 | https://commons.wikimedia.org/wiki/File:باب_الغرب_-_مدينة_وجدة_المغرب-)_bab_elgharbie_oujda_morocco.jpg |
 | spots/oujda-bab-sidi-abdelwahab.jpg | Iznassen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Oujda.baba_sidi_abdel_wahab.jpg |
 | spots/oujda-lalla-aicha.jpg | خديجة الكناني | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:PARC_lala_Aicha_%C3%A0_Oujda_03.jpg |
 | spots/al-hoceima-national-park.jpg | Kokopelado | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Alhucemas_(9).JPG |

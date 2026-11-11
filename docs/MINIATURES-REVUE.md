@@ -2,7 +2,7 @@
 
 ## Méthode
 
-Planches de contrôle générées par `tools/prepare-thumbnail-review.mjs` à partir des originaux, avec la même gravité discrète que PlaceImage. Ces planches contrôlent le cadrage des fichiers ; elles ne prouvent pas le rendu responsive des pages ni la date et la licence des sources. Le premier jeu contient 224 entrées du manifeste spots, pas les 268 images de tous les groupes. Les images de villes et régions doivent être contrôlées séparément.
+Planches de contrôle générées par `tools/prepare-thumbnail-review.mjs` à partir des originaux, avec la même gravité discrète que PlaceImage. Ces planches contrôlent le cadrage des fichiers ; elles ne prouvent pas le rendu responsive des pages ni la date et la licence des sources. Le jeu spots actuel contient 226 entrées vérifiées, pas toutes les images des autres groupes. Les images de villes et régions doivent être contrôlées séparément.
 
 ## Planche 01 — inspectée le 8 novembre 2026
 
@@ -142,3 +142,7 @@ Les 32 couvertures de ville (dont le hero d’accueil) et les 12 couvertures de 
 - Une candidate nommée « Errachidia city.jpg » a été inspectée et écartée : elle montre surtout une palmeraie et une ligne d’horizon, sans vue urbaine identifiable.
 
 Les planches de contrôle sont archivées dans `outputs/miniatures-revue-cities/` et `outputs/miniatures-revue-regions/`. Le jalon global reste ouvert : plusieurs couvertures demandent une source plus nette ou mieux représentative, et les lieux sans photo exacte restent volontairement en placeholder.
+
+## Renouvellement de Bab El Gharbi, Oujda — 11 novembre 2026
+
+La photo de Bab El Gharbi a été renouvelée avec une prise exacte du 3 octobre 2024, publiée sous CC0 1.0 par Elomariamine. Original de 3 648 × 2 736 px ; cadrage 4:3 centré sur le portail, export 1 600 × 1 200 px et 314 Ko. La planche spots 15 a été régénérée après remplacement : le portail reste identifiable au format miniature. La source, le crédit et le texte alternatif sont enregistrés pour les cinq langues. Le total courant de cette planche passe à 226 images vérifiées ; les 69 lieux sans photo exacte restent à illustrer.

@@ -33,7 +33,7 @@
 | Taghazout | `cities/taghazout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vérifiée | CC BY-SA 4.0 |
 | Nador | `cities/nador-corniche-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tétouan | `cities/tetouan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> | vérifiée | CC BY-SA 4.0 |
-| Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg> | vérifiée | CC BY-SA 4.0 |
+| Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_City.jpg> | vérifiée | CC BY-SA 4.0 |
 | Ouarzazate | `cities/ouarzazate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> | vérifiée | CC BY-SA 4.0 |
 | Oujda | `cities/oujda.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Al Hoceïma | `cities/al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_hoceima_beach.jpg> | vérifiée | CC0 1.0 |
@@ -301,7 +301,7 @@
 | Grande mosquée d’Oujda | `spots/oujda-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda.jamaa_lkbir.JPG> | vérifiée | CC BY-SA 3.0 |
 | Médersa mérinide | — (« Photo à venir ») | — | — | placeholder | — |
 | Casbah d’Oujda | — (« Photo à venir ») | — | — | placeholder | — |
-| Bab El Gharbi | `spots/oujda-bab-el-gharbi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda_Bab_al_Gharbi,vue_2_,Ghizlane_BOUMACHMACHA.jpg> | vérifiée | CC BY-SA 4.0 |
+| Bab El Gharbi | `spots/oujda-bab-el-gharbi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:باب_الغرب_-_مدينة_وجدة_المغرب-)_bab_elgharbie_oujda_morocco.jpg> | vérifiée | CC0 1.0 |
 | Oasis de Sidi Yahya | `spots/oujda-sidi-yahya.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda.sidi_yahya.jpg> | vérifiée | CC BY-SA 3.0 |
 
 ### Al Hoceïma (5/9 vérifiées)
