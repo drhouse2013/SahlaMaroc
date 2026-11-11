@@ -131,7 +131,7 @@ const stops = (tiznitStops ? tiznitStops : errachidiaStops ? errachidiaStops : k
   { id: 'al-attarine', query: 'Al Attarine Madrasa Fes Morocco', name: 'Al Attarine' },
   { id: 'jnan-sbil', query: 'Jnan Sbil Fes Morocco', name: 'Jnan Sbil' },
 ]).map((s) => ({ ...s, photo: placePhoto('spot', `${city}/${s.id}`, lang) }));
-const featuredStop = stops[city === 'essaouira' || city === 'agadir' || city === 'merzouga' || city === 'el-jadida' || city === 'taroudant' || city === 'tiznit' ? 0 : 1];
+const featuredStop = stops[city === 'essaouira' || city === 'agadir' || city === 'merzouga' || city === 'el-jadida' || city === 'taroudant' || city === 'tiznit' || city === 'errachidia' ? 0 : 1];
 const extraMeknesStops = [
   { query: 'Place Lahdim Meknes Morocco', name: { fr: 'Place Lahdim', en: 'Lahdim Square', es: 'Plaza Lahdim', de: 'Lahdim-Platz', ar: 'ساحة الهديم' }[lang] },
   { query: 'Mausoleum of Moulay Ismail Meknes Morocco', name: { fr: 'Mausolée de Moulay Ismaïl', en: 'Mausoleum of Moulay Ismail', es: 'Mausoleo de Muley Ismail', de: 'Mausoleum von Moulay Ismail', ar: 'ضريح مولاي إسماعيل' }[lang] },
