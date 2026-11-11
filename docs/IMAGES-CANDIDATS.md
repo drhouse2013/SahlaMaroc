@@ -1,46 +1,52 @@
 # Candidats photos à valider
 
-> Généré par `node tools/fetch-place-photos.mjs` le 2026-11-07. **Aucune de ces photos n'est intégrée.** Pour chaque lieu : ouvrir la page de la photo, vérifier visuellement qu'elle montre le lieu EXACT (pas un autre lieu ni une scène générique), relever photographe + licence + lien, télécharger depuis la page publique, puis ajouter l'entrée au manifeste (voir `docs/IMAGES.md`). Sans certitude : laisser le placeholder « Photo à venir ». Wikimedia indique la date déclarée DateTimeOriginal, la licence et les dimensions originales ; ces métadonnées ne prouvent pas le lieu exact. Fournisseurs : Wikimedia Commons, Unsplash et Pexels.
+> Généré par `node tools/fetch-place-photos.mjs` le 2026-11-11. **Deux candidats ont été confirmés et intégrés le 11 novembre : la kasbah de Kénitra et le ksar Tissergate. Les autres résultats restent à valider.** Pour chaque lieu : ouvrir la page source, vérifier visuellement le lieu EXACT (pas un autre lieu ni une scène générique), confirmer photographe, licence et dimensions sur la source d'origine, puis ajouter l'entrée au manifeste (voir `docs/IMAGES.md`). Sans certitude : laisser le placeholder « Photo à venir ». Les dates, licences et descriptions indexées peuvent être absentes ou inexactes ; elles ne prouvent pas le lieu exact ni les droits. Fournisseurs : Wikimedia Commons, Openverse, Unsplash et Pexels.
 
 ### Marrakech : Musée de la Palmeraie (`marrakech/palmeraie-museum`)
 
-Recherche Wikimedia : `Musée de la Palmeraie Marrakech`. Requête Unsplash/Pexels : `Palmeraie Museum Marrakech Morocco`.
+Requêtes : Wikimedia « Musée de la Palmeraie Marrakech » ; Openverse/Unsplash/Pexels « Palmeraie Museum Marrakech Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
+| Wikimedia Commons | Passet Stéphane | December 1912 | CC0 | 2560 × 1898 | <https://commons.wikimedia.org/wiki/File:La_palmeraie_-_A914.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/La_palmeraie_-_A914.jpg/500px-La_palmeraie_-_A914.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Lieu : Marrakech Lieu : Marrakech, Maroc Mission : 1912-1913 - Maroc - Stéphane Passet - (décembre-janvier) Sous-thème : Palmier / Palmeraie Sous-thème : Fruit Légende d'origine : Maroc, Marrakech, La palmeraie Procédé : Autochrome Support : Verre Dénomination : Autochrome Format d'origine : Horizontal Appartenance actuelle : Département des Hauts-de-Seine, musée Albert-Kahn | [ ] |
 | Wikimedia Commons | Chevalier Georges | 19 June 1926 | CC BY-SA 4.0 | 2560 × 1898 | <https://commons.wikimedia.org/wiki/File:La_palmeraie_-_A49658S.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/La_palmeraie_-_A49658S.jpg/500px-La_palmeraie_-_A49658S.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Lieu : Marrakech Lieu : Marrakech, Maroc Mission : 1926 - Maroc - Georges Chevalier - (18 juin-9 juillet) Thème : Activite économique Sous-thème : Agriculture / élevage Sous-thème : Désert Sous-thème : Palmier / Palmeraie Légende d'origine : Maroc, Marrakech, La Palmeraie Procédé : Autochrome Support : Verre Dénomination : Autochrome Format d'origine : Horizontal Appartenance actuelle : Départemen | [ ] |
+| Wikimedia Commons | Passet Stéphane | December 1912 | CC0 | 2560 × 1898 | <https://commons.wikimedia.org/wiki/File:La_palmeraie_-_A961.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/La_palmeraie_-_A961.jpg/500px-La_palmeraie_-_A961.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Lieu : Marrakech Lieu : Marrakech, Maroc Mission : 1912-1913 - Maroc - Stéphane Passet - (décembre-janvier) Sous-thème : Désert Sous-thème : Palmier / Palmeraie Sous-thème : Cours d'eau Légende d'origine : Maroc, Marrakech, La palmeraie Procédé : Autochrome Support : Verre Dénomination : Autochrome Format d'origine : Horizontal Appartenance actuelle : Département des Hauts-de-Seine, musée Albert-K | [ ] |
 | Wikimedia Commons | Chevalier Georges | 19 June 1926 | CC BY-SA 4.0 | 2560 × 1898 | <https://commons.wikimedia.org/wiki/File:Troupeau_de_moutons_dans_la_palmeraie_-_A49657S.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Troupeau_de_moutons_dans_la_palmeraie_-_A49657S.jpg/500px-Troupeau_de_moutons_dans_la_palmeraie_-_A49657S.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Lieu : Marrakech Lieu : Marrakech, Maroc Mission : 1926 - Maroc - Georges Chevalier - (18 juin-9 juillet) Thème : Animal Thème : Activite économique Sous-thème : Animal réel Sous-thème : Agriculture / élevage Sous-thème : Mouton Sous-thème : Désert Sous-thème : Palmier / Palmeraie Légende d'origine : Maroc, Marrakech, La Palmeraie avec moutons Procédé : Autochrome Support : Verre Dénomination : Au | [ ] |
 | Wikimedia Commons | Passet Stéphane | December 1912 | CC0 | 2560 × 1898 | <https://commons.wikimedia.org/wiki/File:Les_remparts_de_la_ville_vus_depuis_la_palmeraie_-_A999.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Les_remparts_de_la_ville_vus_depuis_la_palmeraie_-_A999.jpg/500px-Les_remparts_de_la_ville_vus_depuis_la_palmeraie_-_A999.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Lieu : Marrakech Lieu : Marrakech, Maroc Mission : 1912-1913 - Maroc - Stéphane Passet - (décembre-janvier) Thème : Habitat / Architecture Sous-thème : Palmier / Palmeraie Sous-thème : Route Sous-thème : Architecture fortifiée Sous-thème : Rempart Légende d'origine : Maroc, Marrakech, La route de Mazagan Procédé : Autochrome Support : Verre Dénomination : Autochrome Format d'origine : Horizontal A | [ ] |
 
 ### Marrakech : Musée Farid Belkahia (`marrakech/belkahia-museum`)
 
-Recherche Wikimedia : `Musée Farid Belkahia Marrakech`. Requête Unsplash/Pexels : `Farid Belkahia Museum Marrakech Morocco`.
+Requêtes : Wikimedia « Musée Farid Belkahia Marrakech » ; Openverse/Unsplash/Pexels « Farid Belkahia Museum Marrakech Morocco ».
 
 Aucun candidat.
 
 ### Tanger : Église de l'Immaculée-Conception (`tangier/immaculate-conception`)
 
-Recherche Wikimedia : `Église de l'Immaculée-Conception Tanger`. Requête Unsplash/Pexels : `Church of the Immaculate Conception Tangier Morocco`.
+Requêtes : Wikimedia « Église de l'Immaculée-Conception Tanger » ; Openverse/Unsplash/Pexels « Church of the Immaculate Conception Tangier Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
 | Wikimedia Commons | This illustration was made by Peter Potrowl . Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu would be much appreciated but isn't mandatory. An email to Peter Potrowl would be appreciated too. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me Peter Potrowl to negotiate terms. More free pictures in my website . Donations are accepted here and here . | 2010-06-05 | CC BY 3.0 | 1824 × 1368 | <https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_1.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_1.jpg/500px-Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Cathedral of the Immaculate Conception of Hangzhou (Zhejiang, China). | [ ] |
+| Wikimedia Commons | This illustration was made by Peter Potrowl . Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu would be much appreciated but isn't mandatory. An email to Peter Potrowl would be appreciated too. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me Peter Potrowl to negotiate terms. More free pictures in my website . Donations are accepted here and here . | 2010-06-05 | CC BY 3.0 | 1824 × 1368 | <https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_2.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_2.jpg/500px-Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Cathedral of the Immaculate Conception of Hangzhou (Zhejiang, China). | [ ] |
 | Wikimedia Commons | This illustration was made by Peter Potrowl . Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu would be much appreciated but isn't mandatory. An email to Peter Potrowl would be appreciated too. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me Peter Potrowl to negotiate terms. More free pictures in my website . Donations are accepted here and here . | 2010-06-05 | CC BY 3.0 | 1368 × 1824 | <https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_5.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_5.jpg/500px-Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Cathedral of the Immaculate Conception of Hangzhou (Zhejiang, China). | [ ] |
+| Wikimedia Commons | This illustration was made by Peter Potrowl . Please credit this with : © Peter Potrowl in the immediate vicinity of the image. A link to my website sitemai.eu would be much appreciated but isn't mandatory. An email to Peter Potrowl would be appreciated too. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me Peter Potrowl to negotiate terms. More free pictures in my website . Donations are accepted here and here . | 2010-06-05 | CC BY 3.0 | 1368 × 1824 | <https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_6.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_6.jpg/500px-Cathedral_of_the_Immaculate_Conception_of_Hangzhou_-_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Cathedral of the Immaculate Conception of Hangzhou (Zhejiang, China). | [ ] |
 | Wikimedia Commons | 猫猫的日记本 | 2021-01-28 11:00:03 | CC BY-SA 4.0 | 4912 × 3264 | <https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Immaculate_Conception_in_Hangzhou_02_2021-01.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Cathedral_of_the_Immaculate_Conception_in_Hangzhou_02_2021-01.jpg/500px-Cathedral_of_the_Immaculate_Conception_in_Hangzhou_02_2021-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | ​杭州天主教堂，东面。 | [ ] |
 
 ### Tanger : Musée d'art contemporain (`tangier/contemporary-art`)
 
-Recherche Wikimedia : `Musée d'art contemporain Tanger`. Requête Unsplash/Pexels : `Museum of Contemporary Art Tangier Morocco`.
+Requêtes : Wikimedia « Musée d'art contemporain Tanger » ; Openverse/Unsplash/Pexels « Museum of Contemporary Art Tangier Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
 | Wikimedia Commons | Maciej Zgadzaj | 2006-09-12 | CC BY 2.0 | 2080 × 1544 | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_d%27Art_moderne_de_la_Ville_de_Paris.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Mus%C3%A9e_d%27Art_moderne_de_la_Ville_de_Paris.jpg/500px-Mus%C3%A9e_d%27Art_moderne_de_la_Ville_de_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Musée d'Art moderne de la Ville de Paris | [ ] |
 | Wikimedia Commons | Department of State. Agency for International Development. 1961-10/1/1979 | Original: 1 January 1948; This version: 31 December 1967 | Public domain | 4588 × 3563 | <https://commons.wikimedia.org/wiki/File:%2250_Years_of_US_Art%22_Exhibit_(Lay-out_of_the_exhibit,_Museum_of_Modern_Art,_Paris)_-_DPLA_-_5286b657b01f0863eabf7c838ff55717.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/%2250_Years_of_US_Art%22_Exhibit_%28Lay-out_of_the_exhibit%2C_Museum_of_Modern_Art%2C_Paris%29_-_DPLA_-_5286b657b01f0863eabf7c838ff55717.jpg/500px-%2250_Years_of_US_Art%22_Exhibit_%28Lay-out_of_the_exhibit%2C_Museum_of_Modern_Art%2C_Paris%29_-_DPLA_-_5286b657b01f0863eabf7c838ff55717.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | — | [ ] |
 | Wikimedia Commons | Nicolas Richoffer | 2010-05-20 13:40:28 | CC BY-SA 4.0 | 4256 × 2832 | <https://commons.wikimedia.org/wiki/File:Vol_Mus%C3%A9e_d%27Art_moderne_de_Paris.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Vol_Mus%C3%A9e_d%27Art_moderne_de_Paris.jpg/500px-Vol_Mus%C3%A9e_d%27Art_moderne_de_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | La police scientifique débute ses investigations au Musée d'Art moderne de Paris le 20 mai 2010 après le vol de cinq tableaux durant la nuit précédente. | [ ] |
+| Wikimedia Commons | André Derain | 2025-10-17 | CC0 | 600 × 408 | <https://commons.wikimedia.org/wiki/File:Trois_personnages_assis_dans_l%27herbe,_Andr%C3%A9_Derain,_1906,_huile_sur_toile,_38_x_55_cm,_Mus%C3%A9e_d%E2%80%99Art_moderne_de_Paris.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Trois_personnages_assis_dans_l%27herbe%2C_Andr%C3%A9_Derain%2C_1906%2C_huile_sur_toile%2C_38_x_55_cm%2C_Mus%C3%A9e_d%E2%80%99Art_moderne_de_Paris.jpg/500px-Trois_personnages_assis_dans_l%27herbe%2C_Andr%C3%A9_Derain%2C_1906%2C_huile_sur_toile%2C_38_x_55_cm%2C_Mus%C3%A9e_d%E2%80%99Art_moderne_de_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Peinture d'André Derain conservée au Musée d'Art Moderne de Paris : Trois personnages assis dans l'herbe, 1906, Legs du Docteur Maurice Girardin en 1953, Inv. : AMVP 471 | [ ] |
+| Wikimedia Commons | Suzanne Valadon | 2025-10-17 | CC0 | 494 × 600 | <https://commons.wikimedia.org/wiki/File:Nu,_Suzanne_Valadon,_1925,_Huile_sur_toile,_Mus%C3%A9e_d%E2%80%99Art_moderne_de_Paris.jpg> | [aperçu](https://upload.wikimedia.org/wikipedia/commons/f/fb/Nu%2C_Suzanne_Valadon%2C_1925%2C_Huile_sur_toile%2C_Mus%C3%A9e_d%E2%80%99Art_moderne_de_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled) | Oeuvre de Suzanne Valadon au Musée d’Art moderne de Paris, Donation du Comte Emanuele Sarmiento en 1936 Inv. : AMVP 1057 | [ ] |
 
 ### Essaouira : Diabat (`essaouira/diabat`)
 
-Recherche Wikimedia : `Diabat Essaouira`. Requête Unsplash/Pexels : `Diabat Essaouira Morocco`.
+Requêtes : Wikimedia « Diabat Essaouira » ; Openverse/Unsplash/Pexels « Diabat Essaouira Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -49,37 +55,37 @@ Recherche Wikimedia : `Diabat Essaouira`. Requête Unsplash/Pexels : `Diabat Ess
 
 ### Essaouira : Dar Sultan (`essaouira/dar-sultan`)
 
-Recherche Wikimedia : `Dar Sultan Essaouira`. Requête Unsplash/Pexels : `Dar Sultan Palace Essaouira Morocco`.
+Requêtes : Wikimedia « Dar Sultan Essaouira » ; Openverse/Unsplash/Pexels « Dar Sultan Palace Essaouira Morocco ».
 
 Aucun candidat.
 
 ### Essaouira : Oasis d’Aïn Hajar (`essaouira/ain-hajar`)
 
-Recherche Wikimedia : `Oasis d’Aïn Hajar Essaouira`. Requête Unsplash/Pexels : `Ain Hajar Oasis Essaouira Morocco`.
+Requêtes : Wikimedia « Oasis d’Aïn Hajar Essaouira » ; Openverse/Unsplash/Pexels « Ain Hajar Oasis Essaouira Morocco ».
 
 Aucun candidat.
 
 ### Chefchaouen : Quartier Souiqa (`chefchaouen/souiqa`)
 
-Recherche Wikimedia : `Quartier Souiqa Chefchaouen`. Requête Unsplash/Pexels : `Souiqa Quarter Chefchaouen Morocco`.
+Requêtes : Wikimedia « Quartier Souiqa Chefchaouen » ; Openverse/Unsplash/Pexels « Souiqa Quarter Chefchaouen Morocco ».
 
 Aucun candidat.
 
 ### Chefchaouen : Écomusée du parc de Talassemtane (`chefchaouen/talassemtane-ecomuseum`)
 
-Recherche Wikimedia : `Écomusée du parc de Talassemtane Chefchaouen`. Requête Unsplash/Pexels : `Talassemtane National Park Ecomuseum Chefchaouen Morocco`.
+Requêtes : Wikimedia « Écomusée du parc de Talassemtane Chefchaouen » ; Openverse/Unsplash/Pexels « Talassemtane National Park Ecomuseum Chefchaouen Morocco ».
 
 Aucun candidat.
 
 ### Chefchaouen : Colline de l'hôtel Atlas (`chefchaouen/atlas-hill`)
 
-Recherche Wikimedia : `Colline de l'hôtel Atlas Chefchaouen`. Requête Unsplash/Pexels : `Hotel Atlas Hill Chefchaouen Morocco`.
+Requêtes : Wikimedia « Colline de l'hôtel Atlas Chefchaouen » ; Openverse/Unsplash/Pexels « Hotel Atlas Hill Chefchaouen Morocco ».
 
 Aucun candidat.
 
 ### Taghazout : Hash Point (`taghazout/hash-point`)
 
-Recherche Wikimedia : `Hash Point Taghazout`. Requête Unsplash/Pexels : `Hash Point Taghazout Morocco`.
+Requêtes : Wikimedia « Hash Point Taghazout » ; Openverse/Unsplash/Pexels « Hash Point Taghazout Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -88,55 +94,49 @@ Recherche Wikimedia : `Hash Point Taghazout`. Requête Unsplash/Pexels : `Hash P
 
 ### Taghazout : Imouran (rocher des Diables) (`taghazout/imouran`)
 
-Recherche Wikimedia : `Imouran (rocher des Diables) Taghazout`. Requête Unsplash/Pexels : `Imouran (Devil’s Rock) Taghazout Morocco`.
+Requêtes : Wikimedia « Imouran (rocher des Diables) Taghazout » ; Openverse/Unsplash/Pexels « Imouran (Devil’s Rock) Taghazout Morocco ».
 
 Aucun candidat.
 
 ### Nador : Golf d’Atalayoun (`nador/atalayoun-golf`)
 
-Recherche Wikimedia : `Golf d’Atalayoun Nador`. Requête Unsplash/Pexels : `Atalayoun Golf Resort Nador Morocco`.
+Requêtes : Wikimedia « Golf d’Atalayoun Nador » ; Openverse/Unsplash/Pexels « Atalayoun Golf Resort Nador Morocco ».
 
 Aucun candidat.
 
 ### Tétouan : Jardin Riad Al Ochak (`tetouan/riad-al-ochak`)
 
-Recherche Wikimedia : `Jardin Riad Al Ochak Tétouan`. Requête Unsplash/Pexels : `Riad Al Ochak Garden Tetouan Morocco`.
+Requêtes : Wikimedia « Jardin Riad Al Ochak Tétouan » ; Openverse/Unsplash/Pexels « Riad Al Ochak Garden Tetouan Morocco ».
 
 Aucun candidat.
 
-### Tétouan : Kasbah du mont Dersa (`tetouan/dersa-kasbah`)
-
-Recherche Wikimedia : `Kasbah du mont Dersa Tétouan`. Requête Unsplash/Pexels : `Kasbah on Mount Dersa Tetouan Morocco`.
-
-**Intégrée après recherche ciblée, le 8 novembre 2026 :** [ancienne caserne des Regulares sur le mont Dersa](https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg). Auteur : Dahbi fatima zahrae ; CC BY-SA 4.0 ; prise déclarée le 4 octobre 2026 ; original 1868 × 3901 px. La description Wikimedia confirme les anciennes casernes au sommet du mont Dersa ; le cadrage 4:3 a été vérifié visuellement. La copie locale de 960 × 2005 px est la réduction Wikimedia, enregistrée sous `src/assets/photos/spots/tetouan-dersa-kasbah-2026.jpg`.
-
 ### Tétouan : Musée du patrimoine religieux (`tetouan/religious-heritage-museum`)
 
-Recherche Wikimedia : `Musée du patrimoine religieux Tétouan`. Requête Unsplash/Pexels : `Museum of Religious Heritage Tetouan Morocco`.
+Requêtes : Wikimedia « Musée du patrimoine religieux Tétouan » ; Openverse/Unsplash/Pexels « Museum of Religious Heritage Tetouan Morocco ».
 
 Aucun candidat.
 
 ### Tétouan : Musée Dar El Oddi (`tetouan/dar-el-oddi`)
 
-Recherche Wikimedia : `Musée Dar El Oddi Tétouan`. Requête Unsplash/Pexels : `Dar El Oddi Museum Tetouan Morocco`.
+Requêtes : Wikimedia « Musée Dar El Oddi Tétouan » ; Openverse/Unsplash/Pexels « Dar El Oddi Museum Tetouan Morocco ».
 
 Aucun candidat.
 
 ### Tétouan : Avenue Mohammed V (`tetouan/mohammed-v-avenue`)
 
-Recherche Wikimedia : `Avenue Mohammed V Tétouan`. Requête Unsplash/Pexels : `Mohammed V Avenue Tetouan Morocco`.
+Requêtes : Wikimedia « Avenue Mohammed V Tétouan » ; Openverse/Unsplash/Pexels « Mohammed V Avenue Tetouan Morocco ».
 
 Aucun candidat.
 
 ### Tétouan : Quartier de l’Ensanche (`tetouan/ensanche`)
 
-Recherche Wikimedia : `Quartier de l’Ensanche Tétouan`. Requête Unsplash/Pexels : `Ensanche District Tetouan Morocco`.
+Requêtes : Wikimedia « Quartier de l’Ensanche Tétouan » ; Openverse/Unsplash/Pexels « Ensanche District Tetouan Morocco ».
 
 Aucun candidat.
 
 ### Meknès : Prison Kara (`meknes/kara-prison`)
 
-Recherche Wikimedia : `Prison Kara Meknès`. Requête Unsplash/Pexels : `Kara Prison Meknes Morocco`.
+Requêtes : Wikimedia « Prison Kara Meknès » ; Openverse/Unsplash/Pexels « Kara Prison Meknes Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -146,47 +146,51 @@ Recherche Wikimedia : `Prison Kara Meknès`. Requête Unsplash/Pexels : `Kara Pr
 
 ### Meknès : Palais Al-Mansour (`meknes/palais-al-mansour`)
 
-Recherche Wikimedia : `Palais Al-Mansour Meknès`. Requête Unsplash/Pexels : `Al-Mansour Palace Meknes Morocco`.
+Requêtes : Wikimedia « Palais Al-Mansour Meknès » ; Openverse/Unsplash/Pexels « Al-Mansour Palace Meknes Morocco ».
 
 Aucun candidat.
 
 ### Meknès : Musée de Meknès (`meknes/meknes-museum`)
 
-Recherche Wikimedia : `Musée de Meknès Meknès`. Requête Unsplash/Pexels : `Meknes Museum Meknes Morocco`.
+Requêtes : Wikimedia « Musée de Meknès Meknès » ; Openverse/Unsplash/Pexels « Meknes Museum Meknes Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
 | Wikimedia Commons | Eugène Delacroix | 1847 date QS:P571,+1847-00-00T00:00:00Z/9 | Public domain | 485 × 591 | <https://commons.wikimedia.org/wiki/File:Corps_de_garde_%C3%A0_Mekn%C3%A8s_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_Cond%C3%A9.jpg> | [aperçu](https://upload.wikimedia.org/wikipedia/commons/0/0a/Corps_de_garde_%C3%A0_Mekn%C3%A8s_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_Cond%C3%A9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled) | — | [ ] |
+| Wikimedia Commons | Henri Emilien Rousseau | 1925 date QS:P571,+1925-00-00T00:00:00Z/9 | CC BY-SA 3.0 | 2431 × 1764 | <https://commons.wikimedia.org/wiki/File:Henri_%C3%89milien_Rousseau-Le_soir_aux_portes_de_Mekn%C3%A8s-1925.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Henri_%C3%89milien_Rousseau-Le_soir_aux_portes_de_Mekn%C3%A8s-1925.jpg/500px-Henri_%C3%89milien_Rousseau-Le_soir_aux_portes_de_Mekn%C3%A8s-1925.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | French: Le soir aux portes de Meknès title QS:P1476,fr:"Le soir aux portes de Meknès" label QS:Lfr,"Le soir aux portes de Meknès" | [ ] |
+| Wikimedia Commons | Eugène Delacroix | 1847 | Public domain | 4097 × 4983 | <https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Le_corps_de_garde_%C3%A0_Mekn%C3%A8s_-_Google_Art_Project.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Eug%C3%A8ne_Delacroix_-_Le_corps_de_garde_%C3%A0_Mekn%C3%A8s_-_Google_Art_Project.jpg/500px-Eug%C3%A8ne_Delacroix_-_Le_corps_de_garde_%C3%A0_Mekn%C3%A8s_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | — | [ ] |
 | Wikimedia Commons | Daemon11 | 2017-02-20 | CC BY-SA 4.0 | 960 × 720 | <https://commons.wikimedia.org/wiki/File:Borj_belkari.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Borj_belkari.jpg/500px-Borj_belkari.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Borj Belkari tower. Built in the 17th century. | [ ] |
 | Wikimedia Commons | Daemon11 | 2017-02-20 | CC BY-SA 4.0 | 670 × 230 | <https://commons.wikimedia.org/wiki/File:Borj-belkari-museum-2.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Borj-belkari-museum-2.jpg/500px-Borj-belkari-museum-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | The museum of pottery, inside Borj Belkari tower. | [ ] |
+| Openverse (wikimedia) | [Adam Jones, Ph.D.](https://commons.wikimedia.org/wiki/User:Adam63) | à vérifier | CC BY-SA 3.0 | 3456 × 2304 | <https://commons.wikimedia.org/w/index.php?curid=27744643> | [aperçu](https://api.openverse.org/v1/images/402c0b56-31e6-4fcb-b11d-cb63c1a11aa7/thumb/) | Detail of Dar Jamai Museum - Medina (Old City) - Meknes - Morocco - 01 | [ ] |
+| Openverse (wikimedia) | [Adam Jones, Ph.D.](https://commons.wikimedia.org/wiki/User:Adam63) | à vérifier | CC BY-SA 3.0 | 2304 × 3456 | <https://commons.wikimedia.org/w/index.php?curid=27744624> | [aperçu](https://api.openverse.org/v1/images/bba946cd-9c6e-4849-aaf7-0f0ba898e5c2/thumb/) | Detail of Dar Jamai Museum - Medina (Old City) - Meknes - Morocco - 02 | [ ] |
 
 ### Oujda : Parc Lalla Meryem (`oujda/lalla-meryem`)
 
-Recherche Wikimedia : `Parc Lalla Meryem Oujda`. Requête Unsplash/Pexels : `Lalla Meryem Park Oujda Morocco`.
+Requêtes : Wikimedia « Parc Lalla Meryem Oujda » ; Openverse/Unsplash/Pexels « Lalla Meryem Park Oujda Morocco ».
 
 Aucun candidat.
 
 ### Oujda : Médersa mérinide (`oujda/marinid-madrasa`)
 
-Recherche Wikimedia : `Médersa mérinide Oujda`. Requête Unsplash/Pexels : `Marinid Madrasa Oujda Morocco`.
+Requêtes : Wikimedia « Médersa mérinide Oujda » ; Openverse/Unsplash/Pexels « Marinid Madrasa Oujda Morocco ».
 
 Aucun candidat.
 
 ### Oujda : Casbah d’Oujda (`oujda/kasbah`)
 
-Recherche Wikimedia : `Casbah d’Oujda Oujda`. Requête Unsplash/Pexels : `Oujda Kasbah Oujda Morocco`.
+Requêtes : Wikimedia « Casbah d’Oujda Oujda » ; Openverse/Unsplash/Pexels « Oujda Kasbah Oujda Morocco ».
 
 Aucun candidat.
 
 ### Al Hoceïma : Belvédère de Moroviejo (`al-hoceima/moroviejo`)
 
-Recherche Wikimedia : `Belvédère de Moroviejo Al Hoceïma`. Requête Unsplash/Pexels : `Moroviejo Viewpoint Al Hoceima Morocco`.
+Requêtes : Wikimedia « Belvédère de Moroviejo Al Hoceïma » ; Openverse/Unsplash/Pexels « Moroviejo Viewpoint Al Hoceima Morocco ».
 
 Aucun candidat.
 
 ### Al Hoceïma : Cala Bonita (`al-hoceima/cala-bonita`)
 
-Recherche Wikimedia : `Cala Bonita Al Hoceïma`. Requête Unsplash/Pexels : `Cala Bonita Al Hoceima Morocco`.
+Requêtes : Wikimedia « Cala Bonita Al Hoceïma » ; Openverse/Unsplash/Pexels « Cala Bonita Al Hoceima Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -194,115 +198,115 @@ Recherche Wikimedia : `Cala Bonita Al Hoceïma`. Requête Unsplash/Pexels : `Cal
 
 ### Al Hoceïma : Plage de Tala Youssef (`al-hoceima/tala-youssef`)
 
-Recherche Wikimedia : `Plage de Tala Youssef Al Hoceïma`. Requête Unsplash/Pexels : `Tala Youssef Beach Al Hoceima Morocco`.
+Requêtes : Wikimedia « Plage de Tala Youssef Al Hoceïma » ; Openverse/Unsplash/Pexels « Tala Youssef Beach Al Hoceima Morocco ».
 
 Aucun candidat.
 
 ### Al Hoceïma : Site archéologique d’Al Mazamma (`al-hoceima/al-mazamma`)
 
-Recherche Wikimedia : `Site archéologique d’Al Mazamma Al Hoceïma`. Requête Unsplash/Pexels : `Al Mazamma Archaeological Site Al Hoceima Morocco`.
+Requêtes : Wikimedia « Site archéologique d’Al Mazamma Al Hoceïma » ; Openverse/Unsplash/Pexels « Al Mazamma Archaeological Site Al Hoceima Morocco ».
 
 Aucun candidat.
 
 ### Tafraout : Gorges d’Aït Mansour (`tafraout/ait-mansour`)
 
-Recherche Wikimedia : `Gorges d’Aït Mansour Tafraout`. Requête Unsplash/Pexels : `Aït Mansour Gorge Tafraout Morocco`.
+Requêtes : Wikimedia « Gorges d’Aït Mansour Tafraout » ; Openverse/Unsplash/Pexels « Aït Mansour Gorge Tafraout Morocco ».
 
 Aucun candidat.
 
 ### Tafraout : Agard Oudad (`tafraout/agard-oudad`)
 
-Recherche Wikimedia : `Agard Oudad Tafraout`. Requête Unsplash/Pexels : `Agard Oudad Tafraout Morocco`.
+Requêtes : Wikimedia « Agard Oudad Tafraout » ; Openverse/Unsplash/Pexels « Agard Oudad Tafraout Morocco ».
 
 Aucun candidat.
 
 ### Agadir : Musée Mémoire d’Agadir (`agadir/memory-museum`)
 
-Recherche Wikimedia : `Musée Mémoire d’Agadir Agadir`. Requête Unsplash/Pexels : `Memory of Agadir Museum Agadir Morocco`.
+Requêtes : Wikimedia « Musée Mémoire d’Agadir Agadir » ; Openverse/Unsplash/Pexels « Memory of Agadir Museum Agadir Morocco ».
 
 Aucun candidat.
 
 ### Agadir : Mosquée Loubnane (`agadir/loubnane-mosque`)
 
-Recherche Wikimedia : `Mosquée Loubnane Agadir`. Requête Unsplash/Pexels : `Loubnane Mosque Agadir Morocco`.
+Requêtes : Wikimedia « Mosquée Loubnane Agadir » ; Openverse/Unsplash/Pexels « Loubnane Mosque Agadir Morocco ».
 
 Aucun candidat.
 
 ### Agadir : Mur du souvenir (`agadir/wall-of-commemoration`)
 
-Recherche Wikimedia : `Mur du souvenir Agadir`. Requête Unsplash/Pexels : `Wall of Commemoration Agadir Morocco`.
+Requêtes : Wikimedia « Mur du souvenir Agadir » ; Openverse/Unsplash/Pexels « Wall of Commemoration Agadir Morocco ».
 
 Aucun candidat.
 
 ### Agadir : Théâtre de plein air (`agadir/open-air-theatre`)
 
-Recherche Wikimedia : `Théâtre de plein air Agadir`. Requête Unsplash/Pexels : `Open-air Theatre Agadir Morocco`.
+Requêtes : Wikimedia « Théâtre de plein air Agadir » ; Openverse/Unsplash/Pexels « Open-air Theatre Agadir Morocco ».
 
 Aucun candidat.
 
 ### Agadir : Église protestante (`agadir/protestant-church`)
 
-Recherche Wikimedia : `Église protestante Agadir`. Requête Unsplash/Pexels : `Protestant Church Agadir Morocco`.
+Requêtes : Wikimedia « Église protestante Agadir » ; Openverse/Unsplash/Pexels « Protestant Church Agadir Morocco ».
 
 Aucun candidat.
 
 ### Dakhla : La Sarga (`dakhla/la-sarga`)
 
-Recherche Wikimedia : `La Sarga Dakhla`. Requête Unsplash/Pexels : `La Sarga Dakhla Morocco`.
+Requêtes : Wikimedia « La Sarga Dakhla » ; Openverse/Unsplash/Pexels « La Sarga Dakhla Morocco ».
 
 Aucun candidat.
 
 ### Dakhla : Port de pêche de Dakhla (`dakhla/fishing-port`)
 
-Recherche Wikimedia : `Port de pêche de Dakhla Dakhla`. Requête Unsplash/Pexels : `Dakhla Fishing Port Dakhla Morocco`.
+Requêtes : Wikimedia « Port de pêche de Dakhla Dakhla » ; Openverse/Unsplash/Pexels « Dakhla Fishing Port Dakhla Morocco ».
 
 Aucun candidat.
 
 ### Laayoune : Mosquée Al-Zawiya (`laayoune/zawiya-mosque`)
 
-Recherche Wikimedia : `Mosquée Al-Zawiya Laayoune`. Requête Unsplash/Pexels : `Al-Zawiya Mosque Laayoune Morocco`.
+Requêtes : Wikimedia « Mosquée Al-Zawiya Laayoune » ; Openverse/Unsplash/Pexels « Al-Zawiya Mosque Laayoune Morocco ».
 
 Aucun candidat.
 
 ### Laayoune : Lagune de Laâyoune (`laayoune/lagoon`)
 
-Recherche Wikimedia : `Lagune de Laâyoune Laayoune`. Requête Unsplash/Pexels : `Laayoune Lagoon Laayoune Morocco`.
+Requêtes : Wikimedia « Lagune de Laâyoune Laayoune » ; Openverse/Unsplash/Pexels « Laayoune Lagoon Laayoune Morocco ».
 
 Aucun candidat.
 
 ### El Jadida : Haras d’El Jadida (`el-jadida/haras`)
 
-Recherche Wikimedia : `Haras d’El Jadida El Jadida`. Requête Unsplash/Pexels : `El Jadida Stud Farm El Jadida Morocco`.
+Requêtes : Wikimedia « Haras d’El Jadida El Jadida » ; Openverse/Unsplash/Pexels « El Jadida Stud Farm El Jadida Morocco ».
 
 Aucun candidat.
 
 ### Saidia : Vieille ville de Saïdia (`saidia/old-town`)
 
-Recherche Wikimedia : `Vieille ville de Saïdia Saidia`. Requête Unsplash/Pexels : `Saïdia Old Town Saidia Morocco`.
+Requêtes : Wikimedia « Vieille ville de Saïdia Saidia » ; Openverse/Unsplash/Pexels « Saïdia Old Town Saidia Morocco ».
 
 Aucun candidat.
 
 ### Saidia : Corniche de Saïdia (`saidia/corniche`)
 
-Recherche Wikimedia : `Corniche de Saïdia Saidia`. Requête Unsplash/Pexels : `Saïdia Corniche Saidia Morocco`.
+Requêtes : Wikimedia « Corniche de Saïdia Saidia » ; Openverse/Unsplash/Pexels « Saïdia Corniche Saidia Morocco ».
 
 Aucun candidat.
 
 ### Saidia : Casbah de Saïdia (`saidia/alcazaba`)
 
-Recherche Wikimedia : `Casbah de Saïdia Saidia`. Requête Unsplash/Pexels : `Saïdia Kasbah Saidia Morocco`.
+Requêtes : Wikimedia « Casbah de Saïdia Saidia » ; Openverse/Unsplash/Pexels « Saïdia Kasbah Saidia Morocco ».
 
 Aucun candidat.
 
 ### Saidia : Plage sauvage entre le Kiss et la Moulouya (`saidia/wild-beach`)
 
-Recherche Wikimedia : `Plage sauvage entre le Kiss et la Moulouya Saidia`. Requête Unsplash/Pexels : `Wild Beach between the Kiss and the Moulouya Saidia Morocco`.
+Requêtes : Wikimedia « Plage sauvage entre le Kiss et la Moulouya Saidia » ; Openverse/Unsplash/Pexels « Wild Beach between the Kiss and the Moulouya Saidia Morocco ».
 
 Aucun candidat.
 
 ### Kenitra : Forêt de la Maâmora (`kenitra/maamora-forest`)
 
-Recherche Wikimedia : `Forêt de la Maâmora Kenitra`. Requête Unsplash/Pexels : `Maamora Forest Kenitra Morocco`.
+Requêtes : Wikimedia « Forêt de la Maâmora Kenitra » ; Openverse/Unsplash/Pexels « Maamora Forest Kenitra Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -310,23 +314,25 @@ Recherche Wikimedia : `Forêt de la Maâmora Kenitra`. Requête Unsplash/Pexels 
 
 ### Kenitra : Taxi Beach (`kenitra/taxi-beach`)
 
-Recherche Wikimedia : `Taxi Beach Kenitra`. Requête Unsplash/Pexels : `Taxi Beach Kenitra Morocco`.
+Requêtes : Wikimedia « Taxi Beach Kenitra » ; Openverse/Unsplash/Pexels « Taxi Beach Kenitra Morocco ».
 
 Aucun candidat.
 
 ### Kenitra : Kasbah de Kénitra (`kenitra/kenitra-kasbah`)
 
-Recherche Wikimedia : `Kasbah de Kénitra Kenitra`. Requête Unsplash/Pexels : `Kenitra Kasbah Kenitra Morocco`.
+Requêtes : Wikimedia « Kasbah de Kénitra Kenitra » ; Openverse/Unsplash/Pexels « Kenitra Kasbah Kenitra Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
+| Wikimedia Commons | Wafaa Tajri | 2010-11-01 00:00 | CC BY-SA 2.0 | 1024 × 768 | <https://commons.wikimedia.org/wiki/File:Kasbah_Mehdia-exterieur-wtajri.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Kasbah_Mehdia-exterieur-wtajri.jpg/500px-Kasbah_Mehdia-exterieur-wtajri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Kasbah Mehdia, extérieur | [ ] |
+| Wikimedia Commons | Wafaa Tajri | 2010-11-01 00:00 | CC BY-SA 2.0 | 768 × 1024 | <https://commons.wikimedia.org/wiki/File:Kasbah_Mehdia_Portail-wtajri.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Kasbah_Mehdia_Portail-wtajri.jpg/500px-Kasbah_Mehdia_Portail-wtajri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Kasbah Mehdia, Portail | [ ] |
 | Wikimedia Commons | Jaro Varga | 2008-05-03 14:37 | CC BY-SA 3.0 | 1024 × 736 | <https://commons.wikimedia.org/wiki/File:Puerta_de_la_alcazaba_de_Mehdia.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Puerta_de_la_alcazaba_de_Mehdia.jpg/500px-Puerta_de_la_alcazaba_de_Mehdia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Puerta de la alcazaba de Mehdia | [ ] |
 | Wikimedia Commons | Erwann ANDRE | 2017-02-01 | CC BY-SA 4.0 | 1648 × 2466 | <https://commons.wikimedia.org/wiki/File:Porte_d%27une_cour_de_la_Kasbah_de_Moulay_Ismael_%C3%A0_Mehdia.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Porte_d%27une_cour_de_la_Kasbah_de_Moulay_Ismael_%C3%A0_Mehdia.jpg/500px-Porte_d%27une_cour_de_la_Kasbah_de_Moulay_Ismael_%C3%A0_Mehdia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Porte à muqarnas de la cour du Makhzen, dans la kasbah bâtie par le calife almohade Abu Yusuf Yaqub al-Mansur (1184-1199), à Mehdia. | [ ] |
-| Wikimedia Commons | Fauve | 2023-03-06 17:33:03 | CC BY 4.0 | 3120 × 4160 | <https://commons.wikimedia.org/wiki/File:Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg/500px-Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Fenêtre du bastion de la Kasbah de Kénitra donnant sur le Sebou | [ ] |
+| Wikimedia Commons | Fauve | 2023-03-06 17:33:03 | CC BY 4.0 | 3120 × 4160 | <https://commons.wikimedia.org/wiki/File:Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg/500px-Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Fenêtre du bastion de la Kasbah de Kénitra donnant sur le Sebou | [x] |
 
 ### Errachidia : Source bleue de Meski (`errachidia/meski-blue-spring`)
 
-Recherche Wikimedia : `Source bleue de Meski Errachidia`. Requête Unsplash/Pexels : `Blue Spring of Meski Errachidia Morocco`.
+Requêtes : Wikimedia « Source bleue de Meski Errachidia » ; Openverse/Unsplash/Pexels « Blue Spring of Meski Errachidia Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -334,7 +340,7 @@ Recherche Wikimedia : `Source bleue de Meski Errachidia`. Requête Unsplash/Pexe
 
 ### Errachidia : Barrage Hassan Addakhil (`errachidia/hassan-addakhil-dam`)
 
-Recherche Wikimedia : `Barrage Hassan Addakhil Errachidia`. Requête Unsplash/Pexels : `Hassan Addakhil Dam Errachidia Morocco`.
+Requêtes : Wikimedia « Barrage Hassan Addakhil Errachidia » ; Openverse/Unsplash/Pexels « Hassan Addakhil Dam Errachidia Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -343,37 +349,37 @@ Recherche Wikimedia : `Barrage Hassan Addakhil Errachidia`. Requête Unsplash/Pe
 
 ### Errachidia : Oasis de Walad Chaker (`errachidia/walad-chaker-oasis`)
 
-Recherche Wikimedia : `Oasis de Walad Chaker Errachidia`. Requête Unsplash/Pexels : `Walad Chaker Oasis Errachidia Morocco`.
+Requêtes : Wikimedia « Oasis de Walad Chaker Errachidia » ; Openverse/Unsplash/Pexels « Walad Chaker Oasis Errachidia Morocco ».
 
 Aucun candidat.
 
 ### Errachidia : Oasis de Kelmima (`errachidia/kelmima-oasis`)
 
-Recherche Wikimedia : `Oasis de Kelmima Errachidia`. Requête Unsplash/Pexels : `Kelmima Oasis Errachidia Morocco`.
+Requêtes : Wikimedia « Oasis de Kelmima Errachidia » ; Openverse/Unsplash/Pexels « Kelmima Oasis Errachidia Morocco ».
 
 Aucun candidat.
 
 ### Guelmim : Oasis d’Asrir (`guelmim/asrir-oasis`)
 
-Recherche Wikimedia : `Oasis d’Asrir Guelmim`. Requête Unsplash/Pexels : `Asrir Oasis Guelmim Morocco`.
+Requêtes : Wikimedia « Oasis d’Asrir Guelmim » ; Openverse/Unsplash/Pexels « Asrir Oasis Guelmim Morocco ».
 
 Aucun candidat.
 
 ### Guelmim : Zriouila (`guelmim/zriouila`)
 
-Recherche Wikimedia : `Zriouila Guelmim`. Requête Unsplash/Pexels : `Zriouila Guelmim Morocco`.
+Requêtes : Wikimedia « Zriouila Guelmim » ; Openverse/Unsplash/Pexels « Zriouila Guelmim Morocco ».
 
 Aucun candidat.
 
 ### Guelmim : Abaynou (`guelmim/abaynou`)
 
-Recherche Wikimedia : `Abaynou Guelmim`. Requête Unsplash/Pexels : `Abaynou Guelmim Morocco`.
+Requêtes : Wikimedia « Abaynou Guelmim » ; Openverse/Unsplash/Pexels « Abaynou Guelmim Morocco ».
 
 Aucun candidat.
 
 ### Guelmim : Plage Blanche (`guelmim/plage-blanche`)
 
-Recherche Wikimedia : `Plage Blanche Guelmim`. Requête Unsplash/Pexels : `White Beach Guelmim Morocco`.
+Requêtes : Wikimedia « Plage Blanche Guelmim » ; Openverse/Unsplash/Pexels « White Beach Guelmim Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -381,61 +387,51 @@ Recherche Wikimedia : `Plage Blanche Guelmim`. Requête Unsplash/Pexels : `White
 
 ### Guelmim : Souk de Guelmim (`guelmim/souk`)
 
-Recherche Wikimedia : `Souk de Guelmim Guelmim`. Requête Unsplash/Pexels : `Guelmim Souk Guelmim Morocco`.
+Requêtes : Wikimedia « Souk de Guelmim Guelmim » ; Openverse/Unsplash/Pexels « Guelmim Souk Guelmim Morocco ».
 
 Aucun candidat.
 
 ### Taroudant : Souk berbère (Jnane Jamaa) (`taroudant/berber-souk`)
 
-Recherche Wikimedia : `Souk berbère (Jnane Jamaa) Taroudant`. Requête Unsplash/Pexels : `Berber Souk (Jnane Jamaa) Taroudant Morocco`.
+Requêtes : Wikimedia « Souk berbère (Jnane Jamaa) Taroudant » ; Openverse/Unsplash/Pexels « Berber Souk (Jnane Jamaa) Taroudant Morocco ».
 
 Aucun candidat.
 
 ### Taroudant : Cigognes de la porte est (`taroudant/storks`)
 
-Recherche Wikimedia : `Cigognes de la porte est Taroudant`. Requête Unsplash/Pexels : `Storks by the East Gate Taroudant Morocco`.
+Requêtes : Wikimedia « Cigognes de la porte est Taroudant » ; Openverse/Unsplash/Pexels « Storks by the East Gate Taroudant Morocco ».
 
 Aucun candidat.
 
 ### Larache : Kasbah de Larache (`larache/kasbah`)
 
-Recherche Wikimedia : `Kasbah de Larache Larache`. Requête Unsplash/Pexels : `Larache Kasbah Larache Morocco`.
+Requêtes : Wikimedia « Kasbah de Larache Larache » ; Openverse/Unsplash/Pexels « Larache Kasbah Larache Morocco ».
 
 Aucun candidat.
 
 ### Larache : Château des cigognes (`larache/stork-castle`)
 
-Recherche Wikimedia : `Château des cigognes Larache`. Requête Unsplash/Pexels : `Storks’ Castle Larache Morocco`.
+Requêtes : Wikimedia « Château des cigognes Larache » ; Openverse/Unsplash/Pexels « Storks’ Castle Larache Morocco ».
 
 Aucun candidat.
 
 ### Larache : Balcon Atlántico (`larache/balcon-atlantico`)
 
-Recherche Wikimedia : `Balcon Atlántico Larache`. Requête Unsplash/Pexels : `Atlantic Balcony Larache Morocco`.
+Requêtes : Wikimedia « Balcon Atlántico Larache » ; Openverse/Unsplash/Pexels « Atlantic Balcony Larache Morocco ».
 
 Aucun candidat.
 
 ### Ifrane : Centre-ville d’Ifrane (`ifrane/centre-ville`)
 
-Recherche Wikimedia : `Centre-ville d’Ifrane Ifrane`. Requête Unsplash/Pexels : `Ifrane Town Centre Ifrane Morocco`.
+Requêtes : Wikimedia « Centre-ville d’Ifrane Ifrane » ; Openverse/Unsplash/Pexels « Ifrane Town Centre Ifrane Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
 | Wikimedia Commons | Marokistorique | 2021-07-21 22:55:05 | CC0 | 4224 × 5632 | <https://commons.wikimedia.org/wiki/File:H%C3%B4tel_les_tilleuls.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/H%C3%B4tel_les_tilleuls.jpg/500px-H%C3%B4tel_les_tilleuls.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | hôtel au centre-ville d'ifrane | [ ] |
 
-### Ifrane : Parc national d’Ifrane (`ifrane/national-park`)
-
-Recherche Wikimedia : `Parc national d’Ifrane Ifrane`. Requête Unsplash/Pexels : `Ifrane National Park Ifrane Morocco`.
-
-| Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
-|---|---|---|---|---|---|---|---|---|
-| Wikimedia Commons | Mehdi.Tj | 2015-04-11 | CC BY-SA 3.0 | 1280 × 720 | <https://commons.wikimedia.org/wiki/File:Ifrane_National_Park_3.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Ifrane_National_Park_3.jpg/500px-Ifrane_National_Park_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Ifrane National Park | [ ] |
-| Wikimedia Commons | Mehdi.Tj | 2015-04-11 | CC BY-SA 3.0 | 1280 × 608 | <https://commons.wikimedia.org/wiki/File:Ifrane_National_Park_2.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Ifrane_National_Park_2.jpg/500px-Ifrane_National_Park_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Ifrane National Park | [ ] |
-| Wikimedia Commons | Mehdi.Tj | 2015-04-11 | CC BY-SA 3.0 | 1280 × 720 | <https://commons.wikimedia.org/wiki/File:Ifrane_National_Park_4.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Ifrane_National_Park_4.jpg/500px-Ifrane_National_Park_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Ifrane National Park | [ ] |
-
 ### Zagora : Palmeraie de Zagora (`zagora/palmeraie`)
 
-Recherche Wikimedia : `Palmeraie de Zagora Zagora`. Requête Unsplash/Pexels : `Zagora Palm Grove Zagora Morocco`.
+Requêtes : Wikimedia « Palmeraie de Zagora Zagora » ; Openverse/Unsplash/Pexels « Zagora Palm Grove Zagora Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -444,28 +440,28 @@ Recherche Wikimedia : `Palmeraie de Zagora Zagora`. Requête Unsplash/Pexels : `
 
 ### Zagora : Bibliothèque de Tamegroute (`zagora/tamegroute-library`)
 
-Recherche Wikimedia : `Bibliothèque de Tamegroute Zagora`. Requête Unsplash/Pexels : `Tamegroute Library Zagora Morocco`.
+Requêtes : Wikimedia « Bibliothèque de Tamegroute Zagora » ; Openverse/Unsplash/Pexels « Tamegroute Library Zagora Morocco ».
 
 Aucun candidat.
 
 ### Zagora : Ksar Tissergate (`zagora/tissergate`)
 
-Recherche Wikimedia : `Ksar Tissergate Zagora`. Requête Unsplash/Pexels : `Ksar Tissergate Zagora Morocco`.
+Requêtes : Wikimedia « Ksar Tissergate Zagora » ; Openverse/Unsplash/Pexels « Ksar Tissergate Zagora Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
-| Wikimedia Commons | Lalla-ltcia | 2023-01-04 | CC BY-SA 4.0 | 960 × 640 | <https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Ksar-tissergate-zagora-maroc.jpg/500px-Ksar-tissergate-zagora-maroc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Ksar Tissergate - Zagora - Morocco | [ ] |
+| Wikimedia Commons | Lalla-ltcia | 2023-01-04 | CC BY-SA 4.0 | 960 × 640 | <https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Ksar-tissergate-zagora-maroc.jpg/500px-Ksar-tissergate-zagora-maroc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Ksar Tissergate - Zagora - Morocco | [x] |
 | Wikimedia Commons | Lalla-ltcia | 2019-02-22 16:55:12 | CC BY-SA 4.0 | 640 × 480 | <https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc-2.jpg> | [aperçu](https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Ksar-tissergate-zagora-maroc-2.jpg/500px-Ksar-tissergate-zagora-maroc-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail) | Ksar Tissergate - Zagora - Morocco | [ ] |
 
 ### Sidi Ifni : Ancienne amirauté (`sidi-ifni/admiralty`)
 
-Recherche Wikimedia : `Ancienne amirauté Sidi Ifni`. Requête Unsplash/Pexels : `Former Admiralty Sidi Ifni Morocco`.
+Requêtes : Wikimedia « Ancienne amirauté Sidi Ifni » ; Openverse/Unsplash/Pexels « Former Admiralty Sidi Ifni Morocco ».
 
 Aucun candidat.
 
 ### Sidi Ifni : Palais du gouverneur (`sidi-ifni/governor-palace`)
 
-Recherche Wikimedia : `Palais du gouverneur Sidi Ifni`. Requête Unsplash/Pexels : `Governor’s Palace Sidi Ifni Morocco`.
+Requêtes : Wikimedia « Palais du gouverneur Sidi Ifni » ; Openverse/Unsplash/Pexels « Governor’s Palace Sidi Ifni Morocco ».
 
 | Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |
 |---|---|---|---|---|---|---|---|---|
@@ -473,25 +469,25 @@ Recherche Wikimedia : `Palais du gouverneur Sidi Ifni`. Requête Unsplash/Pexels
 
 ### Sidi Ifni : Rue Sidi Mohammed (`sidi-ifni/sidi-mohammed-street`)
 
-Recherche Wikimedia : `Rue Sidi Mohammed Sidi Ifni`. Requête Unsplash/Pexels : `Rue Sidi Mohammed Sidi Ifni Morocco`.
+Requêtes : Wikimedia « Rue Sidi Mohammed Sidi Ifni » ; Openverse/Unsplash/Pexels « Rue Sidi Mohammed Sidi Ifni Morocco ».
 
 Aucun candidat.
 
 ### Sidi Ifni : Câble marin de l’ancien port (`sidi-ifni/cable-car`)
 
-Recherche Wikimedia : `Câble marin de l’ancien port Sidi Ifni`. Requête Unsplash/Pexels : `Old Port Sea Cable Car Sidi Ifni Morocco`.
+Requêtes : Wikimedia « Câble marin de l’ancien port Sidi Ifni » ; Openverse/Unsplash/Pexels « Old Port Sea Cable Car Sidi Ifni Morocco ».
 
 Aucun candidat.
 
 ### Tiznit : Source bleue (Aïn Akdim) (`tiznit/blue-spring`)
 
-Recherche Wikimedia : `Source bleue (Aïn Akdim) Tiznit`. Requête Unsplash/Pexels : `Blue Spring (Aïn Akdim) Tiznit Morocco`.
+Requêtes : Wikimedia « Source bleue (Aïn Akdim) Tiznit » ; Openverse/Unsplash/Pexels « Blue Spring (Aïn Akdim) Tiznit Morocco ».
 
 Aucun candidat.
 
 ### Tiznit : Place El Mechouar (`tiznit/mechouar`)
 
-Recherche Wikimedia : `Place El Mechouar Tiznit`. Requête Unsplash/Pexels : `El Mechouar Square Tiznit Morocco`.
+Requêtes : Wikimedia « Place El Mechouar Tiznit » ; Openverse/Unsplash/Pexels « El Mechouar Square Tiznit Morocco ».
 
 Aucun candidat.
 

@@ -106,10 +106,28 @@ Tannerie : contrôle navigateur ordinateur du 10 novembre sur /fr/villes/tetouan
 
 Trois prises du 2 février 2026 (Taghazout Beach - 2026-02-02 01/02/03.jpg), auteur 瑞丽江的河水, CC BY-SA 4.0, originaux 5712×4284. Source 01 consultée directement ; métadonnées API de 02 et 03 enregistrées dans outputs. Trois vues inspectées : 01 panneau central, 02 plage/ciel gris sans sujet fort, 03 surfeurs lisibles mais lumière grise et grande plage vide. Non retenues pour le remplacement premium ; continuer avec d’autres prises et photographes. La photo actuelle avec intrusion reste un défaut ouvert, aucune retouche artificielle ajoutée.
 
+« Taghazout coast - 2026-02-02 04.jpg » inspectée directement : belle largeur de plage, mais lumière grise et clôture dominante. « Taghazout coast - 2026-02-02 05.jpg » retenue après inspection de l’original 5712×4284 : plage Panorama, vagues et surfeurs visibles, sans toit ni intrusion ; plus informative que l’ancienne vue avec toiture au premier plan. Prise du 2 février 2026 selon les métadonnées Commons, 瑞丽江的河水, CC BY-SA 4.0. L’original a été recadré en 4:3 et optimisé à 1600×1200 JPEG. Alt en cinq langues, attribution et source mises à jour dans le manifeste réellement utilisé par le site. Build : 936 pages, 0 erreur ; check:dist : 110647 références, 0 erreur. La carte Plage de Taghazout et le crédit « 瑞丽江的河水 (recadrée et optimisée), CC BY-SA 4.0 » vérifiés dans le navigateur ordinateur et sur mobile 390×844. Le contrôle confirme cette carte et sa licence ; les autres défauts visuels restent ouverts.
+
 Panorama_beach_at_Taghazout.jpg : source primaire consultée, date de prise 24 mars 2013, Heather Cowper, CC BY2.0 avec attribution Heatheronhertravels.com. Non retenue pour renouvellement récent. Actions 42838094942 du lot tannerie terminé success.
 
 Contrôle mobile Tétouan du 10 novembre, viewport 390×844 : liste des douze lieux dépliée, nouvelle photo de tannerie entière dans sa carte, texte lisible, bouton crédit activé ; attribution Rachidourkia et CC BY-SA4.0 lisible dans la fenêtre. Aucun débordement horizontal visible dans cette section. Viewport rétabli après contrôle. Validation limitée à cette carte et cette section.
 
 ## Nador — recherche de renouvellement
 
-Source Corniche,_Nador.jpg (SALHI Kaouthar, prise déclarée 6 octobre 2026) inspectée via aperçu original : ciel et chaussée dominants, lumière sombre ; non retenue pour remplacer la miniature. Source actuelle nador-corniche-2026.jpg déjà datée septembre 2026 ; le défaut est la composition/lumière, pas son ancienneté. Chercher une vue large de la ville et de Marchica plutôt qu’une autre vue verticale de promenade.
+Source Corniche,_Nador.jpg (SALHI Kaouthar, prise déclarée 6 octobre 2026) inspectée via aperçu original : ciel et chaussée dominants, lumière sombre ; non retenue pour remplacer la miniature. La variante Corniche Nador 23-09-2026.jpg de la même photographe (2 268 × 4 032, CC BY-SA 4.0) montre une petite barque sous un grand ciel ; recadrée dans le hero actuel, elle reste plus lisible que la variante du 6 octobre, mais la composition de départ est peu flexible.
+
+La vue panoramique « Marchica nador.jpg » (Taloubant, 5 709 × 4 036, CC BY-SA 4.0, téléversée en août 2024) a aussi été inspectée. Elle est lumineuse et large, mais montre surtout la lagune depuis la dune et correspond déjà à la fiche du lieu « Lagune de Marchica » (`spots/nador-marchica.jpg`) ; ce n’est pas une nouvelle vue de ville et elle ne remplace donc pas le hero actuel. Le phare Marchica (Matthew Explorer, août 2025, CC0) a été inspecté également : portrait, ciel gris et rambarde au premier plan, donc non adapté au hero. Garder la photo actuelle du hero, prise en septembre 2026, et chercher une vraie vue large de Nador/Marchica qui apporte une composition nouvelle.
+
+## Taghazout — recherche des deux lieux sans photo (10 novembre 2026)
+
+- **Hash Point** : « Taghazout village .jpg » de Jimbobbailey312 montre le littoral devant le village et identifie Hash Point dans sa description. L’original ne fait que 1 280 × 720 et date du 26 janvier 2016 ; la vue ne met pas en scène le surf. Non retenu pour un renouvellement premium récent. « Surf berbere cafe on hash point.jpg » date aussi de 2016 et ne fait que 640 × 640 ; non retenu.
+- **Imouran / Devil’s Rock** : la photo libre de Dale Harvey est précisément identifiée comme Devil’s Rock, mais la prise date du 26 novembre 2009. Non retenue comme visuel récent. La page officielle Taghazout Bay montre le lieu, mais ne donne pas de licence ou d’autorisation de réutilisation ; l’image n’est pas copiée.
+- Aucun visuel ajouté et aucun placeholder retiré. Continuer à rechercher une photo récente, de résolution suffisante et sous licence explicite, ou une image autorisée par son photographe.
+
+Sources : https://commons.wikimedia.org/wiki/File:Taghazout_village_.jpg ; https://commons.wikimedia.org/wiki/File:Surf_berbere_cafe_on_hash_point.jpg ; https://www.flickr.com/photos/69845378@N00/4153955319/ ; https://www.taghazoutbay.ma/fr/nos-experiences/dcouverte/imouran-rocher-du-diable.
+
+## Ajouts visuels ciblés — 11 novembre 2026
+
+- Couvertures d’Al Hoceima (plage de la ville, prise déclarée en janvier 2024, CC0) et de Tafraout (vue de la ville dans l’Anti-Atlas, décembre 2023, CC BY-SA 4.0) inspectées en grand format. Elles remplacent respectivement une plage ancienne et des terrasses agricoles peu représentatives.
+- Kasbah de Kénitra : fenêtre du bastion, Sebou et remparts visibles. Cadrage 4:3 contrôlé après recadrage centré ; prise déclarée en mars 2023, CC BY 4.0.
+- Ksar Tissergate : bâtiments du ksar bien reconnaissables, prise de janvier 2023, CC BY-SA 4.0. Le fichier source de 960 × 640 px est moins défini que souhaité, mais adapté à la vignette et constitue une illustration exacte plutôt qu’un visuel générique.

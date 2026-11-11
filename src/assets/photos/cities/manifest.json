@@ -170,14 +170,14 @@
   "al-hoceima": {
     "file": "al-hoceima.jpg",
     "alt": {
-      "fr": "Plage de Quemado et ville d'Al Hoceima",
-      "en": "Quemado beach and the town of Al Hoceima",
-      "es": "Playa de Quemado y ciudad de Alhucemas",
-      "de": "Strand Quemado und Stadt Al Hoceima",
-      "ar": "شاطئ كيمادو ومدينة الحسيمة"
+      "fr": "Plage aux eaux turquoise sur la côte d'Al Hoceima",
+      "en": "Turquoise-water beach on the Al Hoceima coast",
+      "es": "Playa de aguas turquesas en la costa de Alhucemas",
+      "de": "Strand mit türkisfarbenem Wasser an der Küste von Al Hoceima",
+      "ar": "شاطئ بمياه فيروزية على ساحل الحسيمة"
     },
-    "credit": "Abdel Jalil Bouhaj, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg"
+    "credit": "Ismailchahab1, CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Al_hoceima_beach.jpg"
   },
   "merzouga": {
     "file": "merzouga.jpg",
@@ -206,14 +206,14 @@
   "tafraout": {
     "file": "tafraout.jpg",
     "alt": {
-      "fr": "Terrasses agricoles et village dans les montagnes de l'Anti-Atlas près de Tafraout",
-      "en": "Agricultural terraces and village in the Anti-Atlas mountains near Tafraout",
-      "es": "Terrazas agrícolas y aldea en las montañas del Antiatlas cerca de Tafraout",
-      "de": "Terrassenfelder und Dorf im Anti-Atlas bei Tafraout",
-      "ar": "مدرجات زراعية وقرية في جبال الأطلس الصغير قرب تافراوت"
+      "fr": "Tafraout au pied des reliefs granitiques de l'Anti-Atlas",
+      "en": "Tafraout beneath the granite ridges of the Anti-Atlas",
+      "es": "Tafraout al pie de los relieves graníticos del Anti-Atlas",
+      "de": "Tafraout am Fuß der Granitberge des Anti-Atlas",
+      "ar": "تافراوت عند سفوح مرتفعات الأطلس الصغير الجرانيتية"
     },
-    "credit": "Marek Ślusarczyk (Tupungato), CC BY 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg"
+    "credit": "Holger Uwe Schmitt, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%22Inmitten_einer_beeindruckenden_Granitlandschaft%22._01.jpg"
   },
   "agadir": {
     "file": "agadir.jpg",

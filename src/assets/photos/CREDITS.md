@@ -430,3 +430,19 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 Casablanca-Settat — photographie également utilisée pour Casablanca : OussamaHamama, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg . Copie du fichier de ville pour remplacer une source dont le minaret était coupé ; cadrage responsive.
 
 Tannerie de Tétouan : Rachidourkia, CC BY-SA 4.0, prise déclarée le 12 novembre 2024. Source : https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg . Original 8000×6000 ; version optimisée à 1600×1200. Remplace le cliché comportant un doigt au bord supérieur.
+
+## Renouvellement de la plage de Taghazout — 10 novembre 2026
+
+- `spots/taghazout-taghazout-beach.jpg` : 瑞丽江的河水, CC BY-SA 4.0. Prise déclarée le 2 février 2026, 5 712 × 4 284. Source : https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg. Dérivé 1 600 × 1 200, recadrage et optimisation JPEG documentés ; l’attribution et la licence figurent dans le crédit discret de la page.
+
+## Renouvellement de deux couvertures de ville — 11 novembre 2026
+
+- `cities/al-hoceima.jpg` : Ismailchahab1, CC0 1.0. Prise déclarée le 13 janvier 2024, original 3 024 × 4 032 px. La description Commons la situe parmi les plages de la ville d’Al Hoceima ; l’image a été contrôlée visuellement. Source : https://commons.wikimedia.org/wiki/File:Al_hoceima_beach.jpg.
+- `cities/tafraout.jpg` : Holger Uwe Schmitt, CC BY-SA 4.0. Prise déclarée le 30 décembre 2023, original 5 906 × 2 367 px. La description Commons identifie la ville de Tafraout dans l’Anti-Atlas ; image contrôlée visuellement. Source : https://commons.wikimedia.org/wiki/File:%22Inmitten_einer_beeindruckenden_Granitlandschaft%22._01.jpg.
+
+Les fichiers originaux sont conservés tels que publiés. Astro produit les variantes d’image ; les attributions visibles suivent les manifestes.
+
+## Lieux à visiter — 11 novembre 2026
+
+- `spots/kenitra-kasbah.jpg` : Fauve, CC BY 4.0 ; prise déclarée le 6 mars 2023 ; original 3 120 × 4 160 px. Recadrage centré en 3 120 × 2 340 px pour conserver l’arc, le Sebou et les remparts, puis conversion JPEG qualité 88. Source : https://commons.wikimedia.org/wiki/File:Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg.
+- `spots/zagora-tissergate.jpg` : Lalla-ltcia, CC BY-SA 4.0 ; prise déclarée le 4 janvier 2023 ; original 960 × 640 px. Composition vérifiée visuellement ; dimensions conservées. Source : https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg.

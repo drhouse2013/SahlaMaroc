@@ -1,15 +1,15 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-08. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-11. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 267 photos vérifiées, 72 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 270 photos vérifiées, 69 placeholders (« Photo à venir »), 0 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 223 | 72 | 0 |
+| Lieux à visiter | 295 | 226 | 69 | 0 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -30,15 +30,15 @@
 | Fès | `cities/fes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Essaouira | `cities/essaouira.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Chefchaouen | `cities/chefchaouen.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg> | vérifiée | CC BY-SA 4.0 |
-| Taghazout | `cities/taghazout.jpg` | Wikimedia Commons (2 février 2026, 5 712 × 4 284 px) | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vérifiée | CC BY-SA 4.0 |
+| Taghazout | `cities/taghazout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vérifiée | CC BY-SA 4.0 |
 | Nador | `cities/nador-corniche-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tétouan | `cities/tetouan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> | vérifiée | CC BY-SA 4.0 |
 | Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg> | vérifiée | CC BY-SA 4.0 |
 | Ouarzazate | `cities/ouarzazate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> | vérifiée | CC BY-SA 4.0 |
 | Oujda | `cities/oujda.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg> | vérifiée | CC BY-SA 4.0 |
-| Al Hoceïma | `cities/al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> | vérifiée | CC BY-SA 4.0 |
+| Al Hoceïma | `cities/al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_hoceima_beach.jpg> | vérifiée | CC0 1.0 |
 | Merzouga | `cities/merzouga.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg> | vérifiée | CC0 |
-| Tafraout | `cities/tafraout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg> | vérifiée | CC BY 3.0 |
+| Tafraout | `cities/tafraout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Inmitten_einer_beeindruckenden_Granitlandschaft%22._01.jpg> | vérifiée | CC BY-SA 4.0 |
 | Agadir | `cities/agadir.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg> | vérifiée | CC BY-SA 4.0 |
 | Dakhla | `cities/dakhla.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg> | vérifiée | CC0 1.0 |
 | Laayoune | `cities/laayoune.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -64,7 +64,7 @@
 | Fès-Meknès | `regions/fes-meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg> | vérifiée | CC BY-SA 4.0 |
 | Rabat-Salé-Kénitra | `regions/rabat-sale-kenitra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Main_Gate_Chellah_Rabat_Nov25_A7CR_08921.jpg> | vérifiée | CC BY-SA 4.0 |
 | Béni Mellal-Khénifra | `regions/beni-mellal-khenifra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
-| Casablanca-Settat | `regions/casablanca-settat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_and_Its_Minaret_in_Casablanca,_Morocco_2.jpg> | vérifiée | CC BY-SA 4.0 |
+| Casablanca-Settat | `regions/casablanca-settat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> | vérifiée | CC BY-SA 4.0 |
 | Marrakech-Safi | `regions/marrakech-safi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Jemaa_el-Fna_square_is_a_major_place_of_cultural_exchanges.jpg> | vérifiée | CC BY-SA 4.0 |
 | Drâa-Tafilalet | `regions/draa-tafilalet.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg> | vérifiée | CC BY-SA 4.0 |
 | Souss-Massa | `regions/souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_Agadir_Oufella.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -125,9 +125,9 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Kasbah des Oudayas | `spots/rabat-oudayas.jpg` | Wikimedia Commons (30 octobre 2026, 3 899 × 2 602 px) | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg> | vérifiée | CC BY-SA 4.0 |
-| Tour Hassan et mausolée Mohammed V | `spots/rabat-hassan-tower.jpg` | Wikimedia Commons (28 octobre 2026, 4 032 × 2 839 px) | <https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg> | vérifiée | CC BY-SA 4.0 |
-| Chellah | `spots/rabat-chellah.jpg` | Wikimedia Commons (19 avril 2025, 3 986 × 3 000 px) | <https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg> | vérifiée | CC BY-SA 4.0 |
+| Kasbah des Oudayas | `spots/rabat-oudayas.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg> | vérifiée | CC BY-SA 4.0 |
+| Tour Hassan et mausolée Mohammed V | `spots/rabat-hassan-tower.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg> | vérifiée | CC BY-SA 4.0 |
+| Chellah | `spots/rabat-chellah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg> | vérifiée | CC BY-SA 4.0 |
 | Médina de Rabat | `spots/rabat-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg> | vérifiée | CC BY 2.0 |
 | Musée de l'histoire et des civilisations | `spots/rabat-history-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l'histoire,_Rabat_(2).jpg> | vérifiée | CC BY-SA 4.0 |
 | Cathédrale Saint-Pierre | `spots/rabat-st-peters.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-Pierre_de_Rabat.JPG> | vérifiée | CC BY-SA 3.0 |
@@ -195,8 +195,8 @@
 | Île de Mogador | `spots/essaouira-mogador-island.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg> | vérifiée | CC BY-SA 4.0 |
 | Diabat | — (« Photo à venir ») | — | — | placeholder | — |
 | Dar Sultan | — (« Photo à venir ») | — | — | placeholder | — |
-| Port d’Essaouira | `spots/essaouira-fishing-port.jpg` | Wikimedia Commons (16 mai 2024, 5 760 × 3 840 px) | <https://commons.wikimedia.org/wiki/File:Fishing_Boats_at_Port_of_Essaouira_Sqala.jpg> | vérifiée | CC BY-SA 4.0 |
-| Plage d’Essaouira | `spots/essaouira-beach.jpg` | Wikimedia Commons (19 avril 2026, 5 788 × 3 864 px) | <https://commons.wikimedia.org/wiki/File:Essaouira_coast,_Morocco.jpg> | vérifiée | CC0 1.0 |
+| Port d’Essaouira | `spots/essaouira-fishing-port.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fishing_Boats_at_Port_of_Essaouira_Sqala.jpg> | vérifiée | CC BY-SA 4.0 |
+| Plage d’Essaouira | `spots/essaouira-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_coast,_Morocco.jpg> | vérifiée | CC0 1.0 |
 | Place Moulay Hassan | `spots/essaouira-place-moulay-hassan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Place_Moulay_El_Hassan,_Essaouira_(2901935426).jpg> | vérifiée | CC BY-SA 2.0 |
 | Oasis d’Aïn Hajar | — (« Photo à venir ») | — | — | placeholder | — |
 | Sidi Kaouki | `spots/essaouira-sidi-kaouki.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Beach,_Sidi_Kaouki,_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -224,7 +224,7 @@
 | Hash Point | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage Panorama | `spots/taghazout-panorama.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_beach_at_Taghazout.jpg> | vérifiée | CC BY 2.0 |
 | Paradise Valley | `spots/taghazout-paradise-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_Paradise_Valley.jpg> | vérifiée | CC BY-SA 4.0 |
-| Plage de Taghazout | `spots/taghazout-taghazout-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_plage_%22_TAGHAZOUT%22.jpg> | vérifiée | CC BY-SA 4.0 |
+| Plage de Taghazout | `spots/taghazout-taghazout-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg> | vérifiée | CC BY-SA 4.0 |
 | Imouran (rocher des Diables) | — (« Photo à venir ») | — | — | placeholder | — |
 
 ### Nador (8/9 vérifiées)
@@ -241,7 +241,7 @@
 | Plage de Charrana | `spots/nador-charrana.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Charana_2.JPG> | vérifiée | CC BY-SA 4.0 |
 | Golf d’Atalayoun | — (« Photo à venir ») | — | — | placeholder | — |
 
-### Tétouan (6/12 vérifiées)
+### Tétouan (7/12 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -254,7 +254,7 @@
 | Kasbah du mont Dersa | `spots/tetouan-dersa-kasbah-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée du patrimoine religieux | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée Dar El Oddi | — (« Photo à venir ») | — | — | placeholder | — |
-| Tannerie de Tétouan | `spots/tetouan-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%AF%D8%A7%D8%B1_%D8%A7%D9%84%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
+| Tannerie de Tétouan | `spots/tetouan-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg> | vérifiée | CC BY-SA 4.0 |
 | Avenue Mohammed V | — (« Photo à venir ») | — | — | placeholder | — |
 | Quartier de l’Ensanche | — (« Photo à venir ») | — | — | placeholder | — |
 
@@ -342,13 +342,13 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Kasbah d’Agadir Oufella | `spots/agadir-oufella.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg> | vérifiée | CC BY-SA 4.0 |
-| Plage d’Agadir et tour de sauveteur | `spots/agadir-beach.jpg` | Wikimedia Commons (13 janvier 2025, 3 024 × 3 165 px) | <https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg> | vérifiée | CC BY 4.0 |
+| Plage et promenade d’Agadir | `spots/agadir-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg> | vérifiée | CC BY 4.0 |
 | Souk El Had | `spots/agadir-souk-el-had.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée Mémoire d’Agadir | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée du patrimoine amazigh | `spots/agadir-amazigh-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc aux crocodiles | `spots/agadir-crocodile-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Excursion_Crocoparc_Agadir_(33434626570).jpg> | vérifiée | CC BY 2.0 |
 | Vallée des Oiseaux | `spots/agadir-valley-of-birds.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_18-39-49.JPG> | vérifiée | CC0 |
-| Jardin Ibn Zaydoun | `spots/agadir-ibn-zaidoun-garden.jpg` | Wikimedia Commons (25 août 2025, 4 000 × 3 000 px) | <https://commons.wikimedia.org/wiki/File:حديقة_ابن_زيدون_أكادير.jpg> | vérifiée | CC0 1.0 |
+| Jardin Ibn Zaydoun | `spots/agadir-ibn-zaidoun-garden.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:حديقة_ابن_زيدون_أكادير.jpg> | vérifiée | CC0 1.0 |
 | Mosquée Mohammed V | `spots/agadir-mohammed-v-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mohammed_V_Moschee_20111014_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Jardin d'Olhão (Jardin du Portugal) | `spots/agadir-olhao-garden.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_28.01.2011_15-12-35.JPG> | vérifiée | CC0 |
 | Marina d'Agadir | `spots/agadir-marina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_Marina_Agadir_2020.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -408,7 +408,7 @@
 | Réserve naturelle de la Moulouya | `spots/saidia-moulouya-reserve.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Moulouya_river.jpg> | vérifiée | CC BY-SA 3.0 |
 | Plage sauvage entre le Kiss et la Moulouya | — (« Photo à venir ») | — | — | placeholder | — |
 
-### Kenitra (5/8 vérifiées)
+### Kenitra (6/8 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -419,7 +419,7 @@
 | Taxi Beach | — (« Photo à venir ») | — | — | placeholder | — |
 | Merja de Sidi Boughaba | `spots/kenitra-sidi-boughaba.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:NW_Central_Sidi_Boughaba_Lake_Kenitra_Nov25_A7CR_08995.jpg> | vérifiée | CC BY-SA 4.0 |
 | Site de Thamusida | `spots/kenitra-thamusida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Thamusida,_Mauretania_Tingitana,_Morocco_(25394792208).jpg> | vérifiée | CC BY-SA 2.0 |
-| Kasbah de Kénitra | — (« Photo à venir ») | — | — | placeholder | — |
+| Kasbah de Kénitra | `spots/kenitra-kasbah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg> | vérifiée | CC BY 4.0 |
 
 ### Errachidia (1/5 vérifiées)
 
@@ -477,7 +477,7 @@
 | Grande mosquée d’Asilah | `spots/asilah-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:La_Grande_Mosquée_de_Assilah_01.jpg> | vérifiée | CC BY-SA 4.0 |
 | Fresques murales | `spots/asilah-murals.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Asilah_(36493700570).jpg> | vérifiée | CC BY 2.0 |
 
-### Ifrane (6/8 vérifiées)
+### Ifrane (7/8 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -485,12 +485,12 @@
 | Statue du lion | `spots/ifrane-lion-statue.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ifrane_lion.jpg> | vérifiée | CC BY-SA 3.0 |
 | Source Vittel | `spots/ifrane-vittel-spring.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Parc_Ain_Vittel_Ifrane1.jpg> | vérifiée | CC BY-SA 4.0 |
 | Cèdre Gouraud (Arz Goro) | `spots/ifrane-cedre-gouraud.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cèdre_Gouraud.jpg> | vérifiée | CC BY-SA 2.0 |
-| Parc national d’Ifrane | — (« Photo à venir ») | — | — | placeholder | — |
+| Parc national d’Ifrane | `spots/ifrane-national-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg> | vérifiée | CC BY-SA 4.0 |
 | Macaques de Barbarie | `spots/ifrane-macaques.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Barbary_macaque_near_Azrou.JPG> | vérifiée | CC BY-SA 4.0 |
 | Ras el Ma | `spots/ifrane-ras-el-ma.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg> | vérifiée | CC BY-SA 4.0 |
 | Université Al Akhawayn | `spots/ifrane-akhawayn-university.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg> | vérifiée | CC BY-SA 4.0 |
 
-### Zagora (3/6 vérifiées)
+### Zagora (4/6 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -499,7 +499,7 @@
 | Panneau de Tombouctou | `spots/zagora-timbuktu-sign-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zagora_City.jpg> | vérifiée | CC BY-SA 4.0 |
 | Bibliothèque de Tamegroute | — (« Photo à venir ») | — | — | placeholder | — |
 | Poterie verte de Tamegroute | `spots/zagora-tamegroute-pottery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tamegroute_Pottery.jpg> | vérifiée | CC BY-SA 2.0 |
-| Ksar Tissergate | — (« Photo à venir ») | — | — | placeholder | — |
+| Ksar Tissergate | `spots/zagora-tissergate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg> | vérifiée | CC BY-SA 4.0 |
 
 ### Sidi Ifni (4/8 vérifiées)
 

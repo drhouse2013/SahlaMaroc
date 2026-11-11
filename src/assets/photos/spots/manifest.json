@@ -2002,14 +2002,14 @@
  "taghazout/taghazout-beach": {
   "file": "taghazout-taghazout-beach.jpg",
   "alt": {
-   "fr": "Plage de Taghazout, Taghazout",
-   "en": "Taghazout Beach, Taghazout",
-   "es": "Playa de Taghazout, Taghazout",
-   "de": "Strand von Taghazout, Taghazout",
-   "ar": "شاطئ تغازوت, تاغزوت"
+   "fr": "Surfeurs dans les vagues sur la plage de Taghazout en février 2026",
+   "en": "Surfers in the waves at Taghazout beach in February 2026",
+   "es": "Surfistas entre las olas de la playa de Taghazout en febrero de 2026",
+   "de": "Surfer in den Wellen am Strand von Taghazout im Februar 2026",
+   "ar": "راكبو الأمواج وسط أمواج شاطئ تغازوت، فبراير 2026"
   },
-  "credit": "Mouad aguenaou, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_plage_%22_TAGHAZOUT%22.jpg"
+  "credit": "瑞丽江的河水 (recadrée et optimisée), CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg"
  },
  "taghazout/anchor-point": {
   "file": "taghazout-anchor-point.jpg",
@@ -2742,5 +2742,29 @@
    50,
    40
   ]
+ },
+ "kenitra/kenitra-kasbah": {
+  "file": "kenitra-kasbah.jpg",
+  "alt": {
+   "fr": "Ouverture de pierre dans la kasbah de Kénitra, sur le Sebou",
+   "en": "Stone opening in Kenitra Kasbah overlooking the Sebou",
+   "es": "Abertura de piedra en la kasbah de Kenitra, sobre el Sebú",
+   "de": "Steinbogen in der Kasbah von Kenitra mit Blick auf den Sebou",
+   "ar": "فتحة حجرية في قصبة القنيطرة تطل على سبو"
+  },
+  "credit": "Fauve, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg"
+ },
+ "zagora/tissergate": {
+  "file": "zagora-tissergate.jpg",
+  "alt": {
+   "fr": "Bâtiments en terre du ksar Tissergate à Zagora",
+   "en": "Earthen buildings at Ksar Tissergate in Zagora",
+   "es": "Edificios de adobe en el ksar Tissergate de Zagora",
+   "de": "Lehmbauten im Ksar Tissergate bei Zagora",
+   "ar": "مبانٍ طينية في قصر تيسرغات بزكورة"
+  },
+  "credit": "Lalla-ltcia, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg"
  }
 }
