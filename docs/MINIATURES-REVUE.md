@@ -148,3 +148,7 @@ Sources primaires : https://www.pexels.com/photo/palm-trees-on-the-desert-113873
 - Le lieu est exact, la licence permet la réutilisation avec attribution et partage à l’identique, et la résolution suffit. Après inspection de l’original, le cadrage 4:3 fait ressortir le lampadaire, les fils aériens et le bord de route ; la scène ne donne pas une miniature assez soignée pour le site.
 - Candidat écarté pour la présentation, non pour les droits. Aucun fichier ni manifeste modifié ; le placeholder de la Forêt de la Maâmora reste ouvert jusqu’à une meilleure vue.
 - Empreinte SHA-256 de la copie de contrôle : `6b6bff967ac7717cba98f7febd92f616468715e2cdfff578dcf58882af1cd37e`.
+
+## Renouvellement de Bab El Gharbi, Oujda — 11 novembre 2026
+
+Photo exacte prise le 3 octobre 2024, publiée sous licence CC0 1.0 par Elomariamine. Original 3 648 × 2 736 px ; recadrage 4:3 centré sur le portail, export 1 600 × 1 200 px (314 Ko). Cadrage contrôlé à la taille miniature ; source, crédit et texte alternatif dans les cinq langues enregistrés.
