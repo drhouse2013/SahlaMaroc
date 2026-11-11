@@ -134,14 +134,18 @@
   "meknes": {
     "file": "meknes.jpg",
     "alt": {
-      "fr": "Bab Mansour, grande porte monumentale de Meknès",
-      "en": "Bab Mansour, the monumental gate of Meknes",
-      "es": "Bab Mansur, monumental puerta de Mequinez",
-      "de": "Bab Mansur, monumentales Tor von Meknès",
-      "ar": "باب المنصور، البوابة الضخمة لمكناس"
+      "fr": "Panorama de Meknès, avec un minaret doré au-dessus des remparts et des palmiers",
+      "en": "Panorama of Meknes, with a golden minaret rising above the city wall and palm trees",
+      "es": "Panorámica de Mequinez, con un minarete dorado sobre la muralla y palmeras",
+      "de": "Panorama von Meknès mit goldenem Minarett über Stadtmauer und Palmen",
+      "ar": "منظر بانورامي لمكناس، صومعة ذهبية تعلو الأسوار وأشجار النخيل"
     },
-    "credit": "Werner100359, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg"
+    "credit": "Cesar.mx22, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Meknes_City.jpg",
+    "focalPoint": [
+      50,
+      50
+    ]
   },
   "ouarzazate": {
     "file": "ouarzazate.jpg",

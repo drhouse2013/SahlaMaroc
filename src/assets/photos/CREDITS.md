@@ -45,7 +45,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | cities/taghazout.jpg | 瑞丽江的河水 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg |
 | cities/nador.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg |
 | cities/tetouan.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg |
-| cities/meknes.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg |
+| cities/meknes.jpg | Cesar.mx22 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_City.jpg (photo du 1er février 2025, 4 000 × 6 000 px) |
 | cities/ouarzazate.jpg | Petar Milošević | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg |
 | cities/oujda.jpg | Farajiibrahim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg |
 | cities/al-hoceima.jpg | Abdel Jalil Bouhaj | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg |
@@ -450,3 +450,7 @@ Les fichiers originaux sont conservés tels que publiés. Astro produit les vari
 ## Couverture de ville — Errachidia
 
 - `cities/errachidia.jpg` : HSTG1, CC BY-SA 4.0 ; panorama de la ville pris le 5 janvier 2018, original 1 200 × 800 px. Recadrage responsive centré légèrement vers le bas pour préserver quartiers, palmiers et reliefs. Source : https://commons.wikimedia.org/wiki/File:Errachidia_north_view.jpg. Cette vue remplace une image de la province qui ne représentait pas clairement la ville ; son ancienneté est consignée et un renouvellement récent reste souhaitable.
+
+## Couverture de ville — Meknès (2025)
+
+- `cities/meknes.jpg` : Cesar.mx22, CC BY-SA 4.0 ; prise déclarée le 1er février 2025 ; original 4 000 × 6 000 px ; recadrage 4:3 du panorama, puis optimisation JPEG à 1 600 × 1 200 px. Source : https://commons.wikimedia.org/wiki/File:Meknes_City.jpg.
