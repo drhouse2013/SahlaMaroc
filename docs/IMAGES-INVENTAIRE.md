@@ -33,7 +33,7 @@
 | Taghazout | `cities/taghazout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vérifiée | CC BY-SA 4.0 |
 | Nador | `cities/nador-corniche-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tétouan | `cities/tetouan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> | vérifiée | CC BY-SA 4.0 |
-| Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg> | vérifiée | CC BY-SA 4.0 |
+| Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg> | vérifiée | CC BY 4.0 |
 | Ouarzazate | `cities/ouarzazate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> | vérifiée | CC BY-SA 4.0 |
 | Oujda | `cities/oujda.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Al Hoceïma | `cities/al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> | vérifiée | CC BY-SA 4.0 |
