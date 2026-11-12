@@ -465,3 +465,7 @@ spots/agadir-beach.jpg : Fmc2026, CC BY 4.0. Source : https://commons.wikimedia.
 ## Recadrage corniche de Nador — 12 novembre 2026
 
 cities/nador-corniche-2026.jpg : SALHI Kaouthar, CC BY-SA 4.0 ; source du 23 septembre 2026 : https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg . Original 2268 × 4032 px ; extrait x300 y1850, 1800 × 1350 px, export 1600 × 1200 px JPEG mozjpeg qualité 88 sans EXIF. Ciel et chaussée réduits pour rendre la barque plus lisible. Point focal recentré ; comparaison 4:3 et 16:9 effectuée. SHA-256 : 44cb8c2d6943bd1bf77a9ca70a1da63dd1bf87251dce7fa949b07970c613b494.
+
+## Recadrage monument Tombouctou de Zagora — 12 novembre 2026
+
+spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mars 2026. Source : https://commons.wikimedia.org/wiki/File:Zagora_City.jpg . Original redressé selon son orientation EXIF, 4000 × 6000 px ; extrait x0 y2500, 4000 × 3000 px ; export 1800 × 1350 px JPEG mozjpeg qualité 88 sans EXIF. Point focal haut pour conserver les deux tours et le panneau aux formats 4:3 et 16:9. Dérivé sous CC BY-SA 4.0. SHA-256 : 8DB08E6877294B21D0965BACA5DC71B04B5F915731DAE172F25207FBBF848270.
