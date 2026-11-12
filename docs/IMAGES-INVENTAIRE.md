@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-12. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 269 photos vérifiées, 70 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 270 photos vérifiées, 69 placeholders (« Photo à venir »), 0 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 225 | 70 | 0 |
+| Lieux à visiter | 295 | 226 | 69 | 0 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -408,12 +408,12 @@
 | Réserve naturelle de la Moulouya | `spots/saidia-moulouya-reserve.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Moulouya_river.jpg> | vérifiée | CC BY-SA 3.0 |
 | Plage sauvage entre le Kiss et la Moulouya | — (« Photo à venir ») | — | — | placeholder | — |
 
-### Kenitra (5/8 vérifiées)
+### Kenitra (6/8 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Kasbah de Mehdia | `spots/kenitra-kasbah-mahdiyya.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Rampart_of_Mehdya_Castle.jpg> | vérifiée | CC BY-SA 4.0 |
-| Forêt de la Maâmora | — (« Photo à venir ») | — | — | placeholder | — |
+| Forêt de la Maâmora | `spots/kenitra-maamora-forest.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Maamora_Forest_in_Bouknadel_-_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Merja Zerga | `spots/kenitra-merja-zerga.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Lagune_Bleu_Moulay_Bousselham.jpg> | vérifiée | CC BY-SA 4.0 |
 | Plage de Mehdia | `spots/kenitra-mehdia-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_de_Mehdia.JPG> | vérifiée | CC BY-SA 3.0 |
 | Taxi Beach | — (« Photo à venir ») | — | — | placeholder | — |
