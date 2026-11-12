@@ -462,3 +462,6 @@ regions/fes-meknes.jpg : Mustang Joe / Joe deSousa, CC0 1.0 ; prise le 13 avril 
 
 spots/agadir-beach.jpg : Fmc2026, CC BY 4.0. Source : https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg . Original 3024 × 3165 px ; extrait x0 y700, 3024 × 2268 px, export 1800 × 1350 en JPEG mozjpeg qualité 88, EXIF retirées. Cadrage plus bas pour conserver la plage, la baie et le toit de la tour. SHA-256 : 9F409A9665AACEAF13CDA9221C86B4CEB219D9DE89268DB70DF361E2C2D6E1D9.
 
+## Recadrage corniche de Nador — 12 novembre 2026
+
+cities/nador-corniche-2026.jpg : SALHI Kaouthar, CC BY-SA 4.0 ; source du 23 septembre 2026 : https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg . Original 2268 × 4032 px ; extrait x300 y1850, 1800 × 1350 px, export 1600 × 1200 px JPEG mozjpeg qualité 88 sans EXIF. Ciel et chaussée réduits pour rendre la barque plus lisible. Point focal recentré ; comparaison 4:3 et 16:9 effectuée. SHA-256 : 44cb8c2d6943bd1bf77a9ca70a1da63dd1bf87251dce7fa949b07970c613b494.
