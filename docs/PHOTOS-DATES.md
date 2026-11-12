@@ -1,6 +1,6 @@
 # Dates déclarées des photographies
 
-Relevé du 2026-11-08 via `node tools/audit-photo-dates.mjs`. 305 entrées des manifestes villes, régions, lieux et guides ; 295 sources Wikimedia uniques interrogées.
+Relevé du 2026-11-12 via `node tools/audit-photo-dates.mjs`. 308 entrées des manifestes villes, régions, lieux et guides ; 298 sources Wikimedia uniques interrogées.
 
 Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli sur DateTime, le nom du fichier ou la date de mise en ligne. Ce sont des déclarations de la source : elles ne prouvent pas à elles seules la date réelle, la netteté, le lieu ou les droits. Les autres hébergeurs et les dates absentes nécessitent une vérification manuelle. Les anciens fichiers non référencés et les photos de repli codées dans guidePhotos.ts ne font pas partie de ce relevé.
 
@@ -16,13 +16,13 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | cities/taghazout | 2026-02-02 10:48:29 | DateTimeOriginal | 5712 × 4284 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> |
 | cities/nador | 2026-09-23 17:50:17 | DateTimeOriginal | 2268 × 4032 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> |
 | cities/tetouan | 11 November 2024 (according to Exif data) | DateTimeOriginal | 4080 × 3060 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> |
-| cities/meknes | 2019-12-31 13:24:59 | DateTimeOriginal | 3984 × 2656 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg> |
+| cities/meknes | 2025-02-01 17:12:20 | DateTimeOriginal | 4000 × 6000 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Meknes_City.jpg> |
 | cities/ouarzazate | 2024-03-18 14:38:23 | DateTimeOriginal | 5184 × 3384 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> |
 | cities/oujda | 2019-09-24 19:22:29 | DateTimeOriginal | 5361 × 3574 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg> |
-| cities/al-hoceima | 2018-06-01 15:00:27 | DateTimeOriginal | 4032 × 1960 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> |
+| cities/al-hoceima | 2024-01-13 15:23:57 | DateTimeOriginal | 3024 × 4032 | CC0 | <https://commons.wikimedia.org/wiki/File:Al_hoceima_beach.jpg> |
 | cities/merzouga | Taken on 15 April 2026, 19:27:13 | DateTimeOriginal | 6016 × 4016 | CC0 | <https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg> |
 | cities/home-hero | 2022-03-16 19:31:36 | DateTimeOriginal | 5184 × 3456 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg> |
-| cities/tafraout | 2022-02-15 | DateTimeOriginal | 5400 × 3600 | CC BY 3.0 | <https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg> |
+| cities/tafraout | 2023-12-30 18:06:26 | DateTimeOriginal | 5906 × 2367 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%22Inmitten_einer_beeindruckenden_Granitlandschaft%22._01.jpg> |
 | cities/agadir | 5 November 2023 (according to Exif data) | DateTimeOriginal | 4624 × 3472 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg> |
 | cities/dakhla | 24 November 2024 (according to Exif data) | DateTimeOriginal | 4124 × 1657 | CC0 | <https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg> |
 | cities/laayoune | 2023-07-30 21:53:09 | DateTimeOriginal | 5280 × 2970 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg> |
@@ -33,7 +33,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | cities/sidi-ifni | 2023-11-09 17:45:10 | DateTimeOriginal | 4032 × 3024 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg> |
 | cities/taroudant | 2026-10-10 12:26:29 | DateTimeOriginal | 4160 × 1968 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> |
 | cities/zagora | 2026-03-21 14:12:32 | DateTimeOriginal | 3024 × 4032 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg> |
-| cities/errachidia | Taken on 23 September 2012 | DateTimeOriginal | 2048 × 1375 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg> |
+| cities/errachidia | 2018-01-05 11:12:46 | DateTimeOriginal | 1200 × 800 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Errachidia_north_view.jpg> |
 | cities/ifrane | 2025-04-27 16:21:52 | DateTimeOriginal | 4080 × 2296 | CC0 | <https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg> |
 | cities/asilah | 2026-08-21 12:01:33 | DateTimeOriginal | 4000 × 2252 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:The_ramparts_of_the_Old_Medina_of_Asilah.jpg> |
 | cities/larache | 7 November 2024 (according to Exif data) | DateTimeOriginal | 4080 × 3060 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg> |
@@ -43,7 +43,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | regions/fes-meknes | 2017-05-11 13:16:55 | DateTimeOriginal | 4160 × 3120 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg> |
 | regions/rabat-sale-kenitra | 2025-11-02 10:08:43 | DateTimeOriginal | 5721 × 4291 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Main_Gate_Chellah_Rabat_Nov25_A7CR_08921.jpg> |
 | regions/beni-mellal-khenifra | 2016-04-23 17:15:17 | DateTimeOriginal | 2560 × 1536 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg> |
-| regions/casablanca-settat | 2019-04-04 12:58:42 | DateTimeOriginal | 4618 × 2437 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_and_Its_Minaret_in_Casablanca,_Morocco_2.jpg> |
+| regions/casablanca-settat | 2026-08-03 20:03:24 | DateTimeOriginal | 5184 × 3456 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> |
 | regions/marrakech-safi | 2023-03-17 20:07:58 | DateTimeOriginal | 5568 × 3712 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Jemaa_el-Fna_square_is_a_major_place_of_cultural_exchanges.jpg> |
 | regions/draa-tafilalet | 2024-03-19 10:42:53 | DateTimeOriginal | 8160 × 5048 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg> |
 | regions/souss-massa | 2023-11-06 18:16:23 | DateTimeOriginal | 4080 × 3072 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Kasbah_of_Agadir_Oufella.jpg> |
@@ -214,16 +214,16 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | spots/rabat/royal-palace | 2005-01-17 | DateTimeOriginal | 2286 × 1633 | Public domain | <https://commons.wikimedia.org/wiki/File:Royal_Palace,_Rabat.jpg> |
 | spots/rabat/sale-medina | 2011-01-04 12:16 | DateTimeOriginal | 4208 × 2717 | CC BY 2.0 | <https://commons.wikimedia.org/wiki/File:Sal%C3%A9_from_the_Plateforme_du_S%C3%A9maphore_(Kasbah_des_Oudais)_(5509116076).jpg> |
 | spots/rabat/zoo | 2017-05-01 09:50:52 | DateTimeOriginal | 5184 × 3456 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Rhinoceros_in_the_zoo_of_Rabat,_Morocco.jpg> |
-| spots/taghazout/taghazout-beach | 2013-08-26 | DateTimeOriginal | 2048 × 1536 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_plage_%22_TAGHAZOUT%22.jpg> |
+| spots/taghazout/taghazout-beach | 2026-02-02 12:28:09 | DateTimeOriginal | 5712 × 4284 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg> |
 | spots/taghazout/anchor-point | à vérifier | — | — | à vérifier | <https://unsplash.com/photos/a-person-standing-on-a-rock-watching-a-wave-LH_ribmaYRo> |
 | spots/tangier/ibn-battuta-tomb | 2024-11-18 12:05:15 | DateTimeOriginal | 4032 × 3024 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Inside_Ibn_Battuta%27s_Tomb_-_Tangier.jpg> |
 | spots/tangier/marshan-palace | 2022-12-26 16:09:59 | DateTimeOriginal | 2908 × 2698 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg> |
-| spots/tetouan/tannery | 12 November 2024 (according to Exif data) | DateTimeOriginal | 3264 × 2448 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%D8%AF%D8%A7%D8%B1_%D8%A7%D9%84%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> |
+| spots/tetouan/tannery | 2024-11-12 | DateTimeOriginal | 8000 × 6000 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg> |
 | spots/casablanca/habous | 2019-09-10 | DateTimeOriginal | 2048 × 1365 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Al_mohamedia_Mosque_in_Habous_district_Casablanca_the_mosque_was_built_by_Mohamed_the_fifth_king_of_morocco.jpg> |
 | spots/casablanca/sacre-coeur | 2011-02-22 06:41 | DateTimeOriginal | 4032 × 3024 | CC BY-SA 2.0 | <https://commons.wikimedia.org/wiki/File:%C3%89glise_du_Sacr%C3%A9-Coeur,_Casablanca_(5507016000).jpg> |
 | spots/al-hoceima/sfiha | 2021-06-08 | DateTimeOriginal | 9168 × 1840 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Sfiha_panorama.jpg> |
 | spots/fes/tijani | 2014-11-13 14:47:57 | DateTimeOriginal | 3000 × 2250 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Zawiya_al-Tijani_DSCF4204.jpg> |
-| spots/oujda/bab-el-gharbi | 2019-07-01 19:05:13 | DateTimeOriginal | 4608 × 3456 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Oujda_Bab_al_Gharbi,vue_2_,Ghizlane_BOUMACHMACHA.jpg> |
+| spots/oujda/bab-el-gharbi | 2024-10-03 11:12:38 | DateTimeOriginal | 3648 × 2736 | CC0 | <https://commons.wikimedia.org/wiki/File:باب_الغرب_-_مدينة_وجدة_المغرب-)_bab_elgharbie_oujda_morocco.jpg> |
 | spots/oujda/sidi-yahya | à vérifier | — | 2592 × 1944 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Oujda.sidi_yahya.jpg> |
 | spots/rabat/marinid-madrasa | 2025-03-31 15:20:50 | DateTimeOriginal | 6000 × 4000 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:The_Marinid_Medersa.jpg> |
 | spots/nador/boucana | 2018-12-25 16:42:35 | DateTimeOriginal | 4928 × 3264 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Flock_of_birds_Boukana_beach.jpg> |
@@ -247,6 +247,7 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | spots/asilah/grand-mosque | 2019-08-18 11:59:57 | DateTimeOriginal | 3960 × 3177 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:La_Grande_Mosquée_de_Assilah_01.jpg> |
 | spots/ifrane/vittel-spring | 2023-06-04 12:11:07 | DateTimeOriginal | 5184 × 3456 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Parc_Ain_Vittel_Ifrane1.jpg> |
 | spots/ifrane/ras-el-ma | 2021-03-29 17:36:44 | DateTimeOriginal | 3024 × 3024 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg> |
+| spots/ifrane/national-park | 2023-06-03 18:43:57 | DateTimeOriginal | 5184 × 3176 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg> |
 | spots/ifrane/akhawayn-university | 2023-03-13 10:54:56 | DateTimeOriginal | 4032 × 3024 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg> |
 | spots/ifrane/cedre-gouraud | 2011-11-24 | DateTimeOriginal | 3264 × 4928 | CC BY-SA 2.0 | <https://commons.wikimedia.org/wiki/File:Cèdre_Gouraud.jpg> |
 | spots/ifrane/macaques | 2016-05-01 17:21:20 | DateTimeOriginal | 3264 × 2448 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Barbary_macaque_near_Azrou.JPG> |
@@ -273,6 +274,8 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | spots/errachidia/ziz-valley | 2017-04-12 17:05:10 | DateTimeOriginal | 4862 × 2657 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ziz_Valley_in_the_desert_of_Morocco.jpg> |
 | spots/oujda/grand-mosque | à vérifier | — | 1899 × 2304 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Oujda.jamaa_lkbir.JPG> |
 | spots/tetouan/dersa-kasbah | 2026-10-04 16:26:44 | DateTimeOriginal | 1868 × 3901 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> |
+| spots/kenitra/kenitra-kasbah | 2023-03-06 17:33:03 | DateTimeOriginal | 3120 × 4160 | CC BY 4.0 | <https://commons.wikimedia.org/wiki/File:Fen%C3%AAtre_du_bastion_de_la_Kasbah_de_K%C3%A9nitra.jpg> |
+| spots/zagora/tissergate | 2023-01-04 | DateTimeOriginal | 960 × 640 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg> |
 | guides/marhaba-guide | 2011-05-02 | DateTimeOriginal | 3531 × 2364 | CC BY-SA 3.0 | <https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG> |
 | guides/car-180-days | 30 June 2022 (according to Exif data) | DateTimeOriginal | 4000 × 1929 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg> |
 | guides/motorway | 2019-10-03 11:30:38 | DateTimeOriginal | 4608 × 2240 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Highway_Marrakech_Agadir_2019.jpg> |
@@ -311,3 +314,4 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | guides/world-cup-2030-transport | 2022-12-31 12:33:32 | DateTimeOriginal | 3023 × 2266 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg> |
 | guides/riad-or-hotel | 2023-06-26 19:42:44 | DateTimeOriginal | 4000 × 3000 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg> |
 | guides/taghazout-surf | à vérifier | — | — | à vérifier | <https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/> |
+
