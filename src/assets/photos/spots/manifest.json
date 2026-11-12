@@ -1889,7 +1889,11 @@
    "ar": "كالا إيريس, الحسيمة"
   },
   "credit": "Hafiddubled5, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_Cala_Iris.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_Cala_Iris.jpg",
+  "focalPoint": [
+   85,
+   50
+  ]
  },
  "dakhla/lagoon": {
   "file": "dakhla-lagoon.jpg",
@@ -2093,7 +2097,11 @@
    "ar": "شاطئ الصفيحة, الحسيمة"
   },
   "credit": "Sultanfouad, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Sfiha_panorama.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Sfiha_panorama.jpg",
+  "focalPoint": [
+   18,
+   50
+  ]
  },
  "fes/tijani": {
   "file": "fes-tijani.jpg",
