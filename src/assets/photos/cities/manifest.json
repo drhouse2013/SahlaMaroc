@@ -140,6 +140,7 @@
    "de": "Bab Mansur und ein Teil der Stadtmauer am Platz El Hedim in Meknès",
    "ar": "باب المنصور وجزء من الأسوار المطلة على ساحة الهديم بمكناس"
   },
+  "focalPoint": [50, 0],
   "credit": "Moleskine, recadrée 4:3, CC BY 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg"
  },
@@ -164,6 +165,7 @@
    "de": "Tor Bab Sidi Aissa und Stadtmauer von Oujda in der Dämmerung",
    "ar": "باب سيدي عيسى وأسوار وجدة عند الغسق"
   },
+  "focalPoint": [50, 100],
   "credit": "Farajiibrahim, CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg"
  },
