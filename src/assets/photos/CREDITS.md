@@ -129,7 +129,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tetouan-bab-okla.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg |
 | spots/tetouan-archaeological-museum.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg |
 | spots/tetouan-modern-art.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg |
-| spots/meknes-bab-mansour.jpg | Steven Lek | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Mansour_Meknes_2018_2.jpg |
+| spots/meknes-bab-mansour.jpg | Moleskine, recadrée 4:3 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg |
 | spots/meknes-lahdim.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_(2020)_06.jpg |
 | spots/meknes-moulay-ismail.jpg | CTHOE | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mausoleum-Moulay-Ismail-2-CTH.jpg |
 | spots/meknes-bou-inania.jpg | Ariel Gera | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_-_courtyard_through_arch.jpg |

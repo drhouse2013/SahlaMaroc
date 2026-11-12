@@ -262,7 +262,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Bab Mansour | `spots/meknes-bab-mansour.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Mansour_Meknes_2018_2.jpg> | vérifiée | CC BY-SA 4.0 |
+| Bab Mansour | `spots/meknes-bab-mansour.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg> | vérifiée | CC BY 4.0 |
 | Place Lahdim | `spots/meknes-lahdim.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_06.jpg> | vérifiée | CC BY-SA 4.0 |
 | Mausolée de Moulay Ismaïl | `spots/meknes-moulay-ismail.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mausoleum-Moulay-Ismail-2-CTH.jpg> | vérifiée | CC BY-SA 4.0 |
 | Médersa Bou Inania | `spots/meknes-bou-inania.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bou_Inania_-_courtyard_through_arch.jpg> | vérifiée | CC BY-SA 4.0 |
