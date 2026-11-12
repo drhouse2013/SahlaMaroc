@@ -2458,14 +2458,14 @@
   "ifrane/macaques": {
     "file": "ifrane-macaques.jpg",
     "alt": {
-      "fr": "Macaque de Barbarie dans un cèdre près d'Azrou",
-      "en": "Barbary macaque in a cedar near Azrou",
-      "es": "Macaco de Berbería en un cedro cerca de Azrou",
-      "de": "Berberaffe in einer Zeder bei Azrou",
-      "ar": "قرد ماغو فوق شجرة أرز قرب أزرو"
+      "fr": "Macaque de Barbarie au premier plan, un autre dans la forêt de cèdres près d’Azrou",
+      "en": "Barbary macaque in the foreground with another macaque in the cedar forest near Azrou",
+      "es": "Macaco de Berbería en primer plano y otro en el bosque de cedros cerca de Azrou",
+      "de": "Berberaffe im Vordergrund und ein weiterer im Zedernwald bei Azrou",
+      "ar": "قرد ماغو في المقدمة وآخر في غابة الأرز قرب أزرو"
     },
-    "credit": "Ayoub BAMOHAMED, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Barbary_macaque_near_Azrou.JPG"
+    "credit": "Jorge Franganillo, CC BY 2.0 (image recadrée et optimisée)",
+    "source": "https://commons.wikimedia.org/wiki/File:Azrou_macaque_monkeys_in_the_cedar_forest_(54243668983).jpg"
   },
   "ifrane/lion-statue": {
     "file": "ifrane-lion-statue.jpg",
@@ -2780,3 +2780,4 @@
     ]
   }
 }
+

@@ -486,7 +486,7 @@
 | Source Vittel | `spots/ifrane-vittel-spring.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Parc_Ain_Vittel_Ifrane1.jpg> | vérifiée | CC BY-SA 4.0 |
 | Cèdre Gouraud (Arz Goro) | `spots/ifrane-cedre-gouraud.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cèdre_Gouraud.jpg> | vérifiée | CC BY-SA 2.0 |
 | Parc national d’Ifrane | `spots/ifrane-national-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg> | vérifiée | CC BY-SA 4.0 |
-| Macaques de Barbarie | `spots/ifrane-macaques.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Barbary_macaque_near_Azrou.JPG> | vérifiée | CC BY-SA 4.0 |
+| Macaques de Barbarie | `spots/ifrane-macaques.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Azrou_macaque_monkeys_in_the_cedar_forest_(54243668983).jpg> | vérifiée | CC BY 2.0 |
 | Ras el Ma | `spots/ifrane-ras-el-ma.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ras_El_Ma,_Ifrane.jpg> | vérifiée | CC BY-SA 4.0 |
 | Université Al Akhawayn | `spots/ifrane-akhawayn-university.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg> | vérifiée | CC BY-SA 4.0 |
 
@@ -523,3 +523,4 @@
 | Place El Mechouar | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage d’Aglou | `spots/tiznit-aglou-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc national de Souss-Massa | `spots/tiznit-souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Viewpoint_Massa_Delta_Souss-Massa_Park_Oct25_A7CR_08026.jpg> | vérifiée | CC BY-SA 4.0 |
+

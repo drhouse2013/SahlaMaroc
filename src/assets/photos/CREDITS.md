@@ -449,3 +449,8 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 ## Renouvellement des souks de Marrakech — 30 décembre 2025
 
 - `spots/marrakech-souks.jpg` : Tbo47, CC BY 4.0 ; photo datée du 30 décembre 2025 ; original 3 000 × 4 000 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg). Recadrage à 1 600 × 1 200 px (x=0, y=1 100 sur l’original) pour conserver les lanternes et la perspective du passage ; JPEG optimisé en mozjpeg qualité 85, métadonnées EXIF supprimées. SHA-256 : `858AFF2143A9EDE1A33DA2ACC4F255946705CBFE44F2E458E1D282E0F4774CBF`.
+
+## Renouvellement des macaques d’Azrou — 27 décembre 2024
+
+- `spots/ifrane-macaques.jpg` : Jorge Franganillo, CC BY 2.0 ; photo prise à Azrou le 27 décembre 2024 ; original 5 108 × 3 406 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Azrou_macaque_monkeys_in_the_cedar_forest_(54243668983).jpg). Recadrage central 4:3 et optimisation en JPEG 1 600 × 1 200 px ; le macaque principal et un second dans le sous-bois restent visibles. EXIF supprimées du dérivé. SHA-256 : `74CD4834E93223E9690A0F2B18818CFF43A27981C93AB4F3E28AA9FE6C9AF1C2`.
+
