@@ -310,7 +310,7 @@
 |---|---|---|---|---|---|
 | Parc national d’Al Hoceïma | `spots/al-hoceima-national-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Alhucemas_(9).JPG> | vérifiée | CC BY-SA 4.0 |
 | Belvédère de Moroviejo | — (« Photo à venir ») | — | — | placeholder | — |
-| Plage Quemado | `spots/al-hoceima-quemado.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> | vérifiée | CC BY-SA 4.0 |
+| Plage Quemado | `spots/al-hoceima-quemado.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Playa_quemado_Alhoceima_2024.jpg> | vérifiée | CC0 1.0 |
 | Îles d’Al Hoceïma | `spots/al-hoceima-alhucemas-islands.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Pe%C3%B1%C3%B3n_de_Alhucemas_desde_la_costa_marroqu%C3%AD.jpg> | vérifiée | CC BY-SA 2.0 |
 | Cala Iris | `spots/al-hoceima-cala-iris.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_Cala_Iris.jpg> | vérifiée | CC BY-SA 4.0 |
 | Plage de Sfiha | `spots/al-hoceima-sfiha.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sfiha_panorama.jpg> | vérifiée | CC BY-SA 4.0 |

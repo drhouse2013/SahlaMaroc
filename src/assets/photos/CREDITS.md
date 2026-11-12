@@ -440,3 +440,7 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 ## Recadrage de la plage de Dakhla — 12 novembre 2026
 
 - spots/dakhla-beach.jpg : Tbo47, CC0 1.0 ; prise déclarée le 24 novembre 2024 ; original 3 752 × 1 664 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Plage_pr%C3%A8s_de_Dakhla_2.jpg). Le panorama a été recadré aux coordonnées de pixels 0,250,1 550 × 1 162 pour produire une miniature 4:3 de 1 600 × 1 200 px. Ce cadrage conserve la plage, les vagues et le phare au loin tout en sortant l’ombre du photographe du cadre. Le dérivé JPEG est optimisé sans métadonnées EXIF ; SHA-256 : 352432B8B17FA2CE0B59906C1C1449BA67592C5F9790D2B46722861C05E71F8A.
+
+## Mise à jour de la plage Quemado — 1 juillet 2024
+
+- `spots/al-hoceima-quemado.jpg` : Abdelhafid95, CC0 1.0 ; photo datée du 1 juillet 2024 ; original 1 179 × 1 419 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Playa_quemado_Alhoceima_2024.jpg). Recadrage central à 1 179 × 884 px (x=0, y=268) pour la carte 4:3 ; JPEG optimisé en mozjpeg qualité 91, métadonnées EXIF supprimées. SHA-256 : `BDF196B79B9161FCC00BE1450641EA124F911C37EA035D567E52B6A1C20B6F1D`.
