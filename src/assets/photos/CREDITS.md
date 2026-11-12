@@ -4,6 +4,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
+| taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
 | merzouga-dunes.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg |
 | chefchaouen-ruelle.jpg | Ekaterina Kvelidze | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg |
 | essaouira-remparts.jpg | Ahmed.magdy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Citadel.jpg |
@@ -68,7 +69,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tafraout-painted-rocks.jpg | Simohnt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Colored_Rocks_1.jpg |
 | spots/tafraout-napoleons-hat.jpg | Just Booked A Trip | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg |
 | spots/agadir-oufella.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg |
-| spots/agadir-beach.jpg | Elmschrat | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:02-beach-agadir-morocco.JPG |
+| spots/agadir-beach.jpg | Fmc2026 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg (prise de vue du 13 janvier 2025, 3 024 × 3 165 px) |
 | spots/agadir-souk-el-had.jpg | Anass Sedrati | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg |
 | spots/agadir-amazigh-museum.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg |
 | spots/dakhla-lighthouse.jpg | Vanbasten 23 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Faro_de_Dajla.jpg |
@@ -86,14 +87,14 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/marrakech-jemaa-el-fna.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg |
 | spots/marrakech-koutoubia.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Kutubiyya_Mosque,_Marrakesh,_Morocco,_20250124_1834_7027.jpg |
 | spots/marrakech-majorelle.jpg | Viault, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG |
-| spots/marrakech-ben-youssef.jpg | Marco Almbauer, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg |
+| spots/marrakech-ben-youssef.jpg | SafiaMens (recadrage) | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ben_Youssef_Madrasa_courtyard_architecture.jpg |
 | spots/marrakech-saadian-tombs.jpg | C messier, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg |
 | spots/marrakech-el-badi.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg |
 | spots/casablanca-hassan-ii.jpg | Tinuzzo, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg |
 | spots/casablanca-old-medina.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_of_Casablanca_5.jpg |
-| spots/rabat-oudayas.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg |
-| spots/rabat-hassan-tower.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg |
-| spots/rabat-chellah.jpg | Mohibsam, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Challah.jpg |
+| spots/rabat-oudayas.jpg | Aemazy, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg |
+| spots/rabat-hassan-tower.jpg | Aemazy, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg |
+| spots/rabat-chellah.jpg | BusinkaSalima, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg |
 | spots/rabat-medina.jpg | U.S. Secretary of Defense, CC BY 2.0 | https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg |
 | spots/tangier-medina.jpg | logopop, CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ancien_Medina,_Tangier,_Morocco_-_panoramio_(11).jpg |
 | spots/tangier-kasbah-museum.jpg | ZAINEB HACHAMI, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_de_Tanger_2.jpg |
@@ -102,7 +103,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tangier-hercules-caves.jpg | Diego Delso, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cuevas_de_H%C3%A9rcules,_Cabo_Espartel,_Marruecos,_2015-12-11,_DD_10-12_HDR.JPG |
 | spots/fes-fes-el-bali.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg |
 | spots/fes-chouara.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_Touristenattraktion_trotz_des_starken_Geruchs%22._01.jpg |
-| spots/fes-bou-inania.jpg | Petar Milošević, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg |
+| spots/fes-bou-inania.jpg | Jorge Franganillo (recadrage) | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Fez_Bou_Inania_Madrasa_(54252643280).jpg |
 | spots/fes-al-attarine.jpg | Jorge Franganillo, CC BY 2.0 (redimensionnée) | https://commons.wikimedia.org/wiki/File:Fez_Al-Attarine_Madrasa_%2854250005206%29.jpg |
 | spots/fes-borj-nord.jpg | R Prazeres, Public domain | https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg |
 | spots/essaouira-medina.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg |
@@ -128,16 +129,17 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tetouan-bab-okla.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg |
 | spots/tetouan-archaeological-museum.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg |
 | spots/tetouan-modern-art.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg |
-| spots/meknes-bab-mansour.jpg | Steven Lek | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Mansour_Meknes_2018_2.jpg |
+| spots/meknes-bab-mansour.jpg | Moleskine, recadrée 4:3 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg |
 | spots/meknes-lahdim.jpg | Werner100359 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_(2020)_06.jpg |
 | spots/meknes-moulay-ismail.jpg | CTHOE | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mausoleum-Moulay-Ismail-2-CTH.jpg |
 | spots/meknes-bou-inania.jpg | Ariel Gera | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_-_courtyard_through_arch.jpg |
 | spots/meknes-heri-souani.jpg | Grace Tankard | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Meknes_6_(39069702785).jpg |
 | spots/ouarzazate-taourirt.jpg | János Korom Dr. | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_26bDSC_0353_(39988264510).jpg |
-| spots/ouarzazate-ait-benhaddou.jpg | Peter in s | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A%C3%AFt_Benhaddou_100.jpg |
+| spots/ouarzazate-ait-benhaddou.jpg | Draceane (recadrage) | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ait_Ben_Haddou,_2025_(04).jpg |
 | spots/ouarzazate-atlas-studios.jpg | Yair Haklai | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Atlas_Corporation_Studios-Ouarzazate.jpg |
 | spots/ouarzazate-fint-oasis.jpg | Fraguando | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Oasis_de_Fint,_Uarzazat_02.jpg |
 | spots/oujda-medina.jpg | Farajiibrahim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg |
+| spots/oujda-bab-el-gharbi.jpg | Elomariamine | CC0 1.0 | https://commons.wikimedia.org/wiki/File:باب_الغرب_-_مدينة_وجدة_المغرب-)_bab_elgharbie_oujda_morocco.jpg |
 | spots/oujda-bab-sidi-abdelwahab.jpg | Iznassen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Oujda.baba_sidi_abdel_wahab.jpg |
 | spots/oujda-lalla-aicha.jpg | خديجة الكناني | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:PARC_lala_Aicha_%C3%A0_Oujda_03.jpg |
 | spots/al-hoceima-national-park.jpg | Kokopelado | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Alhucemas_(9).JPG |
@@ -151,12 +153,13 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 |---|---|---|---|
 | spots/tafraout-ammeln-valley.jpg | Ayman Abdelilah | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Valley_of_Ammeln.jpg |
 | spots/merzouga-dayet-srji.jpg | Ron Knight from Seaford, East Sussex, United Kingdom | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Lake_(12383277085).jpg |
+| spots/casablanca-sacre-coeur.jpg | Philip Mallis (14 mai 2025) | CC BY-SA 4.0 | https://www.flickr.com/photos/philipmallis/54875763260/ |
 
 ## Photos des lieux (groupe 4)
 
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
-| spots/marrakech-souks.jpg | David Broad | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg |
+| spots/marrakech-souks.jpg | Tbo47 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg |
 | spots/marrakech-tanneries.jpg | mwanasimba | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Marrakech_tanneries_(2846868933).jpg |
 | spots/marrakech-ysl-museum.jpg | Pivari | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Architetti_studio_ko,_museo_YSL_a_Marrakech.jpg |
 | spots/marrakech-dar-si-said.jpg | C messier | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_Si_Said_1489.jpg |
@@ -196,6 +199,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/nador-mar-chica-beach.jpg | ArnoldBetten | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Nador,_Uferpromenade_am_Mar_Chica.jpg |
 | spots/nador-kariat-arekmane.jpg | Soufiane elkadaoui | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:La_plage_de_Kariat_Arkmane.jpg |
 | spots/tetouan-royal-palace.jpg | Dickelbers | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Tetouan_Morocco_%C2%A9_03.jpg |
+| spots/tetouan-dersa-kasbah-2026.jpg | Dahbi fatima zahrae | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg |
 | spots/meknes-sidi-ben-aissa.jpg | Robert Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg |
 | spots/ouarzazate-cinema-museum.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Pathe_Projector_Ouarzazate.jpg |
 | spots/ouarzazate-solar-park.jpg | Richard Allaway | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Noor_1_and_2_-_Ouarzazate_Solar_Power_Station_(48962353822).jpg |
@@ -223,20 +227,20 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tangier-sidi-bou-abib.jpg | Diego Delso | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Plaza_del_9_de_abril_de_1947,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_28.JPG |
 | spots/tangier-st-andrews.jpg | KJP1 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Church_of_St_Andrew,_Tangier.jpg |
 | spots/tangier-cap-malabata.jpg | California Will | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Cape_Malabata_Lighthouse.jpg |
-| spots/tangier-cervantes-theatre.jpg | Diego Delso | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Gran_Teatro_Cervantes,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_50.JPG |
+| spots/tangier-cervantes-theatre.jpg | Bisel91 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:مسرح_ثيربانتس_الكبير.jpg |
 | spots/tangier-great-mosque.jpg | Hiroki Ogawa | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:La_Gran_Mezquita_Tanger.Morocco_-_panoramio.jpg |
 | spots/tangier-mendoubia.jpg | Boubloub | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Mendoubia.jpg |
 | spots/tangier-plaza-de-toros.jpg | عبد الكريم للوشت | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:PlazaTorosTanger.jpg |
 | spots/fes-andalusian-mosque.jpg | Robert Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Andalous_mosque_portal.jpg |
 | spots/fes-borj-sud.jpg | Robert Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Borj_sud1.jpg |
 | spots/fes-merenid-tombs.jpg | Mx. Granger | CC0 | https://commons.wikimedia.org/wiki/File:Marinid_Tombs_in_April_2016_1.jpg |
-| spots/fes-quaraouiyine.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3_(83359).jpg |
+| spots/fes-quaraouiyine.jpg | RACHID BAYA (recadrage) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Architecture_islamique_dans_la_cour_de_la_mosquée_Al-Qarawiyyin,_Fès.jpg |
 | spots/fes-nejjarine.jpg | Michal Osmenda from Brussels, Belgium | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Fondouk_el-Nejjarine_(Old_name-_Fes_(5364129707)).jpg |
 | spots/fes-dar-batha.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_Batha_DSCF2801.jpg |
 | spots/fes-jnan-sbil.jpg | just_a_cheeseburger | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Jnan_Sbil_(Bou_Jeloud_Gardens),_Fes_(8952352159).jpg |
 | spots/fes-glaoui-palace.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_Glaoui_Fes_DSCF4279.jpg |
-| spots/essaouira-fishing-port.jpg | DimiTalen | CC0 | https://commons.wikimedia.org/wiki/File:Fishing_boats_in_the_port_of_Essaouira,_2008.jpg |
-| spots/essaouira-beach.jpg | Adam Harangozó | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_beach_02.jpg |
+| spots/essaouira-fishing-port.jpg | ErnestK91 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Fishing_Boats_at_Port_of_Essaouira_Sqala.jpg |
+| spots/essaouira-beach.jpg | Mustang Joe | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Essaouira_coast,_Morocco.jpg (prise de vue du 19 avril 2026, 5 788 × 3 864 px) |
 | spots/essaouira-place-moulay-hassan.jpg | mwanasimba from La Réunion | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Place_Moulay_El_Hassan,_Essaouira_(2901935426).jpg |
 | spots/essaouira-sidi-kaouki.jpg | Goldfinchshuffle | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Beach,_Sidi_Kaouki,_Morocco.jpg |
 | spots/chefchaouen-grand-mosque.jpg | cat_collector | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_(23479090035).jpg |
@@ -361,7 +365,7 @@ Hammam Saffarin à Fès, salle tiède (wasti), prise le 5 juillet 2026. Auteur :
 Les photographies restent celles déjà créditées dans le manifeste. Aucun changement de date de prise de vue.
 
 - `spots/fes-cherratine.jpg` : original 4208 × 1888, Hajji lahcen, CC0. [Source](https://commons.wikimedia.org/wiki/File:%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D8%B7%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3.jpg). SHA-256 : 9990cf46715589b67b659db111aafd85019f7cfc8e0caf012ce0f6f02d448e86. Original conservé sans modification ; versions AVIF/WebP générées par Astro.
-- `spots/rabat-hassan-tower.jpg` : original 5906 × 2881, Holger Uwe Schmitt, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg). SHA-256 : d8659b230206708ea7245ce6bcdfa27b4ead2e07df6d4f31f8cb8cf96c79902f. Original conservé sans modification ; versions AVIF/WebP générées par Astro.
+- `spots/rabat-hassan-tower.jpg` : original 4032 × 2839, Aemazy, CC BY-SA 4.0 ; prise déclarée le 28 octobre 2026. [Source](https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg). Original conservé sans modification ; versions AVIF/WebP générées par Astro.
 
 Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour Hassan : date déclarée 22 décembre 2023, ancien fichier 1400 × 683 ; cadrage CSS 75 % 50 % pour conserver la tour dans les formats de carte.
 
@@ -384,3 +388,86 @@ Cherratine : date déclarée 3 février 2026, ancien fichier 1400 × 628. Tour H
 ## Ifrane — lac Aïn Ifrane, avril 2025
 
 - `cities/ifrane-lake-2025.jpg` : RACHID BAYA, CC0 1.0. [Source](https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg). Prise de vue déclarée le 27 avril 2025, original 4080×2296 conservé sans modification. SHA-256 : `6AA2B43A34E2B26069C907916143338C406726E3458A4E8A600A939FEED10BD1`. Remplace la vue de rue d'Ifrane de 2023 ; Astro génère les formats AVIF/WebP.
+
+## Originaux panoramiques rétablis — 7 novembre 2026
+
+Originaux Wikimedia récupérés pour éviter la perte de détails des copies réduites. Les originaux d’Agadir Marina, Cala Iris et du stade Ibn Batouta restent inchangés. Le panorama de Sfiha avait un flux JPEG incomplet, avec son marqueur de fin absent, que Sharp ne pouvait pas décoder. Une copie haute qualité a été réencodée avec FFmpeg en conservant 9 168 × 1 840 px ; l’original reste dans l’historique Git à 4fec6b1. Auteur, licence et source ne changent pas. Les conversions et recadrages sont produits par Astro.
+- src/assets/photos/spots/agadir-marina.jpg — SHA-256 : C1F1CEE0F59246246F859C756C775A13B9764BD1ECA813CF318F46B762838E10
+- src/assets/photos/spots/al-hoceima-cala-iris.jpg — SHA-256 : 4BB0078DDA40294CAE0EDFA28E77D27577A98853A0D599F72AA17DAC29ED251E
+- src/assets/photos/spots/al-hoceima-sfiha.jpg — SHA-256 : 3B86D97EA0E1F1CFEAC18201F384728C5A61205A9F1AB6B31084B42FBB228722
+- src/assets/photos/cdm-stade-ibn-batouta.jpg — SHA-256 : DF8C7027311044FE0B2E88E1E6946AE9115DB61E3E338555A28BE37D2AF2D8F6
+
+## Tétouan — kasbah du mont Dersa, octobre 2026
+
+- `spots/tetouan-dersa-kasbah-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg). Prise déclarée le 4 octobre 2026 ; original 1868 × 3901 px. L’asset local est la réduction Wikimedia 960 × 2005 px, suffisante pour le recadrage 4:3 jusqu’à 480 × 360. Point focal [50, 40]. Variantes Astro sous CC BY-SA 4.0.
+
+
+## Taroudant — remparts, octobre 2026
+
+- `cities/taroudant.jpg` et `spots/taroudant-ramparts.jpg` : JBPedia, CC BY-SA 4.0. Prise déclarée le 10 octobre 2026 à 12:26:29 ; original 4160 × 1968 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg. Versions et recadrages Astro sous la même licence. Remplace les vues de ville de 2016 et des remparts de 2011.
+
+
+## Merzouga — dunes, avril 2026
+
+- `cities/merzouga.jpg` : Mustang Joe, CC0 1.0. Date déclarée : 15 avril 2026, 19:27:13. Original 6016 × 4016 conservé sans modification ; conversions et recadrages par Astro. Source : https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg. Remplace la vue de 2019.
+
+
+## El Jadida — Mazagan, octobre 2026
+
+- `cities/el-jadida.jpg` et `spots/el-jadida-mazagan.jpg` : Xpelli, CC BY-SA 4.0. Date déclarée : 31 octobre 2026, 11:52:18. Original 5686 × 7581 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg. Conversions Astro et recadrage CSS 50 % / 30 % sous la même licence. Remplace les vues de ville de 2017 et de Mazagan de 2012.
+
+
+## Rabat — visuels récents, octobre 2026
+
+- `spots/rabat-oudayas.jpg` : Aemazy, CC BY-SA 4.0 ; prise déclarée le 30 octobre 2026 ; original 3 899 × 2 602 px. [Source](https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg). SHA-256 : ce32b534e2edc59a8b8c803eddedcba7b059b93d584dc859233881e5f324c616.
+- `spots/rabat-hassan-tower.jpg` : Aemazy, CC BY-SA 4.0 ; prise déclarée le 28 octobre 2026 ; original 4 032 × 2 839 px. [Source](https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg). SHA-256 : 2ba53ff7c4b62f2823c419fe681c6a228560d4d57d0218a66e39b0d707cf149f.
+- `spots/rabat-chellah.jpg` : BusinkaSalima, CC BY-SA 4.0 ; prise déclarée le 19 avril 2025 ; original 3 986 × 3 000 px. [Source](https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg). SHA-256 : 6271cc040ee8c01c4b6509437e15519312a244e6a4bb3f1168de162ebbc77541.
+
+Les originaux sont conservés tels que publiés ; Astro produit les variantes AVIF/WebP et leurs recadrages sous la licence respective.
+
+## Parc national d’Ifrane — juin 2023
+
+- `spots/ifrane-national-park.jpg` : Reda benkhadra, CC BY-SA 4.0 ; prise déclarée le 3 juin 2023 ; original 5 184 × 3 176 px, optimisé à 1 600 × 980 px pour le dépôt. [Source](https://commons.wikimedia.org/wiki/File:Nomad_camps_in_the_Ifrane_National_Park_(2).jpg). La page source situe les campements près de Michlifen, dans le parc ; photo contrôlée visuellement et choisie après comparaison des deux cadrages. L’attribution visible précise « version recadrée et optimisée ». Ancrage focal bas-centre pour garder les campements dans les recadrages panoramiques. Les EXIF ne sont pas copiées dans le dérivé. SHA-256 du dérivé : `F906A7BB4ABC9E97BF4D1B8EFBC0724299261635E9F72C1090277ADDC66A6FA6`.
+
+
+## Renouvellement de la plage de Taghazout — 10 novembre 2026
+
+- `spots/taghazout-taghazout-beach.jpg` : 瑞丽江的河水, CC BY-SA 4.0. Prise déclarée le 2 février 2026, 5 712 × 4 284. Source : https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg. Dérivé 1 600 × 1 200, recadrage et optimisation JPEG documentés ; l’attribution et la licence figurent dans le crédit discret de la page.
+
+## Oasis de Goulmima / Kelmima — août 2026
+
+- `spots/errachidia-kelmima-oasis.jpg` : Greenvertone1, CC BY-SA 4.0 ; prise déclarée le 8 août 2026 ; original 3 072 × 4 096 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hart_of_Oasis.jpg). La source identifie le ksar Hart dans l’oasis de Goulmima. Dérivé recadré verticalement à 3 072 × 2 304 px, puis optimisé en JPEG 1 600 × 1 200 px ; la scène garde le ksar, les palmiers et les cultures dans le cadre 4:3. Vérification visuelle effectuée. Crédit visible : Greenvertone1, CC BY-SA 4.0, image recadrée et optimisée. Métadonnées EXIF retirées du dérivé. SHA-256 : `C30049F91BFA223F1945BD65826F936976E560CD4DB271E0666EE97F62EC464D`.
+
+## Recadrage de la plage de Dakhla — 12 novembre 2026
+
+- spots/dakhla-beach.jpg : Tbo47, CC0 1.0 ; prise déclarée le 24 novembre 2024 ; original 3 752 × 1 664 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Plage_pr%C3%A8s_de_Dakhla_2.jpg). Le panorama a été recadré aux coordonnées de pixels 0,250,1 550 × 1 162 pour produire une miniature 4:3 de 1 600 × 1 200 px. Ce cadrage conserve la plage, les vagues et le phare au loin tout en sortant l’ombre du photographe du cadre. Le dérivé JPEG est optimisé sans métadonnées EXIF ; SHA-256 : 352432B8B17FA2CE0B59906C1C1449BA67592C5F9790D2B46722861C05E71F8A.
+
+## Mise à jour de la plage Quemado — 1 juillet 2024
+
+- `spots/al-hoceima-quemado.jpg` : Abdelhafid95, CC0 1.0 ; photo datée du 1 juillet 2024 ; original 1 179 × 1 419 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Playa_quemado_Alhoceima_2024.jpg). Recadrage central à 1 179 × 884 px (x=0, y=268) pour la carte 4:3 ; JPEG optimisé en mozjpeg qualité 91, métadonnées EXIF supprimées. SHA-256 : `BDF196B79B9161FCC00BE1450641EA124F911C37EA035D567E52B6A1C20B6F1D`.
+
+## Renouvellement des souks de Marrakech — 30 décembre 2025
+
+- `spots/marrakech-souks.jpg` : Tbo47, CC BY 4.0 ; photo datée du 30 décembre 2025 ; original 3 000 × 4 000 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg). Recadrage à 1 600 × 1 200 px (x=0, y=1 100 sur l’original) pour conserver les lanternes et la perspective du passage ; JPEG optimisé en mozjpeg qualité 85, métadonnées EXIF supprimées. SHA-256 : `858AFF2143A9EDE1A33DA2ACC4F255946705CBFE44F2E458E1D282E0F4774CBF`.
+
+## Renouvellement des macaques d’Azrou — 27 décembre 2024
+
+- `spots/ifrane-macaques.jpg` : Jorge Franganillo, CC BY 2.0 ; photo prise à Azrou le 27 décembre 2024 ; original 5 108 × 3 406 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Azrou_macaque_monkeys_in_the_cedar_forest_(54243668983).jpg). Recadrage central 4:3 et optimisation en JPEG 1 600 × 1 200 px ; le macaque principal et un second dans le sous-bois restent visibles. EXIF supprimées du dérivé. SHA-256 : `74CD4834E93223E9690A0F2B18818CFF43A27981C93AB4F3E28AA9FE6C9AF1C2`.
+
+## Renouvellement régional Fès–Meknès — 13 avril 2026
+
+regions/fes-meknes.jpg : Mustang Joe / Joe deSousa, CC0 1.0 ; prise le 13 avril 2026. Source : https://commons.wikimedia.org/wiki/File:The_Triumphal_Arch_of_Caracalla,_Volubilis.jpg . Original 5746 × 4016 px ; dérivé 1800 px de large, JPEG mozjpeg qualité 88, métadonnées retirées. SHA-256 : 96057325E771DC77EFE83579BF7AC3D76976D75B42573E36371565BC2A4F9108. Arc complet confirmé sur la miniature 4:3.
+
+## Recadrage plage Agadir — source du 13 janvier 2025
+
+spots/agadir-beach.jpg : Fmc2026, CC BY 4.0. Source : https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg . Original 3024 × 3165 px ; extrait x0 y700, 3024 × 2268 px, export 1800 × 1350 en JPEG mozjpeg qualité 88, EXIF retirées. Cadrage plus bas pour conserver la plage, la baie et le toit de la tour. SHA-256 : 9F409A9665AACEAF13CDA9221C86B4CEB219D9DE89268DB70DF361E2C2D6E1D9.
+
+## Recadrage corniche de Nador — 12 novembre 2026
+
+cities/nador-corniche-2026.jpg : SALHI Kaouthar, CC BY-SA 4.0 ; source du 23 septembre 2026 : https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg . Original 2268 × 4032 px ; extrait x300 y1850, 1800 × 1350 px, export 1600 × 1200 px JPEG mozjpeg qualité 88 sans EXIF. Ciel et chaussée réduits pour rendre la barque plus lisible. Point focal recentré ; comparaison 4:3 et 16:9 effectuée. SHA-256 : 44cb8c2d6943bd1bf77a9ca70a1da63dd1bf87251dce7fa949b07970c613b494.
+
+## Recadrage monument Tombouctou de Zagora — 12 novembre 2026
+
+spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mars 2026. Source : https://commons.wikimedia.org/wiki/File:Zagora_City.jpg . Original redressé selon son orientation EXIF, 4000 × 6000 px ; extrait x0 y2500, 4000 × 3000 px ; export 1800 × 1350 px JPEG mozjpeg qualité 88 sans EXIF. Point focal haut pour conserver les deux tours et le panneau aux formats 4:3 et 16:9. Dérivé sous CC BY-SA 4.0. SHA-256 : 8DB08E6877294B21D0965BACA5DC71B04B5F915731DAE172F25207FBBF848270.
+
+- spots/taroudant-tiout-palm-grove.jpg : Adville, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg ; prise du 13 mars 2025, export 1800×1350 sans EXIF.

@@ -1,410 +1,416 @@
 {
-  "marrakech": {
-    "file": "marrakech-jemaa-night-2026.jpg",
-    "alt": {
-      "fr": "Jemaa el-Fna animée la nuit, avec la Koutoubia illuminée en arrière-plan, Marrakech",
-      "en": "Jemaa el-Fna at night, with the illuminated Koutoubia in the background, Marrakech",
-      "es": "Jemaa el-Fna de noche, con la Kutubía iluminada al fondo, Marrakech",
-      "de": "Jemaa el-Fna bei Nacht mit der beleuchteten Koutoubia im Hintergrund, Marrakesch",
-      "ar": "ساحة جامع الفنا ليلاً وصومعة الكتبية مضاءة في الخلفية، مراكش"
-    },
-    "credit": "Dahbi fatima zahrae, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg",
-    "focalPoint": [
-      50,
-      62
-    ]
+ "marrakech": {
+  "file": "marrakech-jemaa-night-2026.jpg",
+  "alt": {
+   "fr": "Jemaa el-Fna animée la nuit, avec la Koutoubia illuminée en arrière-plan, Marrakech",
+   "en": "Jemaa el-Fna at night, with the illuminated Koutoubia in the background, Marrakech",
+   "es": "Jemaa el-Fna de noche, con la Kutubía iluminada al fondo, Marrakech",
+   "de": "Jemaa el-Fna bei Nacht mit der beleuchteten Koutoubia im Hintergrund, Marrakesch",
+   "ar": "ساحة جامع الفنا ليلاً وصومعة الكتبية مضاءة في الخلفية، مراكش"
   },
-  "casablanca": {
-    "file": "casablanca.jpg",
-    "alt": {
-      "fr": "Minaret de la mosquée Hassan II vu à travers une arche, Casablanca",
-      "en": "Hassan II Mosque minaret seen through an arch, Casablanca",
-      "es": "Minarete de la mezquita Hassan II visto a través de un arco, Casablanca",
-      "de": "Minarett der Hassan-II-Moschee durch einen Bogen, Casablanca",
-      "ar": "مئذنة مسجد الحسن الثاني من خلال قوس، الدار البيضاء"
-    },
-    "credit": "OussamaHamama, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg",
-    "focalPoint": [
-      50,
-      0
-    ]
+  "credit": "Dahbi fatima zahrae, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg",
+  "focalPoint": [
+   50,
+   62
+  ]
+ },
+ "casablanca": {
+  "file": "casablanca.jpg",
+  "alt": {
+   "fr": "Minaret de la mosquée Hassan II vu à travers une arche, Casablanca",
+   "en": "Hassan II Mosque minaret seen through an arch, Casablanca",
+   "es": "Minarete de la mezquita Hassan II visto a través de un arco, Casablanca",
+   "de": "Minarett der Hassan-II-Moschee durch einen Bogen, Casablanca",
+   "ar": "مئذنة مسجد الحسن الثاني من خلال قوس، الدار البيضاء"
   },
-  "rabat": {
-    "file": "rabat.jpg",
-    "alt": {
-      "fr": "Kasbah des Oudayas et remparts de Rabat vus depuis le Bouregreg",
-      "en": "Kasbah of the Udayas and Rabat’s ramparts viewed from the Bouregreg",
-      "es": "Kasbah de los Udayas y murallas de Rabat vistas desde el Bouregreg",
-      "de": "Kasbah der Udayas und Stadtmauern von Rabat, vom Bouregreg aus gesehen",
-      "ar": "قصبة الأوداية وأسوار الرباط من جهة نهر أبي رقراق"
-    },
-    "credit": "TheUmpteenthPostwoman, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Kasbah_des_Oudayas_%C3%A0_Rabat.jpg"
+  "credit": "OussamaHamama, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg",
+  "focalPoint": [
+   50,
+   0
+  ]
+ },
+ "rabat": {
+  "file": "rabat.jpg",
+  "alt": {
+   "fr": "Kasbah des Oudayas et remparts de Rabat vus depuis le Bouregreg",
+   "en": "Kasbah of the Udayas and Rabat’s ramparts viewed from the Bouregreg",
+   "es": "Kasbah de los Udayas y murallas de Rabat vistas desde el Bouregreg",
+   "de": "Kasbah der Udayas und Stadtmauern von Rabat, vom Bouregreg aus gesehen",
+   "ar": "قصبة الأوداية وأسوار الرباط من جهة نهر أبي رقراق"
   },
-  "tangier": {
-    "file": "tangier.jpg",
-    "alt": {
-      "fr": "Vue sur la médina et la baie de Tanger",
-      "en": "View over the medina and bay of Tangier",
-      "es": "Vista de la medina y la bahía de Tánger",
-      "de": "Blick über Medina und Bucht von Tanger",
-      "ar": "منظر على مدينة طنجة العتيقة والخليج"
-    },
-    "credit": "Herbert wie, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg"
+  "credit": "TheUmpteenthPostwoman, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kasbah_des_Oudayas_%C3%A0_Rabat.jpg"
+ },
+ "tangier": {
+  "file": "tangier.jpg",
+  "alt": {
+   "fr": "Vue sur la médina et la baie de Tanger",
+   "en": "View over the medina and bay of Tangier",
+   "es": "Vista de la medina y la bahía de Tánger",
+   "de": "Blick über Medina und Bucht von Tanger",
+   "ar": "منظر على مدينة طنجة العتيقة والخليج"
   },
-  "fes": {
-    "file": "fes.jpg",
-    "alt": {
-      "fr": "Vue en hauteur sur la médina de Fès el-Bali",
-      "en": "Elevated view of the Fes el-Bali medina",
-      "es": "Vista elevada de la medina de Fez el-Bali",
-      "de": "Blick von oben auf die Medina von Fès el-Bali",
-      "ar": "منظر علوي على مدينة فاس البالي"
-    },
-    "credit": "Petar Milošević, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg"
+  "credit": "Herbert wie, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg"
+ },
+ "fes": {
+  "file": "fes.jpg",
+  "alt": {
+   "fr": "Vue en hauteur sur la médina de Fès el-Bali",
+   "en": "Elevated view of the Fes el-Bali medina",
+   "es": "Vista elevada de la medina de Fez el-Bali",
+   "de": "Blick von oben auf die Medina von Fès el-Bali",
+   "ar": "منظر علوي على مدينة فاس البالي"
   },
-  "essaouira": {
-    "file": "essaouira.jpg",
-    "alt": {
-      "fr": "Remparts et maisons blanches d'Essaouira face à l'océan",
-      "en": "Essaouira ramparts and white houses facing the ocean",
-      "es": "Murallas y casas blancas de Essaouira frente al océano",
-      "de": "Stadtmauer und weiße Häuser von Essaouira am Meer",
-      "ar": "أسوار الصويرة وبيوتها البيضاء المطلة على المحيط"
-    },
-    "credit": "Christinagrabelusshaikh, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg"
+  "credit": "Petar Milošević, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg"
+ },
+ "essaouira": {
+  "file": "essaouira.jpg",
+  "alt": {
+   "fr": "Remparts et maisons blanches d'Essaouira face à l'océan",
+   "en": "Essaouira ramparts and white houses facing the ocean",
+   "es": "Murallas y casas blancas de Essaouira frente al océano",
+   "de": "Stadtmauer und weiße Häuser von Essaouira am Meer",
+   "ar": "أسوار الصويرة وبيوتها البيضاء المطلة على المحيط"
   },
-  "chefchaouen": {
-    "file": "chefchaouen.jpg",
-    "alt": {
-      "fr": "Chefchaouen et ses maisons bleues au coucher du soleil",
-      "en": "Chefchaouen and its blue houses at sunset",
-      "es": "Chefchaouen y sus casas azules al atardecer",
-      "de": "Chefchaouen mit blauen Häusern bei Sonnenuntergang",
-      "ar": "شفشاون ومنازلها الزرقاء عند الغروب"
-    },
-    "credit": "Badr Rachadi, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg"
+  "credit": "Christinagrabelusshaikh, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg"
+ },
+ "chefchaouen": {
+  "file": "chefchaouen.jpg",
+  "alt": {
+   "fr": "Chefchaouen et ses maisons bleues au coucher du soleil",
+   "en": "Chefchaouen and its blue houses at sunset",
+   "es": "Chefchaouen y sus casas azules al atardecer",
+   "de": "Chefchaouen mit blauen Häusern bei Sonnenuntergang",
+   "ar": "شفشاون ومنازلها الزرقاء عند الغروب"
   },
-  "taghazout": {
-    "file": "taghazout.jpg",
-    "alt": {
-      "fr": "Ruelle de Taghazout bordée de commerces locaux, février 2026",
-      "en": "Taghazout alley lined with local shops, February 2026",
-      "es": "Callejón de Taghazout con comercios locales, febrero de 2026",
-      "de": "Gasse in Taghazout mit lokalen Geschäften, Februar 2026",
-      "ar": "زقاق في تغازوت تصطف على جانبيه متاجر محلية، فبراير 2026"
-    },
-    "credit": "瑞丽江的河水, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg"
+  "credit": "Badr Rachadi, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg"
+ },
+ "taghazout": {
+  "file": "taghazout.jpg",
+  "alt": {
+   "fr": "Ruelle de Taghazout bordée de commerces locaux, février 2026",
+   "en": "Taghazout alley lined with local shops, February 2026",
+   "es": "Callejón de Taghazout con comercios locales, febrero de 2026",
+   "de": "Gasse in Taghazout mit lokalen Geschäften, Februar 2026",
+   "ar": "زقاق في تغازوت تصطف على جانبيه متاجر محلية، فبراير 2026"
   },
-  "nador": {
-    "file": "nador-corniche-2026.jpg",
-    "alt": {
-      "fr": "Une barque sur la lagune de Marchica vue depuis la corniche de Nador, septembre 2026",
-      "en": "A small boat on Marchica lagoon seen from Nador corniche, September 2026",
-      "es": "Una barca en la laguna de Marchica vista desde la cornisa de Nador, septiembre 2026",
-      "de": "Ein Boot auf der Marchica-Lagune, gesehen von der Uferpromenade in Nador, September 2026",
-      "ar": "قارب على بحيرة مارتشيكا من كورنيش الناظور، سبتمبر 2026"
-    },
-    "credit": "SALHI Kaouthar, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg",
-    "focalPoint": [
-      50,
-      72
-    ]
+  "credit": "瑞丽江的河水, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg"
+ },
+ "nador": {
+  "file": "nador-corniche-2026.jpg",
+  "alt": {
+   "fr": "Une barque sur la lagune de Marchica vue depuis la corniche de Nador, septembre 2026",
+   "en": "A small boat on Marchica lagoon seen from Nador corniche, September 2026",
+   "es": "Una barca en la laguna de Marchica vista desde la cornisa de Nador, septiembre 2026",
+   "de": "Ein Boot auf der Marchica-Lagune, gesehen von der Uferpromenade in Nador, September 2026",
+   "ar": "قارب على بحيرة مارتشيكا من كورنيش الناظور، سبتمبر 2026"
   },
-  "tetouan": {
-    "file": "tetouan.jpg",
-    "alt": {
-      "fr": "Ruelle voûtée de la médina de Tétouan",
-      "en": "Arched lane in the Tetouan medina",
-      "es": "Callejón con arcos en la medina de Tetuán",
-      "de": "Gewölbte Gasse in der Medina von Tétouan",
-      "ar": "زقاق مقوس في مدينة تطوان العتيقة"
-    },
-    "credit": "Ideophagous, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg"
+  "credit": "SALHI Kaouthar, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg",
+  "focalPoint": [
+   50,
+   50
+  ]
+ },
+ "tetouan": {
+  "file": "tetouan.jpg",
+  "alt": {
+   "fr": "Ruelle voûtée de la médina de Tétouan",
+   "en": "Arched lane in the Tetouan medina",
+   "es": "Callejón con arcos en la medina de Tetuán",
+   "de": "Gewölbte Gasse in der Medina von Tétouan",
+   "ar": "زقاق مقوس في مدينة تطوان العتيقة"
   },
-  "meknes": {
-    "file": "meknes.jpg",
-    "alt": {
-      "fr": "Bab Mansour, grande porte monumentale de Meknès",
-      "en": "Bab Mansour, the monumental gate of Meknes",
-      "es": "Bab Mansur, monumental puerta de Mequinez",
-      "de": "Bab Mansur, monumentales Tor von Meknès",
-      "ar": "باب المنصور، البوابة الضخمة لمكناس"
-    },
-    "credit": "Werner100359, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg"
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg"
+ },
+ "meknes": {
+  "file": "meknes.jpg",
+  "alt": {
+   "fr": "Bab Mansour et une partie des remparts face à la place El Hedim, à Meknès",
+   "en": "Bab Mansour and part of the ramparts facing El Hedim Square in Meknes",
+   "es": "Bab Mansur y parte de las murallas frente a la plaza El Hedim, en Mequinez",
+   "de": "Bab Mansur und ein Teil der Stadtmauer am Platz El Hedim in Meknès",
+   "ar": "باب المنصور وجزء من الأسوار المطلة على ساحة الهديم بمكناس"
   },
-  "ouarzazate": {
-    "file": "ouarzazate.jpg",
-    "alt": {
-      "fr": "Kasbah de Taourirt à Ouarzazate",
-      "en": "Taourirt Kasbah in Ouarzazate",
-      "es": "Kasbah de Taourirt en Uarzazate",
-      "de": "Kasbah Taourirt in Ouarzazate",
-      "ar": "قصبة تاوريرت في ورزازات"
-    },
-    "credit": "Petar Milošević, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg"
+  "focalPoint": [50, 0],
+  "credit": "Moleskine, recadrée 4:3, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg"
+ },
+ "ouarzazate": {
+  "file": "ouarzazate.jpg",
+  "alt": {
+   "fr": "Kasbah de Taourirt à Ouarzazate",
+   "en": "Taourirt Kasbah in Ouarzazate",
+   "es": "Kasbah de Taourirt en Uarzazate",
+   "de": "Kasbah Taourirt in Ouarzazate",
+   "ar": "قصبة تاوريرت في ورزازات"
   },
-  "oujda": {
-    "file": "oujda.jpg",
-    "alt": {
-      "fr": "Bab Sidi Aissa et remparts d'Oujda au crépuscule",
-      "en": "Bab Sidi Aissa gate and walls of Oujda at dusk",
-      "es": "Puerta Bab Sidi Aissa y murallas de Uchda al anochecer",
-      "de": "Tor Bab Sidi Aissa und Stadtmauer von Oujda in der Dämmerung",
-      "ar": "باب سيدي عيسى وأسوار وجدة عند الغسق"
-    },
-    "credit": "Farajiibrahim, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg"
+  "credit": "Petar Milošević, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg"
+ },
+ "oujda": {
+  "file": "oujda.jpg",
+  "alt": {
+   "fr": "Bab Sidi Aissa et remparts d'Oujda au crépuscule",
+   "en": "Bab Sidi Aissa gate and walls of Oujda at dusk",
+   "es": "Puerta Bab Sidi Aissa y murallas de Uchda al anochecer",
+   "de": "Tor Bab Sidi Aissa und Stadtmauer von Oujda in der Dämmerung",
+   "ar": "باب سيدي عيسى وأسوار وجدة عند الغسق"
   },
-  "al-hoceima": {
-    "file": "al-hoceima.jpg",
-    "alt": {
-      "fr": "Plage de Quemado et ville d'Al Hoceima",
-      "en": "Quemado beach and the town of Al Hoceima",
-      "es": "Playa de Quemado y ciudad de Alhucemas",
-      "de": "Strand Quemado und Stadt Al Hoceima",
-      "ar": "شاطئ كيمادو ومدينة الحسيمة"
-    },
-    "credit": "Abdel Jalil Bouhaj, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg"
+  "focalPoint": [50, 100],
+  "credit": "Farajiibrahim, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg"
+ },
+ "al-hoceima": {
+  "file": "al-hoceima.jpg",
+  "alt": {
+   "fr": "Plage de Quemado et ville d'Al Hoceima",
+   "en": "Quemado beach and the town of Al Hoceima",
+   "es": "Playa de Quemado y ciudad de Alhucemas",
+   "de": "Strand Quemado und Stadt Al Hoceima",
+   "ar": "شاطئ كيمادو ومدينة الحسيمة"
   },
-  "merzouga": {
-    "file": "merzouga.jpg",
-    "alt": {
-      "fr": "Caravane de dromadaires dans les dunes de Merzouga",
-      "en": "Camel caravan in the Merzouga dunes",
-      "es": "Caravana de dromedarios en las dunas de Merzouga",
-      "de": "Kamelkarawane in den Dünen von Merzouga",
-      "ar": "قافلة جمال في كثبان مرزوكة"
-    },
-    "credit": "Houssain tork, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Les_dunes_de_Merzouga_(Une_caravane_de_chameaux_).jpg"
+  "credit": "Abdel Jalil Bouhaj, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg"
+ },
+ "merzouga": {
+  "file": "merzouga.jpg",
+  "alt": {
+   "fr": "Dunes de Merzouga aux crêtes dorées et aux ombres profondes",
+   "en": "Merzouga dunes with golden ridges and deep shadows",
+   "es": "Dunas de Merzouga con crestas doradas y sombras profundas",
+   "de": "Dünen von Merzouga mit goldenen Kämmen und tiefen Schatten",
+   "ar": "كثبان مرزوكة بقمم ذهبية وظلال عميقة"
   },
-  "home-hero": {
-    "file": "home-hero.jpg",
-    "alt": {
-      "fr": "Caravane de dromadaires dans les dunes dorées du Sahara marocain",
-      "en": "Camel caravan crossing golden Moroccan Sahara dunes",
-      "es": "Caravana de dromedarios por las dunas doradas del Sáhara marroquí",
-      "de": "Kamelkarawane in den goldenen Dünen der marokkanischen Sahara",
-      "ar": "قافلة جمال في كثبان الصحراء المغربية الذهبية"
-    },
-    "credit": "Merzougaloisirs, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg"
+  "credit": "Mustang Joe, CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Merzouga_dunes_of_Morocco.jpg"
+ },
+ "home-hero": {
+  "file": "home-hero.jpg",
+  "alt": {
+   "fr": "Caravane de dromadaires dans les dunes dorées du Sahara marocain",
+   "en": "Camel caravan crossing golden Moroccan Sahara dunes",
+   "es": "Caravana de dromedarios por las dunas doradas del Sáhara marroquí",
+   "de": "Kamelkarawane in den goldenen Dünen der marokkanischen Sahara",
+   "ar": "قافلة جمال في كثبان الصحراء المغربية الذهبية"
   },
-  "tafraout": {
-    "file": "tafraout.jpg",
-    "alt": {
-      "fr": "Terrasses agricoles et village dans les montagnes de l'Anti-Atlas près de Tafraout",
-      "en": "Agricultural terraces and village in the Anti-Atlas mountains near Tafraout",
-      "es": "Terrazas agrícolas y aldea en las montañas del Antiatlas cerca de Tafraout",
-      "de": "Terrassenfelder und Dorf im Anti-Atlas bei Tafraout",
-      "ar": "مدرجات زراعية وقرية في جبال الأطلس الصغير قرب تافراوت"
-    },
-    "credit": "Marek Ślusarczyk (Tupungato), CC BY 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg"
+  "credit": "Merzougaloisirs, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg"
+ },
+ "tafraout": {
+  "file": "tafraout.jpg",
+  "alt": {
+   "fr": "Terrasses agricoles et village dans les montagnes de l'Anti-Atlas près de Tafraout",
+   "en": "Agricultural terraces and village in the Anti-Atlas mountains near Tafraout",
+   "es": "Terrazas agrícolas y aldea en las montañas del Antiatlas cerca de Tafraout",
+   "de": "Terrassenfelder und Dorf im Anti-Atlas bei Tafraout",
+   "ar": "مدرجات زراعية وقرية في جبال الأطلس الصغير قرب تافراوت"
   },
-  "agadir": {
-    "file": "agadir.jpg",
-    "alt": {
-      "fr": "Plage d'Agadir et baie vues depuis le sable au petit matin",
-      "en": "Agadir beach and bay seen from the sand in the early morning",
-      "es": "Playa y bahía de Agadir vistas desde la arena a primera hora",
-      "de": "Strand und Bucht von Agadir vom Sand aus am frühen Morgen",
-      "ar": "شاطئ أكادير والخليج من الرمال في الصباح الباكر"
-    },
-    "credit": "Francesc Fort, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg"
+  "credit": "Marek Ślusarczyk (Tupungato), CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg"
+ },
+ "agadir": {
+  "file": "agadir.jpg",
+  "alt": {
+   "fr": "Plage d'Agadir et baie vues depuis le sable au petit matin",
+   "en": "Agadir beach and bay seen from the sand in the early morning",
+   "es": "Playa y bahía de Agadir vistas desde la arena a primera hora",
+   "de": "Strand und Bucht von Agadir vom Sand aus am frühen Morgen",
+   "ar": "شاطئ أكادير والخليج من الرمال في الصباح الباكر"
   },
-  "dakhla": {
-    "file": "dakhla.jpg",
-    "alt": {
-      "fr": "Vue panoramique de la plage du PK25 sur la lagune de Dakhla",
-      "en": "Panoramic view of PK25 beach on the Dakhla lagoon",
-      "es": "Vista panorámica de la playa PK25 en la laguna de Dajla",
-      "de": "Panoramablick auf den Strand PK25 an der Lagune von Dakhla",
-      "ar": "منظر بانورامي لشاطئ PK25 على بحيرة الداخلة"
-    },
-    "credit": "Tbo47, CC0 1.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg"
+  "credit": "Francesc Fort, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg"
+ },
+ "dakhla": {
+  "file": "dakhla.jpg",
+  "alt": {
+   "fr": "Vue panoramique de la plage du PK25 sur la lagune de Dakhla",
+   "en": "Panoramic view of PK25 beach on the Dakhla lagoon",
+   "es": "Vista panorámica de la playa PK25 en la laguna de Dajla",
+   "de": "Panoramablick auf den Strand PK25 an der Lagune von Dakhla",
+   "ar": "منظر بانورامي لشاطئ PK25 على بحيرة الداخلة"
   },
-  "laayoune": {
-    "file": "laayoune.jpg",
-    "alt": {
-      "fr": "Vue aérienne de la place centrale de Laâyoune de nuit",
-      "en": "Aerial view of the central square of Laayoune at night",
-      "es": "Vista aérea de la plaza central de El Aaiún de noche",
-      "de": "Luftaufnahme des zentralen Platzes von Laâyoune bei Nacht",
-      "ar": "منظر جوي لساحة وسط مدينة العيون ليلاً"
-    },
-    "credit": "Zakaria Taberkant / Commune of Laayoune, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg"
+  "credit": "Tbo47, CC0 1.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg"
+ },
+ "laayoune": {
+  "file": "laayoune.jpg",
+  "alt": {
+   "fr": "Vue aérienne de la place centrale de Laâyoune de nuit",
+   "en": "Aerial view of the central square of Laayoune at night",
+   "es": "Vista aérea de la plaza central de El Aaiún de noche",
+   "de": "Luftaufnahme des zentralen Platzes von Laâyoune bei Nacht",
+   "ar": "منظر جوي لساحة وسط مدينة العيون ليلاً"
   },
-  "el-jadida": {
-    "file": "el-jadida.jpg",
-    "alt": {
-      "fr": "Voûtes et reflet dans la citerne portugaise d'El Jadida",
-      "en": "Vaults and reflection in the Portuguese Cistern of El Jadida",
-      "es": "Bóvedas y reflejo en la cisterna portuguesa de El Jadida",
-      "de": "Gewölbe und Spiegelung in der portugiesischen Zisterne von El Jadida",
-      "ar": "أقواس وانعكاس في الصهريج البرتغالي بالجديدة"
-    },
-    "credit": "Mathew Koshy, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Portuguese_Cistern_01.jpg"
+  "credit": "Zakaria Taberkant / Commune of Laayoune, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Laayoune_01.jpg"
+ },
+ "el-jadida": {
+  "file": "el-jadida.jpg",
+  "alt": {
+   "fr": "Port et remparts de Mazagan vus à travers une arche de pierre, El Jadida",
+   "en": "Mazagan port and ramparts seen through a stone arch, El Jadida",
+   "es": "Puerto y murallas de Mazagán vistos a través de un arco de piedra, El Jadida",
+   "de": "Hafen und Stadtmauern von Mazagan durch einen Steinbogen gesehen, El Jadida",
+   "ar": "ميناء وأسوار مازغان من خلال قوس حجري في الجديدة"
   },
-  "saidia": {
-    "file": "saidia.jpg",
-    "alt": {
-      "fr": "Coucher de soleil sur la plage et la mer à Saïdia",
-      "en": "Sunset over the beach and sea at Saidia",
-      "es": "Atardecer sobre la playa y el mar en Saidia",
-      "de": "Sonnenuntergang über Strand und Meer in Saidia",
-      "ar": "غروب الشمس فوق شاطئ البحر في السعيدية"
-    },
-    "credit": "Meryem BOURAS, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg"
+  "credit": "Xpelli, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg",
+  "focalPoint": [
+   50,
+   30
+  ]
+ },
+ "saidia": {
+  "file": "saidia.jpg",
+  "alt": {
+   "fr": "Coucher de soleil sur la plage et la mer à Saïdia",
+   "en": "Sunset over the beach and sea at Saidia",
+   "es": "Atardecer sobre la playa y el mar en Saidia",
+   "de": "Sonnenuntergang über Strand und Meer in Saidia",
+   "ar": "غروب الشمس فوق شاطئ البحر في السعيدية"
   },
-  "guelmim": {
-    "file": "guelmim.jpg",
-    "alt": {
-      "fr": "Porte ouest de la ville, Guelmim",
-      "en": "West gate of the city, Guelmim",
-      "es": "Puerta occidental de la ciudad, Guelmim",
-      "de": "Westliches Stadttor von Guelmim",
-      "ar": "البوابة الغربية لمدينة كلميم"
-    },
-    "credit": "Mhobl, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg"
+  "credit": "Meryem BOURAS, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Saidia_marina_beach.jpg"
+ },
+ "guelmim": {
+  "file": "guelmim.jpg",
+  "alt": {
+   "fr": "Porte ouest de la ville, Guelmim",
+   "en": "West gate of the city, Guelmim",
+   "es": "Puerta occidental de la ciudad, Guelmim",
+   "de": "Westliches Stadttor von Guelmim",
+   "ar": "البوابة الغربية لمدينة كلميم"
   },
-  "tiznit": {
-    "file": "tiznit.jpg",
-    "alt": {
-      "fr": "Grande mosquée de Tiznit et son minaret ocre, photographiés en novembre 2023",
-      "en": "Grand Mosque of Tiznit and its ochre minaret, photographed in November 2023",
-      "es": "Gran Mezquita de Tiznit y su minarete ocre, fotografiados en noviembre de 2023",
-      "de": "Große Moschee von Tiznit mit ockerfarbenem Minarett, fotografiert im November 2023",
-      "ar": "المسجد الكبير في تيزنيت ومئذنته ذات اللون المغري، صُوّرا في نوفمبر 2023"
-    },
-    "credit": "Rachidourkia, CC0 1.0",
-    "source": "https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg",
-    "focalPoint": [
-      50,
-      18
-    ]
+  "credit": "Mhobl, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Westliches_Stadttor_von_Guelmim_in_Marokko.jpg"
+ },
+ "tiznit": {
+  "file": "tiznit.jpg",
+  "alt": {
+   "fr": "Grande mosquée de Tiznit et son minaret ocre, photographiés en novembre 2023",
+   "en": "Grand Mosque of Tiznit and its ochre minaret, photographed in November 2023",
+   "es": "Gran Mezquita de Tiznit y su minarete ocre, fotografiados en noviembre de 2023",
+   "de": "Große Moschee von Tiznit mit ockerfarbenem Minarett, fotografiert im November 2023",
+   "ar": "المسجد الكبير في تيزنيت ومئذنته ذات اللون المغري، صُوّرا في نوفمبر 2023"
   },
-  "sidi-ifni": {
-    "file": "sidi-ifni.jpg",
-    "alt": {
-      "fr": "Hôtel de ville de style art déco, Sidi Ifni",
-      "en": "Art deco town hall, Sidi Ifni",
-      "es": "Ayuntamiento art déco, Sidi Ifni",
-      "de": "Rathaus im Art-déco-Stil, Sidi Ifni",
-      "ar": "دار الجماعة بطراز الآرت ديكو في سيدي إفني"
-    },
-    "credit": "Anass Sedrati, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg"
+  "credit": "Rachidourkia, CC0 1.0",
+  "source": "https://commons.wikimedia.org/wiki/File:مسجد_الكبير_تيزنيت.jpg",
+  "focalPoint": [
+   50,
+   18
+  ]
+ },
+ "sidi-ifni": {
+  "file": "sidi-ifni.jpg",
+  "alt": {
+   "fr": "Hôtel de ville de style art déco, Sidi Ifni",
+   "en": "Art deco town hall, Sidi Ifni",
+   "es": "Ayuntamiento art déco, Sidi Ifni",
+   "de": "Rathaus im Art-déco-Stil, Sidi Ifni",
+   "ar": "دار الجماعة بطراز الآرت ديكو في سيدي إفني"
   },
-  "taroudant": {
-    "file": "taroudant.jpg",
-    "alt": {
-      "fr": "Remparts de Taroudant bordés de palmiers",
-      "en": "Palm-lined ramparts of Taroudant",
-      "es": "Murallas de Taroudant bordeadas de palmeras",
-      "de": "Von Palmen gesäumte Stadtmauern von Taroudant",
-      "ar": "أسوار تارودانت تحفها النخيل"
-    },
-    "credit": "Hamza Izourane, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Taroudant_City_Walls.jpg"
+  "credit": "Anass Sedrati, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sidi_Ifni_Commune_House.jpg"
+ },
+ "taroudant": {
+  "file": "taroudant.jpg",
+  "alt": {
+   "fr": "Tours crénelées des remparts ocre de Taroudant sous un ciel bleu",
+   "en": "Crenellated towers of the ochre Taroudant ramparts under a blue sky",
+   "es": "Torres almenadas de las murallas ocres de Taroudant bajo un cielo azul",
+   "de": "Zinnentürme der ockerfarbenen Stadtmauern von Taroudant unter blauem Himmel",
+   "ar": "أبراج مسننة لأسوار تارودانت بلونها المغري تحت سماء زرقاء"
   },
-  "zagora": {
-    "file": "zagora.jpg",
-    "alt": {
-      "fr": "Mosquée aux façades ocre et au minaret orné, Zagora",
-      "en": "Ochre mosque with an ornate minaret in Zagora",
-      "es": "Mezquita ocre con minarete decorado en Zagora",
-      "de": "Ockerfarbene Moschee mit verziertem Minarett in Zagora",
-      "ar": "مسجد بواجهات بلون المغرة ومئذنة مزخرفة في زاكورة"
-    },
-    "credit": "Cesar.mx22, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg",
-    "focalPoint": [
-      50,
-      68
-    ]
+  "credit": "JBPedia, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg"
+ },
+ "zagora": {
+  "file": "zagora.jpg",
+  "alt": {
+   "fr": "Mosquée aux façades ocre et au minaret orné, Zagora",
+   "en": "Ochre mosque with an ornate minaret in Zagora",
+   "es": "Mezquita ocre con minarete decorado en Zagora",
+   "de": "Ockerfarbene Moschee mit verziertem Minarett in Zagora",
+   "ar": "مسجد بواجهات بلون المغرة ومئذنة مزخرفة في زاكورة"
   },
-  "errachidia": {
-    "file": "errachidia.jpg",
-    "alt": {
-      "fr": "Palmeraie de la vallée du Ziz, province d'Errachidia",
-      "en": "Palm grove in the Ziz valley, Errachidia province",
-      "es": "Palmeral del valle del Ziz, provincia de Errachidia",
-      "de": "Palmenhain im Ziz-Tal, Provinz Errachidia",
-      "ar": "واحة نخيل في وادي زيز، إقليم الراشيدية"
-    },
-    "credit": "Ben Bender, CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg"
+  "credit": "Cesar.mx22, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Zagora_City_2.jpg",
+  "focalPoint": [
+   50,
+   68
+  ]
+ },
+ "errachidia": {
+  "file": "errachidia.jpg",
+  "alt": {
+   "fr": "Palmeraie de la vallée du Ziz, province d'Errachidia",
+   "en": "Palm grove in the Ziz valley, Errachidia province",
+   "es": "Palmeral del valle del Ziz, provincia de Errachidia",
+   "de": "Palmenhain im Ziz-Tal, Provinz Errachidia",
+   "ar": "واحة نخيل في وادي زيز، إقليم الراشيدية"
   },
-  "ifrane": {
-    "file": "ifrane-lake-2025.jpg",
-    "alt": {
-      "fr": "Lac Aïn Ifrane et ses rives, photographiés en avril 2025",
-      "en": "Lake Ain Ifrane and its banks, photographed in April 2025",
-      "es": "Lago Aïn Ifrane y sus orillas, fotografiados en abril de 2025",
-      "de": "See Aïn Ifrane und sein Ufer, fotografiert im April 2025",
-      "ar": "بحيرة عين إفران وضفافها، صُوّرت في أبريل 2025"
-    },
-    "credit": "RACHID BAYA, CC0 1.0",
-    "source": "https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg"
+  "credit": "Ben Bender, CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Errachidia_Province,_Morocco_-_panoramio_(1).jpg"
+ },
+ "ifrane": {
+  "file": "ifrane-lake-2025.jpg",
+  "alt": {
+   "fr": "Lac Aïn Ifrane et ses rives, photographiés en avril 2025",
+   "en": "Lake Ain Ifrane and its banks, photographed in April 2025",
+   "es": "Lago Aïn Ifrane y sus orillas, fotografiados en abril de 2025",
+   "de": "See Aïn Ifrane und sein Ufer, fotografiert im April 2025",
+   "ar": "بحيرة عين إفران وضفافها، صُوّرت في أبريل 2025"
   },
-  "asilah": {
-    "file": "asilah.jpg",
-    "alt": {
-      "fr": "Remparts de la médina d'Asilah au bord de l'Atlantique",
-      "en": "Ramparts of the Asilah medina on the Atlantic coast",
-      "es": "Murallas de la medina de Arcila junto al Atlántico",
-      "de": "Stadtmauer der Medina von Asilah am Atlantik",
-      "ar": "أسوار مدينة أصيلة العتيقة على المحيط الأطلسي"
-    },
-    "credit": "RACHID BAYA, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:The_ramparts_of_the_Old_Medina_of_Asilah.jpg"
+  "credit": "RACHID BAYA, CC0 1.0",
+  "source": "https://commons.wikimedia.org/wiki/File:بحيرة_عين_إفران.jpg"
+ },
+ "asilah": {
+  "file": "asilah.jpg",
+  "alt": {
+   "fr": "Remparts de la médina d'Asilah au bord de l'Atlantique",
+   "en": "Ramparts of the Asilah medina on the Atlantic coast",
+   "es": "Murallas de la medina de Arcila junto al Atlántico",
+   "de": "Stadtmauer der Medina von Asilah am Atlantik",
+   "ar": "أسوار مدينة أصيلة العتيقة على المحيط الأطلسي"
   },
-  "larache": {
-    "file": "larache.jpg",
-    "alt": {
-      "fr": "Palmiers et portail orné sur la place de la Libération, Larache",
-      "en": "Palms and an ornate gateway on Liberation Square, Larache",
-      "es": "Palmeras y un portal decorado en la plaza de la Liberación, Larache",
-      "de": "Palmen und ein verziertes Tor am Platz der Befreiung in Larache",
-      "ar": "نخيل وبوابة مزخرفة في ساحة التحرير بالعرائش"
-    },
-    "credit": "Ideophagous, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg",
-    "focalPoint": [
-      50,
-      70
-    ]
+  "credit": "RACHID BAYA, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_ramparts_of_the_Old_Medina_of_Asilah.jpg"
+ },
+ "larache": {
+  "file": "larache.jpg",
+  "alt": {
+   "fr": "Palmiers et portail orné sur la place de la Libération, Larache",
+   "en": "Palms and an ornate gateway on Liberation Square, Larache",
+   "es": "Palmeras y un portal decorado en la plaza de la Liberación, Larache",
+   "de": "Palmen und ein verziertes Tor am Platz der Befreiung in Larache",
+   "ar": "نخيل وبوابة مزخرفة في ساحة التحرير بالعرائش"
   },
-  "kenitra": {
-    "file": "kenitra.jpg",
-    "alt": {
-      "fr": "Façade de la gare de Kénitra",
-      "en": "Facade of Kenitra railway station",
-      "es": "Fachada de la estación de Kenitra",
-      "de": "Fassade des Bahnhofs von Kenitra",
-      "ar": "واجهة محطة القنيطرة"
-    },
-    "credit": "Zakiman0, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Gare_de_train_(TGV)._KENITRA._Maroc.jpg"
-  }
+  "credit": "Ideophagous, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1_%D8%A3%D9%88_%D8%B3%D8%A7%D8%AD%D8%A9_%D8%A5%D8%B3%D9%BE%D8%A7%D9%86%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D8%A6%D8%B4_3.jpg",
+  "focalPoint": [
+   50,
+   70
+  ]
+ },
+ "kenitra": {
+  "file": "kenitra.jpg",
+  "alt": {
+   "fr": "Façade de la gare de Kénitra",
+   "en": "Facade of Kenitra railway station",
+   "es": "Fachada de la estación de Kenitra",
+   "de": "Fassade des Bahnhofs von Kenitra",
+   "ar": "واجهة محطة القنيطرة"
+  },
+  "credit": "Zakiman0, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Gare_de_train_(TGV)._KENITRA._Maroc.jpg"
+ }
 }
