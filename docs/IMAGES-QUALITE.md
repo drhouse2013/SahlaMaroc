@@ -1,8 +1,8 @@
 # Contrôle des dimensions des images
 
-Généré par `node tools/audit-image-quality.mjs` le 2026-11-08.
+Généré par `node tools/audit-image-quality.mjs` le 2026-11-12.
 
-**494 fichiers examinés**, dont 111 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
+**497 fichiers examinés**, dont 111 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
 
 Périmètre : toutes les images de `src/assets` et `public`, y compris les images non utilisées et les variantes déjà générées. Les sorties `dist` et les dépendances sont exclues. Les dimensions tiennent compte de la rotation EXIF. Seules les photographies de `src/assets/photos` sont soumises aux seuils : largeur disponible après recadrage 4:3 pour les cartes (720 px) et 16:9 pour les héros (1600 px). Les seuils repèrent les sources à examiner : le rôle réel, le ratio et le cadrage doivent être contrôlés dans les pages. Une grande dimension ne prouve ni la netteté, ni la date, ni le lieu, ni la licence. Les fichiers ICO sont signalés si le décodeur ne les lit pas.
 
@@ -156,13 +156,13 @@ Aucune.
 | src/assets/photos/chefchaouen-place-haouta-2025.jpg | 1600 × 1064 | 239 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/chefchaouen-ruelle.jpg | 1600 × 1200 | 219 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/agadir.jpg | 1600 × 1202 | 182 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cities/al-hoceima.jpg | 1600 × 778 | 243 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/cities/al-hoceima.jpg | 3024 × 4032 | 3272 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/asilah.jpg | 1600 × 901 | 188 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/casablanca.jpg | 1600 × 1067 | 203 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/chefchaouen.jpg | 1600 × 1064 | 229 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/dakhla.jpg | 4124 × 1657 | 2463 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/el-jadida.jpg | 5686 × 7581 | 5876 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cities/errachidia.jpg | 1600 × 1074 | 169 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/cities/errachidia.jpg | 1200 × 800 | 494 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/cities/essaouira.jpg | 1600 × 1042 | 211 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/fes.jpg | 1400 × 821 | 249 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/cities/guelmim.jpg | 1600 × 797 | 96 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -173,7 +173,7 @@ Aucune.
 | src/assets/photos/cities/larache.jpg | 4080 × 3060 | 3806 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/marrakech-jemaa-night-2026.jpg | 3072 × 4080 | 3517 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/marrakech.jpg | 1600 × 1067 | 196 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cities/meknes.jpg | 1600 × 1067 | 216 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/cities/meknes.jpg | 1600 × 1200 | 248 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/merzouga.jpg | 6016 × 4016 | 9880 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/nador-corniche-2026.jpg | 2268 × 4032 | 1128 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/nador.jpg | 1600 × 1067 | 241 | dimensions suffisantes ; cadrage à vérifier |
@@ -182,7 +182,7 @@ Aucune.
 | src/assets/photos/cities/rabat.jpg | 4032 × 3024 | 2577 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/saidia.jpg | 1600 × 900 | 171 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/sidi-ifni.jpg | 1600 × 1200 | 222 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/cities/tafraout.jpg | 1600 × 1067 | 242 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/cities/tafraout.jpg | 5906 × 2367 | 2996 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/taghazout.jpg | 1920 × 1440 | 1032 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/tangier.jpg | 1600 × 1200 | 239 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/cities/taroudant.jpg | 4160 × 1968 | 1908 | dimensions suffisantes ; cadrage à vérifier |
@@ -255,7 +255,7 @@ Aucune.
 | src/assets/photos/rabat-oudayas-tour-2024.jpg | 1600 × 1200 | 227 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/rabat-oudayas.jpg | 1600 × 1055 | 238 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/regions/beni-mellal-khenifra.jpg | 1600 × 960 | 224 | dimensions suffisantes ; cadrage à vérifier |
-| src/assets/photos/regions/casablanca-settat.jpg | 1600 × 844 | 132 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/regions/casablanca-settat.jpg | 1600 × 1067 | 203 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/regions/dakhla-oued-ed-dahab.jpg | 1600 × 1067 | 199 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/regions/draa-tafilalet.jpg | 1600 × 990 | 224 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/regions/fes-meknes.jpg | 1600 × 1200 | 221 | dimensions suffisantes ; cadrage à vérifier |
@@ -363,9 +363,11 @@ Aucune.
 | src/assets/photos/spots/ifrane-cedre-gouraud.jpg | 1400 × 2114 | 192 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/ifrane-lion-statue.jpg | 1400 × 1048 | 190 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/ifrane-macaques.jpg | 1400 × 1050 | 176 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/ifrane-national-park.jpg | 1600 × 980 | 365 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/ifrane-ras-el-ma.jpg | 1400 × 1400 | 185 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/ifrane-vittel-spring.jpg | 1400 × 933 | 174 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/kenitra-kasbah-mahdiyya.jpg | 1400 × 788 | 125 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/kenitra-kasbah.jpg | 3120 × 2340 | 1074 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/kenitra-mehdia-beach.jpg | 1400 × 1050 | 185 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/kenitra-merja-zerga.jpg | 1400 × 933 | 140 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/kenitra-sidi-boughaba.jpg | 1400 × 788 | 180 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -425,7 +427,7 @@ Aucune.
 | src/assets/photos/spots/ouarzazate-main-square.jpg | 1400 × 850 | 155 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/ouarzazate-solar-park.jpg | 1400 × 700 | 186 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/ouarzazate-taourirt.jpg | 1400 × 935 | 189 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/oujda-bab-el-gharbi.jpg | 1400 × 1050 | 182 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/oujda-bab-el-gharbi.jpg | 1600 × 1200 | 306 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/oujda-bab-sidi-abdelwahab.jpg | 1400 × 1050 | 198 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/oujda-grand-mosque.jpg | 1400 × 1053 | 128 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/oujda-honor-stadium.jpg | 1400 × 1050 | 173 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -463,7 +465,7 @@ Aucune.
 | src/assets/photos/spots/taghazout-anchor-point.jpg | 1600 × 1067 | 255 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/taghazout-panorama.jpg | 1400 × 1050 | 197 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/taghazout-paradise-valley.jpg | 1400 × 1400 | 199 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/taghazout-taghazout-beach.jpg | 1400 × 1050 | 175 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/taghazout-taghazout-beach.jpg | 1600 × 1200 | 292 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/tangier-american-legation.jpg | 1400 × 933 | 182 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tangier-cap-malabata.jpg | 1400 × 1036 | 191 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tangier-cervantes-theatre.jpg | 1400 × 970 | 174 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -490,13 +492,14 @@ Aucune.
 | src/assets/photos/spots/tetouan-medina.jpg | 1400 × 1867 | 196 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tetouan-modern-art.jpg | 1400 × 1050 | 187 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tetouan-royal-palace.jpg | 1400 × 796 | 174 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/tetouan-tannery.jpg | 1400 × 1050 | 185 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/tetouan-tannery.jpg | 1600 × 1200 | 442 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/tiznit-aglou-beach.jpg | 1400 × 836 | 111 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tiznit-medina-walls.jpg | 6000 × 8000 | 8257 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/tiznit-souss-massa.jpg | 1400 × 933 | 156 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/zagora-jebel-zagora.jpg | 1400 × 788 | 191 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/zagora-tamegroute-pottery.jpg | 1400 × 931 | 190 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/zagora-timbuktu-sign-2026.jpg | 4000 × 6000 | 7673 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/spots/zagora-tissergate.jpg | 960 × 640 | 129 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/stades-rabat-moulay-abdellah.jpg | 1600 × 1067 | 220 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/surf-taghazout-baie.jpg | 1600 × 1200 | 207 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/taghazout-surf-2026.jpg | 5568 × 3712 | 1344 | dimensions suffisantes ; cadrage à vérifier |
@@ -513,3 +516,4 @@ Aucune.
 | src/assets/photos/voiture-autoroute.jpg | 1600 × 1067 | 166 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/voiture-traversee-mre.jpg | 1600 × 772 | 192 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/vols-ryanair-rabat.jpg | 1600 × 1200 | 147 | dimensions suffisantes ; cadrage à vérifier |
+
