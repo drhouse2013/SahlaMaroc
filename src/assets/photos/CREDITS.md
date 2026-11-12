@@ -454,3 +454,7 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 
 - `spots/ifrane-macaques.jpg` : Jorge Franganillo, CC BY 2.0 ; photo prise à Azrou le 27 décembre 2024 ; original 5 108 × 3 406 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Azrou_macaque_monkeys_in_the_cedar_forest_(54243668983).jpg). Recadrage central 4:3 et optimisation en JPEG 1 600 × 1 200 px ; le macaque principal et un second dans le sous-bois restent visibles. EXIF supprimées du dérivé. SHA-256 : `74CD4834E93223E9690A0F2B18818CFF43A27981C93AB4F3E28AA9FE6C9AF1C2`.
 
+## Renouvellement régional Fès–Meknès — 13 avril 2026
+
+regions/fes-meknes.jpg : Mustang Joe / Joe deSousa, CC0 1.0 ; prise le 13 avril 2026. Source : https://commons.wikimedia.org/wiki/File:The_Triumphal_Arch_of_Caracalla,_Volubilis.jpg . Original 5746 × 4016 px ; dérivé 1800 px de large, JPEG mozjpeg qualité 88, métadonnées retirées. SHA-256 : 96057325E771DC77EFE83579BF7AC3D76976D75B42573E36371565BC2A4F9108. Arc complet confirmé sur la miniature 4:3.
+

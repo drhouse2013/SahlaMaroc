@@ -61,7 +61,7 @@
 |---|---|---|---|---|---|
 | Tanger-Tétouan-Al Hoceïma | `regions/tanger-tetouan-al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Faro_del_cabo_Espartel,_Marruecos,_2015-12-11,_DD_02.JPG> | vérifiée | CC BY-SA 4.0 |
 | L'Oriental | `regions/oriental.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Grotte_du_chameau,_Zegzel_-_Province_de_Berkane.jpg> | vérifiée | CC BY-SA 4.0 |
-| Fès-Meknès | `regions/fes-meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg> | vérifiée | CC BY-SA 4.0 |
+| Fès-Meknès | `regions/fes-meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:The_Triumphal_Arch_of_Caracalla,_Volubilis.jpg> | vérifiée | CC0 1.0 |
 | Rabat-Salé-Kénitra | `regions/rabat-sale-kenitra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Main_Gate_Chellah_Rabat_Nov25_A7CR_08921.jpg> | vérifiée | CC BY-SA 4.0 |
 | Béni Mellal-Khénifra | `regions/beni-mellal-khenifra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Casablanca-Settat | `regions/casablanca-settat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> | vérifiée | CC BY-SA 4.0 |
