@@ -280,7 +280,7 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Kasbah de Taourirt | `spots/ouarzazate-taourirt.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_26bDSC_0353_(39988264510).jpg> | vérifiée | CC BY-SA 2.0 |
-| Aït Ben Haddou | `spots/ouarzazate-ait-benhaddou.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:A%C3%AFt_Benhaddou_100.jpg> | vérifiée | CC BY-SA 4.0 |
+| Aït Ben Haddou | `spots/ouarzazate-ait-benhaddou.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ait_Ben_Haddou,_2025_(04).jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée du cinéma | `spots/ouarzazate-cinema-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Pathe_Projector_Ouarzazate.jpg> | vérifiée | CC BY-SA 3.0 |
 | Atlas Studios | `spots/ouarzazate-atlas-studios.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Atlas_Corporation_Studios-Ouarzazate.jpg> | vérifiée | CC BY-SA 4.0 |
 | Oasis de Fint | `spots/ouarzazate-fint-oasis.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oasis_de_Fint,_Uarzazat_02.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -523,4 +523,3 @@
 | Place El Mechouar | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage d’Aglou | `spots/tiznit-aglou-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plage_Aglou_-_Province_de_Tiznit.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc national de Souss-Massa | `spots/tiznit-souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Viewpoint_Massa_Delta_Souss-Massa_Park_Oct25_A7CR_08026.jpg> | vérifiée | CC BY-SA 4.0 |
-

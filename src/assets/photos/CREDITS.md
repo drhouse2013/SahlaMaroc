@@ -135,7 +135,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/meknes-bou-inania.jpg | Ariel Gera | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_-_courtyard_through_arch.jpg |
 | spots/meknes-heri-souani.jpg | Grace Tankard | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Meknes_6_(39069702785).jpg |
 | spots/ouarzazate-taourirt.jpg | János Korom Dr. | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Kasbah_Taourirt_26bDSC_0353_(39988264510).jpg |
-| spots/ouarzazate-ait-benhaddou.jpg | Peter in s | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:A%C3%AFt_Benhaddou_100.jpg |
+| spots/ouarzazate-ait-benhaddou.jpg | Draceane (recadrage) | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ait_Ben_Haddou,_2025_(04).jpg |
 | spots/ouarzazate-atlas-studios.jpg | Yair Haklai | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Atlas_Corporation_Studios-Ouarzazate.jpg |
 | spots/ouarzazate-fint-oasis.jpg | Fraguando | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Oasis_de_Fint,_Uarzazat_02.jpg |
 | spots/oujda-medina.jpg | Farajiibrahim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:FARAJI_Brahim_-_LA_GRANDE_MOSQUEE_DU_MEDINA_OUJDA_-_Septembre2015.jpg |
