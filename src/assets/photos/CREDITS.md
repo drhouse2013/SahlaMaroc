@@ -153,6 +153,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 |---|---|---|---|
 | spots/tafraout-ammeln-valley.jpg | Ayman Abdelilah | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Valley_of_Ammeln.jpg |
 | spots/merzouga-dayet-srji.jpg | Ron Knight from Seaford, East Sussex, United Kingdom | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Lake_(12383277085).jpg |
+| spots/casablanca-sacre-coeur.jpg | Philip Mallis (14 mai 2025) | CC BY-SA 4.0 | https://www.flickr.com/photos/philipmallis/54875763260/ |
 
 ## Photos des lieux (groupe 4)
 

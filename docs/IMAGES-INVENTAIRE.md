@@ -108,7 +108,7 @@
 | Ancienne médina | `spots/casablanca-old-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_of_Casablanca_5.jpg> | vérifiée | CC BY-SA 4.0 |
 | Quartier des Habous | `spots/casablanca-habous.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_mohamedia_Mosque_in_Habous_district_Casablanca_the_mosque_was_built_by_Mohamed_the_fifth_king_of_morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Mahkama du Pacha | `spots/casablanca-mahkama-pacha.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mahkama_du_Pacha_ou_Palais_du_M%C3%A9chouar.jpg> | vérifiée | CC BY-SA 3.0 |
-| Ancienne cathédrale du Sacré-Cœur | `spots/casablanca-sacre-coeur.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%C3%89glise_du_Sacr%C3%A9-Coeur,_Casablanca_(5507016000).jpg> | vérifiée | CC BY-SA 2.0 |
+| Ancienne cathédrale du Sacré-Cœur | `spots/casablanca-sacre-coeur.jpg` | Flickr | <https://www.flickr.com/photos/philipmallis/54875763260/> | vérifiée | CC BY-SA 4.0, photo du 14 mai 2025 |
 | Marché central | `spots/casablanca-marche-central.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%CE%9A%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%BA%CE%AE_%CE%91%CE%B3%CE%BF%CF%81%CE%AC_%CE%9A%CE%B1%CE%B6%CE%B1%CE%BC%CF%80%CE%BB%CE%AC%CE%BD%CE%BA%CE%B1_1821.jpg> | vérifiée | CC BY-SA 4.0 |
 | Place Mohammed V | `spots/casablanca-mohammed-v-square.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Place_Mohammed_V_-_Casablanca_-_2022.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée Abderrahman Slaoui | `spots/casablanca-slaoui-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_gen%C3%A8se_2.jpg> | vérifiée | CC BY-SA 3.0 |
