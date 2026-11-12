@@ -15,7 +15,7 @@ const focalGravity = photo.focalPoint && (() => {
 })();
 ---
 {photo.image ? (
-  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} height={height} fit={height ? photo.fit ?? 'cover' : undefined} position={height ? focalGravity : undefined} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} style={!height && photo.focalPoint ? { objectPosition: `${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` } : undefined} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} height={height} fit={height ? photo.fit ?? 'cover' : undefined} position={height ? focalGravity : undefined} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} style={photo.fit === 'contain' || (!height && photo.focalPoint) ? { objectFit: photo.fit === 'contain' ? 'contain' : undefined, objectPosition: !height && photo.focalPoint ? `${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` : undefined } : undefined} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
 ) : (
   <PhotoPlaceholder kind={kind} lang={lang} name={name} />
 )}
