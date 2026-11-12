@@ -81,7 +81,7 @@
 | Place Jemaa el-Fna | `spots/marrakech-jemaa-el-fna.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg> | vérifiée | CC BY 4.0 |
 | Mosquée de la Koutoubia | `spots/marrakech-koutoubia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kutubiyya_Mosque,_Marrakesh,_Morocco,_20250124_1834_7027.jpg> | vérifiée | CC BY 4.0 |
 | Jardin Majorelle | `spots/marrakech-majorelle.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG> | vérifiée | CC BY-SA 4.0 |
-| Médersa Ben Youssef | `spots/marrakech-ben-youssef.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg> | vérifiée | CC BY-SA 4.0 |
+| Médersa Ben Youssef | `spots/marrakech-ben-youssef.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ben_Youssef_Madrasa_courtyard_architecture.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tombeaux saadiens | `spots/marrakech-saadian-tombs.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg> | vérifiée | CC BY-SA 4.0 |
 | Palais El Badi | `spots/marrakech-el-badi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg> | vérifiée | CC BY 4.0 |
 | Souks de la médina | `spots/marrakech-souks.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg> | vérifiée | CC BY 4.0 |
@@ -171,13 +171,13 @@
 |---|---|---|---|---|---|
 | Médina de Fès el-Bali | `spots/fes-fes-el-bali.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tanneries Chouara | `spots/fes-chouara-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tanning_hides_in_Fes,_Morocco.jpg> | vérifiée | CC0 |
-| Médersa Bou Inania | `spots/fes-bou-inania.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg> | vérifiée | CC BY-SA 4.0 |
+| Médersa Bou Inania | `spots/fes-bou-inania.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fez_Bou_Inania_Madrasa_(54252643280).jpg> | vérifiée | CC BY 2.0 |
 | Médersa Al Attarine | `spots/fes-al-attarine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fez_Al-Attarine_Madrasa_%2854250005206%29.jpg> | vérifiée | CC BY 2.0 |
 | Borj Nord | `spots/fes-borj-nord.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg> | vérifiée | Public domain |
 | Mosquée des Andalous | `spots/fes-andalusian-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Andalous_mosque_portal.jpg> | vérifiée | CC BY-SA 4.0 |
 | Borj Sud | `spots/fes-borj-sud.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Borj_sud1.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tombeaux mérinides | `spots/fes-merenid-tombs.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marinid_Tombs_in_April_2016_1.jpg> | vérifiée | CC0 |
-| Mosquée et bibliothèque Al Quaraouiyine | `spots/fes-quaraouiyine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3_(83359).jpg> | vérifiée | CC BY-SA 4.0 |
+| Mosquée et bibliothèque Al Quaraouiyine | `spots/fes-quaraouiyine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Architecture_islamique_dans_la_cour_de_la_mosquée_Al-Qarawiyyin,_Fès.jpg> | vérifiée | CC BY 4.0 |
 | Mausolée de Moulay Idriss II | `spots/fes-moulay-idriss-shrine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mausol%C3%A9e_Moulay_Idriss_II_F%C3%A8s.jpg> | vérifiée | CC BY-SA 4.0 |
 | Mosquée et mausolée de Sidi Ahmed al-Tijani | `spots/fes-tijani.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Zawiya_al-Tijani_DSCF4204.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée Nejjarine | `spots/fes-nejjarine.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Fondouk_el-Nejjarine_(Old_name-_Fes_(5364129707)).jpg> | vérifiée | CC BY-SA 2.0 |

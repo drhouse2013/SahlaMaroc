@@ -87,7 +87,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/marrakech-jemaa-el-fna.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg |
 | spots/marrakech-koutoubia.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Kutubiyya_Mosque,_Marrakesh,_Morocco,_20250124_1834_7027.jpg |
 | spots/marrakech-majorelle.jpg | Viault, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_16.JPG |
-| spots/marrakech-ben-youssef.jpg | Marco Almbauer, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg |
+| spots/marrakech-ben-youssef.jpg | SafiaMens (recadrage) | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Ben_Youssef_Madrasa_courtyard_architecture.jpg |
 | spots/marrakech-saadian-tombs.jpg | C messier, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg |
 | spots/marrakech-el-badi.jpg | Jakub Hałun, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg |
 | spots/casablanca-hassan-ii.jpg | Tinuzzo, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_-_general_framing,_Casablanca,_Morocco.jpg |
@@ -103,7 +103,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tangier-hercules-caves.jpg | Diego Delso, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cuevas_de_H%C3%A9rcules,_Cabo_Espartel,_Marruecos,_2015-12-11,_DD_10-12_HDR.JPG |
 | spots/fes-fes-el-bali.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Der_%C3%A4lteste_ummauerte_Teil_von_Fes%22._07.jpg |
 | spots/fes-chouara.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Eine_Touristenattraktion_trotz_des_starken_Geruchs%22._01.jpg |
-| spots/fes-bou-inania.jpg | Petar Milošević, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg |
+| spots/fes-bou-inania.jpg | Jorge Franganillo (recadrage) | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Fez_Bou_Inania_Madrasa_(54252643280).jpg |
 | spots/fes-al-attarine.jpg | Jorge Franganillo, CC BY 2.0 (redimensionnée) | https://commons.wikimedia.org/wiki/File:Fez_Al-Attarine_Madrasa_%2854250005206%29.jpg |
 | spots/fes-borj-nord.jpg | R Prazeres, Public domain | https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg |
 | spots/essaouira-medina.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg |
@@ -234,7 +234,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/fes-andalusian-mosque.jpg | Robert Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Andalous_mosque_portal.jpg |
 | spots/fes-borj-sud.jpg | Robert Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Borj_sud1.jpg |
 | spots/fes-merenid-tombs.jpg | Mx. Granger | CC0 | https://commons.wikimedia.org/wiki/File:Marinid_Tombs_in_April_2016_1.jpg |
-| spots/fes-quaraouiyine.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3_(83359).jpg |
+| spots/fes-quaraouiyine.jpg | RACHID BAYA (recadrage) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Architecture_islamique_dans_la_cour_de_la_mosquée_Al-Qarawiyyin,_Fès.jpg |
 | spots/fes-nejjarine.jpg | Michal Osmenda from Brussels, Belgium | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Fondouk_el-Nejjarine_(Old_name-_Fes_(5364129707)).jpg |
 | spots/fes-dar-batha.jpg | R Prazeres | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_Batha_DSCF2801.jpg |
 | spots/fes-jnan-sbil.jpg | just_a_cheeseburger | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Jnan_Sbil_(Bou_Jeloud_Gardens),_Fes_(8952352159).jpg |

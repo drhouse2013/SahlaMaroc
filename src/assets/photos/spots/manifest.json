@@ -46,14 +46,14 @@
     ],
     "file": "marrakech-ben-youssef.jpg",
     "alt": {
-      "fr": "Cour intérieure et façade en bois sculpté de la médersa Ben Youssef à Marrakech",
-      "en": "Courtyard and carved cedar façade of the Ben Youssef Madrasa in Marrakech",
-      "es": "Patio y fachada de madera tallada de la madrasa Ben Youssef en Marrakech",
-      "de": "Innenhof und geschnitzte Holzfassade der Ben-Youssef-Medersa in Marrakesch",
-      "ar": "الفناء والواجهة الخشبية المنحوتة لمدرسة ابن يوسف بمراكش"
+      "fr": "Décors de stuc et de bois sculpté dans la cour de la médersa Ben Youssef à Marrakech",
+      "en": "Carved stucco and woodwork in the courtyard of Ben Youssef Madrasa in Marrakech",
+      "es": "Decoración de estuco y madera tallada en el patio de la madrasa Ben Youssef de Marrakech",
+      "de": "Geschnitzte Stuck- und Holzdekoration im Hof der Ben-Youssef-Medersa in Marrakesch",
+      "ar": "زخارف من الجبس والخشب المنحوت في صحن مدرسة ابن يوسف بمراكش"
     },
-    "credit": "Marco Almbauer, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg"
+    "credit": "SafiaMens, CC BY-SA 4.0 · recadrage",
+    "source": "https://commons.wikimedia.org/wiki/File:Ben_Youssef_Madrasa_courtyard_architecture.jpg"
   },
   "marrakech/saadian-tombs": {
     "file": "marrakech-saadian-tombs.jpg",
@@ -246,14 +246,18 @@
   "fes/bou-inania": {
     "file": "fes-bou-inania.jpg",
     "alt": {
-      "fr": "Minaret vu à travers une arche en stuc sculpté de la médersa Bou Inania, Fès",
-      "en": "Minaret seen through a carved stucco arch of the Bou Inania Madrasa, Fes",
-      "es": "Minarete visto a través de un arco de estuco tallado de la madrasa Bou Inania, Fez",
-      "de": "Minarett durch einen Stuckbogen der Bou-Inania-Medersa, Fès",
-      "ar": "مئذنة تظهر عبر قوس من الجبس المنحوت في مدرسة بوعنانية بفاس"
+      "fr": "Minaret et façades sculptées de la médersa Bou Inania à Fès",
+      "en": "Minaret and carved façades of Bou Inania Madrasa in Fes",
+      "es": "Alminar y fachadas talladas de la madrasa Bou Inania de Fez",
+      "de": "Minarett und verzierte Fassaden der Bou-Inania-Medersa in Fès",
+      "ar": "مئذنة وواجهات مزخرفة لمدرسة بوعنانية بفاس"
     },
-    "credit": "Petar Milošević, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fez,_Marocco_(%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D8%A8%D9%88%D8%B9%D9%86%D8%A7%D9%86%D9%8A%D8%A9,_%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F_%E2%B4%B1%E2%B5%93_%E2%B5%89%E2%B5%8F%E2%B4%B0%E2%B5%8F%E2%B5%89%E2%B5%A2%E2%B4%B0).jpg"
+    "credit": "Jorge Franganillo, CC BY 2.0 · recadrage",
+    "source": "https://commons.wikimedia.org/wiki/File:Fez_Bou_Inania_Madrasa_(54252643280).jpg",
+    "focalPoint": [
+      50,
+      0
+    ]
   },
   "fes/al-attarine": {
     "file": "fes-al-attarine.jpg",
@@ -1330,14 +1334,14 @@
   "fes/quaraouiyine": {
     "file": "fes-quaraouiyine.jpg",
     "alt": {
-      "fr": "Cour carrelée et minaret de la mosquée Al Quaraouiyine à Fès",
-      "en": "Tiled courtyard and minaret of the Al Quaraouiyine Mosque in Fes",
-      "es": "Patio de azulejos y alminar de la mezquita Al Qarawiyyin en Fez",
-      "de": "Gefliester Hof und Minarett der Al-Qarawiyyin-Moschee in Fès",
-      "ar": "صحن مبلط ومئذنة جامع القرويين في فاس"
+      "fr": "Pavillon à toit vert et arcades de la cour de la mosquée Al Quaraouiyine à Fès",
+      "en": "Green-roofed pavilion and arcades in the courtyard of Al Quaraouiyine Mosque in Fes",
+      "es": "Pabellón de tejado verde y arcadas del patio de la mezquita Al Qarawiyyin de Fez",
+      "de": "Pavillon mit grünem Dach und Arkaden im Hof der Al-Qarawiyyin-Moschee in Fès",
+      "ar": "جناح بسقف أخضر وأروقة في صحن جامع القرويين بفاس"
     },
-    "credit": "Ideophagous, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86_%D8%A8%D9%81%D8%A7%D8%B3_(83359).jpg"
+    "credit": "RACHID BAYA, CC BY 4.0 · recadrage",
+    "source": "https://commons.wikimedia.org/wiki/File:Architecture_islamique_dans_la_cour_de_la_mosquée_Al-Qarawiyyin,_Fès.jpg"
   },
   "fes/nejjarine": {
     "file": "fes-nejjarine.jpg",
