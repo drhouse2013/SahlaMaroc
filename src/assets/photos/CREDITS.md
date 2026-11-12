@@ -227,7 +227,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/tangier-sidi-bou-abib.jpg | Diego Delso | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Plaza_del_9_de_abril_de_1947,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_28.JPG |
 | spots/tangier-st-andrews.jpg | KJP1 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Church_of_St_Andrew,_Tangier.jpg |
 | spots/tangier-cap-malabata.jpg | California Will | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Cape_Malabata_Lighthouse.jpg |
-| spots/tangier-cervantes-theatre.jpg | Diego Delso | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Gran_Teatro_Cervantes,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_50.JPG |
+| spots/tangier-cervantes-theatre.jpg | Bisel91 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:مسرح_ثيربانتس_الكبير.jpg |
 | spots/tangier-great-mosque.jpg | Hiroki Ogawa | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:La_Gran_Mezquita_Tanger.Morocco_-_panoramio.jpg |
 | spots/tangier-mendoubia.jpg | Boubloub | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Mendoubia.jpg |
 | spots/tangier-plaza-de-toros.jpg | عبد الكريم للوشت | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:PlazaTorosTanger.jpg |
@@ -469,3 +469,5 @@ cities/nador-corniche-2026.jpg : SALHI Kaouthar, CC BY-SA 4.0 ; source du 23 sep
 ## Recadrage monument Tombouctou de Zagora — 12 novembre 2026
 
 spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mars 2026. Source : https://commons.wikimedia.org/wiki/File:Zagora_City.jpg . Original redressé selon son orientation EXIF, 4000 × 6000 px ; extrait x0 y2500, 4000 × 3000 px ; export 1800 × 1350 px JPEG mozjpeg qualité 88 sans EXIF. Point focal haut pour conserver les deux tours et le panneau aux formats 4:3 et 16:9. Dérivé sous CC BY-SA 4.0. SHA-256 : 8DB08E6877294B21D0965BACA5DC71B04B5F915731DAE172F25207FBBF848270.
+
+- spots/taroudant-tiout-palm-grove.jpg : Adville, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg ; prise du 13 mars 2025, export 1800×1350 sans EXIF.

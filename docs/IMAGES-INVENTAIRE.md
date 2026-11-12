@@ -163,7 +163,7 @@
 | Plaza de Toros | `spots/tangier-plaza-de-toros.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:PlazaTorosTanger.jpg> | vérifiée | CC BY-SA 4.0 |
 | Cap Malabata | `spots/tangier-cap-malabata.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cape_Malabata_Lighthouse.jpg> | vérifiée | CC BY 2.0 |
 | Palais Marshan | `spots/tangier-marshan-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg> | vérifiée | CC BY-SA 4.0 |
-| Gran Teatro Cervantes | `spots/tangier-cervantes-theatre.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Gran_Teatro_Cervantes,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_50.JPG> | vérifiée | CC BY-SA 4.0 |
+| Gran Teatro Cervantes | `spots/tangier-cervantes-theatre.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:مسرح_ثيربانتس_الكبير.jpg> | vérifiée | CC BY-SA 4.0 |
 
 ### Fès (16/16 vérifiées)
 
@@ -451,7 +451,7 @@
 | Souk berbère (Jnane Jamaa) | — (« Photo à venir ») | — | — | placeholder | — |
 | Tannerie de Taroudant | `spots/taroudant-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudannt_Gerberei.JPG> | vérifiée | CC BY-SA 3.0 |
 | Cigognes de la porte est | — (« Photo à venir ») | — | — | placeholder | — |
-| Palmeraie de Tiout | `spots/taroudant-tiout-palm-grove.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oasis_Tiout,_Taroudant_province,_Morocco_-_%D9%85%D9%86%D8%B8%D8%B1%D9%86_%D9%81%D9%8A_%D9%85%D9%86%D8%B7%D9%82%D8%A9_%D8%AA%D9%8A%D9%88%D8%AA_%D9%86%D9%88%D8%A7%D8%AD%D9%8A_%D8%AA%D8%A7%D8%B1%D9%88%D8%AF%D8%A7%D9%86%D8%AA.jpg> | vérifiée | CC BY-SA 4.0 |
+| Palmeraie de Tiout | `spots/taroudant-tiout-palm-grove.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 
 ### Larache (6/9 vérifiées)
 

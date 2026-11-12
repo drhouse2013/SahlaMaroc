@@ -1248,8 +1248,12 @@
       "de": "Gekachelte Fassade des Gran Teatro Cervantes in Tanger",
       "ar": "واجهة مزينة بالزليج لمسرح ثيربانتس الكبير في طنجة"
     },
-    "credit": "Diego Delso, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Gran_Teatro_Cervantes,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_50.JPG"
+    "credit": "Bisel91, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:مسرح_ثيربانتس_الكبير.jpg",
+    "focalPoint": [
+      50,
+      100
+    ]
   },
   "tangier/great-mosque": {
     "file": "tangier-great-mosque.jpg",
@@ -2598,8 +2602,8 @@
       "de": "Palmenhain von Tiout von einem Aussichtspunkt aus, mit Dorf und Palmen bis zum Horizont",
       "ar": "واحة تيوت من نقطة مشاهدة، تظهر القرية والنخيل حتى الأفق"
     },
-    "credit": "طالب الجنان, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Oasis_Tiout,_Taroudant_province,_Morocco_-_%D9%85%D9%86%D8%B8%D8%B1%D9%86_%D9%81%D9%8A_%D9%85%D9%86%D8%B7%D9%82%D8%A9_%D8%AA%D9%8A%D9%88%D8%AA_%D9%86%D9%88%D8%A7%D8%AD%D9%8A_%D8%AA%D8%A7%D8%B1%D9%88%D8%AF%D8%A7%D9%86%D8%AA.jpg"
+    "credit": "Adville, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg"
   },
   "larache/port": {
     "file": "larache-port.jpg",
