@@ -458,3 +458,7 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 
 regions/fes-meknes.jpg : Mustang Joe / Joe deSousa, CC0 1.0 ; prise le 13 avril 2026. Source : https://commons.wikimedia.org/wiki/File:The_Triumphal_Arch_of_Caracalla,_Volubilis.jpg . Original 5746 × 4016 px ; dérivé 1800 px de large, JPEG mozjpeg qualité 88, métadonnées retirées. SHA-256 : 96057325E771DC77EFE83579BF7AC3D76976D75B42573E36371565BC2A4F9108. Arc complet confirmé sur la miniature 4:3.
 
+## Recadrage plage Agadir — source du 13 janvier 2025
+
+spots/agadir-beach.jpg : Fmc2026, CC BY 4.0. Source : https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg . Original 3024 × 3165 px ; extrait x0 y700, 3024 × 2268 px, export 1800 × 1350 en JPEG mozjpeg qualité 88, EXIF retirées. Cadrage plus bas pour conserver la plage, la baie et le toit de la tour. SHA-256 : 9F409A9665AACEAF13CDA9221C86B4CEB219D9DE89268DB70DF361E2C2D6E1D9.
+
