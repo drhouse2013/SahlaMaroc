@@ -436,3 +436,7 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 ## Oasis de Goulmima / Kelmima — août 2026
 
 - `spots/errachidia-kelmima-oasis.jpg` : Greenvertone1, CC BY-SA 4.0 ; prise déclarée le 8 août 2026 ; original 3 072 × 4 096 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hart_of_Oasis.jpg). La source identifie le ksar Hart dans l’oasis de Goulmima. Dérivé recadré verticalement à 3 072 × 2 304 px, puis optimisé en JPEG 1 600 × 1 200 px ; la scène garde le ksar, les palmiers et les cultures dans le cadre 4:3. Vérification visuelle effectuée. Crédit visible : Greenvertone1, CC BY-SA 4.0, image recadrée et optimisée. Métadonnées EXIF retirées du dérivé. SHA-256 : `C30049F91BFA223F1945BD65826F936976E560CD4DB271E0666EE97F62EC464D`.
+
+## Recadrage de la plage de Dakhla — 12 novembre 2026
+
+- spots/dakhla-beach.jpg : Tbo47, CC0 1.0 ; prise déclarée le 24 novembre 2024 ; original 3 752 × 1 664 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Plage_pr%C3%A8s_de_Dakhla_2.jpg). Le panorama a été recadré aux coordonnées de pixels 0,250,1 550 × 1 162 pour produire une miniature 4:3 de 1 600 × 1 200 px. Ce cadrage conserve la plage, les vagues et le phare au loin tout en sortant l’ombre du photographe du cadre. Le dérivé JPEG est optimisé sans métadonnées EXIF ; SHA-256 : 352432B8B17FA2CE0B59906C1C1449BA67592C5F9790D2B46722861C05E71F8A.
