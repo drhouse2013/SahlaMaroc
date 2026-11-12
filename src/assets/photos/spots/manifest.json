@@ -846,14 +846,14 @@
  "marrakech/souks": {
   "file": "marrakech-souks.jpg",
   "alt": {
-   "fr": "Étals colorés d'un souk de la médina de Marrakech",
-   "en": "Colourful stalls in a Marrakech medina souk",
-   "es": "Puestos de colores en un zoco de la medina de Marrakech",
-   "de": "Bunte Stände in einem Souk der Medina von Marrakesch",
-   "ar": "أكشاك ملونة في سوق بالمدينة العتيقة بمراكش"
+   "fr": "Passage pavé d'un souk de Marrakech bordé de lanternes artisanales",
+   "en": "Paved Marrakech souk alley lined with handcrafted lanterns",
+   "es": "Pasaje empedrado de un zoco de Marrakech con faroles artesanales",
+   "de": "Gepflasterte Gasse in einem Souk von Marrakesch mit kunstvollen Laternen",
+   "ar": "ممر مرصوف في سوق مراكش تحف به فوانيس تقليدية"
   },
-  "credit": "David Broad, CC BY 3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg"
+  "credit": "Tbo47, CC BY 4.0 (image recadrée et optimisée)",
+  "source": "https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg"
  },
  "marrakech/tanneries": {
   "file": "marrakech-tanneries.jpg",

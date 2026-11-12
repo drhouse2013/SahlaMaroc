@@ -84,7 +84,7 @@
 | Médersa Ben Youssef | `spots/marrakech-ben-youssef.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medersa_Ben_Youssef_Madrasa_Marrakesh_4.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tombeaux saadiens | `spots/marrakech-saadian-tombs.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B1%CF%85%CF%83%CF%89%CE%BB%CE%B5%CE%AF%CE%BF_%CF%84%CF%89%CE%BD_%CE%A3%CE%B1%CE%B1%CE%BD%CF%84%CE%AF_1069.jpg> | vérifiée | CC BY-SA 4.0 |
 | Palais El Badi | `spots/marrakech-el-badi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Badi_Palace,_Marrakesh,_Morocco,_20250125_0957_7120.jpg> | vérifiée | CC BY 4.0 |
-| Souks de la médina | `spots/marrakech-souks.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg> | vérifiée | CC BY 3.0 |
+| Souks de la médina | `spots/marrakech-souks.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg> | vérifiée | CC BY 4.0 |
 | Tanneries | `spots/marrakech-tanneries.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marrakech_tanneries_(2846868933).jpg> | vérifiée | CC BY-SA 2.0 |
 | Musée des arts culinaires | `spots/marrakech-culinary-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Moroccan_Culinary_Arts_Museum.jpg> | vérifiée | CC BY 4.0 |
 | Musée Yves Saint Laurent | `spots/marrakech-ysl-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Architetti_studio_ko,_museo_YSL_a_Marrakech.jpg> | vérifiée | CC BY 4.0 |

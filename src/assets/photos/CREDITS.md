@@ -158,7 +158,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
-| spots/marrakech-souks.jpg | David Broad | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Medina_souk,_Marrakech,_Morocco_-_panoramio_(3).jpg |
+| spots/marrakech-souks.jpg | Tbo47 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg |
 | spots/marrakech-tanneries.jpg | mwanasimba | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Marrakech_tanneries_(2846868933).jpg |
 | spots/marrakech-ysl-museum.jpg | Pivari | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Architetti_studio_ko,_museo_YSL_a_Marrakech.jpg |
 | spots/marrakech-dar-si-said.jpg | C messier | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dar_Si_Said_1489.jpg |
@@ -444,3 +444,7 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 ## Mise à jour de la plage Quemado — 1 juillet 2024
 
 - `spots/al-hoceima-quemado.jpg` : Abdelhafid95, CC0 1.0 ; photo datée du 1 juillet 2024 ; original 1 179 × 1 419 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Playa_quemado_Alhoceima_2024.jpg). Recadrage central à 1 179 × 884 px (x=0, y=268) pour la carte 4:3 ; JPEG optimisé en mozjpeg qualité 91, métadonnées EXIF supprimées. SHA-256 : `BDF196B79B9161FCC00BE1450641EA124F911C37EA035D567E52B6A1C20B6F1D`.
+
+## Renouvellement des souks de Marrakech — 30 décembre 2025
+
+- `spots/marrakech-souks.jpg` : Tbo47, CC BY 4.0 ; photo datée du 30 décembre 2025 ; original 3 000 × 4 000 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Souk_%C3%A0_Marrakech,_Maroc.jpg). Recadrage à 1 600 × 1 200 px (x=0, y=1 100 sur l’original) pour conserver les lanternes et la perspective du passage ; JPEG optimisé en mozjpeg qualité 85, métadonnées EXIF supprimées. SHA-256 : `858AFF2143A9EDE1A33DA2ACC4F255946705CBFE44F2E458E1D282E0F4774CBF`.
