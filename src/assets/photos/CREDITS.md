@@ -432,3 +432,7 @@ Les originaux sont conservés tels que publiés ; Astro produit les variantes AV
 ## Renouvellement de la plage de Taghazout — 10 novembre 2026
 
 - `spots/taghazout-taghazout-beach.jpg` : 瑞丽江的河水, CC BY-SA 4.0. Prise déclarée le 2 février 2026, 5 712 × 4 284. Source : https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg. Dérivé 1 600 × 1 200, recadrage et optimisation JPEG documentés ; l’attribution et la licence figurent dans le crédit discret de la page.
+
+## Oasis de Goulmima / Kelmima — août 2026
+
+- `spots/errachidia-kelmima-oasis.jpg` : Greenvertone1, CC BY-SA 4.0 ; prise déclarée le 8 août 2026 ; original 3 072 × 4 096 px. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hart_of_Oasis.jpg). La source identifie le ksar Hart dans l’oasis de Goulmima. Dérivé recadré verticalement à 3 072 × 2 304 px, puis optimisé en JPEG 1 600 × 1 200 px ; la scène garde le ksar, les palmiers et les cultures dans le cadre 4:3. Vérification visuelle effectuée. Crédit visible : Greenvertone1, CC BY-SA 4.0, image recadrée et optimisée. Métadonnées EXIF retirées du dérivé. SHA-256 : `C30049F91BFA223F1945BD65826F936976E560CD4DB271E0666EE97F62EC464D`.

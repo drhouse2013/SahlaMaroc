@@ -1,15 +1,15 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-08. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-12. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 268 photos vérifiées, 71 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 lieux, 269 photos vérifiées, 70 placeholders (« Photo à venir »), 0 à confirmer.**
 
 | Type | Lieux | Vérifiées | Placeholders | À confirmer |
 |---|---|---|---|---|
 | Hero accueil | 1 | 1 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 224 | 71 | 0 |
+| Lieux à visiter | 295 | 225 | 70 | 0 |
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -64,7 +64,7 @@
 | Fès-Meknès | `regions/fes-meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg> | vérifiée | CC BY-SA 4.0 |
 | Rabat-Salé-Kénitra | `regions/rabat-sale-kenitra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Main_Gate_Chellah_Rabat_Nov25_A7CR_08921.jpg> | vérifiée | CC BY-SA 4.0 |
 | Béni Mellal-Khénifra | `regions/beni-mellal-khenifra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
-| Casablanca-Settat | `regions/casablanca-settat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_and_Its_Minaret_in_Casablanca,_Morocco_2.jpg> | vérifiée | CC BY-SA 4.0 |
+| Casablanca-Settat | `regions/casablanca-settat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> | vérifiée | CC BY-SA 4.0 |
 | Marrakech-Safi | `regions/marrakech-safi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Jemaa_el-Fna_square_is_a_major_place_of_cultural_exchanges.jpg> | vérifiée | CC BY-SA 4.0 |
 | Drâa-Tafilalet | `regions/draa-tafilalet.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg> | vérifiée | CC BY-SA 4.0 |
 | Souss-Massa | `regions/souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_Agadir_Oufella.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -224,7 +224,7 @@
 | Hash Point | — (« Photo à venir ») | — | — | placeholder | — |
 | Plage Panorama | `spots/taghazout-panorama.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_beach_at_Taghazout.jpg> | vérifiée | CC BY 2.0 |
 | Paradise Valley | `spots/taghazout-paradise-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_Paradise_Valley.jpg> | vérifiée | CC BY-SA 4.0 |
-| Plage de Taghazout | `spots/taghazout-taghazout-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_plage_%22_TAGHAZOUT%22.jpg> | vérifiée | CC BY-SA 4.0 |
+| Plage de Taghazout | `spots/taghazout-taghazout-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taghazout_coast_-_2026-02-02_05.jpg> | vérifiée | CC BY-SA 4.0 |
 | Imouran (rocher des Diables) | — (« Photo à venir ») | — | — | placeholder | — |
 
 ### Nador (8/9 vérifiées)
@@ -254,7 +254,7 @@
 | Kasbah du mont Dersa | `spots/tetouan-dersa-kasbah-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée du patrimoine religieux | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée Dar El Oddi | — (« Photo à venir ») | — | — | placeholder | — |
-| Tannerie de Tétouan | `spots/tetouan-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%AF%D8%A7%D8%B1_%D8%A7%D9%84%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
+| Tannerie de Tétouan | `spots/tetouan-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg> | vérifiée | CC BY-SA 4.0 |
 | Avenue Mohammed V | — (« Photo à venir ») | — | — | placeholder | — |
 | Quartier de l’Ensanche | — (« Photo à venir ») | — | — | placeholder | — |
 
@@ -301,7 +301,7 @@
 | Grande mosquée d’Oujda | `spots/oujda-grand-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda.jamaa_lkbir.JPG> | vérifiée | CC BY-SA 3.0 |
 | Médersa mérinide | — (« Photo à venir ») | — | — | placeholder | — |
 | Casbah d’Oujda | — (« Photo à venir ») | — | — | placeholder | — |
-| Bab El Gharbi | `spots/oujda-bab-el-gharbi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda_Bab_al_Gharbi,vue_2_,Ghizlane_BOUMACHMACHA.jpg> | vérifiée | CC BY-SA 4.0 |
+| Bab El Gharbi | `spots/oujda-bab-el-gharbi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:باب_الغرب_-_مدينة_وجدة_المغرب-)_bab_elgharbie_oujda_morocco.jpg> | vérifiée | CC0 1.0 |
 | Oasis de Sidi Yahya | `spots/oujda-sidi-yahya.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Oujda.sidi_yahya.jpg> | vérifiée | CC BY-SA 3.0 |
 
 ### Al Hoceïma (5/9 vérifiées)
@@ -421,7 +421,7 @@
 | Site de Thamusida | `spots/kenitra-thamusida.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Thamusida,_Mauretania_Tingitana,_Morocco_(25394792208).jpg> | vérifiée | CC BY-SA 2.0 |
 | Kasbah de Kénitra | — (« Photo à venir ») | — | — | placeholder | — |
 
-### Errachidia (1/5 vérifiées)
+### Errachidia (2/5 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -429,7 +429,7 @@
 | Barrage Hassan Addakhil | — (« Photo à venir ») | — | — | placeholder | — |
 | Vallée du Ziz | `spots/errachidia-ziz-valley.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ziz_Valley_in_the_desert_of_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Oasis de Walad Chaker | — (« Photo à venir ») | — | — | placeholder | — |
-| Oasis de Kelmima | — (« Photo à venir ») | — | — | placeholder | — |
+| Oasis de Kelmima | `spots/errachidia-kelmima-oasis.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hart_of_Oasis.jpg> | vérifiée | CC BY-SA 4.0 |
 
 ### Guelmim (1/6 vérifiées)
 
