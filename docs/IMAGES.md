@@ -37,6 +37,8 @@ Une entrée de manifeste peut préciser `"focalPoint": [50, 0]` : coordonnées h
 
 ## Formats et poids
 
+Pour une photo verticale dont le sujet doit rester entier, ajouter `"fit": "contain"` au manifeste. `PlaceImage` conserve alors la photo complète dans les variantes à dimensions imposées, avec des marges transparentes sur le fond de la carte. Les cartes concernées ne zooment pas l’image au survol afin de ne pas couper à nouveau ses bords. Réserver ce réglage aux sujets qui le nécessitent ; vérifier le rendu sur bureau et mobile.
+
 Sortie avif + webp (repli `<img>` webp). L'avif est lent à encoder (environ 1 s par variante), mais le cache d'Astro (`node_modules/.astro`) évite de le refaire. Hero : `widths` 640/1024/1600 ; cartes : 480/720.
 
 ## Candidats via API : `tools/fetch-place-photos.mjs`

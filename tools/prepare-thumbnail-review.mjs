@@ -17,7 +17,7 @@ for(let offset=0;offset<entries.length;offset+=12){
  for(let i=0;i<batch.length;i++){
   const [id,v]=batch[i]; const [x,y]=v.focalPoint??[50,50];
   const gravity=((y<33?'north':y>67?'south':'')+(x<33?'west':x>67?'east':''))||'centre';
-  const tile=await sharp(path.join(`src/assets/photos/${group}`,v.file)).rotate().resize(320,240,{fit:'cover',position:gravity}).toBuffer();
+  const tile=await sharp(path.join(`src/assets/photos/${group}`,v.file)).rotate().resize(320,240,{fit:v.fit??'cover',position:gravity,background:'#172322'}).toBuffer();
   const left=(i%3)*340+10,top=Math.floor(i/3)*280+10;
   layers.push({input:tile,left,top});
   const safe=id.replaceAll('&','&amp;').replaceAll('<','&lt;');

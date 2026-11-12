@@ -1604,6 +1604,7 @@
     "source": "https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg"
   },
   "ouarzazate/cinema-museum": {
+    "fit": "contain",
     "file": "ouarzazate-cinema-museum.jpg",
     "alt": {
       "fr": "Ancien projecteur Pathé exposé au musée du cinéma d'Ouarzazate",
@@ -2516,6 +2517,7 @@
     "source": "https://commons.wikimedia.org/wiki/File:Sidi_Ifni_-_Art_deco_,_aus_der_Zeit_der_spanischen_Besatzung.jpg"
   },
   "sidi-ifni/former-cathedral": {
+    "fit": "contain",
     "file": "sidi-ifni-former-cathedral.jpg",
     "alt": {
       "fr": "Entrée de l'ancienne église espagnole de Sidi Ifni",
