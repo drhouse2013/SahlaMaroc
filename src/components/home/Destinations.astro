@@ -1,37 +1,55 @@
 ---
-/** Accueil : mosaïque de destinations (vraies photos du manifeste, crédit conservé). */
-import CityImage from '../CityImage.astro';
-import { useTranslations, type Locale } from '../../i18n';
+/**
+ * Bande « Découvrir le Maroc » de la maquette : cinq destinations en cartes photo.
+ * Les photos sont celles de la template (recadrées, libellés en HTML donc traduisibles).
+ */
+import Icon from '../Icon.astro';
 import { CITY_PAGES, cityLabel } from '../../data/cities';
 import { cityPath, hubPath } from '../../utils/i18n';
+import type { Locale } from '../../i18n';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
-const t = useTranslations(lang);
-const ids = ['marrakech', 'chefchaouen', 'fes', 'essaouira'];
-const list = ids.map((id) => CITY_PAGES.find((c) => c.id === id)).filter((c) => c !== undefined);
+
+const copy = {
+  fr: { title: 'Découvrir le Maroc', sub: ['Villes impériales, plages, montagnes et trésors cachés…', 'Explorez les plus belles destinations du Royaume.'], all: 'Toutes les destinations' },
+  en: { title: 'Discover Morocco', sub: ['Imperial cities, beaches, mountains and hidden treasures…', 'Explore the most beautiful destinations in the Kingdom.'], all: 'All destinations' },
+  es: { title: 'Descubrir Marruecos', sub: ['Ciudades imperiales, playas, montañas y tesoros escondidos…', 'Explora los destinos más bellos del Reino.'], all: 'Todos los destinos' },
+  de: { title: 'Marokko entdecken', sub: ['Kaiserstädte, Strände, Berge und verborgene Schätze…', 'Entdecken Sie die schönsten Reiseziele des Königreichs.'], all: 'Alle Reiseziele' },
+  ar: { title: 'اكتشف المغرب', sub: ['مدن إمبراطورية وشواطئ وجبال وكنوز خفية…', 'استكشف أجمل وجهات المملكة.'], all: 'كل الوجهات' },
+}[lang];
+
+const TAGLINES: Record<string, Record<Locale, string>> = {
+  marrakech: { fr: 'Culture, histoire et art de vivre', en: 'Culture, history and art of living', es: 'Cultura, historia y arte de vivir', de: 'Kultur, Geschichte und Lebensart', ar: 'ثقافة وتاريخ وفن عيش' },
+  fes: { fr: 'Patrimoine et traditions', en: 'Heritage and traditions', es: 'Patrimonio y tradiciones', de: 'Erbe und Traditionen', ar: 'تراث وتقاليد' },
+  chefchaouen: { fr: 'La perle bleue du Rif', en: 'The blue pearl of the Rif', es: 'La perla azul del Rif', de: 'Die blaue Perle des Rif', ar: 'اللؤلؤة الزرقاء للريف' },
+  agadir: { fr: 'Plages, détente et nature', en: 'Beaches, relaxation and nature', es: 'Playas, descanso y naturaleza', de: 'Strände, Erholung und Natur', ar: 'شواطئ واستجمام وطبيعة' },
+  casablanca: { fr: 'Modernité et patrimoine', en: 'Modernity and heritage', es: 'Modernidad y patrimonio', de: 'Moderne und Erbe', ar: 'حداثة وتراث' },
+};
+const IDS = ['marrakech', 'fes', 'chefchaouen', 'agadir', 'casablanca'];
+const places = IDS.map((id) => CITY_PAGES.find((c) => c.id === id)).filter((c) => c !== undefined);
+const arrowLabel = { fr: 'Voir la ville', en: 'See the city', es: 'Ver la ciudad', de: 'Stadt ansehen', ar: 'شاهد المدينة' }[lang];
 ---
-<section class="container-page section" aria-labelledby="cities-title">
-  <div class="section-head">
+
+<section class="tpl-section tpl-destinations" aria-labelledby="destinations-heading">
+  <div class="tpl-section__head">
     <div>
-      <h2 id="cities-title" class="section-title">{t('home.cities.title')}</h2>
-      <p class="section-sub">{t('home.cities.sub', { n: CITY_PAGES.length })}</p>
+      <h2 id="destinations-heading">{copy.title} <span class="tpl-accent" aria-hidden="true"></span></h2>
+      <p>{copy.sub[0]}<br />{copy.sub[1]}</p>
     </div>
-    <a href={hubPath(lang, 'cities')} class="text-link">{t('common.seeAll')}</a>
+    <a href={hubPath(lang, 'cities')} class="tpl-more">{copy.all} <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
   </div>
-  <ul class="dest-grid">
-    {list.map((c, i) => (
-      <li class="contents">
-        <article class="dest group">
-          <a class="dest__link" href={cityPath(lang, c.slug[lang])} aria-label={cityLabel(c.id, lang)}></a>
-          <span class="dest__num" aria-hidden="true" dir="ltr">{String(i + 1).padStart(2, '0')} / {String(list.length).padStart(2, '0')}</span>
-          <CityImage scene={c.id} lang={lang} width={i === 0 ? 900 : 640} sizes={i === 0 ? '(min-width:768px) 40vw, 100vw' : '(min-width:768px) 30vw, 100vw'} />
-          <div class="dest__label">
-            <h3>{cityLabel(c.id, lang)}</h3>
-            <p class="line-clamp-2">{c.text[lang].intro}</p>
-          </div>
-        </article>
-      </li>
+  <div class="tpl-destinations__grid">
+    {places.map((city) => (
+      <div class="tpl-dest">
+        <img src={`/assets/cards/destination-${city.id}.webp`} alt="" width="720" height="301" loading="lazy" />
+        <div class="tpl-dest__text">
+          <h3><Icon name="mapPin" class="size-4" />{cityLabel(city.id, lang)}</h3>
+          <p>{TAGLINES[city.id]?.[lang] ?? ''}</p>
+        </div>
+        <span class="tpl-dest__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" /></span>
+        <a class="tpl-dest__link" href={cityPath(lang, city.slug[lang])} aria-label={`${cityLabel(city.id, lang)} — ${arrowLabel}`}></a>
+      </div>
     ))}
-  </ul>
+  </div>
 </section>

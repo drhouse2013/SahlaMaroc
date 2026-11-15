@@ -1,0 +1,31 @@
+---
+/**
+ * Bandeau « Vos checklists prêtes à l'emploi » de la maquette : photo littorale, motif doré,
+ * icône et lien vers le hub des checklists (qui contient les listes interactives réelles).
+ */
+import Icon from '../Icon.astro';
+import { hubPath } from '../../utils/i18n';
+import type { Locale } from '../../i18n';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+
+const copy = {
+  fr: { title: 'Vos checklists prêtes à l’emploi', text: ['Retours, installation, achat immobilier, voyage…', 'Ne rien oublier grâce à nos checklists complètes.'], link: 'Voir les checklists' },
+  en: { title: 'Ready-to-use checklists', text: ['Returning, settling in, buying property, travelling…', 'Forget nothing with our complete checklists.'], link: 'See the checklists' },
+  es: { title: 'Listas de control listas', text: ['Regreso, instalación, compra de vivienda, viaje…', 'No olvides nada con nuestras listas completas.'], link: 'Ver las listas' },
+  de: { title: 'Checklisten für jeden Schritt', text: ['Rückkehr, Einrichtung, Immobilienkauf, Reise…', 'Nichts vergessen mit unseren vollständigen Checklisten.'], link: 'Checklisten ansehen' },
+  ar: { title: 'قوائم جاهزة للاستخدام', text: ['العودة، الاستقرار، شراء العقار، السفر…', 'لا تنسَ شيئًا مع قوائمنا الكاملة.'], link: 'شاهد القوائم' },
+}[lang];
+---
+
+<section class="tpl-checklist" aria-labelledby="checklists-banner-title">
+  <div class="tpl-checklist__photo" aria-hidden="true"></div>
+  <div class="tpl-checklist__ornament" aria-hidden="true"></div>
+  <span class="tpl-checklist__icon" aria-hidden="true"><Icon name="listChecks" class="size-7" /></span>
+  <div class="tpl-checklist__copy">
+    <h2 id="checklists-banner-title">{copy.title}</h2>
+    <p>{copy.text[0]}<br />{copy.text[1]}</p>
+  </div>
+  <a class="tpl-checklist__link" href={hubPath(lang, 'checklists')}>{copy.link} <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" /></a>
+</section>

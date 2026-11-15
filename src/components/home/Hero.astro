@@ -1,54 +1,93 @@
 ---
-/** Hero immersif de l'accueil, suivi des trois parcours et de la recherche. */
+/**
+ * Héros de l'accueil (maquette Sahla Maroc) : panorama de Tanger, titre serif, recherche
+ * et quatre bénéfices. Le panorama est optimisé (srcset) ; le texte est traduit.
+ */
 import { Image } from 'astro:assets';
 import Icon from '../Icon.astro';
-import PathCard from '../paths/PathCard.astro';
-import PathPhoto from '../paths/PathPhoto.astro';
+import heroPanorama from '../../assets/template/hero-panorama.webp';
 import { useTranslations, type Locale } from '../../i18n';
-import { PATH_ORDER, PATH_UI } from '../../data/paths';
-import { placePhoto } from '../../utils/photos';
 import { hubPath } from '../../utils/i18n';
-import PhotoCredit from '../PhotoCredit.astro';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
 const copy = {
- fr: { title: 'Le Maroc,', titleEm: 'simplement.', intro: 'Votre retour, votre investissement ou votre voyage au Maroc, étape par étape. Guides et outils gratuits.', search: 'Rechercher un guide', placeholder: 'Une ville, une démarche, une envie…', action: 'Explorer les parcours', inset: 'Tanger Med · Le retour commence ici' },
- en: { title: 'Morocco,', titleEm: 'made simple.', intro: 'Plan your return, investment or trip to Morocco, step by step. Free guides and tools.', search: 'Search the guides', placeholder: 'A city, a question, an idea…', action: 'Explore the paths', inset: 'Tanger Med · Your return starts here' },
- es: { title: 'Marruecos,', titleEm: 'sin complicaciones.', intro: 'Prepara tu regreso, inversión o viaje a Marruecos, paso a paso. Guías y herramientas gratuitas.', search: 'Buscar una guía', placeholder: 'Una ciudad, una pregunta, una idea…', action: 'Explorar los recorridos', inset: 'Tánger Med · Aquí empieza el regreso' },
- de: { title: 'Marokko,', titleEm: 'ganz einfach.', intro: 'Rückkehr, Investition oder Reise nach Marokko: Schritt für Schritt planen. Kostenlose Ratgeber und Rechner.', search: 'Ratgeber durchsuchen', placeholder: 'Eine Stadt, eine Frage, eine Idee…', action: 'Die Wege entdecken', inset: 'Tanger Med · Hier beginnt die Rückkehr' },
- ar: { title: 'المغرب،', titleEm: 'ببساطة.', intro: 'خطّط لعودتك أو استثمارك أو رحلتك إلى المغرب، خطوة بخطوة. أدلة وأدوات مجانية.', search: 'ابحث في الأدلة', placeholder: 'مدينة، سؤال، فكرة…', action: 'اكتشف المسارات', inset: 'طنجة المتوسط · من هنا تبدأ العودة' },
+  fr: {
+    title: 'Le Maroc,', em: 'simplement.',
+    intro: ['Guides pratiques, démarches, investissement, voyage et outils pour les Marocains du ', 'monde', ' et tous les voyageurs.'],
+    placeholder: 'Rechercher un guide, une démarche, une ville…',
+    cta: 'Rechercher',
+    benefits: ['Guides fiables', 'Outils pratiques', 'Spécial MRE', '100% gratuit'],
+    photo: 'Tanger au coucher du soleil, panorama du site Sahla Maroc',
+  },
+  en: {
+    title: 'Morocco,', em: 'made simple.',
+    intro: ['Practical guides, paperwork, investing, travel and tools for Moroccans ', 'abroad', ' and every visitor.'],
+    placeholder: 'Search a guide, a procedure, a city…',
+    cta: 'Search',
+    benefits: ['Trusted guides', 'Practical tools', 'Built for MREs', '100% free'],
+    photo: 'Tangier at sunset, Sahla Maroc panorama',
+  },
+  es: {
+    title: 'Marruecos,', em: 'sin complicaciones.',
+    intro: ['Guías prácticas, trámites, inversión, viajes y herramientas para los marroquíes ', 'en el mundo', ' y todos los viajeros.'],
+    placeholder: 'Buscar una guía, un trámite, una ciudad…',
+    cta: 'Buscar',
+    benefits: ['Guías fiables', 'Herramientas prácticas', 'Para la diáspora', '100% gratis'],
+    photo: 'Tánger al atardecer, panorama de Sahla Maroc',
+  },
+  de: {
+    title: 'Marokko,', em: 'ganz einfach.',
+    intro: ['Praktische Ratgeber, Formalitäten, Investieren, Reisen und Rechner für Marokkaner ', 'im Ausland', ' und alle Reisenden.'],
+    placeholder: 'Ratgeber, Formalität oder Stadt suchen…',
+    cta: 'Suchen',
+    benefits: ['Verlässliche Ratgeber', 'Praktische Rechner', 'Für Marokkaner im Ausland', '100 % kostenlos'],
+    photo: 'Tanger bei Sonnenuntergang, Panorama von Sahla Maroc',
+  },
+  ar: {
+    title: 'المغرب،', em: 'ببساطة.',
+    intro: ['أدلة عملية وإجراءات واستثمار وسفر وأدوات لمغاربة ', 'العالم', ' ولجميع الزوار.'],
+    placeholder: 'ابحث عن دليل أو إجراء أو مدينة…',
+    cta: 'ابحث',
+    benefits: ['أدلة موثوقة', 'أدوات عملية', 'لمغاربة العالم', '100٪ مجانًا'],
+    photo: 'طنجة عند الغروب، بانوراما موقع ساهلة المغرب',
+  },
 }[lang];
+
 const searchUrl = hubPath(lang, 'search');
-const heroPhoto = placePhoto('hero', 'home-hero', lang);
+const benefitIcons = ['book', 'sparkles', 'users', 'shield'] as const;
 ---
-<section class="home-hero" aria-labelledby="home-title">
-  <div class="home-hero__visual">
-    {heroPhoto.image && <Image src={heroPhoto.image} alt={heroPhoto.alt} widths={[480, 720, 1080]} sizes="100vw" class="home-hero__image" loading="eager" fetchpriority="high" />}
-    <div class="home-hero__veil">
-      <div class="container-page home-hero__copy">
-        <h1 id="home-title">{copy.title} <em>{copy.titleEm}</em></h1>
-        <p class="home-hero__intro">{copy.intro}</p>
-        <a class="home-hero__action" href="#parcours">{copy.action}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
-      </div>
-    </div>
-    {heroPhoto.credit && <PhotoCredit lang={lang} credit={heroPhoto.credit} source={heroPhoto.source} />}
-    <figure class="home-hero__secondary" tabindex="0" aria-label={copy.inset}>
-      <div class="home-hero__secondary-image"><PathPhoto id="return" lang={lang} widths={[320, 480]} sizes="(min-width: 900px) 18rem, 9rem" eager /></div>
-      <figcaption>{copy.inset}</figcaption>
-    </figure>
-  </div>
-  <div class="container-page home-hero__grid">
-    <div class="home-paths" data-home-paths id="parcours">
-      <h2 class="home-paths__title">{PATH_UI.paths[lang]}</h2>
-      <ul class="path-cards">
-        {PATH_ORDER.map((id, i) => <li><PathCard id={id} lang={lang} eager priority={i === 0} /></li>)}
-      </ul>
-    </div>
-    <form class="home-search" action={searchUrl} method="get" role="search">
-      <label for="home-query">{copy.search}</label>
-      <div><Icon name="search" class="size-5 shrink-0 muted" /><input id="home-query" name="q" type="search" placeholder={copy.placeholder} required /><button class="btn btn-primary btn-sm" type="submit">{t('nav.search')}</button></div>
+
+<section class="tpl-hero" aria-labelledby="home-title">
+  <Image
+    src={heroPanorama}
+    alt={copy.photo}
+    widths={[640, 960, 1440, 2172]}
+    sizes="100vw"
+    class="tpl-hero__media"
+    loading="eager"
+    fetchpriority="high"
+    quality={72}
+  />
+  <div class="tpl-hero__shade" aria-hidden="true"></div>
+  <div class="tpl-hero__content">
+    <h1 id="home-title">{copy.title} <em>{copy.em}</em></h1>
+    <p class="tpl-hero__intro">{copy.intro[0]}<u>{copy.intro[1]}</u>{copy.intro[2]}</p>
+    <form class="tpl-search" action={searchUrl} method="get" role="search">
+      <Icon name="search" class="size-5" />
+      <input type="search" name="q" placeholder={copy.placeholder} aria-label={t('nav.search')} required />
+      <button type="submit">{copy.cta}</button>
     </form>
+    <div class="tpl-benefits">
+      {copy.benefits.map((label, i) => (
+        <span class="tpl-benefit">
+          <Icon name={benefitIcons[i]} class="size-5" />
+          <span>{label}</span>
+          {i < copy.benefits.length - 1 && <i aria-hidden="true"></i>}
+        </span>
+      ))}
+    </div>
   </div>
 </section>

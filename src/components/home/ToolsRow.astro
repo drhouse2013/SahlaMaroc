@@ -1,0 +1,59 @@
+---
+/**
+ * Bande « Outils pratiques » de la maquette : cinq raccourcis vers les calculateurs réels du site.
+ */
+import Icon from '../Icon.astro';
+import { TOOLS } from '../../data/tools';
+import { getPageUrl, hubPath } from '../../utils/i18n';
+import type { Locale } from '../../i18n';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+
+const copy = {
+  fr: { title: 'Outils pratiques', sub: 'Des calculateurs et services pour vos projets au Maroc.', all: 'Voir tous les outils', checklist: 'Checklist voyage' },
+  en: { title: 'Practical tools', sub: 'Calculators and services for your projects in Morocco.', all: 'See all tools', checklist: 'Travel checklist' },
+  es: { title: 'Herramientas prácticas', sub: 'Calculadoras y servicios para tus proyectos en Marruecos.', all: 'Ver todas las herramientas', checklist: 'Lista de viaje' },
+  de: { title: 'Praktische Rechner', sub: 'Rechner und Dienste für Ihre Vorhaben in Marokko.', all: 'Alle Rechner', checklist: 'Reise-Checkliste' },
+  ar: { title: 'أدوات عملية', sub: 'حاسبات وخدمات لمشاريعك في المغرب.', all: 'كل الأدوات', checklist: 'قائمة السفر' },
+}[lang];
+
+const PICK = ['calc-fx', 'calc-customs', 'calc-property-fees', 'calc-city-costs'];
+const tools = (
+  await Promise.all(
+    PICK.map(async (key) => {
+      const tool = TOOLS.find((x) => x.key === key);
+      const href = await getPageUrl(lang, key);
+      return tool && href
+        ? { key, icon: tool.icon, title: tool.title[lang], href, detail: key === 'calc-fx' ? 'EUR / MAD' : '' }
+        : null;
+    }),
+  )
+).filter((x) => x !== null);
+const allTools = (await getPageUrl(lang, 'calculators')) ?? hubPath(lang, 'checklists');
+---
+
+<section class="tpl-section tpl-tools" aria-labelledby="tools-heading">
+  <div class="tpl-section__head">
+    <div>
+      <h2 id="tools-heading">{copy.title} <span class="tpl-accent" aria-hidden="true"></span></h2>
+      <p>{copy.sub}</p>
+    </div>
+    <a href={allTools} class="tpl-more">{copy.all} <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+  </div>
+  <div class="tpl-tools__grid">
+    {tools.map((tool) => (
+      <a class="tpl-tool" href={tool.href}>
+        <Icon name={tool.icon} class="size-8" />
+        <span>
+          <strong>{tool.title}</strong>
+          {tool.detail && <small>{tool.detail}</small>}
+        </span>
+      </a>
+    ))}
+    <a class="tpl-tool" href={hubPath(lang, 'checklists')}>
+      <Icon name="listChecks" class="size-8" />
+      <span><strong>{copy.checklist}</strong></span>
+    </a>
+  </div>
+</section>

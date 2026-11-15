@@ -1,17 +1,17 @@
 ---
-/** Accueil localisé : /en, /fr, /es, /de, /ar */
+/** Accueil localisé : /en, /fr, /es, /de, /ar — maquette Sahla Maroc. */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/home/Hero.astro';
-import EditorNote from '../../components/home/EditorNote.astro';
+import FeatureCards from '../../components/home/FeatureCards.astro';
+import ToolsRow from '../../components/home/ToolsRow.astro';
+import GuidesRow from '../../components/home/GuidesRow.astro';
 import Destinations from '../../components/home/Destinations.astro';
-import ArticleCard from '../../components/ArticleCard.astro';
-import { TOOLS } from '../../data/tools';
+import ChecklistBanner from '../../components/home/ChecklistBanner.astro';
+import EditorNote from '../../components/home/EditorNote.astro';
 import Newsletter from '../../components/Newsletter.astro';
 import AdSlot from '../../components/AdSlot.astro';
-import Icon from '../../components/Icon.astro';
 import { LOCALES, useTranslations, type Locale } from '../../i18n';
-import { allChecklists } from '../../utils/content';
-import { allLocalesAlternates, allLocalesTargets, getArticleByKey, getPageUrl, homePath, hubPath } from '../../utils/i18n';
+import { allLocalesAlternates, allLocalesTargets, homePath } from '../../utils/i18n';
 import { organizationJsonLd, websiteJsonLd } from '../../utils/seo';
 
 export function getStaticPaths() {
@@ -21,39 +21,18 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as Locale;
 const t = useTranslations(lang);
 const homeSeo: Record<Locale, [string, string]> = {"fr":["Maroc : guides MRE, voyages et calculateurs gratuits","Préparez votre retour ou votre voyage au Maroc : guides pratiques, ferries, démarches, immobilier et calculateurs gratuits pour MRE et voyageurs."],"en":["Morocco travel guides, MRE advice & free calculators","Plan your Morocco trip or return home with practical guides, ferry information, property advice and free calculators for MREs and visitors."],"es":["Marruecos: guías, diáspora y calculadoras gratuitas","Prepara tu viaje o regreso a Marruecos: guías prácticas, ferris, trámites, vivienda y calculadoras gratuitas para la diáspora y los visitantes."],"de":["Marokko: Reiseführer, MRE-Tipps & kostenlose Rechner","Planen Sie Ihre Reise oder Rückkehr nach Marokko: praktische Guides, Fähren, Formalitäten, Immobilien und kostenlose Rechner für MRE und Besucher."],"ar":["المغرب: أدلة عملية لمغاربة العالم والزوار وحاسبات مجانية","خطط لرحلتك أو عودتك إلى المغرب مع أدلة عملية حول العبّارات والإجراءات والعقار وحاسبات مجانية لمغاربة العالم والزوار."]};
-const toolUrl = await getPageUrl(lang, 'calculators');
-const POPULAR = ['marhaba-guide', 'car-180-days', 'send-money', 'buy-property-abroad', 'e-visa', 'sim-esim-morocco'];
-const popular = (await Promise.all(POPULAR.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
-const availableChecklists = await allChecklists(lang);
-const checklistKeys = ['summer-checklist', 'buy-property-abroad', 'kids-pets'];
-const checklists = checklistKeys.flatMap(key => {
-  const item = availableChecklists.find(c => c.article.data.translationKey === key);
-  return item ? [item] : [];
-});
-const checklistsUrl = hubPath(lang, 'checklists');
-const TOOL_KEYS = ['calc-property-fees', 'calc-mortgage', 'calc-transfer', 'calc-summer', 'calc-car-days', 'calc-ferry-compare'];
-const tools = (await Promise.all(TOOLS.filter((x) => TOOL_KEYS.includes(x.key)).map(async (x) => ({ ...x, href: await getPageUrl(lang, x.key) })))).filter((x) => x.href);
 ---
 
 <BaseLayout lang={lang} title={homeSeo[lang][0]} description={homeSeo[lang][1]} alternates={allLocalesAlternates(homePath)} switchTargets={allLocalesTargets(homePath)} jsonLd={[websiteJsonLd(lang, Astro.site, t('site.description')), organizationJsonLd(Astro.site)]}>
-  <div class="home-page">
+  <div class="home-shell">
     <Hero lang={lang} />
-    {popular.length > 0 && <section class="container-page section" aria-labelledby="popular-title">
-      <div class="section-head"><div><p class="eyebrow text-[var(--accent)]">{t('nav.guides')}</p><h2 id="popular-title" class="section-title mt-3">{t('home.popular')}</h2><p class="section-sub">{t('home.popularSub')}</p></div><a href={hubPath(lang,'guides')} class="text-link">{t('nav.allGuides')}</a></div>
-      <div class="guide-feature"><ArticleCard article={popular[0]} /><div class="guide-list">{popular.slice(1).map(a=><ArticleCard article={a} size="sm" />)}</div></div>
-    </section>}
+    <FeatureCards lang={lang} />
+    <ToolsRow lang={lang} />
+    <GuidesRow lang={lang} />
     <Destinations lang={lang} />
-    <section class="tools-band" aria-labelledby="tools-title">
-      <div class="container-page">
-        <div class="section-head"><div><p class="eyebrow">{t('nav.tools')}</p><h2 id="tools-title" class="section-title mt-3">{t('home.tools.title')}</h2><p class="section-sub">{t('home.tools.sub')}</p></div>{toolUrl && <a href={toolUrl} class="text-link">{t('common.seeAll')}</a>}</div>
-        <ul class="tool-list">
-          {tools.map((x) => <li><a href={x.href} data-track="tool_click" data-track-label={x.key}><Icon name={x.icon} class="size-6" /><span><span class="tool-list__title">{x.title[lang]}</span><span class="tool-list__text">{x.text[lang]}</span></span><Icon name="arrowRight" class="size-5 rtl:-scale-x-100" /></a></li>)}
-        </ul>
-      </div>
-    </section>
-    {checklists.length > 0 && <section class="container-page section" aria-labelledby="chk-title"><div class="checklists"><div><p class="eyebrow text-[var(--accent)]">{t('nav.checklists')}</p><h2 id="chk-title" class="section-title mt-3">{t('home.checklists.title')}</h2><p class="section-sub">{t('home.checklists.text')}</p><a href={checklistsUrl} class="btn btn-secondary mt-6">{t('home.checklists.cta')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a></div><ul>{checklists.map(c=><li><a href={`/${lang}/${c.article.data.slug}#checklist-${c.id}`}><Icon name="listChecks" class="size-5 shrink-0" /><span>{c.title}</span><span class="muted">{t('checklists.items',{n:c.items})}</span></a></li>)}</ul></div></section>}
+    <ChecklistBanner lang={lang} />
     <EditorNote lang={lang} />
     <Newsletter lang={lang} />
-    <div class="container-page"><AdSlot type="banner" lang={lang} /></div>
+    <div class="tpl-section"><AdSlot type="banner" lang={lang} /></div>
   </div>
 </BaseLayout>

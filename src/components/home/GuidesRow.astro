@@ -1,0 +1,66 @@
+---
+/**
+ * Bande « Guides essentiels » de la maquette : une colonne d'introduction + trois guides réels.
+ * L'image vient du visuel du guide (photo éditoriale ou illustration de secours).
+ */
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
+import { getArticleByKey, entryPath, hubPath } from '../../utils/i18n';
+import { getGuidePhoto } from '../../utils/guidePhotos';
+import { guideVisual } from '../../utils/guideVisual';
+import type { Locale } from '../../i18n';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+
+const copy = {
+  fr: { title: 'Guides essentiels', sub: 'Nos dossiers complets pour vous accompagner à chaque étape.', all: 'Voir tous les guides' },
+  en: { title: 'Essential guides', sub: 'Complete guides to help you at every step.', all: 'See all guides' },
+  es: { title: 'Guías esenciales', sub: 'Nuestros dosieres completos para acompañarte en cada etapa.', all: 'Ver todas las guías' },
+  de: { title: 'Wichtige Ratgeber', sub: 'Unsere vollständigen Dossiers für jeden Schritt.', all: 'Alle Ratgeber' },
+  ar: { title: 'أدلة أساسية', sub: 'ملفات كاملة ترافقك في كل خطوة.', all: 'كل الأدلة' },
+}[lang];
+
+const KEYS = ['permanent-return', 'buy-property-abroad', 'import-car-permanent-return'];
+const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key)))).filter((a) => a !== null);
+---
+
+<section class="tpl-section tpl-guides" aria-labelledby="guides-heading">
+  <div class="tpl-guides__grid">
+    <div class="tpl-guides__intro">
+      <h2 id="guides-heading">{copy.title} <span class="tpl-accent" aria-hidden="true"></span></h2>
+      <p>{copy.sub}</p>
+      <a class="tpl-pill" href={hubPath(lang, 'guides')}>{copy.all} <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
+    </div>
+    {items.map((article) => {
+      const d = article.data;
+      const photo = getGuidePhoto(d.translationKey, d.category, d.lang);
+      const visual = guideVisual(d.translationKey, d.category, d.title);
+      const checks = d.tags.slice(0, 3);
+      return (
+        <article class="tpl-guide">
+          <div class="tpl-guide__media">
+            {photo ? (
+              <Image src={photo.src} alt={photo.alt} widths={[320, 480, 640]} sizes="(min-width: 1000px) 22vw, (min-width: 650px) 30vw, 92vw" loading="lazy" />
+            ) : (
+              <span class="tpl-guide__icon" aria-hidden="true"><Icon name={visual.icon} class="size-8" /></span>
+            )}
+          </div>
+          <div class="tpl-guide__body">
+            <span class="tpl-guide__tag">{CATEGORIES[d.category].label[d.lang]}</span>
+            <span class="tpl-guide__title">{d.title}</span>
+            <a class="tpl-guide__link" href={entryPath(d.lang, d.slug)} aria-label={d.title}></a>
+            <span class="tpl-guide__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></span>
+            <div class="tpl-guide__checks">
+              {checks.map((check) => (
+                <span><Icon name="check" class="size-3" />{check}</span>
+              ))}
+              {checks.length === 0 && <span><Icon name={CATEGORY_ICON[d.category]} class="size-3" />{CATEGORIES[d.category].label[d.lang]}</span>}
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+</section>
