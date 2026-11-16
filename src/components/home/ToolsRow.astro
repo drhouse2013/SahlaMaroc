@@ -27,12 +27,20 @@ const PICK: { key: string; icon: 'coins' | 'car' | 'home' | 'wallet'; detail?: s
   { key: 'calc-property-fees', icon: 'home' },
   { key: 'calc-city-costs', icon: 'wallet' },
 ];
+/** Libellés courts de la maquette, strictement équivalents à l'outil ciblé. */
+const SHORT: Record<string, Record<Locale, string>> = {
+  'calc-fx': { fr: 'Calculateur de change', en: 'Currency calculator', es: 'Calculadora de cambio', de: 'Währungsrechner', ar: 'حاسبة الصرف' },
+  'calc-customs': { fr: 'Frais de douane véhicule', en: 'Vehicle customs fees', es: 'Aduana del vehículo', de: 'Kfz-Zollgebühren', ar: 'رسوم جمركية للسيارة' },
+  'calc-property-fees': { fr: "Frais d'achat immobilier", en: 'Property purchase costs', es: 'Gastos de compra', de: 'Kaufnebenkosten', ar: 'مصاريف الشراء' },
+  'calc-city-costs': { fr: 'Coût de la vie au Maroc', en: 'Cost of living in Morocco', es: 'Coste de vida en Marruecos', de: 'Lebenshaltung in Marokko', ar: 'تكلفة المعيشة' },
+};
+
 const tools = (
   await Promise.all(
     PICK.map(async ({ key, icon, detail }) => {
       const tool = TOOLS.find((x) => x.key === key);
       const href = await getPageUrl(lang, key);
-      return tool && href ? { key, icon, title: tool.title[lang], href, detail: detail ?? '' } : null;
+      return tool && href ? { key, icon, title: SHORT[key]?.[lang] ?? tool.title[lang], href, detail: detail ?? '' } : null;
     }),
   )
 ).filter((x) => x !== null);
