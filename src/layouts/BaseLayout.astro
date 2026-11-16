@@ -85,9 +85,11 @@ const description = seo.description ?? t('site.description');
         function readPreference() {
           try {
             var saved = localStorage.getItem(key);
-            if (saved === 'light' || saved === 'dark') return saved;
+            if (saved === 'light' || saved === 'dark' || saved === 'system') return saved;
           } catch (e) {}
-          return 'system';
+          // Par défaut : clair, pour que le rendu corresponde à la maquette de référence.
+          // « Système » reste disponible dans le sélecteur de thème.
+          return 'light';
         }
         var preference = readPreference();
         function applyTheme() {

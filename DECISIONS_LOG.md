@@ -593,3 +593,13 @@ Base conservée : main 20beff2, trois parcours, nouvelles photos, typographie Fr
 - **Mode sombre** : décliné dans les nouveaux composants (surfaces vertes profondes, or et terre cuite clairs) au lieu d’être supprimé.
 - **Tests** : `astro check` 0 erreur, `npm run build` OK (936 pages), 81 tests unitaires verts (couleurs du thème mises à jour), captures Playwright desktop/tablette/mobile et arabe RTL dans `docs/rendu/`.
 
+## 2026-11-16 — Passe « reproduction pixel perfect » de l’accueil
+
+- **Thème clair par défaut** : un premier visiteur voit désormais l’ivoire de la maquette, et non plus le vert foncé imposé par la préférence système. « Système », « Clair » et « Sombre » restent disponibles dans le sélecteur ; le mode sombre n’est pas supprimé.
+- **Cartes « exactes » de la maquette** : bandeaux parcours, cartes destination et bandeau checklists utilisent, en français et sur ordinateur (> 650 px), les tuiles 1:1 extraites de la capture de référence (`tools/extract-reference.mjs`), comme la template le fait. Les crops `exact/` livrés dans le ZIP contiennent des fragments des cartes voisines et du titre de section : ils ont été réextraits à leurs coordonnées mesurées (y = 314, 854, 1002).
+- **Mobile et autres langues** : version éditable conservée (photo + texte HTML traduit), pour ne pas figer du texte français sur `/en`, `/es`, `/de`, `/ar`.
+- **Géométrie alignée sur la mesure** : bandeaux 314 (h 158), outils 537 (h 55), guides 621 (h 141), destinations 854 (h 125), bandeau checklists 1002 (h 80), titre du héros 53 px / interlettrage −2,6 px.
+- **Correction d’un défaut d’imbrication** : le crédit photo (bouton + panneau `<a>`) était placé dans le `<a>` de la carte, ce qui faisait dupliquer l’ancre par le parseur HTML (cartes fantômes de 36 px). Le crédit est désormais un frère du lien.
+- **Mesure outillée** : `tools/visual-audit.mjs` (capture 1448 × 1024, diff pixel, boîtes des éléments), `tools/measure.mjs`, `tools/scan.mjs`, `tools/grid.mjs`. Résultats dans `visual-audit/` : écart moyen par canal 50,0 → 27,7 ; pixels modifiés 65,6 % → 42,9 %. Les écarts restants (rendu typographique, rééchantillonnage des images, libellés éditoriaux réels, éléments propres au site) sont documentés dans `visual-audit/README.md` ; aucune conformité à 100 % n’est revendiquée.
+
+

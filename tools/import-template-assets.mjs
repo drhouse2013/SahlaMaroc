@@ -55,6 +55,30 @@ for (const city of cities) {
     .toFile(out(`public/assets/cards/destination-${city}.webp`));
 }
 
+// 3 bis. Cartes « exactes » de la maquette (texte incrusté) : utilisées telles quelles sur
+//        ordinateur en français, comme le fait la template. Les autres langues et le mobile
+//        gardent la version HTML éditable.
+for (const name of ['je-rentre-au-maroc', 'je-souhaite-investir', 'je-visite-le-maroc']) {
+  await copy(`banners/exact/${name}.png`, `public/assets/cards/exact/${name}.png`);
+}
+for (const city of cities) {
+  await copy(`destinations/exact/${city}.png`, `public/assets/cards/exact/${city}.png`);
+}
+await copy('footer/checklist-bandeau-exact.png', 'public/assets/cards/exact/checklist-bandeau.png');
+
+// 3 ter. Photos des guides de la maquette (recadrées dans les cartes « editables » pour retirer
+//        la bande ivoire et le texte), utilisées comme visuel des cartes guides.
+const guides = ['retour-definitif-mre', 'achat-immobilier', 'transport-voiture'];
+for (const name of guides) {
+  const { width, height } = await sharp(path.join(assets, `guides/editables/${name}.webp`)).metadata();
+  const top = Math.round(height * 0.24);
+  await sharp(path.join(assets, `guides/editables/${name}.webp`))
+    .extract({ left: 0, top, width, height: height - top })
+    .resize({ width: 640 })
+    .webp({ quality: 84 })
+    .toFile(out(`public/assets/cards/guide-${name}.webp`));
+}
+
 // 4. Bandeau checklists : bande littorale (photo + motif doré) sans l'interface autour.
 {
   const meta = await sharp(path.join(assets, 'footer/plage-coucher-soleil.webp')).metadata();

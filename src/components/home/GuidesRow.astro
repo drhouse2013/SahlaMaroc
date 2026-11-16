@@ -23,6 +23,12 @@ const copy = {
 }[lang];
 
 const KEYS = ['permanent-return', 'buy-property-abroad', 'import-car-permanent-return'];
+/** Photos des cartes de la maquette, recadrées (retour définitif, achat immobilier, transport voiture). */
+const TEMPLATE_PHOTOS: Record<string, string> = {
+  'permanent-return': '/assets/cards/guide-retour-definitif-mre.webp',
+  'buy-property-abroad': '/assets/cards/guide-achat-immobilier.webp',
+  'import-car-permanent-return': '/assets/cards/guide-transport-voiture.webp',
+};
 const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key)))).filter((a) => a !== null);
 ---
 
@@ -41,7 +47,9 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
       return (
         <article class="tpl-guide">
           <div class="tpl-guide__media">
-            {photo ? (
+            {TEMPLATE_PHOTOS[d.translationKey] ? (
+              <img src={TEMPLATE_PHOTOS[d.translationKey]} alt="" width="640" height="150" loading="lazy" />
+            ) : photo ? (
               <Image src={photo.src} alt={photo.alt} widths={[320, 480, 640]} sizes="(min-width: 1000px) 22vw, (min-width: 650px) 30vw, 92vw" loading="lazy" />
             ) : (
               <span class="tpl-guide__icon" aria-hidden="true"><Icon name={visual.icon} class="size-8" /></span>
