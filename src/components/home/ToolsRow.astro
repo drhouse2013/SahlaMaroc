@@ -1,6 +1,8 @@
 ---
 /**
  * Bande « Outils pratiques » de la maquette : cinq raccourcis vers les calculateurs réels du site.
+ * Les icônes suivent celles de la maquette ; les libellés sont les vrais noms des outils du site
+ * (un outil ne doit pas être annoncé sous un nom qui ne correspond pas à son calcul).
  */
 import Icon from '../Icon.astro';
 import { TOOLS } from '../../data/tools';
@@ -18,15 +20,19 @@ const copy = {
   ar: { title: 'أدوات عملية', sub: 'حاسبات وخدمات لمشاريعك في المغرب.', all: 'كل الأدوات', checklist: 'قائمة السفر' },
 }[lang];
 
-const PICK = ['calc-fx', 'calc-customs', 'calc-property-fees', 'calc-city-costs'];
+/** Icônes de la maquette : pièces (change), voiture (douane), maison (immobilier), base (coût de vie), liste (checklists). */
+const PICK: { key: string; icon: 'coins' | 'car' | 'home' | 'wallet'; detail?: string }[] = [
+  { key: 'calc-fx', icon: 'coins', detail: 'EUR / MAD' },
+  { key: 'calc-customs', icon: 'car' },
+  { key: 'calc-property-fees', icon: 'home' },
+  { key: 'calc-city-costs', icon: 'wallet' },
+];
 const tools = (
   await Promise.all(
-    PICK.map(async (key) => {
+    PICK.map(async ({ key, icon, detail }) => {
       const tool = TOOLS.find((x) => x.key === key);
       const href = await getPageUrl(lang, key);
-      return tool && href
-        ? { key, icon: tool.icon, title: tool.title[lang], href, detail: key === 'calc-fx' ? 'EUR / MAD' : '' }
-        : null;
+      return tool && href ? { key, icon, title: tool.title[lang], href, detail: detail ?? '' } : null;
     }),
   )
 ).filter((x) => x !== null);

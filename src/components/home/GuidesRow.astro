@@ -22,6 +22,12 @@ const copy = {
   ar: { title: 'أدلة أساسية', sub: 'ملفات كاملة ترافقك في كل خطوة.', all: 'كل الأدلة' },
 }[lang];
 
+/** Étiquettes courtes de la maquette (MRE, Immobilier, Voyage) au lieu du libellé long du thème. */
+const SHORT_TAGS: Record<string, string> = {
+  retour: { fr: 'MRE', en: 'MRE', es: 'MRE', de: 'MRE', ar: 'MRE' }[lang],
+  immobilier: { fr: 'Immobilier', en: 'Property', es: 'Inmobiliario', de: 'Immobilien', ar: 'عقار' }[lang],
+  tours: { fr: 'Voyage', en: 'Travel', es: 'Viaje', de: 'Reise', ar: 'سفر' }[lang],
+};
 const KEYS = ['permanent-return', 'buy-property-abroad', 'import-car-permanent-return'];
 /** Photos des cartes de la maquette, recadrées (retour définitif, achat immobilier, transport voiture). */
 const TEMPLATE_PHOTOS: Record<string, string> = {
@@ -56,7 +62,7 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
             )}
           </div>
           <div class="tpl-guide__body">
-            <span class="tpl-guide__tag">{CATEGORIES[d.category].label[d.lang]}</span>
+            <span class="tpl-guide__tag">{SHORT_TAGS[d.category] ?? CATEGORIES[d.category].label[d.lang]}</span>
             <span class="tpl-guide__title">{d.title}</span>
             <a class="tpl-guide__link" href={entryPath(d.lang, d.slug)} aria-label={d.title}></a>
             <span class="tpl-guide__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></span>

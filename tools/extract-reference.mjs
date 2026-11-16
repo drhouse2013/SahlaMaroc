@@ -17,7 +17,7 @@ const cities = ['marrakech', 'fes', 'chefchaouen', 'agadir', 'casablanca'];
 for (let i = 0; i < cities.length; i++) {
   const left = Math.round(86 + i * (cardW + 12));
   await sharp(ref)
-    .extract({ left: left + 1, top, width: Math.round(cardW) - 3, height: 125 })
+    .extract({ left, top, width: Math.round(cardW), height: 125 })
     .png()
     .toFile(`public/assets/cards/ref/destination-${cities[i]}.png`);
 }

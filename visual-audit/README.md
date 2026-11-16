@@ -27,8 +27,8 @@ verticales d'une colonne), `tools/grid.mjs` (grille de mesure), `tools/extract-r
 
 | Mesure | Avant l'intégration | 1re intégration | Après passe « pixel perfect » |
 |---|---|---|---|
-| Écart moyen par canal | 50,04 | 44,10 | **27,7** |
-| Pixels modifiés (> 24) | 65,6 % | 60,7 % | **42,9 %** |
+| Écart moyen par canal | 50,04 | 44,10 | **27,5** |
+| Pixels modifiés (> 24) | 65,6 % | 60,7 % | **42,3 %** |
 
 Positions mesurées identiques à la maquette (y) : bandeaux parcours **314** (h 158),
 cartes outils **537** (h 55), cartes guides **621** (h 141), cartes destination **854** (h 125),
@@ -49,3 +49,14 @@ bandeau checklists **1002** (h 80), héros **51–388**, en-tête **0–51**.
 5. **Images du ZIP inutilisables telles quelles** : les crops `exact/*.png` du ZIP contiennent
    des fragments des cartes voisines et du titre de section ; les tuiles ont donc été
    réextraites de la référence à l'échelle 1:1 (`tools/extract-reference.mjs`).
+
+## Corrections apportées depuis la première mesure
+
+- En-tête : bloc de marque 384 px, logo 49 px de haut, navigation en `flex-start` avec 34 px
+  d'écart (« Accueil » à 496 px contre 494 px sur la maquette, « Visiter le Maroc » 844–936
+  contre 868–974 — l'écart restant vient de la largeur du texte rendu par Inter).
+- Tuiles exactes dessinées à leur taille native (425 × 158, 246 × 125, 1312 × 80) : plus de
+  mise à l'échelle, donc plus de rééchantillonnage ; le débordement fractionnaire est rogné
+  par le `overflow: hidden` des cartes.
+- Icônes d'outils alignées sur la maquette (pièces, voiture, maison, portefeuille, liste) et
+  étiquettes de guides raccourcies (MRE, Immobilier, Voyage).
