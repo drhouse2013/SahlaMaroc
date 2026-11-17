@@ -11,3 +11,7 @@ Les corrections Astro documentées dans GHSA-mh32-jxcr-mh9f et GHSA-r3h5-4585-7x
 ## Portée observée dans ce dépôt
 
 `astro.config.mjs` définit `output: static` et aucun adaptateur de serveur. Le code applicatif ne référence ni picomatch, ni tinyglobby, ni micromatch ; les motifs glob de contenu sont des constantes dans `src/content.config.ts`. Cela réduit l’exposition directe aux motifs fournis par les visiteurs, mais ne supprime pas la dépendance vulnérable dans la chaîne de construction. Le contrôle reste en échec et aucune exception n’est ajoutée.
+
+## Construction validée
+
+Construction locale terminée : 936 pages. `npm run check:dist` : 114726 références locales, 0 erreur. Le héros généré est converti en variantes optimisées WebP (53 à 186 Ko pour les variantes relevées dans le journal). Le fichier source PNG est conservé pour la traçabilité.
