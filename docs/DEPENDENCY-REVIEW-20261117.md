@@ -15,3 +15,7 @@ Les corrections Astro documentées dans GHSA-mh32-jxcr-mh9f et GHSA-r3h5-4585-7x
 ## Construction validée
 
 Construction locale terminée : 936 pages. `npm run check:dist` : 114726 références locales, 0 erreur. Le héros généré est converti en variantes optimisées WebP (53 à 186 Ko pour les variantes relevées dans le journal). Le fichier source PNG est conservé pour la traçabilité.
+
+## Minimum de version et piste amont
+
+La plage déclarée Astro est désormais `~7.4.12` pour exclure les anciennes versions 7.4 vulnérables même lors d’une régénération du verrou. Le registre picomatch consulté propose toujours 4.0.7. La PR amont 194, référencée par l’avis, est ouverte et indique explicitement ne pas constituer un correctif de sécurité : elle ne doit pas être installée comme résolution supposée de l’alerte.
