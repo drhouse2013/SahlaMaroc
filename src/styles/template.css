@@ -195,7 +195,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   background: linear-gradient(90deg, rgb(9 15 40 / .1) 0, rgb(16 20 56 / .39) 17%, rgb(9 20 48 / .34) 50%, transparent 90%);
 }
 .tpl-hero__shade { position: absolute; inset-inline: 0; bottom: 0; height: 110px; background: linear-gradient(0deg, rgb(3 25 37 / .32), transparent); pointer-events: none; }
-.tpl-hero__content { position: relative; z-index: 1; width: 100%; padding-block-start: 20px; padding-inline-end: var(--tpl-gutter); padding-inline-start: max(calc((100% - 1300px) / 2 + 184px), 14vw); }
+.tpl-hero__content { position: relative; z-index: 1; width: 100%; padding-block-start: 20px; padding-inline-end: var(--tpl-gutter); padding-inline-start: max(calc((100% - 1300px) / 2 + 184px), 17.3vw); }
 .tpl-hero h1 {
   margin: 0;
   max-width: 46rem;
