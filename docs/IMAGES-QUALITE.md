@@ -2,7 +2,7 @@
 
 Généré par `node tools/audit-image-quality.mjs` le 2026-11-17.
 
-**512 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
+**513 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
 
 Périmètre : toutes les images de `src/assets` et `public`, y compris les images non utilisées et les variantes déjà générées. Les sorties `dist` et les dépendances sont exclues. Les dimensions tiennent compte de la rotation EXIF. Seules les photographies de `src/assets/photos` sont soumises aux seuils : largeur disponible après recadrage 4:3 pour les cartes (720 px) et 16:9 pour les héros (1600 px). Les seuils repèrent les sources à examiner : le rôle réel, le ratio et le cadrage doivent être contrôlés dans les pages. Une grande dimension ne prouve ni la netteté, ni la date, ni le lieu, ni la licence. Les fichiers ICO sont signalés si le décodeur ne les lit pas.
 
@@ -353,7 +353,7 @@ Aucune.
 | src/assets/photos/spots/essaouira-mogador-island.jpg | 1400 × 933 | 137 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/essaouira-place-moulay-hassan.jpg | 1400 × 1050 | 133 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/essaouira-sidi-kaouki.jpg | 1400 × 1050 | 133 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/essaouira-skala.jpg | 1400 × 1003 | 192 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/essaouira-skala.jpg | 1920 × 1280 | 193 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/fes-al-attarine.jpg | 1600 × 1067 | 717 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/fes-andalusian-mosque.jpg | 1400 × 1867 | 177 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/fes-borj-nord.jpg | 1400 × 1089 | 192 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -531,3 +531,4 @@ Aucune.
 | src/assets/photos/vols-ryanair-rabat.jpg | 1600 × 1200 | 147 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/template/hero-panorama.webp | 2172 × 724 | 533 | hors photographie : rôle spécifique à examiner |
 | src/assets/template/hero-reference-20261117.png | 2167 × 726 | 2349 | hors photographie : rôle spécifique à examiner |
+| src/assets/template/passport-lost-cover-20261117.png | 1536 × 864 | 1072 | hors photographie : rôle spécifique à examiner |

@@ -107,7 +107,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/fes-al-attarine.jpg | Jorge Franganillo, CC BY 2.0 (redimensionnée) | https://commons.wikimedia.org/wiki/File:Fez_Al-Attarine_Madrasa_%2854250005206%29.jpg |
 | spots/fes-borj-nord.jpg | R Prazeres, Public domain | https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg |
 | spots/essaouira-medina.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg |
-| spots/essaouira-skala.jpg | Holger Uwe Schmitt, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg |
+| spots/essaouira-skala.jpg | Christinagrabelusshaikh, CC BY-SA 4.0 (photo prise le 31 janvier 2026 ; variante Wikimedia 1 920 × 1 280) | https://commons.wikimedia.org/wiki/File:Essaouira_in_the_dusk.jpg |
 | spots/essaouira-mogador-island.jpg | Christian Pirkl, CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg |
 | spots/chefchaouen-kasbah.jpg | Emilien Lebourgeois, Public domain | https://commons.wikimedia.org/wiki/File:20230914_12h3632EX_Chefchaouen_Kasbah_(53256409248).jpg |
 | spots/chefchaouen-outa-el-hammam.jpg | Dennis Sylvester Hurd, CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_(55312834484).jpg |

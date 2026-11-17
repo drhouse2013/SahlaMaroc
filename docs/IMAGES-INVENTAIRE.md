@@ -194,7 +194,7 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Médina d’Essaouira | `spots/essaouira-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg> | vérifiée | CC BY-SA 4.0 |
-| Remparts et Skala | `spots/essaouira-skala.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg> | vérifiée | CC BY-SA 4.0 |
+| Remparts et Skala | `spots/essaouira-skala.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_in_the_dusk.jpg> | vérifiée | CC BY-SA 4.0 |
 | Île de Mogador | `spots/essaouira-mogador-island.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg> | vérifiée | CC BY-SA 4.0 |
 | Diabat | — (« Photo à venir ») | — | — | placeholder | — |
 | Dar Sultan | — (« Photo à venir ») | — | — | placeholder | — |
