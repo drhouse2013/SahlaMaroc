@@ -834,3 +834,12 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 @media (prefers-reduced-motion: reduce) {
   .tpl-feature, .tpl-tool, .tpl-guide, .tpl-dest, .listing-card, .search-results > a, .tpl-guide__tag, .tpl-feature__arrow { transition: none; }
 }
+
+/* A brief entrance keeps the reference composition still once the page settles. */
+@media (prefers-reduced-motion: no-preference) {
+  .tpl-hero__content { animation: tpl-hero-arrive 550ms cubic-bezier(.22, 1, .36, 1) both; }
+  @keyframes tpl-hero-arrive {
+    from { opacity: .65; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
