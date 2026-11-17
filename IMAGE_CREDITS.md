@@ -447,3 +447,7 @@ Source : `docs/GUIDE_PHOTOS.md` (liens Unsplash et Commons). L'association fichi
 | spots/oujda-sidi-yahya.jpg | Oasis de Sidi Yahya (Oujda) | Iznassen | CC BY-SA 3.0 | [lien](https://commons.wikimedia.org/wiki/File:Oujda.sidi_yahya.jpg) | Oui : auteur, licence, source |
 | spots/rabat-marinid-madrasa.jpg | Médersa mérinide (Rabat) | OussamaHamama | CC BY-SA 4.0 | [lien](https://commons.wikimedia.org/wiki/File:The_Marinid_Medersa.jpg) | Oui : auteur, licence, source |
 | spots/nador-boucana.jpg | Plage de Boucana (Nador) | Sapha Bouamara | CC BY-SA 4.0 | [lien](https://commons.wikimedia.org/wiki/File:Flock_of_birds_Boukana_beach.jpg) | Oui : auteur, licence, source |
+
+## Ajout du 17 novembre 2026 — Tétouan, mont Dersa
+
+- `src/assets/photos/spots/tetouan-dersa-kasbah-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0. Prise de vue : 4 octobre 2026. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg). Fichier redimensionné du lot précédent, cadrage d’affichage à 50 % / 54 % pour conserver les anciennes casernes visibles. Licence de l’adaptation : [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
