@@ -171,11 +171,11 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   content: "";
   position: absolute;
   z-index: 0;
-  background: url("/assets/decor/motif-zellige.svg") repeat;
+  background: url("/assets/decor/motif-zellige-outline.svg") repeat;
   pointer-events: none;
 }
-.home-shell::before { top: 376px; inset-inline-start: -25px; width: 90px; height: 250px; opacity: .4; }
-.home-shell::after { top: 615px; inset-inline-end: -48px; width: 99px; height: 225px; opacity: .3; transform: rotate(15deg); }
+.home-shell::before { top: 376px; inset-inline-start: -25px; width: 90px; height: 170px; opacity: .32; }
+.home-shell::after { top: 615px; inset-inline-end: -48px; width: 99px; height: 170px; opacity: .27; transform: rotate(15deg); }
 .home-shell > * { position: relative; z-index: 1; }
 .dark .home-shell { background: linear-gradient(180deg, #0c2b24 0, #0a2520 45%, #08211c 100%); }
 .dark .home-shell::before,
