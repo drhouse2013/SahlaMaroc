@@ -119,7 +119,7 @@ const isFrench = lang === 'fr';
       {navItems.map((item) => (
         item.sub ? (
           <details class="tpl-nav__item" data-nav-menu>
-            <summary class="tpl-nav__link" aria-current={isCurrent(item.href) ? 'page' : undefined}>
+            <summary class="tpl-nav__link" aria-current={isCurrent(item.href) ? 'page' : item.sub.some((s) => isCurrent(s.href)) ? 'location' : undefined}>
               {item.label}
               <Icon name="chevronDown" class="size-3.5 tpl-nav__chev" />
             </summary>
@@ -145,7 +145,7 @@ const isFrench = lang === 'fr';
         <div class="tpl-nav__menu tpl-nav__menu--mobile">
           <p class="tpl-nav__mobile-title">{t('nav.main')}</p>
           {navItems.map((item) => (
-            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : item.sub?.some((s) => isCurrent(s.href)) ? 'location' : undefined}>{item.label}</a>
           ))}
           <hr />
           {cats.map((id) => (
