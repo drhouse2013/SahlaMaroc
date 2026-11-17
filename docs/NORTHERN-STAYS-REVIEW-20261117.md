@@ -9,3 +9,7 @@
 - Le retrait du héros sur petit ordinateur est aussi ajusté dans ce lot pour dégager le titre de la lanterne ; vérification visuelle locale réussie.
 
 Publication non réalisée : dépend des lots 83 et 84 et de la résolution du contrôle de sécurité.
+
+## Contrôle du dernier lot consolidé
+
+81 tests unitaires réussis ; construction 936 pages ; vérification de 114746 références locales sans erreur. Guide retour définitif inspecté : un h1, un main, image chargée, canonical sur le domaine de production configuré. Checklist de 12 cases : cocher une case, recharger et constater la conservation ; décocher, recharger et confirmer le retour aux 12 cases vides. État initial entièrement restauré.
