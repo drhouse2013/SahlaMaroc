@@ -21,17 +21,17 @@ const copy = {
 }[lang];
 
 /** Icônes de la maquette : pièces (change), voiture (douane), maison (immobilier), base (coût de vie), liste (checklists). */
-const PICK: { key: string; icon: 'coins' | 'car' | 'home' | 'wallet'; detail?: string }[] = [
-  { key: 'calc-fx', icon: 'coins', detail: 'EUR / MAD' },
-  { key: 'calc-customs', icon: 'car' },
+const PICK: { key: string; icon: 'stackedCoins' | 'carFront' | 'home' | 'database'; detail?: string }[] = [
+  { key: 'calc-fx', icon: 'stackedCoins', detail: 'EUR / MAD' },
+  { key: 'calc-customs', icon: 'carFront' },
   { key: 'calc-property-fees', icon: 'home' },
-  { key: 'calc-city-costs', icon: 'wallet' },
+  { key: 'calc-city-costs', icon: 'database' },
 ];
 /** Libellés courts de la maquette, strictement équivalents à l'outil ciblé. */
 const SHORT: Record<string, Record<Locale, string>> = {
   'calc-fx': { fr: 'Calculateur de change', en: 'Currency calculator', es: 'Calculadora de cambio', de: 'Währungsrechner', ar: 'حاسبة الصرف' },
   'calc-customs': { fr: 'Frais de douane véhicule', en: 'Vehicle customs fees', es: 'Aduana del vehículo', de: 'Kfz-Zollgebühren', ar: 'رسوم جمركية للسيارة' },
-  'calc-property-fees': { fr: "Frais d'achat immobilier", en: 'Property purchase costs', es: 'Gastos de compra', de: 'Kaufnebenkosten', ar: 'مصاريف الشراء' },
+  'calc-property-fees': { fr: 'Estimation immobilière', en: 'Property purchase costs', es: 'Gastos de compra', de: 'Kaufnebenkosten', ar: 'مصاريف الشراء' },
   'calc-city-costs': { fr: 'Coût de la vie au Maroc', en: 'Cost of living in Morocco', es: 'Coste de vida en Marruecos', de: 'Lebenshaltung in Marokko', ar: 'تكلفة المعيشة' },
 };
 
@@ -57,7 +57,7 @@ const allTools = (await getPageUrl(lang, 'calculators')) ?? hubPath(lang, 'check
   </div>
   <div class="tpl-tools__grid">
     {tools.map((tool) => (
-      <a class="tpl-tool" href={tool.href}>
+      <a class="tpl-tool" href={tool.href} aria-label={lang === 'fr' && tool.key === 'calc-property-fees' ? 'Estimation immobilière : frais d’achat' : undefined}>
         <Icon name={tool.icon} class="size-8" />
         <span>
           <strong>{tool.title}</strong>
@@ -66,7 +66,7 @@ const allTools = (await getPageUrl(lang, 'calculators')) ?? hubPath(lang, 'check
       </a>
     ))}
     <a class="tpl-tool" href={hubPath(lang, 'checklists')}>
-      <Icon name="listChecks" class="size-8" />
+      <Icon name="clipboardChecks" class="size-8" />
       <span><strong>{copy.checklist}</strong></span>
     </a>
   </div>

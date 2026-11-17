@@ -72,5 +72,11 @@ export const ICONS = {
   thermometer: "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />",
   tent: "<path d=\"M3.5 21 14 3\" /><path d=\"M20.5 21 10 3\" /><path d=\"M15.5 21 12 15l-3.5 6\" /><path d=\"M2 21h20\" />",
   grid: "<rect width=\"7\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\" /><rect width=\"7\" height=\"7\" x=\"14\" y=\"3\" rx=\"1\" /><rect width=\"7\" height=\"7\" x=\"14\" y=\"14\" rx=\"1\" /><rect width=\"7\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\" />",
+  userRound: '<circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2Z"/>',
+  database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 4 18 4 18 0V5M3 12c0 4 18 4 18 0"/>',
+  stackedCoins: '<ellipse cx="15" cy="5" rx="6" ry="3"/><path d="M9 5v4c0 4 12 4 12 0V5M21 9v4c0 2-3 3-6 3"/><ellipse cx="8" cy="13" rx="6" ry="3"/><path d="M2 13v4c0 4 12 4 12 0v-4M2 17v3c0 4 12 4 12 0v-3"/>',
+  carFront: '<path d="m5 10 2-6h10l2 6M4 10h16v9H4ZM6 19v2M18 19v2M4 10l-2 1M20 10l2 1M7 15h2M15 15h2"/>',
+  clipboardChecks: '<rect x="5" y="4" width="15" height="18" rx="2"/><rect x="9" y="2" width="7" height="4" rx="1"/><path d="m8 12 1 1 2-2M14 12h3M8 17l1 1 2-2M14 17h3"/>',
+  zap: '<path d="m13 2-9 12h7l-1 8 10-13h-7Z"/>',
 } as const;
 export type IconName = keyof typeof ICONS;

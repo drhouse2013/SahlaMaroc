@@ -49,7 +49,12 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
       const d = article.data;
       const photo = getGuidePhoto(d.translationKey, d.category, d.lang);
       const visual = guideVisual(d.translationKey, d.category, d.title);
-      const checks = d.tags.slice(0, 3);
+      const reference = lang === 'fr' ? ({
+        'permanent-return': { title: 'Retour définitif au Maroc : le guide complet', tag: 'MRE', checks: ['Démarches', 'Documents', 'Conseils'] },
+        'buy-property-abroad': { title: 'Acheter un bien au Maroc : étapes, coûts et conseils', tag: 'Immobilier', checks: ['Financement', 'Fiscalité', 'Pièges à éviter'] },
+        'import-car-permanent-return': { title: 'Transport de voiture au Maroc : procédures et frais', tag: 'Voyage', checks: ['Documents', 'Tarifs', 'Recommandations'] },
+      } as Record<string, {title: string; tag: string; checks: string[]}>)[d.translationKey] : undefined;
+      const checks = reference?.checks ?? d.tags.slice(0, 3);
       return (
         <article class="tpl-guide">
           <div class="tpl-guide__media">
@@ -62,8 +67,8 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
             )}
           </div>
           <div class="tpl-guide__body">
-            <span class="tpl-guide__tag">{SHORT_TAGS[d.category] ?? CATEGORIES[d.category].label[d.lang]}</span>
-            <span class="tpl-guide__title">{d.title}</span>
+            <span class="tpl-guide__tag">{reference?.tag ?? SHORT_TAGS[d.category] ?? CATEGORIES[d.category].label[d.lang]}</span>
+            <span class="tpl-guide__title">{reference?.title ?? d.title}</span>
             <a class="tpl-guide__link" href={entryPath(d.lang, d.slug)} aria-label={d.title}></a>
             <span class="tpl-guide__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></span>
             <div class="tpl-guide__checks">
