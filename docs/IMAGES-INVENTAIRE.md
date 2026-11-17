@@ -67,7 +67,7 @@
 | Fès-Meknès | `regions/fes-meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg> | vérifiée | CC BY-SA 4.0 |
 | Rabat-Salé-Kénitra | `regions/rabat-sale-kenitra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Main_Gate_Chellah_Rabat_Nov25_A7CR_08921.jpg> | vérifiée | CC BY-SA 4.0 |
 | Béni Mellal-Khénifra | `regions/beni-mellal-khenifra.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
-| Casablanca-Settat | `regions/casablanca-settat.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hassan_II_Mosque_and_Its_Minaret_in_Casablanca,_Morocco_2.jpg> | vérifiée | CC BY-SA 4.0 |
+| Casablanca-Settat | `cities/casablanca.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg> | vérifiée | CC BY-SA 4.0 ; photo du chef-lieu (Casablanca) |
 | Marrakech-Safi | `regions/marrakech-safi.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Jemaa_el-Fna_square_is_a_major_place_of_cultural_exchanges.jpg> | vérifiée | CC BY-SA 4.0 |
 | Drâa-Tafilalet | `regions/draa-tafilalet.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg> | vérifiée | CC BY-SA 4.0 |
 | Souss-Massa | `regions/souss-massa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_Agadir_Oufella.jpg> | vérifiée | CC BY-SA 4.0 |
