@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-17. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 entrées, 265 photos vérifiées, 73 placeholders (« Photo à venir »), 0 à confirmer, 1 illustration décorative.**
+**Total : 339 entrées, 266 photos vérifiées, 72 placeholders (« Photo à venir »), 0 à confirmer, 1 illustration décorative.**
 
 | Type | Entrées | Vérifiées | Placeholders | À confirmer | Illustrations |
 |---|---|---|---|---|---|
 | Hero accueil | 1 | 0 | 0 | 0 | 1 |
 | Villes | 31 | 31 | 0 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 | 0 |
-| Lieux à visiter | 295 | 222 | 73 | 0 | 0 |
+| Lieux à visiter | 295 | 223 | 72 | 0 | 0 |
 
 **Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le panorama illustré actuellement utilisé remplace ici la photographie historique `cities/home-hero.jpg`, qui ne représente plus le héros affiché.
 
@@ -244,7 +244,7 @@
 | Plage de Charrana | `spots/nador-charrana.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Charana_2.JPG> | vérifiée | CC BY-SA 4.0 |
 | Golf d’Atalayoun | — (« Photo à venir ») | — | — | placeholder | — |
 
-### Tétouan (6/12 vérifiées)
+### Tétouan (7/12 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -254,7 +254,7 @@
 | Musée d’art moderne | `spots/tetouan-modern-art.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg> | vérifiée | CC BY-SA 4.0 |
 | Palais royal et Méchouar | `spots/tetouan-royal-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Morocco_%C2%A9_03.jpg> | vérifiée | CC BY-SA 3.0 |
 | Jardin Riad Al Ochak | — (« Photo à venir ») | — | — | placeholder | — |
-| Kasbah du mont Dersa | — (« Photo à venir ») | — | — | placeholder | — |
+| Kasbah du mont Dersa | `spots/tetouan-dersa-kasbah-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée du patrimoine religieux | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée Dar El Oddi | — (« Photo à venir ») | — | — | placeholder | — |
 | Tannerie de Tétouan | `spots/tetouan-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%AF%D8%A7%D8%B1_%D8%A7%D9%84%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
