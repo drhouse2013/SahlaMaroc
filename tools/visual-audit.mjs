@@ -5,19 +5,19 @@
  */
 import { chromium } from '@playwright/test';
 import sharp from 'sharp';
-import { mkdir, copyFile, stat } from 'node:fs/promises';
+import { mkdir, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 
 const base = process.env.PLAYWRIGHT_BASE_URL ?? 'http://[::1]:4331';
 const out = 'visual-audit';
-const ZIP_REF = process.env.TEMPLATE_REF ?? 'C:/Users/Diniz/AppData/Local/Temp/SahlaTpl/SahlaMaroc_Template_Complete/public/assets/reference/capture-originale.png';
+const ZIP_REF = process.env.TEMPLATE_REF ?? 'C:/Users/Diniz/Downloads/SahlaMaroc.png';
 const W = 1448;
-const H = 1024;
+const H = 1086;
 
 await mkdir(out, { recursive: true });
 if (!existsSync(`${out}/reference.png`) && existsSync(ZIP_REF)) await copyFile(ZIP_REF, `${out}/reference.png`);
 
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH } : {});
 const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1, colorScheme: 'light', locale: 'fr-FR', reducedMotion: 'reduce' });
 // Aucune préférence de thème forcée : on vérifie le rendu par défaut (clair) comme un premier visiteur.
 await page.goto(`${base}/fr`, { waitUntil: 'networkidle' });
@@ -54,7 +54,6 @@ const { data: B } = curRaw;
 const px = info.width * info.height;
 const diff = Buffer.alloc(px * 3);
 let sum = 0, changed = 0;
-const bandH = 1;
 const rows = new Array(info.height).fill(0);
 for (let i = 0; i < px; i++) {
   const o = i * 3;

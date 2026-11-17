@@ -40,46 +40,7 @@ for (const [from, to] of copies) await copy(from, to);
 //    flèche incrustée ; elles ne sont pas réutilisables telles quelles. Les cartes sont donc
 //    reconstruites en HTML/CSS avec les photos éditoriales du site (voir home/FeatureCards.astro).
 
-// 3. Destinations : recadrage des cartes de la capture (bord de la carte voisine et bandeau de
-//    titre retirés) ; les libellés sont affichés en HTML, donc traduisibles.
-const cities = ['marrakech', 'fes', 'chefchaouen', 'agadir', 'casablanca'];
-for (const city of cities) {
-  const { width, height } = await sharp(path.join(assets, `destinations/editables/${city}.webp`)).metadata();
-  const top = Math.round(height * 0.215);
-  const left = Math.round(width * 0.04);
-  await sharp(path.join(assets, `destinations/editables/${city}.webp`))
-    .extract({ left, top, width: width - left, height: height - top })
-    .resize({ width: 720 })
-    .sharpen({ sigma: 0.6 })
-    .webp({ quality: 84 })
-    .toFile(out(`public/assets/cards/destination-${city}.webp`));
-}
-
-// 3 bis. Cartes « exactes » de la maquette (texte incrusté) : utilisées telles quelles sur
-//        ordinateur en français, comme le fait la template. Les autres langues et le mobile
-//        gardent la version HTML éditable.
-for (const name of ['je-rentre-au-maroc', 'je-souhaite-investir', 'je-visite-le-maroc']) {
-  await copy(`banners/exact/${name}.png`, `public/assets/cards/exact/${name}.png`);
-}
-for (const city of cities) {
-  await copy(`destinations/exact/${city}.png`, `public/assets/cards/exact/${city}.png`);
-}
-await copy('footer/checklist-bandeau-exact.png', 'public/assets/cards/exact/checklist-bandeau.png');
-
-// 3 ter. Photos des guides de la maquette (recadrées dans les cartes « editables » pour retirer
-//        la bande ivoire et le texte), utilisées comme visuel des cartes guides.
-const guides = ['retour-definitif-mre', 'achat-immobilier', 'transport-voiture'];
-for (const name of guides) {
-  const { width, height } = await sharp(path.join(assets, `guides/editables/${name}.webp`)).metadata();
-  const top = Math.round(height * 0.24);
-  await sharp(path.join(assets, `guides/editables/${name}.webp`))
-    .extract({ left: 0, top, width, height: height - top })
-    .resize({ width: 640 })
-    .webp({ quality: 84 })
-    .toFile(out(`public/assets/cards/guide-${name}.webp`));
-}
-
-// 4. Bandeau checklists : bande littorale (photo + motif doré) sans l'interface autour.
+// 3. Bandeau checklists : bande littorale (photo + motif doré) sans l'interface autour.
 {
   const meta = await sharp(path.join(assets, 'footer/plage-coucher-soleil.webp')).metadata();
   const top = Math.round(meta.height * 0.38);
@@ -95,7 +56,6 @@ const list = await Promise.all(
     'public/assets/decor/motif-zellige.svg',
     'public/assets/logos/logo-horizontal-clair.svg',
     'src/assets/template/hero-panorama.webp',
-    'public/assets/cards/destination-marrakech.webp',
     'public/assets/cards/coast-checklist.webp',
   ].map(async (p) => `${p} — ${(await stat(out(p))).size} o`),
 );

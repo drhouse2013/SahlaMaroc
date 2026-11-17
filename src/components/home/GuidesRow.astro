@@ -5,6 +5,7 @@
  */
 import { Image } from 'astro:assets';
 import Icon from '../Icon.astro';
+import PhotoCredit from '../PhotoCredit.astro';
 import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
 import { getArticleByKey, entryPath, hubPath } from '../../utils/i18n';
 import { getGuidePhoto } from '../../utils/guidePhotos';
@@ -29,12 +30,6 @@ const SHORT_TAGS: Record<string, string> = {
   tours: { fr: 'Voyage', en: 'Travel', es: 'Viaje', de: 'Reise', ar: 'سفر' }[lang],
 };
 const KEYS = ['permanent-return', 'buy-property-abroad', 'import-car-permanent-return'];
-/** Photos des cartes de la maquette, recadrées (retour définitif, achat immobilier, transport voiture). */
-const TEMPLATE_PHOTOS: Record<string, string> = {
-  'permanent-return': '/assets/cards/guide-retour-definitif-mre.webp',
-  'buy-property-abroad': '/assets/cards/guide-achat-immobilier.webp',
-  'import-car-permanent-return': '/assets/cards/guide-transport-voiture.webp',
-};
 const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key)))).filter((a) => a !== null);
 ---
 
@@ -58,14 +53,13 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
       return (
         <article class="tpl-guide">
           <div class="tpl-guide__media">
-            {TEMPLATE_PHOTOS[d.translationKey] ? (
-              <img src={TEMPLATE_PHOTOS[d.translationKey]} alt="" width="640" height="150" loading="lazy" />
-            ) : photo ? (
-              <Image src={photo.src} alt={photo.alt} widths={[320, 480, 640]} sizes="(min-width: 1000px) 22vw, (min-width: 650px) 30vw, 92vw" loading="lazy" />
+            {photo ? (
+              <Image src={photo.src} alt={photo.alt} widths={[320, 480, 640, 960]} sizes="(min-width: 1000px) 22vw, (min-width: 650px) 30vw, 92vw" loading="lazy" quality={84} />
             ) : (
               <span class="tpl-guide__icon" aria-hidden="true"><Icon name={visual.icon} class="size-8" /></span>
             )}
           </div>
+          {photo?.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
           <div class="tpl-guide__body">
             <span class="tpl-guide__tag">{reference?.tag ?? SHORT_TAGS[d.category] ?? CATEGORIES[d.category].label[d.lang]}</span>
             <span class="tpl-guide__title">{reference?.title ?? d.title}</span>

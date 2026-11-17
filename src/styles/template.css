@@ -61,6 +61,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  z-index: 2;
 }
 .tpl-brand { display: flex; align-items: center; justify-content: center; flex: none; width: 446px; height: 50px; }
 .tpl-brand img { width: auto; height: 49px; max-height: 49px; }
@@ -251,9 +252,9 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   position: relative;
   display: block;
   min-width: 0;
-  height: 154px;
+  height: 158px;
   border-radius: var(--tpl-radius);
-  border: 4px solid #fff8f1;
+  border: 0;
   overflow: hidden;
   color: #fff;
   background: var(--tpl-forest);
@@ -261,12 +262,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out);
 }
 .tpl-feature:hover, .tpl-feature:focus-visible { transform: translateY(-3px); box-shadow: var(--tpl-shadow-lift); }
-/* Carte « exacte » (français, ordinateur) : image de la maquette, texte incrusté comme la référence. */
-.tpl-feature__exact { display: none; width: 100%; height: 100%; max-width: 100%; object-fit: fill; object-position: left top; }
-.tpl-feature--exact { height: 158px; border: 0; box-shadow: 0 6px 16px rgb(61 38 27 / .14); }
-.tpl-feature--exact .tpl-feature__exact { display: block; }
-.tpl-feature--exact .tpl-feature__editable { display: none; }
-/* Carte éditable : photo + texte HTML traduit (mobile et autres langues). */
+/* Carte : photographie haute résolution et texte HTML traduit. */
 .tpl-feature__editable {
   position: relative;
   isolation: isolate;
@@ -310,6 +306,8 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-feature-cell .photo-credit-control__trigger { width: 1.3rem; height: 1.3rem; border-color: rgb(255 255 255 / .35); background: rgb(7 30 24 / .45); opacity: .8; }
 .tpl-feature-cell .photo-credit-control__trigger svg { width: .8rem; height: .8rem; }
 .tpl-feature-cell .photo-credit-control__trigger:hover { opacity: 1; }
+.tpl-guide > .photo-credit-control { inset-block-end: auto; inset-block-start: .45rem; inset-inline-end: .45rem; z-index: 2; }
+.tpl-guide > .photo-credit-control .photo-credit-control__trigger { width: 1.35rem; height: 1.35rem; border-color: rgb(255 255 255 / .5); background: rgb(7 30 24 / .52); opacity: .86; }
 .tpl-dest__link { position: absolute; inset: 0; z-index: 3; }
 .tpl-dest__link:focus-visible { outline: 3px solid #f4c051; outline-offset: -4px; border-radius: 10px; }
 .tpl-dest .photo-credit-control { inset-block-end: auto; inset-block-start: .4rem; inset-inline-end: .4rem; z-index: 4; }
@@ -352,7 +350,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-pill:hover { background: linear-gradient(#1a6b4d, #0a3a2d); }
 
 /* 6. Outils pratiques ------------------------------------------------------- */
-.tpl-tools { margin-block-start: 18px; }
+.tpl-tools { margin-block-start: 9px; }
 .tpl-tools__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 15px; margin-block-start: 1px; }
 .tpl-tool {
   display: flex;
@@ -374,7 +372,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-tool small { margin-block-start: 3px; font-size: 10.4px; color: #424d55; }
 
 /* 7. Guides essentiels ------------------------------------------------------ */
-.tpl-guides { margin-block-start: 24px; }
+.tpl-guides { margin-block-start: 27px; }
 .tpl-guides__grid { display: grid; grid-template-columns: 275px repeat(3, minmax(0, 1fr)); gap: 15px; }
 .tpl-guides__intro h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.4rem, 1.8vw, 1.62rem); font-weight: 800; letter-spacing: -.03em; }
 .tpl-guides__intro p { margin: 6px 0 20px; font-size: 12.5px; line-height: 1.45; color: #243441; }
@@ -428,8 +426,8 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-guide__checks svg { flex: none; color: #cb3f1d; }
 
 /* 8. Destinations ----------------------------------------------------------- */
-.tpl-destinations { margin-block-start: 21px; }
-.tpl-destinations__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-block-start: 9px; }
+.tpl-destinations { margin-block-start: 18px; }
+.tpl-destinations__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-block-start: 4px; }
 .tpl-dest {
   position: relative;
   display: block;
@@ -442,11 +440,9 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   background: var(--surface-3);
 }
 .tpl-dest:hover, .tpl-dest:focus-visible { transform: translateY(-3px); }
-.tpl-dest__exact { display: none; position: absolute; inset-block-start: 0; inset-inline-start: 0; width: 100%; height: 100%; max-width: 100%; object-fit: fill; }
-.tpl-dest--exact .tpl-dest__exact { display: block; }
-.tpl-dest--exact .tpl-dest__editable { display: none; }
 .tpl-dest__editable { position: absolute; inset: 0; }
 .tpl-dest__editable > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tpl-dest__fallback { position: absolute; inset: 0; background: linear-gradient(140deg, #315e58, #163a33 65%, #d08c4d); }
 .tpl-dest__editable::after { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(0deg, rgb(2 18 15 / .92), transparent); }
 .tpl-dest__text { position: absolute; z-index: 1; inset-inline-start: 11px; bottom: 9px; }
 .tpl-dest__text h3 { display: flex; align-items: center; gap: 3px; margin: 0; font-family: var(--font-display); font-size: 17px; font-weight: 700; color: #fff; }
@@ -505,7 +501,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   opacity: .85;
   pointer-events: none;
 }
-.tpl-checklist__icon { position: relative; z-index: 1; margin-inline-start: 30%; display: grid; place-items: center; color: #f9d06d; }
+.tpl-checklist__icon { position: relative; z-index: 1; margin-inline-start: 30%; display: grid; place-items: center; width: 46px; height: 46px; flex: none; border: 1px solid rgb(255 224 161 / .22); border-radius: 11px; background: linear-gradient(145deg, rgb(206 145 47 / .82), rgb(150 89 27 / .78)); color: #ffe3a0; box-shadow: inset 0 1px rgb(255 255 255 / .16); }
 .tpl-checklist__copy { position: relative; z-index: 1; }
 .tpl-checklist__copy h2 { margin: 0; font-family: var(--font-display); font-size: 21px; font-weight: 700; letter-spacing: -.01em; color: #fff; }
 .tpl-checklist__copy p { margin: 2px 0 0; font-size: 11px; line-height: 1.45; color: rgb(255 255 255 / .88); }
@@ -692,7 +688,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-guides__intro { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
   .tpl-guides__intro p { display: none; }
   .tpl-guides__intro .tpl-pill { margin-inline-start: auto; }
-  .tpl-destinations__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tpl-destinations__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-block-start: 9px; }
   .tpl-checklist { flex-wrap: wrap; height: auto; min-height: 96px; }
   .tpl-checklist__icon { margin-inline-start: 22%; }
   .tpl-footer__inner { grid-template-columns: repeat(2, 1fr); }
@@ -723,13 +719,9 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-benefit i { display: none; }
   .tpl-features { width: calc(100% - 24px); margin-block-start: -36px; }
   .tpl-features__grid { grid-template-columns: 1fr; gap: 10px; }
-  .tpl-feature { height: 147px; border-width: 3px; }
-  .tpl-feature--exact .tpl-feature__exact { display: none; }
-  .tpl-feature--exact .tpl-feature__editable { display: flex; }
+  .tpl-feature { height: 147px; }
   .tpl-feature h2 { font-size: 1.8rem; }
   .tpl-feature p { font-size: 10.5px; max-width: 14rem; }
-  .tpl-dest--exact .tpl-dest__exact { display: none; }
-  .tpl-dest--exact .tpl-dest__editable { display: block; }
   .tpl-section { width: calc(100% - 34px); }
   .tpl-section__head h2, .tpl-guides__intro h2 { font-size: 1.5rem; }
   .tpl-accent { width: 28px; }
@@ -750,12 +742,14 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-checklist--exact { height: auto; }
   .tpl-checklist--exact .tpl-checklist__exact { display: none; }
   .tpl-checklist--exact .tpl-checklist__editable { display: flex; }
-  .tpl-checklist__editable { padding: 13px; }
-  .tpl-checklist__photo { width: 45%; }
-  .tpl-checklist__icon { margin-inline-start: 26%; }
-  .tpl-checklist__link { margin-inline-start: auto; padding: 9px 13px; }
-  .tpl-checklist__copy h2 { font-size: 19px; }
-  .tpl-checklist__copy p { font-size: 10px; }
+  .tpl-checklist__editable, .tpl-checklist--exact .tpl-checklist__editable { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: start; gap: 10px 13px; padding: 18px; }
+  .tpl-checklist__photo { display: none; }
+  .tpl-checklist__ornament { width: 88px; opacity: .45; }
+  .tpl-checklist__icon { width: 40px; height: 40px; margin: 0; border-radius: 10px; }
+  .tpl-checklist__copy { min-width: 0; }
+  .tpl-checklist__link { grid-column: 2; grid-row: 2; justify-self: start; margin: 1px 0 0; padding: 10px 15px; }
+  .tpl-checklist__copy h2 { font-size: 19px; line-height: 1.14; }
+  .tpl-checklist__copy p { font-size: 12px; line-height: 1.45; }
   .tpl-footer__inner { grid-template-columns: 1fr 1fr; gap: 30px 16px; padding: 34px 21px; }
   .tpl-footer__brand { grid-column: 1 / -1; }
   .tpl-footer__col h2 { font-size: 13px; }
@@ -842,4 +836,12 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
     from { opacity: .65; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
+}
+
+/* Home: keep the full arch inside the panorama and align the feature row to its edge. */
+@media (min-width: 1081px) {
+  body:has(.home-shell) .tpl-hero { height: 262px; }
+  body:has(.home-shell) .tpl-hero__media { object-position: center top; }
+  body:has(.home-shell) .tpl-hero__content { padding-inline-start: max(calc((100% - 1300px) / 2 + 140px), 17.3vw); }
+  body:has(.home-shell) .tpl-features { margin-block-start: 0; }
 }

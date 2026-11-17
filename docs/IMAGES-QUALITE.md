@@ -2,7 +2,7 @@
 
 Généré par `node tools/audit-image-quality.mjs` le 2026-11-17.
 
-**536 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
+**511 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
 
 Périmètre : toutes les images de `src/assets` et `public`, y compris les images non utilisées et les variantes déjà générées. Les sorties `dist` et les dépendances sont exclues. Les dimensions tiennent compte de la rotation EXIF. Seules les photographies de `src/assets/photos` sont soumises aux seuils : largeur disponible après recadrage 4:3 pour les cartes (720 px) et 16:9 pour les héros (1600 px). Les seuils repèrent les sources à examiner : le rôle réel, le ratio et le cadrage doivent être contrôlés dans les pages. Une grande dimension ne prouve ni la netteté, ni la date, ni le lieu, ni la licence. Les fichiers ICO sont signalés si le décodeur ne les lit pas.
 
@@ -20,32 +20,7 @@ Aucune.
 | Fichier | Dimensions orientées | Poids Ko | Revue à prévoir |
 |---|---:|---:|---|
 | public/assets/cards/coast-checklist.webp | 720 × 77 | 6 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/destination-agadir.webp | 720 × 313 | 8 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/destination-casablanca.webp | 720 × 319 | 8 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/destination-chefchaouen.webp | 720 × 317 | 26 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/destination-fes.webp | 720 × 315 | 24 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/destination-marrakech.webp | 720 × 299 | 14 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/agadir.png | 244 × 123 | 43 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/casablanca.png | 240 × 123 | 42 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/checklist-bandeau.png | 1312 × 80 | 125 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/chefchaouen.png | 241 × 123 | 57 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/fes.png | 243 × 123 | 59 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/je-rentre-au-maroc.png | 419 × 149 | 96 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/je-souhaite-investir.png | 417 × 149 | 104 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/je-visite-le-maroc.png | 417 × 149 | 106 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/exact/marrakech.png | 256 × 123 | 61 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/guide-achat-immobilier.webp | 640 × 148 | 7 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/guide-retour-definitif-mre.webp | 640 × 146 | 10 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/guide-transport-voiture.webp | 640 × 144 | 6 | hors photographie : rôle spécifique à examiner |
 | public/assets/cards/ref/checklist-banner.png | 1312 × 80 | 238 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/destination-agadir.png | 251 × 128 | 80 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/destination-casablanca.png | 252 × 128 | 87 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/destination-chefchaouen.png | 248 × 128 | 97 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/destination-fes.png | 251 × 128 | 98 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/destination-marrakech.png | 264 × 128 | 95 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/je-rentre-au-maroc.png | 434 × 159 | 170 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/je-souhaite-investir.png | 429 × 159 | 181 | hors photographie : rôle spécifique à examiner |
-| public/assets/cards/ref/je-visite-le-maroc.png | 434 × 159 | 177 | hors photographie : rôle spécifique à examiner |
 | public/assets/decor/coin-arabesque.svg | 250 × 250 | 1 | vectoriel |
 | public/assets/decor/lanterne.svg | 100 × 220 | 0 | vectoriel |
 | public/assets/decor/ligne-ornement.svg | 160 × 20 | 0 | vectoriel |
