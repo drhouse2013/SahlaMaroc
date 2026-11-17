@@ -94,7 +94,7 @@ const navItems: NavItem[] = [
   },
 ];
 const searchHref = hubPath(lang, 'search');
-const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
+const isCurrent = (href: string) => path === href || (href !== homePath(lang) && path.startsWith(href + '/'));
 const isFrench = lang === 'fr';
 ---
 
