@@ -59,6 +59,20 @@ const spotSections = Object.entries(SPOTS).map(([cityId, spots]) => ({
 }));
 sections.push({ title: 'Lieux à visiter', rows: spotSections.flatMap((s) => s.rows), groups: spotSections });
 
+// Keep article-specific images visible in the same audit as destination photos.
+// Several guides can intentionally reuse one file: count references, not unique photos.
+const editorial = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/assets/photos/guides/editorial-photos.json'), 'utf8'));
+const editorialRows = Object.entries(editorial).map(([id, e]) => {
+  const exists = fs.existsSync(path.join(ROOT, 'src/assets/photos', e.file));
+  const metadata = { ...e, credit: `${e.credit ?? ''}, ${e.license ?? ''}` };
+  const valid = exists && !!e.credit?.trim() && isVerified(metadata);
+  return {
+    name: id, image: `src/assets/photos/${e.file}`, source: 'Photographie éditoriale',
+    url: e.source ?? '', status: valid ? V : C, license: e.license ?? '—',
+    note: !exists ? 'fichier introuvable' : !valid ? 'auteur, licence ou source incomplets' : 'métadonnées contrôlées ; date et composition à examiner',
+  };
+});
+
 const count = (rows, st) => rows.filter((r) => r.status === st).length;
 const all = sections.flatMap((s) => s.rows);
 const line = (r) => `| ${cell(r.name)} | ${r.image === '—' ? '— (« Photo à venir »)' : `\`${r.image}\``} | ${r.source} | ${r.url ? `<${r.url}>` : '—'} | ${r.status} | ${r.license}${r.note ? ` ; ${cell(r.note.trim())}` : ''} |`;
@@ -78,4 +92,13 @@ for (const s of sections) {
   for (const g of s.groups) out.push(`### ${g.title} (${count(g.rows, V)}/${g.rows.length} vérifiées)`, '', table(g.rows), '');
 }
 fs.writeFileSync(path.join(ROOT, 'docs/IMAGES-INVENTAIRE.md'), out.join('\n'));
+const editorialOut = [
+  '# Inventaire des photographies éditoriales', '',
+  '> Généré par `npm run images:inventory` depuis `src/assets/photos/guides/editorial-photos.json`.', '',
+  `${editorialRows.length} références de guides, ${new Set(editorialRows.map(r => r.image)).size} fichiers distincts ; ${count(editorialRows, C)} référence(s) à corriger.`, '',
+  '**Portée.** Présence du fichier, auteur, licence reconnue et URL HTTPS uniquement. Ce contrôle ne prouve ni la date, ni la qualité, ni la correspondance visuelle au sujet. Les huit images génériques de catégorie et les illustrations de la template restent hors de ce manifeste.', '',
+  table(editorialRows), '',
+];
+fs.writeFileSync(path.join(ROOT, 'docs/IMAGES-EDITORIALES.md'), editorialOut.join('\n'));
+if (count(editorialRows, C)) process.exitCode = 1;
 console.log(`docs/IMAGES-INVENTAIRE.md : ${all.length} entrées, ${count(all, V)} vérifiées, ${count(all, P)} placeholders, ${count(all, C)} à confirmer, ${count(all, I)} illustration décorative.`);
