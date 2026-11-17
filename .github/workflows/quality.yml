@@ -4,6 +4,8 @@ on:
     branches: [main, 'design/**']
   pull_request:
     branches: [main]
+    # A changed base branch must validate the new comparison as well.
+    types: [opened, synchronize, reopened, ready_for_review, edited]
 permissions:
   contents: read
 concurrency:
