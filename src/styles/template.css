@@ -49,8 +49,9 @@
   inset-inline-start: 0;
   width: 139px;
   background: url("/assets/decor/motif-zellige-terracotta.svg") repeat;
-  opacity: .5;
-  clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+  background-size: 28px 28px;
+  opacity: .85;
+  clip-path: polygon(0 0, 100% 0, 87% 20%, 73% 48%, 58% 100%, 0 100%);
   pointer-events: none;
 }
 .tpl-header__inner {
@@ -157,7 +158,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-burger-wrap { display: block; position: relative; }
   .tpl-burger { display: flex; }
 }
-[dir="rtl"] .tpl-header::before { inset-inline-start: auto; inset-inline-end: 0; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%); }
+[dir="rtl"] .tpl-header::before { inset-inline-start: auto; inset-inline-end: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 42% 100%, 27% 48%, 13% 20%); }
 
 /* 3. Héros ------------------------------------------------------------------ */
 .home-shell {
