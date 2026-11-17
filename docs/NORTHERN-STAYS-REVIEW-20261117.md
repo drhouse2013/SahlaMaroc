@@ -13,3 +13,5 @@ Publication non réalisée : dépend des lots 83 et 84 et de la résolution du c
 ## Contrôle du dernier lot consolidé
 
 81 tests unitaires réussis ; construction 936 pages ; vérification de 114746 références locales sans erreur. Guide retour définitif inspecté : un h1, un main, image chargée, canonical sur le domaine de production configuré. Checklist de 12 cases : cocher une case, recharger et constater la conservation ; décocher, recharger et confirmer le retour aux 12 cases vides. État initial entièrement restauré.
+
+Convertisseur EUR/MAD contrôlé dans le navigateur : montant 100, taux d’exemple 10 → 1 000,00 DH ; taux 0 → résultat masqué et message « Le taux doit être supérieur à 0. ». Retour aux valeurs initiales 100 et 11 après le test. Aucun taux réel du marché n’est revendiqué ni modifié.
