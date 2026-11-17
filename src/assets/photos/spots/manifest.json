@@ -2151,6 +2151,19 @@
     "credit": "Sapha Bouamara, CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Flock_of_birds_Boukana_beach.jpg"
   },
+  "meknes/meknes-museum": {
+    "file": "meknes-museum.jpg",
+    "fit": "contain",
+    "alt": {
+      "fr": "Porte sculptée du Musée de Meknès dans la médina",
+      "en": "Carved doorway of the Meknes Museum in the medina",
+      "es": "Puerta tallada del Museo de Mequinez en la medina",
+      "de": "Geschnitzter Eingang des Museums von Meknès in der Medina",
+      "ar": "مدخل منحوت لمتحف مكناس في المدينة العتيقة"
+    },
+    "credit": "ZAINEB HACHAMI, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_Mekn%C3%A8s.jpg"
+  },
   "el-jadida/sidi-bouzid": {
     "file": "el-jadida-sidi-bouzid.jpg",
     "alt": {

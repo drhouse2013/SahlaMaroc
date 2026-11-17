@@ -467,6 +467,10 @@ La page régionale Casablanca-Settat réutilise désormais la photo vérifiée d
 
 - `src/assets/photos/spots/agadir-beach.jpg` : original HD de 3024 × 3165 pixels, Fmc2026, prise le 13 janvier 2025. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cadrage d’affichage 50 % / 65 %, sans modification du fichier original ; formats de diffusion optimisés par Astro. Le point de cadrage conserve la tour, la plage et l’océan sur les cartes de bureau et mobiles. Les lignes de crédits des quatre vues Rabat/Mazagan ont également été synchronisées avec leurs manifestes actuels.
 
+## Ajout du 17 novembre 2026 — Musée de Meknès
+
+- `src/assets/photos/spots/meknes-museum.jpg` : ZAINEB HACHAMI, CC BY-SA 4.0. Photo exacte du Musée de Meknès, prise le 24 novembre 2020. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_Mekn%C3%A8s.jpg). Original vertical HD de 2813 × 3938 pixels, redimensionné à 1600 × 2240 ; affichage intégral dans la miniature pour conserver l’arche et la porte, sans recadrage. Attribution affichée au survol / focus et partage sous [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
 ## Héros adapté à la référence — 17 novembre 2026
 
 `src/assets/template/hero-reference-20261117.png` : illustration décorative créée avec l’outil intégré ImageGen à partir de `SahlaMaroc.png` fourni par le propriétaire du site. Ce composite ne représente pas une photographie documentaire récente.

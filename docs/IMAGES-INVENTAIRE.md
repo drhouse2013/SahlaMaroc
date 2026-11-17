@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-17. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 entrées, 268 photos vérifiées, 70 placeholders (« Photo à venir »), 0 à confirmer, 1 illustration décorative.**
+**Total : 339 entrées, 269 photos vérifiées, 69 placeholders (« Photo à venir »), 0 à confirmer, 1 illustration décorative.**
 
 | Type | Entrées | Vérifiées | Placeholders | À confirmer | Illustrations |
 |---|---|---|---|---|---|
 | Hero accueil | 1 | 0 | 0 | 0 | 1 |
 | Villes | 31 | 31 | 0 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 | 0 |
-| Lieux à visiter | 295 | 225 | 70 | 0 | 0 |
+| Lieux à visiter | 295 | 226 | 69 | 0 | 0 |
 
 **Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le panorama illustré actuellement utilisé remplace ici la photographie historique `cities/home-hero.jpg`, qui ne représente plus le héros affiché.
 
@@ -261,7 +261,7 @@
 | Avenue Mohammed V | — (« Photo à venir ») | — | — | placeholder | — |
 | Quartier de l’Ensanche | — (« Photo à venir ») | — | — | placeholder | — |
 
-### Meknès (9/12 vérifiées)
+### Meknès (10/12 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -275,7 +275,7 @@
 | Bassin de l'Agdal | `spots/meknes-agdal-basin.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bassin_de_l%27Agdal_ou_Sahrij_Swani_-_Mekn%C3%A8s_02.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée Dar Jamaï | `spots/meknes-dar-jamai.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Dar_jamai_DSCF5744.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée Borj Belkari | `spots/meknes-borj-belkari.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_51DSC_0326_(42737841031).jpg> | vérifiée | CC BY-SA 2.0 |
-| Musée de Meknès | — (« Photo à venir ») | — | — | placeholder | — |
+| Musée de Meknès | `spots/meknes-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_Mekn%C3%A8s.jpg> | vérifiée | CC BY-SA 4.0 |
 | Mausolée de Sidi Ben Aïssa | `spots/meknes-sidi-ben-aissa.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg> | vérifiée | CC BY-SA 4.0 |
 
 ### Ouarzazate (8/8 vérifiées)

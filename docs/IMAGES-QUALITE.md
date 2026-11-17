@@ -2,7 +2,7 @@
 
 Généré par `node tools/audit-image-quality.mjs` le 2026-11-17.
 
-**511 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
+**512 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
 
 Périmètre : toutes les images de `src/assets` et `public`, y compris les images non utilisées et les variantes déjà générées. Les sorties `dist` et les dépendances sont exclues. Les dimensions tiennent compte de la rotation EXIF. Seules les photographies de `src/assets/photos` sont soumises aux seuils : largeur disponible après recadrage 4:3 pour les cartes (720 px) et 16:9 pour les héros (1600 px). Les seuils repèrent les sources à examiner : le rôle réel, le ratio et le cadrage doivent être contrôlés dans les pages. Une grande dimension ne prouve ni la netteté, ni la date, ni le lieu, ni la licence. Les fichiers ICO sont signalés si le décodeur ne les lit pas.
 
@@ -419,6 +419,7 @@ Aucune.
 | src/assets/photos/spots/meknes-heri-souani.jpg | 1400 × 2100 | 193 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/meknes-lahdim.jpg | 1400 × 933 | 199 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/meknes-moulay-ismail.jpg | 1400 × 930 | 190 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/meknes-museum.jpg | 1600 × 2240 | 349 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/meknes-sidi-ben-aissa.jpg | 1400 × 949 | 151 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/merzouga-dayet-srji.jpg | 1400 × 933 | 144 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/merzouga-erg-chebbi.jpg | 1400 × 933 | 120 | recadrage 16:9 sous 1600 px : héro à examiner |
