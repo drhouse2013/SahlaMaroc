@@ -799,6 +799,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .dark .tpl-section__head p, .dark .tpl-guides__intro p { color: var(--muted); }
 .dark .tpl-tool { background: linear-gradient(140deg, #17423a, #12332b); border-color: #265045; }
 .dark .tpl-tool strong { color: var(--text); }
+.dark .tpl-tool svg { color: #f6b67d; }
 .dark .tpl-tool small { color: #b9c7bd; }
 .dark .tpl-guide { background: #12332b; }
 .dark .tpl-guide__body { background: linear-gradient(180deg, #17423a, #12332b); }
