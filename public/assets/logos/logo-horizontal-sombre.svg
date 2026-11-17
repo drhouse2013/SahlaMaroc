@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435 92" role="img" aria-label="Sahla Maroc">
+ <g transform="translate(12 10)" fill="none" stroke="#A9371E" stroke-width="4.3" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M8 66V31L35 6l27 25v35H47V47H23v19Z"/>
+  <path d="M18 30 35 15l17 15M4 68h20M47 68h20"/>
+  <path d="m35 29 4.9 9.8 11 1.5-7.9 7.6 1.9 10.9-9.9-5.2-9.9 5.2 1.9-10.9-7.9-7.6 11-1.5Z" stroke="#0B4F3E" stroke-width="3.5"/>
+ </g>
+ <text x="93" y="65" font-family="Georgia, 'Times New Roman',serif" font-size="52" font-weight="700" letter-spacing="-1.7" fill="#fff8ef">Sahla</text>
+ <text x="238" y="65" font-family="Georgia, 'Times New Roman',serif" font-size="52" font-weight="700" letter-spacing="-1.7" fill="#e8b48c">Maroc</text>
+</svg>

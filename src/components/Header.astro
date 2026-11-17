@@ -1,115 +1,162 @@
 ---
 /**
- * En-tête : logo, navigation principale, recherche, langue, thème.
- * - Desktop (≥ lg) : Guides (menu par profil + par thème), Villes, Calculateurs, Checklists, MRE.
- * - Mobile : recherche + menu plein écran (<details>, fonctionne sans JavaScript).
- * - La recherche est un lien vers /<lang>/recherche, transformé en fenêtre instantanée par SearchDialog.
+ * En-tête de la maquette Sahla Maroc : logo horizontal, navigation à sous-menus, recherche,
+ * langue, thème et accès au carnet (« Mon espace »).
+ * - Desktop (≥ 900 px) : menu complet, sous-menus <details> (fonctionnent sans JavaScript).
+ * - Mobile : logo + recherche + menu déroulant (la barre basse reste gérée par MobileNav).
+ * - La recherche ouvre la fenêtre instantanée (SearchBox, attribut data-search-open).
  */
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import Logo from './Logo.astro';
 import Icon from './Icon.astro';
 import { brandName } from '../utils/seo';
-import { INVEST_HUB, PATHS } from '../data/paths';
+import { INVEST_HUB } from '../data/paths';
 import { useTranslations, type Locale } from '../i18n';
 import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
-import { categoryPath, getActiveCategories, getPageUrl, homePath, hubPath, type Alternates } from '../utils/i18n';
+import { categoryPath, getPageUrl, homePath, hubPath, getActiveCategories, type Alternates } from '../utils/i18n';
 
-interface Props { lang: Locale; switchTargets: Alternates }
+interface Props { lang: Locale; switchTargets?: Alternates }
 const { lang, switchTargets } = Astro.props;
 const t = useTranslations(lang);
 const brand = brandName(lang);
+const brandTail = brand.split(' ')[1] ?? '';
 const toolUrl = (await getPageUrl(lang, 'calculators')) ?? homePath(lang);
 const cats = await getActiveCategories(lang);
 const path = Astro.url.pathname;
-const nav = [
-  { href: hubPath(lang, 'cities'), label: t('nav.cities') },
-  { href: toolUrl, label: t('nav.tools') },
-  { href: hubPath(lang, 'checklists'), label: t('nav.checklists') },
-  { href: hubPath(lang, 'mre'), label: t('nav.mre') },
+const account = { fr: 'Mon espace', en: 'My space', es: 'Mi espacio', de: 'Mein Bereich', ar: 'مساحتي' }[lang];
+const accountHint = { fr: 'Ouvrir mon carnet de voyage', en: 'Open my travel notebook', es: 'Abrir mi cuaderno', de: 'Reiseheft öffnen', ar: 'افتح دفتري' }[lang];
+const themeLabel = { fr: 'Thème', en: 'Theme', es: 'Tema', de: 'Design', ar: 'المظهر' }[lang];
+// Libellés courts de navigation (la maquette tient sur une ligne à 1290 px).
+const shortLabel = {
+  demarches: { fr: 'Démarches', en: 'Paperwork', es: 'Trámites', de: 'Formalitäten', ar: 'الإجراءات' },
+  invest: { fr: 'Investir', en: 'Invest', es: 'Invertir', de: 'Investieren', ar: 'استثمار' },
+  tools: { fr: 'Outils', en: 'Tools', es: 'Herramientas', de: 'Rechner', ar: 'أدوات' },
+};
+
+// « Démarches » n'existe que si la catégorie a des guides publiés dans cette langue.
+const hasDemarches = cats.includes('demarches');
+const demarchesHref = hasDemarches ? categoryPath(lang, 'demarches') : hubPath(lang, 'mre');
+const demarchesLabel = hasDemarches ? shortLabel.demarches[lang] : t('nav.mre');
+
+type SubLink = { href: string; label: string };
+type NavItem = { href: string; label: string; sub?: SubLink[] };
+
+const navItems: NavItem[] = [
+  { href: homePath(lang), label: t('nav.home') },
+  {
+    href: hubPath(lang, 'guides'),
+    label: t('nav.guides'),
+    sub: [
+      { href: hubPath(lang, 'guides'), label: t('nav.allGuides') },
+      ...(cats.includes('retour') ? [{ href: categoryPath(lang, 'retour'), label: CATEGORIES.retour.label[lang] }] : []),
+      ...(cats.includes('immobilier') ? [{ href: categoryPath(lang, 'immobilier'), label: CATEGORIES.immobilier.label[lang] }] : []),
+      ...(cats.includes('tours') ? [{ href: categoryPath(lang, 'tours'), label: CATEGORIES.tours.label[lang] }] : []),
+    ],
+  },
+  {
+    href: demarchesHref,
+    label: demarchesLabel,
+    sub: [
+      { href: demarchesHref, label: demarchesLabel },
+      ...(cats.includes('arrival') ? [{ href: categoryPath(lang, 'arrival'), label: CATEGORIES.arrival.label[lang] }] : []),
+      { href: hubPath(lang, 'calendar'), label: t('nav.calendar') },
+      { href: hubPath(lang, 'glossary'), label: t('nav.glossary') },
+    ],
+  },
+  {
+    href: hubPath(lang, 'invest'),
+    label: shortLabel.invest[lang],
+    sub: [
+      { href: hubPath(lang, 'invest'), label: INVEST_HUB[lang].nav },
+      ...(cats.includes('immobilier') ? [{ href: categoryPath(lang, 'immobilier'), label: CATEGORIES.immobilier.label[lang] }] : []),
+      ...(cats.includes('money') ? [{ href: categoryPath(lang, 'money'), label: CATEGORIES.money.label[lang] }] : []),
+    ],
+  },
+  {
+    href: hubPath(lang, 'visit'),
+    label: t('nav.visit'),
+    sub: [
+      { href: hubPath(lang, 'visit'), label: t('nav.visit') },
+      { href: hubPath(lang, 'cities'), label: t('nav.cities') },
+      { href: hubPath(lang, 'regions'), label: t('nav.regions') },
+    ],
+  },
+  {
+    href: toolUrl,
+    label: shortLabel.tools[lang],
+    sub: [
+      { href: toolUrl, label: t('nav.tools') },
+      { href: hubPath(lang, 'checklists'), label: t('nav.checklists') },
+      { href: hubPath(lang, 'search'), label: t('nav.search') },
+      { href: hubPath(lang, 'news'), label: t('nav.news') },
+    ],
+  },
 ];
-const more = [
-  { href: hubPath(lang, 'glossary'), label: t('nav.glossary') },
-  { href: hubPath(lang, 'calendar'), label: t('nav.calendar') },
-];
-const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
 const searchHref = hubPath(lang, 'search');
+const isCurrent = (href: string) => path === href || (href !== homePath(lang) && path.startsWith(href + '/'));
+const isFrench = lang === 'fr';
 ---
 
-<header class="site-header sticky top-0 z-40">
-  <div class="container-page flex h-16 items-center gap-2 sm:gap-3 lg:h-18">
-    <a href={homePath(lang)} class="flex min-w-0 shrink-0 items-center gap-2 rounded-lg" aria-label={`${brand} — ${t('nav.home')}`}>
-      <Logo class="h-8 w-7 sm:h-9 sm:w-8" />
-      <span class="brand-word truncate text-base text-[var(--brand)] min-[400px]:text-lg sm:text-xl" dir="ltr">Sahla <span class="italic text-[var(--accent)]">{brand.split(' ')[1]}</span></span>
+<header class="tpl-header">
+  <div class="tpl-header__inner">
+    <a href={homePath(lang)} class="tpl-brand" aria-label={`${brand} — ${t('nav.home')}`}>
+      {isFrench ? (
+        <>
+          <img class="logo-light" src="/assets/logos/logo-horizontal-clair.svg" alt={brand} width="435" height="92" loading="eager" />
+          <img class="logo-dark" src="/assets/logos/logo-horizontal-sombre.svg" alt={brand} width="435" height="92" loading="eager" />
+        </>
+      ) : (
+        <span class="tpl-brand__fallback">
+          <Logo class="h-9 w-8" />
+          <span dir="ltr">Sahla <span class="italic">{brandTail}</span></span>
+        </span>
+      )}
     </a>
+    <div class="tpl-header__divider" aria-hidden="true"></div>
 
-    <nav class="ms-2 hidden items-center gap-0 text-[0.9rem] font-semibold lg:flex" aria-label={t('nav.main')}>
-      <details class="group relative" data-nav-menu>
-        <summary class="flex min-h-10 cursor-pointer list-none items-center gap-1 rounded-full px-2 hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden">
-          {t('nav.guides')}
-          <Icon name="chevronDown" class="size-4 transition group-open:rotate-180" />
-        </summary>
-        <div class="card absolute start-0 z-50 mt-2 grid w-[34rem] grid-cols-[1fr_1.3fr] gap-2 p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in">
-          <a href={hubPath(lang, 'guides')} class="col-span-full flex min-h-11 items-center justify-between gap-3 rounded-xl border border-[var(--line)] bg-[var(--surface-3)] px-4 py-3 font-semibold hover:underline">{t('nav.allGuides')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
-          <div class="rounded-2xl bg-sand-50 p-2 dark:bg-white/5">
-            <p class="eyebrow px-2 pt-1 pb-2 muted">{t('nav.byAudience')}</p>
-            <a href={hubPath(lang, 'mre')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
-              <span class="icon-tile size-9"><Icon name="ship" /></span>
-              <span><span class="block font-semibold">{t('home.path.mre')}</span><span class="block text-xs muted">{t('home.path.mreText')}</span></span>
-            </a>
-            <a href={hubPath(lang, 'invest')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
-              <span class="icon-tile size-9"><Icon name={PATHS.invest.icon} /></span>
-              <span><span class="block font-semibold">{PATHS.invest.title[lang]}</span><span class="block text-xs muted">{INVEST_HUB[lang].menu}</span></span>
-            </a>
-            <a href={hubPath(lang, 'visit')} class="flex gap-3 rounded-xl p-2 hover:bg-white dark:hover:bg-white/10">
-              <span class="icon-tile size-9"><Icon name="compass" /></span>
-              <span><span class="block font-semibold">{t('home.path.visit')}</span><span class="block text-xs muted">{t('home.path.visitText')}</span></span>
-            </a>
-          </div>
-          <div>
-            <p class="eyebrow px-2 pt-1 pb-2 muted">{t('nav.byTopic')}</p>
-            <ul class="grid gap-0.5">
-              {cats.map((id) => (
-                <li><a href={categoryPath(lang, id)} class="flex items-center gap-2.5 rounded-xl px-2 py-1.5 hover:bg-sand-100 dark:hover:bg-white/10"><Icon name={CATEGORY_ICON[id]} class="size-4 text-navy-600 dark:text-navy-300" />{CATEGORIES[id].label[lang]}</a></li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </details>
-      {nav.map((n) => (
-        <a href={n.href} class="flex min-h-10 items-center rounded-full px-3 hover:bg-sand-100 aria-[current=page]:text-terracotta-600 dark:hover:bg-white/10 dark:aria-[current=page]:text-terracotta-300" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>
+    <nav class="tpl-nav" aria-label={t('nav.main')}>
+      {navItems.map((item) => (
+        item.sub ? (
+          <details class="tpl-nav__item" data-nav-menu>
+            <summary class="tpl-nav__link" aria-current={isCurrent(item.href) ? 'page' : item.sub.some((s) => isCurrent(s.href)) ? 'location' : undefined}>
+              {item.label}
+              <Icon name="chevronDown" class="size-3.5 tpl-nav__chev" />
+            </summary>
+            <div class="tpl-nav__menu">{item.sub.map((s) => <a href={s.href}>{s.label}</a>)}{item.href === toolUrl && <div class="tpl-menu-theme"><ThemeToggle lang={lang} /></div>}</div>
+          </details>
+        ) : (
+          <a class="tpl-nav__item tpl-nav__link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+        )
       ))}
     </nav>
 
-    <div class="ms-auto flex items-center gap-0.5 sm:gap-1">
-      <a href={searchHref} data-search-open class="flex min-h-10 items-center gap-2 rounded-full px-2 text-sm hover:bg-sand-100 sm:border sm:border-[var(--line-strong)] sm:px-3 dark:hover:bg-white/10" aria-label={t('nav.search')}>
-        <Icon name="search" class="size-5 sm:size-4" />
-        <span class="hidden xl:inline muted">{t('nav.search')}</span>
-        <kbd class="kbd hidden xl:inline-grid" aria-hidden="true">/</kbd>
-      </a>
-      <LanguageSwitcher lang={lang} targets={switchTargets} />
-      <ThemeToggle lang={lang} class="hidden sm:grid" />
-      <details class="relative lg:hidden" data-nav-menu>
-        <summary class="grid size-10 cursor-pointer list-none place-items-center rounded-full hover:bg-sand-100 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden" aria-label={t('nav.menu')}>
-          <Icon name="menu" class="size-6" />
-        </summary>
-        <div class="card fixed inset-x-3 top-[4.5rem] z-50 max-h-[calc(100dvh-5.5rem)] overflow-y-auto p-3 shadow-[var(--shadow-lg)] motion-safe:animate-fade-in sm:absolute sm:inset-x-auto sm:end-0 sm:top-auto sm:mt-2 sm:w-80">
-          <nav aria-label={t('nav.main')}>
-            <a href={hubPath(lang, 'mre')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="ship" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.mre')}</a>
-            <a href={hubPath(lang, 'invest')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name={PATHS.invest.icon} class="size-5 text-navy-600 dark:text-navy-300" />{PATHS.invest.title[lang]}</a>
-            <a href={hubPath(lang, 'visit')} class="flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold hover:bg-sand-100 dark:hover:bg-white/10"><Icon name="compass" class="size-5 text-navy-600 dark:text-navy-300" />{t('home.path.visit')}</a>
-            <hr class="my-2 border-[var(--line)]" />
-            {[{ href: hubPath(lang, 'guides'), label: t('nav.allGuides') }, ...nav, ...more].map((n) => <a href={n.href} class="block rounded-xl px-3 py-2.5 hover:bg-sand-100 dark:hover:bg-white/10" aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>)}
-            <hr class="my-2 border-[var(--line)]" />
-            <p class="eyebrow px-3 pt-1 pb-1 muted">{t('nav.byTopic')}</p>
-            <ul class="grid gap-0.5">
-              {cats.map((id) => (
-                <li><a href={categoryPath(lang, id)} class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-sand-100 dark:hover:bg-white/10"><Icon name={CATEGORY_ICON[id]} class="size-4 text-navy-600 dark:text-navy-300" />{CATEGORIES[id].label[lang]}</a></li>
-              ))}
-            </ul>
-            <hr class="my-2 border-[var(--line)] sm:hidden" />
-            <div class="sm:hidden"><ThemeToggle lang={lang} row /></div>
-          </nav>
+    <div class="tpl-controls">
+      <a href={searchHref} data-search-open class="tpl-iconbtn" aria-label={t('nav.search')}><Icon name="search" class="size-5" /></a>
+      <div class="tpl-lang-wrap"><LanguageSwitcher lang={lang} targets={switchTargets ?? {}} /></div>
+      <button type="button" class="tpl-iconbtn tpl-theme" data-theme-cycle aria-label={themeLabel}>
+        <Icon name="sun" class="size-4 tpl-theme__sun" /><Icon name="moon" class="size-4 tpl-theme__moon" />
+      </button>
+      <button type="button" class="tpl-account" data-notebook-open aria-label={accountHint}>
+        <Icon name="userRound" class="size-4" /><span>{account}</span>
+      </button>
+      <details class="tpl-burger-wrap" data-nav-menu>
+        <summary class="tpl-burger" aria-label={t('nav.menu')}><Icon name="menu" class="size-6" /></summary>
+        <div class="tpl-nav__menu tpl-nav__menu--mobile">
+          <p class="tpl-nav__mobile-title">{t('nav.main')}</p>
+          {navItems.map((item) => (
+            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : item.sub?.some((s) => isCurrent(s.href)) ? 'location' : undefined}>{item.label}</a>
+          ))}
+          <hr />
+          {cats.map((id) => (
+            <a href={categoryPath(lang, id)}><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</a>
+          ))}
+          <hr />
+          <a href={hubPath(lang, 'checklists')}>{t('nav.checklists')}</a>
+          <a href={hubPath(lang, 'glossary')}>{t('nav.glossary')}</a>
+          <a href={hubPath(lang, 'calendar')}>{t('nav.calendar')}</a>
+          <a href={hubPath(lang, 'news')}>{t('nav.news')}</a>
+          <div class="tpl-nav__mobile-theme"><ThemeToggle lang={lang} row /></div>
         </div>
       </details>
     </div>
@@ -117,7 +164,7 @@ const searchHref = hubPath(lang, 'search');
 </header>
 
 <script>
-  // Menus <details> : fermeture au clic extérieur, à la touche Échap et à l'ouverture d'un autre menu.
+  // Menus <details> : un seul ouvert à la fois, fermeture au clic extérieur et à Échap.
   const menus = Array.from(document.querySelectorAll<HTMLDetailsElement>('details[data-nav-menu], details[data-lang-switcher]'));
   menus.forEach((m) => m.addEventListener('toggle', () => { if (m.open) menus.forEach((o) => o !== m && (o.open = false)); }));
   document.addEventListener('click', (e) => menus.forEach((m) => { if (m.open && !m.contains(e.target as Node)) m.open = false; }));
@@ -126,18 +173,25 @@ const searchHref = hubPath(lang, 'search');
     menus.forEach((m) => { if (m.open) { m.open = false; m.querySelector('summary')?.focus(); } });
   });
 
-  // Header scroll-shrink
-  const header = document.querySelector<HTMLElement>('header.sticky');
-  if (header) {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          header.classList.toggle('is-scrolled', window.scrollY > 40);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  }
+  // « Mon espace » ouvre le carnet de voyage (composant TravelNotebook).
+  document.querySelectorAll('[data-notebook-open]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const notebook = document.querySelector<HTMLDetailsElement>('details[data-notebook]');
+      if (!notebook) return;
+      notebook.open = true;
+      notebook.scrollIntoView({ block: 'nearest' });
+      notebook.querySelector<HTMLElement>('summary')?.focus();
+    });
+  });
+
+  // Bouton thème compact : système → clair → sombre (le select complet reste dans le menu mobile).
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-cycle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const order = ['system', 'light', 'dark'] as const;
+      const current = document.documentElement.dataset.themePreference ?? 'system';
+      const next = order[(order.indexOf(current as (typeof order)[number]) + 1) % order.length];
+      btn.dataset.themeNext = next;
+      document.dispatchEvent(new CustomEvent('sahla:theme-change', { detail: next }));
+    });
+  });
 </script>

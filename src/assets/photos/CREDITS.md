@@ -4,7 +4,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
-| taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
+| taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels License | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
 | merzouga-dunes.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg |
 | chefchaouen-ruelle.jpg | Ekaterina Kvelidze | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg |
 | essaouira-remparts.jpg | Ahmed.magdy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Citadel.jpg |

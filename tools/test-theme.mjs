@@ -31,9 +31,10 @@ function page({ dark = false, saved, legacy, blocked = false } = {}) {
     stored(value, key = KEY) { value === null ? values.delete(KEY) : values.set(KEY, value); const event = new Event('storage'); event.key = key; window.dispatchEvent(event); },
   };
 }
-test('sans préférence, suit le système au chargement et pendant la visite', () => {
-  const p = page({ dark: true }); assert.equal(p.dark(), true); assert.equal(p.preference(), 'system'); assert.equal(p.color(), '#0f2a26');
-  p.system(false); assert.equal(p.dark(), false); assert.equal(p.color(), '#f4efe6');
+test('sans préférence : clair par défaut, « Système » suit ensuite le système', () => {
+  const p = page({ dark: true }); assert.equal(p.dark(), false); assert.equal(p.preference(), 'light'); assert.equal(p.color(), '#fcf6ee');
+  p.choose('system'); assert.equal(p.dark(), true); assert.equal(p.color(), '#0a2520');
+  p.system(false); assert.equal(p.dark(), false); assert.equal(p.color(), '#fcf6ee');
   p.system(true); assert.equal(p.dark(), true); assert.deepEqual(p.selects.map(s => s.value), ['system', 'system']);
 });
 test('un choix manuel reste stable puis Système réactive le suivi', () => {
@@ -47,14 +48,14 @@ test('les préférences manuelles sont restaurées au chargement', () => {
   assert.equal(page({ dark: false, saved: 'dark' }).dark(), true);
 });
 test('les anciennes préférences et valeurs invalides ne bloquent pas le système', () => {
-  const p = page({ dark: false, legacy: 'dark', saved: 'invalid' }); assert.equal(p.dark(), false); assert.equal(p.preference(), 'system');
-  p.choose('invalid'); assert.equal(p.preference(), 'system'); p.system(true); assert.equal(p.dark(), true);
+  const p = page({ dark: false, legacy: 'dark', saved: 'invalid' }); assert.equal(p.dark(), false); assert.equal(p.preference(), 'light');
+  p.choose('invalid'); assert.equal(p.preference(), 'light'); p.choose('system'); p.system(true); assert.equal(p.dark(), true);
 });
 test('fonctionne sans stockage disponible', () => {
-  const p = page({ dark: true, blocked: true }); assert.equal(p.dark(), true); p.choose('light'); assert.equal(p.dark(), false); p.choose('system'); assert.equal(p.dark(), true);
+  const p = page({ dark: true, blocked: true }); assert.equal(p.dark(), false); p.choose('dark'); assert.equal(p.dark(), true); p.choose('light'); assert.equal(p.dark(), false);
 });
 test('synchronise les onglets et revient au système après effacement', () => {
   const p = page({ dark: true }); p.stored('light'); assert.equal(p.dark(), false); assert.equal(p.preference(), 'light');
   p.stored('dark', 'autre-cle'); assert.equal(p.preference(), 'light');
-  p.stored(null, null); assert.equal(p.preference(), 'system'); assert.equal(p.dark(), true);
+  p.stored(null, null); assert.equal(p.preference(), 'light'); assert.equal(p.dark(), false);
 });

@@ -1,4 +1,8 @@
 ---
+/**
+ * Pied de page de la maquette : vert forêt, motif zellige discret, logo horizontal,
+ * colonnes de liens (guides par thème, explorer, confiance, mentions) et langues.
+ */
 import Logo from './Logo.astro';
 import { brandName } from '../utils/seo';
 import { INVEST_HUB } from '../data/paths';
@@ -10,8 +14,10 @@ interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const brand = brandName(lang);
+const brandTail = brand.split(' ')[1] ?? '';
 const page = async (key: string) => getPageUrl(lang, key);
 const active = await getActiveCategories(lang);
+const seal = { fr: 'Guides & ressources vérifiées', en: 'Guides & checked resources', es: 'Guías y recursos verificados', de: 'Ratgeber & geprüfte Quellen', ar: 'أدلة ومصادر موثوقة' }[lang];
 
 const explore = [
   { href: hubPath(lang, 'mre'), label: t('nav.mre') },
@@ -40,48 +46,50 @@ const legal = [
   { href: await page('legal-notice'), label: t('footer.legalNotice') },
   { href: rssPath(lang), label: t('footer.rss') },
 ];
-const col = 'text-[var(--muted)] hover:text-[var(--brand)] hover:underline underline-offset-4';
+const isFrench = lang === 'fr';
 ---
 
-<footer class="site-footer mt-24 sm:mt-28">
-  <div class="zellige-band" aria-hidden="true"></div>
-  <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
-    <div class="sm:col-span-2 lg:col-span-1">
-      <a href={homePath(lang)} class="inline-flex items-center gap-2.5 rounded-lg">
-        <Logo class="h-11 w-10" />
-        <span class="font-display text-2xl font-semibold" dir="ltr">Sahla <span class="italic text-[var(--accent)]">{brand.split(' ')[1]}</span></span>
+<footer class="tpl-footer">
+  <div class="tpl-footer__inner">
+    <div class="tpl-footer__brand">
+      <a href={homePath(lang)} aria-label={`${brand} — ${t('nav.home')}`}>
+        {isFrench ? (
+          <img src="/assets/logos/logo-horizontal-clair.svg" alt={brand} width="435" height="92" loading="lazy" />
+        ) : (
+          <span class="tpl-footer__wordmark"><Logo class="h-9 w-8" /><span dir="ltr">Sahla <span>{brandTail}</span></span></span>
+        )}
       </a>
-      <p class="mt-4 max-w-xs text-sm text-[var(--muted)]">{t('footer.tagline')}</p>
-      <p class="eyebrow mt-8 text-[var(--brand)]">{t('footer.languages')}</p>
-      <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+      <p>{t('footer.tagline')}</p>
+      <span class="tpl-footer__seal">{seal}</span>
+      <ul class="tpl-footer__langs">
         {LOCALES.map((code) => (
-          <li><a href={`/${code}`} hreflang={LOCALE_META[code].hreflang} lang={LOCALE_META[code].hreflang} class:list={[col, code === lang && '!text-[var(--brand)] font-semibold']} aria-current={code === lang ? 'true' : undefined}>{LOCALE_META[code].label}</a></li>
+          <li>
+            <a href={`/${code}`} hreflang={LOCALE_META[code].hreflang} lang={LOCALE_META[code].hreflang} aria-current={code === lang ? 'true' : undefined}>
+              {LOCALE_META[code].label}
+            </a>
+          </li>
         ))}
       </ul>
     </div>
-    <nav aria-label={t('footer.guides')}>
-      <p class="eyebrow text-[var(--brand)]">{t('footer.guides')}</p>
-      <ul class="mt-4 space-y-2.5 text-sm">
-        {active.map((id) => <li><a class={col} href={categoryPath(lang, id)}>{CATEGORIES[id].label[lang]}</a></li>)}
-      </ul>
+    <nav class="tpl-footer__col" aria-label={t('footer.guides')}>
+      <h2>{t('footer.guides')}</h2>
+      {active.map((id) => <a href={categoryPath(lang, id)}>{CATEGORIES[id].label[lang]}</a>)}
     </nav>
-    <nav aria-label={t('footer.explore')}>
-      <p class="eyebrow text-[var(--brand)]">{t('footer.explore')}</p>
-      <ul class="mt-4 space-y-2.5 text-sm">{explore.map((l) => l.href && <li><a class={col} href={l.href}>{l.label}</a></li>)}</ul>
+    <nav class="tpl-footer__col" aria-label={t('footer.explore')}>
+      <h2>{t('footer.explore')}</h2>
+      {explore.map((l) => l.href && <a href={l.href}>{l.label}</a>)}
     </nav>
-    <nav aria-label={t('footer.trust')}>
-      <p class="eyebrow text-[var(--brand)]">{t('footer.trust')}</p>
-      <ul class="mt-4 space-y-2.5 text-sm">{trust.map((l) => l.href && <li><a class={col} href={l.href}>{l.label}</a></li>)}</ul>
+    <nav class="tpl-footer__col" aria-label={t('footer.trust')}>
+      <h2>{t('footer.trust')}</h2>
+      {trust.map((l) => l.href && <a href={l.href}>{l.label}</a>)}
     </nav>
-    <nav aria-label={t('footer.legal')}>
-      <p class="eyebrow text-[var(--brand)]">{t('footer.legal')}</p>
-      <ul class="mt-4 space-y-2.5 text-sm">{legal.map((l) => l.href && <li><a class={col} href={l.href}>{l.label}</a></li>)}</ul>
+    <nav class="tpl-footer__col" aria-label={t('footer.legal')}>
+      <h2>{t('footer.legal')}</h2>
+      {legal.map((l) => l.href && <a href={l.href}>{l.label}</a>)}
     </nav>
   </div>
-  <div class="border-t border-[var(--line)]">
-    <div class="container-page flex flex-col gap-2 py-6 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-      <p>{t('footer.notice')}</p>
-      <p class="shrink-0">© {new Date().getFullYear()} {brand} · {t('footer.rights')}</p>
-    </div>
+  <div class="tpl-footer__bottom">
+    <span>{t('footer.notice')}</span>
+    <span>© {new Date().getFullYear()} {brand} · {t('footer.rights')}</span>
   </div>
 </footer>

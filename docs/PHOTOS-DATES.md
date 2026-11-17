@@ -1,6 +1,6 @@
 # Dates déclarées des photographies
 
-Relevé du 2026-11-08 via `node tools/audit-photo-dates.mjs`. 305 entrées des manifestes villes, régions, lieux et guides ; 295 sources Wikimedia uniques interrogées.
+Relevé automatisé du 2026-11-08 via `node tools/audit-photo-dates.mjs` : 305 entrées et 295 sources Wikimedia uniques. Complément manuel du 2026-11-17 pour la photo Pexels de Taghazout.
 
 Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli sur DateTime, le nom du fichier ou la date de mise en ligne. Ce sont des déclarations de la source : elles ne prouvent pas à elles seules la date réelle, la netteté, le lieu ou les droits. Les autres hébergeurs et les dates absentes nécessitent une vérification manuelle. Les anciens fichiers non référencés et les photos de repli codées dans guidePhotos.ts ne font pas partie de ce relevé.
 
@@ -310,4 +310,4 @@ Les dates viennent uniquement du champ Wikimedia DateTimeOriginal ; aucun repli 
 | guides/world-cup-2030-trip-planning | 2023-02-07 | DateTimeOriginal | 2048 × 686 | Public domain | <https://commons.wikimedia.org/wiki/File:Stade_Ibn_Batuta,_Tanger_2023.jpg> |
 | guides/world-cup-2030-transport | 2022-12-31 12:33:32 | DateTimeOriginal | 3023 × 2266 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg> |
 | guides/riad-or-hotel | 2023-06-26 19:42:44 | DateTimeOriginal | 4000 × 3000 | CC BY-SA 4.0 | <https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg> |
-| guides/taghazout-surf | à vérifier | — | — | à vérifier | <https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/> |
+| guides/taghazout-surf | 2023-01-10 | Pexels « Taken At » | 5568 × 3712 | Pexels License | <https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/> |

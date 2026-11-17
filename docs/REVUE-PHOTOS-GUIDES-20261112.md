@@ -11,7 +11,7 @@ Les planches présentent un recadrage central 4:3. Elles ne reproduisent ni tous
 - `daam-sakane-logements.jpg` : route et poteaux dominants, logements éloignés ; améliorer la représentation du sujet sans suggérer que ces immeubles sont éligibles à une aide.
 - `voiture-achat-garage-casablanca.jpg` : garage sombre ; ne représente pas une sélection ou une recommandation vérifiée de ce vendeur.
 - `fuseau-horloge.jpg` : horloge petite et peu contrastée dans un grand mur ; rechercher un cadrage plus lisible.
-- `taghazout-surf-2026.jpg` : vague et surfeurs identifiables mais image sombre ; vérifier le résultat derrière le traitement du guide.
+- `taghazout-surf-2026.jpg` : Pexels confirme une prise du 10 janvier 2023, 5568 × 3712, par Desert Morocco Adventure Tours, sous Pexels License. La vague et les surfeurs sont identifiables ; l’image reste sombre, le rendu du guide doit encore être revu.
 - Les autres aperçus présentent des sujets identifiables à cette taille. Cela ne vaut pas validation intégrale de leur provenance ou de leur fraîcheur.
 
 ## Contrôle dans une page

@@ -56,8 +56,8 @@ const labels = Object.fromEntries(['all', ...kinds].map((k) => [k, { count: coun
   .spot-chip { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.5rem; padding: .3rem .85rem; border-radius: 999px; border: 1px solid var(--line-strong, var(--line)); background: var(--surface); color: var(--text); font-size: .85rem; font-weight: 600; cursor: pointer; transition: background-color .2s, border-color .2s; }
   .spot-chip:hover { border-color: var(--text); }
   .spot-chip-n { font-weight: 500; opacity: .7; font-variant-numeric: tabular-nums; }
-  .spot-chip[aria-pressed="true"] { background: var(--color-navy-700); color: #fff; border-color: var(--color-navy-700); }
-  :global(.dark) .spot-chip[aria-pressed="true"] { background: var(--color-sand-50); color: var(--color-navy-800); border-color: var(--color-sand-50); }
+  .spot-chip[aria-pressed="true"] { background: var(--city-accent, var(--color-navy-700)); color: var(--city-accent-ink, #fff); border-color: var(--city-accent, var(--color-navy-700)); }
+  :global(.dark) .spot-chip[aria-pressed="true"] { background: var(--city-accent, var(--color-sand-50)); color: var(--city-accent-ink, var(--color-navy-800)); border-color: var(--city-accent, var(--color-sand-50)); }
   .spot-badge { display: inline-flex; padding: .2rem .65rem; border-radius: 999px; background: #14161f; color: #fff; border: 1px solid rgb(255 255 255 / .28); font-size: .75rem; font-weight: 600; line-height: 1.3; box-shadow: 0 1px 3px rgb(0 0 0 / .3); }
   .spot-card { transition: transform .25s ease, box-shadow .25s ease; }
   .spot-card:hover, .spot-card:focus-within { transform: translateY(-3px); box-shadow: 0 10px 24px rgb(0 0 0 / .14); }

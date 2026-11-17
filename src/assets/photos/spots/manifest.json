@@ -12,10 +12,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna,_Marrakesh,_Morocco,_20250124_1804_7017.jpg"
   },
   "marrakech/koutoubia": {
-    "focalPoint": [
-      50,
-      20
-    ],
     "file": "marrakech-koutoubia.jpg",
     "alt": {
       "fr": "Minaret et façade de la mosquée de la Koutoubia à Marrakech",
@@ -440,10 +436,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg"
   },
   "tetouan/medina": {
-    "focalPoint": [
-      50,
-      20
-    ],
     "file": "tetouan-medina.jpg",
     "alt": {
       "fr": "Minaret de la mosquée Al-Ayoun dans la médina de Tétouan",
@@ -708,7 +700,7 @@
     "source": "https://commons.wikimedia.org/wiki/File:Painted_Rocks_Trafraoute.jpg",
     "focalPoint": [
       50,
-      50
+      72
     ]
   },
   "tafraout/napoleons-hat": {
@@ -745,7 +737,11 @@
       "ar": "برج إنقاذ خشبي على شاطئ أكادير مقابل المحيط الأطلسي"
     },
     "credit": "Fmc2026, CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg",
+    "focalPoint": [
+      50,
+      65
+    ]
   },
   "agadir/souk-el-had": {
     "file": "agadir-souk-el-had.jpg",
@@ -1464,10 +1460,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg"
   },
   "chefchaouen/bouzafar-mosque": {
-    "focalPoint": [
-      50,
-      20
-    ],
     "file": "chefchaouen-bouzafar-mosque.jpg",
     "alt": {
       "fr": "Mosquée blanche sur la colline de Chefchaouen",
@@ -1600,7 +1592,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Meknes_sidi_ben_aissa_IMG_1380.jpg"
   },
   "ouarzazate/cinema-museum": {
-    "fit": "contain",
     "file": "ouarzazate-cinema-museum.jpg",
     "alt": {
       "fr": "Ancien projecteur Pathé exposé au musée du cinéma d'Ouarzazate",
@@ -2297,10 +2288,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Larache_Medina.jpg"
   },
   "larache/pilar-church": {
-    "focalPoint": [
-      50,
-      20
-    ],
     "file": "larache-pilar-church.jpg",
     "alt": {
       "fr": "Église Notre-Dame du Pilier à Larache",
@@ -2437,10 +2424,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Al_Akhawayn_University_Campus_-_Ifrane_1.jpg"
   },
   "ifrane/cedre-gouraud": {
-    "focalPoint": [
-      50,
-      20
-    ],
     "file": "ifrane-cedre-gouraud.jpg",
     "alt": {
       "fr": "Le cèdre Gouraud, vieil arbre mort près d'Azrou",
@@ -2513,7 +2496,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Sidi_Ifni_-_Art_deco_,_aus_der_Zeit_der_spanischen_Besatzung.jpg"
   },
   "sidi-ifni/former-cathedral": {
-    "fit": "contain",
     "file": "sidi-ifni-former-cathedral.jpg",
     "alt": {
       "fr": "Entrée de l'ancienne église espagnole de Sidi Ifni",
@@ -2758,7 +2740,7 @@
     "source": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg",
     "focalPoint": [
       50,
-      40
+      54
     ]
   },
   "kenitra/maamora-forest": {

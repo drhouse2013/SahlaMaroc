@@ -16,50 +16,51 @@
 
 /* 1. Jetons ---------------------------------------------------------------- */
 @theme {
-  /* Vert profond (alias « navy » historique) */
-  --color-navy-50: #e9f0ed;
-  --color-navy-100: #d2e1db;
-  --color-navy-300: #8fb3a8;
-  --color-navy-600: #215247;
-  --color-navy-700: #173f38;
-  --color-navy-800: #10302a;
-  --color-navy-900: #0b231f;
-  --color-majorelle-50: #e9f0ed;
-  --color-majorelle-100: #d2e1db;
-  --color-majorelle-300: #9cc7b9;
-  --color-majorelle-500: #2a6b5b;
-  --color-majorelle-600: #1f5447;
-  --color-majorelle-700: #173f38;
-  --color-majorelle-900: #0f2a26;
+  /* Palette de la maquette Sahla Maroc (template du 15/11/2026) :
+     vert forêt #0B3D2E, terre cuite #B53A1A, or #D9A441, ivoire #FCF6EE, encre #11171C. */
+  --color-navy-50: #e7efe9;
+  --color-navy-100: #cdddd2;
+  --color-navy-300: #96b5a4;
+  --color-navy-600: #1a5341;
+  --color-navy-700: #0b3d2e;
+  --color-navy-800: #082e23;
+  --color-navy-900: #06261d;
+  --color-majorelle-50: #e7efe9;
+  --color-majorelle-100: #cdddd2;
+  --color-majorelle-300: #a8c8b6;
+  --color-majorelle-500: #22654f;
+  --color-majorelle-600: #17513f;
+  --color-majorelle-700: #0b3d2e;
+  --color-majorelle-900: #06261d;
 
   /* Terre cuite : 500 = décor (jamais pour un texte < 24 px), 600 = texte/CTA (AA) */
-  --color-terracotta-50: #faf1ea;
-  --color-terracotta-100: #f3dccd;
-  --color-terracotta-300: #e9b58f;
-  --color-terracotta-500: #b96f47;
-  --color-terracotta-600: #9a5632;
-  --color-terracotta-700: #7d4426;
+  --color-terracotta-50: #fdefe7;
+  --color-terracotta-100: #f8dbca;
+  --color-terracotta-300: #e7a784;
+  --color-terracotta-500: #c25230;
+  --color-terracotta-600: #b53a1a;
+  --color-terracotta-700: #8f2b12;
 
-  --color-gold-100: #f4ead6;
-  --color-gold-300: #dcc08a;
-  --color-gold-500: #b98946;
-  --color-gold-600: #88602e;
-  --color-saffron-400: #e8c170;
-  --color-saffron-500: #d9a94b;
+  --color-gold-100: #f7ecd7;
+  --color-gold-300: #e6c68a;
+  --color-gold-500: #d9a441;
+  --color-gold-600: #a87820;
+  --color-saffron-400: #f1c46f;
+  --color-saffron-500: #d9a441;
   --color-emerald-moroccan-100: #d5ece2;
   --color-emerald-moroccan-500: #1d7a57;
   --color-emerald-moroccan-600: #155f44;
 
-  --color-sand-50: #f4efe6;
-  --color-sand-100: #ebe3d4;
-  --color-sand-200: #ddd2bd;
-  --color-ink-900: #1b1a17;
-  --color-night-900: #0f2a26;
-  --color-night-800: #15332e;
-  --color-night-700: #1e413a;
+  --color-sand-50: #fcf6ee;
+  --color-sand-100: #f7ede0;
+  --color-sand-200: #ecdcc8;
+  --color-ink-900: #11171c;
+  --color-night-900: #06261d;
+  --color-night-800: #0b3d2e;
+  --color-night-700: #124a38;
 
-  --font-sans: "Manrope Variable", "Readex Pro Variable", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
-  --font-display: "Fraunces Variable", "Readex Pro Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", "Readex Pro Variable", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Playfair Display Variable", "Readex Pro Variable", Georgia, "Times New Roman", serif;
   --font-arabic: "Readex Pro Variable", "Segoe UI", Tahoma, sans-serif;
   --font-brand: "Marhey Variable", "Readex Pro Variable", ui-sans-serif, system-ui, sans-serif;
 
@@ -71,22 +72,22 @@
 
 /* Rôles sémantiques : clair par défaut, sombre via html.dark (Système/Clair/Sombre). */
 :root {
-  --surface: #ffffff;
-  --surface-2: #f4efe6;
-  --surface-3: #ebe3d4;
-  --text: #1b1a17;
-  --muted: #5a554b;
-  --line: rgb(27 26 23 / .12);
-  --line-strong: rgb(27 26 23 / .24);
-  --accent: #9a5632;
-  --accent-deco: #b96f47;
-  --brand: #173f38;
+  --surface: #fffdf9;
+  --surface-2: #fcf6ee;
+  --surface-3: #f6ece0;
+  --text: #11171c;
+  --muted: #52615a;
+  --line: rgb(100 70 55 / .16);
+  --line-strong: rgb(100 70 55 / .3);
+  --accent: #b53a1a;
+  --accent-deco: #c25230;
+  --brand: #0b3d2e;
   --brand-ink: #ffffff;
-  --link: #173f38;
-  --focus: #173f38;
-  --shadow-sm: 0 1px 2px rgb(23 63 56 / .08);
-  --shadow-md: 0 12px 28px -16px rgb(23 63 56 / .14);
-  --shadow-lg: 0 18px 40px -20px rgb(23 63 56 / .18);
+  --link: #0b3d2e;
+  --focus: #b3701d;
+  --shadow-sm: 0 1px 2px rgb(61 38 27 / .08);
+  --shadow-md: 0 12px 28px -16px rgb(61 38 27 / .2);
+  --shadow-lg: 0 18px 40px -20px rgb(61 38 27 / .24);
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --dur-quick: 150ms;
   --dur-base: 220ms;
@@ -105,19 +106,19 @@
 }
 @media (min-width: 768px) { :root { --section-gap: 7rem; } }
 html.dark {
-  --surface: #15332e;
-  --surface-2: #0f2a26;
-  --surface-3: #1e413a;
-  --text: #f4efe6;
-  --muted: #c9c1b1;
-  --line: rgb(244 239 230 / .12);
-  --line-strong: rgb(244 239 230 / .26);
-  --accent: #e9b58f;
-  --accent-deco: #e9b58f;
-  --brand: #f4efe6;
-  --brand-ink: #0f2a26;
-  --link: #e9b58f;
-  --focus: #e9b58f;
+  --surface: #12332b;
+  --surface-2: #0a2520;
+  --surface-3: #17423a;
+  --text: #f6efe3;
+  --muted: #c2cbbd;
+  --line: rgb(246 239 227 / .14);
+  --line-strong: rgb(246 239 227 / .3);
+  --accent: #e7a784;
+  --accent-deco: #e7a784;
+  --brand: #f6efe3;
+  --brand-ink: #0a2520;
+  --link: #e7a784;
+  --focus: #e6c68a;
   --shadow-sm: 0 1px 2px rgb(0 0 0 / .3);
   --shadow-md: 0 12px 28px -16px rgb(0 0 0 / .5);
   --shadow-lg: 0 18px 40px -20px rgb(0 0 0 / .6);

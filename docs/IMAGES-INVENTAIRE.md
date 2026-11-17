@@ -1,15 +1,18 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-12. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-17. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 269 photos vérifiées, 70 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 entrées, 268 photos vérifiées, 70 placeholders (« Photo à venir »), 0 à confirmer, 1 illustration décorative.**
 
-| Type | Lieux | Vérifiées | Placeholders | À confirmer |
-|---|---|---|---|---|
-| Hero accueil | 1 | 1 | 0 | 0 |
-| Villes | 31 | 31 | 0 | 0 |
-| Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 225 | 70 | 0 |
+| Type | Entrées | Vérifiées | Placeholders | À confirmer | Illustrations |
+|---|---|---|---|---|---|
+| Hero accueil | 1 | 0 | 0 | 0 | 1 |
+| Villes | 31 | 31 | 0 | 0 | 0 |
+| Régions | 12 | 12 | 0 | 0 | 0 |
+| Lieux à visiter | 295 | 225 | 70 | 0 | 0 |
+
+**Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le panorama illustré actuellement utilisé remplace ici la photographie historique `cities/home-hero.jpg`, qui ne représente plus le héros affiché.
+
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -17,7 +20,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Accueil (hero) | `cities/home-hero.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg> | vérifiée | CC BY-SA 4.0 |
+| Accueil (hero) | `src/assets/template/hero-reference-20261117.png` | Illustration générée à partir de la référence fournie | — | illustration décorative | Création avec ImageGen, 17 novembre 2026 ; composition illustrative ; ne constitue pas une photographie récente vérifiée |
 
 ## Villes (31)
 
