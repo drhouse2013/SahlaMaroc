@@ -20,6 +20,7 @@ const t = useTranslations(lang);
     aria-label={`${t('lang.switch')} (${LOCALE_META[lang].label})`}
   >
     <Icon name="globe" class="size-4" />
+    {lang === 'fr' && <span class="tpl-language-flag" aria-hidden="true"></span>}
     <span class="uppercase">{lang}</span>
     <Icon name="chevronDown" class="size-3.5 transition group-open:rotate-180" />
   </summary>

@@ -1,6 +1,6 @@
 ---
 /**
- * Héros de l'accueil (maquette Sahla Maroc) : panorama de Tanger, titre serif, recherche
+ * Héros de l'accueil (maquette Sahla Maroc) : panorama illustré du Maroc, titre serif, recherche
  * et quatre bénéfices. Le panorama est optimisé (srcset) ; le texte est traduit.
  */
 import { Image } from 'astro:assets';
@@ -19,8 +19,8 @@ const copy = {
     intro: ['Guides pratiques, démarches, investissement, voyage et outils pour les Marocains du ', 'monde', ' et tous les voyageurs.'],
     placeholder: 'Rechercher un guide, une démarche, une ville…',
     cta: 'Rechercher',
-    benefits: ['Guides fiables', 'Outils pratiques', 'Spécial MRE', '100% gratuit'],
-    photo: 'Tanger au coucher du soleil, panorama du site Sahla Maroc',
+    benefits: ['Guides fiables', 'Outils pratiques', 'Spécial MRE', '100% Gratuit'],
+    photo: 'Illustration panoramique du Maroc au coucher du soleil',
   },
   en: {
     title: 'Morocco,', em: 'made simple.',
@@ -28,7 +28,7 @@ const copy = {
     placeholder: 'Search a guide, a procedure, a city…',
     cta: 'Search',
     benefits: ['Trusted guides', 'Practical tools', 'Built for MREs', '100% free'],
-    photo: 'Tangier at sunset, Sahla Maroc panorama',
+    photo: 'Panoramic illustration of Morocco at sunset',
   },
   es: {
     title: 'Marruecos,', em: 'sin complicaciones.',
@@ -36,7 +36,7 @@ const copy = {
     placeholder: 'Buscar una guía, un trámite, una ciudad…',
     cta: 'Buscar',
     benefits: ['Guías fiables', 'Herramientas prácticas', 'Para la diáspora', '100% gratis'],
-    photo: 'Tánger al atardecer, panorama de Sahla Maroc',
+    photo: 'Ilustración panorámica de Marruecos al atardecer',
   },
   de: {
     title: 'Marokko,', em: 'ganz einfach.',
@@ -44,7 +44,7 @@ const copy = {
     placeholder: 'Ratgeber, Formalität oder Stadt suchen…',
     cta: 'Suchen',
     benefits: ['Verlässliche Ratgeber', 'Praktische Rechner', 'Für Marokkaner im Ausland', '100 % kostenlos'],
-    photo: 'Tanger bei Sonnenuntergang, Panorama von Sahla Maroc',
+    photo: 'Panoramaillustration von Marokko bei Sonnenuntergang',
   },
   ar: {
     title: 'المغرب،', em: 'ببساطة.',
@@ -52,12 +52,12 @@ const copy = {
     placeholder: 'ابحث عن دليل أو إجراء أو مدينة…',
     cta: 'ابحث',
     benefits: ['أدلة موثوقة', 'أدوات عملية', 'لمغاربة العالم', '100٪ مجانًا'],
-    photo: 'طنجة عند الغروب، بانوراما موقع ساهلة المغرب',
+    photo: 'رسم بانورامي للمغرب عند الغروب',
   },
 }[lang];
 
 const searchUrl = hubPath(lang, 'search');
-const benefitIcons = ['book', 'sparkles', 'users', 'shield'] as const;
+const benefitIcons = ['book', 'zap', 'users', 'shield'] as const;
 ---
 
 <section class="tpl-hero" aria-labelledby="home-title">

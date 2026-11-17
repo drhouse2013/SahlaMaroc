@@ -123,7 +123,7 @@ const isFrench = lang === 'fr';
               {item.label}
               <Icon name="chevronDown" class="size-3.5 tpl-nav__chev" />
             </summary>
-            <div class="tpl-nav__menu">{item.sub.map((s) => <a href={s.href}>{s.label}</a>)}</div>
+            <div class="tpl-nav__menu">{item.sub.map((s) => <a href={s.href}>{s.label}</a>)}{item.href === toolUrl && <div class="tpl-menu-theme"><ThemeToggle lang={lang} /></div>}</div>
           </details>
         ) : (
           <a class="tpl-nav__item tpl-nav__link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
@@ -138,7 +138,7 @@ const isFrench = lang === 'fr';
         <Icon name="sun" class="size-4 tpl-theme__sun" /><Icon name="moon" class="size-4 tpl-theme__moon" />
       </button>
       <button type="button" class="tpl-account" data-notebook-open aria-label={accountHint}>
-        <Icon name="book" class="size-4" /><span>{account}</span>
+        <Icon name="userRound" class="size-4" /><span>{account}</span>
       </button>
       <details class="tpl-burger-wrap" data-nav-menu>
         <summary class="tpl-burger" aria-label={t('nav.menu')}><Icon name="menu" class="size-6" /></summary>
