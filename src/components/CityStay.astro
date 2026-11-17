@@ -64,7 +64,7 @@ const atlanticStops = city === 'tangier' ? [
 const chefchaouenStops = city === 'chefchaouen' ? [{ id: 'kasbah', query: 'Kasbah Chefchaouen Morocco' }, { id: 'ras-el-ma', query: 'Ras El Ma Chefchaouen Morocco' }].map(stop => ({ ...stop, name: SPOTS.chefchaouen.find(spot => spot.id === stop.id)!.name[lang] })) : undefined;
 const stops = (city === 'tetouan' ? [
   { id: 'medina', query: 'Medina Tetouan Morocco', name: TETOUAN_STAY[lang].titles[0] },
-  { id: 'martil-beach', query: 'Martil Beach Morocco', name: TETOUAN_STAY[lang].titles[1] },
+  { id: 'ensanche', query: 'Ensanche Tetouan Morocco', name: TETOUAN_STAY[lang].titles[1] },
 ] : city === 'nador' ? [
   { id: 'corniche', query: 'Corniche Nador Morocco', name: NADOR_STAY[lang].titles[0] },
   { id: 'gourougou', query: 'Mont Gourougou Nador Morocco', name: NADOR_STAY[lang].titles[1] },
@@ -95,7 +95,7 @@ const stops = (city === 'tetouan' ? [
   { id: 'al-attarine', query: 'Al Attarine Madrasa Fes Morocco', name: 'Al Attarine' },
   { id: 'jnan-sbil', query: 'Jnan Sbil Fes Morocco', name: 'Jnan Sbil' },
 ]).map((s) => ({ ...s, photo: placePhoto('spot', `${city}/${s.id}`, lang) }));
-const featuredStop = stops[city === 'essaouira' || city === 'agadir' ? 0 : 1];
+const featuredStop = city === 'tetouan' ? { id: 'medina', name: TETOUAN_STAY[lang].titles[0], photo: placePhoto('city', 'tetouan', lang) } : stops[city === 'essaouira' || city === 'agadir' ? 0 : 1];
 const extraMeknesStops = [
   { query: 'Place Lahdim Meknes Morocco', name: { fr: 'Place Lahdim', en: 'Lahdim Square', es: 'Plaza Lahdim', de: 'Lahdim-Platz', ar: 'ساحة الهديم' }[lang] },
   { query: 'Mausoleum of Moulay Ismail Meknes Morocco', name: { fr: 'Mausolée de Moulay Ismaïl', en: 'Mausoleum of Moulay Ismail', es: 'Mausoleo de Muley Ismail', de: 'Mausoleum von Moulay Ismail', ar: 'ضريح مولاي إسماعيل' }[lang] },
