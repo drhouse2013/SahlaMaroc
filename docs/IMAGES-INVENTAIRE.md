@@ -1,15 +1,18 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-07. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-17. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 lieux, 266 photos vérifiées, 73 placeholders (« Photo à venir »), 0 à confirmer.**
+**Total : 339 entrées, 265 photos vérifiées, 73 placeholders (« Photo à venir »), 0 à confirmer, 1 illustration décorative.**
 
-| Type | Lieux | Vérifiées | Placeholders | À confirmer |
-|---|---|---|---|---|
-| Hero accueil | 1 | 1 | 0 | 0 |
-| Villes | 31 | 31 | 0 | 0 |
-| Régions | 12 | 12 | 0 | 0 |
-| Lieux à visiter | 295 | 222 | 73 | 0 |
+| Type | Entrées | Vérifiées | Placeholders | À confirmer | Illustrations |
+|---|---|---|---|---|---|
+| Hero accueil | 1 | 0 | 0 | 0 | 1 |
+| Villes | 31 | 31 | 0 | 0 | 0 |
+| Régions | 12 | 12 | 0 | 0 | 0 |
+| Lieux à visiter | 295 | 222 | 73 | 0 | 0 |
+
+**Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le panorama illustré actuellement utilisé remplace ici la photographie historique `cities/home-hero.jpg`, qui ne représente plus le héros affiché.
+
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
@@ -17,7 +20,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Accueil (hero) | `cities/home-hero.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg> | vérifiée | CC BY-SA 4.0 |
+| Accueil (hero) | `src/assets/template/hero-panorama.webp` | Template fournie | — | illustration décorative | Provenance à documenter ; composition illustrative ; ne constitue pas une photographie récente vérifiée |
 
 ## Villes (31)
 
@@ -30,7 +33,7 @@
 | Fès | `cities/fes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Essaouira | `cities/essaouira.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Chefchaouen | `cities/chefchaouen.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg> | vérifiée | CC BY-SA 4.0 |
-| Taghazout | `cities/taghazout.jpg` | Wikimedia Commons (2 février 2026, 5 712 × 4 284 px) | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vérifiée | CC BY-SA 4.0 |
+| Taghazout | `cities/taghazout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vérifiée | CC BY-SA 4.0 |
 | Nador | `cities/nador-corniche-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tétouan | `cities/tetouan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> | vérifiée | CC BY-SA 4.0 |
 | Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_(2020)_12.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -348,7 +351,7 @@
 | Musée du patrimoine amazigh | `spots/agadir-amazigh-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg> | vérifiée | CC BY-SA 4.0 |
 | Parc aux crocodiles | `spots/agadir-crocodile-park.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Excursion_Crocoparc_Agadir_(33434626570).jpg> | vérifiée | CC BY 2.0 |
 | Vallée des Oiseaux | `spots/agadir-valley-of-birds.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_27.01.2011_18-39-49.JPG> | vérifiée | CC0 |
-| Jardin Ibn Zaydoun | `spots/agadir-ibn-zaidoun-garden.jpg` | Wikimedia Commons (25 août 2025, 4 000 × 3 000 px) | <https://commons.wikimedia.org/wiki/File:حديقة_ابن_زيدون_أكادير.jpg> | vérifiée | CC0 1.0 |
+| Jardin Ibn Zaydoun | `spots/agadir-ibn-zaidoun-garden.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:حديقة_ابن_زيدون_أكادير.jpg> | vérifiée | CC0 1.0 |
 | Mosquée Mohammed V | `spots/agadir-mohammed-v-mosque.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mohammed_V_Moschee_20111014_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Jardin d'Olhão (Jardin du Portugal) | `spots/agadir-olhao-garden.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_28.01.2011_15-12-35.JPG> | vérifiée | CC0 |
 | Marina d'Agadir | `spots/agadir-marina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Panorama_Marina_Agadir_2020.jpg> | vérifiée | CC BY-SA 4.0 |
