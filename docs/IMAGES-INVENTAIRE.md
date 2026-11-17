@@ -128,9 +128,9 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Kasbah des Oudayas | `spots/rabat-oudayas.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Eine_beeindruckende_Festung%22._13.jpg> | vérifiée | CC BY-SA 4.0 |
-| Tour Hassan et mausolée Mohammed V | `spots/rabat-hassan-tower.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%22Unvollendet_geblieben_sind_Turm_und_Moschee%22._05.jpg> | vérifiée | CC BY-SA 4.0 |
-| Chellah | `spots/rabat-chellah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Challah.jpg> | vérifiée | CC BY-SA 4.0 |
+| Kasbah des Oudayas | `spots/rabat-oudayas.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_%26_ramparts.jpg> | vérifiée | CC BY-SA 4.0 |
+| Tour Hassan et mausolée Mohammed V | `spots/rabat-hassan-tower.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Hassan_Tower,_Rabat_-_view_from_garden_terrace.jpg> | vérifiée | CC BY-SA 4.0 |
+| Chellah | `spots/rabat-chellah.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Main_gate_of_Chellah,_Rabat.jpg> | vérifiée | CC BY-SA 4.0 |
 | Médina de Rabat | `spots/rabat-medina.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:201002-D-BN624-1121_(50409627566).jpg> | vérifiée | CC BY 2.0 |
 | Musée de l'histoire et des civilisations | `spots/rabat-history-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_l'histoire,_Rabat_(2).jpg> | vérifiée | CC BY-SA 4.0 |
 | Cathédrale Saint-Pierre | `spots/rabat-st-peters.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-Pierre_de_Rabat.JPG> | vérifiée | CC BY-SA 3.0 |
@@ -389,7 +389,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Cité portugaise de Mazagan | `spots/el-jadida-mazagan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Forteresse_Jadida_03.JPG> | vérifiée | CC BY-SA 3.0 |
+| Cité portugaise de Mazagan | `spots/el-jadida-mazagan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Framed_view_of_the_ramparts_and_port_from_Bastion_Saint_Sébastien_balcony,_Portuguese_City_of_Mazagan_-_Oct_2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Citerne portugaise | `spots/el-jadida-cistern.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Water_reflection_Portuguese_Cistern.jpg> | vérifiée | CC BY-SA 4.0 |
 | Plage de Deauville | `spots/el-jadida-deauville-plage.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:El_Jadida_Beach.jpg> | vérifiée | CC BY-SA 4.0 |
 | Plage de Sidi Bouzid | `spots/el-jadida-sidi-bouzid.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Sidi_Bouzid_El_Jadida_.jpg> | vérifiée | CC BY-SA 4.0 |
