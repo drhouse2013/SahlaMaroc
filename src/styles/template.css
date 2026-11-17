@@ -627,6 +627,11 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 @media (min-width: 1321px) {
   .tpl-header__divider { position: absolute; inset-inline-start: 384px; margin: 0; }
   .tpl-nav { gap: 26px; }
+  /* Translated fallback wordmarks are much narrower than the French SVG logo.
+     Give long desktop navigation labels the reclaimed space, especially German. */
+  .tpl-header:has(.tpl-brand__fallback) .tpl-brand { width: 360px; }
+  .tpl-header:has(.tpl-brand__fallback) .tpl-header__divider { inset-inline-start: 346px; }
+  .tpl-header:has(.tpl-brand__fallback) .tpl-nav { gap: 18px; }
   .tpl-controls { gap: 14px; }
   .tpl-lang-wrap summary { min-width: 87px; }
   .tpl-hero__media { width: 100%; object-position: center 30%; }
