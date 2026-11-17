@@ -466,3 +466,9 @@ La page régionale Casablanca-Settat réutilise désormais la photo vérifiée d
 ## Actualisation du 17 novembre 2026 — plage d’Agadir
 
 - `src/assets/photos/spots/agadir-beach.jpg` : original HD de 3024 × 3165 pixels, Fmc2026, prise le 13 janvier 2025. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cadrage d’affichage 50 % / 65 %, sans modification du fichier original ; formats de diffusion optimisés par Astro. Le point de cadrage conserve la tour, la plage et l’océan sur les cartes de bureau et mobiles. Les lignes de crédits des quatre vues Rabat/Mazagan ont également été synchronisées avec leurs manifestes actuels.
+
+## Héros adapté à la référence — 17 novembre 2026
+
+`src/assets/template/hero-reference-20261117.png` : illustration décorative créée avec l’outil intégré ImageGen à partir de `SahlaMaroc.png` fourni par le propriétaire du site. Ce composite ne représente pas une photographie documentaire récente.
+
+Instruction de création : reconstruire uniquement le fond du héros de la référence, supprimer texte, navigation, recherche et cartes ; conserver arche étroite à gauche, lanterne vers 12 %, ciel dégagé pour le titre, tour illuminée vers 77 %, ville et reflets au coucher du soleil. Le résultat rapproche la composition de la référence sans garantir une identité pixel par pixel. Original précédent conservé.

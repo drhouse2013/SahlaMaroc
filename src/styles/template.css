@@ -633,7 +633,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-nav { gap: 26px; }
   .tpl-controls { gap: 14px; }
   .tpl-lang-wrap summary { min-width: 87px; }
-  .tpl-hero__media { width: 108%; max-width: none; object-position: center 55%; }
+  .tpl-hero__media { width: 100%; object-position: center 30%; }
   .tpl-features { width: min(1320px, calc(100% - 128px)); inset-inline-start: 14px; }
   .tpl-section { width: min(1296px, calc(100% - 152px)); inset-inline-start: 14px; }
   .tpl-guides__grid { grid-template-columns: 280px repeat(3, minmax(0, 1fr)); }

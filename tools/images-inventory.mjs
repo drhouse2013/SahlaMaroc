@@ -39,8 +39,8 @@ function row(name, dir, id, note = '') {
 const sections = [];
 // Hero.astro uses the supplied template panorama, not the legacy home-hero photo.
 sections.push({ title: 'Hero accueil', rows: [{
-  name: 'Accueil (hero)', image: 'src/assets/template/hero-panorama.webp',
-  source: 'Template fournie', url: '', status: I, license: 'Provenance à documenter',
+  name: 'Accueil (hero)', image: 'src/assets/template/hero-reference-20261117.png',
+  source: 'Illustration générée à partir de la référence fournie', url: '', status: I, license: 'Création avec ImageGen, 17 novembre 2026',
   note: 'composition illustrative ; ne constitue pas une photographie récente vérifiée',
 }] });
 sections.push({ title: 'Villes', rows: CITY_PAGES.map((c) => row(cityLabel(c.id, 'fr'), 'cities', c.id)) });

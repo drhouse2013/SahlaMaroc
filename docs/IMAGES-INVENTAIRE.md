@@ -20,7 +20,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Accueil (hero) | `src/assets/template/hero-panorama.webp` | Template fournie | — | illustration décorative | Provenance à documenter ; composition illustrative ; ne constitue pas une photographie récente vérifiée |
+| Accueil (hero) | `src/assets/template/hero-reference-20261117.png` | Illustration générée à partir de la référence fournie | — | illustration décorative | Création avec ImageGen, 17 novembre 2026 ; composition illustrative ; ne constitue pas une photographie récente vérifiée |
 
 ## Villes (31)
 
