@@ -713,14 +713,15 @@
  "agadir/beach": {
   "file": "agadir-beach.jpg",
   "alt": {
-   "fr": "Plage et promenade du front de mer d'Agadir",
-   "en": "Agadir beach and seafront promenade",
-   "es": "Playa y paseo marítimo de Agadir",
-   "de": "Strand und Strandpromenade von Agadir",
-   "ar": "شاطئ ومنتزه الواجهة البحرية في أكادير"
+   "fr": "Tour de sauveteur en bois sur la plage d’Agadir, face à l’Atlantique",
+   "en": "Wooden lifeguard tower on Agadir beach facing the Atlantic",
+   "es": "Torre de salvavidas de madera en la playa de Agadir frente al Atlántico",
+   "de": "Hölzerner Rettungsturm am Strand von Agadir mit Blick auf den Atlantik",
+   "ar": "برج إنقاذ خشبي على شاطئ أكادير مقابل المحيط الأطلسي"
   },
-  "credit": "Elmschrat, CC BY-SA 3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:02-beach-agadir-morocco.JPG"
+  "credit": "Fmc2026, CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg",
+  "focalPoint": [50, 65]
  },
  "agadir/souk-el-had": {
   "file": "agadir-souk-el-had.jpg",
