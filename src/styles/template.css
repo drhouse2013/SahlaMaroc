@@ -390,6 +390,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-guide:hover { transform: translateY(-3px); box-shadow: 0 12px 22px rgb(52 38 28 / .18); }
 .tpl-guide__media { position: relative; height: 79px; overflow: hidden; background: #eadfd2; }
 .tpl-guide__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tpl-guide__media--passport img { transform: scale(1.75); transform-origin: left center; object-position: 24% center; }
 .tpl-guide__body { position: relative; height: 65px; padding: 11px 18px 4px; background: linear-gradient(180deg, #fffdf8, #faf0e6); }
 .tpl-guide__tag {
   position: absolute;
@@ -845,8 +846,19 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 
 /* Home: keep the full arch inside the panorama and align the feature row to its edge. */
 @media (min-width: 1081px) {
-  body:has(.home-shell) .tpl-hero { height: 262px; }
+  body:has(.home-shell) .tpl-header {
+    background: linear-gradient(90deg, transparent 0 88px, rgb(255 251 245 / .84) 170px, rgb(255 251 245 / .98) 280px);
+    backdrop-filter: none;
+  }
+  body:has(.home-shell) .tpl-header::before { display: none; }
+  body:has(.home-shell) .tpl-hero { height: 313px; margin-block-start: -51px; padding-block-start: 51px; }
   body:has(.home-shell) .tpl-hero__media { object-position: center top; }
   body:has(.home-shell) .tpl-hero__content { padding-inline-start: max(calc((100% - 1300px) / 2 + 140px), 17.3vw); }
   body:has(.home-shell) .tpl-features { margin-block-start: 0; }
+}
+
+@media (min-width: 1081px) {
+  .dark body:has(.home-shell) .tpl-header {
+    background: linear-gradient(90deg, transparent 0 88px, rgb(10 37 32 / .84) 170px, rgb(10 37 32 / .98) 280px);
+  }
 }

@@ -17,6 +17,8 @@ La maquette fournie par le propriétaire (`SahlaMaroc_Template_Complete.zip`) es
 
 Les cartes « parcours » de l'accueil n'utilisent **pas** les images du ZIP (texte incrusté et flèche raster) : elles reprennent les photos éditoriales du site, créditées ci-dessous (`marhaba-port.jpg`, `banque-casablanca-cfc.jpg`, photo de Ouarzazate). Les visuels de guides utilisent les photos éditoriales existantes.
 
+| `src/assets/template/passport-lost-cover-20261117.png` | Visuel HD fourni par le propriétaire du site, confirmé comme créé par ChatGPT | Le cadrage de la couverture est conservé dans le fichier source ; seule la partie illustrant le passeport est affichée dans la vignette Sahla Maroc. Aucun crédit photo externe n'est revendiqué. |
+
 
 ## Photos de villes
 

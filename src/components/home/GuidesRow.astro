@@ -10,6 +10,7 @@ import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
 import { getArticleByKey, entryPath, hubPath } from '../../utils/i18n';
 import { getGuidePhoto } from '../../utils/guidePhotos';
 import { guideVisual } from '../../utils/guideVisual';
+import passportCover from '../../assets/template/passport-lost-cover-20261117.png';
 import type { Locale } from '../../i18n';
 
 interface Props { lang: Locale }
@@ -43,6 +44,7 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
     {items.map((article) => {
       const d = article.data;
       const photo = getGuidePhoto(d.translationKey, d.category, d.lang);
+      const isPassportCover = d.translationKey === 'permanent-return';
       const visual = guideVisual(d.translationKey, d.category, d.title);
       const reference = lang === 'fr' ? ({
         'permanent-return': { title: 'Retour définitif au Maroc : le guide complet', tag: 'MRE', checks: ['Démarches', 'Documents', 'Conseils'] },
@@ -52,14 +54,18 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
       const checks = reference?.checks ?? d.tags.slice(0, 3);
       return (
         <article class="tpl-guide">
-          <div class="tpl-guide__media">
-            {photo ? (
+          <div class:list={['tpl-guide__media', isPassportCover && 'tpl-guide__media--passport']}>
+            {isPassportCover ? (
+              <Image src={passportCover} alt={lang === 'ar' ? 'جواز سفر مغربي' : lang === 'de' ? 'Marokkanischer Reisepass' : lang === 'es' ? 'Pasaporte marroquí' : lang === 'en' ? 'Moroccan passport' : 'Passeport marocain'} widths={[480, 640, 960, 1200, 1536]} sizes="(min-width: 1000px) 45vw, (min-width: 650px) 52vw, 160vw" loading="lazy" quality={90} />
+            ) : photo ? (
               <Image src={photo.src} alt={photo.alt} widths={[320, 480, 640, 960]} sizes="(min-width: 1000px) 22vw, (min-width: 650px) 30vw, 92vw" loading="lazy" quality={84} />
             ) : (
               <span class="tpl-guide__icon" aria-hidden="true"><Icon name={visual.icon} class="size-8" /></span>
             )}
           </div>
-          {photo?.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
+          {isPassportCover
+            ? <PhotoCredit lang={lang} credit="Visuel HD fourni par le propriétaire du site" source={null} />
+            : photo?.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
           <div class="tpl-guide__body">
             <span class="tpl-guide__tag">{reference?.tag ?? SHORT_TAGS[d.category] ?? CATEGORIES[d.category].label[d.lang]}</span>
             <span class="tpl-guide__title">{reference?.title ?? d.title}</span>
