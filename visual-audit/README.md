@@ -70,3 +70,7 @@ Le calcul des bandes utilisait une indexation de colonne au lieu des lignes ; il
 ### Cartes parcours
 
 Titres agrandis et descriptions passées à 12 px ; hauteur minimale conservée, avec adaptation aux traductions. `tools/check-home-features.mjs` contrôle les trois cartes en cinq langues à 390, 768 et 1448 px : 15 rendus, aucun texte hors cadre. Captures française ordinateur et arabe mobile archivées ; build 936 pages et contrôle de sortie réussis. Ce contrôle mesure les débordements des textes, pas la fidélité globale à la référence.
+
+## Balayage global des pages
+
+`tools/audit-site-render.mjs` parcourt les 930 routes préfixées par langue du build : largeurs 390 et 1448, thèmes clair et sombre. Le rapport progressif enregistre les réponses HTTP, le débordement horizontal global, le thème rendu et les images chargées en erreur. Les images différées non chargées, contrastes, chevauchements locaux et fidélité esthétique demandent une inspection complémentaire : un balayage sans erreur ne termine pas seul l’audit visuel. Le build ne doit pas être modifié pendant ce contrôle.
