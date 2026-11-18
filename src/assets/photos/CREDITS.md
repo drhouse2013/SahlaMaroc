@@ -268,6 +268,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API), Pexels.
 | permis-route-r203.jpg | Alexander Leisser | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:View_over_R_203_from_Tizi-n-Test.jpg |
 | argent-dirhams.jpg | Freepius | CC0 | https://commons.wikimedia.org/wiki/File:Dirhams_marocains_(MAD).jpeg |
 | finance-casablanca-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_14.jpg |
+| casa-finance-city-investissement.jpg | Chah.salah | CC0 | https://commons.wikimedia.org/wiki/File:Casa_finance_city_6.jpg |
 | banque-casablanca-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_35.jpg |
 | epargne-casablanca-cfc.jpg | AyourAchtouk | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_37.jpg |
 | the-menthe-marrakech.jpg | Adam Harangozó | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mint_tea,_Marrakesh.jpg |
@@ -280,6 +281,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API), Pexels.
 
 - immo-acheter-casa-2025.jpg : Casa Finance City, coucher de soleil (2025). Auteur : Chah.salah. Licence : CC0. Source : https://commons.wikimedia.org/wiki/File:Casa_finance_city_5.jpg
 - voiture-traversee-mre.jpg : voitures en attente d’embarquement, port d’Algésiras (2022). Auteur : Xemenendura. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg
+- transport-vehicules-tanger-med.jpg : voitures et camions à côté du ferry Tanger Express au port de Tanger Med (2025). Auteur : Bertrand SOUBEYRAND. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Déchargement_poids_lourds_ferry_Tanger_Express_à_Tanger_MED-photo_Bertrand_SOUBEYRAND.jpg
 - chefchaouen-place-haouta-2025.jpg : Place El Haouta, Chefchaouen (2025). Auteur : Badr Rachadi. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Place-el-haouta-fountain-chefchaouen-morocco.jpg
 - merzouga-camp-2019.jpg : Camp du désert, Merzouga (2019). Auteur : Isabeldianamadrid. Licence : CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Merzouga_desert_camp.jpg
 - essaouira-medina-2023.jpg : Médina d’Essaouira (2023). Auteur : Mounir Neddi. Licence : CC0. Source : https://commons.wikimedia.org/wiki/File:M%C3%A9dina_d%27Essaouira_(ancienne_Mogador)_8.jpg

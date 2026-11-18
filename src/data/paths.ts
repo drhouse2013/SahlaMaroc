@@ -10,7 +10,7 @@ import type { CategoryId } from '../i18n/categories';
 import type { IconName } from './icons';
 import { placePhoto } from '../utils/photos';
 import returnPhoto from '../assets/photos/assurance-voyage-ram.jpg';
-import investmentPhoto from '../assets/photos/riad-patio-dar-el-bacha.jpg';
+import investmentPhoto from '../assets/photos/casa-finance-city-investissement.jpg';
 
 type T = Record<Locale, string>;
 export type PathId = 'return' | 'invest' | 'visit';
@@ -171,9 +171,9 @@ const STATIC_PHOTOS: Record<Exclude<PathId, 'visit'>, { src: ImageMetadata; cred
     alt: { fr: 'Avion de Royal Air Maroc en vol au-dessus du Maroc', en: 'Royal Air Maroc aircraft in flight over Morocco', es: 'Avión de Royal Air Maroc en vuelo sobre Marruecos', de: 'Flugzeug von Royal Air Maroc im Flug über Marokko', ar: 'طائرة تابعة للخطوط الملكية المغربية تحلق فوق المغرب' },
   },
   invest: {
-    src: investmentPhoto, credit: 'R Prazeres, CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg',
-    alt: { fr: 'Patio arboré d’un riad marocain à Marrakech', en: 'Tree-filled courtyard of a Moroccan riad in Marrakech', es: 'Patio arbolado de un riad marroquí en Marrakech', de: 'Bepflanzter Innenhof eines marokkanischen Riads in Marrakesch', ar: 'فناء رياض مغربي تحيط به الأشجار في مراكش' },
+    src: investmentPhoto, credit: 'Chah.salah (CC0)',
+    source: 'https://commons.wikimedia.org/wiki/File:Casa_finance_city_6.jpg',
+    alt: { fr: 'Les tours et immeubles du quartier Casablanca Finance City au coucher du soleil', en: 'Towers and buildings of the Casablanca Finance City district at sunset', es: 'Torres y edificios del distrito Casablanca Finance City al atardecer', de: 'Türme und Gebäude im Viertel Casablanca Finance City bei Sonnenuntergang', ar: 'أبراج ومباني حي الدار البيضاء للمالية عند غروب الشمس' },
   },
 };
 
