@@ -37,12 +37,11 @@ function row(name, dir, id, note = '') {
 }
 
 const sections = [];
-// Hero.astro uses the supplied template panorama, not the legacy home-hero photo.
-sections.push({ title: 'Hero accueil', rows: [{
-  name: 'Accueil (hero)', image: 'src/assets/template/hero-reference-20261117.png',
-  source: 'Illustration générée à partir de la référence fournie', url: '', status: I, license: 'Création avec ImageGen, 17 novembre 2026',
-  note: 'composition illustrative ; ne constitue pas une photographie récente vérifiée',
-}] });
+// The homepage hero uses two photographic layers with separate credits.
+sections.push({ title: 'Hero accueil', rows: [
+  row('Accueil — panorama de Rabat', 'cities', 'home-hero'),
+  row('Accueil — porte Bab Oudaia', 'cities', 'home-hero-gate'),
+] });
 sections.push({ title: 'Villes', rows: CITY_PAGES.map((c) => row(cityLabel(c.id, 'fr'), 'cities', c.id)) });
 sections.push({
   title: 'Régions',
@@ -84,7 +83,7 @@ out.push(`> Généré par \`node tools/images-inventory.mjs\` (\`npm run images:
 out.push(`**Total : ${all.length} entrées, ${count(all, V)} photos vérifiées, ${count(all, P)} placeholders (« Photo à venir »), ${count(all, C)} à confirmer, ${count(all, I)} illustration décorative.**`, '');
 out.push('| Type | Entrées | Vérifiées | Placeholders | À confirmer | Illustrations |', '|---|---|---|---|---|---|');
 for (const s of sections) out.push(`| ${s.title} | ${s.rows.length} | ${count(s.rows, V)} | ${count(s.rows, P)} | ${count(s.rows, C)} | ${count(s.rows, I)} |`);
-out.push('', '**Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le panorama illustré actuellement utilisé remplace ici la photographie historique `cities/home-hero.jpg`, qui ne représente plus le héros affiché.', '');
+out.push('', '**Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le héros de l’accueil associe une photo du panorama de Rabat (septembre 2025) à une photo récente de Bab Oudaia (octobre 2026) ; les deux crédits sont consultables sur place.', '');
 out.push('', '**Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l\'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.', '');
 for (const s of sections) {
   out.push(`## ${s.title} (${s.rows.length})`, '');

@@ -2,7 +2,7 @@
 
 > Généré par `npm run images:inventory` depuis `src/assets/photos/guides/editorial-photos.json`.
 
-38 références de guides, 34 fichiers distincts ; 0 référence(s) à corriger.
+40 références de guides, 35 fichiers distincts ; 0 référence(s) à corriger.
 
 **Portée.** Présence du fichier, auteur, licence reconnue et URL HTTPS uniquement. Ce contrôle ne prouve ni la date, ni la qualité, ni la correspondance visuelle au sujet. Les huit images génériques de catégorie et les illustrations de la template restent hors de ce manifeste.
 
@@ -46,3 +46,5 @@
 | world-cup-2030-transport | `src/assets/photos/gare-rabat-ville.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
 | riad-or-hotel | `src/assets/photos/riad-patio-dar-el-bacha.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
 | taghazout-surf | `src/assets/photos/taghazout-surf-2026.jpg` | Photographie éditoriale | <https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/> | vérifiée | Pexels License ; métadonnées contrôlées ; date et composition à examiner |
+| buy-property-abroad | `src/assets/photos/credit-immeubles-casa.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Four-storey_white_apartment_and_commercial_buildings_on_Boulevard_Mohammed_V_in_Casablanca,_Morocco_(54875688339).jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
+| import-car-permanent-return | `src/assets/photos/voiture-traversee-mre.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |

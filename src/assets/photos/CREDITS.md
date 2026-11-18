@@ -1,9 +1,11 @@
 # Crédits photos
 
-Sources : Wikimedia Commons (licences vérifiées via l'API).
+Sources : Wikimedia Commons (licences vérifiées via l'API), Pexels.
 
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
+| home-hero.jpg | Earth Photart | Pexels License | https://www.pexels.com/photo/sunset-view-of-the-iconic-rabat-skyline-34059520/ |
+| home-hero-gate.jpg | Aemazy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_gate.jpg |
 | taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels License | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
 | merzouga-dunes.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg |
 | chefchaouen-ruelle.jpg | Ekaterina Kvelidze | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg |
@@ -50,7 +52,8 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | cities/oujda.jpg | Farajiibrahim | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg |
 | cities/al-hoceima.jpg | Abdel Jalil Bouhaj | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg |
 | cities/merzouga.jpg | Houssain tork | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Les_dunes_de_Merzouga_(Une_caravane_de_chameaux_).jpg |
-| cities/home-hero.jpg | Merzougaloisirs | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg |
+| cities/home-hero.jpg | Earth Photart | Pexels License | https://www.pexels.com/photo/sunset-view-of-the-iconic-rabat-skyline-34059520/ |
+| cities/home-hero-gate.jpg | Aemazy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_gate.jpg |
 | cities/tafraout.jpg | Marek Ślusarczyk (Tupungato) | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg |
 | cities/agadir.jpg | Francesc Fort | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg |
 | cities/dakhla.jpg | Tbo47 | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Plage_PK25_Dakhla.jpg (photo du 24 novembre 2024, 4 124 × 1 657 px) |

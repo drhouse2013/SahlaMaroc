@@ -196,14 +196,26 @@
  "home-hero": {
   "file": "home-hero.jpg",
   "alt": {
-   "fr": "Caravane de dromadaires dans les dunes dorées du Sahara marocain",
-   "en": "Camel caravan crossing golden Moroccan Sahara dunes",
-   "es": "Caravana de dromedarios por las dunas doradas del Sáhara marroquí",
-   "de": "Kamelkarawane in den goldenen Dünen der marokkanischen Sahara",
-   "ar": "قافلة جمال في كثبان الصحراء المغربية الذهبية"
+   "fr": "Panorama du Bouregreg à l’heure dorée, avec la tour Hassan et la tour Mohammed VI à Rabat",
+   "en": "Bouregreg panorama at golden hour, with Hassan Tower and Mohammed VI Tower in Rabat",
+   "es": "Panorama del Bouregreg en la hora dorada, con la Torre Hassan y la Torre Mohammed VI en Rabat",
+   "de": "Bouregreg-Panorama im goldenen Abendlicht mit Hassan-Turm und Mohammed-VI.-Turm in Rabat",
+   "ar": "مشهد بانورامي لوادي أبي رقراق عند الغروب، مع صومعة حسان وبرج محمد السادس في الرباط"
   },
-  "credit": "Merzougaloisirs, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Cavalier_de_chameaux_au_passage_dans_une_dune_de_sable_au_Maroc.jpg"
+  "credit": "Earth Photart, Pexels License",
+  "source": "https://www.pexels.com/photo/sunset-view-of-the-iconic-rabat-skyline-34059520/"
+ },
+ "home-hero-gate": {
+  "file": "home-hero-gate.jpg",
+  "alt": {
+   "fr": "Bab Oudaia, porte monumentale de la kasbah des Oudayas à Rabat",
+   "en": "Bab Oudaia, monumental gate of the Kasbah of the Udayas in Rabat",
+   "es": "Bab Oudaia, puerta monumental de la kasbah de los Udayas en Rabat",
+   "de": "Bab Oudaia, monumentales Tor der Kasbah der Udayas in Rabat",
+   "ar": "باب الوداية، البوابة الضخمة لقصبة الوداية في الرباط"
+  },
+  "credit": "Aemazy, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_gate.jpg"
  },
  "tafraout": {
   "file": "tafraout.jpg",
