@@ -1,20 +1,17 @@
 ---
 /**
- * Héros de l'accueil : vraies photos de Rabat, titre serif, recherche et quatre bénéfices.
- * Les images sont optimisées et leurs crédits restent accessibles à la demande.
+ * Héros de l'accueil (maquette Sahla Maroc) : panorama illustré du Maroc, titre serif, recherche
+ * et quatre bénéfices. Le panorama est optimisé (srcset) ; le texte est traduit.
  */
+import { Image } from 'astro:assets';
 import Icon from '../Icon.astro';
-import CityImage from '../CityImage.astro';
-import PlaceImage from '../PlaceImage.astro';
-import PhotoCredit from '../PhotoCredit.astro';
+import heroPanorama from '../../assets/template/hero-reference-20261117.png';
 import { useTranslations, type Locale } from '../../i18n';
 import { hubPath } from '../../utils/i18n';
-import { placePhoto } from '../../utils/photos';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const archPhoto = placePhoto('hero', 'home-hero-gate', lang);
 
 const copy = {
   fr: {
@@ -23,6 +20,7 @@ const copy = {
     placeholder: 'Rechercher un guide, une démarche, une ville…',
     cta: 'Rechercher',
     benefits: ['Guides fiables', 'Outils pratiques', 'Spécial MRE', '100% Gratuit'],
+    photo: 'Illustration panoramique du Maroc au coucher du soleil',
   },
   en: {
     title: 'Morocco,', em: 'made simple.',
@@ -30,6 +28,7 @@ const copy = {
     placeholder: 'Search a guide, a procedure, a city…',
     cta: 'Search',
     benefits: ['Trusted guides', 'Practical tools', 'Built for MREs', '100% free'],
+    photo: 'Panoramic illustration of Morocco at sunset',
   },
   es: {
     title: 'Marruecos,', em: 'sin complicaciones.',
@@ -37,6 +36,7 @@ const copy = {
     placeholder: 'Buscar una guía, un trámite, una ciudad…',
     cta: 'Buscar',
     benefits: ['Guías fiables', 'Herramientas prácticas', 'Para la diáspora', '100% gratis'],
+    photo: 'Ilustración panorámica de Marruecos al atardecer',
   },
   de: {
     title: 'Marokko,', em: 'ganz einfach.',
@@ -44,6 +44,7 @@ const copy = {
     placeholder: 'Ratgeber, Formalität oder Stadt suchen…',
     cta: 'Suchen',
     benefits: ['Verlässliche Ratgeber', 'Praktische Rechner', 'Für Marokkaner im Ausland', '100 % kostenlos'],
+    photo: 'Panoramaillustration von Marokko bei Sonnenuntergang',
   },
   ar: {
     title: 'المغرب،', em: 'ببساطة.',
@@ -51,6 +52,7 @@ const copy = {
     placeholder: 'ابحث عن دليل أو إجراء أو مدينة…',
     cta: 'ابحث',
     benefits: ['أدلة موثوقة', 'أدوات عملية', 'لمغاربة العالم', '100٪ مجانًا'],
+    photo: 'رسم بانورامي للمغرب عند الغروب',
   },
 }[lang];
 
@@ -59,13 +61,16 @@ const benefitIcons = ['book', 'zap', 'users', 'shield'] as const;
 ---
 
 <section class="tpl-hero" aria-labelledby="home-title">
-  <div class="tpl-hero__media">
-    <CityImage scene="home-hero" lang={lang} width={2172} widths={[640, 960, 1440, 2172]} sizes="100vw" eager priority />
-  </div>
-  <div class="tpl-hero__arch">
-    <PlaceImage photo={archPhoto} kind="hero" lang={lang} width={960} widths={[480, 720, 960]} sizes="26vw" eager priority class="tpl-hero__arch-image" />
-    {archPhoto.credit && <PhotoCredit lang={lang} credit={archPhoto.credit} source={archPhoto.source} />}
-  </div>
+  <Image
+    src={heroPanorama}
+    alt={copy.photo}
+    widths={[640, 960, 1440, 2172]}
+    sizes="100vw"
+    class="tpl-hero__media"
+    loading="eager"
+    fetchpriority="high"
+    quality={72}
+  />
   <div class="tpl-hero__shade" aria-hidden="true"></div>
   <div class="tpl-hero__content">
     <h1 id="home-title">{copy.title} <em>{copy.em}</em></h1>

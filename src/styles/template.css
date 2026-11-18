@@ -187,11 +187,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 }
 
 .tpl-hero { position: relative; isolation: isolate; height: 337px; color: #fff; overflow: hidden; background: var(--tpl-forest-deep); }
-.tpl-hero__media { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; overflow: hidden; }
-.tpl-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-.tpl-hero__arch { position: absolute; inset-block: 0; inset-inline-start: 0; z-index: 0; width: clamp(13rem, 18vw, 21rem); overflow: hidden; border-inline-end: 1px solid rgb(255 255 255 / .28); box-shadow: 5px 0 18px rgb(6 38 29 / .18); }
-.tpl-hero__arch-image { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; transform: scale(1.25); transform-origin: center bottom; }
-.tpl-hero__arch .photo-credit-control { inset-inline: .75rem auto; }
+.tpl-hero__media { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
 .tpl-hero::after {
   content: "";
   position: absolute;
@@ -694,7 +690,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-header:has(.tpl-brand__fallback) .tpl-nav { gap: 18px; }
   .tpl-controls { gap: 14px; }
   .tpl-lang-wrap summary { min-width: 87px; }
-  .tpl-hero__media img { object-position: center 30%; }
+  .tpl-hero__media { object-position: center 30%; }
   .tpl-features { width: min(1320px, calc(100% - 128px)); inset-inline-start: 14px; }
   .tpl-section { width: min(1296px, calc(100% - 152px)); inset-inline-start: 14px; }
   .tpl-guides__grid { grid-template-columns: 280px repeat(3, minmax(0, 1fr)); }
@@ -731,7 +727,6 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-nav__link { font-size: 11px; }
   .tpl-nav { gap: 8px; }
   .tpl-hero__content { padding-inline-start: 12%; width: 100%; }
-  .tpl-hero__arch { display: none; }
   .tpl-guides__grid { grid-template-columns: 220px repeat(3, minmax(0, 1fr)); gap: 10px; }
   .tpl-guide__checks span { font-size: 8px; }
   .tpl-tool strong { font-size: 10.8px; }
@@ -772,7 +767,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-account { width: 38px; padding: 0; }
   .tpl-account span { display: none; }
   .tpl-hero { height: 395px; }
-  .tpl-hero__media img { object-position: 80% 35%; }
+  .tpl-hero__media { object-position: 54% center; }
   .tpl-hero::after { background: linear-gradient(90deg, rgb(16 29 52 / .6), rgb(12 36 56 / .47), transparent); }
   .tpl-hero__content { width: 100%; padding: 40px 21px 0; }
   .tpl-hero h1 { font-size: clamp(2rem, 10vw, 2.44rem); letter-spacing: -.03em; }
@@ -904,7 +899,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   }
 }
 
-/* Home: keep the full arch inside the panorama and align the feature row to its edge. */
+/* Home hero: use the supplied panoramic reference artwork full-bleed. */
 @media (min-width: 1081px) {
   body:has(.home-shell) .tpl-header {
     background: linear-gradient(90deg, transparent 0 88px, rgb(255 251 245 / .84) 170px, rgb(255 251 245 / .98) 280px);
@@ -912,7 +907,8 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   }
   body:has(.home-shell) .tpl-header::before { display: none; }
   body:has(.home-shell) .tpl-hero { height: 313px; margin-block-start: -51px; padding-block-start: 51px; }
-  body:has(.home-shell) .tpl-hero__content { padding-inline-start: calc(clamp(13rem, 18vw, 21rem) + 1.5rem); }
+  body:has(.home-shell) .tpl-hero__media { object-position: center top; }
+  body:has(.home-shell) .tpl-hero__content { padding-inline-start: max(calc((100% - 1300px) / 2 + 140px), 17.3vw); }
   body:has(.home-shell) .tpl-features { margin-block-start: 0; }
 }
 
