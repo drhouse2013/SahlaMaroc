@@ -317,6 +317,33 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-dest .photo-credit-control__trigger svg { width: .7rem; height: .7rem; }
 .tpl-dest .photo-credit-control__trigger:hover { opacity: 1; }
 
+
+/* Keep photo attribution available without adding a badge to every image. */
+@media (hover: hover) and (pointer: fine) {
+  .tpl-feature-cell .photo-credit-control__trigger,
+  .tpl-guide > .photo-credit-control .photo-credit-control__trigger,
+  .tpl-dest .photo-credit-control__trigger {
+    opacity: 0;
+    transition: opacity .18s ease;
+  }
+  .tpl-feature-cell:hover .photo-credit-control__trigger,
+  .tpl-feature-cell:focus-within .photo-credit-control__trigger,
+  .tpl-guide:hover > .photo-credit-control .photo-credit-control__trigger,
+  .tpl-guide:focus-within > .photo-credit-control .photo-credit-control__trigger,
+  .tpl-dest:hover .photo-credit-control__trigger,
+  .tpl-dest:focus-within .photo-credit-control__trigger {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .tpl-feature-cell .photo-credit-control__trigger,
+  .tpl-guide > .photo-credit-control .photo-credit-control__trigger,
+  .tpl-dest .photo-credit-control__trigger {
+    opacity: .58;
+  }
+}
+
 /* Keep photo attribution available without adding a badge to every image. */
 @media (hover: hover) and (pointer: fine) {
   .tpl-feature-cell .photo-credit-control__trigger,
