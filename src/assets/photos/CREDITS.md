@@ -402,6 +402,10 @@ Originaux Wikimedia récupérés pour éviter la perte de détails des copies r�
 - `spots/tetouan-dersa-kasbah-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg). Prise déclarée le 4 octobre 2026 ; original 1868 × 3901 px. L’asset local est la réduction Wikimedia 960 × 2005 px, suffisante pour le recadrage 4:3 jusqu’à 480 × 360. Point focal [50, 40]. Variantes Astro sous CC BY-SA 4.0.
 
 
+## Taroudant — souk, janvier 2025
+
+- `spots/taroudant-market-rugs-2025.jpg` : Abdel Achkouk, Pexels License. Photo prise le 7 janvier 2025 à Taroudant, 4032 × 3024 px ; attribution non requise par Pexels, crédit conservé dans le manifeste. Source : https://www.pexels.com/photo/colorful-moroccan-rugs-displayed-in-taroudant-market-30130315/.
+
 ## Taroudant — remparts, octobre 2026
 
 - `cities/taroudant.jpg` et `spots/taroudant-ramparts.jpg` : JBPedia, CC BY-SA 4.0. Prise déclarée le 10 octobre 2026 à 12:26:29 ; original 4160 × 1968 conservé sans modification. Source : https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg. Versions et recadrages Astro sous la même licence. Remplace les vues de ville de 2016 et des remparts de 2011.

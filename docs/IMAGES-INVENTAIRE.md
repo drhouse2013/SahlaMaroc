@@ -450,7 +450,7 @@
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
 | Remparts de Taroudant | `spots/taroudant-ramparts.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:One_of_the_towers_of_the_Taroudant_wall.jpg> | vérifiée | CC BY-SA 4.0 |
-| Souk arabe (Kissaria) | `spots/taroudant-arab-souk.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudannt_Souk.jpg> | vérifiée | CC BY-SA 4.0 |
+| Souk arabe (Kissaria) | `spots/taroudant-market-rugs-2025.jpg` | Pexels | <https://www.pexels.com/photo/colorful-moroccan-rugs-displayed-in-taroudant-market-30130315/> | vérifiée | Pexels License |
 | Souk berbère (Jnane Jamaa) | — (« Photo à venir ») | — | — | placeholder | — |
 | Tannerie de Taroudant | `spots/taroudant-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taroudannt_Gerberei.JPG> | vérifiée | CC BY-SA 3.0 |
 | Cigognes de la porte est | — (« Photo à venir ») | — | — | placeholder | — |
