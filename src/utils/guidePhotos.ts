@@ -43,7 +43,7 @@ const photos = {
 };
 
 export function getGuidePhoto(key: string, category: CategoryId, lang: Locale) {
-  const subject = (specific as Record<string, {file: string; credit: string; license: string; source: string; alt?: Partial<Record<Locale, string>>}>)[key];
+  const subject = (specific as unknown as Record<string, {file: string; credit: string; license: string; source: string; alt?: Partial<Record<Locale, string>>}>)[key];
   if (subject) {
     const src = subjectImages[`../assets/photos/${subject.file}`]?.default;
     if (!src) throw new Error(`Missing guide subject photograph: ${subject.file}`);
@@ -67,3 +67,4 @@ export function getGuidePhoto(key: string, category: CategoryId, lang: Locale) {
   const p = photos[id];
   return { src: hit.default, alt: p.alt[lang], credit: p.author, source: p.source, license: p.license, licenseUrl: p.licenseUrl };
 }
+

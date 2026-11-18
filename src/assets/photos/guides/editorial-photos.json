@@ -233,5 +233,32 @@
       "de": "Zwei Surfer reiten in Taghazout dieselbe Welle",
       "ar": "راكبان للأمواج يركبان الموجة نفسها في تغازوت"
     }
+  },
+  "buy-property-abroad": {
+    "file": "credit-immeubles-casa.jpg",
+    "credit": "Philip Mallis",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Four-storey_white_apartment_and_commercial_buildings_on_Boulevard_Mohammed_V_in_Casablanca,_Morocco_(54875688339).jpg",
+    "alt": {
+      "fr": "Immeubles résidentiels et commerces du boulevard Mohammed-V à Casablanca, photographiés en 2025",
+      "en": "Residential and commercial buildings on Boulevard Mohammed V in Casablanca, photographed in 2025",
+      "es": "Edificios residenciales y comercios del bulevar Mohammed V en Casablanca, fotografiados en 2025",
+      "de": "Wohn- und Geschäftshäuser am Boulevard Mohammed V in Casablanca, 2025 fotografiert",
+      "ar": "مبانٍ سكنية وتجارية بشارع محمد الخامس في الدار البيضاء، صُوّرت سنة 2025"
+    }
+  },
+  "import-car-permanent-return": {
+    "file": "voiture-traversee-mre.jpg",
+    "credit": "Xemenendura",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg",
+    "alt": {
+      "fr": "Voitures en file au port d’Algésiras avant une traversée du détroit (2022)",
+      "en": "Cars queuing at the Port of Algeciras for a Strait crossing (2022)",
+      "es": "Coches en fila en el puerto de Algeciras antes de cruzar el estrecho (2022)",
+      "de": "Autos warten im Hafen von Algeciras auf eine Überfahrt über die Meerenge (2022)",
+      "ar": "سيارات مصطفّة في ميناء الجزيرة الخضراء قبل عبور المضيق (2022)"
+    }
   }
 }
+
