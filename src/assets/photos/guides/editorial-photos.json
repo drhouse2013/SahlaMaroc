@@ -234,6 +234,19 @@
       "ar": "راكبان للأمواج يركبان الموجة نفسها في تغازوت"
     }
   },
+  "buy-property-abroad": {
+    "file": "credit-immeubles-casa.jpg",
+    "credit": "Philip Mallis",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Four-storey_white_apartment_and_commercial_buildings_on_Boulevard_Mohammed_V_in_Casablanca,_Morocco_(54875688339).jpg",
+    "alt": {
+      "fr": "Immeubles résidentiels et commerces du boulevard Mohammed-V à Casablanca, photographiés en 2025",
+      "en": "Residential and commercial buildings on Boulevard Mohammed V in Casablanca, photographed in 2025",
+      "es": "Edificios residenciales y comercios del bulevar Mohammed V en Casablanca, fotografiados en 2025",
+      "de": "Wohn- und Geschäftshäuser am Boulevard Mohammed V in Casablanca, 2025 fotografiert",
+      "ar": "مبانٍ سكنية وتجارية بشارع محمد الخامس في الدار البيضاء، صُوّرت سنة 2025"
+    }
+  },
   "import-car-permanent-return": {
     "file": "voiture-traversee-mre.jpg",
     "credit": "Xemenendura",
@@ -249,3 +262,5 @@
   }
 }
 
+warning: in the working copy of 'src/assets/photos/guides/editorial-photos.json', LF will be replaced by CRLF the next time Git touches it
+valid
