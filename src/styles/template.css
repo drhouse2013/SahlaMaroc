@@ -449,7 +449,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-guide:hover { transform: translateY(-3px); box-shadow: 0 12px 22px rgb(52 38 28 / .18); }
 .tpl-guide__media { position: relative; height: 79px; overflow: hidden; background: #eadfd2; }
 .tpl-guide__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.tpl-guide__media--passport img { width: 175%; max-width: none; object-position: left 12%; }
+.tpl-guide__media--passport img { width: 100%; max-width: 100%; object-fit: cover; object-position: left 12%; }
 .tpl-guide__body { position: relative; height: 65px; padding: 11px 18px 4px; background: linear-gradient(180deg, #fffdf8, #faf0e6); }
 .tpl-guide__tag {
   position: absolute;
