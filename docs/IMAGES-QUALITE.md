@@ -1,8 +1,8 @@
 # Contrôle des dimensions des images
 
-Généré par `node tools/audit-image-quality.mjs` le 2026-11-17.
+Généré par `node tools/audit-image-quality.mjs` le 2026-11-18.
 
-**513 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
+**512 fichiers examinés**, dont 121 vectoriels ; 0 photos sous 720 px après recadrage 4:3 ; 0 fichier(s) non lisible(s) par Sharp ; 0 référence(s) de manifeste manquante(s).
 
 Périmètre : toutes les images de `src/assets` et `public`, y compris les images non utilisées et les variantes déjà générées. Les sorties `dist` et les dépendances sont exclues. Les dimensions tiennent compte de la rotation EXIF. Seules les photographies de `src/assets/photos` sont soumises aux seuils : largeur disponible après recadrage 4:3 pour les cartes (720 px) et 16:9 pour les héros (1600 px). Les seuils repèrent les sources à examiner : le rôle réel, le ratio et le cadrage doivent être contrôlés dans les pages. Une grande dimension ne prouve ni la netteté, ni la date, ni le lieu, ni la licence. Les fichiers ICO sont signalés si le décodeur ne les lit pas.
 
@@ -33,9 +33,7 @@ Aucune.
 | public/assets/logos/logo-symbol.svg | 80 × 82 | 0 | vectoriel |
 | public/favicon.svg | 200 × 220 | 0 | vectoriel |
 | public/images/moroccan-zellige.webp | 480 × 853 | 144 | hors photographie : rôle spécifique à examiner |
-| public/logo.png | 512 × 512 | 19 | hors photographie : rôle spécifique à examiner |
 | public/logo.svg | 220 × 220 | 1 | vectoriel |
-| public/og-default.png | 1200 × 630 | 58 | hors photographie : rôle spécifique à examiner |
 | public/og-default.svg | 1200 × 630 | 3 | vectoriel |
 | src/assets/illustrations/atlas.svg | 1200 × 750 | 13 | vectoriel |
 | src/assets/illustrations/casablanca.svg | 1200 × 750 | 17 | vectoriel |
@@ -294,6 +292,7 @@ Aucune.
 | src/assets/photos/spots/agadir-mohammed-v-mosque.jpg | 1400 × 933 | 108 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-olhao-garden.jpg | 1400 × 930 | 181 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-oufella-2026.jpg | 1920 × 1277 | 514 | dimensions suffisantes ; cadrage à vérifier |
+| src/assets/photos/spots/agadir-oufella.jpg | 1400 × 1050 | 189 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-poste-centrale.jpg | 1400 × 973 | 174 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-souk-el-had.jpg | 1400 × 1400 | 191 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-valley-of-birds.jpg | 1400 × 930 | 187 | recadrage 16:9 sous 1600 px : héro à examiner |
@@ -495,7 +494,7 @@ Aucune.
 | src/assets/photos/spots/tangier-plaza-de-toros.jpg | 1400 × 933 | 153 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tangier-sidi-bou-abib.jpg | 1400 × 778 | 120 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/tangier-st-andrews.jpg | 1400 × 1050 | 173 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/taroudant-arab-souk.jpg | 1400 × 1867 | 186 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/taroudant-market-rugs-2025.jpg | 4032 × 3024 | 2243 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/taroudant-ramparts.jpg | 4160 × 1968 | 1908 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/taroudant-tannery.jpg | 1400 × 933 | 170 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/taroudant-tiout-palm-grove.jpg | 1800 × 1350 | 690 | dimensions suffisantes ; cadrage à vérifier |
