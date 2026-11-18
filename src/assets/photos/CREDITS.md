@@ -492,10 +492,8 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 
 - spots/taroudant-tiout-palm-grove.jpg : Adville, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg ; prise du 13 mars 2025, export 1800×1350 sans EXIF.
 
-
-
 ## Guides immobilier MRE et dédouanement automobile — 18 novembre 2026
 
-- `villa-majorelle-marrakech-2024.jpg` : Adrien Casse, Pexels License. Photographie prise le 14 décembre 2024, publiée en 2026, 4 000 × 6 000 px à la source. Recadrée en 1 800 × 1 350 px pour garder la villa bleue et les cactus du jardin Majorelle dans les cartes et bannières ; métadonnées retirées. Source : https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/.
-- `customs-border-car-2025.jpg` : Ishara Kasthuriarachchi, Pexels License. Photographie prise le 10 août 2025 au poste-frontière arménien, source originale 3 024 × 4 032 px. Recadrée en 1 800 × 1 350 px pour garder la voiture et les voies de contrôle en vue ; métadonnées retirées. Source : https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/.
+- `villa-majorelle-marrakech-2024.jpg` : Adrien Casse, Pexels License. Photographie prise le 14 décembre 2024, publiée en 2026 ; original 4 000 × 6 000 px. Dérivé 1 600 × 1 200 px, recadré pour la carte ; métadonnées retirées. Source : https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/.
+- `customs-border-car-2025.jpg` : Ishara Kasthuriarachchi, Pexels License. Photographie prise le 10 août 2025 au poste-frontière arménien ; original 3 024 × 4 032 px. Dérivé 1 600 × 1 200 px, recadré pour garder la voiture et les voies de contrôle ; métadonnées retirées. Source : https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/.
 
