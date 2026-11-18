@@ -189,7 +189,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-hero { position: relative; isolation: isolate; height: 337px; color: #fff; overflow: hidden; background: var(--tpl-forest-deep); }
 .tpl-hero__media { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; overflow: hidden; }
 .tpl-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-.tpl-hero__arch { position: absolute; inset-block: 0; inset-inline-start: 0; z-index: 0; width: clamp(15.5rem, 24vw, 22rem); overflow: hidden; border-inline-end: 1px solid rgb(255 255 255 / .28); box-shadow: 5px 0 18px rgb(6 38 29 / .18); }
+.tpl-hero__arch { position: absolute; inset-block: 0; inset-inline-start: 0; z-index: 0; width: clamp(13rem, 18vw, 21rem); overflow: hidden; border-inline-end: 1px solid rgb(255 255 255 / .28); box-shadow: 5px 0 18px rgb(6 38 29 / .18); }
 .tpl-hero__arch-image { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; transform: scale(1.25); transform-origin: center bottom; }
 .tpl-hero__arch .photo-credit-control { inset-inline: .75rem auto; }
 .tpl-hero::after {
@@ -684,7 +684,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-language-flag { width: 21px; height: 21px; flex: none; border-radius: 50%; background: linear-gradient(90deg, #1c3a91 0 33.33%, #fff 33.33% 66.66%, #ec3041 66.66%); }
 .tpl-menu-theme { padding: 8px 10px; border-top: 1px solid var(--tpl-line); }
 .tpl-controls > .tpl-theme { display: none; }
-@media (min-width: 1321px) {
+@media (min-width: 1081px) {
   .tpl-header__divider { position: absolute; inset-inline-start: 384px; margin: 0; }
   .tpl-nav { gap: 26px; }
   /* Translated fallback wordmarks are much narrower than the French SVG logo.
@@ -912,7 +912,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   }
   body:has(.home-shell) .tpl-header::before { display: none; }
   body:has(.home-shell) .tpl-hero { height: 313px; margin-block-start: -51px; padding-block-start: 51px; }
-  body:has(.home-shell) .tpl-hero__content { padding-inline-start: max(calc((100% - 1300px) / 2 + 330px), 26vw); }
+  body:has(.home-shell) .tpl-hero__content { padding-inline-start: calc(clamp(13rem, 18vw, 21rem) + 1.5rem); }
   body:has(.home-shell) .tpl-features { margin-block-start: 0; }
 }
 
