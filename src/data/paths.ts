@@ -9,8 +9,8 @@ import type { HubId, Locale } from '../i18n/config';
 import type { CategoryId } from '../i18n/categories';
 import type { IconName } from './icons';
 import { placePhoto } from '../utils/photos';
-import portPhoto from '../assets/photos/marhaba-port.jpg';
-import cfcPhoto from '../assets/photos/banque-casablanca-cfc.jpg';
+import returnPhoto from '../assets/photos/assurance-voyage-ram.jpg';
+import investmentPhoto from '../assets/photos/riad-patio-dar-el-bacha.jpg';
 
 type T = Record<Locale, string>;
 export type PathId = 'return' | 'invest' | 'visit';
@@ -166,14 +166,14 @@ export const PATHS: Record<PathId, PathDef> = {
 /** Photos authentiques déjà présentes (crédits : src/assets/photos/CREDITS.md et manifeste des villes). */
 const STATIC_PHOTOS: Record<Exclude<PathId, 'visit'>, { src: ImageMetadata; credit: string; source: string; alt: T }> = {
   return: {
-    src: portPhoto, credit: 'HrAd, CC BY-SA 3.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG',
-    alt: { fr: 'Ferries à quai au port de Tanger Med', en: 'Ferries moored at the port of Tanger Med', es: 'Ferris atracados en el puerto de Tanger Med', de: 'Fähren am Kai im Hafen Tanger Med', ar: 'عبّارات راسية في ميناء طنجة المتوسط' },
+    src: returnPhoto, credit: 'Acroterion, CC BY-SA 4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg',
+    alt: { fr: 'Avion de Royal Air Maroc en vol au-dessus du Maroc', en: 'Royal Air Maroc aircraft in flight over Morocco', es: 'Avión de Royal Air Maroc en vuelo sobre Marruecos', de: 'Flugzeug von Royal Air Maroc über Marokko', ar: 'طائرة للخطوط الملكية المغربية تحلق فوق المغرب' },
   },
   invest: {
-    src: cfcPhoto, credit: 'AyourAchtouk, CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_35.jpg',
-    alt: { fr: 'Tours de bureaux de Casablanca Finance City', en: 'Office towers in Casablanca Finance City', es: 'Torres de oficinas de Casablanca Finance City', de: 'Bürotürme in Casablanca Finance City', ar: 'أبراج مكاتب في القطب المالي للدار البيضاء' },
+    src: investmentPhoto, credit: 'R Prazeres, CC BY-SA 4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg',
+    alt: { fr: 'Patio arboré d’un riad à Marrakech, exemple de bien immobilier marocain', en: 'Tree-filled riad courtyard in Marrakech, an example of Moroccan property', es: 'Patio ajardinado de un riad en Marrakech, ejemplo de inmueble marroquí', de: 'Begrünter Riad-Hof in Marrakesch als Beispiel einer marokkanischen Immobilie', ar: 'فناء رياض مزروع بالأشجار في مراكش، مثال على العقار المغربي' },
   },
 };
 
