@@ -10,7 +10,7 @@ import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
 import { getArticleByKey, entryPath, hubPath } from '../../utils/i18n';
 import { getGuidePhoto } from '../../utils/guidePhotos';
 import { guideVisual } from '../../utils/guideVisual';
-import passportCover from '../../assets/template/passport-lost-cover-20261117.png';
+import passportCover from '../../assets/photos/passport-maroc-user-2026.jpg';
 import type { Locale } from '../../i18n';
 
 interface Props { lang: Locale }
@@ -56,16 +56,14 @@ const items = (await Promise.all(KEYS.map((key) => getArticleByKey(lang, key))))
         <article class="tpl-guide">
           <div class:list={['tpl-guide__media', isPassportCover && 'tpl-guide__media--passport']}>
             {isPassportCover ? (
-              <Image src={passportCover} alt={lang === 'ar' ? 'جواز سفر مغربي' : lang === 'de' ? 'Marokkanischer Reisepass' : lang === 'es' ? 'Pasaporte marroquí' : lang === 'en' ? 'Moroccan passport' : 'Passeport marocain'} widths={[480, 640, 960, 1200, 1536]} sizes="(min-width: 1000px) 45vw, (min-width: 650px) 52vw, 160vw" loading="lazy" quality={90} />
+              <Image src={passportCover} alt={lang === 'ar' ? 'جواز سفر مغربي أخضر ممسوك باليد، غلافه مكتوب بالعربية والفرنسية' : lang === 'de' ? 'Grüner marokkanischer Reisepass in einer Hand, mit arabischer und französischer Beschriftung' : lang === 'es' ? 'Pasaporte marroquí verde sostenido con la mano, con cubierta en árabe y francés' : lang === 'en' ? 'Green Moroccan passport held in a hand, with Arabic and French lettering on the cover' : 'Passeport marocain vert tenu à la main, avec une couverture en arabe et en français'} widths={[320, 480, 640]} sizes="(min-width: 1000px) 420px, (min-width: 650px) 52vw, 92vw" loading="lazy" quality={90} />
             ) : photo ? (
               <Image src={photo.src} alt={photo.alt} widths={[320, 480, 640, 960]} sizes="(min-width: 1000px) 22vw, (min-width: 650px) 30vw, 92vw" loading="lazy" quality={84} />
             ) : (
               <span class="tpl-guide__icon" aria-hidden="true"><Icon name={visual.icon} class="size-8" /></span>
             )}
           </div>
-          {isPassportCover
-            ? <PhotoCredit lang={lang} credit="Visuel HD fourni par le propriétaire du site" source={null} />
-            : photo?.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
+          {!isPassportCover && photo?.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
           <div class="tpl-guide__body">
             <span class="tpl-guide__tag">{reference?.tag ?? SHORT_TAGS[d.category] ?? CATEGORIES[d.category].label[d.lang]}</span>
             <span class="tpl-guide__title">{reference?.title ?? d.title}</span>

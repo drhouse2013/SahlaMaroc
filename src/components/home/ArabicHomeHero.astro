@@ -1,0 +1,214 @@
+---
+/**
+ * Hero Arabic-only, intentionally isolated from shared tpl-hero styles.
+ * Its content stays physically on the left while Arabic text remains RTL.
+ */
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import heroPanorama from '../../assets/template/hero-reference-20261117.png';
+import { hubPath } from '../../utils/i18n';
+
+const searchUrl = hubPath('ar', 'search');
+const benefitIcons = ['book', 'zap', 'users', 'shield'] as const;
+const benefits = ['أدلة موثوقة', 'أدوات عملية', 'لمغاربة العالم', '100٪ مجانًا'];
+---
+
+<section class="ar-home-hero-lock" dir="rtl" lang="ar" aria-labelledby="ar-home-title">
+  <Image
+    src={heroPanorama}
+    alt="رسم بانورامي للمغرب عند الغروب"
+    widths={[640, 960, 1440, 2172]}
+    sizes="100vw"
+    class="ar-home-hero-lock__media"
+    loading="eager"
+    fetchpriority="high"
+    quality={72}
+  />
+  <div class="ar-home-hero-lock__shade" aria-hidden="true"></div>
+  <div class="ar-home-hero-lock__content">
+    <h1 id="ar-home-title">المغرب، <em>ببساطة.</em></h1>
+    <p class="ar-home-hero-lock__intro">أدلة عملية وإجراءات واستثمار وسفر وأدوات لمغاربة <u>العالم</u> ولجميع الزوار.</p>
+    <form class="ar-home-hero-lock__search" action={searchUrl} method="get" role="search">
+      <Icon name="search" class="size-5" />
+      <input type="search" name="q" placeholder="ابحث عن دليل أو إجراء أو مدينة…" aria-label="بحث" required />
+      <button type="submit">ابحث</button>
+    </form>
+    <div class="ar-home-hero-lock__benefits">
+      {benefits.map((label, i) => (
+        <span class="ar-home-hero-lock__benefit">
+          <Icon name={benefitIcons[i]} class="size-5" />
+          <span>{label}</span>
+          {i < benefits.length - 1 && <i aria-hidden="true"></i>}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Arabic home composition is deliberately independent of all shared hero rules. */
+  .ar-home-hero-lock {
+    position: relative;
+    isolation: isolate;
+    height: 337px;
+    overflow: hidden;
+    color: #fff;
+    background: #10293f;
+    direction: rtl;
+  }
+  .ar-home-hero-lock__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+  }
+  .ar-home-hero-lock::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(14 31 62 / .78) 0%, rgb(16 39 68 / .58) 38%, rgb(16 39 68 / .08) 76%);
+    content: "";
+    pointer-events: none;
+  }
+  .ar-home-hero-lock__shade {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 110px;
+    background: linear-gradient(0deg, rgb(3 25 37 / .32), transparent);
+    pointer-events: none;
+  }
+  .ar-home-hero-lock__content {
+    position: relative;
+    z-index: 1;
+    width: min(760px, calc(100% - 42px));
+    margin: 0 auto 0 max(calc((100% - 1300px) / 2 + 100px), 12vw);
+    padding-top: 20px;
+    text-align: right;
+    direction: rtl;
+  }
+  .ar-home-hero-lock h1 {
+    margin: 0;
+    color: #fff;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: clamp(2.7rem, 4.6vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: 0;
+    text-shadow: 0 2px 12px rgb(0 0 0 / .22);
+  }
+  .ar-home-hero-lock h1 em {
+    position: relative;
+    color: #f7c57a;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .ar-home-hero-lock h1 em::after {
+    position: absolute;
+    right: 0;
+    bottom: -.13em;
+    width: 72%;
+    height: 3px;
+    border-radius: 50%;
+    background: #e2ab4e;
+    content: "";
+    transform: rotate(-4deg);
+  }
+  .ar-home-hero-lock__intro {
+    max-width: 32rem;
+    margin: 8px 0 14px;
+    color: #fffcfb;
+    font-size: 17px;
+    line-height: 1.55;
+    text-shadow: 0 1px 4px rgb(11 33 59 / .44);
+  }
+  .ar-home-hero-lock__intro u { text-decoration-color: #e2ab4e; text-underline-offset: .18em; }
+  .ar-home-hero-lock__search {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 615px;
+    max-width: 100%;
+    height: 52px;
+    padding: 4px 5px 4px 21px;
+    border: 1px solid #ddd6cb;
+    border-radius: 28px;
+    background: #fffaf8;
+    color: #27333a;
+    box-shadow: 0 3px 16px rgb(0 0 0 / .19);
+  }
+  .ar-home-hero-lock__search > svg { flex: none; color: #27333a; }
+  .ar-home-hero-lock__search input {
+    flex: 1;
+    min-width: 0;
+    margin-inline-start: 12px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #26323a;
+    font: inherit;
+    font-size: 13px;
+  }
+  .ar-home-hero-lock__search input::placeholder { color: #31383c; opacity: 1; }
+  .ar-home-hero-lock__search button {
+    flex: none;
+    min-width: 138px;
+    height: 100%;
+    padding: 0 24px;
+    border: 0;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #df6425, #a63810);
+    color: #fff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .ar-home-hero-lock__benefits {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-block-start: 19px;
+    margin-inline-start: 8px;
+  }
+  .ar-home-hero-lock__benefit {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .ar-home-hero-lock__benefit svg { flex: none; color: #f1b441; }
+  .ar-home-hero-lock__benefit i {
+    display: inline-block;
+    height: 21px;
+    margin-inline-start: 10px;
+    border-inline-start: 1px solid rgb(255 255 255 / .53);
+  }
+  @media (max-width: 980px) {
+    .ar-home-hero-lock__content { margin-left: 8vw; width: calc(100% - 16vw); }
+    .ar-home-hero-lock h1 { font-size: clamp(2.5rem, 6vw, 3.4rem); }
+  }
+  @media (max-width: 760px) {
+    .ar-home-hero-lock { height: 395px; }
+    .ar-home-hero-lock__media { object-position: 54% center; }
+    .ar-home-hero-lock::after { background: linear-gradient(90deg, rgb(16 29 52 / .72), rgb(12 36 56 / .52), rgb(12 36 56 / .22)); }
+    .ar-home-hero-lock__content { width: 100%; margin: 0; padding: 38px 21px 0; }
+    .ar-home-hero-lock h1 { font-size: clamp(2.25rem, 10vw, 2.75rem); }
+    .ar-home-hero-lock__intro { max-width: 21rem; font-size: 13px; }
+    .ar-home-hero-lock__search { width: 100%; height: 48px; margin-block-start: 18px; padding-inline-start: 14px; }
+    .ar-home-hero-lock__search input { margin-inline-start: 8px; font-size: 11px; }
+    .ar-home-hero-lock__search button { min-width: 99px; padding-inline: 12px; font-size: 11px; }
+    .ar-home-hero-lock__benefits { flex-wrap: wrap; gap: 8px 15px; margin-block-start: 18px; margin-inline-start: 0; }
+    .ar-home-hero-lock__benefit { gap: 4px; font-size: 10px; }
+    .ar-home-hero-lock__benefit i { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ar-home-hero-lock *, .ar-home-hero-lock *::before, .ar-home-hero-lock *::after { animation: none !important; scroll-behavior: auto !important; }
+  }
+</style>
