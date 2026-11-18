@@ -134,15 +134,15 @@
  "meknes": {
   "file": "meknes.jpg",
   "alt": {
-   "fr": "Bab Mansour et une partie des remparts face à la place El Hedim, à Meknès",
-   "en": "Bab Mansour and part of the ramparts facing El Hedim Square in Meknes",
-   "es": "Bab Mansur y parte de las murallas frente a la plaza El Hedim, en Mequinez",
-   "de": "Bab Mansur und ein Teil der Stadtmauer am Platz El Hedim in Meknès",
-   "ar": "باب المنصور وجزء من الأسوار المطلة على ساحة الهديم بمكناس"
+   "fr": "Minaret ocre et remparts de Meknès bordés de palmiers",
+   "en": "Ocher minaret and ramparts in Meknes, lined with palm trees",
+   "es": "Minarete ocre y murallas de Mequinez, bordeados de palmeras",
+   "de": "Ockerfarbener Minaretturm und Stadtmauer von Meknès, gesäumt von Palmen",
+   "ar": "صومعة بلون المغرة وأسوار مكناس تحيط بها أشجار النخيل"
   },
-  "focalPoint": [50, 0],
-  "credit": "Moleskine, recadrée 4:3, CC BY 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg"
+  "focalPoint": [50, 40],
+  "credit": "Cesar.mx22 (réduite à 3 840 px), CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Meknes_City.jpg"
  },
  "ouarzazate": {
   "file": "ouarzazate.jpg",
@@ -414,3 +414,4 @@
   "source": "https://commons.wikimedia.org/wiki/File:Gare_de_train_(TGV)._KENITRA._Maroc.jpg"
  }
 }
+
