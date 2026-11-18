@@ -162,7 +162,7 @@
 | Mosquée Sidi Bou Abib | `spots/tangier-sidi-bou-abib.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plaza_del_9_de_abril_de_1947,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_28.JPG> | vérifiée | CC BY-SA 4.0 |
 | Église Saint-André | `spots/tangier-st-andrews.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Church_of_St_Andrew,_Tangier.jpg> | vérifiée | CC BY-SA 4.0 |
 | Jardins de la Mendoubia | `spots/tangier-mendoubia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Mendoubia.jpg> | vérifiée | CC BY-SA 4.0 |
-| Musée d'art contemporain | — (« Photo à venir ») | — | — | placeholder | — |
+| Galerie d’Art Contemporain Mohamed Drissi | — (« Photo à venir ») | — | — | placeholder | — |
 | Plaza de Toros | `spots/tangier-plaza-de-toros.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:PlazaTorosTanger.jpg> | vérifiée | CC BY-SA 4.0 |
 | Cap Malabata | `spots/tangier-cap-malabata.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cape_Malabata_Lighthouse.jpg> | vérifiée | CC BY 2.0 |
 | Palais Marshan | `spots/tangier-marshan-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg> | vérifiée | CC BY-SA 4.0 |
