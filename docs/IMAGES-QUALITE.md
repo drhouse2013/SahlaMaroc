@@ -293,7 +293,7 @@ Aucune.
 | src/assets/photos/spots/agadir-marina.jpg | 4381 × 1611 | 3413 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/agadir-mohammed-v-mosque.jpg | 1400 × 933 | 108 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-olhao-garden.jpg | 1400 × 930 | 181 | recadrage 16:9 sous 1600 px : héro à examiner |
-| src/assets/photos/spots/agadir-oufella.jpg | 1400 × 1050 | 189 | recadrage 16:9 sous 1600 px : héro à examiner |
+| src/assets/photos/spots/agadir-oufella-2026.jpg | 1920 × 1277 | 514 | dimensions suffisantes ; cadrage à vérifier |
 | src/assets/photos/spots/agadir-poste-centrale.jpg | 1400 × 973 | 174 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-souk-el-had.jpg | 1400 × 1400 | 191 | recadrage 16:9 sous 1600 px : héro à examiner |
 | src/assets/photos/spots/agadir-valley-of-birds.jpg | 1400 × 930 | 187 | recadrage 16:9 sous 1600 px : héro à examiner |

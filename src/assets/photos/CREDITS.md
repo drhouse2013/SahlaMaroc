@@ -68,7 +68,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/merzouga-grand-dune.jpg | Thomas Fuhrmann | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Erg_Chebbi_sunset.jpg |
 | spots/tafraout-painted-rocks.jpg | Simohnt | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Colored_Rocks_1.jpg |
 | spots/tafraout-napoleons-hat.jpg | Just Booked A Trip | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg |
-| spots/agadir-oufella.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg |
+| spots/agadir-oufella-2026.jpg | BusinkaSalima | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Agadir_Oufella_Kasbah_on_a_hillside,_Agadir,_Morocco.jpg — photo du 9 août 2026, redimensionnée depuis 4 512 × 3 000 px |
 | spots/agadir-beach.jpg | Fmc2026 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg (prise de vue du 13 janvier 2025, 3 024 × 3 165 px) |
 | spots/agadir-souk-el-had.jpg | Anass Sedrati | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg |
 | spots/agadir-amazigh-museum.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Building_Amazigh_Culture_Museum_Agadir.jpg |

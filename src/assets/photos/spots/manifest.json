@@ -716,16 +716,20 @@
     "source": "https://commons.wikimedia.org/wiki/File:Napoleon%27s_Hat%2C_near_Tafraoute.jpg"
   },
   "agadir/oufella": {
-    "file": "agadir-oufella.jpg",
+    "file": "agadir-oufella-2026.jpg",
     "alt": {
-      "fr": "Remparts restaurés de la kasbah d'Agadir Oufella",
-      "en": "Restored ramparts of the Agadir Oufella kasbah",
-      "es": "Murallas restauradas de la kasbah de Agadir Oufella",
-      "de": "Restaurierte Mauern der Kasbah Agadir Oufella",
-      "ar": "أسوار مرممة في قصبة أكادير أوفلا"
+      "fr": "Remparts de la kasbah d'Agadir Oufella sur la colline, photographiés en août 2026",
+      "en": "Agadir Oufella Kasbah ramparts on the hillside, photographed in August 2026",
+      "es": "Murallas de la kasbah de Agadir Oufella en la colina, fotografiadas en agosto de 2026",
+      "de": "Mauern der Kasbah Agadir Oufella am Hang, im August 2026 fotografiert",
+      "ar": "أسوار قصبة أكادير أوفلا على التل، صُوّرت في أغسطس 2026"
     },
-    "credit": "Abdeaitali, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg"
+    "credit": "BusinkaSalima, CC BY-SA 4.0 · redimensionnement",
+    "source": "https://commons.wikimedia.org/wiki/File:Agadir_Oufella_Kasbah_on_a_hillside,_Agadir,_Morocco.jpg",
+    "focalPoint": [
+      42,
+      62
+    ]
   },
   "agadir/beach": {
     "file": "agadir-beach.jpg",
