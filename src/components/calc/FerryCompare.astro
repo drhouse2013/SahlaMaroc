@@ -1,8 +1,9 @@
 ---
 /** Comparateur de ferries et péages ADM : filtre côté client, données statiques (src/data/ferries.ts). */
-import { type Locale } from '../../i18n';
+import { useTranslations, type Locale } from '../../i18n';
 import { ROUTES, TOLLS, FERRIES_LAST_CHECKED } from '../../data/ferries';
 const lang = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(lang);
 const D = FERRIES_LAST_CHECKED;
 const T = {
   fr: { from: 'Départ', dest: 'Arrivée', all: 'Toutes', es: 'Espagne', fr: 'France', it: 'Italie', port: 'Liaison', dur: 'Durée indicative', co: 'Compagnies', chk: 'Vérifié le', price: 'Prix : voir le site de la compagnie (non confirmés ici).', none: 'Aucune liaison pour ce filtre.', tolls: 'Péages ADM, classe 1 (voiture)', seg: 'Tronçon', toll: 'Péage', approx: 'environ', road: 'Tronçons publiés uniquement. Pour Rabat, Casablanca ou Fès depuis Tanger Med, additionnez les tronçons de la grille officielle ADM : distances et totaux non publiés ici.', tm: 'Tanger Med', tc: 'Tanger Ville', nd: 'Nador', ah: 'Al Hoceïma', h: 'h', plus: 'et plus', note: `Durées et compagnies d’après les programmes été 2026, qui changent selon les saisons. Vérifié le ${D}. Sebta : aucune liaison documentée dans nos guides. Péages : grille ADM, hors remorque.` },
@@ -32,7 +33,7 @@ const dur = (r: (typeof ROUTES)[number]) =>
     </label>
   </form>
   <div class="mt-4 overflow-x-auto">
-    <table class="w-full text-start text-sm">
+    <table class="w-full text-start text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--link)]" tabindex="0" aria-label={t('calc.ferryTable')}>
       <thead><tr><th>{T.port}</th><th>{T.dur}</th><th>{T.co}</th><th>{T.chk}</th></tr></thead>
       <tbody>
         {ROUTES.map((r) => (

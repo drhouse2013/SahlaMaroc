@@ -39,7 +39,7 @@ const sources = (tool?.sources ?? []).map((id) => SOURCES[id]).filter(Boolean);
     </div>
     <div class="alert alert-warn">
       <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-terracotta-600 dark:text-terracotta-300" />
-      <p class="text-sm">{t('calc.disclaimer')}</p>
+      <p class="text-sm">{t(toolKey === 'calc-ferry-compare' ? 'calc.ferryDisclaimer' : 'calc.disclaimer')}</p>
     </div>
     {guide && (
       <a href={entryPath(lang, guide.data.slug)} class="group card card-hover flex items-center justify-between gap-4 p-5">

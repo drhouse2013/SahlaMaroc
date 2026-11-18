@@ -203,6 +203,8 @@
   "calc.checked": "Standardwerte geprüft am {date}",
   "calc.guide": "Passenden Ratgeber lesen",
   "calc.disclaimer": "Dieses Ergebnis ist eine unverbindliche Schätzung. Es ersetzt weder ein Angebot noch eine offizielle Berechnung oder den Rat einer Fachperson (Notar, Bank, Steuerberater).",
+  "calc.ferryDisclaimer": "Fahrpläne, Fahrtdauer und Preise sind Richtwerte. Bestätigen Sie Überfahrt, Einschiffungsbedingungen und Fahrpreis vor der Buchung bei der Reederei. Prüfen Sie die Maut bei Autoroutes du Maroc.",
+  "calc.ferryTable": "Fährverbindungen — horizontal scrollbare Tabelle",
   "calc.invalid": "Bitte eine positive Zahl eingeben.",
   "calc.invalidDate": "Das Ausreisedatum liegt vor dem Einreisedatum.",
   "calc.reset": "Zurücksetzen",

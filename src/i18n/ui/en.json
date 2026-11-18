@@ -203,6 +203,8 @@
   "calc.checked": "Default values checked on {date}",
   "calc.guide": "Read the related guide",
   "calc.disclaimer": "This result is an estimate for information only. It does not replace a quote, an official simulation or the advice of a professional (notary, bank, tax adviser).",
+  "calc.ferryDisclaimer": "Timetables, durations and prices are indicative. Confirm your crossing, boarding requirements and fare with the ferry operator before booking. Check tolls with Autoroutes du Maroc.",
+  "calc.ferryTable": "Ferry routes — horizontally scrollable table",
   "calc.invalid": "Enter a positive number.",
   "calc.invalidDate": "The exit date is before the entry date.",
   "calc.reset": "Reset",
