@@ -2054,7 +2054,10 @@
     },
     "credit": "Dahbi fatima zahrae (réduite à 3 840 px), CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Historic_Tanneries_and_Traditional_Leather_Tanning_Vats_in_Tetouan,_Morocco.jpg",
-    "focalPoint": [50, 50]
+    "focalPoint": [
+      50,
+      50
+    ]
   },
   "casablanca/habous": {
     "file": "casablanca-habous.jpg",
@@ -2776,6 +2779,21 @@
       50,
       55
     ]
+  },
+  "casablanca/twin-center": {
+    "file": "casablanca-twin-center-2024.jpg",
+    "alt": {
+      "fr": "Tours du Twin Center au-dessus des toits de Casablanca, août 2024",
+      "en": "Twin Center towers above Casablanca rooftops, August 2024",
+      "es": "Torres del Twin Center sobre los tejados de Casablanca, agosto de 2024",
+      "de": "Twin-Center-Türme über den Dächern Casablancas, August 2024",
+      "ar": "برجا توين سنتر فوق أسطح الدار البيضاء، أغسطس 2024"
+    },
+    "credit": "Zak H, Pexels License",
+    "source": "https://www.pexels.com/photo/panoramic-view-of-casablanca-s-tallest-buildings-36851839/",
+    "focalPoint": [
+      58,
+      25
+    ]
   }
 }
-

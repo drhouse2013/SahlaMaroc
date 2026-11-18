@@ -2,14 +2,14 @@
 
 > Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-18. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 340 entrées, 271 photos vérifiées, 69 placeholders (« Photo à venir »), 0 à confirmer, 0 illustration décorative.**
+**Total : 340 entrées, 272 photos vérifiées, 68 placeholders (« Photo à venir »), 0 à confirmer, 0 illustration décorative.**
 
 | Type | Entrées | Vérifiées | Placeholders | À confirmer | Illustrations |
 |---|---|---|---|---|---|
 | Hero accueil | 2 | 2 | 0 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 | 0 |
-| Lieux à visiter | 295 | 226 | 69 | 0 | 0 |
+| Lieux à visiter | 295 | 227 | 68 | 0 | 0 |
 
 **Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le héros de l’accueil associe une photo du panorama de Rabat (septembre 2025) à une photo récente de Bab Oudaia (octobre 2026) ; les deux crédits sont consultables sur place.
 
@@ -103,7 +103,7 @@
 | Jardins de l'Agdal | `spots/marrakech-agdal.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agdale.jpg> | vérifiée | CC BY-SA 3.0 |
 | Koubba almoravide | `spots/marrakech-almoravid-koubba.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Marrakesh,_Almoravid_Koubba_(5365339756)_(2).jpg> | vérifiée | CC BY-SA 2.0 |
 
-### Casablanca (16/17 vérifiées)
+### Casablanca (17/17 vérifiées)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
@@ -118,7 +118,7 @@
 | Musée Abderrahman Slaoui | `spots/casablanca-slaoui-museum.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_gen%C3%A8se_2.jpg> | vérifiée | CC BY-SA 3.0 |
 | Villa des Arts | `spots/casablanca-villa-des-arts.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Villa_des_arts_Casablanca_02.jpg> | vérifiée | CC BY-SA 4.0 |
 | Poste centrale | `spots/casablanca-poste-centrale.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:20190814_CASABLANCA_69.jpg> | vérifiée | CC BY-SA 4.0 |
-| Twin Center | — (« Photo à venir ») | — | — | placeholder | — |
+| Twin Center | `spots/casablanca-twin-center-2024.jpg` | Pexels | <https://www.pexels.com/photo/panoramic-view-of-casablanca-s-tallest-buildings-36851839/> | vérifiée | Pexels License |
 | Morocco Mall | `spots/casablanca-morocco-mall.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Mall.jpg> | vérifiée | CC BY-SA 4.0 |
 | Phare d'El Hank | `spots/casablanca-el-hank-lighthouse.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Le_phare_d'El_Hank,_Casablanca,_Maroc.jpg> | vérifiée | CC BY-SA 3.0 |
 | Rick’s Café | `spots/casablanca-ricks-cafe.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Rick%C2%B4s_Cafe_01.jpg> | vérifiée | CC BY-SA 4.0 |

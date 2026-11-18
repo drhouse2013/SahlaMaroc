@@ -481,3 +481,11 @@ La page régionale Casablanca-Settat réutilise désormais la photo vérifiée d
 `src/assets/template/hero-reference-20261117.png` : illustration décorative créée avec l’outil intégré ImageGen à partir de `SahlaMaroc.png` fourni par le propriétaire du site. Ce composite ne représente pas une photographie documentaire récente.
 
 Instruction de création : reconstruire uniquement le fond du héros de la référence, supprimer texte, navigation, recherche et cartes ; conserver arche étroite à gauche, lanterne vers 12 %, ciel dégagé pour le titre, tour illuminée vers 77 %, ville et reflets au coucher du soleil. Le résultat rapproche la composition de la référence sans garantir une identité pixel par pixel. Original précédent conservé.
+
+## Twin Center — photographie de remplacement (18 novembre 2026)
+
+- Fichier : `src/assets/photos/spots/casablanca-twin-center-2024.jpg`.
+- Auteur : Zak H. [Photo Pexels 36851839](https://www.pexels.com/photo/panoramic-view-of-casablanca-s-tallest-buildings-36851839/).
+- Licence : [Pexels License](https://www.pexels.com/license/), réutilisation gratuite sur le site. Aucun achat.
+- Prise de vue déclarée : 1er août 2024 ; publication le 1er avril 2026. Source 2982 × 3974 px, fichier web 1600 × 2132 px ; adaptation responsive et recadrage d’affichage.
+- Lieu : Casablanca, Twin Center. Façades et enseigne comparées au visuel du [Conseil régional du tourisme de Casablanca](https://visitcasablanca.ma/pois/twin-center/).
