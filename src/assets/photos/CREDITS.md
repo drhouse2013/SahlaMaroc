@@ -485,3 +485,6 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 
 - spots/taroudant-tiout-palm-grove.jpg : Adville, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg ; prise du 13 mars 2025, export 1800×1350 sans EXIF.
 
+## Souk berbère de Taroudant — janvier 2025
+
+- `spots/taroudant-market-rugs-2025.jpg` : Abdel Achkouk, licence Pexels. Photo prise le 7 janvier 2025 à Taroudant ; original 4 032 × 3 024 px, réduction 1 800 × 1 350 px pour la galerie. Source : https://www.pexels.com/photo/colorful-moroccan-rugs-displayed-in-taroudant-market-30130315/ .

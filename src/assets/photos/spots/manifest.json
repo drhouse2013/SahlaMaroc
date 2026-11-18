@@ -2054,7 +2054,10 @@
     },
     "credit": "Dahbi fatima zahrae (réduite à 3 840 px), CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Historic_Tanneries_and_Traditional_Leather_Tanning_Vats_in_Tetouan,_Morocco.jpg",
-    "focalPoint": [50, 50]
+    "focalPoint": [
+      50,
+      50
+    ]
   },
   "casablanca/habous": {
     "file": "casablanca-habous.jpg",
@@ -2776,6 +2779,17 @@
       50,
       55
     ]
+  },
+  "taroudant/berber-souk": {
+    "file": "taroudant-market-rugs-2025.jpg",
+    "alt": {
+      "fr": "Tapis marocains colorés exposés dans une boutique du souk de Taroudant",
+      "en": "Colourful Moroccan rugs displayed in a shop in the Taroudant souk",
+      "es": "Alfombras marroquíes de colores expuestas en una tienda del zoco de Taroudant",
+      "de": "Farbenfrohe marokkanische Teppiche in einem Geschäft im Souk von Taroudant",
+      "ar": "سجاجيد مغربية ملونة معروضة في متجر بسوق تارودانت"
+    },
+    "credit": "Abdel Achkouk, Pexels License",
+    "source": "https://www.pexels.com/photo/colorful-moroccan-rugs-displayed-in-taroudant-market-30130315/"
   }
 }
-
