@@ -5,7 +5,7 @@
  */
 import { chromium } from '@playwright/test';
 import sharp from 'sharp';
-import { mkdir, copyFile } from 'node:fs/promises';
+import { mkdir, copyFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 
 const base = process.env.PLAYWRIGHT_BASE_URL ?? 'http://[::1]:4331';
@@ -59,7 +59,7 @@ for (let i = 0; i < px; i++) {
   const o = i * 3;
   const d = Math.abs(A[o] - B[o]) + Math.abs(A[o + 1] - B[o + 1]) + Math.abs(A[o + 2] - B[o + 2]);
   sum += d / 3;
-  if (d > 24) { changed++; rows[i % info.height]++; }
+  if (d / 3 > 24) { changed++; rows[Math.floor(i / info.width)]++; }
   const v = Math.min(255, d);
   diff[o] = v; diff[o + 1] = v > 60 ? v - 40 : 0; diff[o + 2] = 0;
 }
@@ -70,13 +70,17 @@ const bands = [];
 for (let y = 0; y < info.height; y += 50) {
   let c = 0;
   for (let yy = y; yy < Math.min(y + 50, info.height); yy++) c += rows[yy];
-  bands.push({ y, changedPct: +(100 * c / (W * 50)).toFixed(1) });
+  bands.push({ y, changedPct: +(100 * c / (W * Math.min(50, info.height - y))).toFixed(1) });
 }
-console.log(JSON.stringify({
+const report = {
+  capturedAt: new Date().toISOString(),
+  base,
   viewport: { W, H },
   meanAbsDiff: +(sum / px).toFixed(2),
   changedPct: +(100 * changed / px).toFixed(2),
   worstBands: bands.sort((a, b) => b.changedPct - a.changedPct).slice(0, 8),
   boxes,
-}, null, 2));
+};
+await writeFile(`${out}/report.json`, JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify(report, null, 2));
 await browser.close();

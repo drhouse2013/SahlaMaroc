@@ -60,3 +60,9 @@ bandeau checklists **1002** (h 80), héros **51–388**, en-tête **0–51**.
   par le `overflow: hidden` des cartes.
 - Icônes d'outils alignées sur la maquette (pièces, voiture, maison, portefeuille, liste) et
   étiquettes de guides raccourcies (MRE, Immobilier, Voyage).
+
+## Contrôle du 18 novembre 2026
+
+Capture Edge du build actuel à 1448 × 1086 : arche continue jusqu’en haut, titre du passeport HD désormais visible. Build : 936 pages ; check:dist : zéro erreur, dont 155 pages ville. Les photographies et la typographie des cartes parcours restent différentes de la référence ; la signature visuelle n’est pas déclarée terminée.
+
+Le calcul des bandes utilisait une indexation de colonne au lieu des lignes ; il est corrigé, ainsi que le seuil moyen de 24 par canal et la dernière bande partielle. Le rapport est désormais écrit avec sa date et son URL. Les anciens pourcentages ne sont donc pas directement comparables. Mesure actuelle : écart moyen 36,60 ; 39,03 % des pixels dépassent le seuil moyen. Ces métriques ne prouvent pas seules la qualité du design.
