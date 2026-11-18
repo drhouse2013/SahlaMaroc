@@ -948,3 +948,10 @@ html[lang="ar"] .tpl-guide__tag {
   line-height: 1.5;
 }
 
+
+/* Keep Arabic guide metadata readable at mobile sizes. */
+html[lang="ar"] .tpl-guide__checks span {
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: normal;
+}
