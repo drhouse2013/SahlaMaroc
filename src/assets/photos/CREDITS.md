@@ -497,3 +497,7 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 - `villa-majorelle-marrakech-2024.jpg` : Adrien Casse, Pexels License. Photographie prise le 14 décembre 2024, publiée en 2026 ; original 4 000 × 6 000 px. Dérivé 1 600 × 1 200 px, recadré pour la carte ; métadonnées retirées. Source : https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/.
 - `customs-border-car-2025.jpg` : Ishara Kasthuriarachchi, Pexels License. Photographie prise le 10 août 2025 au poste-frontière arménien ; original 3 024 × 4 032 px. Dérivé 1 600 × 1 200 px, recadré pour garder la voiture et les voies de contrôle ; métadonnées retirées. Source : https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/.
 
+
+## Photo fournie par le propriétaire du site — 18 novembre 2026
+
+- `passport-maroc-user-2026.jpg` : image fournie par le propriétaire du site, sans auteur ni licence revendiqués. Conversion du PNG fourni en JPEG qualité 94, sans recadrage, 681 × 681 px ; métadonnées supprimées. Aucun agrandissement au-delà de la résolution source dans les variantes de la carte.
