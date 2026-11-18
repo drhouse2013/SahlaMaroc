@@ -19,3 +19,6 @@ Construction locale terminée : 936 pages. `npm run check:dist` : 114726 référ
 ## Minimum de version et piste amont
 
 La plage déclarée Astro est désormais `~7.4.12` pour exclure les anciennes versions 7.4 vulnérables même lors d’une régénération du verrou. Le registre picomatch consulté propose toujours 4.0.7. La PR amont 194, référencée par l’avis, est ouverte et indique explicitement ne pas constituer un correctif de sécurité : elle ne doit pas être installée comme résolution supposée de l’alerte.
+
+### Nouvelle vérification avant publication
+L’audit du registre exécuté le 17 novembre à 23:58 UTC confirme encore 12 alertes élevées propagées depuis picomatch, y compris la copie 2.3.2 d’anymatch. Le déclassement des outils vers devDependencies ne constituerait pas un correctif de la chaîne de construction : il ne sera pas utilisé pour masquer le contrôle. La publication reste à valider avec cette exposition explicitement documentée.

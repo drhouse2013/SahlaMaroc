@@ -74,10 +74,17 @@ const searchPexels = async (q) => {
   return (j?.photos ?? []).map((p) => ({ provider: 'Pexels', author: p.photographer ?? '?', authorUrl: p.photographer_url ?? '', page: p.url ?? '', thumb: p.src?.medium ?? '', desc: p.alt || '' }));
 };
 const plain = (s) => String(s ?? '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+// Commons otherwise broadens multiword searches and can return Paris or China
+// for a Tangier museum/church. Require the city as an explicit search term.
+const commonsQuery = (target) => queryOverride || `"${target.name.replace(/"/g, '')}" AND (${[...new Set(target.cities)].map(city => `"${city.replace(/"/g, '')}"`).join(' OR ')})`;
 const searchCommons = async (target) => {
-  const query = queryOverride || `${target.name} ${target.city}`;
+  const query = commonsQuery(target);
   const params = new URLSearchParams({ action: 'query', format: 'json', generator: 'search', gsrsearch: query, gsrnamespace: '6', gsrlimit: String(per), prop: 'imageinfo', iiprop: 'url|extmetadata|size', iiurlwidth: '480' });
   const j = await get(`https://commons.wikimedia.org/w/api.php?${params}`, { 'User-Agent': 'SahlaMarocPhotoCandidates/1.0 (manual editorial review)' }, 'Wikimedia Commons');
+  if (j?.error?.code === 'cirrussearch-too-busy-error') {
+    stop = 'Wikimedia Commons : moteur de recherche temporairement surchargé ; relancer plus tard.';
+    return [];
+  }
   if (j?.error) throw new Error(`Wikimedia Commons : ${j.error.code}`);
   return Object.values(j?.query?.pages ?? {}).filter(p => /\.(?:jpe?g|png|webp|avif)$/i.test(p.title)).map(p => {
     const i = p.imageinfo?.[0], m = i?.extmetadata;
@@ -129,7 +136,7 @@ const cell = (s) => String(s).replace(/\|/g, '/').replace(/\s+/g, ' ').trim();
 const md = ['# Candidats photos à valider', '',
   `> Généré par \`node tools/fetch-place-photos.mjs\` le ${new Date().toISOString().slice(0, 10)}. **Aucune de ces photos n'est intégrée.** Pour chaque lieu : ouvrir la page source, vérifier visuellement le lieu EXACT (pas un autre lieu ni une scène générique), confirmer photographe, licence et dimensions sur la source d'origine, puis ajouter l'entrée au manifeste (voir \`docs/IMAGES.md\`). Sans certitude : laisser le placeholder « Photo à venir ». Les dates, licences et descriptions indexées peuvent être absentes ou inexactes ; elles ne prouvent pas le lieu exact ni les droits. Fournisseurs : Wikimedia Commons, Openverse, Unsplash et Pexels.`, ''];
 for (const f of found) {
-  md.push(`### ${f.city} : ${f.name} (\`${f.key}\`)`, '', `Requêtes : Wikimedia « ${cell(queryOverride || `${f.name} ${f.city}`)} » ; Openverse/Unsplash/Pexels « ${cell(queryOverride || f.query)} ».`, '');
+  md.push(`### ${f.city} : ${f.name} (\`${f.key}\`)`, '', `Requêtes : Wikimedia « ${cell(commonsQuery(f))} » ; Openverse/Unsplash/Pexels « ${cell(queryOverride || f.query)} ».`, '');
   if (!f.hits.length) { md.push('Aucun candidat.', ''); continue; }
   md.push('| Fournisseur | Photographe | Date déclarée | Licence déclarée | Original | Page photo | Aperçu | Description du fournisseur | Lieu exact confirmé |', '|---|---|---|---|---|---|---|---|---|');
   for (const h of f.hits) md.push(`| ${h.provider} | ${h.authorUrl ? `[${cell(h.author)}](${h.authorUrl})` : cell(h.author)} | ${cell(h.date || 'à vérifier')} | ${cell(h.license || 'à vérifier')} | ${h.dimensions || '—'} | <${h.page}> | [aperçu](${h.thumb}) | ${cell(h.desc) || '—'} | [ ] |`);
@@ -137,5 +144,12 @@ for (const f of found) {
 }
 if (stop) md.push(`> Recherche interrompue : ${stop}`, '');
 fs.mkdirSync(path.dirname(output), { recursive: true });
+// A temporary provider outage must not erase previously collected candidates.
+if (stop && !found.length && fs.existsSync(output)) {
+  console.log(`${stop} Rapport existant conservé : ${path.relative(ROOT, output)}.`);
+  process.exitCode = 1;
+} else {
 fs.writeFileSync(output, md.join('\n'));
 console.log(`${path.relative(ROOT, output)} écrit (${found.length} lieu(x), ${found.reduce((n, f) => n + f.hits.length, 0)} candidat(s)).${stop ? ' ' + stop : ''}`);
+if (stop) process.exitCode = 1;
+}
