@@ -344,7 +344,7 @@
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Kasbah d’Agadir Oufella | `spots/agadir-oufella.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Renovated_walls_-_Kasbah_of_Agadir_Oufella.jpg> | vérifiée | CC BY-SA 4.0 |
+| Kasbah d’Agadir Oufella | `spots/agadir-oufella-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_Oufella_Kasbah_on_a_hillside,_Agadir,_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Plage et promenade d’Agadir | `spots/agadir-beach.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg> | vérifiée | CC BY 4.0 |
 | Souk El Had | `spots/agadir-souk-el-had.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Souk_El_Had_Entrance.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée Mémoire d’Agadir | — (« Photo à venir ») | — | — | placeholder | — |
