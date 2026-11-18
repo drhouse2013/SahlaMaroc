@@ -143,7 +143,7 @@ Les lignes ajoutees le 2026-10-16 (a la suite du tableau) sont les NOUVEAUX lieu
 | tangier | sidi-bou-abib | Mosquée Sidi Bou Abib | Sidi Bou Abib Mosque tangier Morocco |
 | tangier | st-andrews | Église Saint-André | Church of Saint Andrew tangier Morocco |
 | tangier | mendoubia | Jardins de la Mendoubia | Mendoubia Gardens tangier Morocco |
-| tangier | contemporary-art | Musée d'art contemporain | Museum of Contemporary Art tangier Morocco |
+| tangier | contemporary-art | Galerie Mohamed Drissi | Mohamed Drissi Contemporary Art Gallery tangier Morocco |
 | tangier | plaza-de-toros | Plaza de Toros | Plaza de Toros tangier Morocco |
 | tangier | cap-malabata | Cap Malabata | Cap Malabata tangier Morocco |
 | rabat | history-museum | Musée de l'histoire et des civilisations | Museum of History and Civilizations rabat Morocco |
