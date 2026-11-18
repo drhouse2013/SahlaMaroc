@@ -127,6 +127,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API).
 | spots/nador-marchica.jpg | Taloubant | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Marchica_nador.jpg |
 | spots/tetouan-medina.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Medina_de_Tetouan_Nov2020_054.jpg |
 | spots/tetouan-bab-okla.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D8%A8%D8%A7%D8%A8_%D8%A7%D9%84%D8%B9%D9%82%D9%84%D8%A9_4%D8%8C_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D8%A8%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg |
+| spots/tetouan-tannery-2026.jpg | Dahbi fatima zahrae (réduite de 4 000 à 3 840 px) | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Historic_Tanneries_and_Traditional_Leather_Tanning_Vats_in_Tetouan,_Morocco.jpg |
 | spots/tetouan-archaeological-museum.jpg | Yamen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_T%C3%A9touan_MedinaStories_09112020_007.jpg |
 | spots/tetouan-modern-art.jpg | Ideophagous | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D9%85%D8%B1%D9%83%D8%B2_%D8%AA%D8%B7%D9%88%D8%A7%D9%86_%D9%84%D9%84%D9%81%D9%86_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB.jpg |
 | spots/meknes-bab-mansour.jpg | Moleskine, recadrée 4:3 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg |
@@ -401,6 +402,10 @@ Originaux Wikimedia récupérés pour éviter la perte de détails des copies r�
 
 - `spots/tetouan-dersa-kasbah-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg). Prise déclarée le 4 octobre 2026 ; original 1868 × 3901 px. L’asset local est la réduction Wikimedia 960 × 2005 px, suffisante pour le recadrage 4:3 jusqu’à 480 × 360. Point focal [50, 40]. Variantes Astro sous CC BY-SA 4.0.
 
+## Tétouan — tannerie historique, octobre 2026
+
+- `spots/tetouan-tannery-2026.jpg` : Dahbi fatima zahrae, CC BY-SA 4.0. [Source](https://commons.wikimedia.org/wiki/File:Historic_Tanneries_and_Traditional_Leather_Tanning_Vats_in_Tetouan,_Morocco.jpg). Prise déclarée le 4 octobre 2026 ; original 4 000 × 1 868 px. L’asset local est la réduction Wikimedia 3 840 × 1 793 px ; point focal centré pour le recadrage 4:3 de la galerie. Variantes Astro sous CC BY-SA 4.0.
+
 
 ## Taroudant — souk, janvier 2025
 
@@ -475,3 +480,4 @@ cities/nador-corniche-2026.jpg : SALHI Kaouthar, CC BY-SA 4.0 ; source du 23 sep
 spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mars 2026. Source : https://commons.wikimedia.org/wiki/File:Zagora_City.jpg . Original redressé selon son orientation EXIF, 4000 × 6000 px ; extrait x0 y2500, 4000 × 3000 px ; export 1800 × 1350 px JPEG mozjpeg qualité 88 sans EXIF. Point focal haut pour conserver les deux tours et le panneau aux formats 4:3 et 16:9. Dérivé sous CC BY-SA 4.0. SHA-256 : 8DB08E6877294B21D0965BACA5DC71B04B5F915731DAE172F25207FBBF848270.
 
 - spots/taroudant-tiout-palm-grove.jpg : Adville, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg ; prise du 13 mars 2025, export 1800×1350 sans EXIF.
+

@@ -2044,16 +2044,17 @@
     "source": "https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg"
   },
   "tetouan/tannery": {
-    "file": "tetouan-tannery.jpg",
+    "file": "tetouan-tannery-2026.jpg",
     "alt": {
-      "fr": "Bassins de la tannerie et maisons de la médina de Tétouan",
-      "en": "Tannery vats and houses in the medina of Tetouan",
-      "es": "Cubas de la curtiduría y casas de la medina de Tetuán",
-      "de": "Gerbereibecken und Häuser in der Medina von Tetouan",
-      "ar": "أحواض الدباغة ومنازل المدينة العتيقة بتطوان"
+      "fr": "Vue panoramique des bassins de la tannerie historique dans la médina de Tétouan",
+      "en": "Panoramic view of the historic tannery vats in the medina of Tetouan",
+      "es": "Vista panorámica de las cubas de la curtiduría histórica en la medina de Tetuán",
+      "de": "Panoramablick auf die historischen Gerberbecken in der Medina von Tetouan",
+      "ar": "منظر بانورامي لأحواض الدباغة التاريخية في مدينة تطوان القديمة"
     },
-    "credit": "Rachidourkia (version optimisée), CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg"
+    "credit": "Dahbi fatima zahrae (réduite à 3 840 px), CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Historic_Tanneries_and_Traditional_Leather_Tanning_Vats_in_Tetouan,_Morocco.jpg",
+    "focalPoint": [50, 50]
   },
   "casablanca/habous": {
     "file": "casablanca-habous.jpg",
@@ -2777,3 +2778,4 @@
     ]
   }
 }
+
