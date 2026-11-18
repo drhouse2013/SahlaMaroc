@@ -233,5 +233,19 @@
       "de": "Zwei Surfer reiten in Taghazout dieselbe Welle",
       "ar": "راكبان للأمواج يركبان الموجة نفسها في تغازوت"
     }
+  },
+  "import-car-permanent-return": {
+    "file": "voiture-traversee-mre.jpg",
+    "credit": "Xemenendura",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg",
+    "alt": {
+      "fr": "Voitures en file au port d’Algésiras avant une traversée du détroit (2022)",
+      "en": "Cars queuing at the Port of Algeciras for a Strait crossing (2022)",
+      "es": "Coches en fila en el puerto de Algeciras antes de cruzar el estrecho (2022)",
+      "de": "Autos warten im Hafen von Algeciras auf eine Überfahrt über die Meerenge (2022)",
+      "ar": "سيارات مصطفّة في ميناء الجزيرة الخضراء قبل عبور المضيق (2022)"
+    }
   }
 }
+
