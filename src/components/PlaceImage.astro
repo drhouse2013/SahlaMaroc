@@ -5,11 +5,17 @@ import type { Locale } from '../i18n';
 import type { PlaceKind, PlacePhoto } from '../utils/photos';
 import PhotoPlaceholder from './PhotoPlaceholder.astro';
 
-interface Props { photo: PlacePhoto; kind: PlaceKind; lang: Locale; name?: string; width: number; widths?: number[]; sizes?: string; eager?: boolean; priority?: boolean; decorative?: boolean; class?: string }
-const { photo, kind, lang, name, width, widths, sizes, eager = false, priority = eager, decorative = false, class: cls } = Astro.props;
+interface Props { photo: PlacePhoto; kind: PlaceKind; lang: Locale; name?: string; width: number; height?: number; widths?: number[]; sizes?: string; eager?: boolean; priority?: boolean; decorative?: boolean; class?: string }
+const { photo, kind, lang, name, width, height, widths, sizes, eager = false, priority = eager, decorative = false, class: cls } = Astro.props;
+const focalGravity = photo.focalPoint && (() => {
+  const [x, y] = photo.focalPoint!;
+  const horizontal = x < 33 ? 'west' : x > 67 ? 'east' : '';
+  const vertical = y < 33 ? 'north' : y > 67 ? 'south' : '';
+  return `${vertical}${horizontal}` || 'centre';
+})();
 ---
 {photo.image ? (
-  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} style={photo.focalPoint ? { objectPosition: `${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` } : undefined} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+  <Picture src={photo.image} alt={decorative ? '' : photo.alt} width={width} height={height} fit={height ? photo.fit ?? 'cover' : undefined} position={height ? focalGravity : undefined} widths={widths ?? [width, width * 2]} sizes={sizes ?? `${width}px`} formats={['avif', 'webp']} fallbackFormat="webp" pictureAttributes={{ class: 'contents' }} class={cls} style={photo.fit === 'contain' || (!height && photo.focalPoint) ? { objectFit: photo.fit === 'contain' ? 'contain' : undefined, objectPosition: !height && photo.focalPoint ? `${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` : undefined } : undefined} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
 ) : (
   <PhotoPlaceholder kind={kind} lang={lang} name={name} />
 )}

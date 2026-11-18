@@ -60,3 +60,19 @@ bandeau checklists **1002** (h 80), héros **51–388**, en-tête **0–51**.
   par le `overflow: hidden` des cartes.
 - Icônes d'outils alignées sur la maquette (pièces, voiture, maison, portefeuille, liste) et
   étiquettes de guides raccourcies (MRE, Immobilier, Voyage).
+
+## Contrôle du 18 novembre 2026
+
+Capture Edge du build actuel à 1448 × 1086 : arche continue jusqu’en haut, titre du passeport HD désormais visible. Build : 936 pages ; check:dist : zéro erreur, dont 155 pages ville. Les photographies et la typographie des cartes parcours restent différentes de la référence ; la signature visuelle n’est pas déclarée terminée.
+
+Le calcul des bandes utilisait une indexation de colonne au lieu des lignes ; il est corrigé, ainsi que le seuil moyen de 24 par canal et la dernière bande partielle. Le rapport est désormais écrit avec sa date et son URL. Les anciens pourcentages ne sont donc pas directement comparables. Mesure actuelle : écart moyen 36,60 ; 39,03 % des pixels dépassent le seuil moyen. Ces métriques ne prouvent pas seules la qualité du design.
+
+### Cartes parcours
+
+Titres agrandis et descriptions passées à 12 px ; hauteur minimale conservée, avec adaptation aux traductions. `tools/check-home-features.mjs` contrôle les trois cartes en cinq langues à 390, 768 et 1448 px : 15 rendus, aucun texte hors cadre. Captures française ordinateur et arabe mobile archivées ; build 936 pages et contrôle de sortie réussis. Ce contrôle mesure les débordements des textes, pas la fidélité globale à la référence.
+
+## Balayage global des pages
+
+`tools/audit-site-render.mjs` parcourt les 930 routes préfixées par langue du build : largeurs 390 et 1448, thèmes clair et sombre. Le rapport progressif enregistre les réponses HTTP, le débordement horizontal global, le thème rendu et les images chargées en erreur. Les images différées non chargées, contrastes, chevauchements locaux et fidélité esthétique demandent une inspection complémentaire : un balayage sans erreur ne termine pas seul l’audit visuel. Le build ne doit pas être modifié pendant ce contrôle.
+
+La première passe du 18 novembre signalait deux images cassées à tort : elles existaient dans `dist` et se chargeaient lors d’une vérification isolée. Le balayage a été corrigé pour parcourir la page et attendre le décodage des images avant de conclure.

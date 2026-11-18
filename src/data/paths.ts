@@ -164,22 +164,24 @@ export const PATHS: Record<PathId, PathDef> = {
 };
 
 /** Photos authentiques déjà présentes (crédits : src/assets/photos/CREDITS.md et manifeste des villes). */
-const STATIC_PHOTOS: Record<Exclude<PathId, 'visit'>, { src: ImageMetadata; credit: string; alt: T }> = {
+const STATIC_PHOTOS: Record<Exclude<PathId, 'visit'>, { src: ImageMetadata; credit: string; source: string; alt: T }> = {
   return: {
     src: portPhoto, credit: 'HrAd, CC BY-SA 3.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG',
     alt: { fr: 'Ferries à quai au port de Tanger Med', en: 'Ferries moored at the port of Tanger Med', es: 'Ferris atracados en el puerto de Tanger Med', de: 'Fähren am Kai im Hafen Tanger Med', ar: 'عبّارات راسية في ميناء طنجة المتوسط' },
   },
   invest: {
     src: cfcPhoto, credit: 'AyourAchtouk, CC BY-SA 4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_35.jpg',
     alt: { fr: 'Tours de bureaux de Casablanca Finance City', en: 'Office towers in Casablanca Finance City', es: 'Torres de oficinas de Casablanca Finance City', de: 'Bürotürme in Casablanca Finance City', ar: 'أبراج مكاتب في القطب المالي للدار البيضاء' },
   },
 };
 
-export function pathPhoto(id: PathId, lang: Locale): { src: ImageMetadata; alt: string; credit: string } | null {
+export function pathPhoto(id: PathId, lang: Locale): { src: ImageMetadata; alt: string; credit: string; source: string } | null {
   if (id === 'visit') {
     const p = placePhoto('hero', 'home-hero', lang);
-    return p.image && p.credit ? { src: p.image, alt: p.alt, credit: p.credit } : null;
+    return p.image && p.credit && p.source ? { src: p.image, alt: p.alt, credit: p.credit, source: p.source } : null;
   }
   const s = STATIC_PHOTOS[id];
-  return { src: s.src, alt: s.alt[lang], credit: s.credit };
+  return { src: s.src, alt: s.alt[lang], credit: s.credit, source: s.source };
 }

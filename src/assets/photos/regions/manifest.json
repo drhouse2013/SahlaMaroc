@@ -32,8 +32,8 @@
       "de": "Caracalla-Bogen, römische Stätte Volubilis",
       "ar": "قوس كركلا في موقع وليلي الأثري الروماني"
     },
-    "credit": "Mohamed Bourazza, CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Volubilis_Oualili.jpg"
+    "credit": "Mustang Joe / Joe deSousa, CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Triumphal_Arch_of_Caracalla,_Volubilis.jpg"
   },
   "rabat-sale-kenitra": {
     "file": "rabat-sale-kenitra.jpg",
@@ -58,6 +58,22 @@
     },
     "credit": "YnsThm, CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Ouzoud_waterfal_Azilal-Morocco.jpg"
+  },
+  "casablanca-settat": {
+    "file": "casablanca-settat.jpg",
+    "alt": {
+      "fr": "Minaret de la mosquée Hassan II vu à travers une arche, Casablanca",
+      "en": "Hassan II Mosque minaret seen through an arch, Casablanca",
+      "es": "Minarete de la mezquita Hassan II visto a través de un arco, Casablanca",
+      "de": "Minarett der Hassan-II-Moschee durch einen Bogen, Casablanca",
+      "ar": "مئذنة مسجد الحسن الثاني من خلال قوس، الدار البيضاء"
+    },
+    "credit": "OussamaHamama, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Whispers_of_Gold_-_Hassan_II_Mosque_at_Dusk.jpg",
+    "focalPoint": [
+      50,
+      0
+    ]
   },
   "marrakech-safi": {
     "file": "marrakech-safi.jpg",

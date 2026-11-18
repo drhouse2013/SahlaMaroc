@@ -21,6 +21,8 @@ export interface PlacePhoto {
   status: 'verified' | 'placeholder';
   /** Subject position in percent, applied to every responsive crop. */
   focalPoint?: [number, number];
+  /** Preserve the complete subject when a cropped thumbnail would cut it. */
+  fit?: 'cover' | 'contain';
 }
 
 type Dir = 'cities' | 'regions' | 'spots';
@@ -43,7 +45,7 @@ export function placePhoto(type: PlaceType, id: string, lang: Locale): PlacePhot
     const capital = type === 'region' ? regionById(id)?.capitalCity : undefined;
     return capital ? placePhoto('city', capital, lang) : PLACEHOLDER;
   }
-  return { image: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit ?? null, source: e.source ?? null, status: 'verified', focalPoint: e.focalPoint };
+  return { image: hit.default, alt: e.alt?.[lang] ?? e.alt?.fr ?? e.alt?.en ?? '', credit: e.credit ?? null, source: e.source ?? null, status: 'verified', focalPoint: e.focalPoint, fit: e.fit };
 }
 
 const CREDIT: Record<Locale, string> = { fr: 'Photo : ', en: 'Photo: ', es: 'Foto: ', de: 'Foto: ', ar: 'صورة: ' };

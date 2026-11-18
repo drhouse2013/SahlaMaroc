@@ -2,7 +2,7 @@
 
 > Généré par `npm run images:inventory` depuis `src/assets/photos/guides/editorial-photos.json`.
 
-37 références de guides, 33 fichiers distincts ; 0 référence(s) à corriger.
+38 références de guides, 34 fichiers distincts ; 0 référence(s) à corriger.
 
 **Portée.** Présence du fichier, auteur, licence reconnue et URL HTTPS uniquement. Ce contrôle ne prouve ni la date, ni la qualité, ni la correspondance visuelle au sujet. Les huit images génériques de catégorie et les illustrations de la template restent hors de ce manifeste.
 
@@ -45,3 +45,4 @@
 | world-cup-2030-trip-planning | `src/assets/photos/cdm-stade-ibn-batouta.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Stade_Ibn_Batuta,_Tanger_2023.jpg> | vérifiée | Public domain ; métadonnées contrôlées ; date et composition à examiner |
 | world-cup-2030-transport | `src/assets/photos/gare-rabat-ville.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
 | riad-or-hotel | `src/assets/photos/riad-patio-dar-el-bacha.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
+| taghazout-surf | `src/assets/photos/taghazout-surf-2026.jpg` | Photographie éditoriale | <https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/> | vérifiée | Pexels License ; métadonnées contrôlées ; date et composition à examiner |

@@ -43,14 +43,14 @@ const photos = {
 };
 
 export function getGuidePhoto(key: string, category: CategoryId, lang: Locale) {
-  const subject = (specific as Record<string, {file: string; credit: string; license: string; source: string}>)[key];
+  const subject = (specific as Record<string, {file: string; credit: string; license: string; source: string; alt?: Partial<Record<Locale, string>>}>)[key];
   if (subject) {
     const src = subjectImages[`../assets/photos/${subject.file}`]?.default;
     if (!src) throw new Error(`Missing guide subject photograph: ${subject.file}`);
     const cc = subject.license.match(/^CC (BY(?:-SA)?) ([\d.]+)$/);
-    const licenseUrl = cc ? `https://creativecommons.org/licenses/${cc[1].toLowerCase()}/${cc[2]}/` : subject.license === 'CC0' ? 'https://creativecommons.org/publicdomain/zero/1.0/' : 'https://creativecommons.org/publicdomain/mark/1.0/';
+    const licenseUrl = cc ? `https://creativecommons.org/licenses/${cc[1].toLowerCase()}/${cc[2]}/` : subject.license === 'CC0' ? 'https://creativecommons.org/publicdomain/zero/1.0/' : subject.license === 'Pexels' ? 'https://www.pexels.com/license/' : 'https://creativecommons.org/publicdomain/mark/1.0/';
     // These photographs illustrate the adjacent guide heading; they add no separate instructional content.
-    return {src, alt: '', credit: subject.credit, source: subject.source, license: subject.license, licenseUrl};
+    return {src, alt: subject.alt?.[lang] ?? '', credit: subject.credit, source: subject.source, license: subject.license, licenseUrl};
   }
   let id: keyof typeof photos | undefined;
   if (/military-service/.test(key)) id = 'flag';

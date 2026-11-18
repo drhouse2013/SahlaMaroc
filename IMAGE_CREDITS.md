@@ -17,6 +17,8 @@ La maquette fournie par le propriétaire (`SahlaMaroc_Template_Complete.zip`) es
 
 Les cartes « parcours » de l'accueil n'utilisent **pas** les images du ZIP (texte incrusté et flèche raster) : elles reprennent les photos éditoriales du site, créditées ci-dessous (`marhaba-port.jpg`, `banque-casablanca-cfc.jpg`, photo de Ouarzazate). Les visuels de guides utilisent les photos éditoriales existantes.
 
+| `src/assets/template/passport-lost-cover-20261117.png` | Visuel HD fourni par le propriétaire du site, confirmé comme créé par ChatGPT | Le cadrage de la couverture est conservé dans le fichier source ; seule la partie illustrant le passeport est affichée dans la vignette Sahla Maroc. Aucun crédit photo externe n'est revendiqué. |
+
 
 ## Photos de villes
 
@@ -99,7 +101,7 @@ Les cartes « parcours » de l'accueil n'utilisent **pas** les images du ZIP (te
 | spots/fes-al-attarine.jpg | Cour de la médersa Al Attarine avec sa vasque centrale et ses zelliges, Fès | Holger Uwe Schmitt | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:%22Ein_Juwel_islamischer_Architektur%22._05.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
 | spots/fes-borj-nord.jpg | Forteresse du Borj Nord dominant la médina de Fès depuis sa colline | R Prazeres | Public domain | [lien](https://commons.wikimedia.org/wiki/File:Borj_Nord_DSCF2747.jpg) | Non (courtoisie recommandée) |
 | spots/essaouira-medina.jpg | Rue animée à arcades et tour de l'horloge dans la médina d'Essaouira | Holger Uwe Schmitt | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:%22Ein_Schmelztiegel_der_Kulturen%22._04.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
-| spots/essaouira-skala.jpg | Canon de bronze sur les remparts de la Skala d'Essaouira | Holger Uwe Schmitt | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:%22Breite_Mauern_sch%C3%BCtzen_die_Bev%C3%B6lkerung_von_Essaouira.%22_01.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
+| spots/essaouira-skala.jpg | Remparts de la Skala du port d'Essaouira au crépuscule (photo prise le 31 janvier 2026 ; variante Wikimedia redimensionnée à 1 920 × 1 280) | Christinagrabelusshaikh | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Essaouira_in_the_dusk.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
 | spots/essaouira-mogador-island.jpg | Île de Mogador et son fort face à la plage d'Essaouira | Christian Pirkl | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Mogador_Iles_purpuraires_0002.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
 | spots/chefchaouen-kasbah.jpg | Tours crénelées de la kasbah de Chefchaouen et montagnes du Rif | Emilien Lebourgeois | Public domain | [lien](https://commons.wikimedia.org/wiki/File:20230914_12h3632EX_Chefchaouen_Kasbah_(53256409248).jpg) | Non (courtoisie recommandée) |
 | spots/chefchaouen-outa-el-hammam.jpg | Place Outa el-Hammam et ses terrasses de café, avec la médina bleue et la montagne | Badr Rachadi | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Chefchaouen-the-blue-city-of-morocco-with-the-mountain-view-in-the-backrgound.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
@@ -466,3 +468,13 @@ La page régionale Casablanca-Settat réutilise désormais la photo vérifiée d
 ## Actualisation du 17 novembre 2026 — plage d’Agadir
 
 - `src/assets/photos/spots/agadir-beach.jpg` : original HD de 3024 × 3165 pixels, Fmc2026, prise le 13 janvier 2025. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Agadir_Plage.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cadrage d’affichage 50 % / 65 %, sans modification du fichier original ; formats de diffusion optimisés par Astro. Le point de cadrage conserve la tour, la plage et l’océan sur les cartes de bureau et mobiles. Les lignes de crédits des quatre vues Rabat/Mazagan ont également été synchronisées avec leurs manifestes actuels.
+
+## Ajout du 17 novembre 2026 — Musée de Meknès
+
+- `src/assets/photos/spots/meknes-museum.jpg` : ZAINEB HACHAMI, CC BY-SA 4.0. Photo exacte du Musée de Meknès, prise le 24 novembre 2020. [Source Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_Mekn%C3%A8s.jpg). Original vertical HD de 2813 × 3938 pixels, redimensionné à 1600 × 2240 ; affichage intégral dans la miniature pour conserver l’arche et la porte, sans recadrage. Attribution affichée au survol / focus et partage sous [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## Héros adapté à la référence — 17 novembre 2026
+
+`src/assets/template/hero-reference-20261117.png` : illustration décorative créée avec l’outil intégré ImageGen à partir de `SahlaMaroc.png` fourni par le propriétaire du site. Ce composite ne représente pas une photographie documentaire récente.
+
+Instruction de création : reconstruire uniquement le fond du héros de la référence, supprimer texte, navigation, recherche et cartes ; conserver arche étroite à gauche, lanterne vers 12 %, ciel dégagé pour le titre, tour illuminée vers 77 %, ville et reflets au coucher du soleil. Le résultat rapproche la composition de la référence sans garantir une identité pixel par pixel. Original précédent conservé.

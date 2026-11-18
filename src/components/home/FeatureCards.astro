@@ -1,8 +1,7 @@
 ---
 /**
  * Les trois bandeaux de la maquette.
- * - Français, ordinateur (> 650 px) : cartes « exactes » du ZIP (texte incrusté), comme la template.
- * - Mobile et autres langues : version éditable en HTML (photo éditoriale du site + texte traduit).
+ * Cartes natives : photographie haute résolution, texte accessible et contenu traduit.
  */
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
@@ -22,7 +21,6 @@ const visitPlace = placePhoto('city', 'ouarzazate', lang);
 
 interface Card {
   id: 'return' | 'invest' | 'visit';
-  exact: string;
   href: string;
   icon: 'plane' | 'building' | 'map';
   title: string;
@@ -37,32 +35,29 @@ interface Card {
 const cards: Card[] = [
   {
     id: 'return',
-    exact: 'je-rentre-au-maroc',
     href: hubPath(lang, 'mre'),
     icon: 'plane',
     title: PATHS.return.title[lang],
     text: PATHS.return.text[lang],
     media: returnPhoto?.src ?? null,
     credit: returnPhoto?.credit ?? null,
-    source: null,
+    source: returnPhoto?.source ?? null,
     alt: returnPhoto?.alt ?? '',
   },
   {
     id: 'invest',
-    exact: 'je-souhaite-investir',
     href: hubPath(lang, 'invest'),
     icon: 'building',
     title: PATHS.invest.title[lang],
     text: PATHS.invest.text[lang],
     media: investPhoto?.src ?? null,
     credit: investPhoto?.credit ?? null,
-    source: null,
+    source: investPhoto?.source ?? null,
     alt: investPhoto?.alt ?? '',
     rust: true,
   },
   {
     id: 'visit',
-    exact: 'je-visite-le-maroc',
     href: hubPath(lang, 'visit'),
     icon: 'map',
     title: PATHS.visit.title[lang],
@@ -73,7 +68,6 @@ const cards: Card[] = [
     alt: visitPlace.alt,
   },
 ];
-const useExact = lang === 'fr';
 const cta = { fr: 'Découvrir', en: 'Explore', es: 'Descubrir', de: 'Entdecken', ar: 'اكتشف' }[lang];
 ---
 
@@ -82,20 +76,20 @@ const cta = { fr: 'Découvrir', en: 'Explore', es: 'Descubrir', de: 'Entdecken',
     {cards.map((card) => (
       <div class="tpl-feature-cell" data-path={card.id}>
         <a
-          class:list={['tpl-feature', card.rust && 'tpl-feature--rust', useExact ? 'tpl-feature--exact' : 'tpl-feature--editable']}
+          class:list={['tpl-feature', card.rust && 'tpl-feature--rust', 'tpl-feature--editable']}
           href={card.href}
-          aria-label={useExact ? `${card.title} — ${cta}` : undefined}
+          aria-label={`${card.title} — ${cta}`}
         >
-          {useExact && <img class="tpl-feature__exact" src={`/assets/cards/ref/${card.exact}.png`} alt={`${card.title}. ${card.text}`} width="425" height="158" loading="eager" />}
           <span class="tpl-feature__editable">
             {card.media && (
               <Image
                 src={card.media}
                 alt={card.alt}
-                widths={[420, 640, 900]}
+                widths={[420, 640, 900, 1200]}
                 sizes="(min-width: 1000px) 31vw, (min-width: 650px) 33vw, 92vw"
                 class="tpl-feature__media"
                 loading={card.id === 'return' ? 'eager' : 'lazy'}
+                quality={84}
               />
             )}
             <Icon name={card.icon} class="size-6 tpl-feature__icon" />
@@ -104,7 +98,7 @@ const cta = { fr: 'Découvrir', en: 'Explore', es: 'Descubrir', de: 'Entdecken',
             <span class="tpl-feature__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></span>
           </span>
         </a>
-        {!useExact && card.credit && <PhotoCredit lang={lang} credit={card.credit} source={card.source} />}
+        {card.credit && <PhotoCredit lang={lang} credit={card.credit} source={card.source} />}
       </div>
     ))}
   </div>

@@ -5,19 +5,19 @@
  */
 import { chromium } from '@playwright/test';
 import sharp from 'sharp';
-import { mkdir, copyFile, stat } from 'node:fs/promises';
+import { mkdir, copyFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 
 const base = process.env.PLAYWRIGHT_BASE_URL ?? 'http://[::1]:4331';
 const out = 'visual-audit';
-const ZIP_REF = process.env.TEMPLATE_REF ?? 'C:/Users/Diniz/AppData/Local/Temp/SahlaTpl/SahlaMaroc_Template_Complete/public/assets/reference/capture-originale.png';
+const ZIP_REF = process.env.TEMPLATE_REF ?? 'C:/Users/Diniz/Downloads/SahlaMaroc.png';
 const W = 1448;
-const H = 1024;
+const H = 1086;
 
 await mkdir(out, { recursive: true });
 if (!existsSync(`${out}/reference.png`) && existsSync(ZIP_REF)) await copyFile(ZIP_REF, `${out}/reference.png`);
 
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH } : {});
 const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1, colorScheme: 'light', locale: 'fr-FR', reducedMotion: 'reduce' });
 // Aucune préférence de thème forcée : on vérifie le rendu par défaut (clair) comme un premier visiteur.
 await page.goto(`${base}/fr`, { waitUntil: 'networkidle' });
@@ -54,13 +54,12 @@ const { data: B } = curRaw;
 const px = info.width * info.height;
 const diff = Buffer.alloc(px * 3);
 let sum = 0, changed = 0;
-const bandH = 1;
 const rows = new Array(info.height).fill(0);
 for (let i = 0; i < px; i++) {
   const o = i * 3;
   const d = Math.abs(A[o] - B[o]) + Math.abs(A[o + 1] - B[o + 1]) + Math.abs(A[o + 2] - B[o + 2]);
   sum += d / 3;
-  if (d > 24) { changed++; rows[i % info.height]++; }
+  if (d / 3 > 24) { changed++; rows[Math.floor(i / info.width)]++; }
   const v = Math.min(255, d);
   diff[o] = v; diff[o + 1] = v > 60 ? v - 40 : 0; diff[o + 2] = 0;
 }
@@ -71,13 +70,17 @@ const bands = [];
 for (let y = 0; y < info.height; y += 50) {
   let c = 0;
   for (let yy = y; yy < Math.min(y + 50, info.height); yy++) c += rows[yy];
-  bands.push({ y, changedPct: +(100 * c / (W * 50)).toFixed(1) });
+  bands.push({ y, changedPct: +(100 * c / (W * Math.min(50, info.height - y))).toFixed(1) });
 }
-console.log(JSON.stringify({
+const report = {
+  capturedAt: new Date().toISOString(),
+  base,
   viewport: { W, H },
   meanAbsDiff: +(sum / px).toFixed(2),
   changedPct: +(100 * changed / px).toFixed(2),
   worstBands: bands.sort((a, b) => b.changedPct - a.changedPct).slice(0, 8),
   boxes,
-}, null, 2));
+};
+await writeFile(`${out}/report.json`, JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify(report, null, 2));
 await browser.close();

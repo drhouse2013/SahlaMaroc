@@ -1,11 +1,13 @@
 ---
 /**
  * Bande « Découvrir le Maroc » : cinq destinations en cartes photo.
- * - Français, ordinateur (> 650 px) : cartes « exactes » du ZIP (texte incrusté), comme la template.
- * - Mobile et autres langues : photo recadrée du ZIP + libellés HTML traduits.
+ * Photos sans bordure intégrée, libellés HTML traduits et liens accessibles.
  */
 import Icon from '../Icon.astro';
+import { Image } from 'astro:assets';
+import PhotoCredit from '../PhotoCredit.astro';
 import { CITY_PAGES, cityLabel } from '../../data/cities';
+import { placePhoto } from '../../utils/photos';
 import { cityPath, hubPath } from '../../utils/i18n';
 import type { Locale } from '../../i18n';
 
@@ -29,7 +31,6 @@ const TAGLINES: Record<string, Record<Locale, string>> = {
 };
 const IDS = ['marrakech', 'fes', 'chefchaouen', 'agadir', 'casablanca'];
 const places = IDS.map((id) => CITY_PAGES.find((c) => c.id === id)).filter((c) => c !== undefined);
-const useExact = lang === 'fr';
 const arrowLabel = { fr: 'Voir la ville', en: 'See the city', es: 'Ver la ciudad', de: 'Stadt ansehen', ar: 'شاهد المدينة' }[lang];
 ---
 
@@ -42,21 +43,22 @@ const arrowLabel = { fr: 'Voir la ville', en: 'See the city', es: 'Ver la ciudad
     <a href={hubPath(lang, 'cities')} class="tpl-more">{copy.all} <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
   </div>
   <div class="tpl-destinations__grid">
-    {places.map((city) => (
-      <div class:list={['tpl-dest', useExact && 'tpl-dest--exact']}>
-        {useExact && (
-          <img class="tpl-dest__exact" src={`/assets/cards/ref/destination-${city.id}.png`} alt={`${cityLabel(city.id, lang)} — ${TAGLINES[city.id]?.[lang] ?? ''}`} width="246" height="125" loading="lazy" />
-        )}
+    {places.map((city) => {
+      const photo = placePhoto('city', city.id, lang);
+      return (
+      <div class="tpl-dest">
         <div class="tpl-dest__editable">
-          <img src={`/assets/cards/destination-${city.id}.webp`} alt="" width="720" height="301" loading="lazy" />
+          {photo.image ? <Image src={photo.image} alt={photo.alt} widths={[320, 480, 640, 960]} sizes="(min-width: 1000px) 20vw, (min-width: 650px) 31vw, 46vw" loading="lazy" decoding="async" quality={84} style={photo.focalPoint ? `object-position: ${photo.focalPoint[0]}% ${photo.focalPoint[1]}%` : undefined} /> : <div class="tpl-dest__fallback" aria-hidden="true" />}
           <div class="tpl-dest__text">
             <h3><Icon name="mapPin" class="size-4" />{cityLabel(city.id, lang)}</h3>
             <p>{TAGLINES[city.id]?.[lang] ?? ''}</p>
           </div>
           <span class="tpl-dest__arrow" aria-hidden="true"><Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" /></span>
         </div>
+        {photo.credit && <PhotoCredit lang={lang} credit={photo.credit} source={photo.source} />}
         <a class="tpl-dest__link" href={cityPath(lang, city.slug[lang])} aria-label={`${cityLabel(city.id, lang)} — ${arrowLabel}`}></a>
       </div>
-    ))}
+      );
+    })}
   </div>
 </section>
