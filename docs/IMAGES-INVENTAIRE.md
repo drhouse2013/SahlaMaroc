@@ -1,26 +1,27 @@
 # Inventaire des images de lieux
 
-> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-17. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
+> Généré par `node tools/images-inventory.mjs` (`npm run images:inventory`) le 2026-11-18. Ne pas éditer à la main : modifier les manifestes (`src/assets/photos/*/manifest.json`) puis relancer. Règles : `docs/IMAGES.md`.
 
-**Total : 339 entrées, 269 photos vérifiées, 69 placeholders (« Photo à venir »), 0 à confirmer, 1 illustration décorative.**
+**Total : 340 entrées, 271 photos vérifiées, 69 placeholders (« Photo à venir »), 0 à confirmer, 0 illustration décorative.**
 
 | Type | Entrées | Vérifiées | Placeholders | À confirmer | Illustrations |
 |---|---|---|---|---|---|
-| Hero accueil | 1 | 0 | 0 | 0 | 1 |
+| Hero accueil | 2 | 2 | 0 | 0 | 0 |
 | Villes | 31 | 31 | 0 | 0 | 0 |
 | Régions | 12 | 12 | 0 | 0 | 0 |
 | Lieux à visiter | 295 | 226 | 69 | 0 | 0 |
 
-**Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le panorama illustré actuellement utilisé remplace ici la photographie historique `cities/home-hero.jpg`, qui ne représente plus le héros affiché.
+**Portée.** Les statuts vérifient la présence du fichier et les métadonnées du manifeste, pas la date de prise de vue ni la qualité du cadrage. Les miniatures de guides et les cartes de la template nécessitent un audit complémentaire. Le héros de l’accueil associe une photo du panorama de Rabat (septembre 2025) à une photo récente de Bab Oudaia (octobre 2026) ; les deux crédits sont consultables sur place.
 
 
 **Statuts.** *vérifiée* : fichier présent, auteur + licence reconnue (CC BY, CC BY-SA, CC0, domaine public, Unsplash/Pexels License) et lien source https ; seule cette photo est affichée. *placeholder* : aucune photo, le site affiche « Photo à venir ». *à confirmer* : entrée de manifeste incomplète ou `"verified": false` ; non affichée (placeholder) tant que non corrigée. Licences relevées lors de l'ajout des photos (voir `IMAGE_CREDITS.md`), non revérifiées une à une ici.
 
-## Hero accueil (1)
+## Hero accueil (2)
 
 | Lieu | Image actuelle | Source | URL | Statut | Licence / note |
 |---|---|---|---|---|---|
-| Accueil (hero) | `src/assets/template/hero-reference-20261117.png` | Illustration générée à partir de la référence fournie | — | illustration décorative | Création avec ImageGen, 17 novembre 2026 ; composition illustrative ; ne constitue pas une photographie récente vérifiée |
+| Accueil — panorama de Rabat | `cities/home-hero.jpg` | Pexels | <https://www.pexels.com/photo/sunset-view-of-the-iconic-rabat-skyline-34059520/> | vérifiée | Pexels License |
+| Accueil — porte Bab Oudaia | `cities/home-hero-gate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_gate.jpg> | vérifiée | CC BY-SA 4.0 |
 
 ## Villes (31)
 
@@ -36,7 +37,7 @@
 | Taghazout | `cities/taghazout.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Taghazout_alley_-_2026-02-02_02.jpg> | vérifiée | CC BY-SA 4.0 |
 | Nador | `cities/nador-corniche-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Corniche_Nador_23-09-2026.jpg> | vérifiée | CC BY-SA 4.0 |
 | Tétouan | `cities/tetouan.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Tetouan_Old_Medina_streets_4.jpg> | vérifiée | CC BY-SA 4.0 |
-| Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Mansour_in_Meknes1732.jpg> | vérifiée | CC BY 4.0 |
+| Meknès | `cities/meknes.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Meknes_City.jpg> | vérifiée | CC BY-SA 4.0 |
 | Ouarzazate | `cities/ouarzazate.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg> | vérifiée | CC BY-SA 4.0 |
 | Oujda | `cities/oujda.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Bab_Sidi_Aissa_Oujda_Brahim_FARAJI_2.jpg> | vérifiée | CC BY-SA 4.0 |
 | Al Hoceïma | `cities/al-hoceima.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Al_Hoceima_Quemado.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -162,7 +163,7 @@
 | Mosquée Sidi Bou Abib | `spots/tangier-sidi-bou-abib.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Plaza_del_9_de_abril_de_1947,_T%C3%A1nger,_Marruecos,_2015-12-11,_DD_28.JPG> | vérifiée | CC BY-SA 4.0 |
 | Église Saint-André | `spots/tangier-st-andrews.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Church_of_St_Andrew,_Tangier.jpg> | vérifiée | CC BY-SA 4.0 |
 | Jardins de la Mendoubia | `spots/tangier-mendoubia.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Tangier_Mendoubia.jpg> | vérifiée | CC BY-SA 4.0 |
-| Galerie d’Art Contemporain Mohamed Drissi | — (« Photo à venir ») | — | — | placeholder | — |
+| Galerie d’art contemporain Mohamed Drissi | — (« Photo à venir ») | — | — | placeholder | — |
 | Plaza de Toros | `spots/tangier-plaza-de-toros.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:PlazaTorosTanger.jpg> | vérifiée | CC BY-SA 4.0 |
 | Cap Malabata | `spots/tangier-cap-malabata.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Cape_Malabata_Lighthouse.jpg> | vérifiée | CC BY 2.0 |
 | Palais Marshan | `spots/tangier-marshan-palace.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg> | vérifiée | CC BY-SA 4.0 |
@@ -257,7 +258,7 @@
 | Kasbah du mont Dersa | `spots/tetouan-dersa-kasbah-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%AB%D9%83%D9%86%D8%A9_%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D9%83%D9%88%D9%84%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%AC%D8%A8%D9%84_%D8%AF%D8%B1%D8%B3%D8%A9%D8%8C_%D8%AA%D8%B7%D9%88%D8%A7%D9%86.jpg> | vérifiée | CC BY-SA 4.0 |
 | Musée du patrimoine religieux | — (« Photo à venir ») | — | — | placeholder | — |
 | Musée Dar El Oddi | — (« Photo à venir ») | — | — | placeholder | — |
-| Tannerie de Tétouan | `spots/tetouan-tannery.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:دار_الدباغة_بتطوان،_المدينة_القديمة.jpg> | vérifiée | CC BY-SA 4.0 |
+| Tannerie de Tétouan | `spots/tetouan-tannery-2026.jpg` | Wikimedia Commons | <https://commons.wikimedia.org/wiki/File:Historic_Tanneries_and_Traditional_Leather_Tanning_Vats_in_Tetouan,_Morocco.jpg> | vérifiée | CC BY-SA 4.0 |
 | Avenue Mohammed V | — (« Photo à venir ») | — | — | placeholder | — |
 | Quartier de l’Ensanche | — (« Photo à venir ») | — | — | placeholder | — |
 
