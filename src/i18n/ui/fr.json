@@ -203,6 +203,8 @@
   "calc.checked": "Valeurs par défaut vérifiées le {date}",
   "calc.guide": "Lire le guide associé",
   "calc.disclaimer": "Ce résultat est une estimation à titre informatif. Il ne remplace ni un devis, ni une simulation officielle, ni l'avis d'un professionnel (notaire, banque, fiscaliste).",
+  "calc.ferryDisclaimer": "Horaires, durées et prix indicatifs : confirmez votre traversée, les conditions d’embarquement et le tarif auprès de la compagnie maritime avant de réserver. Vérifiez les péages auprès d’Autoroutes du Maroc.",
+  "calc.ferryTable": "Liaisons de ferry — tableau à défilement horizontal",
   "calc.invalid": "Saisissez un nombre positif.",
   "calc.invalidDate": "La date de sortie est antérieure à la date d'entrée.",
   "calc.reset": "Réinitialiser",

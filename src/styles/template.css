@@ -681,6 +681,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-menu-theme { padding: 8px 10px; border-top: 1px solid var(--tpl-line); }
 .tpl-controls > .tpl-theme { display: none; }
 @media (min-width: 1081px) {
+  .tpl-brand { flex-shrink: 1; }
   .tpl-header__divider { position: absolute; inset-inline-start: 384px; margin: 0; }
   .tpl-nav { gap: 26px; }
   /* Translated fallback wordmarks are much narrower than the French SVG logo.
@@ -712,6 +713,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-header__divider { margin-inline-end: 18px; }
   .tpl-controls { margin-inline-start: 15px; }
   .tpl-nav { gap: 10px; }
+  .tpl-header:has(.tpl-brand__fallback) .tpl-nav { gap: 8px; }
   .tpl-nav__link { font-size: 11.7px; }
   .tpl-features { width: calc(100% - 80px); }
   .tpl-section { width: calc(100% - 92px); }
@@ -736,6 +738,13 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-footer__inner { grid-template-columns: 1.6fr repeat(4, 1fr); gap: 18px; }
   .reading-layout { grid-template-columns: minmax(0, 1fr) 280px; gap: 25px; }
   .listing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 901px) and (max-width: 1080px) {
+  .tpl-nav { display: none; }
+  .tpl-burger-wrap { display: block; position: relative; }
+  .tpl-burger { display: flex; }
+  .tpl-brand { width: auto; }
+  .tpl-controls { margin-inline-start: auto; }
 }
 @media (max-width: 900px) {
   .tpl-nav { display: none; }
