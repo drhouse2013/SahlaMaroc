@@ -7,6 +7,8 @@ Sources : Wikimedia Commons (licences vérifiées via l'API), Pexels.
 | home-hero.jpg | Earth Photart | Pexels License | https://www.pexels.com/photo/sunset-view-of-the-iconic-rabat-skyline-34059520/ |
 | home-hero-gate.jpg | Aemazy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_gate.jpg |
 | taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels License | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
+| villa-majorelle-marrakech-2024.jpg | Adrien Casse | Pexels License | https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/ |
+| customs-border-car-2025.jpg | Ishara Kasthuriarachchi | Pexels License | https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/ |
 | merzouga-dunes.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg |
 | chefchaouen-ruelle.jpg | Ekaterina Kvelidze | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg |
 | essaouira-remparts.jpg | Ahmed.magdy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Citadel.jpg |
@@ -489,4 +491,9 @@ cities/nador-corniche-2026.jpg : SALHI Kaouthar, CC BY-SA 4.0 ; source du 23 sep
 spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mars 2026. Source : https://commons.wikimedia.org/wiki/File:Zagora_City.jpg . Original redressé selon son orientation EXIF, 4000 × 6000 px ; extrait x0 y2500, 4000 × 3000 px ; export 1800 × 1350 px JPEG mozjpeg qualité 88 sans EXIF. Point focal haut pour conserver les deux tours et le panneau aux formats 4:3 et 16:9. Dérivé sous CC BY-SA 4.0. SHA-256 : 8DB08E6877294B21D0965BACA5DC71B04B5F915731DAE172F25207FBBF848270.
 
 - spots/taroudant-tiout-palm-grove.jpg : Adville, CC BY-SA 4.0. Source : https://commons.wikimedia.org/wiki/File:Tiout_Morocco.jpg ; prise du 13 mars 2025, export 1800×1350 sans EXIF.
+
+## Guides immobilier MRE et dédouanement automobile — 18 novembre 2026
+
+- `villa-majorelle-marrakech-2024.jpg` : Adrien Casse, Pexels License. Photographie prise le 14 décembre 2024, publiée en 2026 ; original 4 000 × 6 000 px. Dérivé 1 600 × 1 200 px, recadré pour la carte ; métadonnées retirées. Source : https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/.
+- `customs-border-car-2025.jpg` : Ishara Kasthuriarachchi, Pexels License. Photographie prise le 10 août 2025 au poste-frontière arménien ; original 3 024 × 4 032 px. Dérivé 1 600 × 1 200 px, recadré pour garder la voiture et les voies de contrôle ; métadonnées retirées. Source : https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/.
 
