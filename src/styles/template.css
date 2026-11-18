@@ -917,3 +917,34 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
     background: linear-gradient(90deg, transparent 0 88px, rgb(10 37 32 / .84) 170px, rgb(10 37 32 / .98) 280px);
   }
 }
+
+/* Scoped to Arabic guide cards; the isolated Arabic hero is unaffected. */
+html[lang="ar"] .tpl-guide {
+  height: auto;
+  min-height: 220px;
+}
+html[lang="ar"] .tpl-guide__body {
+  height: auto;
+  min-height: 112px;
+  padding-block: 18px 14px;
+}
+html[lang="ar"] .tpl-guide__title {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+html[lang="ar"] .tpl-guide__checks {
+  position: static;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-block-start: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+html[lang="ar"] .tpl-guide__tag {
+  max-width: calc(100% - 48px);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
