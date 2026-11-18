@@ -8,10 +8,10 @@ try {
   const page=await browser.newPage({viewport:{width,height:1086},reducedMotion:'reduce'});
   await page.goto(`${base}/${lang}/`,{waitUntil:'networkidle'});
   await page.evaluate(()=>document.fonts.ready);
-  const cards=await page.locator('.tpl-feature').evaluateAll(els=>els.map(el=>{
+  const cards=await page.locator('.tpl-feature, .tpl-dest').evaluateAll(els=>els.map(el=>{
    const card=el.getBoundingClientRect();
-   const children=[...el.querySelectorAll('h2,p')];
-   return {title:el.querySelector('h2')?.textContent,height:card.height,clipped:children.some(child=>{const b=child.getBoundingClientRect();return b.bottom>card.bottom+1||b.left<card.left-1||b.right>card.right+1;})};
+   const children=[...el.querySelectorAll('h2,h3,p')];
+   return {title:el.querySelector('h2,h3')?.textContent,height:card.height,clipped:children.some(child=>{const b=child.getBoundingClientRect();return b.bottom>card.bottom+1||b.left<card.left-1||b.right>card.right+1;})};
   }));
   results.push({width,lang,cards});
   if(lang==='fr'&&width===1448) await page.screenshot({path:'visual-audit/features-desktop-20261118.png'});
@@ -19,7 +19,7 @@ try {
   await page.close();
  }
  await writeFile('visual-audit/features-20261118.json',JSON.stringify(results,null,2)+'\n');
- const failures=results.filter(r=>r.cards.length!==3||r.cards.some(c=>c.clipped));
+ const failures=results.filter(r=>r.cards.length!==8||r.cards.some(c=>c.clipped));
  console.log(JSON.stringify({renders:results.length,failures},null,2));
  if(failures.length) process.exitCode=1;
 } finally {await browser.close();}
