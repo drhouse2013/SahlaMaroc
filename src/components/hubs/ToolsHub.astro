@@ -8,15 +8,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import ToolGrid from '../ToolGrid.astro';
 import Icon from '../Icon.astro';
-import { useTranslations, type Locale } from '../../i18n';
+import { LOCALES, useTranslations, type Locale } from '../../i18n';
 import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, getPageUrl } from '../../utils/i18n';
 import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const copy = {
+  fr: { eyebrow: 'Outils pratiques', titleStart: 'Des outils simples et utiles pour tous vos projets au', country: 'Maroc', intro: "Calculez, planifiez, organisez et trouvez rapidement l’information dont vous avez besoin.", search: 'Rechercher un outil : calculateur, checklist, calendrier…', searchButton: 'Rechercher', quick: 'Accès rapide aux outils', why: 'Pourquoi utiliser nos outils ?', whyText: 'Des outils pratiques et actualisés pour gagner du temps et prendre des décisions éclairées.', popular: 'Outils les plus utilisés', all: 'Voir tous les outils', calculators: 'Tous nos calculateurs et simulateurs', cta: 'Besoin d’un accompagnement ?', ctaText: 'Nos guides et outils vous aident à chaque étape de votre projet au Maroc.', explore: 'Explorer nos guides' },
+  en: { eyebrow: 'Practical tools', titleStart: 'Useful tools for every project in', country: 'Morocco', intro: 'Calculate, plan and find the information you need.', search: 'Search a tool: calculator, checklist, calendar…', searchButton: 'Search', quick: 'Quick access to tools', why: 'Why use these tools?', whyText: 'Practical, up-to-date tools to save time and make informed decisions.', popular: 'Most used tools', all: 'See all tools', calculators: 'All calculators and simulators', cta: 'Need more guidance?', ctaText: 'Our guides and tools help at every stage of your project in Morocco.', explore: 'Explore our guides' },
+  es: { eyebrow: 'Herramientas prácticas', titleStart: 'Herramientas útiles para tus proyectos en', country: 'Marruecos', intro: 'Calcula, planifica y encuentra la información que necesitas.', search: 'Buscar una herramienta: calculadora, lista, calendario…', searchButton: 'Buscar', quick: 'Acceso rápido a las herramientas', why: '¿Por qué usar estas herramientas?', whyText: 'Herramientas prácticas y actualizadas para ahorrar tiempo y decidir con criterio.', popular: 'Herramientas más usadas', all: 'Ver todas las herramientas', calculators: 'Todas las calculadoras y simuladores', cta: '¿Necesitas más orientación?', ctaText: 'Nuestras guías y herramientas te ayudan en cada etapa de tu proyecto en Marruecos.', explore: 'Explorar nuestras guías' },
+  de: { eyebrow: 'Praktische Werkzeuge', titleStart: 'Nützliche Werkzeuge für Ihre Vorhaben in', country: 'Marokko', intro: 'Berechnen, planen und die benötigten Informationen schnell finden.', search: 'Werkzeug suchen: Rechner, Checkliste, Kalender…', searchButton: 'Suchen', quick: 'Schnellzugriff auf Werkzeuge', why: 'Warum diese Werkzeuge nutzen?', whyText: 'Praktische, aktuelle Werkzeuge für fundierte Entscheidungen.', popular: 'Meistgenutzte Werkzeuge', all: 'Alle Werkzeuge ansehen', calculators: 'Alle Rechner und Simulatoren', cta: 'Brauchen Sie weitere Hilfe?', ctaText: 'Unsere Ratgeber und Werkzeuge unterstützen Sie bei Ihrem Vorhaben in Marokko.', explore: 'Ratgeber entdecken' },
+  ar: { eyebrow: 'أدوات عملية', titleStart: 'أدوات مفيدة لكل مشاريعك في', country: 'المغرب', intro: 'احسب وخطط واعثر بسرعة على المعلومات التي تحتاجها.', search: 'ابحث عن أداة: حاسبة، قائمة تحقق، تقويم…', searchButton: 'ابحث', quick: 'وصول سريع إلى الأدوات', why: 'لماذا تستخدم أدواتنا؟', whyText: 'أدوات عملية ومحدّثة تساعدك على توفير الوقت واتخاذ قرارات مدروسة.', popular: 'الأدوات الأكثر استخدامًا', all: 'عرض جميع الأدوات', calculators: 'جميع الحاسبات والمحاكيات', cta: 'هل تحتاج إلى إرشاد إضافي؟', ctaText: 'تساعدك أدلتنا وأدواتنا في كل مرحلة من مشروعك في المغرب.', explore: 'استكشف الأدلة' },
+}[lang];
+const quickText = {
+  fr: [['Tous les outils', 'Explorez tous nos outils pratiques.'], ['Calculateurs', 'Estimez coûts, budgets et investissements.'], ['Checklists', 'Des listes de contrôle prêtes à l’emploi.'], ['Calendrier pratique', 'Les dates et échéances à retenir.'], ['Glossaire', 'Les termes clés expliqués simplement.']],
+  en: [['All tools', 'Explore every practical tool.'], ['Calculators', 'Estimate costs, budgets and investments.'], ['Checklists', 'Ready-to-use lists for your plans.'], ['Practical calendar', 'Key dates and deadlines.'], ['Glossary', 'Important terms explained simply.']],
+  es: [['Todas las herramientas', 'Explora todas las herramientas prácticas.'], ['Calculadoras', 'Estima costes, presupuestos e inversiones.'], ['Listas de control', 'Listas listas para usar.'], ['Calendario práctico', 'Fechas y plazos importantes.'], ['Glosario', 'Términos clave explicados con claridad.']],
+  de: [['Alle Werkzeuge', 'Alle praktischen Werkzeuge entdecken.'], ['Rechner', 'Kosten, Budgets und Investitionen schätzen.'], ['Checklisten', 'Listen zum direkten Anwenden.'], ['Praktischer Kalender', 'Wichtige Termine und Fristen.'], ['Glossar', 'Wichtige Begriffe einfach erklärt.']],
+  ar: [['جميع الأدوات', 'تصفح كل أدواتنا العملية.'], ['الحاسبات', 'قدّر التكاليف والميزانيات والاستثمارات.'], ['قوائم التحقق', 'قوائم جاهزة للاستخدام.'], ['التقويم العملي', 'تواريخ وآجال مهمة.'], ['المعجم', 'شرح مبسط للمصطلحات الأساسية.']],
+}[lang];
+const benefitText = {
+  fr: ['Simple et rapide', 'Fiable et actualisé', 'Adapté aux MRE et résidents', 'Accessible sur tous les appareils', '100 % gratuit'],
+  en: ['Simple and quick', 'Reliable and up to date', 'For Moroccans abroad and residents', 'Works on every device', 'Completely free'],
+  es: ['Sencillo y rápido', 'Fiable y actualizado', 'Para residentes y marroquíes en el extranjero', 'Disponible en todos los dispositivos', 'Totalmente gratis'],
+  de: ['Einfach und schnell', 'Zuverlässig und aktuell', 'Für Marokkaner im Ausland und Einwohner', 'Auf allen Geräten nutzbar', 'Völlig kostenlos'],
+  ar: ['بسيط وسريع', 'موثوق ومحدّث', 'للمغاربة المقيمين بالخارج والمقيمين', 'يعمل على جميع الأجهزة', 'مجاني بالكامل'],
+}[lang];
+const popularText = {
+  fr: [['Calculateur', 'Frais d’achat immobilier au Maroc', 'Estimez les frais de notaire, d’enregistrement et le coût total.'], ['Calculateur', 'Coût de dédouanement d’une voiture', 'Estimez les droits et taxes pour votre véhicule.'], ['Checklist', 'Préparer son retour au Maroc', 'Les étapes à vérifier avant votre retour ou séjour.'], ['Calendrier', 'Calendrier des démarches au Maroc', 'Suivez les dates et échéances administratives.']],
+  en: [['Calculator', 'Property purchase costs in Morocco', 'Estimate notary fees, registration and total costs.'], ['Calculator', 'Car customs clearance costs', 'Estimate duties and taxes for your vehicle.'], ['Checklist', 'Prepare your return to Morocco', 'Check each step before your return or stay.'], ['Calendar', 'Moroccan paperwork calendar', 'Track important dates and deadlines.']],
+  es: [['Calculadora', 'Gastos de compra de vivienda en Marruecos', 'Estima notaría, registro y coste total.'], ['Calculadora', 'Coste de despacho de aduana del coche', 'Estima derechos e impuestos para tu vehículo.'], ['Lista', 'Prepara tu regreso a Marruecos', 'Revisa cada paso antes del regreso o estancia.'], ['Calendario', 'Calendario de trámites en Marruecos', 'Consulta fechas y plazos administrativos.']],
+  de: [['Rechner', 'Kaufnebenkosten für Immobilien', 'Notar-, Registrierungs- und Gesamtkosten schätzen.'], ['Rechner', 'Kosten der Kfz-Verzollung', 'Zölle und Steuern für Ihr Fahrzeug schätzen.'], ['Checkliste', 'Rückkehr nach Marokko vorbereiten', 'Alle Schritte vor Rückkehr oder Aufenthalt prüfen.'], ['Kalender', 'Kalender für Behördengänge', 'Wichtige Termine und Fristen im Blick behalten.']],
+  ar: [['حاسبة', 'تكاليف شراء عقار في المغرب', 'قدّر أتعاب التوثيق والتسجيل والتكلفة الإجمالية.'], ['حاسبة', 'تكلفة تعشير السيارة', 'قدّر الرسوم والضرائب على سيارتك.'], ['قائمة تحقق', 'التحضير للعودة إلى المغرب', 'راجع كل خطوة قبل العودة أو الإقامة.'], ['تقويم', 'تقويم الإجراءات في المغرب', 'تابع التواريخ والآجال الإدارية المهمة.']],
+}[lang];
 
 const toolUrl = (await getPageUrl(lang, 'calculators')) ?? await redesignContentPath(lang, 'calculators');
+const toolTargets = Object.fromEntries(await Promise.all(LOCALES.map(async (l) => [l, (await getPageUrl(l, 'calculators')) ?? hubPath(l, 'guides')]))) as Record<Locale, string>;
 const url = absoluteUrl(toolUrl, Astro.site);
 
 const crumbs = [
@@ -30,7 +59,7 @@ const quickAccess = [
   { label: 'Checklists', desc: 'Des listes de contrôle prêtes à l\'emploi.', icon: 'listChecks' as const, href: hubPath(lang, 'checklists'), highlight: false },
   { label: 'Calendrier pratique', desc: 'Les dates et échéances à ne pas manquer.', icon: 'calendar' as const, href: hubPath(lang, 'calendar'), highlight: false },
   { label: 'Glossaire', desc: 'Les termes clés expliqués simplement.', icon: 'book' as const, href: hubPath(lang, 'glossary'), highlight: false },
-];
+].map((item, index) => ({ ...item, label: quickText[index][0], desc: quickText[index][1] }));
 
 const benefits = [
   { label: 'Simple et rapide', icon: 'sparkles' as const },
@@ -38,7 +67,7 @@ const benefits = [
   { label: 'Adapté aux MRE et résidents', icon: 'users' as const },
   { label: 'Accessible sur tous les appareils', icon: 'globe' as const },
   { label: '100% gratuit', icon: 'lock' as const },
-];
+].map((item, index) => ({ ...item, label: benefitText[index] }));
 
 const popularTools = [
   {
@@ -73,15 +102,15 @@ const popularTools = [
     image: '/assets/photos/retour-rabat-bouregreg.jpg',
     href: hubPath(lang, 'calendar'),
   },
-];
+].map((item, index) => ({ ...item, tag: popularText[index][0], title: popularText[index][1], desc: popularText[index][2] }));
 ---
 
 <BaseLayout
   lang={lang}
   title={{ fr: 'Outils pratiques & calculateurs gratuits Maroc', en: 'Practical Tools & Free Calculators Morocco', es: 'Herramientas prácticas y calculadoras Marruecos', de: 'Praktische Tools & Rechner Marokko', ar: 'أدوات وحاسبات مجانية المغرب' }[lang]}
   description={{ fr: 'Tous nos calculateurs gratuits pour le Maroc : dédouanement voiture, frais d\'achat immobilier, change EUR/MAD, budget voyage, checklists et glossaire.', en: 'Free tools for Morocco: car customs, property fees, currency converter, checklists and glossary.', es: 'Calculadoras gratuitas para Marruecos: aduana coche, gastos inmobiliarios, conversor euro-dirham.', de: 'Kostenlose Rechner für Marokko: Kfz-Zoll, Immobilienkauf, Währungsrechner und Checklisten.', ar: 'حاسبات وأدوات مجانية للمغرب: تعشير السيارة، مصاريف العقار، محول العملات وقوائم التحقق.' }[lang]}
-  alternates={allLocalesAlternates(() => toolUrl)}
-  switchTargets={allLocalesTargets(() => toolUrl)}
+  alternates={allLocalesAlternates((l) => toolTargets[l])}
+  switchTargets={allLocalesTargets((l) => toolTargets[l])}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}
 >
   <div class="root-page-shell">
@@ -95,14 +124,14 @@ const popularTools = [
       <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
         <div class="lg:col-span-6 z-10">
           <div class="flex items-center gap-2 mb-3">
-            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">OUTILS PRATIQUES</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">{copy.eyebrow}</span>
             <span class="w-8 h-px bg-[#c05621]"></span>
           </div>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
-            Des outils simples et utiles pour tous vos projets au <span class="text-[#c05621]">Maroc</span>.
+            {copy.titleStart} <span class="text-[#c05621]">{copy.country}</span>.
           </h1>
           <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
-            Calculez, planifiez, organisez et trouvez rapidement l'information dont vous avez besoin, en toute simplicité.
+            {copy.intro}
           </p>
 
           <form action={hubPath(lang, 'search')} method="get" class="mt-8 flex items-center bg-white border border-[#eae0d2] rounded-full p-1.5 shadow-md max-w-xl">
@@ -110,10 +139,10 @@ const popularTools = [
             <input
               type="text"
               name="q"
-              placeholder="Rechercher un outil : calculateur, checklist, calendrier..."
+              placeholder={copy.search}
               class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
             />
-            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label="Rechercher">
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label={copy.searchButton}>
               <Icon name="search" class="size-4" />
             </button>
           </form>
@@ -135,7 +164,7 @@ const popularTools = [
       <section class="mt-8 pt-8 border-t border-[#eae0d2]/70">
         <div class="flex items-center gap-2 mb-6">
           <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Accès rapide aux outils</h2>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.quick}</h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
@@ -173,9 +202,9 @@ const popularTools = [
               <div class="flex items-start gap-3">
                 <Icon name="compass" class="size-7 text-[#d9a441] shrink-0 mt-1" />
                 <div>
-                  <h3 class="text-lg font-bold font-serif">Pourquoi utiliser nos outils ?</h3>
+                  <h3 class="text-lg font-bold font-serif">{copy.why}</h3>
                   <p class="text-xs text-white/80 mt-1 leading-relaxed">
-                    Des outils fiables, pratiques et à jour pour vous faire gagner du temps et prendre les bonnes décisions.
+                    {copy.whyText}
                   </p>
                 </div>
               </div>
@@ -203,10 +232,10 @@ const popularTools = [
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
-            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Outils les plus utilisés</h2>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.popular}</h2>
           </div>
           <a href="#calculateurs" class="text-xs sm:text-sm font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
-            <span>Voir tous les outils</span>
+            <span>{copy.all}</span>
             <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
           </a>
         </div>
@@ -248,7 +277,7 @@ const popularTools = [
       <section id="calculateurs" class="mt-14 pt-8 border-t border-[#eae0d2]/70">
         <div class="flex items-center gap-2 mb-6">
           <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Tous nos calculateurs et simulateurs</h2>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.calculators}</h2>
         </div>
         <ToolGrid lang={lang} />
       </section>
@@ -262,9 +291,9 @@ const popularTools = [
               <Icon name="book" class="size-7" />
             </div>
             <div>
-              <h3 class="text-xl sm:text-2xl font-serif font-bold">Besoin d'un accompagnement ?</h3>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">{copy.cta}</h3>
               <p class="text-xs sm:text-sm text-white/80 mt-1 max-w-xl">
-                Nos guides et outils vous aident à chaque étape de votre projet au Maroc.
+                {copy.ctaText}
               </p>
             </div>
           </div>
@@ -272,7 +301,7 @@ const popularTools = [
             href={hubPath(lang, 'guides')}
             class="bg-white text-[#0d2b24] hover:bg-[#fcf7ee] px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all shrink-0 inline-flex items-center gap-2"
           >
-            <span>Explorer nos guides</span>
+            <span>{copy.explore}</span>
             <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" />
           </a>
         </div>

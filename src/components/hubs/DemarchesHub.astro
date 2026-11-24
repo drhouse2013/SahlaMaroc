@@ -1,5 +1,5 @@
 ---
-import { redesignContentPath } from "../../utils/redesignContentPath";
+import { redesignContent, redesignContentPath } from "../../utils/redesignContentPath";
 /**
  * Page officielle « Démarches & formalités »
  * Reproduction fidèle de la maquette de référence 03 — Démarches
@@ -10,10 +10,32 @@ import Icon from '../Icon.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, categoryPath } from '../../utils/i18n';
 import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+import { formatDate, readingTime } from '../../utils/date';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const copy = {
+  fr: { eyebrow: 'Démarches & formalités au Maroc', titleStart: 'Vos démarches au', country: 'Maroc', titleEnd: ', simples et bien expliquées.', intro: 'Toutes les formalités, documents et procédures pour préparer votre séjour, votre retour ou votre installation au Maroc.', search: 'Rechercher une démarche : CNIE, visa, douane, retraite…', searchButton: 'Rechercher', quick: 'Accès rapide par thématique', quickText: 'Choisissez votre démarche et accédez à tous les guides, documents et étapes.', help: "Besoin d’aide ?", helpText: 'Trouvez rapidement la démarche adaptée à votre situation.', start: 'Commencer mon parcours', official: 'Liens officiels utiles', popular: 'Guides les plus consultés', all: 'Voir toutes les démarches' },
+  en: { eyebrow: 'Paperwork in Morocco', titleStart: 'Your paperwork in', country: 'Morocco', titleEnd: ', clearly explained.', intro: 'Documents, formalities and procedures for your visit, return or move to Morocco.', search: 'Search a procedure: ID card, visa, customs, retirement…', searchButton: 'Search', quick: 'Explore by topic', quickText: 'Choose a procedure to see its guides, documents and steps.', help: 'Need help?', helpText: 'Find the right procedure for your situation.', start: 'Start my path', official: 'Useful official links', popular: 'Most read guides', all: 'See all procedures' },
+  es: { eyebrow: 'Trámites en Marruecos', titleStart: 'Tus trámites en', country: 'Marruecos', titleEnd: ', explicados con claridad.', intro: 'Documentos, formalidades y procedimientos para preparar tu estancia, regreso o instalación en Marruecos.', search: 'Buscar un trámite: identidad, visado, aduana, jubilación…', searchButton: 'Buscar', quick: 'Explorar por tema', quickText: 'Elige un trámite y consulta sus guías, documentos y pasos.', help: '¿Necesitas ayuda?', helpText: 'Encuentra el trámite adecuado para tu situación.', start: 'Empezar mi recorrido', official: 'Enlaces oficiales útiles', popular: 'Guías más consultadas', all: 'Ver todos los trámites' },
+  de: { eyebrow: 'Formalitäten in Marokko', titleStart: 'Ihre Formalitäten in', country: 'Marokko', titleEnd: ', verständlich erklärt.', intro: 'Dokumente und Verfahren für Ihren Aufenthalt, Ihre Rückkehr oder Ihren Umzug nach Marokko.', search: 'Verfahren suchen: Ausweis, Visum, Zoll, Rente…', searchButton: 'Suchen', quick: 'Nach Thema suchen', quickText: 'Wählen Sie ein Verfahren und sehen Sie Ratgeber, Unterlagen und Schritte.', help: 'Brauchen Sie Hilfe?', helpText: 'Finden Sie das passende Verfahren für Ihre Situation.', start: 'Meinen Weg beginnen', official: 'Nützliche offizielle Links', popular: 'Meistgelesene Ratgeber', all: 'Alle Verfahren ansehen' },
+  ar: { eyebrow: 'الإجراءات الإدارية في المغرب', titleStart: 'إجراءاتك في', country: 'المغرب', titleEnd: '، مشروحة ببساطة.', intro: 'الوثائق والمساطر اللازمة للتحضير لإقامتك أو عودتك أو استقرارك في المغرب.', search: 'ابحث عن إجراء: البطاقة الوطنية، التأشيرة، الجمارك، التقاعد…', searchButton: 'ابحث', quick: 'تصفح حسب الموضوع', quickText: 'اختر الإجراء واطّلع على أدلته ووثائقه وخطواته.', help: 'هل تحتاج إلى مساعدة؟', helpText: 'اعثر على الإجراء المناسب لوضعك.', start: 'ابدأ مساري', official: 'روابط رسمية مفيدة', popular: 'الأدلة الأكثر قراءة', all: 'عرض جميع الإجراءات' },
+}[lang];
+const guideTags = {
+  fr: ['Documents', 'Visas', 'Douane', 'Santé'],
+  en: ['Documents', 'Visas', 'Customs', 'Health'],
+  es: ['Documentos', 'Visados', 'Aduana', 'Salud'],
+  de: ['Dokumente', 'Visa', 'Zoll', 'Gesundheit'],
+  ar: ['الوثائق', 'التأشيرات', 'الجمارك', 'الصحة'],
+}[lang];
+const officialLabels = {
+  fr: ['Portail du Gouvernement', 'Service-Public.ma', 'Ministère de l’Intérieur', 'Douane Marocaine (ADII)', 'CNSS (Protection sociale)'],
+  en: ['Government portal', 'Public services', 'Ministry of the Interior', 'Moroccan Customs (ADII)', 'CNSS (Social security)'],
+  es: ['Portal del Gobierno', 'Servicios públicos', 'Ministerio del Interior', 'Aduana marroquí (ADII)', 'CNSS (Seguridad social)'],
+  de: ['Regierungsportal', 'Öffentliche Dienste', 'Innenministerium', 'Marokkanischer Zoll (ADII)', 'CNSS (Sozialversicherung)'],
+  ar: ['بوابة الحكومة', 'الخدمات العمومية', 'وزارة الداخلية', 'إدارة الجمارك (ADII)', 'الصندوق الوطني للضمان الاجتماعي'],
+}[lang];
 
 const self = (l: Locale) => hubPath(l, 'demarches');
 const url = absoluteUrl(self(lang), Astro.site);
@@ -37,9 +59,9 @@ const officialLinks = [
   { label: 'Ministère de l\'Intérieur', href: 'https://www.interieur.gov.ma' },
   { label: 'Douane Marocaine (ADII)', href: 'https://www.douane.gov.ma' },
   { label: 'CNSS (Protection Sociale)', href: 'https://www.cnss.ma' },
-];
+].map((item, index) => ({ ...item, label: officialLabels[index] }));
 
-const popularGuides = [
+const popularGuides = await Promise.all([
   {
     tag: 'Documents',
     title: 'Demander ou renouveler la CNIE au Maroc',
@@ -72,7 +94,18 @@ const popularGuides = [
     image: '/assets/photos/sante-chu-tanger.jpg',
     href: await redesignContentPath(lang, 'amo-health-return-mre'),
   },
-];
+].map(async (item, index) => {
+  const key = ['passport-cnie', 'residence-permit', 'calc-customs', 'amo-health-return-mre'][index];
+  const entry = await redesignContent(lang, key);
+  const updated = entry?.data.updatedDate ?? (entry?.collection === 'articles' ? entry.data.pubDate : undefined);
+  return {
+    ...item,
+    tag: guideTags[index],
+    title: entry?.data.title ?? item.title,
+    date: updated ? t('common.updatedOn', { date: formatDate(updated, lang) }) : '',
+    time: entry?.collection === 'articles' ? t('article.readingTime', { n: readingTime(entry.body) }) : '',
+  };
+}));
 ---
 
 <BaseLayout
@@ -94,14 +127,14 @@ const popularGuides = [
       <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
         <div class="lg:col-span-6 z-10">
           <div class="flex items-center gap-2 mb-3">
-            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">DÉMARCHES & FORMALITÉS AU MAROC</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">{copy.eyebrow}</span>
             <span class="w-8 h-px bg-[#c05621]"></span>
           </div>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
-            Vos démarches au <span class="text-[#c05621]">Maroc</span>, simples et bien expliquées.
+            {copy.titleStart} <span class="text-[#c05621]">{copy.country}</span>{copy.titleEnd}
           </h1>
           <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
-            Toutes les formalités, documents et procédures pour préparer votre séjour, votre retour ou votre installation au Maroc.
+            {copy.intro}
           </p>
 
           <form action={hubPath(lang, 'search')} method="get" class="mt-8 flex items-center bg-white border border-[#eae0d2] rounded-full p-1.5 shadow-md max-w-xl">
@@ -109,10 +142,10 @@ const popularGuides = [
             <input
               type="text"
               name="q"
-              placeholder="Rechercher une démarche : CNIE, visa, douane, retraite..."
+              placeholder={copy.search}
               class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
             />
-            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label="Rechercher">
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label={copy.searchButton}>
               <Icon name="search" class="size-4" />
             </button>
           </form>
@@ -137,9 +170,9 @@ const popularGuides = [
       <section class="mt-8 pt-8 border-t border-[#eae0d2]/70">
         <div class="flex items-center gap-2 mb-1">
           <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Accès rapide par thématique</h2>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.quick}</h2>
         </div>
-        <p class="text-sm text-[#665e52] mb-6 ms-3.5">Choisissez votre démarche et accédez à tous les guides, documents et étapes.</p>
+        <p class="text-sm text-[#665e52] mb-6 ms-3.5">{copy.quickText}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
@@ -168,9 +201,9 @@ const popularGuides = [
             <div class="bg-[#0d2b24] text-white rounded-2xl p-5 shadow-lg">
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <h3 class="text-lg font-bold font-serif">Besoin d'aide ?</h3>
+                  <h3 class="text-lg font-bold font-serif">{copy.help}</h3>
                   <p class="text-xs text-white/80 mt-1 leading-relaxed">
-                    Trouvez rapidement la démarche adaptée à votre situation (MRE, résident, voyageur).
+                    {copy.helpText}
                   </p>
                 </div>
                 <Icon name="file" class="size-8 text-[#d9a441] shrink-0" />
@@ -179,7 +212,7 @@ const popularGuides = [
                 href={hubPath(lang, 'mre')}
                 class="mt-4 inline-flex items-center gap-2 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] font-semibold text-xs px-4 py-2 rounded-full transition-colors"
               >
-                <span>Commencer mon parcours</span>
+                <span>{copy.start}</span>
                 <Icon name="arrowRight" class="size-3 rtl:-scale-x-100" />
               </a>
             </div>
@@ -187,7 +220,7 @@ const popularGuides = [
             <div class="bg-white border border-[#eae0d2] rounded-2xl p-4 shadow-sm">
               <div class="flex items-center gap-2 mb-3 pb-2 border-b border-[#eae0d2]/60">
                 <Icon name="link" class="size-4 text-[#c05621]" />
-                <h3 class="text-sm font-bold text-[#1b1916]">Liens officiels utiles</h3>
+                <h3 class="text-sm font-bold text-[#1b1916]">{copy.official}</h3>
               </div>
               <ul class="flex flex-col gap-2 text-xs">
                 {officialLinks.map((item) => (
@@ -215,10 +248,10 @@ const popularGuides = [
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
-            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Guides les plus consultés</h2>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.popular}</h2>
           </div>
           <a href={categoryPath(lang, 'demarches')} class="text-xs sm:text-sm font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
-            <span>Voir toutes les démarches</span>
+            <span>{copy.all}</span>
             <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
           </a>
         </div>
@@ -241,8 +274,8 @@ const popularGuides = [
                 </h3>
                 <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
                   <div class="flex flex-col">
-                    <span>{g.date}</span>
-                    <span>{g.time}</span>
+                    {g.date && <span>{g.date}</span>}
+                    {g.time && <span>{g.time}</span>}
                   </div>
                   <span class="size-7 rounded-full bg-[#fbf5ec] group-hover:bg-[#c05621] group-hover:text-white flex items-center justify-center text-gray-500 text-xs transition-colors">
                     →

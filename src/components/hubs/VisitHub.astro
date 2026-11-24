@@ -16,6 +16,13 @@ import { cityById } from '../../data/cities';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const copy = {
+  fr: { eyebrow: 'Visiter le Maroc', titleStart: 'Découvrez le', country: 'Maroc', titleEnd: ', entre authenticité et diversité.', intro: 'Villes impériales, plages, montagnes, désert, culture et gastronomie… Préparez votre voyage et vivez une expérience inoubliable.', search: 'Rechercher une destination, une activité, un hébergement…', searchButton: 'Lancer la recherche', explore: 'Explorez le Maroc à votre rythme', exploreText: 'Toutes les clés pour organiser, découvrir et profiter pleinement de votre voyage.', region: 'Explorez le Maroc par région', regionText: "Du littoral atlantique aux montagnes de l’Atlas, découvrez la richesse de chaque région.", regions: 'Voir les régions', advice: 'Conseils pratiques', itineraries: 'Itinéraires & inspirations', allItineraries: 'Voir tous les itinéraires', cta: 'Prêt à découvrir le Maroc ?', ctaText: 'Nos guides, itinéraires et conseils vous accompagnent à chaque étape de votre voyage.', start: 'Commencer mon voyage' },
+  en: { eyebrow: 'Visit Morocco', titleStart: 'Discover', country: 'Morocco', titleEnd: ', from living traditions to varied landscapes.', intro: 'Imperial cities, beaches, mountains, desert, culture and food. Plan your trip and make the most of your stay.', search: 'Search a destination, activity or place to stay…', searchButton: 'Search', explore: 'Explore Morocco your way', exploreText: 'Everything you need to plan, discover and enjoy your trip.', region: 'Explore Morocco by region', regionText: 'From the Atlantic coast to the Atlas Mountains, discover what makes each region distinct.', regions: 'See the regions', advice: 'Practical advice', itineraries: 'Itineraries & inspiration', allItineraries: 'See all itineraries', cta: 'Ready to explore Morocco?', ctaText: 'Our guides, routes and advice help you at every stage of your journey.', start: 'Plan my trip' },
+  es: { eyebrow: 'Visitar Marruecos', titleStart: 'Descubre', country: 'Marruecos', titleEnd: ', entre autenticidad y diversidad.', intro: 'Ciudades imperiales, playas, montañas, desierto, cultura y gastronomía. Prepara tu viaje y disfruta de cada etapa.', search: 'Buscar un destino, una actividad o alojamiento…', searchButton: 'Buscar', explore: 'Explora Marruecos a tu ritmo', exploreText: 'Todo lo necesario para organizar y disfrutar de tu viaje.', region: 'Explora Marruecos por región', regionText: 'De la costa atlántica al Atlas, descubre la riqueza de cada región.', regions: 'Ver las regiones', advice: 'Consejos prácticos', itineraries: 'Rutas e inspiración', allItineraries: 'Ver todas las rutas', cta: '¿Listo para descubrir Marruecos?', ctaText: 'Nuestras guías, rutas y consejos te acompañan durante todo el viaje.', start: 'Empezar mi viaje' },
+  de: { eyebrow: 'Marokko besuchen', titleStart: 'Entdecken Sie', country: 'Marokko', titleEnd: ' mit all seinen Facetten.', intro: 'Königsstädte, Strände, Berge, Wüste, Kultur und Küche. Planen Sie Ihre Reise und genießen Sie jeden Abschnitt.', search: 'Reiseziel, Aktivität oder Unterkunft suchen…', searchButton: 'Suchen', explore: 'Marokko in Ihrem Tempo entdecken', exploreText: 'Alles, was Sie für Planung und Reise brauchen.', region: 'Marokko nach Regionen entdecken', regionText: 'Von der Atlantikküste bis zum Atlasgebirge: Jede Region hat ihren eigenen Charakter.', regions: 'Regionen ansehen', advice: 'Praktische Tipps', itineraries: 'Routen & Inspiration', allItineraries: 'Alle Routen ansehen', cta: 'Bereit, Marokko zu entdecken?', ctaText: 'Unsere Ratgeber, Routen und Tipps begleiten Sie auf Ihrer Reise.', start: 'Reise planen' },
+  ar: { eyebrow: 'زيارة المغرب', titleStart: 'اكتشف', country: 'المغرب', titleEnd: '، بتنوعه وأصالته.', intro: 'مدن عريقة وشواطئ وجبال وصحراء وثقافة ومطبخ متنوع. خطط لرحلتك واستمتع بكل مرحلة.', search: 'ابحث عن وجهة أو نشاط أو مكان للإقامة…', searchButton: 'ابحث', explore: 'اكتشف المغرب على طريقتك', exploreText: 'كل ما تحتاجه لتنظيم رحلتك والاستمتاع بها.', region: 'اكتشف المغرب حسب الجهة', regionText: 'من ساحل الأطلسي إلى جبال الأطلس، تعرّف على ما يميز كل جهة.', regions: 'عرض الجهات', advice: 'نصائح عملية', itineraries: 'مسارات وأفكار للسفر', allItineraries: 'عرض جميع المسارات', cta: 'هل أنت مستعد لاكتشاف المغرب؟', ctaText: 'ترافقك أدلتنا ومساراتنا ونصائحنا في كل مرحلة من رحلتك.', start: 'ابدأ التخطيط لرحلتي' },
+}[lang];
 
 const self = (l: Locale) => hubPath(l, 'visit');
 const url = absoluteUrl(self(lang), Astro.site);
@@ -98,14 +105,14 @@ const itineraries = [
       <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
         <div class="lg:col-span-6 z-10">
           <div class="flex items-center gap-2 mb-3">
-            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">VISITER LE MAROC</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">{copy.eyebrow}</span>
             <span class="w-8 h-px bg-[#c05621]"></span>
           </div>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
-            Découvrez le <span class="text-[#c05621]">Maroc</span>, entre authenticité et diversité.
+            {copy.titleStart} <span class="text-[#c05621]">{copy.country}</span>{copy.titleEnd}
           </h1>
           <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
-            Villes impériales, plages, montagnes, désert, culture et gastronomie... Préparez votre voyage et vivez une expérience inoubliable.
+            {copy.intro}
           </p>
 
           <!-- Formulaire de recherche -->
@@ -114,10 +121,10 @@ const itineraries = [
             <input
               type="text"
               name="q"
-              placeholder="Rechercher une destination, une activité, un hébergement..."
+              placeholder={copy.search}
               class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
             />
-            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label="Lancer la recherche">
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label={copy.searchButton}>
               <Icon name="search" class="size-4" />
             </button>
           </form>
@@ -151,9 +158,9 @@ const itineraries = [
       <section id="conseils" class="mt-8 pt-8 border-t border-[#eae0d2]/70">
         <div class="flex items-center gap-2 mb-1">
           <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Explorez le Maroc à votre rythme</h2>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.explore}</h2>
         </div>
-        <p class="text-sm text-[#665e52] mb-6 ms-3.5">Toutes les clés pour organiser, découvrir et profiter pleinement de votre voyage.</p>
+        <p class="text-sm text-[#665e52] mb-6 ms-3.5">{copy.exploreText}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
@@ -184,9 +191,9 @@ const itineraries = [
             <div class="bg-[#0d2b24] text-white rounded-2xl p-5 shadow-lg relative overflow-hidden">
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <h3 class="text-lg font-bold font-serif">Explorez le Maroc par région</h3>
+                  <h3 class="text-lg font-bold font-serif">{copy.region}</h3>
                   <p class="text-xs text-white/80 mt-1 leading-relaxed">
-                    Du littoral atlantique aux montagnes de l'Atlas, découvrez la richesse de chaque région.
+                    {copy.regionText}
                   </p>
                 </div>
                 <Icon name="map" class="size-10 text-[#d9a441] shrink-0 opacity-80" />
@@ -195,7 +202,7 @@ const itineraries = [
                 href={hubPath(lang, 'regions')}
                 class="mt-4 inline-flex items-center gap-2 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] font-semibold text-xs px-4 py-2 rounded-full transition-colors"
               >
-                <span>Voir les régions</span>
+                <span>{copy.regions}</span>
                 <Icon name="arrowRight" class="size-3 rtl:-scale-x-100" />
               </a>
             </div>
@@ -204,7 +211,7 @@ const itineraries = [
             <div class="bg-white border border-[#eae0d2] rounded-2xl p-4 shadow-sm">
               <div class="flex items-center gap-2 mb-3 pb-2 border-b border-[#eae0d2]/60">
                 <Icon name="info" class="size-4 text-[#c05621]" />
-                <h3 class="text-sm font-bold text-[#1b1916]">Conseils pratiques</h3>
+                <h3 class="text-sm font-bold text-[#1b1916]">{copy.advice}</h3>
               </div>
               <ul class="flex flex-col gap-2 text-xs">
                 {adviceItems.map((item) => (
@@ -233,10 +240,10 @@ const itineraries = [
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
-            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Itinéraires & inspirations</h2>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.itineraries}</h2>
           </div>
           <a href={`${hubPath(lang, 'visit')}#itineraires`} class="text-xs sm:text-sm font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
-            <span>Voir tous les itinéraires</span>
+            <span>{copy.allItineraries}</span>
             <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
           </a>
         </div>
@@ -283,9 +290,9 @@ const itineraries = [
               <Icon name="luggage" class="size-7" />
             </div>
             <div>
-              <h3 class="text-xl sm:text-2xl font-serif font-bold">Prêt à découvrir le Maroc ?</h3>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">{copy.cta}</h3>
               <p class="text-xs sm:text-sm text-white/80 mt-1 max-w-xl">
-                Nos guides, itinéraires et conseils vous accompagnent à chaque étape de votre voyage.
+                {copy.ctaText}
               </p>
             </div>
           </div>
@@ -293,7 +300,7 @@ const itineraries = [
             href={categoryPath(lang, 'tours')}
             class="bg-white text-[#0d2b24] hover:bg-[#fcf7ee] px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all shrink-0 inline-flex items-center gap-2"
           >
-            <span>Commencer mon voyage</span>
+            <span>{copy.start}</span>
             <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" />
           </a>
         </div>
