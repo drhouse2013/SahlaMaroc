@@ -29,16 +29,16 @@ const categories = [
   { label: { fr: 'Hébergements', en: 'Accommodations', es: 'Alojamientos', de: 'Unterkünfte', ar: 'الإقامة والسكن' }[lang], icon: 'bed' as const, href: categoryPath(lang, 'stay') },
   { label: { fr: 'Transport & accès', en: 'Transport & access', es: 'Transporte y accesos', de: 'Transport & Anreise', ar: 'النقل والوصول' }[lang], icon: 'car' as const, href: categoryPath(lang, 'arrival') },
   { label: { fr: 'Activités & excursions', en: 'Activities & tours', es: 'Actividades y excursiones', de: 'Aktivitäten & Touren', ar: 'الأنشطة والرحلات' }[lang], icon: 'camera' as const, href: categoryPath(lang, 'tours') },
-  { label: { fr: 'Culture & patrimoine', en: 'Culture & heritage', es: 'Cultura y patrimonio', de: 'Kultur & Erbe', ar: 'الثقافة والتراث' }[lang], icon: 'landmark' as const, href: `${hubPath(lang, 'visit')}#culture` },
-  { label: { fr: 'Gastronomie', en: 'Gastronomy', es: 'Gastronomía', de: 'Gastronomie', ar: 'فن الطبخ' }[lang], icon: 'utensils' as const, href: `${hubPath(lang, 'visit')}#gastronomie` },
+  { label: { fr: 'Culture & patrimoine', en: 'Culture & heritage', es: 'Cultura y patrimonio', de: 'Kultur & Erbe', ar: 'الثقافة والتراث' }[lang], icon: 'landmark' as const, href: await redesignContentPath(lang, 'etiquette') },
+  { label: { fr: 'Gastronomie', en: 'Gastronomy', es: 'Gastronomía', de: 'Gastronomie', ar: 'فن الطبخ' }[lang], icon: 'utensils' as const, href: await redesignContentPath(lang, 'moroccan-food') },
   { label: { fr: 'Itinéraires & circuits', en: 'Itineraries & routes', es: 'Itinerarios y rutas', de: 'Routen & Rundreisen', ar: 'المسارات والجولات' }[lang], icon: 'route' as const, href: `${hubPath(lang, 'visit')}#itineraires` },
   { label: { fr: 'Conseils pratiques', en: 'Practical advice', es: 'Consejos prácticos', de: 'Praktische Tipps', ar: 'نصائح عملية' }[lang], icon: 'lightbulb' as const, href: `${hubPath(lang, 'visit')}#conseils` },
 ];
 
 const adviceItems = [
-  { label: { fr: 'Meilleure période pour voyager', en: 'Best time to travel', es: 'Mejor época para viajar', de: 'Beste Reisezeit', ar: 'أفضل فترة للسفر' }[lang], href: await redesignContentPath(lang, 'sim-esim-morocco'), icon: 'calendar' as const },
+  { label: { fr: 'Meilleure période pour voyager', en: 'Best time to travel', es: 'Mejor época para viajar', de: 'Beste Reisezeit', ar: 'أفضل فترة للسفر' }[lang], href: hubPath(lang, 'regions'), icon: 'calendar' as const },
   { label: { fr: 'Formalités & documents', en: 'Formalities & documents', es: 'Trámites y documentos', de: 'Formalitäten & Dokumente', ar: 'الإجراءات والوثائق' }[lang], href: await redesignContentPath(lang, 'residence-permit'), icon: 'file' as const },
-  { label: { fr: 'Sécurité & santé', en: 'Safety & health', es: 'Seguridad y salud', de: 'Sicherheit & Gesundheit', ar: 'الأمان والصحة' }[lang], href: await redesignContentPath(lang, 'amo-health-return-mre'), icon: 'shield' as const },
+  { label: { fr: 'Sécurité & santé', en: 'Safety & health', es: 'Seguridad y salud', de: 'Sicherheit & Gesundheit', ar: 'الأمان والصحة' }[lang], href: await redesignContentPath(lang, 'health-travellers'), icon: 'shield' as const },
   { label: { fr: 'Budget & coût de la vie', en: 'Budget & cost of living', es: 'Presupuesto y coste de vida', de: 'Budget & Lebenshaltungskosten', ar: 'الميزانية وتكلفة المعيشة' }[lang], href: await redesignContentPath(lang, 'calc-city-costs'), icon: 'coins' as const },
   { label: { fr: 'Internet & communication', en: 'Internet & communication', es: 'Internet y comunicación', de: 'Internet & Mobilfunk', ar: 'الإنترنت والاتصالات' }[lang], href: await redesignContentPath(lang, 'sim-esim-morocco'), icon: 'wifi' as const },
   { label: { fr: 'Météo par région', en: 'Weather by region', es: 'Clima por región', de: 'Wetter nach Region', ar: 'الطقس حسب الجهة' }[lang], href: hubPath(lang, 'regions'), icon: 'sun' as const },
