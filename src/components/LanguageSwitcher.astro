@@ -16,14 +16,14 @@ const t = useTranslations(lang);
 
 <details class="group relative" data-lang-switcher>
   <summary
-    class="flex min-h-10 cursor-pointer list-none items-center gap-1.5 rounded-full px-2 text-sm font-medium hover:bg-sand-100 sm:px-3 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden"
+    class="flex cursor-pointer list-none items-center gap-1.5 rounded-full px-2.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors [&::-webkit-details-marker]:hidden"
     aria-label={`${t('lang.switch')} (${LOCALE_META[lang].label})`}
   >
-    <Icon name="globe" class="size-4" />
-    <span class="uppercase">{lang}</span>
-    <Icon name="chevronDown" class="size-3.5 transition group-open:rotate-180" />
+    <span class="text-sm leading-none" aria-hidden="true">{LOCALE_META[lang].flag}</span>
+    <span class="uppercase font-semibold tracking-wide">{lang}</span>
+    <Icon name="chevronDown" class="size-3 transition group-open:rotate-180 opacity-70" />
   </summary>
-  <ul class="card absolute end-0 z-50 mt-2 w-48 overflow-hidden py-1 shadow-[var(--shadow-lg)]" aria-label={t('lang.label')}>
+  <ul class="absolute end-0 z-50 mt-2 w-48 overflow-hidden rounded-xl bg-white text-gray-900 shadow-2xl border border-[#ede3d5] py-1.5" aria-label={t('lang.label')}>
     {LOCALES.map((code) => {
       const meta = LOCALE_META[code];
       return (
@@ -35,10 +35,16 @@ const t = useTranslations(lang);
             dir={meta.dir}
             data-lang-link={code}
             aria-current={code === lang ? 'true' : undefined}
-            class:list={['flex min-h-10 items-center justify-between gap-3 px-4 py-2 text-sm hover:bg-sand-100 dark:hover:bg-white/10', code === lang && 'font-semibold text-terracotta-600 dark:text-terracotta-300']}
+            class:list={[
+              'flex items-center justify-between gap-3 px-4 py-2 text-xs sm:text-sm transition-colors',
+              code === lang ? 'bg-[#fbf5ec] font-bold text-[#c05621]' : 'text-gray-800 hover:bg-[#fbf5ec] hover:text-[#c05621]'
+            ]}
           >
-            {meta.label}
-            <span class="text-xs uppercase muted" aria-hidden="true">{code}</span>
+            <span class="flex items-center gap-2">
+              <span aria-hidden="true">{meta.flag}</span>
+              <span>{meta.label}</span>
+            </span>
+            <span class="text-xs uppercase text-gray-400 font-mono" aria-hidden="true">{code}</span>
           </a>
         </li>
       );

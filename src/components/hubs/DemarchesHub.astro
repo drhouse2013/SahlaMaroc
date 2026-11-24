@@ -1,0 +1,258 @@
+---
+/**
+ * Page officielle « Démarches & formalités »
+ * Reproduction fidèle de la maquette de référence 03 — Démarches
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, categoryPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const self = (l: Locale) => hubPath(l, 'demarches');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [
+  { name: t('breadcrumb.home'), href: homePath(lang) },
+  { name: { fr: 'Démarches', en: 'Paperwork', es: 'Trámites', de: 'Formalitäten', ar: 'الإجراءات' }[lang] }
+];
+
+const categories = [
+  { label: { fr: 'Documents & État civil', en: 'Documents & Civil Status', es: 'Documentos y Estado Civil', de: 'Dokumente & Standesamt', ar: 'الوثائق والحالة المدنية' }[lang], icon: 'passport' as const, href: categoryPath(lang, 'demarches') },
+  { label: { fr: 'Séjour & Visas', en: 'Stay & Visas', es: 'Estancia y Visados', de: 'Aufenthalt & Visa', ar: 'الإقامة والتأشيرات' }[lang], icon: 'stamp' as const, href: `/${lang}/carte-sejour-maroc-etranger` },
+  { label: { fr: 'Douane & Véhicule', en: 'Customs & Vehicle', es: 'Aduana y Vehículos', de: 'Zoll & Fahrzeug', ar: 'الجمارك والسيارات' }[lang], icon: 'car' as const, href: `/${lang}/calcul-frais-dedouanement-voiture-maroc` },
+  { label: { fr: 'Santé & Protection sociale', en: 'Health & Social Security', es: 'Salud y Protección Social', de: 'Gesundheit & Sozialschutz', ar: 'الصحة والحماية الاجتماعية' }[lang], icon: 'heart' as const, href: `/${lang}/amo-assurance-sante-retour-maroc-mre` },
+  { label: { fr: 'Retraite & Pensions', en: 'Retirement & Pensions', es: 'Jubilación y Pensiones', de: 'Rente & Pensionen', ar: 'التقاعد والمعاشات' }[lang], icon: 'umbrella' as const, href: `/${lang}/retraite-au-maroc-fiscalite-pension` },
+  { label: { fr: 'Légalisation & Procurations', en: 'Legalisation & Powers', es: 'Legalización y Poderes', de: 'Beglaubigung & Vollmachten', ar: 'المصادقة والتوكيلات' }[lang], icon: 'file' as const, href: `/${lang}/apostille-legalisation-documents-maroc` },
+];
+
+const officialLinks = [
+  { label: 'Portail du Gouvernement', href: 'https://www.maroc.ma' },
+  { label: 'Service-Public.ma', href: 'https://www.service-public.ma' },
+  { label: 'Ministère de l\'Intérieur', href: 'https://www.interieur.gov.ma' },
+  { label: 'Douane Marocaine (ADII)', href: 'https://www.douane.gov.ma' },
+  { label: 'CNSS (Protection Sociale)', href: 'https://www.cnss.ma' },
+];
+
+const popularGuides = [
+  {
+    tag: 'Documents',
+    title: 'Demander ou renouveler la CNIE au Maroc',
+    date: 'Mis à jour le 10 nov. 2026',
+    time: '7 min de lecture',
+    image: '/assets/photos/consulat-maroc-pontoise.jpg',
+    href: `/${lang}/renouveler-cnie-passeport-maroc-consulat`,
+  },
+  {
+    tag: 'Visas',
+    title: 'Obtenir un visa ou carte de séjour au Maroc',
+    date: 'Mis à jour le 8 nov. 2026',
+    time: '6 min de lecture',
+    image: '/assets/photos/aeroport-casablanca.jpg',
+    href: `/${lang}/carte-sejour-maroc-etranger`,
+  },
+  {
+    tag: 'Douane',
+    title: 'Importer son véhicule au Maroc (180 jours / MRE)',
+    date: 'Mis à jour le 12 nov. 2026',
+    time: '8 min de lecture',
+    image: '/assets/photos/douane-tanger-med.jpg',
+    href: `/${lang}/calcul-frais-dedouanement-voiture-maroc`,
+  },
+  {
+    tag: 'Santé',
+    title: 'S\'inscrire à la protection sociale (AMO)',
+    date: 'Mis à jour le 5 nov. 2026',
+    time: '6 min de lecture',
+    image: '/assets/photos/sante-chu-tanger.jpg',
+    href: `/${lang}/amo-assurance-sante-retour-maroc-mre`,
+  },
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title={{ fr: 'Démarches & formalités au Maroc : CNIE, visa, douane, AMO', en: 'Moroccan Paperwork & Formalities', es: 'Trámites y formalidades en Marruecos', de: 'Formalitäten in Marokko', ar: 'الإجراءات الإدارية في المغرب' }[lang]}
+  description={{ fr: 'Toutes les démarches administratives au Maroc : état civil, passeport, CNIE, séjour, douane voiture, AMO et retraite expliquées simplement.', en: 'All administrative procedures in Morocco: civil registry, visas, car customs, health insurance and retirement.', es: 'Todos los trámites administrativos en Marruecos: documentos, visados, aduana, salud y jubilación.', de: 'Alle Behördengänge in Marokko einfach erklärt: Dokumente, Visa, Zoll, Gesundheit und Rente.', ar: 'جميع الإجراءات الإدارية في المغرب: البطاقة الوطنية، التأشيرة، الجمارك، التغطية الصحية والتقاعد.' }[lang]}
+  alternates={allLocalesAlternates(self)}
+  switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}
+>
+  <div class="root-page-shell">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+      
+      <div class="mb-4">
+        <Breadcrumbs items={crumbs} lang={lang} />
+      </div>
+
+      <!-- Hero Section -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
+        <div class="lg:col-span-6 z-10">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">DÉMARCHES & FORMALITÉS AU MAROC</span>
+            <span class="w-8 h-px bg-[#c05621]"></span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
+            Vos démarches au <span class="text-[#c05621]">Maroc</span>, simples et bien expliquées.
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
+            Toutes les formalités, documents et procédures pour préparer votre séjour, votre retour ou votre installation au Maroc.
+          </p>
+
+          <form action={`/${lang}/recherche`} method="get" class="mt-8 flex items-center bg-white border border-[#eae0d2] rounded-full p-1.5 shadow-md max-w-xl">
+            <Icon name="search" class="size-5 ms-3 text-gray-400 shrink-0" />
+            <input
+              type="text"
+              name="q"
+              placeholder="Rechercher une démarche : CNIE, visa, douane, retraite..."
+              class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
+            />
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label="Rechercher">
+              <Icon name="search" class="size-4" />
+            </button>
+          </form>
+        </div>
+
+        <div class="lg:col-span-6 relative mt-6 lg:mt-0">
+          <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
+            <img
+              src="/assets/photos/consulat-maroc-pontoise.jpg"
+              alt="Administration et démarches au Maroc"
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+          <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-36 sm:w-44 rotate-[4deg] hidden sm:block">
+            <img src="/assets/photos/douane-tanger-med.jpg" alt="Douane Tanger Med" class="w-full h-24 sm:h-32 object-cover rounded" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 : Accès rapide par thématique -->
+      <section class="mt-8 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Accès rapide par thématique</h2>
+        </div>
+        <p class="text-sm text-[#665e52] mb-6 ms-3.5">Choisissez votre démarche et accédez à tous les guides, documents et étapes.</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {categories.map((cat) => (
+              <a
+                href={cat.href}
+                class="bg-white border border-[#eae0d2] rounded-2xl p-5 flex items-center justify-between hover:shadow-md hover:border-[#c05621]/50 hover:-translate-y-0.5 transition-all group"
+              >
+                <div class="flex items-center gap-3.5">
+                  <div class="size-11 rounded-xl bg-[#fbf5ec] flex items-center justify-center text-[#0d2b24] group-hover:bg-[#c05621] group-hover:text-white transition-colors shrink-0">
+                    <Icon name={cat.icon} class="size-5" />
+                  </div>
+                  <span class="font-bold text-sm text-[#1b1916] leading-snug">
+                    {cat.label}
+                  </span>
+                </div>
+                <span class="size-7 rounded-full bg-[#fbf5ec] flex items-center justify-center text-[#554e44] group-hover:bg-[#c05621] group-hover:text-white transition-all text-xs shrink-0">
+                  →
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col gap-4">
+            <div class="bg-[#0d2b24] text-white rounded-2xl p-5 shadow-lg">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-lg font-bold font-serif">Besoin d'aide ?</h3>
+                  <p class="text-xs text-white/80 mt-1 leading-relaxed">
+                    Trouvez rapidement la démarche adaptée à votre situation (MRE, résident, voyageur).
+                  </p>
+                </div>
+                <Icon name="file" class="size-8 text-[#d9a441] shrink-0" />
+              </div>
+              <a
+                href={hubPath(lang, 'mre')}
+                class="mt-4 inline-flex items-center gap-2 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] font-semibold text-xs px-4 py-2 rounded-full transition-colors"
+              >
+                <span>Commencer mon parcours</span>
+                <Icon name="arrowRight" class="size-3 rtl:-scale-x-100" />
+              </a>
+            </div>
+
+            <div class="bg-white border border-[#eae0d2] rounded-2xl p-4 shadow-sm">
+              <div class="flex items-center gap-2 mb-3 pb-2 border-b border-[#eae0d2]/60">
+                <Icon name="link" class="size-4 text-[#c05621]" />
+                <h3 class="text-sm font-bold text-[#1b1916]">Liens officiels utiles</h3>
+              </div>
+              <ul class="flex flex-col gap-2 text-xs">
+                {officialLinks.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-[#fbf5ec] hover:text-[#c05621] text-gray-700 transition-colors group"
+                    >
+                      <span class="font-medium">{item.label}</span>
+                      <Icon name="external" class="size-3 opacity-40 group-hover:opacity-100" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 2 : Guides les plus consultés -->
+      <section class="mt-12 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Guides les plus consultés</h2>
+          </div>
+          <a href={categoryPath(lang, 'demarches')} class="text-xs sm:text-sm font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
+            <span>Voir toutes les démarches</span>
+            <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {popularGuides.map((g) => (
+            <a
+              href={g.href}
+              class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
+            >
+              <div class="relative h-40 overflow-hidden">
+                <img src={g.image} alt={g.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                  {g.tag}
+                </span>
+              </div>
+              <div class="p-4 flex flex-col flex-1 justify-between bg-white">
+                <h3 class="font-serif font-bold text-base text-[#1b1916] group-hover:text-[#c05621] transition-colors leading-snug">
+                  {g.title}
+                </h3>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
+                  <div class="flex flex-col">
+                    <span>{g.date}</span>
+                    <span>{g.time}</span>
+                  </div>
+                  <span class="size-7 rounded-full bg-[#fbf5ec] group-hover:bg-[#c05621] group-hover:text-white flex items-center justify-center text-gray-500 text-xs transition-colors">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

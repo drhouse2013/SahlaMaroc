@@ -72,5 +72,10 @@ export const ICONS = {
   thermometer: "<path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\" />",
   tent: "<path d=\"M3.5 21 14 3\" /><path d=\"M20.5 21 10 3\" /><path d=\"M15.5 21 12 15l-3.5 6\" /><path d=\"M2 21h20\" />",
   grid: "<rect width=\"7\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\" /><rect width=\"7\" height=\"7\" x=\"14\" y=\"3\" rx=\"1\" /><rect width=\"7\" height=\"7\" x=\"14\" y=\"14\" rx=\"1\" /><rect width=\"7\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\" />",
+  trendingUp: "<polyline points=\"23 6 13.5 15.5 8.5 10.5 1 18\" /><polyline points=\"17 6 23 6 23 12\" />",
+  user: "<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\" /><circle cx=\"12\" cy=\"7\" r=\"4\" />",
+  camera: "<path d=\"M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z\" /><circle cx=\"12\" cy=\"13\" r=\"3\" />",
+  coffee: "<path d=\"M10 2v2\" /><path d=\"M14 2v2\" /><path d=\"M18 8h1a4 4 0 0 1 0 8h-1\" /><path d=\"M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z\" /><line x1=\"6\" y1=\"2\" x2=\"6\" y2=\"4\" />",
+  umbrella: "<path d=\"M22 12A10.02 10.02 0 0 0 12 2a10.02 10.02 0 0 0-10 10\" /><path d=\"M12 12v8a2 2 0 0 0 4 0\" /><path d=\"M12 2v1\" />",
 } as const;
 export type IconName = keyof typeof ICONS;

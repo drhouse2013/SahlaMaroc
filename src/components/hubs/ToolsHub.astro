@@ -1,0 +1,282 @@
+---
+/**
+ * Page officielle « Outils pratiques »
+ * Reproduction fidèle de la maquette de référence 06 — Outils pratiques
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import ToolGrid from '../ToolGrid.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, getPageUrl } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const toolUrl = (await getPageUrl(lang, 'calculators')) ?? `/${lang}/calculateurs`;
+const url = absoluteUrl(toolUrl, Astro.site);
+
+const crumbs = [
+  { name: t('breadcrumb.home'), href: homePath(lang) },
+  { name: { fr: 'Outils pratiques', en: 'Practical Tools', es: 'Herramientas prácticas', de: 'Praktische Tools', ar: 'أدوات عملية' }[lang] }
+];
+
+const quickAccess = [
+  { label: 'Tous les outils', desc: 'Explorez l\'ensemble de nos outils pratiques.', icon: 'grid' as const, href: '#calculateurs', highlight: true },
+  { label: 'Calculateurs', desc: 'Estimez vos coûts, budgets et investissements.', icon: 'calculator' as const, href: '#calculateurs', highlight: false },
+  { label: 'Checklists', desc: 'Des listes de contrôle prêtes à l\'emploi.', icon: 'listChecks' as const, href: hubPath(lang, 'checklists'), highlight: false },
+  { label: 'Calendrier pratique', desc: 'Les dates et échéances à ne pas manquer.', icon: 'calendar' as const, href: hubPath(lang, 'calendar'), highlight: false },
+  { label: 'Glossaire', desc: 'Les termes clés expliqués simplement.', icon: 'book' as const, href: hubPath(lang, 'glossary'), highlight: false },
+];
+
+const benefits = [
+  { label: 'Simple et rapide', icon: 'sparkles' as const },
+  { label: 'Fiable et actualisé', icon: 'checkCircle' as const },
+  { label: 'Adapté aux MRE et résidents', icon: 'users' as const },
+  { label: 'Accessible sur tous les appareils', icon: 'globe' as const },
+  { label: '100% gratuit', icon: 'lock' as const },
+];
+
+const popularTools = [
+  {
+    tag: 'Calculateur',
+    icon: 'home' as const,
+    title: 'Estimer un bien immobilier au Maroc',
+    desc: 'Évaluez les frais de notaire, d\'enregistrement et le coût total d\'achat.',
+    image: '/assets/img/guide-immo.jpg',
+    href: `/${lang}/calcul-frais-achat-immobilier-maroc`,
+  },
+  {
+    tag: 'Calculateur',
+    icon: 'car' as const,
+    title: 'Coût d\'importation d\'un véhicule (MRE)',
+    desc: 'Estimez les droits et taxes de douane pour votre véhicule.',
+    image: '/assets/photos/voiture-traversee-mre.jpg',
+    href: `/${lang}/calcul-frais-dedouanement-voiture-maroc`,
+  },
+  {
+    tag: 'Checklist',
+    icon: 'listChecks' as const,
+    title: 'Checklists du retour au Maroc',
+    desc: 'Toutes les étapes à vérifier avant votre retour définitif ou séjour.',
+    image: '/assets/img/guide-mre.jpg',
+    href: hubPath(lang, 'checklists'),
+  },
+  {
+    tag: 'Calendrier',
+    icon: 'calendar' as const,
+    title: 'Calendrier des démarches au Maroc',
+    desc: 'Suivez les dates importantes et échéances administratives.',
+    image: '/assets/photos/retour-rabat-bouregreg.jpg',
+    href: hubPath(lang, 'calendar'),
+  },
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title={{ fr: 'Outils pratiques & calculateurs gratuits Maroc', en: 'Practical Tools & Free Calculators Morocco', es: 'Herramientas prácticas y calculadoras Marruecos', de: 'Praktische Tools & Rechner Marokko', ar: 'أدوات وحاسبات مجانية المغرب' }[lang]}
+  description={{ fr: 'Tous nos calculateurs gratuits pour le Maroc : dédouanement voiture, frais d\'achat immobilier, change EUR/MAD, budget voyage, checklists et glossaire.', en: 'Free tools for Morocco: car customs, property fees, currency converter, checklists and glossary.', es: 'Calculadoras gratuitas para Marruecos: aduana coche, gastos inmobiliarios, conversor euro-dirham.', de: 'Kostenlose Rechner für Marokko: Kfz-Zoll, Immobilienkauf, Währungsrechner und Checklisten.', ar: 'حاسبات وأدوات مجانية للمغرب: تعشير السيارة، مصاريف العقار، محول العملات وقوائم التحقق.' }[lang]}
+  alternates={allLocalesAlternates(() => toolUrl)}
+  switchTargets={allLocalesTargets(() => toolUrl)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}
+>
+  <div class="root-page-shell">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+      
+      <div class="mb-4">
+        <Breadcrumbs items={crumbs} lang={lang} />
+      </div>
+
+      <!-- Hero Section -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
+        <div class="lg:col-span-6 z-10">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">OUTILS PRATIQUES</span>
+            <span class="w-8 h-px bg-[#c05621]"></span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
+            Des outils simples et utiles pour tous vos projets au <span class="text-[#c05621]">Maroc</span>.
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
+            Calculez, planifiez, organisez et trouvez rapidement l'information dont vous avez besoin, en toute simplicité.
+          </p>
+
+          <form action={`/${lang}/recherche`} method="get" class="mt-8 flex items-center bg-white border border-[#eae0d2] rounded-full p-1.5 shadow-md max-w-xl">
+            <Icon name="search" class="size-5 ms-3 text-gray-400 shrink-0" />
+            <input
+              type="text"
+              name="q"
+              placeholder="Rechercher un outil : calculateur, checklist, calendrier..."
+              class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
+            />
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label="Rechercher">
+              <Icon name="search" class="size-4" />
+            </button>
+          </form>
+        </div>
+
+        <div class="lg:col-span-6 relative mt-6 lg:mt-0">
+          <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
+            <img
+              src="/assets/img/dest-casablanca.jpg"
+              alt="Outils et calculateurs pratiques pour le Maroc"
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 : Accès rapide aux outils -->
+      <section class="mt-8 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Accès rapide aux outils</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            {quickAccess.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  "border rounded-2xl p-4 flex flex-col justify-between min-h-[160px] transition-all group",
+                  item.highlight
+                    ? "bg-[#e7f3ee] border-[#b7dccd] hover:shadow-md"
+                    : "bg-white border-[#eae0d2] hover:shadow-md hover:border-[#c05621]/50"
+                ]}
+              >
+                <div class="flex flex-col items-center text-center mt-2">
+                  <Icon name={item.icon} class="size-8 text-[#0d2b24] mb-3 group-hover:text-[#c05621] transition-colors" />
+                  <h3 class="font-bold text-sm text-[#1b1916]">{item.label}</h3>
+                  <p class="text-[11px] text-gray-500 mt-1 leading-snug">{item.desc}</p>
+                </div>
+                <div class="mt-3 flex justify-end">
+                  <span class:list={[
+                    "size-6 rounded-full flex items-center justify-center text-xs transition-colors",
+                    item.highlight ? "bg-[#0d2b24] text-white" : "bg-[#fbf5ec] text-gray-500 group-hover:bg-[#c05621] group-hover:text-white"
+                  ]}>
+                    →
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col gap-4">
+            <div class="bg-[#0d2b24] text-white rounded-2xl p-5 shadow-lg">
+              <div class="flex items-start gap-3">
+                <Icon name="compass" class="size-7 text-[#d9a441] shrink-0 mt-1" />
+                <div>
+                  <h3 class="text-lg font-bold font-serif">Pourquoi utiliser nos outils ?</h3>
+                  <p class="text-xs text-white/80 mt-1 leading-relaxed">
+                    Des outils fiables, pratiques et à jour pour vous faire gagner du temps et prendre les bonnes décisions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-[#eae0d2] rounded-2xl p-4 shadow-sm">
+              <ul class="flex flex-col gap-2.5 text-xs">
+                {benefits.map((b) => (
+                  <li class="flex items-center gap-3 text-gray-700 font-medium">
+                    <span class="size-6 rounded-full bg-[#fbf5ec] flex items-center justify-center text-[#0d2b24] shrink-0">
+                      <Icon name={b.icon} class="size-3.5" />
+                    </span>
+                    <span>{b.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 2 : Outils les plus utilisés -->
+      <section class="mt-12 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Outils les plus utilisés</h2>
+          </div>
+          <a href="#calculateurs" class="text-xs sm:text-sm font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
+            <span>Voir tous les outils</span>
+            <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {popularTools.map((tool) => (
+            <a
+              href={tool.href}
+              class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
+            >
+              <div class="relative h-40 overflow-hidden">
+                <img src={tool.image} alt={tool.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow inline-flex items-center gap-1">
+                  <Icon name={tool.icon} class="size-3 text-[#c05621]" />
+                  {tool.tag}
+                </span>
+              </div>
+              <div class="p-4 flex flex-col flex-1 justify-between bg-white">
+                <div>
+                  <h3 class="font-serif font-bold text-base text-[#1b1916] group-hover:text-[#c05621] transition-colors leading-snug">
+                    {tool.title}
+                  </h3>
+                  <p class="text-xs text-gray-600 mt-1.5 leading-relaxed line-clamp-2">
+                    {tool.desc}
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-end">
+                  <span class="size-7 rounded-full bg-[#fbf5ec] group-hover:bg-[#c05621] group-hover:text-white flex items-center justify-center text-gray-500 text-xs transition-colors">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Catalogue complet de tous les calculateurs existants -->
+      <section id="calculateurs" class="mt-14 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Tous nos calculateurs et simulateurs</h2>
+        </div>
+        <ToolGrid lang={lang} />
+      </section>
+
+      <!-- Bottom CTA Banner -->
+      <section class="mt-14 bg-[#0d2b24] text-white rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('/assets/img/band-legzira.jpg');"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 text-center md:text-start flex-col md:flex-row">
+            <div class="size-14 rounded-2xl border border-white/25 flex items-center justify-center shrink-0 text-[#d9a441]">
+              <Icon name="book" class="size-7" />
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">Besoin d'un accompagnement ?</h3>
+              <p class="text-xs sm:text-sm text-white/80 mt-1 max-w-xl">
+                Nos guides et outils vous aident à chaque étape de votre projet au Maroc.
+              </p>
+            </div>
+          </div>
+          <a
+            href={hubPath(lang, 'guides')}
+            class="bg-white text-[#0d2b24] hover:bg-[#fcf7ee] px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all shrink-0 inline-flex items-center gap-2"
+          >
+            <span>Explorer nos guides</span>
+            <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" />
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
