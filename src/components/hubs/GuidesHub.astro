@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import ArticleCard from '../ArticleCard.astro';
 import Icon from '../Icon.astro';
+import PhotoCredit from '../PhotoCredit.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
 import { JOURNEYS } from '../../data/journeys';
@@ -115,7 +116,8 @@ const parcoursCards = [
 
         <div class="lg:col-span-6 relative mt-6 lg:mt-0">
           <div class="brush-hero-media h-[280px] sm:h-[360px] lg:h-[380px] w-full shadow-xl">
-            <img src="/assets/img/hero-rabat.jpg" alt="Rabat et Maroc" class="w-full h-full object-cover" loading="eager" />
+            <img src="/assets/photos/marrakech-bahia.jpg" alt="Cour du palais Bahia à Marrakech" class="w-full h-full object-cover" loading="eager" />
+            <PhotoCredit lang={lang} credit="Val Traveler · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg" />
           </div>
           <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-32 sm:w-44 rotate-[4deg] hidden sm:block">
             <img src="/assets/img/dest-casablanca.jpg" alt="Casablanca" class="w-full h-24 sm:h-28 object-cover rounded" />

@@ -41,7 +41,7 @@ if (d.translationKey === 'about') jsonLd.push(personJsonLd(Astro.site, url, d.de
     <div class:list={['container-page pt-8 pb-10', tool || isHubTools ? 'max-w-5xl' : 'max-w-3xl']}>
       <Breadcrumbs items={crumbs} lang={lang} />
       {tool && <span class="icon-tile mt-8 size-12"><Icon name={tool.icon} class="size-6" /></span>}
-      <h1 class:list={['text-3xl font-semibold sm:text-[2.6rem]', tool ? 'mt-4' : 'mt-8']}>{d.title}</h1>
+      <h1 class:list={['interior-page-title', tool ? 'mt-4' : 'mt-8']}>{d.title}</h1>
       <p class="mt-4 max-w-2xl text-lg muted">{d.description}</p>
       {d.updatedDate && <p class="mt-4 inline-flex items-center gap-1.5 text-sm muted"><Icon name="calendar" class="size-4" /><time datetime={d.updatedDate.toISOString()}>{t('common.updatedOn', { date: formatDate(d.updatedDate, lang) })}</time></p>}
     </div>

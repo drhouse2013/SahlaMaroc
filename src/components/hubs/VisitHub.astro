@@ -7,6 +7,7 @@ import { redesignContentPath } from "../../utils/redesignContentPath";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import Icon from '../Icon.astro';
+import PhotoCredit from '../PhotoCredit.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, categoryPath, cityPath } from '../../utils/i18n';
 import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
@@ -126,11 +127,12 @@ const itineraries = [
         <div class="lg:col-span-6 relative mt-6 lg:mt-0">
           <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
             <img
-              src="/assets/img/hero-rabat.jpg"
-              alt="Paysages emblématiques du Maroc"
+              src="/assets/photos/ouarzazate-taourirt-2024.jpg"
+              alt="Kasbah de Taourirt et palmeraie à Ouarzazate"
               class="w-full h-full object-cover"
               loading="eager"
             />
+            <PhotoCredit lang={lang} credit="Petar Milošević · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg" />
           </div>
 
           <!-- Polaroid 1 : Chefchaouen -->
