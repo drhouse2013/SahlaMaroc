@@ -22,6 +22,7 @@ const copy = {
   de: { eyebrow: 'In Marokko investieren', titleStart: 'Investieren in', country: 'Marokko', titleEnd: ' mit klarer Orientierung.', intro: 'Immobilien, Unternehmensgründung, Steuern und Finanzierung: Ratgeber und Werkzeuge für Ihre Planung.', search: 'Ratgeber, Verfahren oder Branche suchen…', searchButton: 'Suchen', quick: 'Nach Thema suchen', quickText: 'Informationen für Kauf, Gründung und Entwicklung Ihres Vorhabens in Marokko.', calculators: 'Rechner', calculatorsText: 'Kaufkosten, Kredite und Veräußerungsgewinne einschätzen und vergleichen.', seeCalculators: 'Rechner ansehen', sectors: 'Branchen im Überblick', featured: 'Ausgewählte Ratgeber', all: 'Investitionsratgeber ansehen', cta: 'Planen Sie eine Investition?', ctaText: 'Nutzen Sie unsere Ratgeber und Rechner, um Ihre Möglichkeiten in Marokko zu prüfen.', start: 'Vorhaben planen' },
   ar: { eyebrow: 'الاستثمار في المغرب', titleStart: 'استثمر في', country: 'المغرب', titleEnd: ' بخطوات مدروسة.', intro: 'العقار وإنشاء المقاولات والضرائب والتمويل: أدلة وأدوات تساعدك على التخطيط لاستثمارك.', search: 'ابحث عن دليل أو إجراء أو قطاع…', searchButton: 'ابحث', quick: 'تصفح حسب الموضوع', quickText: 'موارد للشراء وإنشاء مشروع وتطوير استثمارك في المغرب.', calculators: 'الحاسبات', calculatorsText: 'قدّر تكاليف الشراء والقروض والأرباح العقارية وقارن بينها.', seeCalculators: 'عرض الحاسبات', sectors: 'قطاعات للاستكشاف', featured: 'أدلة مختارة', all: 'عرض أدلة الاستثمار', cta: 'هل تخطط للاستثمار؟', ctaText: 'استعن بأدلتنا وحاسباتنا لدراسة خياراتك في المغرب.', start: 'ابدأ التخطيط لمشروعي' },
 }[lang];
+const heroAlt = { fr: 'Mosquée Hassan II au coucher du soleil, Casablanca', en: 'Hassan II Mosque at sunset in Casablanca', es: 'Mezquita Hassan II al atardecer en Casablanca', de: 'Hassan-II.-Moschee bei Sonnenuntergang in Casablanca', ar: 'مسجد الحسن الثاني عند غروب الشمس في الدار البيضاء' }[lang];
 const sectorText = {
   fr: ['Immobilier & construction', 'Tourisme & hôtellerie', 'Énergies renouvelables', 'Agriculture & agroalimentaire', 'Industrie & export', 'Services & numérique'],
   en: ['Property & construction', 'Tourism & hospitality', 'Renewable energy', 'Agriculture & food', 'Industry & exports', 'Services & digital'],
@@ -158,7 +159,7 @@ const featuredGuides = await Promise.all([
           <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
             <img
               src="/assets/img/dest-casablanca.jpg"
-              alt="Mosquée Hassan II au coucher du soleil, Casablanca"
+              alt={heroAlt}
               class="w-full h-full object-cover"
               loading="eager"
             />

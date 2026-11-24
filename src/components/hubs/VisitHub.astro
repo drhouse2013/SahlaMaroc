@@ -23,6 +23,7 @@ const copy = {
   de: { eyebrow: 'Marokko besuchen', titleStart: 'Entdecken Sie', country: 'Marokko', titleEnd: ' mit all seinen Facetten.', intro: 'Königsstädte, Strände, Berge, Wüste, Kultur und Küche. Planen Sie Ihre Reise und genießen Sie jeden Abschnitt.', search: 'Reiseziel, Aktivität oder Unterkunft suchen…', searchButton: 'Suchen', explore: 'Marokko in Ihrem Tempo entdecken', exploreText: 'Alles, was Sie für Planung und Reise brauchen.', region: 'Marokko nach Regionen entdecken', regionText: 'Von der Atlantikküste bis zum Atlasgebirge: Jede Region hat ihren eigenen Charakter.', regions: 'Regionen ansehen', advice: 'Praktische Tipps', itineraries: 'Routen & Inspiration', allItineraries: 'Alle Routen ansehen', cta: 'Bereit, Marokko zu entdecken?', ctaText: 'Unsere Ratgeber, Routen und Tipps begleiten Sie auf Ihrer Reise.', start: 'Reise planen' },
   ar: { eyebrow: 'زيارة المغرب', titleStart: 'اكتشف', country: 'المغرب', titleEnd: '، بتنوعه وأصالته.', intro: 'مدن عريقة وشواطئ وجبال وصحراء وثقافة ومطبخ متنوع. خطط لرحلتك واستمتع بكل مرحلة.', search: 'ابحث عن وجهة أو نشاط أو مكان للإقامة…', searchButton: 'ابحث', explore: 'اكتشف المغرب على طريقتك', exploreText: 'كل ما تحتاجه لتنظيم رحلتك والاستمتاع بها.', region: 'اكتشف المغرب حسب الجهة', regionText: 'من ساحل الأطلسي إلى جبال الأطلس، تعرّف على ما يميز كل جهة.', regions: 'عرض الجهات', advice: 'نصائح عملية', itineraries: 'مسارات وأفكار للسفر', allItineraries: 'عرض جميع المسارات', cta: 'هل أنت مستعد لاكتشاف المغرب؟', ctaText: 'ترافقك أدلتنا ومساراتنا ونصائحنا في كل مرحلة من رحلتك.', start: 'ابدأ التخطيط لرحلتي' },
 }[lang];
+const heroAlt = { fr: 'Kasbah de Taourirt et palmeraie à Ouarzazate', en: 'Taourirt Kasbah and palm grove in Ouarzazate', es: 'Kasba de Taourirt y palmeral de Uarzazat', de: 'Kasbah Taourirt und Palmenhain in Ouarzazate', ar: 'قصبة تاوريرت وواحة النخيل في ورزازات' }[lang];
 
 const self = (l: Locale) => hubPath(l, 'visit');
 const url = absoluteUrl(self(lang), Astro.site);
@@ -135,7 +136,7 @@ const itineraries = [
           <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
             <img
               src="/assets/photos/ouarzazate-taourirt-2024.jpg"
-              alt="Kasbah de Taourirt et palmeraie à Ouarzazate"
+              alt={heroAlt}
               class="w-full h-full object-cover"
               loading="eager"
             />

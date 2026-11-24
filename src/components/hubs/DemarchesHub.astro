@@ -22,6 +22,7 @@ const copy = {
   de: { eyebrow: 'Formalitäten in Marokko', titleStart: 'Ihre Formalitäten in', country: 'Marokko', titleEnd: ', verständlich erklärt.', intro: 'Dokumente und Verfahren für Ihren Aufenthalt, Ihre Rückkehr oder Ihren Umzug nach Marokko.', search: 'Verfahren suchen: Ausweis, Visum, Zoll, Rente…', searchButton: 'Suchen', quick: 'Nach Thema suchen', quickText: 'Wählen Sie ein Verfahren und sehen Sie Ratgeber, Unterlagen und Schritte.', help: 'Brauchen Sie Hilfe?', helpText: 'Finden Sie das passende Verfahren für Ihre Situation.', start: 'Meinen Weg beginnen', official: 'Nützliche offizielle Links', popular: 'Meistgelesene Ratgeber', all: 'Alle Verfahren ansehen' },
   ar: { eyebrow: 'الإجراءات الإدارية في المغرب', titleStart: 'إجراءاتك في', country: 'المغرب', titleEnd: '، مشروحة ببساطة.', intro: 'الوثائق والمساطر اللازمة للتحضير لإقامتك أو عودتك أو استقرارك في المغرب.', search: 'ابحث عن إجراء: البطاقة الوطنية، التأشيرة، الجمارك، التقاعد…', searchButton: 'ابحث', quick: 'تصفح حسب الموضوع', quickText: 'اختر الإجراء واطّلع على أدلته ووثائقه وخطواته.', help: 'هل تحتاج إلى مساعدة؟', helpText: 'اعثر على الإجراء المناسب لوضعك.', start: 'ابدأ مساري', official: 'روابط رسمية مفيدة', popular: 'الأدلة الأكثر قراءة', all: 'عرض جميع الإجراءات' },
 }[lang];
+const heroAlt = { fr: 'Bâtiment du consulat du Maroc à Pontoise', en: 'Moroccan consulate building in Pontoise', es: 'Edificio del consulado de Marruecos en Pontoise', de: 'Gebäude des marokkanischen Konsulats in Pontoise', ar: 'مبنى القنصلية المغربية في بونتواز' }[lang];
 const guideTags = {
   fr: ['Documents', 'Visas', 'Douane', 'Santé'],
   en: ['Documents', 'Visas', 'Customs', 'Health'],
@@ -155,7 +156,7 @@ const popularGuides = await Promise.all([
           <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
             <img
               src="/assets/photos/consulat-maroc-pontoise.jpg"
-              alt="Administration et démarches au Maroc"
+              alt={heroAlt}
               class="w-full h-full object-cover"
               loading="eager"
             />

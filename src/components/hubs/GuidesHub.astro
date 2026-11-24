@@ -21,6 +21,7 @@ const copy = {
   de: { return: 'Meine Rückkehr nach Marokko planen', living: 'In Marokko leben', latest: 'Neueste Ratgeber', eyebrow: 'Das praktische Marokko-Magazin', titleStart: 'Planen Sie Ihr Vorhaben in', country: 'Marokko', intro: 'Rückkehr, Immobilienkauf oder Reise? Hier finden Sie verlässliche Orientierung für Ihre nächsten Schritte.', search: 'Ratgeber suchen: Visum, Fähre, Steuern...', start: 'Wo beginne ich?', paths: 'Geführte Wege für jedes Vorhaben.', explore: 'Alle Ratgeber entdecken', available: 'Ratgeber verfügbar' },
   ar: { return: 'التحضير لعودتي إلى المغرب', living: 'العيش في المغرب', latest: 'أحدث الأدلة', eyebrow: 'دليلك العملي إلى المغرب', titleStart: 'خطط لمشروعك في', country: 'المغرب', intro: 'تستعد للعودة أو شراء منزل أو السفر؟ اعثر على المعلومات التي تساعدك على اتخاذ الخطوة التالية بثقة.', search: 'ابحث عن دليل: التأشيرة، العبّارة، الضرائب...', start: 'من أين تبدأ؟', paths: 'مسارات إرشادية تناسب كل مشروع.', explore: 'استكشف جميع الأدلة', available: 'دليل متاح' },
 }[lang];
+const heroAlt = { fr: 'Cour du palais Bahia à Marrakech', en: 'Courtyard of Bahia Palace in Marrakech', es: 'Patio del palacio de la Bahía en Marrakech', de: 'Innenhof des Bahia-Palasts in Marrakesch', ar: 'فناء قصر الباهية في مراكش' }[lang];
 const articles = await getArticles(lang);
 const cats = await getActiveCategories(lang);
 const norm = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -123,7 +124,7 @@ const parcoursCards = [
 
         <div class="lg:col-span-6 relative mt-6 lg:mt-0">
           <div class="brush-hero-media h-[280px] sm:h-[360px] lg:h-[380px] w-full shadow-xl">
-            <img src="/assets/photos/marrakech-bahia.jpg" alt="Cour du palais Bahia à Marrakech" class="w-full h-full object-cover" loading="eager" />
+            <img src="/assets/photos/marrakech-bahia.jpg" alt={heroAlt} class="w-full h-full object-cover" loading="eager" />
             <PhotoCredit lang={lang} credit="Val Traveler · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg" />
           </div>
           <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-32 sm:w-44 rotate-[4deg] hidden sm:block">

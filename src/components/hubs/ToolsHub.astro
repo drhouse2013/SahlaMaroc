@@ -22,6 +22,7 @@ const copy = {
   de: { eyebrow: 'Praktische Werkzeuge', titleStart: 'Nützliche Werkzeuge für Ihre Vorhaben in', country: 'Marokko', intro: 'Berechnen, planen und die benötigten Informationen schnell finden.', search: 'Werkzeug suchen: Rechner, Checkliste, Kalender…', searchButton: 'Suchen', quick: 'Schnellzugriff auf Werkzeuge', why: 'Warum diese Werkzeuge nutzen?', whyText: 'Praktische, aktuelle Werkzeuge für fundierte Entscheidungen.', popular: 'Meistgenutzte Werkzeuge', all: 'Alle Werkzeuge ansehen', calculators: 'Alle Rechner und Simulatoren', cta: 'Brauchen Sie weitere Hilfe?', ctaText: 'Unsere Ratgeber und Werkzeuge unterstützen Sie bei Ihrem Vorhaben in Marokko.', explore: 'Ratgeber entdecken' },
   ar: { eyebrow: 'أدوات عملية', titleStart: 'أدوات مفيدة لكل مشاريعك في', country: 'المغرب', intro: 'احسب وخطط واعثر بسرعة على المعلومات التي تحتاجها.', search: 'ابحث عن أداة: حاسبة، قائمة تحقق، تقويم…', searchButton: 'ابحث', quick: 'وصول سريع إلى الأدوات', why: 'لماذا تستخدم أدواتنا؟', whyText: 'أدوات عملية ومحدّثة تساعدك على توفير الوقت واتخاذ قرارات مدروسة.', popular: 'الأدوات الأكثر استخدامًا', all: 'عرض جميع الأدوات', calculators: 'جميع الحاسبات والمحاكيات', cta: 'هل تحتاج إلى إرشاد إضافي؟', ctaText: 'تساعدك أدلتنا وأدواتنا في كل مرحلة من مشروعك في المغرب.', explore: 'استكشف الأدلة' },
 }[lang];
+const heroAlt = { fr: 'Mosquée Hassan II au coucher du soleil, Casablanca', en: 'Hassan II Mosque at sunset in Casablanca', es: 'Mezquita Hassan II al atardecer en Casablanca', de: 'Hassan-II.-Moschee bei Sonnenuntergang in Casablanca', ar: 'مسجد الحسن الثاني عند غروب الشمس في الدار البيضاء' }[lang];
 const quickText = {
   fr: [['Tous les outils', 'Explorez tous nos outils pratiques.'], ['Calculateurs', 'Estimez coûts, budgets et investissements.'], ['Checklists', 'Des listes de contrôle prêtes à l’emploi.'], ['Calendrier pratique', 'Les dates et échéances à retenir.'], ['Glossaire', 'Les termes clés expliqués simplement.']],
   en: [['All tools', 'Explore every practical tool.'], ['Calculators', 'Estimate costs, budgets and investments.'], ['Checklists', 'Ready-to-use lists for your plans.'], ['Practical calendar', 'Key dates and deadlines.'], ['Glossary', 'Important terms explained simply.']],
@@ -152,7 +153,7 @@ const popularTools = [
           <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
             <img
               src="/assets/img/dest-casablanca.jpg"
-              alt="Outils et calculateurs pratiques pour le Maroc"
+              alt={heroAlt}
               class="w-full h-full object-cover"
               loading="eager"
             />
