@@ -30,7 +30,7 @@ const shortLabel = {
   demarches: { fr: 'Démarches', en: 'Paperwork', es: 'Trámites', de: 'Formalitäten', ar: 'الإجراءات' },
   invest: { fr: 'Investir', en: 'Invest', es: 'Invertir', de: 'Investieren', ar: 'استثمار' },
   visit: { fr: 'Visiter le Maroc', en: 'Visit Morocco', es: 'Visitar Marruecos', de: 'Marokko besuchen', ar: 'زيارة المغرب' },
-  tools: { fr: 'Outils', en: 'Tools', es: 'Herramientas', de: 'Rechner', ar: 'أدوات' },
+  tools: { fr: 'Outils pratiques', en: 'Tools', es: 'Herramientas', de: 'Rechner', ar: 'أدوات' },
 };
 
 type SubLink = { href: string; label: string };
@@ -197,9 +197,9 @@ const searchHref = hubPath(lang, 'search');
       </div>
 
       <!-- Bouton Mon espace -->
-      <button type="button" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] rounded-full text-xs sm:text-sm font-semibold shadow-sm transition-all" data-notebook-open aria-label={accountHint}>
+      <button type="button" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] rounded-full text-xs sm:text-sm font-semibold shadow-sm transition-all" data-notebook-open aria-label={account} title={accountHint}>
         <Icon name="user" class="size-4 text-[#0d2b24]" />
-        <span>{account}</span>
+        <span class="hidden sm:inline">{account}</span>
       </button>
 
       <!-- Bouton Menu Mobile (Burger) -->
