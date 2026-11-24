@@ -1,5 +1,5 @@
 ---
-/** /<lang>/guides : parcours « Commencer ici », puis tous les guides avec filtre par thème et recherche locale. */
+/** /<lang>/guides : parcours guidés (Je rentre, Mon premier été, Acheter, Visiter) + tous les guides avec filtre par thème et recherche locale. */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import ArticleCard from '../ArticleCard.astro';
@@ -9,111 +9,217 @@ import { CATEGORIES, CATEGORY_ICON } from '../../i18n/categories';
 import { JOURNEYS } from '../../data/journeys';
 import { allLocalesAlternates, allLocalesTargets, categoryPath, entryPath, getActiveCategories, getArticleByKey, getArticles, homePath, hubPath } from '../../utils/i18n';
 import { absoluteUrl, breadcrumbJsonLd, collectionPageJsonLd } from '../../utils/seo';
+
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const articles = await getArticles(lang);
 const cats = await getActiveCategories(lang);
-const norm = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const norm = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const q = (a: (typeof articles)[number]) => norm(`${a.data.title} ${a.data.description} ${a.data.tags.join(' ')}`);
-const journeys = (await Promise.all(JOURNEYS.map(async (j) => ({
-  ...j,
-  guides: (await Promise.all(j.steps.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null),
-})))).filter((j) => j.guides.length >= 2);
+
 const self = (l: Locale) => hubPath(l, 'guides');
 const url = absoluteUrl(self(lang), Astro.site);
 const crumbs = [{ name: t('breadcrumb.home'), href: homePath(lang) }, { name: t('guides.title') }];
-const intro = {
-  fr: ['Préparez votre projet au Maroc.', 'Un retour au pays, un achat, un voyage ? Commencez par ce que vous préparez.', 'Quel sujet vous intéresse ?'],
-  en: ['Plan your next step in Morocco.', 'Returning home, buying a property or planning a trip? Start with your project.', 'What would you like help with?'],
-  es: ['Prepara tu proyecto en Marruecos.', '¿Volver al país, comprar una vivienda o viajar? Empieza por tu proyecto.', '¿Qué tema te interesa?'],
-  de: ['Plane deinen nächsten Schritt in Marokko.', 'Heimkehr, Immobilienkauf oder Reise? Beginne mit deinem Vorhaben.', 'Welches Thema interessiert dich?'],
-  ar: ['حضّر مشروعك في المغرب.', 'عودة إلى البلاد، شراء عقار أم رحلة؟ ابدأ بما تخطّط له.', 'ما الموضوع الذي يهمّك؟'],
-}[lang];
+
+const parcoursCards = [
+  {
+    badge: { fr: 'Retour au pays', en: 'Return Home', es: 'Regreso', de: 'Rückkehr', ar: 'العودة إلى المغرب' }[lang],
+    title: { fr: 'Je rentre au Maroc', en: 'Returning to Morocco', es: 'Vuelvo a Marruecos', de: 'Rückkehr nach Marokko', ar: 'أعود إلى المغرب' }[lang],
+    steps: { fr: '6 étapes', en: '6 steps', es: '6 pasos', de: '6 Schritte', ar: '6 خطوات' }[lang],
+    icon: 'plane' as const,
+    image: '/assets/photos/aeroport-casablanca.jpg',
+    href: hubPath(lang, 'mre'),
+  },
+  {
+    badge: { fr: 'Voyage & été', en: 'Summer & Travel', es: 'Verano y Viaje', de: 'Sommer & Reise', ar: 'الصيف والسفر' }[lang],
+    title: { fr: 'Mon premier été', en: 'My First Summer', es: 'Mi primer verano', de: 'Mein erster Sommer', ar: 'صيفي الأول' }[lang],
+    steps: { fr: '6 étapes', en: '6 steps', es: '6 pasos', de: '6 Schritte', ar: '6 خطوات' }[lang],
+    icon: 'ship' as const,
+    image: '/assets/photos/marhaba-port.jpg',
+    href: categoryPath(lang, 'retour'),
+  },
+  {
+    badge: { fr: 'Immobilier', en: 'Real Estate', es: 'Inmobiliaria', de: 'Immobilien', ar: 'العقار' }[lang],
+    title: { fr: 'Acheter au Maroc', en: 'Buying in Morocco', es: 'Comprar en Marruecos', de: 'Kaufen in Marokko', ar: 'الشراء في المغرب' }[lang],
+    steps: { fr: '5 étapes', en: '5 steps', es: '5 pasos', de: '5 Schritte', ar: '5 خطوات' }[lang],
+    icon: 'home' as const,
+    image: '/assets/img/guide-immo.jpg',
+    href: categoryPath(lang, 'immobilier'),
+  },
+  {
+    badge: { fr: 'Découverte', en: 'Discovery', es: 'Descubrir', de: 'Entdecken', ar: 'اكتشاف' }[lang],
+    title: { fr: 'Visiter le Maroc', en: 'Visit Morocco', es: 'Visitar Marruecos', de: 'Marokko besuchen', ar: 'زيارة المغرب' }[lang],
+    steps: { fr: '6 étapes', en: '6 steps', es: '6 pasos', de: '6 Schritte', ar: '6 خطوات' }[lang],
+    icon: 'mapPin' as const,
+    image: '/assets/img/dest-chefchaouen.jpg',
+    href: hubPath(lang, 'visit'),
+  },
+];
 ---
+
 <BaseLayout lang={lang} title={t('guides.title')} description={t('guides.description')} alternates={allLocalesAlternates(self)} switchTargets={allLocalesTargets(self)}
   jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url }))), collectionPageJsonLd({ url, name: t('guides.title'), description: t('guides.description'), lang, items: articles.map((a) => ({ name: a.data.title, url: absoluteUrl(`/${lang}/${a.data.slug}`, Astro.site) })) })]}>
-  <div data-guides-hub data-lang={lang} data-tpl={t('guides.results')}>
-  <header class="hub-head">
-    <div class="container-page py-9 md:py-14">
-      <Breadcrumbs items={crumbs} lang={lang} />
-      <div class="mt-7 grid items-end gap-8 md:grid-cols-[1.2fr_1fr] md:gap-14">
-        <div>
-          <p class="eyebrow text-[var(--accent)]">{t('category.count', { n: articles.length })}</p>
-          <h1 class="mt-4 max-w-xl">{intro[0]}</h1>
-          <p class="mt-5 max-w-lg text-lg leading-relaxed muted">{intro[1]}</p>
-        </div>
-        <form action="#all-guides" class="card p-6" data-search-form data-js-only hidden>
-          <label for="guides-q" class="block text-lg font-semibold">{intro[2]}</label>
-          <div class="relative mt-4">
-            <Icon name="search" class="pointer-events-none absolute start-4 top-1/2 size-5 -translate-y-1/2 muted" />
-            <input id="guides-q" type="search" aria-label={t('guides.search.label')} autocomplete="off" enterkeyhint="search" placeholder={t('guides.search.placeholder')} class="input ps-12" data-search aria-controls="all-guides" />
-          </div>
-          <button type="submit" class="mt-4 inline-flex min-h-10 items-center gap-3 text-sm font-semibold hover:underline"><span data-search-count>{t('nav.allGuides')}</span><Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></button>
-        </form>
-      </div>
-    </div>
-  </header>
-  <div class="container-page pt-8">
-    <ul class="mb-8 flex flex-wrap gap-3" data-guide-help>
-      <li><a href={hubPath(lang, 'glossary')} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="book" class="size-4" />{t('glossary.title')}</a></li>
-      <li><a href={hubPath(lang, 'calendar')} class="badge badge-navy min-h-10 px-4 text-sm hover:brightness-95"><Icon name="calendar" class="size-4" />{t('calendar.title')}</a></li>
-    </ul>
-    {journeys.length > 0 && (
-      <section aria-labelledby="start-here" data-guided-start>
-        <h2 id="start-here" class="section-title !text-2xl">{t('guides.start.title')}</h2>
-        <p class="mt-2 muted">{t('guides.start.intro')}</p>
-        <ul class="mt-8 grid items-start gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4" data-journeys>
-          {journeys.map((j) => (
-            <li>
-              <details class="border-t-2 border-[var(--text)] pt-4">
-                <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                  <span class="flex items-center justify-between gap-3"><Icon name={j.icon} class="size-6 text-[var(--accent)]" /><Icon name="chevronDown" class="size-4 muted" /></span>
-                  <h3 class="mt-3 text-xl leading-snug">{t(`journey.${j.id}.title` as 'journey.buy.title')}</h3>
-                  <p class="mt-2 text-sm leading-relaxed muted">{t(`journey.${j.id}.desc` as 'journey.buy.desc')}</p>
-                  <p class="mt-4 text-xs font-medium muted">{t('journey.steps', { n: j.guides.length })}</p>
-                </summary>
-              <ol class="mt-4 grid gap-3 border-t border-[var(--line)] pt-4 text-sm">
-                {j.guides.map((a, i) => (
-                  <li class="flex gap-2"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[var(--surface-3)] text-[0.7rem] font-semibold" aria-hidden="true">{i + 1}</span><a href={entryPath(lang, a.data.slug)} class="link min-w-0 [overflow-wrap:anywhere]">{a.data.title}</a></li>
-                ))}
-              </ol>
-              </details>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
 
-    <div class="section !pt-12 scroll-mt-24" id="all-guides">
-      <h2 class="section-title !text-2xl">{t('nav.allGuides')}</h2>
-      <div class="mt-5 grid gap-4">
-        <ul class="flex flex-wrap gap-2" aria-label={t('guides.filter.label')} data-fallback>
-          {cats.map((id) => <li><a href={categoryPath(lang, id)} class="chip"><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</a></li>)}
-        </ul>
-        <div class="flex flex-wrap gap-2" role="group" aria-label={t('guides.filter.label')} data-js-only hidden>
-          <button type="button" class="chip" aria-pressed="true" data-cat="">{t('guides.filter.all')}</button>
-          {cats.map((id) => <button type="button" class="chip" aria-pressed="false" data-cat={id}><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</button>)}
-        </div>
-        <p class="text-sm muted" role="status" aria-live="polite" data-status data-js-only hidden></p>
+  <div class="root-page-shell" data-guides-hub data-lang={lang} data-tpl={t('guides.results')}>
+    <!-- Sous-navigation secondaire Guides -->
+    <div class="bg-[#0a231c] text-white/90 border-b border-white/10">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-11 flex items-center gap-6 text-xs overflow-x-auto whitespace-nowrap">
+        <span class="font-bold text-[#d9a441] uppercase tracking-wider">{t('nav.guides')}</span>
+        <span class="h-3.5 w-px bg-white/20"></span>
+        <a href="#all-guides" class="hover:text-white font-semibold flex items-center gap-1.5 text-white border-b-2 border-[#c05621] h-full"><Icon name="book" class="size-3.5" />{t('nav.allGuides')}</a>
+        <a href={categoryPath(lang, 'retour')} class="hover:text-white flex items-center gap-1.5"><Icon name="plane" class="size-3.5 opacity-70" />Préparer mon retour au Maroc</a>
+        <a href={categoryPath(lang, 'living')} class="hover:text-white flex items-center gap-1.5"><Icon name="home" class="size-3.5 opacity-70" />Vivre au Maroc</a>
+        <a href="#latest" class="hover:text-white flex items-center gap-1.5"><Icon name="clock" class="size-3.5 opacity-70" />Derniers guides</a>
       </div>
-      <p class="card mt-6 p-6 text-center" data-empty hidden>{t('guides.empty')} <button type="button" class="link font-semibold" data-reset>{t('guides.reset')}</button></p>
-      {cats.map((id) => {
-        const list = articles.filter((a) => a.data.category === id);
-        return (
-          <section class="section" aria-labelledby={`cat-${id}`} data-section={id}>
-            <div class="flex flex-wrap items-end justify-between gap-3">
-              <h2 id={`cat-${id}`} class="section-title !text-2xl">{CATEGORIES[id].label[lang]}</h2>
-              <a href={categoryPath(lang, id)} class="btn btn-tertiary">{t('pillar.all')}<Icon name="arrowRight" class="size-4 rtl:-scale-x-100" /></a>
-            </div>
-            <div class="feature-list mt-6">{list.slice(0, 1).map((a) => <div data-guide data-q={q(a)}><ArticleCard article={a} headingLevel="h3" /></div>)}<div class="row-list">{list.slice(1).map((a) => <div data-guide data-q={q(a)}><ArticleCard article={a} size="row" headingLevel="h3" showCategory={false} /></div>)}</div></div>
-          </section>
-        );
-      })}
     </div>
-  </div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+      <div class="mb-4">
+        <Breadcrumbs items={crumbs} lang={lang} />
+      </div>
+
+      <!-- Hero Guides -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
+        <div class="lg:col-span-6 z-10">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">LE MAGAZINE PRATIQUE DU MAROC</span>
+            <span class="w-8 h-px bg-[#c05621]"></span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
+            Préparez votre projet au <span class="text-[#c05621]">Maroc</span>.
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
+            Un retour au pays, un achat, un voyage ? Trouvez les bons repères pour avancer sereinement.
+          </p>
+
+          <form action="#all-guides" class="mt-8 flex items-center bg-white border border-[#eae0d2] rounded-full p-1.5 shadow-md max-w-xl" data-search-form>
+            <Icon name="search" class="size-5 ms-3 text-gray-400 shrink-0" />
+            <input
+              id="guides-q"
+              type="search"
+              aria-label={t('guides.search.label')}
+              autocomplete="off"
+              enterkeyhint="search"
+              placeholder="Rechercher un guide : visa, ferry, impôts..."
+              class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
+              data-search
+              aria-controls="all-guides"
+            />
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label="Rechercher">
+              <Icon name="search" class="size-4" />
+            </button>
+          </form>
+          <p class="mt-2.5 text-xs text-gray-500 ms-2 font-medium" data-search-count>{t('category.count', { n: articles.length })}</p>
+        </div>
+
+        <div class="lg:col-span-6 relative mt-6 lg:mt-0">
+          <div class="brush-hero-media h-[280px] sm:h-[360px] lg:h-[380px] w-full shadow-xl">
+            <img src="/assets/img/hero-rabat.jpg" alt="Rabat et Maroc" class="w-full h-full object-cover" loading="eager" />
+          </div>
+          <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-32 sm:w-44 rotate-[4deg] hidden sm:block">
+            <img src="/assets/img/dest-casablanca.jpg" alt="Casablanca" class="w-full h-24 sm:h-28 object-cover rounded" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 : Par où commencer ? (Parcours guidés) -->
+      <section class="mt-6 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Par où commencer ?</h2>
+        </div>
+        <p class="text-sm text-[#665e52] mb-6 ms-3.5">Des parcours guidés pour chaque projet.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {parcoursCards.map((p) => (
+            <a href={p.href} class="relative h-56 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all group">
+              <img src={p.image} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#09201a]/95 via-[#09201a]/50 to-transparent"></div>
+              <div class="absolute inset-0 p-5 flex flex-col justify-between text-white">
+                <div>
+                  <span class="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20">
+                    <Icon name={p.icon} class="size-3.5 text-[#d9a441]" />
+                    {p.badge}
+                  </span>
+                </div>
+                <div class="flex items-end justify-between gap-2">
+                  <div>
+                    <h3 class="font-serif font-bold text-xl leading-snug">{p.title}</h3>
+                    <span class="text-xs text-white/80 flex items-center gap-1 mt-1">
+                      <Icon name="listChecks" class="size-3.5 text-[#d9a441]" />
+                      {p.steps}
+                    </span>
+                  </div>
+                  <span class="size-8 rounded-full bg-white/15 group-hover:bg-[#c05621] flex items-center justify-center text-white transition-colors shrink-0">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 2 : Explorer tous les guides -->
+      <section class="mt-14 pt-8 border-t border-[#eae0d2]/70 scroll-mt-24" id="all-guides">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Explorer tous les guides</h2>
+          </div>
+          <span class="inline-flex items-center gap-1.5 bg-white border border-[#eae0d2] px-3.5 py-1.5 rounded-full text-xs font-semibold text-gray-700 shadow-sm">
+            <Icon name="book" class="size-3.5 text-[#c05621]" />
+            {articles.length} guides disponibles
+          </span>
+        </div>
+
+        <!-- Filtres par thème -->
+        <div class="mb-6">
+          <ul class="flex flex-wrap gap-2" aria-label={t('guides.filter.label')} data-fallback>
+            {cats.map((id) => <li><a href={categoryPath(lang, id)} class="chip"><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</a></li>)}
+          </ul>
+          <div class="flex flex-wrap gap-2" role="group" aria-label={t('guides.filter.label')} data-js-only hidden>
+            <button type="button" class="chip" aria-pressed="true" data-cat="">{t('guides.filter.all')}</button>
+            {cats.map((id) => <button type="button" class="chip" aria-pressed="false" data-cat={id}><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</button>)}
+          </div>
+          <p class="text-sm muted mt-3" role="status" aria-live="polite" data-status data-js-only hidden></p>
+        </div>
+
+        <p class="card mt-6 p-6 text-center" data-empty hidden>{t('guides.empty')} <button type="button" class="link font-semibold" data-reset>{t('guides.reset')}</button></p>
+
+        <!-- Liste des articles par catégorie -->
+        <div id="latest">
+          {cats.map((id) => {
+            const list = articles.filter((a) => a.data.category === id);
+            return (
+              <section class="mb-12" aria-labelledby={`cat-${id}`} data-section={id}>
+                <div class="flex flex-wrap items-end justify-between gap-3 mb-5 pb-2 border-b border-[#eae0d2]/70">
+                  <h3 id={`cat-${id}`} class="text-xl font-serif font-bold text-[#1a1714] flex items-center gap-2">
+                    <Icon name={CATEGORY_ICON[id]} class="size-5 text-[#c05621]" />
+                    {CATEGORIES[id].label[lang]}
+                  </h3>
+                  <a href={categoryPath(lang, id)} class="text-xs font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
+                    {t('pillar.all')}<Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
+                  </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {list.map((a) => (
+                    <div data-guide data-q={q(a)}>
+                      <ArticleCard article={a} headingLevel="h3" />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      </section>
+
+    </div>
   </div>
 </BaseLayout>
+
 <script>
   // Filtre par thème + recherche locale. Sans JS : liste complète et liens vers les thèmes.
   const root = document.querySelector<HTMLElement>('[data-guides-hub]');
@@ -121,51 +227,61 @@ const intro = {
     const lang = root.dataset.lang || 'fr';
     const tpl = (root.dataset.tpl || '').split('|');
     const order = lang === 'ar' ? ['zero', 'one', 'two', 'few', 'many', 'other'] : ['one', 'other'];
-    const norm = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
-    // Gabarit : ar = zero|one|two|few|many|other ; autres = aucun|one|other.
+    const norm = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
     const msg = (n: number) => {
       if (n === 0) return tpl[0];
       let cat = new Intl.PluralRules(lang).select(n);
       if (!order.includes(cat)) cat = 'other';
       const forms = tpl.slice(1);
-      return (forms[order.indexOf(cat) - (lang === 'ar' ? 1 : 0)] ?? forms[forms.length - 1]).replaceAll('{n}', String(n));
+      const raw = forms[Math.min(order.indexOf(cat), forms.length - 1)] || '';
+      return raw.replace('{n}', String(n));
     };
-    root.querySelectorAll<HTMLElement>('[data-js-only]').forEach((e) => (e.hidden = false));
-    root.querySelector<HTMLElement>('[data-fallback]')!.hidden = true;
-    const q = root.querySelector<HTMLInputElement>('[data-search]')!;
-    const chips = [...root.querySelectorAll<HTMLButtonElement>('button[data-cat]')];
-    const cards = [...root.querySelectorAll<HTMLElement>('[data-guide]')];
+    const input = root.querySelector<HTMLInputElement>('[data-search]');
+    const form = root.querySelector<HTMLFormElement>('[data-search-form]');
+    const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-cat]')];
     const sections = [...root.querySelectorAll<HTMLElement>('[data-section]')];
-    const status = root.querySelector<HTMLElement>('[data-status]')!;
-    const empty = root.querySelector<HTMLElement>('[data-empty]')!;
+    const guides = [...root.querySelectorAll<HTMLElement>('[data-guide]')];
+    const empty = root.querySelector<HTMLElement>('[data-empty]');
+    const status = root.querySelector<HTMLElement>('[data-status]');
+    const count = root.querySelector<HTMLElement>('[data-search-count]');
     let cat = '';
+
+    root.querySelectorAll<HTMLElement>('[data-fallback]').forEach((el) => { el.hidden = true; });
+    root.querySelectorAll<HTMLElement>('[data-js-only]').forEach((el) => { el.hidden = false; });
+
     const apply = () => {
-      const words = norm(q.value).split(/\s+/).filter(Boolean);
-      let shown = 0;
-      cards.forEach((c) => {
-        const inCat = !cat || c.closest<HTMLElement>('[data-section]')?.dataset.section === cat;
-        const ok = inCat && words.every((w) => (c.dataset.q || '').includes(w));
-        c.hidden = !ok;
-        if (ok) shown++;
+      const words = norm(input?.value || '').split(/\s+/).filter(Boolean);
+      let visible = 0;
+      guides.forEach((g) => {
+        const match = !words.length || words.every((w) => (g.dataset.q || '').includes(w));
+        g.hidden = !match;
       });
-      sections.forEach((s) => (s.hidden = !s.querySelector('[data-guide]:not([hidden])')));
-      empty.hidden = shown > 0;
-      status.textContent = msg(shown);
-      const summary = root.querySelector<HTMLElement>('[data-search-count]');
-      if (summary) summary.textContent = msg(shown);
-      root.querySelectorAll<HTMLElement>('[data-guided-start], [data-guide-help]').forEach((el) => { el.hidden = words.length > 0; });
+      sections.forEach((s) => {
+        const okCat = !cat || s.dataset.section === cat;
+        const n = okCat ? s.querySelectorAll('[data-guide]:not([hidden])').length : 0;
+        s.hidden = n === 0;
+        visible += n;
+      });
+      if (empty) empty.hidden = visible > 0;
+      const label = msg(visible);
+      if (status) status.textContent = label;
+      if (count) count.textContent = label;
     };
-    chips.forEach((b) => b.addEventListener('click', () => {
-      cat = b.dataset.cat || '';
-      chips.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+
+    const select = (next: string) => {
+      cat = next;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.cat || '') === cat)));
       apply();
-    }));
-    q.addEventListener('input', apply);
-    root.querySelector('[data-search-form]')?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      root.querySelector('#all-guides')?.scrollIntoView({ block: 'start' });
+    };
+
+    buttons.forEach((b) => b.addEventListener('click', () => select(b.dataset.cat || '')));
+    input?.addEventListener('input', apply);
+    form?.addEventListener('submit', (e) => { e.preventDefault(); apply(); });
+    root.querySelector('[data-reset]')?.addEventListener('click', () => {
+      if (input) input.value = '';
+      select('');
+      input?.focus();
     });
-    root.querySelector('[data-reset]')?.addEventListener('click', () => { q.value = ''; chips[0].click(); q.focus(); });
     apply();
   }
 </script>
