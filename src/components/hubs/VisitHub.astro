@@ -10,6 +10,7 @@ import Icon from '../Icon.astro';
 import { useTranslations, type Locale } from '../../i18n';
 import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, categoryPath, cityPath } from '../../utils/i18n';
 import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+import { cityById } from '../../data/cities';
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -50,14 +51,14 @@ const itineraries = [
     days: { fr: '3 jours', en: '3 days', es: '3 días', de: '3 Tage', ar: '3 أيام' }[lang],
     desc: { fr: 'Souks, palais, jardins et ambiance unique.', en: 'Souks, palaces, gardens and unique vibes.', es: 'Zocos, palacios, jardines y ambiente único.', de: 'Souks, Paläste, Gärten und einmalige Atmosphäre.', ar: 'أسواق وقصور وحدائق وأجواء ساحرة.' }[lang],
     image: '/assets/img/dest-marrakech.jpg',
-    href: cityPath(lang, 'marrakech'),
+    href: cityPath(lang, cityById('marrakech')!.slug[lang]),
   },
   {
     title: { fr: 'Le nord authentique', en: 'The Authentic North', es: 'El norte auténtico', de: 'Der authentische Norden', ar: 'الشمال الأصيل' }[lang],
     days: { fr: '4 jours', en: '4 days', es: '4 días', de: '4 Tage', ar: '4 أيام' }[lang],
     desc: { fr: 'Tanger, Tétouan et Chefchaouen.', en: 'Tangier, Tetouan and Chefchaouen.', es: 'Tánger, Tetuán y Chauen.', de: 'Tanger, Tétouan und Chefchaouen.', ar: 'طنجة وتطوان وشفشاون.' }[lang],
     image: '/assets/img/dest-chefchaouen.jpg',
-    href: cityPath(lang, 'chefchaouen'),
+    href: cityPath(lang, cityById('chefchaouen')!.slug[lang]),
   },
   {
     title: { fr: 'Aventure dans le désert', en: 'Desert Adventure', es: 'Aventura en el desierto', de: 'Wüstenabenteuer', ar: 'مغامرة في الصحراء' }[lang],
@@ -71,7 +72,7 @@ const itineraries = [
     days: { fr: '7 jours', en: '7 days', es: '7 días', de: '7 Tage', ar: '7 أيام' }[lang],
     desc: { fr: 'Villes impériales, montagnes et océan.', en: 'Imperial cities, mountains and ocean.', es: 'Ciudades imperiales, montañas y océano.', de: 'Königsstädte, Berge und Ozean.', ar: 'المدن الإمبراطورية والجبال والمحيط.' }[lang],
     image: '/assets/img/dest-fes.jpg',
-    href: cityPath(lang, 'fes'),
+    href: cityPath(lang, cityById('fes')!.slug[lang]),
   },
 ];
 ---
@@ -145,7 +146,7 @@ const itineraries = [
       </section>
 
       <!-- Section 1 : Explorez le Maroc à votre rythme -->
-      <section class="mt-8 pt-8 border-t border-[#eae0d2]/70">
+      <section id="conseils" class="mt-8 pt-8 border-t border-[#eae0d2]/70">
         <div class="flex items-center gap-2 mb-1">
           <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
           <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">Explorez le Maroc à votre rythme</h2>
@@ -226,7 +227,7 @@ const itineraries = [
       </section>
 
       <!-- Section 2 : Itinéraires & inspirations -->
-      <section class="mt-12 pt-8 border-t border-[#eae0d2]/70">
+      <section id="itineraires" class="mt-12 pt-8 border-t border-[#eae0d2]/70">
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
