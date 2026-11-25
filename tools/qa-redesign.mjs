@@ -20,6 +20,8 @@ for (const [name, path] of [
   ['cities-index', '/fr/villes'],
   ['regions-index', '/fr/regions'],
   ['checklists-index', '/fr/checklists'],
+  ['pillar', '/fr/themes/retour-au-bled'],
+  ['pillar-ar', '/ar/mawadi/al-awda'],
   ['glossary', '/fr/glossaire'],
   ['cities-index-ar', '/ar/mudun'],
   ['guides-ar', '/ar/adilla'],
