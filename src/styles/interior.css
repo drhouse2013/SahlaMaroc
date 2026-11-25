@@ -128,6 +128,7 @@
 .dark .article-meta { border-top-color: #265045; }
 .article-cover { position: relative; border-radius: 20px; border: 0; box-shadow: 0 14px 26px rgb(59 40 21 / .15); overflow: hidden; }
 .article-cover::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(0deg, rgb(2 27 20 / .5), transparent); pointer-events: none; }
+.article-cover--photographic:has(.guide-visual--cover)::after { display: none; }
 .toc-sidebar { position: sticky; top: 90px; padding: 22px 20px; border: 1px solid #ecdcc6; border-radius: 16px; background: #fffaf4; box-shadow: 0 7px 20px rgb(91 63 36 / .1); }
 .toc-sidebar a { color: #4a5850; }
 .toc-sidebar a:hover { color: var(--tpl-terracotta); }

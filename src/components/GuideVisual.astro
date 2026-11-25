@@ -8,8 +8,8 @@ import { placePhoto } from '../utils/photos';
 import { getGuidePhoto } from '../utils/guidePhotos';
 import PhotoCredit from './PhotoCredit.astro';
 
-interface Props { article: CollectionEntry<'articles'>; large?: boolean; eager?: boolean }
-const { article, large = false, eager = false } = Astro.props;
+interface Props { article: CollectionEntry<'articles'>; large?: boolean; eager?: boolean; cover?: boolean }
+const { article, large = false, eager = false, cover = false } = Astro.props;
 const d = article.data;
 const visual = guideVisual(d.translationKey, d.category, d.title);
 const place = visual.destination ? placePhoto('city', visual.destination, d.lang) : null;
@@ -20,7 +20,7 @@ const licenceUrl = photo && 'licenseUrl' in photo && typeof photo.licenseUrl ===
 const photographer = cc ? photo?.credit?.slice(0, cc.index) : photo?.credit;
 const label = { fr: 'Le guide pratique', en: 'The practical guide', es: 'La guía práctica', de: 'Der praktische Guide', ar: 'الدليل العملي' }[d.lang];
 ---
-<div class:list={['guide-visual', large && 'guide-visual--large', photo && 'guide-visual--photo']} data-category={d.category} data-guide-visual={d.translationKey}>
+<div class:list={['guide-visual', large && 'guide-visual--large', photo && 'guide-visual--photo', cover && photo && 'guide-visual--cover']} data-category={d.category} data-guide-visual={d.translationKey}>
   {photo ? (
     <div class="guide-visual__photo"><Image src={photo.src} alt={photo.alt} width={large ? 1400 : 900} widths={large ? [640, 960, 1400] : [360, 640, 900]} sizes={large ? '(min-width: 1280px) 1100px, (min-width: 768px) 90vw, 100vw' : '(min-width: 1024px) 580px, (min-width: 640px) 45vw, 90vw'} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} class="h-full w-full object-cover" /></div>
   ) : (
@@ -30,11 +30,11 @@ const label = { fr: 'Le guide pratique', en: 'The practical guide', es: 'La guí
       <span class="guide-visual__companion"><Icon name={visual.companion} class="size-full" strokeWidth={1.5} /></span>
     </div>
   )}
-  <div class="guide-visual__copy" aria-hidden="true">
+  {(!cover || !photo) && <div class="guide-visual__copy" aria-hidden="true">
     <span class="guide-visual__label">{label}</span>
     <p class="guide-visual__title" dir="auto">{visual.title}</p>
     <span class="guide-visual__category">{CATEGORIES[d.category].label[d.lang]}</span>
-  </div>
+  </div>}
   {photo?.credit && <PhotoCredit lang={d.lang} credit={photo.credit} source={photo.source} label={`© ${photographer}`} class="guide-visual__credit">{licenceUrl && <> · <a href={licenceUrl} target="_blank" rel="noopener noreferrer">{licence}</a></>}</PhotoCredit>}
 </div>
 <style>
@@ -56,6 +56,7 @@ const label = { fr: 'Le guide pratique', en: 'The practical guide', es: 'La guí
   .guide-visual--photo .guide-visual__copy { color: white; width: 100%; padding-block-end: 2.5rem; background: linear-gradient(90deg, rgb(10 24 22 / .88), rgb(10 24 22 / .58)); }
   .guide-visual--photo .guide-visual__title { max-width: 85%; text-shadow: 0 1px 8px rgb(0 0 0 / .2); }
   .guide-visual--photo .guide-visual__label, .guide-visual--photo .guide-visual__category { color: white; }
+  .guide-visual--cover .guide-visual__photo :global(img) { object-position: center; }
   :global([dir="rtl"]) .guide-visual--photo .guide-visual__copy { background: linear-gradient(270deg, rgb(10 24 22 / .88), rgb(10 24 22 / .58)); }
   :global([dir="rtl"]) .guide-visual__title { letter-spacing: 0; }
   @media (prefers-reduced-motion: no-preference) { .guide-visual__symbol { transition: transform .3s ease; } :global(.group:hover) .guide-visual__symbol { transform: rotate(0deg) translateY(-3px); } }
