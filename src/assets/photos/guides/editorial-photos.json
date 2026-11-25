@@ -235,16 +235,16 @@
     }
   },
   "buy-property-abroad": {
-    "file": "villa-majorelle-marrakech-2024.jpg",
-    "credit": "Adrien Casse",
-    "license": "Pexels License",
-    "source": "https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/",
+    "file": "villa-al-maaden-marrakech.jpg",
+    "credit": "Didierlefort",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Al_Maaden_Marrakech_Villa_DL2A.jpg",
     "alt": {
-      "fr": "Villa bleue et cactus du jardin Majorelle à Marrakech, photographiés en 2024",
-      "en": "Blue villa and cacti at Jardin Majorelle in Marrakech, photographed in 2024",
-      "es": "Villa azul y cactus del jardín Majorelle en Marrakech, fotografiados en 2024",
-      "de": "Blaue Villa und Kakteen im Jardin Majorelle in Marrakesch, 2024 fotografiert",
-      "ar": "فيلا زرقاء وصبّار في حديقة ماجوريل بمراكش، صُوّرا سنة 2024"
+      "fr": "Villas élégantes et piscine dans le domaine Al Maaden à Marrakech",
+      "en": "Elegant villas and swimming pool at Al Maaden in Marrakech",
+      "es": "Villas elegantes y piscina en Al Maaden, Marrakech",
+      "de": "Elegante Villen und Pool in Al Maaden, Marrakesch",
+      "ar": "فلل أنيقة ومسبح في المادن بمراكش"
     }
   },
   "import-car-permanent-return": {
