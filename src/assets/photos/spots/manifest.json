@@ -1,4 +1,17 @@
 {
+  "ifrane/centre-ville": {
+    "file": "ifrane-centre-ville-2023.jpg",
+    "alt": {
+      "fr": "Arbres et bâtiments aux toits pentus dans le centre d’Ifrane",
+      "en": "Trees and buildings with steep roofs in central Ifrane",
+      "es": "Árboles y edificios con tejados inclinados en el centro de Ifrane",
+      "de": "Bäume und Gebäude mit steilen Dächern im Zentrum von Ifrane",
+      "ar": "أشجار ومبانٍ بأسقف مائلة في وسط إفران"
+    },
+    "credit": "Mounir Neddi, CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ifrane_city_center.jpg",
+    "focalPoint": [70, 65]
+  },
   "marrakech/jemaa-el-fna": {
     "file": "marrakech-jemaa-el-fna.jpg",
     "alt": {
