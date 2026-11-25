@@ -5,6 +5,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API), Pexels.
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
 | home-hero.jpg | Earth Photart | Pexels License | https://www.pexels.com/photo/sunset-view-of-the-iconic-rabat-skyline-34059520/ |
+| parlement-rabat.jpg | Fernando Pascullo | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Moroccan_Parliament_Building.jpg |
 | home-hero-gate.jpg | Aemazy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_gate.jpg |
 | taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels License | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
 | villa-majorelle-marrakech-2024.jpg | Adrien Casse | Pexels License | https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/ |
