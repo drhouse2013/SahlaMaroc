@@ -134,6 +134,12 @@
 .toc-sidebar a:hover { color: var(--tpl-terracotta); }
 .dark .toc-sidebar { background: #12332b; border-color: #265045; }
 .dark .toc-sidebar a { color: #d3ddca; }
+.article-mobile-toc { border: 1px solid #ecdcc6; border-radius: 14px; background: #fffaf4; }
+.article-mobile-toc summary { cursor: pointer; padding: .9rem 1rem; color: var(--tpl-forest); font-weight: 700; }
+.article-mobile-toc summary:focus-visible { outline: 2px solid var(--tpl-terracotta); outline-offset: 3px; }
+.article-mobile-toc nav a { color: var(--text); }
+.dark .article-mobile-toc { border-color: #265045; background: #12332b; }
+.dark .article-mobile-toc summary { color: #f6efe3; }
 
 /* Corps de texte */
 .prose { --tw-prose-headings: var(--tpl-forest); --tw-prose-links: #a8431f; }

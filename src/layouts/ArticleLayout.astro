@@ -165,10 +165,12 @@ const essentials = {
       )}
 
       {toc.length >= 3 && (
-        <nav class="reveal mt-6 border-b border-[var(--line)] pb-5 text-[0.95rem] lg:hidden" aria-label={t('article.onThisPage')}>
-          <p class="eyebrow muted">{t('article.onThisPage')}</p>
-          <ol class="mt-3 list-decimal space-y-1.5 ps-5 marker:text-[var(--muted)]">{toc.map((h) => <li><a href={`#${h.slug}`} class="hover:underline">{h.text}</a></li>)}</ol>
-        </nav>
+        <details class="article-mobile-toc reveal mt-6 text-[0.95rem] lg:hidden">
+          <summary>{t('article.onThisPage')}</summary>
+          <nav class="px-4 pb-4" aria-label={t('article.onThisPage')}>
+            <ol class="list-decimal space-y-2 ps-5 marker:text-[var(--tpl-terracotta)]">{toc.map((h) => <li><a href={`#${h.slug}`} class="hover:underline">{h.text}</a></li>)}</ol>
+          </nav>
+        </details>
       )}
 
       {checklists.length > 0 && (
