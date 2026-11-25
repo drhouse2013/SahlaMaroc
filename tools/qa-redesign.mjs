@@ -17,6 +17,11 @@ for (const [name, path] of [
   ['article', '/fr/retour-definitif-maroc-mre-guide'],
   ['city', '/fr/villes/marrakech'],
   ['calculator', '/fr/convertisseur-euro-dirham'],
+  ['cities-index', '/fr/villes'],
+  ['regions-index', '/fr/regions'],
+  ['checklists-index', '/fr/checklists'],
+  ['glossary', '/fr/glossaire'],
+  ['cities-index-ar', '/ar/mudun'],
   ['guides-ar', '/ar/adilla'],
   ['demarches-ar', '/ar/ijraat'],
   ['investir-ar', '/ar/al-istithmar-fi-al-maghrib'],
@@ -43,6 +48,13 @@ for (const [name, path] of [
     });
     const response = await page.goto(`http://sahla.local${path}`, { waitUntil: 'networkidle' });
     if (response?.status() !== 200) throw new Error(`${path}: HTTP ${response?.status()}`);
+    const pageHeight = await page.evaluate(() => document.documentElement.scrollHeight);
+    for (let y = 0; y < pageHeight; y += viewport.height) {
+      await page.evaluate(scrollY => window.scrollTo(0, scrollY), y);
+      await page.waitForTimeout(80);
+    }
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(120);
     const title = await page.title();
     const horizontalOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     const broken = await page.locator('img').evaluateAll(images => images.filter(image => image.complete && image.naturalWidth === 0 && image.loading !== 'lazy').map(image => image.getAttribute('src')));
