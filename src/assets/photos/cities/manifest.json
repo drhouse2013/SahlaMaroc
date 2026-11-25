@@ -1,18 +1,18 @@
 {
  "marrakech": {
-  "file": "marrakech-jemaa-night-2026.jpg",
+  "file": "marrakech-koutoubia-2026.jpg",
   "alt": {
-   "fr": "Jemaa el-Fna animée la nuit, avec la Koutoubia illuminée en arrière-plan, Marrakech",
-   "en": "Jemaa el-Fna at night, with the illuminated Koutoubia in the background, Marrakech",
-   "es": "Jemaa el-Fna de noche, con la Kutubía iluminada al fondo, Marrakech",
-   "de": "Jemaa el-Fna bei Nacht mit der beleuchteten Koutoubia im Hintergrund, Marrakesch",
-   "ar": "ساحة جامع الفنا ليلاً وصومعة الكتبية مضاءة في الخلفية، مراكش"
+   "fr": "La Koutoubia et les palmiers au coucher du soleil à Marrakech",
+   "en": "Koutoubia Mosque and palm trees at sunset in Marrakech",
+   "es": "La Kutubía y las palmeras al atardecer en Marrakech",
+   "de": "Koutoubia-Moschee und Palmen bei Sonnenuntergang in Marrakesch",
+   "ar": "صومعة الكتبية والنخيل عند الغروب في مراكش"
   },
-  "credit": "Dahbi fatima zahrae, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Jemaa_el-Fnaa_Square_and_Koutoubia_Minaret_in_Marrakech.jpg",
+  "credit": "Valentin Vesa, Pexels License",
+  "source": "https://www.pexels.com/photo/sunset-at-koutoubia-mosque-in-marrakesh-36595610/",
   "focalPoint": [
    50,
-   62
+    50
   ]
  },
  "casablanca": {
@@ -56,16 +56,16 @@
   "source": "https://commons.wikimedia.org/wiki/File:Panorama_Tanger_Bay_Tangier_Marokko.jpg"
  },
  "fes": {
-  "file": "fes.jpg",
+  "file": "fes-bab-bou-jeloud-2024.jpg",
   "alt": {
-   "fr": "Vue en hauteur sur la médina de Fès el-Bali",
-   "en": "Elevated view of the Fes el-Bali medina",
-   "es": "Vista elevada de la medina de Fez el-Bali",
-   "de": "Blick von oben auf die Medina von Fès el-Bali",
-   "ar": "منظر علوي على مدينة فاس البالي"
+   "fr": "Porte Bab Bou Jeloud et zelliges de la médina de Fès, décembre 2024",
+   "en": "Bab Bou Jeloud gate and tilework in Fes medina, December 2024",
+   "es": "Puerta Bab Bou Jeloud y azulejos de la medina de Fez, diciembre de 2024",
+   "de": "Tor Bab Bou Jeloud und Fliesen der Medina von Fès, Dezember 2024",
+   "ar": "باب بوجلود وزليج مدينة فاس العتيقة، ديسمبر 2024"
   },
-  "credit": "Petar Milošević, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Medina_of_Fes,_Marocco.jpg"
+  "credit": "Jorge Franganillo, CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Fez_Bab_Bou_Jeloud_(54252643270).jpg"
  },
  "essaouira": {
   "file": "essaouira.jpg",
@@ -80,16 +80,17 @@
   "source": "https://commons.wikimedia.org/wiki/File:Essaouira_Ramparts_-_February_2026.jpg"
  },
  "chefchaouen": {
-  "file": "chefchaouen.jpg",
+  "file": "chefchaouen-ruelle-2024.jpg",
   "alt": {
-   "fr": "Chefchaouen et ses maisons bleues au coucher du soleil",
-   "en": "Chefchaouen and its blue houses at sunset",
-   "es": "Chefchaouen y sus casas azules al atardecer",
-   "de": "Chefchaouen mit blauen Häusern bei Sonnenuntergang",
-   "ar": "شفشاون ومنازلها الزرقاء عند الغروب"
+   "fr": "Ruelle bleue décorée de fleurs et d'artisanat à Chefchaouen",
+   "en": "Blue alley decorated with flowers and crafts in Chefchaouen",
+   "es": "Callejón azul decorado con flores y artesanía en Chefchaouen",
+   "de": "Blaue Gasse mit Blumen und Kunsthandwerk in Chefchaouen",
+   "ar": "زقاق أزرق مزين بالزهور والحرف اليدوية في شفشاون"
   },
-  "credit": "Badr Rachadi, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Chefchaouen-blue-city-during-thesunset.jpg"
+  "credit": "Ines Diaz Cervantes, Pexels License",
+  "source": "https://www.pexels.com/photo/vibrant-blue-alley-in-chefchaouen-morocco-28531592/",
+  "focalPoint": [50, 45]
  },
  "taghazout": {
   "file": "taghazout.jpg",
@@ -230,16 +231,16 @@
   "source": "https://commons.wikimedia.org/wiki/File:Agricultural_terraces_in_Anti-Atlas_mountains_near_Tafraoute,_Morocco.jpg"
  },
  "agadir": {
-  "file": "agadir.jpg",
+  "file": "agadir-bay-2025.jpg",
   "alt": {
-   "fr": "Plage d'Agadir et baie vues depuis le sable au petit matin",
-   "en": "Agadir beach and bay seen from the sand in the early morning",
-   "es": "Playa y bahía de Agadir vistas desde la arena a primera hora",
-   "de": "Strand und Bucht von Agadir vom Sand aus am frühen Morgen",
-   "ar": "شاطئ أكادير والخليج من الرمال في الصباح الباكر"
+   "fr": "La plage et la baie d'Agadir vues depuis la kasbah d'Agadir Oufella en 2025",
+   "en": "Agadir beach and bay from the Agadir Oufella kasbah in 2025",
+   "es": "Playa y bahía de Agadir desde la kasbah de Agadir Oufella en 2025",
+   "de": "Strand und Bucht von Agadir von der Kasbah Agadir Oufella, 2025",
+   "ar": "شاطئ أكادير وخليجها من قصبة أكادير أوفلا سنة 2025"
   },
-  "credit": "Francesc Fort, CC BY-SA 4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Wikivibrance_Agadir_5.jpg"
+  "credit": "Abdeaitali, CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Beach_of_Agadir_from_Kasbah_of_Agadir_Oufella.jpg"
  },
  "dakhla": {
   "file": "dakhla.jpg",
