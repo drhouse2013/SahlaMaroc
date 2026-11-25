@@ -58,9 +58,10 @@ for (const [name, path] of [
     const title = await page.title();
     const horizontalOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     const broken = await page.locator('img').evaluateAll(images => images.filter(image => image.complete && image.naturalWidth === 0 && image.loading !== 'lazy').map(image => image.getAttribute('src')));
+    const undersized = await page.locator('img').evaluateAll(images => images.filter(image => image.complete && image.naturalWidth > 0 && image.getBoundingClientRect().width >= 80 && image.naturalWidth < image.getBoundingClientRect().width * .9).map(image => ({ src: image.currentSrc, naturalWidth: image.naturalWidth, displayWidth: Math.round(image.getBoundingClientRect().width) })));
     await page.screenshot({ path: `${out}/${name}-${device}.png`, fullPage: true });
-    console.log(JSON.stringify({ name, device, status: response?.status(), title, horizontalOverflow, brokenCount: broken.length, broken: broken.slice(0, 3) }));
-    if (!title || horizontalOverflow || broken.length) throw new Error(`${name} ${device}: failed visual smoke check`);
+    console.log(JSON.stringify({ name, device, status: response?.status(), title, horizontalOverflow, brokenCount: broken.length, broken: broken.slice(0, 3), undersizedCount: undersized.length, undersized: undersized.slice(0, 3) }));
+    if (!title || horizontalOverflow || broken.length || undersized.length) throw new Error(`${name} ${device}: failed visual smoke check`);
     await page.close();
   }
 }

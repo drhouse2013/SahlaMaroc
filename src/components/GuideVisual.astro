@@ -22,7 +22,7 @@ const label = { fr: 'Le guide pratique', en: 'The practical guide', es: 'La guí
 ---
 <div class:list={['guide-visual', large && 'guide-visual--large', photo && 'guide-visual--photo']} data-category={d.category} data-guide-visual={d.translationKey}>
   {photo ? (
-    <div class="guide-visual__photo"><Image src={photo.src} alt={photo.alt} width={large ? 900 : 640} widths={large ? [480, 900, 1400] : [360, 640, 900]} sizes={large ? '(min-width: 768px) 42vw, 90vw' : '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw'} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} class="h-full w-full object-cover" /></div>
+    <div class="guide-visual__photo"><Image src={photo.src} alt={photo.alt} width={large ? 1400 : 900} widths={large ? [640, 960, 1400] : [360, 640, 900]} sizes={large ? '(min-width: 1280px) 1100px, (min-width: 768px) 90vw, 100vw' : '(min-width: 1024px) 580px, (min-width: 640px) 45vw, 90vw'} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} class="h-full w-full object-cover" /></div>
   ) : (
     <div class="guide-visual__drawing" aria-hidden="true">
       <span class="guide-visual__orbit"></span>
