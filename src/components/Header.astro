@@ -1,171 +1,245 @@
 ---
+import { redesignContentPath } from "../utils/redesignContentPath";
 /**
- * En-tête de la maquette Sahla Maroc : logo horizontal, navigation à sous-menus, recherche,
- * langue, thème et accès au carnet (« Mon espace »).
- * - Desktop (≥ 900 px) : menu complet, sous-menus <details> (fonctionnent sans JavaScript).
- * - Mobile : logo + recherche + menu déroulant (la barre basse reste gérée par MobileNav).
- * - La recherche ouvre la fenêtre instantanée (SearchBox, attribut data-search-open).
+ * En-tête officiel Sahla Maroc / MorokGo
+ * Conforme à la charte graphique : fond vert forêt profond (#0d2b24),
+ * navigation avec icônes et menus déroulants dédiés, pilule terracotta active,
+ * recherche instantanée, sélecteur de langue et bouton « Mon espace ».
  */
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
-import Logo from './Logo.astro';
 import Icon from './Icon.astro';
-import { brandName } from '../utils/seo';
-import { INVEST_HUB } from '../data/paths';
+import { BRAND_CONFIG, getBrandName } from '../config/brand';
 import { useTranslations, type Locale } from '../i18n';
-import { CATEGORIES, CATEGORY_ICON } from '../i18n/categories';
 import { categoryPath, getPageUrl, homePath, hubPath, getActiveCategories, type Alternates } from '../utils/i18n';
+import type { IconName } from '../data/icons';
 
 interface Props { lang: Locale; switchTargets?: Alternates }
 const { lang, switchTargets } = Astro.props;
 const t = useTranslations(lang);
-const brand = brandName(lang);
-const brandTail = brand.split(' ')[1] ?? '';
-const toolUrl = (await getPageUrl(lang, 'calculators')) ?? homePath(lang);
-const cats = await getActiveCategories(lang);
+const brand = getBrandName(lang);
+const toolUrl = (await getPageUrl(lang, 'calculators')) ?? await redesignContentPath(lang, 'calculators');
 const path = Astro.url.pathname;
+
 const account = { fr: 'Mon espace', en: 'My space', es: 'Mi espacio', de: 'Mein Bereich', ar: 'مساحتي' }[lang];
 const accountHint = { fr: 'Ouvrir mon carnet de voyage', en: 'Open my travel notebook', es: 'Abrir mi cuaderno', de: 'Reiseheft öffnen', ar: 'افتح دفتري' }[lang];
-const themeLabel = { fr: 'Thème', en: 'Theme', es: 'Tema', de: 'Design', ar: 'المظهر' }[lang];
-// Libellés courts de navigation (la maquette tient sur une ligne à 1290 px).
+
 const shortLabel = {
+  home: { fr: 'Accueil', en: 'Home', es: 'Inicio', de: 'Startseite', ar: 'الرئيسية' },
+  guides: { fr: 'Guides', en: 'Guides', es: 'Guías', de: 'Ratgeber', ar: 'أدلة' },
   demarches: { fr: 'Démarches', en: 'Paperwork', es: 'Trámites', de: 'Formalitäten', ar: 'الإجراءات' },
   invest: { fr: 'Investir', en: 'Invest', es: 'Invertir', de: 'Investieren', ar: 'استثمار' },
-  tools: { fr: 'Outils', en: 'Tools', es: 'Herramientas', de: 'Rechner', ar: 'أدوات' },
+  visit: { fr: 'Visiter le Maroc', en: 'Visit Morocco', es: 'Visitar Marruecos', de: 'Marokko besuchen', ar: 'زيارة المغرب' },
+  tools: { fr: 'Outils pratiques', en: 'Tools', es: 'Herramientas', de: 'Rechner', ar: 'أدوات' },
 };
 
-// « Démarches » n'existe que si la catégorie a des guides publiés dans cette langue.
-const hasDemarches = cats.includes('demarches');
-const demarchesHref = hasDemarches ? categoryPath(lang, 'demarches') : hubPath(lang, 'mre');
-const demarchesLabel = hasDemarches ? shortLabel.demarches[lang] : t('nav.mre');
-
 type SubLink = { href: string; label: string };
-type NavItem = { href: string; label: string; sub?: SubLink[] };
+type NavItem = { id: string; href: string; label: string; icon: IconName; sub?: SubLink[] };
 
 const navItems: NavItem[] = [
-  { href: homePath(lang), label: t('nav.home') },
   {
+    id: 'home',
+    href: homePath(lang),
+    label: shortLabel.home[lang],
+    icon: 'home',
+  },
+  {
+    id: 'guides',
     href: hubPath(lang, 'guides'),
-    label: t('nav.guides'),
+    label: shortLabel.guides[lang],
+    icon: 'book',
     sub: [
-      { href: hubPath(lang, 'guides'), label: t('nav.allGuides') },
-      ...(cats.includes('retour') ? [{ href: categoryPath(lang, 'retour'), label: CATEGORIES.retour.label[lang] }] : []),
-      ...(cats.includes('immobilier') ? [{ href: categoryPath(lang, 'immobilier'), label: CATEGORIES.immobilier.label[lang] }] : []),
-      ...(cats.includes('tours') ? [{ href: categoryPath(lang, 'tours'), label: CATEGORIES.tours.label[lang] }] : []),
+      { href: hubPath(lang, 'guides'), label: { fr: 'Tous les guides', en: 'All guides', es: 'Todas las guías', de: 'Alle Ratgeber', ar: 'جميع الأدلة' }[lang] },
+      { href: categoryPath(lang, 'retour'), label: { fr: 'Préparer mon retour au Maroc', en: 'Return to Morocco', es: 'Preparar regreso a Marruecos', de: 'Rückkehr nach Marokko', ar: 'التحضير للعودة إلى المغرب' }[lang] },
+      { href: categoryPath(lang, 'living'), label: { fr: 'Vivre au Maroc', en: 'Living in Morocco', es: 'Vivir en Marruecos', de: 'Leben in Marokko', ar: 'العيش في المغرب' }[lang] },
+      { href: `${hubPath(lang, 'guides')}#latest`, label: { fr: 'Derniers guides', en: 'Latest guides', es: 'Últimas guías', de: 'Neueste Ratgeber', ar: 'أحدث الأدلة' }[lang] },
     ],
   },
   {
-    href: demarchesHref,
-    label: demarchesLabel,
+    id: 'demarches',
+    href: hubPath(lang, 'demarches'),
+    label: shortLabel.demarches[lang],
+    icon: 'file',
     sub: [
-      { href: demarchesHref, label: demarchesLabel },
-      ...(cats.includes('arrival') ? [{ href: categoryPath(lang, 'arrival'), label: CATEGORIES.arrival.label[lang] }] : []),
-      { href: hubPath(lang, 'calendar'), label: t('nav.calendar') },
-      { href: hubPath(lang, 'glossary'), label: t('nav.glossary') },
+      { href: hubPath(lang, 'demarches'), label: { fr: 'Toutes les démarches', en: 'All paperwork', es: 'Todos los trámites', de: 'Alle Formalitäten', ar: 'جميع الإجراءات' }[lang] },
+      { href: categoryPath(lang, 'demarches'), label: { fr: 'Documents & état civil', en: 'Documents & civil status', es: 'Documentos y estado civil', de: 'Dokumente & Standesamt', ar: 'الوثائق والحالة المدنية' }[lang] },
+      { href: await redesignContentPath(lang, 'residence-permit'), label: { fr: 'Séjour & visas', en: 'Stay & visas', es: 'Estancia y visados', de: 'Aufenthalt & Visa', ar: 'الإقامة والتأشيرات' }[lang] },
+      { href: await redesignContentPath(lang, 'calc-customs'), label: { fr: 'Douane & véhicule', en: 'Customs & vehicle', es: 'Aduana y vehículos', de: 'Zoll & Fahrzeug', ar: 'الجمارك والسيارات' }[lang] },
+      { href: await redesignContentPath(lang, 'amo-health-return-mre'), label: { fr: 'Santé & protection sociale', en: 'Health & social security', es: 'Salud y protección social', de: 'Gesundheit & Sozialschutz', ar: 'الصحة والحماية الاجتماعية' }[lang] },
+      { href: await redesignContentPath(lang, 'retire-in-morocco'), label: { fr: 'Retraite & pensions', en: 'Retirement & pensions', es: 'Jubilación y pensiones', de: 'Rente & Pensionen', ar: 'التقاعد والمعاشات' }[lang] },
+      { href: await redesignContentPath(lang, 'apostille'), label: { fr: 'Légalisation & procurations', en: 'Legalisation & powers of attorney', es: 'Legalización y poderes', de: 'Beglaubigung & Vollmachten', ar: 'المصادقة والتوكيلات' }[lang] },
     ],
   },
   {
+    id: 'invest',
     href: hubPath(lang, 'invest'),
     label: shortLabel.invest[lang],
+    icon: 'trendingUp',
     sub: [
-      { href: hubPath(lang, 'invest'), label: INVEST_HUB[lang].nav },
-      ...(cats.includes('immobilier') ? [{ href: categoryPath(lang, 'immobilier'), label: CATEGORIES.immobilier.label[lang] }] : []),
-      ...(cats.includes('money') ? [{ href: categoryPath(lang, 'money'), label: CATEGORIES.money.label[lang] }] : []),
+      { href: hubPath(lang, 'invest'), label: { fr: 'Investir au Maroc', en: 'Invest in Morocco', es: 'Invertir en Marruecos', de: 'In Marokko investieren', ar: 'الاستثمار في المغرب' }[lang] },
+      { href: categoryPath(lang, 'immobilier'), label: { fr: 'Immobilier au Maroc', en: 'Property in Morocco', es: 'Inmobiliaria en Marruecos', de: 'Immobilien in Marokko', ar: 'العقار في المغرب' }[lang] },
+      { href: await redesignContentPath(lang, 'business-auto-entrepreneur-mre'), label: { fr: "Création d'entreprise", en: 'Business creation', es: 'Creación de empresas', de: 'Unternehmensgründung', ar: 'إنشاء المقاولات' }[lang] },
+      { href: await redesignContentPath(lang, 'calc-capital-gains'), label: { fr: 'Fiscalité & réglementation', en: 'Tax & regulations', es: 'Fiscalidad y normativa', de: 'Steuern & Vorschriften', ar: 'الضرائب والتنظيم' }[lang] },
+      { href: await redesignContentPath(lang, 'bank-account'), label: { fr: 'Financement & banques', en: 'Finance & banking', es: 'Financiación y banca', de: 'Finanzierung & Banken', ar: 'التمويل والأبناك' }[lang] },
+      { href: `${hubPath(lang, 'invest')}#secteurs`, label: { fr: 'Opportunités & secteurs', en: 'Sectors & opportunities', es: 'Oportunidades y sectores', de: 'Chancen & Branchen', ar: 'الفرص والقطاعات' }[lang] },
     ],
   },
   {
+    id: 'visit',
     href: hubPath(lang, 'visit'),
-    label: t('nav.visit'),
+    label: shortLabel.visit[lang],
+    icon: 'mapPin',
     sub: [
-      { href: hubPath(lang, 'visit'), label: t('nav.visit') },
-      { href: hubPath(lang, 'cities'), label: t('nav.cities') },
-      { href: hubPath(lang, 'regions'), label: t('nav.regions') },
+      { href: hubPath(lang, 'visit'), label: { fr: 'Visiter le Maroc', en: 'Visit Morocco', es: 'Visitar Marruecos', de: 'Marokko besuchen', ar: 'زيارة المغرب' }[lang] },
+      { href: hubPath(lang, 'cities'), label: { fr: 'Destinations & villes', en: 'Destinations & cities', es: 'Destinos y ciudades', de: 'Reiseziele & Städte', ar: 'الوجهات والمدن' }[lang] },
+      { href: hubPath(lang, 'regions'), label: { fr: 'Régions', en: 'Regions', es: 'Regiones', de: 'Regionen', ar: 'الجهات' }[lang] },
+      { href: categoryPath(lang, 'stay'), label: { fr: 'Hébergements', en: 'Accommodations', es: 'Alojamientos', de: 'Unterkünfte', ar: 'الإقامة والسكن' }[lang] },
+      { href: categoryPath(lang, 'arrival'), label: { fr: 'Transport & accès', en: 'Transport & access', es: 'Transporte y accesos', de: 'Transport & Anreise', ar: 'النقل والوصول' }[lang] },
+      { href: categoryPath(lang, 'tours'), label: { fr: 'Activités & excursions', en: 'Activities & tours', es: 'Actividades y excursiones', de: 'Aktivitäten & Touren', ar: 'الأنشطة والرحلات' }[lang] },
+      { href: await redesignContentPath(lang, 'etiquette'), label: { fr: 'Culture & patrimoine', en: 'Culture & heritage', es: 'Cultura y patrimonio', de: 'Kultur & Erbe', ar: 'الثقافة والتراث' }[lang] },
+      { href: await redesignContentPath(lang, 'moroccan-food'), label: { fr: 'Gastronomie', en: 'Gastronomy', es: 'Gastronomía', de: 'Gastronomie', ar: 'فن الطبخ' }[lang] },
+      { href: `${hubPath(lang, 'visit')}#itineraires`, label: { fr: 'Itinéraires & circuits', en: 'Itineraries & routes', es: 'Itinerarios y rutas', de: 'Routen & Rundreisen', ar: 'المسارات والجولات' }[lang] },
+      { href: `${hubPath(lang, 'visit')}#conseils`, label: { fr: 'Conseils pratiques', en: 'Practical advice', es: 'Consejos prácticos', de: 'Praktische Tipps', ar: 'نصائح عملية' }[lang] },
     ],
   },
   {
+    id: 'tools',
     href: toolUrl,
     label: shortLabel.tools[lang],
+    icon: 'grid',
     sub: [
-      { href: toolUrl, label: t('nav.tools') },
-      { href: hubPath(lang, 'checklists'), label: t('nav.checklists') },
-      { href: hubPath(lang, 'search'), label: t('nav.search') },
-      { href: hubPath(lang, 'news'), label: t('nav.news') },
+      { href: toolUrl, label: { fr: 'Tous les outils', en: 'All tools', es: 'Todas las herramientas', de: 'Alle Werkzeuge', ar: 'جميع الأدوات' }[lang] },
+      { href: `${toolUrl}#calculateurs`, label: { fr: 'Calculateurs', en: 'Calculators', es: 'Calculadoras', de: 'Rechner', ar: 'الحاسبات' }[lang] },
+      { href: hubPath(lang, 'checklists'), label: { fr: 'Checklists', en: 'Checklists', es: 'Listas de control', de: 'Checklisten', ar: 'قوائم التحقق' }[lang] },
+      { href: hubPath(lang, 'calendar'), label: { fr: 'Calendrier pratique', en: 'Calendar', es: 'Calendario práctico', de: 'Kalender', ar: 'التقويم الإداري' }[lang] },
+      { href: hubPath(lang, 'glossary'), label: { fr: 'Glossaire', en: 'Glossary', es: 'Glosario', de: 'Glossar', ar: 'المعجم' }[lang] },
     ],
   },
 ];
+
+const isItemActive = (id: string, href: string) => {
+  if (id === 'home') return path === href || path === `/${lang}` || path === `/${lang}/`;
+  if (id === 'guides') return path.includes('/guides');
+  if (id === 'demarches') return path.includes('/demarches') || path.includes('/procedures') || path.includes('/tramites') || path.includes('/formalitaeten') || path.includes('/ijraat');
+  if (id === 'invest') return path.includes('/investir') || path.includes('/invest') || path.includes('/invertir') || path.includes('/al-istithmar');
+  if (id === 'visit') return path.includes('/visiter') || path.includes('/visit') || path.includes('/visitar') || path.includes('/besuchen') || path.includes('/ziyarat') || path.includes('/villes') || path.includes('/cities') || path.includes('/regions');
+  if (id === 'tools') return path.includes('/calculat') || path.includes('/outils') || path.includes('/tools') || path.includes('/checklists') || path.includes('/glossaire') || path.includes('/calendrier') || path.includes('/qawaim');
+  return path === href || path.startsWith(href + '/');
+};
+
 const searchHref = hubPath(lang, 'search');
-const isCurrent = (href: string) => path === href || (href !== homePath(lang) && path.startsWith(href + '/'));
-const isFrench = lang === 'fr';
 ---
 
-<header class="tpl-header">
-  <div class="tpl-header__inner">
-    <a href={homePath(lang)} class="tpl-brand" aria-label={`${brand} — ${t('nav.home')}`}>
-      {isFrench ? (
-        <>
-          <img class="logo-light" src="/assets/logos/logo-horizontal-clair.svg" alt={brand} width="435" height="92" loading="eager" />
-          <img class="logo-dark" src="/assets/logos/logo-horizontal-sombre.svg" alt={brand} width="435" height="92" loading="eager" />
-        </>
-      ) : (
-        <span class="tpl-brand__fallback">
-          <Logo class="h-9 w-8" />
-          <span dir="ltr">Sahla <span class="italic">{brandTail}</span></span>
-        </span>
-      )}
-    </a>
-    <div class="tpl-header__divider" aria-hidden="true"></div>
+<header class="sticky top-0 z-50 bg-[#0d2b24] text-white border-b border-white/10 shadow-md">
+  <div class="max-w-[1440px] mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
 
-    <nav class="tpl-nav" aria-label={t('nav.main')}>
-      {navItems.map((item) => (
-        item.sub ? (
-          <details class="tpl-nav__item" data-nav-menu>
-            <summary class="tpl-nav__link" aria-current={isCurrent(item.href) ? 'page' : item.sub.some((s) => isCurrent(s.href)) ? 'location' : undefined}>
-              {item.label}
-              <Icon name="chevronDown" class="size-3.5 tpl-nav__chev" />
+    <!-- Logo & Marque -->
+    <div class="flex items-center gap-3">
+      <a href={homePath(lang)} class="flex items-center gap-2.5 text-white no-underline group shrink-0" aria-label={`${brand} — ${t('nav.home')}`}>
+        <svg viewBox="0 0 40 40" class="size-7 sm:size-8 shrink-0 text-[#d9a441]" fill="none" stroke="currentColor">
+          <!-- Étoile géométrique octagramme marocaine -->
+          <polygon points="20,2 25,14 38,15 28,24 31,37 20,29 9,37 12,24 2,15 15,14" fill="#c05621" stroke="#d9a441" stroke-width="1.5" />
+          <polygon points="20,7 23,15 32,16 25,22 27,31 20,26 13,31 15,22 8,16 17,15" fill="#0d2b24" stroke="#d9a441" stroke-width="1" />
+          <circle cx="20" cy="20" r="3" fill="#d9a441" />
+        </svg>
+        <span class="text-lg sm:text-xl font-bold tracking-tight text-white font-serif">
+          Sahla<span class="text-[#c05621] ml-1">Maroc</span>
+        </span>
+      </a>
+      <span class="h-6 w-px bg-white/20 hidden xl:block mx-2" aria-hidden="true"></span>
+    </div>
+
+    <!-- Navigation Principale (Desktop) -->
+    <nav class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-sm" aria-label={t('nav.main')}>
+      {navItems.map((item) => {
+        const active = isItemActive(item.id, item.href);
+        return item.sub ? (
+          <details class="relative group" data-nav-menu>
+            <summary class:list={[
+              "cursor-pointer list-none flex items-center gap-1.5 py-1.5 px-3 rounded-full transition-all text-xs xl:text-sm font-medium select-none [&::-webkit-details-marker]:hidden",
+              active ? "bg-[#c05621] text-white shadow-sm font-semibold" : "text-white/90 hover:text-white hover:bg-white/10"
+            ]}>
+              <Icon name={item.icon} class="size-4 shrink-0" />
+              <span>{item.label}</span>
+              <Icon name="chevronDown" class="size-3 transition group-open:rotate-180 opacity-70" />
             </summary>
-            <div class="tpl-nav__menu">{item.sub.map((s) => <a href={s.href}>{s.label}</a>)}{item.href === toolUrl && <div class="tpl-menu-theme"><ThemeToggle lang={lang} /></div>}</div>
+            <div class="absolute start-0 top-full mt-2 w-64 rounded-xl bg-white text-gray-900 shadow-2xl border border-[#ede3d5] py-2 z-50 flex flex-col gap-0.5">
+              {item.sub.map((s) => (
+                <a href={s.href} class="px-4 py-2 hover:bg-[#fbf5ec] hover:text-[#c05621] text-xs xl:text-sm font-medium text-gray-800 transition-colors flex items-center justify-between">
+                  <span>{s.label}</span>
+                  <Icon name="arrowRight" class="size-3 opacity-40 rtl:-scale-x-100" />
+                </a>
+              ))}
+            </div>
           </details>
         ) : (
-          <a class="tpl-nav__item tpl-nav__link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
-        )
-      ))}
+          <a href={item.href} class:list={[
+            "flex items-center gap-1.5 py-1.5 px-3 rounded-full transition-all text-xs xl:text-sm font-medium select-none",
+            active ? "bg-[#c05621] text-white shadow-sm font-semibold" : "text-white/90 hover:text-white hover:bg-white/10"
+          ]}>
+            <Icon name={item.icon} class="size-4 shrink-0" />
+            <span>{item.label}</span>
+          </a>
+        );
+      })}
     </nav>
 
-    <div class="tpl-controls">
-      <a href={searchHref} data-search-open class="tpl-iconbtn" aria-label={t('nav.search')}><Icon name="search" class="size-5" /></a>
-      <div class="tpl-lang-wrap"><LanguageSwitcher lang={lang} targets={switchTargets ?? {}} /></div>
-      <button type="button" class="tpl-iconbtn tpl-theme" data-theme-cycle aria-label={themeLabel}>
-        <Icon name="sun" class="size-4 tpl-theme__sun" /><Icon name="moon" class="size-4 tpl-theme__moon" />
+    <!-- Contrôles droits : Recherche, Langue, Espace, Mobile Burger -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Bouton Recherche globale -->
+      <a href={searchHref} data-search-open class="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" aria-label={t('nav.search')}>
+        <Icon name="search" class="size-4 sm:size-5" />
+      </a>
+
+      <!-- Sélecteur de langue -->
+      <div class="text-white">
+        <LanguageSwitcher lang={lang} targets={switchTargets ?? {}} />
+      </div>
+
+      <!-- Bouton Mon espace -->
+      <button type="button" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] rounded-full text-xs sm:text-sm font-semibold shadow-sm transition-all" data-notebook-open aria-label={account} title={accountHint}>
+        <Icon name="user" class="size-4 text-[#0d2b24]" />
+        <span class="hidden sm:inline">{account}</span>
       </button>
-      <button type="button" class="tpl-account" data-notebook-open aria-label={accountHint}>
-        <Icon name="userRound" class="size-4" /><span>{account}</span>
-      </button>
-      <details class="tpl-burger-wrap" data-nav-menu>
-        <summary class="tpl-burger" aria-label={t('nav.menu')}><Icon name="menu" class="size-6" /></summary>
-        <div class="tpl-nav__menu tpl-nav__menu--mobile">
-          <p class="tpl-nav__mobile-title">{t('nav.main')}</p>
+
+      <!-- Bouton Menu Mobile (Burger) -->
+      <details class="lg:hidden relative" data-nav-menu>
+        <summary class="p-2 text-white/90 hover:text-white rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden" aria-label={t('nav.menu')}>
+          <Icon name="menu" class="size-6" />
+        </summary>
+        <div class="absolute end-0 top-full mt-2 w-72 rounded-xl bg-[#0a251f] border border-white/15 p-4 shadow-2xl text-white z-50 flex flex-col gap-2">
+          <p class="text-xs uppercase tracking-wider text-[#d9a441] font-bold px-2 mb-1">{t('nav.main')}</p>
           {navItems.map((item) => (
-            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : item.sub?.some((s) => isCurrent(s.href)) ? 'location' : undefined}>{item.label}</a>
+            <div>
+              <a href={item.href} class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 text-sm font-medium">
+                <Icon name={item.icon} class="size-4 text-[#d9a441]" />
+                <span>{item.label}</span>
+              </a>
+              {item.sub && (
+                <div class="ms-6 border-s border-white/10 ps-2 flex flex-col gap-1 mt-1">
+                  {item.sub.map((s) => (
+                    <a href={s.href} class="px-2 py-1 text-xs text-white/75 hover:text-white hover:underline">
+                      {s.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
-          <hr />
-          {cats.map((id) => (
-            <a href={categoryPath(lang, id)}><Icon name={CATEGORY_ICON[id]} class="size-4" />{CATEGORIES[id].label[lang]}</a>
-          ))}
-          <hr />
-          <a href={hubPath(lang, 'checklists')}>{t('nav.checklists')}</a>
-          <a href={hubPath(lang, 'glossary')}>{t('nav.glossary')}</a>
-          <a href={hubPath(lang, 'calendar')}>{t('nav.calendar')}</a>
-          <a href={hubPath(lang, 'news')}>{t('nav.news')}</a>
-          <div class="tpl-nav__mobile-theme"><ThemeToggle lang={lang} row /></div>
+          <div class="pt-3 border-t border-white/10 mt-2 flex items-center justify-between px-2">
+            <span class="text-xs text-white/70">Mode</span>
+            <ThemeToggle lang={lang} row />
+          </div>
         </div>
       </details>
+
     </div>
   </div>
 </header>
 
 <script>
-  // Menus <details> : un seul ouvert à la fois, fermeture au clic extérieur et à Échap.
-  const menus = Array.from(document.querySelectorAll<HTMLDetailsElement>('details[data-nav-menu], details[data-lang-switcher]'));
+  // Gestion accessible des menus <details> : fermeture au clic extérieur et touche Échap
+  const menus = Array.from(document.querySelectorAll<HTMLDetailsElement>('header details[data-nav-menu], header details[data-lang-switcher]'));
   menus.forEach((m) => m.addEventListener('toggle', () => { if (m.open) menus.forEach((o) => o !== m && (o.open = false)); }));
   document.addEventListener('click', (e) => menus.forEach((m) => { if (m.open && !m.contains(e.target as Node)) m.open = false; }));
   document.addEventListener('keydown', (e) => {
@@ -173,7 +247,7 @@ const isFrench = lang === 'fr';
     menus.forEach((m) => { if (m.open) { m.open = false; m.querySelector('summary')?.focus(); } });
   });
 
-  // « Mon espace » ouvre le carnet de voyage (composant TravelNotebook).
+  // Bouton « Mon espace » ouvrant le carnet
   document.querySelectorAll('[data-notebook-open]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const notebook = document.querySelector<HTMLDetailsElement>('details[data-notebook]');
@@ -181,17 +255,6 @@ const isFrench = lang === 'fr';
       notebook.open = true;
       notebook.scrollIntoView({ block: 'nearest' });
       notebook.querySelector<HTMLElement>('summary')?.focus();
-    });
-  });
-
-  // Bouton thème compact : système → clair → sombre (le select complet reste dans le menu mobile).
-  document.querySelectorAll<HTMLButtonElement>('[data-theme-cycle]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const order = ['system', 'light', 'dark'] as const;
-      const current = document.documentElement.dataset.themePreference ?? 'system';
-      const next = order[(order.indexOf(current as (typeof order)[number]) + 1) % order.length];
-      btn.dataset.themeNext = next;
-      document.dispatchEvent(new CustomEvent('sahla:theme-change', { detail: next }));
     });
   });
 </script>

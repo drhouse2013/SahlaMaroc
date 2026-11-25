@@ -43,6 +43,10 @@ import GlossaryHub from '../../components/hubs/GlossaryHub.astro';
 import CalendarHub from '../../components/hubs/CalendarHub.astro';
 import SearchPage from '../../components/hubs/SearchPage.astro';
 import AudienceHub from '../../components/hubs/AudienceHub.astro';
+import VisitHub from '../../components/hubs/VisitHub.astro';
+import DemarchesHub from '../../components/hubs/DemarchesHub.astro';
+import InvestHub from '../../components/hubs/InvestHub.astro';
+import ToolsHub from '../../components/hubs/ToolsHub.astro';
 import { HUB_SLUGS, LOCALES, type HubId, type Locale } from '../../i18n';
 import { assertUniqueSlugs, getArticles, getEntryAlternates, getEntrySwitchTargets, getPages, type Entry } from '../../utils/i18n';
 import { readingTime } from '../../utils/date';
@@ -89,6 +93,7 @@ if (entry?.collection === 'articles') {
 {
   !entry ? (
     hub === 'guides' ? <GuidesHub lang={lang} /> :
+    hub === 'demarches' ? <DemarchesHub lang={lang} /> :
     hub === 'cities' ? <CitiesHub lang={lang} /> :
     hub === 'regions' ? <RegionsHub lang={lang} /> :
     hub === 'checklists' ? <ChecklistsHub lang={lang} /> :
@@ -96,7 +101,11 @@ if (entry?.collection === 'articles') {
     hub === 'glossary' ? <GlossaryHub lang={lang} /> :
     hub === 'calendar' ? <CalendarHub lang={lang} /> :
     hub === 'search' ? <SearchPage lang={lang} /> :
-    <AudienceHub lang={lang} hub={hub as 'mre' | 'invest' | 'visit'} />
+    hub === 'visit' ? <VisitHub lang={lang} /> :
+    hub === 'invest' ? <InvestHub lang={lang} /> :
+    <AudienceHub lang={lang} hub={hub as 'mre'} />
+  ) : entry.data.translationKey === 'calculators' ? (
+    <ToolsHub lang={lang} />
   ) : entry.collection === 'articles' ? (
     <ArticleLayout entry={entry} alternates={alternates} switchTargets={switchTargets} headings={headings} minutes={readingTime(entry.body)} related={related}>
       {Content && <Content components={components} />}

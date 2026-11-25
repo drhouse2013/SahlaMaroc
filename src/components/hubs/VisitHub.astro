@@ -1,0 +1,312 @@
+---
+import { redesignContentPath } from "../../utils/redesignContentPath";
+/**
+ * Page officielle « Visiter le Maroc »
+ * Reproduction fidèle de la maquette de référence 05 — Visiter le Maroc
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Icon from '../Icon.astro';
+import PhotoCredit from '../PhotoCredit.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, categoryPath, cityPath } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+import { cityById } from '../../data/cities';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const copy = {
+  fr: { eyebrow: 'Visiter le Maroc', titleStart: 'Découvrez le', country: 'Maroc', titleEnd: ', entre authenticité et diversité.', intro: 'Villes impériales, plages, montagnes, désert, culture et gastronomie… Préparez votre voyage et vivez une expérience inoubliable.', search: 'Rechercher une destination, une activité, un hébergement…', searchButton: 'Lancer la recherche', explore: 'Explorez le Maroc à votre rythme', exploreText: 'Toutes les clés pour organiser, découvrir et profiter pleinement de votre voyage.', region: 'Explorez le Maroc par région', regionText: "Du littoral atlantique aux montagnes de l’Atlas, découvrez la richesse de chaque région.", regions: 'Voir les régions', advice: 'Conseils pratiques', itineraries: 'Itinéraires & inspirations', allItineraries: 'Voir tous les itinéraires', cta: 'Prêt à découvrir le Maroc ?', ctaText: 'Nos guides, itinéraires et conseils vous accompagnent à chaque étape de votre voyage.', start: 'Commencer mon voyage' },
+  en: { eyebrow: 'Visit Morocco', titleStart: 'Discover', country: 'Morocco', titleEnd: ', from living traditions to varied landscapes.', intro: 'Imperial cities, beaches, mountains, desert, culture and food. Plan your trip and make the most of your stay.', search: 'Search a destination, activity or place to stay…', searchButton: 'Search', explore: 'Explore Morocco your way', exploreText: 'Everything you need to plan, discover and enjoy your trip.', region: 'Explore Morocco by region', regionText: 'From the Atlantic coast to the Atlas Mountains, discover what makes each region distinct.', regions: 'See the regions', advice: 'Practical advice', itineraries: 'Itineraries & inspiration', allItineraries: 'See all itineraries', cta: 'Ready to explore Morocco?', ctaText: 'Our guides, routes and advice help you at every stage of your journey.', start: 'Plan my trip' },
+  es: { eyebrow: 'Visitar Marruecos', titleStart: 'Descubre', country: 'Marruecos', titleEnd: ', entre autenticidad y diversidad.', intro: 'Ciudades imperiales, playas, montañas, desierto, cultura y gastronomía. Prepara tu viaje y disfruta de cada etapa.', search: 'Buscar un destino, una actividad o alojamiento…', searchButton: 'Buscar', explore: 'Explora Marruecos a tu ritmo', exploreText: 'Todo lo necesario para organizar y disfrutar de tu viaje.', region: 'Explora Marruecos por región', regionText: 'De la costa atlántica al Atlas, descubre la riqueza de cada región.', regions: 'Ver las regiones', advice: 'Consejos prácticos', itineraries: 'Rutas e inspiración', allItineraries: 'Ver todas las rutas', cta: '¿Listo para descubrir Marruecos?', ctaText: 'Nuestras guías, rutas y consejos te acompañan durante todo el viaje.', start: 'Empezar mi viaje' },
+  de: { eyebrow: 'Marokko besuchen', titleStart: 'Entdecken Sie', country: 'Marokko', titleEnd: ' mit all seinen Facetten.', intro: 'Königsstädte, Strände, Berge, Wüste, Kultur und Küche. Planen Sie Ihre Reise und genießen Sie jeden Abschnitt.', search: 'Reiseziel, Aktivität oder Unterkunft suchen…', searchButton: 'Suchen', explore: 'Marokko in Ihrem Tempo entdecken', exploreText: 'Alles, was Sie für Planung und Reise brauchen.', region: 'Marokko nach Regionen entdecken', regionText: 'Von der Atlantikküste bis zum Atlasgebirge: Jede Region hat ihren eigenen Charakter.', regions: 'Regionen ansehen', advice: 'Praktische Tipps', itineraries: 'Routen & Inspiration', allItineraries: 'Alle Routen ansehen', cta: 'Bereit, Marokko zu entdecken?', ctaText: 'Unsere Ratgeber, Routen und Tipps begleiten Sie auf Ihrer Reise.', start: 'Reise planen' },
+  ar: { eyebrow: 'زيارة المغرب', titleStart: 'اكتشف', country: 'المغرب', titleEnd: '، بتنوعه وأصالته.', intro: 'مدن عريقة وشواطئ وجبال وصحراء وثقافة ومطبخ متنوع. خطط لرحلتك واستمتع بكل مرحلة.', search: 'ابحث عن وجهة أو نشاط أو مكان للإقامة…', searchButton: 'ابحث', explore: 'اكتشف المغرب على طريقتك', exploreText: 'كل ما تحتاجه لتنظيم رحلتك والاستمتاع بها.', region: 'اكتشف المغرب حسب الجهة', regionText: 'من ساحل الأطلسي إلى جبال الأطلس، تعرّف على ما يميز كل جهة.', regions: 'عرض الجهات', advice: 'نصائح عملية', itineraries: 'مسارات وأفكار للسفر', allItineraries: 'عرض جميع المسارات', cta: 'هل أنت مستعد لاكتشاف المغرب؟', ctaText: 'ترافقك أدلتنا ومساراتنا ونصائحنا في كل مرحلة من رحلتك.', start: 'ابدأ التخطيط لرحلتي' },
+}[lang];
+const heroAlt = { fr: 'Kasbah de Taourirt et palmeraie à Ouarzazate', en: 'Taourirt Kasbah and palm grove in Ouarzazate', es: 'Kasba de Taourirt y palmeral de Uarzazat', de: 'Kasbah Taourirt und Palmenhain in Ouarzazate', ar: 'قصبة تاوريرت وواحة النخيل في ورزازات' }[lang];
+
+const self = (l: Locale) => hubPath(l, 'visit');
+const url = absoluteUrl(self(lang), Astro.site);
+const crumbs = [
+  { name: t('breadcrumb.home'), href: homePath(lang) },
+  { name: { fr: 'Visiter le Maroc', en: 'Visit Morocco', es: 'Visitar Marruecos', de: 'Marokko besuchen', ar: 'زيارة المغرب' }[lang] }
+];
+
+const categories = [
+  { label: { fr: 'Visiter le Maroc', en: 'Visit Morocco', es: 'Visitar Marruecos', de: 'Marokko besuchen', ar: 'زيارة المغرب' }[lang], icon: 'compass' as const, href: hubPath(lang, 'visit') },
+  { label: { fr: 'Destinations & villes', en: 'Destinations & cities', es: 'Destinos y ciudades', de: 'Reiseziele & Städte', ar: 'الوجهات والمدن' }[lang], icon: 'building' as const, href: hubPath(lang, 'cities') },
+  { label: { fr: 'Régions', en: 'Regions', es: 'Regiones', de: 'Regionen', ar: 'الجهات' }[lang], icon: 'mountain' as const, href: hubPath(lang, 'regions') },
+  { label: { fr: 'Hébergements', en: 'Accommodations', es: 'Alojamientos', de: 'Unterkünfte', ar: 'الإقامة والسكن' }[lang], icon: 'bed' as const, href: categoryPath(lang, 'stay') },
+  { label: { fr: 'Transport & accès', en: 'Transport & access', es: 'Transporte y accesos', de: 'Transport & Anreise', ar: 'النقل والوصول' }[lang], icon: 'car' as const, href: categoryPath(lang, 'arrival') },
+  { label: { fr: 'Activités & excursions', en: 'Activities & tours', es: 'Actividades y excursiones', de: 'Aktivitäten & Touren', ar: 'الأنشطة والرحلات' }[lang], icon: 'camera' as const, href: categoryPath(lang, 'tours') },
+  { label: { fr: 'Culture & patrimoine', en: 'Culture & heritage', es: 'Cultura y patrimonio', de: 'Kultur & Erbe', ar: 'الثقافة والتراث' }[lang], icon: 'landmark' as const, href: await redesignContentPath(lang, 'etiquette') },
+  { label: { fr: 'Gastronomie', en: 'Gastronomy', es: 'Gastronomía', de: 'Gastronomie', ar: 'فن الطبخ' }[lang], icon: 'utensils' as const, href: await redesignContentPath(lang, 'moroccan-food') },
+  { label: { fr: 'Itinéraires & circuits', en: 'Itineraries & routes', es: 'Itinerarios y rutas', de: 'Routen & Rundreisen', ar: 'المسارات والجولات' }[lang], icon: 'route' as const, href: `${hubPath(lang, 'visit')}#itineraires` },
+  { label: { fr: 'Conseils pratiques', en: 'Practical advice', es: 'Consejos prácticos', de: 'Praktische Tipps', ar: 'نصائح عملية' }[lang], icon: 'lightbulb' as const, href: `${hubPath(lang, 'visit')}#conseils` },
+];
+
+const adviceItems = [
+  { label: { fr: 'Meilleure période pour voyager', en: 'Best time to travel', es: 'Mejor época para viajar', de: 'Beste Reisezeit', ar: 'أفضل فترة للسفر' }[lang], href: hubPath(lang, 'regions'), icon: 'calendar' as const },
+  { label: { fr: 'Formalités & documents', en: 'Formalities & documents', es: 'Trámites y documentos', de: 'Formalitäten & Dokumente', ar: 'الإجراءات والوثائق' }[lang], href: await redesignContentPath(lang, 'residence-permit'), icon: 'file' as const },
+  { label: { fr: 'Sécurité & santé', en: 'Safety & health', es: 'Seguridad y salud', de: 'Sicherheit & Gesundheit', ar: 'الأمان والصحة' }[lang], href: await redesignContentPath(lang, 'health-travellers'), icon: 'shield' as const },
+  { label: { fr: 'Budget & coût de la vie', en: 'Budget & cost of living', es: 'Presupuesto y coste de vida', de: 'Budget & Lebenshaltungskosten', ar: 'الميزانية وتكلفة المعيشة' }[lang], href: await redesignContentPath(lang, 'calc-city-costs'), icon: 'coins' as const },
+  { label: { fr: 'Internet & communication', en: 'Internet & communication', es: 'Internet y comunicación', de: 'Internet & Mobilfunk', ar: 'الإنترنت والاتصالات' }[lang], href: await redesignContentPath(lang, 'sim-esim-morocco'), icon: 'wifi' as const },
+  { label: { fr: 'Météo par région', en: 'Weather by region', es: 'Clima por región', de: 'Wetter nach Region', ar: 'الطقس حسب الجهة' }[lang], href: hubPath(lang, 'regions'), icon: 'sun' as const },
+];
+
+const itineraries = [
+  {
+    title: { fr: 'Escapade à Marrakech', en: 'Marrakech Getaway', es: 'Escapada a Marrakech', de: 'Kurztrip nach Marrakesch', ar: 'عطلة قصيرة في مراكش' }[lang],
+    days: { fr: '3 jours', en: '3 days', es: '3 días', de: '3 Tage', ar: '3 أيام' }[lang],
+    desc: { fr: 'Souks, palais, jardins et ambiance unique.', en: 'Souks, palaces, gardens and unique vibes.', es: 'Zocos, palacios, jardines y ambiente único.', de: 'Souks, Paläste, Gärten und einmalige Atmosphäre.', ar: 'أسواق وقصور وحدائق وأجواء ساحرة.' }[lang],
+    image: '/assets/img/dest-marrakech.jpg',
+    href: cityPath(lang, cityById('marrakech')!.slug[lang]),
+  },
+  {
+    title: { fr: 'Le nord authentique', en: 'The Authentic North', es: 'El norte auténtico', de: 'Der authentische Norden', ar: 'الشمال الأصيل' }[lang],
+    days: { fr: '4 jours', en: '4 days', es: '4 días', de: '4 Tage', ar: '4 أيام' }[lang],
+    desc: { fr: 'Tanger, Tétouan et Chefchaouen.', en: 'Tangier, Tetouan and Chefchaouen.', es: 'Tánger, Tetuán y Chauen.', de: 'Tanger, Tétouan und Chefchaouen.', ar: 'طنجة وتطوان وشفشاون.' }[lang],
+    image: '/assets/img/dest-chefchaouen.jpg',
+    href: cityPath(lang, cityById('chefchaouen')!.slug[lang]),
+  },
+  {
+    title: { fr: 'Aventure dans le désert', en: 'Desert Adventure', es: 'Aventura en el desierto', de: 'Wüstenabenteuer', ar: 'مغامرة في الصحراء' }[lang],
+    days: { fr: '5 jours', en: '5 days', es: '5 días', de: '5 Tage', ar: '5 أيام' }[lang],
+    desc: { fr: 'Merzouga, dunes et nuits sous les étoiles.', en: 'Merzouga, dunes and starry desert nights.', es: 'Merzouga, dunas y noches bajo las estrellas.', de: 'Merzouga, Dünen und Nächte unterm Sternenhimmel.', ar: 'مرزوكة، كثبان رملية وليال تحت النجوم.' }[lang],
+    image: '/assets/photos/merzouga-dunes.jpg',
+    href: await redesignContentPath(lang, 'merzouga-tour'),
+  },
+  {
+    title: { fr: 'Grand tour du Maroc', en: 'Grand Tour of Morocco', es: 'Gran tour de Marruecos', de: 'Große Marokko-Rundreise', ar: 'الجولة الكبرى في المغرب' }[lang],
+    days: { fr: '7 jours', en: '7 days', es: '7 días', de: '7 Tage', ar: '7 أيام' }[lang],
+    desc: { fr: 'Villes impériales, montagnes et océan.', en: 'Imperial cities, mountains and ocean.', es: 'Ciudades imperiales, montañas y océano.', de: 'Königsstädte, Berge und Ozean.', ar: 'المدن الإمبراطورية والجبال والمحيط.' }[lang],
+    image: '/assets/img/dest-fes.jpg',
+    href: cityPath(lang, cityById('fes')!.slug[lang]),
+  },
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title={{ fr: 'Visiter le Maroc : villes, hébergements, itinéraires et conseils', en: 'Visit Morocco: destinations, itineraries, culture & tips', es: 'Visitar Marruecos: ciudades, alojamientos e itinerarios', de: 'Marokko besuchen: Städte, Routen & Reisetipps', ar: 'زيارة المغرب: المدن، الإقامة، المسارات والنصائح' }[lang]}
+  description={{ fr: 'Préparez votre voyage au Maroc : sélection des plus belles villes, itinéraires complets, hébergements, gastronomie et formalités.', en: 'Plan your trip to Morocco: top cities, itineraries, stays, culture and travel tips.', es: 'Prepara tu viaje a Marruecos: ciudades, rutas, hoteles, gastronomía y consejos prácticos.', de: 'Planen Sie Ihre Reise nach Marokko: Städte, Reiserouten, Unterkünfte und praktische Tipps.', ar: 'خطط لرحلتك إلى المغرب: أجمل المدن، المسارات، الإقامة، الطبخ والنصائح.' }[lang]}
+  alternates={allLocalesAlternates(self)}
+  switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}
+>
+  <div class="root-page-shell">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+
+      <!-- Fil d'Ariane -->
+      <div class="mb-4">
+        <Breadcrumbs items={crumbs} lang={lang} />
+      </div>
+
+      <!-- Hero Section avec brush-cut et polaroids superposés -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
+        <div class="lg:col-span-6 z-10">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">{copy.eyebrow}</span>
+            <span class="w-8 h-px bg-[#c05621]"></span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
+            {copy.titleStart} <span class="text-[#c05621]">{copy.country}</span>{copy.titleEnd}
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
+            {copy.intro}
+          </p>
+
+          <!-- Formulaire de recherche -->
+          <form action={hubPath(lang, 'search')} method="get" class="mt-8 flex items-center bg-white border border-[#eae0d2] rounded-full p-1.5 shadow-md max-w-xl">
+            <Icon name="search" class="size-5 ms-3 text-gray-400 shrink-0" />
+            <input
+              type="text"
+              name="q"
+              placeholder={copy.search}
+              class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
+            />
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label={copy.searchButton}>
+              <Icon name="search" class="size-4" />
+            </button>
+          </form>
+        </div>
+
+        <!-- Visuel Hero avec découpe et polaroïds superposés -->
+        <div class="lg:col-span-6 relative mt-6 lg:mt-0">
+          <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
+            <img
+              src="/assets/photos/ouarzazate-taourirt-2024.jpg"
+              alt={heroAlt}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+            <PhotoCredit lang={lang} credit="Petar Milošević · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Ksar_of_Taourirt,_Ouarzazate,_Morocco_(%D9%82%D8%B5%D8%A8%D8%A9_%D8%AA%D8%A7%D9%88%D8%B1%D9%8A%D8%B1%D8%AA,_%E2%B5%9C%E2%B4%B0%E2%B5%A1%E2%B5%94%E2%B5%89%E2%B5%94%E2%B5%9C).jpg" />
+          </div>
+
+          <!-- Polaroid 1 : Chefchaouen -->
+          <div class="polaroid-card absolute -bottom-4 start-4 sm:start-8 w-28 sm:w-36 rotate-[-5deg] hidden sm:block">
+            <img src="/assets/img/dest-chefchaouen.jpg" alt="Chefchaouen" class="w-full h-24 sm:h-32 object-cover rounded" />
+          </div>
+
+          <!-- Polaroid 2 : Désert Merzouga -->
+          <div class="polaroid-card absolute -bottom-6 end-6 sm:end-12 w-32 sm:w-44 rotate-[6deg] hidden sm:block">
+            <img src="/assets/photos/merzouga-dunes.jpg" alt="Désert Merzouga" class="w-full h-28 sm:h-36 object-cover rounded" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 : Explorez le Maroc à votre rythme -->
+      <section id="conseils" class="mt-8 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.explore}</h2>
+        </div>
+        <p class="text-sm text-[#665e52] mb-6 ms-3.5">{copy.exploreText}</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+          <!-- Grille des 10 catégories (col-span-8) -->
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3">
+            {categories.map((cat) => (
+              <a
+                href={cat.href}
+                class="bg-white border border-[#eae0d2] rounded-2xl p-4 flex flex-col justify-between h-28 hover:shadow-md hover:border-[#c05621]/50 hover:-translate-y-0.5 transition-all group"
+              >
+                <div class="flex items-center justify-between">
+                  <Icon name={cat.icon} class="size-6 text-[#0d2b24] group-hover:text-[#c05621] transition-colors" />
+                  <span class="size-6 rounded-full bg-[#fbf5ec] flex items-center justify-center text-[#554e44] group-hover:bg-[#c05621] group-hover:text-white transition-all text-xs">
+                    →
+                  </span>
+                </div>
+                <span class="font-bold text-xs sm:text-sm text-[#1b1916] leading-snug line-clamp-2">
+                  {cat.label}
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <!-- Colonne droite : Encart Région + Conseils pratiques (col-span-4) -->
+          <div class="lg:col-span-4 flex flex-col gap-4">
+
+            <!-- Carte sombre Région -->
+            <div class="bg-[#0d2b24] text-white rounded-2xl p-5 shadow-lg relative overflow-hidden">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-lg font-bold font-serif">{copy.region}</h3>
+                  <p class="text-xs text-white/80 mt-1 leading-relaxed">
+                    {copy.regionText}
+                  </p>
+                </div>
+                <Icon name="map" class="size-10 text-[#d9a441] shrink-0 opacity-80" />
+              </div>
+              <a
+                href={hubPath(lang, 'regions')}
+                class="mt-4 inline-flex items-center gap-2 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] font-semibold text-xs px-4 py-2 rounded-full transition-colors"
+              >
+                <span>{copy.regions}</span>
+                <Icon name="arrowRight" class="size-3 rtl:-scale-x-100" />
+              </a>
+            </div>
+
+            <!-- Liste Conseils pratiques -->
+            <div class="bg-white border border-[#eae0d2] rounded-2xl p-4 shadow-sm">
+              <div class="flex items-center gap-2 mb-3 pb-2 border-b border-[#eae0d2]/60">
+                <Icon name="info" class="size-4 text-[#c05621]" />
+                <h3 class="text-sm font-bold text-[#1b1916]">{copy.advice}</h3>
+              </div>
+              <ul class="flex flex-col gap-2 text-xs">
+                {adviceItems.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-[#fbf5ec] hover:text-[#c05621] text-gray-700 transition-colors group"
+                    >
+                      <span class="flex items-center gap-2">
+                        <Icon name={item.icon} class="size-3.5 text-gray-400 group-hover:text-[#c05621]" />
+                        <span>{item.label}</span>
+                      </span>
+                      <Icon name="arrowRight" class="size-3 opacity-40 group-hover:opacity-100 rtl:-scale-x-100" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 : Itinéraires & inspirations -->
+      <section id="itineraires" class="mt-12 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.itineraries}</h2>
+          </div>
+          <a href={`${hubPath(lang, 'visit')}#itineraires`} class="text-xs sm:text-sm font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
+            <span>{copy.allItineraries}</span>
+            <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {itineraries.map((itin) => (
+            <a
+              href={itin.href}
+              class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
+            >
+              <div class="relative h-44 overflow-hidden">
+                <img src={itin.image} alt={itin.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow flex items-center gap-1">
+                  <Icon name="clock" class="size-3 text-[#c05621]" />
+                  {itin.days}
+                </span>
+              </div>
+              <div class="p-4 flex flex-col flex-1 justify-between bg-white">
+                <div>
+                  <h3 class="font-serif font-bold text-base text-[#1b1916] group-hover:text-[#c05621] transition-colors">
+                    {itin.title}
+                  </h3>
+                  <p class="text-xs text-gray-600 mt-1.5 leading-relaxed line-clamp-2">
+                    {itin.desc}
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-end">
+                  <span class="size-7 rounded-full bg-[#fbf5ec] group-hover:bg-[#c05621] group-hover:text-white flex items-center justify-center text-gray-500 text-xs transition-colors">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Bottom CTA Banner : Prêt à découvrir le Maroc ? -->
+      <section class="mt-14 bg-[#0d2b24] text-white rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('/assets/img/band-legzira.jpg');"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 text-center md:text-start flex-col md:flex-row">
+            <div class="size-14 rounded-2xl border border-white/25 flex items-center justify-center shrink-0 text-[#d9a441]">
+              <Icon name="luggage" class="size-7" />
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">{copy.cta}</h3>
+              <p class="text-xs sm:text-sm text-white/80 mt-1 max-w-xl">
+                {copy.ctaText}
+              </p>
+            </div>
+          </div>
+          <a
+            href={categoryPath(lang, 'tours')}
+            class="bg-white text-[#0d2b24] hover:bg-[#fcf7ee] px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all shrink-0 inline-flex items-center gap-2"
+          >
+            <span>{copy.start}</span>
+            <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" />
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
