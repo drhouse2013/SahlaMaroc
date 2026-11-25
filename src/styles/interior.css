@@ -39,6 +39,14 @@
 .interior-page-title { max-width: 20ch; color: var(--tpl-forest); font-family: var(--font-display); font-size: clamp(2.1rem, 4.4vw, 3.6rem); font-weight: 700; line-height: 1.1; letter-spacing: -.035em; text-wrap: balance; }
 .dark .interior-page-title { color: #f6efe3; }
 :lang(ar) .interior-page-title { font-family: var(--font-arabic); letter-spacing: 0; line-height: 1.3; }
+.interior-content-hero { position: relative; isolation: isolate; overflow: hidden; }
+.interior-content-hero::after { content: ""; position: absolute; z-index: -1; inset-block: 0; inset-inline-end: 0; width: min(32vw, 25rem); background: url('/assets/decor/motif-zellige-outline.svg') center / 9rem repeat; opacity: .12; mask-image: linear-gradient(to left, #000, transparent); pointer-events: none; }
+.interior-content-hero__title { padding-inline-start: 1rem; border-inline-start: 3px solid var(--tpl-terracotta); }
+.interior-content-body { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.interior-content-body > .prose { line-height: 1.8; }
+.interior-content-body > .prose :is(h2, h3) { scroll-margin-top: 5rem; }
+.dark .interior-content-hero::after { opacity: .08; }
+[dir='rtl'] .interior-content-hero::after { mask-image: linear-gradient(to right, #000, transparent); }
 
 /* Titres de section et accroches */
 .section-title {
