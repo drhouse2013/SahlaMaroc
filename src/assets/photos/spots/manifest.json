@@ -1,4 +1,17 @@
 {
+  "zagora/tissergate": {
+    "file": "zagora-tissergate-2023.jpg",
+    "alt": {
+      "fr": "Toits et murs en terre du ksar Tissergate, près de Zagora",
+      "en": "Earthen rooftops and walls of Ksar Tissergate near Zagora",
+      "es": "Tejados y muros de tierra del ksar Tissergate, cerca de Zagora",
+      "de": "Dächer und Lehmwände des Ksar Tissergate bei Zagora",
+      "ar": "أسطح وجدران ترابية في قصر تيسرغات قرب زاكورة"
+    },
+    "credit": "Lalla-ltcia, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg",
+    "focalPoint": [50, 60]
+  },
   "ifrane/centre-ville": {
     "file": "ifrane-centre-ville-2023.jpg",
     "alt": {
