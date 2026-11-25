@@ -16,6 +16,13 @@ for (const [name, path] of [
   ['outils', '/fr/calculateurs'],
   ['article', '/fr/retour-definitif-maroc-mre-guide'],
   ['city', '/fr/villes/marrakech'],
+  ['calculator', '/fr/convertisseur-euro-dirham'],
+  ['guides-ar', '/ar/adilla'],
+  ['demarches-ar', '/ar/ijraat'],
+  ['investir-ar', '/ar/al-istithmar-fi-al-maghrib'],
+  ['visiter-ar', '/ar/ziyarat-al-maghrib'],
+  ['outils-ar', '/ar/al-hasibat'],
+  ['article-ar', '/ar/al-awda-al-nihaiya-ila-al-maghrib-mre'],
 ].filter(([name]) => !process.argv[2] || name === process.argv[2])) {
   for (const [device, viewport] of [
     ['desktop', { width: 1440, height: 900 }],
@@ -41,6 +48,7 @@ for (const [name, path] of [
     const broken = await page.locator('img').evaluateAll(images => images.filter(image => image.complete && image.naturalWidth === 0 && image.loading !== 'lazy').map(image => image.getAttribute('src')));
     await page.screenshot({ path: `${out}/${name}-${device}.png`, fullPage: true });
     console.log(JSON.stringify({ name, device, status: response?.status(), title, horizontalOverflow, brokenCount: broken.length, broken: broken.slice(0, 3) }));
+    if (!title || horizontalOverflow || broken.length) throw new Error(`${name} ${device}: failed visual smoke check`);
     await page.close();
   }
 }
