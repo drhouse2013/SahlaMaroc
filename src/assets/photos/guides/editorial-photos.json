@@ -9,7 +9,14 @@
     "file": "voiture-traversee-mre.jpg",
     "credit": "Xemenendura",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Paso_del_Estrecho_3.jpg",
+    "alt": {
+      "fr": "Voitures en attente d’embarquement au port d’Algésiras",
+      "en": "Cars waiting to board at the port of Algeciras",
+      "es": "Coches en espera de embarcar en el puerto de Algeciras",
+      "de": "Autos warten im Hafen von Algeciras auf die Einschiffung",
+      "ar": "سيارات تنتظر الصعود إلى العبّارة في ميناء الجزيرة الخضراء"
+    }
   },
   "motorway": {
     "file": "autoroute-marrakech-agadir.jpg",
@@ -27,7 +34,14 @@
     "file": "aeroport-casablanca.jpg",
     "credit": "Sharon Hahn Darlin",
     "license": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Interior.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_Mohammed_V_International_Airport,_Morocco_January_2024_-_Interior.jpg",
+    "alt": {
+      "fr": "Intérieur du terminal de l’aéroport Mohammed V de Casablanca",
+      "en": "Inside the terminal at Casablanca Mohammed V International Airport",
+      "es": "Interior de la terminal del aeropuerto Mohammed V de Casablanca",
+      "de": "Innenansicht des Terminals am Flughafen Casablanca Mohammed V",
+      "ar": "داخل مبنى المسافرين في مطار محمد الخامس بالدار البيضاء"
+    }
   },
   "marrakech-airport": {
     "file": "aeroport-marrakech.jpg",
