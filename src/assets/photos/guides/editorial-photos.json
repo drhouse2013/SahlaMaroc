@@ -81,7 +81,14 @@
     "file": "aeroport-agadir-2023.jpg",
     "credit": "Mike Peel (www.mikepeel.net)",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2023_287.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2023_287.jpg",
+    "alt": {
+      "fr": "Aéroport Agadir Al Massira",
+      "en": "Agadir Al Massira Airport",
+      "es": "Aeropuerto de Agadir Al Massira",
+      "de": "Flughafen Agadir Al Massira",
+      "ar": "مطار أكادير المسيرة"
+    }
   },
   "transport-apps": {
     "file": "grand-taxi-inezgane.jpg",
@@ -139,7 +146,14 @@
     "file": "voiture-achat-garage-casablanca.jpg",
     "credit": "Vd212",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Garage_Elegance_Cars_Casablanca.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Garage_Elegance_Cars_Casablanca.jpg",
+    "alt": {
+      "fr": "Garage automobile à Casablanca",
+      "en": "Car dealership in Casablanca",
+      "es": "Concesionario de coches en Casablanca",
+      "de": "Autohaus in Casablanca",
+      "ar": "معرض سيارات في الدار البيضاء"
+    }
   },
   "amo-health-return-mre": {
     "file": "sante-chu-tanger.jpg",
@@ -184,49 +198,105 @@
     "file": "construire-chantier-casa.jpg",
     "credit": "Bengt Nyman",
     "license": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_NZ7_3857_(40167825473).jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_NZ7_3857_(40167825473).jpg",
+    "alt": {
+      "fr": "Chantier de construction à Casablanca",
+      "en": "Construction site in Casablanca",
+      "es": "Obra en Casablanca",
+      "de": "Baustelle in Casablanca",
+      "ar": "ورشة بناء في الدار البيضاء"
+    }
   },
   "daam-sakane": {
     "file": "daam-sakane-logements.jpg",
     "credit": "Ideophagous",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:El_Azzouzia.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:El_Azzouzia.jpg",
+    "alt": {
+      "fr": "Immeubles dans le quartier El Azzouzia",
+      "en": "Apartment buildings in El Azzouzia",
+      "es": "Edificios de viviendas en El Azzouzia",
+      "de": "Wohnhäuser im Viertel El Azzouzia",
+      "ar": "عمارات سكنية في حي العزوزية"
+    }
   },
   "moroccan-food": {
     "file": "cuisine-tajine.jpg",
     "credit": "Marco Almbauer",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Moroccan_tajine_with_meat.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Moroccan_tajine_with_meat.jpg",
+    "alt": {
+      "fr": "Tajine marocain à la viande",
+      "en": "Moroccan meat tagine",
+      "es": "Tayín marroquí de carne",
+      "de": "Marokkanische Tajine mit Fleisch",
+      "ar": "طاجين مغربي باللحم"
+    }
   },
   "etiquette": {
     "file": "savoir-vivre-the-menthe.jpg",
     "credit": "مصطفى ملو",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Tea_and_Moroccan_sweets.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Tea_and_Moroccan_sweets.jpg",
+    "alt": {
+      "fr": "Thé et pâtisseries marocaines",
+      "en": "Tea and Moroccan sweets",
+      "es": "Té y dulces marroquíes",
+      "de": "Tee und marokkanisches Gebäck",
+      "ar": "شاي وحلويات مغربية"
+    }
   },
   "cost-of-living": {
     "file": "cout-vie-etal-legumes.jpg",
     "credit": "مصطفى ملو",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:A_greengrocer_displays_vegetables_in_Morocco.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:A_greengrocer_displays_vegetables_in_Morocco.jpg",
+    "alt": {
+      "fr": "Légumes sur un étal au Maroc",
+      "en": "Vegetables at a stall in Morocco",
+      "es": "Verduras en un puesto de Marruecos",
+      "de": "Gemüse an einem Marktstand in Marokko",
+      "ar": "خضروات معروضة في سوق بالمغرب"
+    }
   },
   "business-auto-entrepreneur-mre": {
     "file": "artisan-poterie.jpg",
     "credit": "Houssain tork",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Moroccan_pottery_traditions_from_marrakech.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Moroccan_pottery_traditions_from_marrakech.jpg",
+    "alt": {
+      "fr": "Poterie artisanale de Marrakech",
+      "en": "Traditional pottery from Marrakech",
+      "es": "Cerámica artesanal de Marrakech",
+      "de": "Handgefertigte Keramik aus Marrakesch",
+      "ar": "فخار تقليدي من مراكش"
+    }
   },
   "international-schools": {
     "file": "ecoles-lycee.jpg",
     "credit": "Mounir Neddi",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:1_Qualifying_High_School_Tariq_Ibn_Ziyad_(Berber_High_School).jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:1_Qualifying_High_School_Tariq_Ibn_Ziyad_(Berber_High_School).jpg",
+    "alt": {
+      "fr": "Lycée Tariq Ibn Ziyad",
+      "en": "Tariq Ibn Ziyad High School",
+      "es": "Instituto Tariq Ibn Ziyad",
+      "de": "Gymnasium Tariq Ibn Ziyad",
+      "ar": "ثانوية طارق بن زياد"
+    }
   },
   "return-morocco-with-children": {
     "file": "ecoles-lycee.jpg",
     "credit": "Mounir Neddi",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:1_Qualifying_High_School_Tariq_Ibn_Ziyad_(Berber_High_School).jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:1_Qualifying_High_School_Tariq_Ibn_Ziyad_(Berber_High_School).jpg",
+    "alt": {
+      "fr": "Lycée Tariq Ibn Ziyad",
+      "en": "Tariq Ibn Ziyad High School",
+      "es": "Instituto Tariq Ibn Ziyad",
+      "de": "Gymnasium Tariq Ibn Ziyad",
+      "ar": "ثانوية طارق بن زياد"
+    }
   },
   "health-travellers": {
     "file": "sante-chu-tanger.jpg",
@@ -245,79 +315,170 @@
     "file": "fibre-casa-cfc.jpg",
     "credit": "AyourAchtouk",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_15.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Casablanca_Finance_City_15.jpg",
+    "alt": {
+      "fr": "Quartier Casablanca Finance City",
+      "en": "Casablanca Finance City district",
+      "es": "Distrito Casablanca Finance City",
+      "de": "Stadtviertel Casablanca Finance City",
+      "ar": "حي القطب المالي للدار البيضاء"
+    }
   },
   "hammam": {
     "file": "hammam-saffarin-2026.jpg",
     "credit": "R Prazeres",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Hammam_Saffarin_20260705_113805.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Hammam_Saffarin_20260705_113805.jpg",
+    "alt": {
+      "fr": "Intérieur du hammam Saffarin à Fès",
+      "en": "Inside the Saffarin hammam in Fez",
+      "es": "Interior del hammam Saffarin en Fez",
+      "de": "Innenansicht des Hammams Saffarin in Fès",
+      "ar": "داخل حمام الصفارين في فاس"
+    }
   },
   "time-zone": {
     "file": "fuseau-horloge.jpg",
     "credit": "Reda benkhadra",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Clock_Bank_al-Maghrib,_Casablanca.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Clock_Bank_al-Maghrib,_Casablanca.jpg",
+    "alt": {
+      "fr": "Horloge de Bank Al-Maghrib à Casablanca",
+      "en": "Bank Al-Maghrib clock in Casablanca",
+      "es": "Reloj de Bank Al-Maghrib en Casablanca",
+      "de": "Uhr der Bank Al-Maghrib in Casablanca",
+      "ar": "ساعة بنك المغرب في الدار البيضاء"
+    }
   },
   "passport-cnie": {
     "file": "consulat-maroc-pontoise.jpg",
     "credit": "Chabe01",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Consulat_Maroc_Pontoise_1.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Consulat_Maroc_Pontoise_1.jpg",
+    "alt": {
+      "fr": "Consulat du Maroc à Pontoise",
+      "en": "Moroccan consulate in Pontoise",
+      "es": "Consulado de Marruecos en Pontoise",
+      "de": "Marokkanisches Konsulat in Pontoise",
+      "ar": "القنصلية المغربية في بونتواز"
+    }
   },
   "darija-phrases": {
     "file": "darija-souk-haddadine.jpg",
     "credit": "Petar Milošević",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Oriental_hanging_lanterns._Souk_Haddadine,_Marrakech_Medina_(سوق_الحدادين_مراكش).jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Oriental_hanging_lanterns._Souk_Haddadine,_Marrakech_Medina_(سوق_الحدادين_مراكش).jpg",
+    "alt": {
+      "fr": "Lanternes suspendues au souk Haddadine de Marrakech",
+      "en": "Hanging lanterns in Marrakech’s Haddadine souk",
+      "es": "Faroles colgantes en el zoco Haddadine de Marrakech",
+      "de": "Hängende Laternen im Souk Haddadine in Marrakesch",
+      "ar": "فوانيس معلقة في سوق الحدادين بمراكش"
+    }
   },
   "tipping": {
     "file": "pourboire-jemaa-terrasse.jpg",
     "credit": "Jorge Franganillo",
     "license": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Marrakech_Jemaa_el-Fna_(54269477282).jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Marrakech_Jemaa_el-Fna_(54269477282).jpg",
+    "alt": {
+      "fr": "Vue de la place Jemaa el-Fna à Marrakech",
+      "en": "View of Jemaa el-Fna square in Marrakech",
+      "es": "Vista de la plaza Jemaa el-Fna en Marrakech",
+      "de": "Blick auf den Platz Jemaa el-Fna in Marrakesch",
+      "ar": "منظر لساحة جامع الفنا في مراكش"
+    }
   },
   "trains": {
     "file": "train-al-boraq.jpg",
     "credit": "SpreeTom",
     "license": "CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Al_Boraq_Tangier.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Al_Boraq_Tangier.jpg",
+    "alt": {
+      "fr": "Train Al Boraq à Tanger",
+      "en": "Al Boraq train in Tangier",
+      "es": "Tren Al Boraq en Tánger",
+      "de": "Al-Boraq-Zug in Tanger",
+      "ar": "قطار البراق في طنجة"
+    }
   },
   "tram-brt": {
     "file": "tram-rabat-sale.jpg",
     "credit": "Taha ahha",
     "license": "CC0",
-    "source": "https://commons.wikimedia.org/wiki/File:Tramway_line_Rabat.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Tramway_line_Rabat.jpg",
+    "alt": {
+      "fr": "Tramway à Rabat",
+      "en": "Tram in Rabat",
+      "es": "Tranvía en Rabat",
+      "de": "Straßenbahn in Rabat",
+      "ar": "ترامواي في الرباط"
+    }
   },
   "world-cup-2030": {
     "file": "cdm2030-stade-moulay-abdellah.jpg",
     "credit": "Reda benkhadra",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Moulay_Abdellah_Stadium.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Moulay_Abdellah_Stadium.jpg",
+    "alt": {
+      "fr": "Stade Moulay Abdellah à Rabat",
+      "en": "Moulay Abdellah Stadium in Rabat",
+      "es": "Estadio Moulay Abdellah en Rabat",
+      "de": "Moulay-Abdellah-Stadion in Rabat",
+      "ar": "ملعب مولاي عبد الله في الرباط"
+    }
   },
   "world-cup-2030-stadiums": {
     "file": "cdm2030-stade-moulay-abdellah.jpg",
     "credit": "Reda benkhadra",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Moulay_Abdellah_Stadium.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Moulay_Abdellah_Stadium.jpg",
+    "alt": {
+      "fr": "Stade Moulay Abdellah à Rabat",
+      "en": "Moulay Abdellah Stadium in Rabat",
+      "es": "Estadio Moulay Abdellah en Rabat",
+      "de": "Moulay-Abdellah-Stadion in Rabat",
+      "ar": "ملعب مولاي عبد الله في الرباط"
+    }
   },
   "world-cup-2030-trip-planning": {
     "file": "cdm-stade-ibn-batouta.jpg",
     "credit": "KSKB1935",
     "license": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Stade_Ibn_Batuta,_Tanger_2023.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Stade_Ibn_Batuta,_Tanger_2023.jpg",
+    "alt": {
+      "fr": "Stade Ibn Batouta à Tanger",
+      "en": "Ibn Batouta Stadium in Tangier",
+      "es": "Estadio Ibn Batouta en Tánger",
+      "de": "Ibn-Batouta-Stadion in Tanger",
+      "ar": "ملعب ابن بطوطة في طنجة"
+    }
   },
   "world-cup-2030-transport": {
     "file": "gare-rabat-ville.jpg",
     "credit": "Boubloub",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg",
+    "alt": {
+      "fr": "Gare de Rabat-Ville",
+      "en": "Rabat Ville railway station",
+      "es": "Estación de Rabat Ville",
+      "de": "Bahnhof Rabat Ville",
+      "ar": "محطة الرباط المدينة"
+    }
   },
   "riad-or-hotel": {
     "file": "riad-patio-dar-el-bacha.jpg",
     "credit": "R Prazeres",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg",
+    "alt": {
+      "fr": "Cour de Dar El Bacha à Marrakech",
+      "en": "Courtyard of Dar El Bacha in Marrakech",
+      "es": "Patio de Dar El Bacha en Marrakech",
+      "de": "Innenhof von Dar El Bacha in Marrakesch",
+      "ar": "فناء دار الباشا في مراكش"
+    }
   },
   "taghazout-surf": {
     "file": "taghazout-surf-2026.jpg",
