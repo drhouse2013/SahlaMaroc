@@ -30,6 +30,7 @@ const HREFLANG = {
 };
 
 export default defineConfig({
+  cacheDir: './.astro-cache',
   // Domaine canonique : voir site.config.mjs (variable d'environnement SITE_URL).
   site: SITE_URL,
 

@@ -310,6 +310,7 @@ Les cartes « parcours » de l'accueil n'utilisent **pas** les images du ZIP (te
 | chefchaouen-ruelle.jpg | Photo de guide (voir CREDITS.md) | Ekaterina Kvelidze | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
 | construire-chantier-casa.jpg | Photo de guide (voir CREDITS.md) | Bengt Nyman | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [lien](https://commons.wikimedia.org/wiki/File:Casablanca_NZ7_3857_(40167825473).jpg) | Oui : auteur, licence, lien |
 | consulat-maroc-pontoise.jpg | Photo de guide (voir CREDITS.md) | Chabe01 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Consulat_Maroc_Pontoise_1.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
+| parlement-rabat.jpg | Parlement du Maroc à Rabat, photographié en 2019 | Fernando Pascullo | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Moroccan_Parliament_Building.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
 | corniche-casablanca.jpg | Photo de guide (voir CREDITS.md) | Paolapezz | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Corniche,_Casablanca.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
 | cout-vie-etal-legumes.jpg | Photo de guide (voir CREDITS.md) | مصطفى ملو | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:A_greengrocer_displays_vegetables_in_Morocco.jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
 | credit-immeubles-casa.jpg | Photo de guide (voir CREDITS.md) | Philip Mallis | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [lien](https://commons.wikimedia.org/wiki/File:Four-storey_white_apartment_and_commercial_buildings_on_Boulevard_Mohammed_V_in_Casablanca,_Morocco_(54875688339).jpg) | Oui : auteur, licence, lien ; partage dans les mêmes conditions |
@@ -481,3 +482,11 @@ La page régionale Casablanca-Settat réutilise désormais la photo vérifiée d
 `src/assets/template/hero-reference-20261117.png` : illustration décorative créée avec l’outil intégré ImageGen à partir de `SahlaMaroc.png` fourni par le propriétaire du site. Ce composite ne représente pas une photographie documentaire récente.
 
 Instruction de création : reconstruire uniquement le fond du héros de la référence, supprimer texte, navigation, recherche et cartes ; conserver arche étroite à gauche, lanterne vers 12 %, ciel dégagé pour le titre, tour illuminée vers 77 %, ville et reflets au coucher du soleil. Le résultat rapproche la composition de la référence sans garantir une identité pixel par pixel. Original précédent conservé.
+
+## Twin Center — photographie de remplacement (18 novembre 2026)
+
+- Fichier : `src/assets/photos/spots/casablanca-twin-center-2024.jpg`.
+- Auteur : Zak H. [Photo Pexels 36851839](https://www.pexels.com/photo/panoramic-view-of-casablanca-s-tallest-buildings-36851839/).
+- Licence : [Pexels License](https://www.pexels.com/license/), réutilisation gratuite sur le site. Aucun achat.
+- Prise de vue déclarée : 1er août 2024 ; publication le 1er avril 2026. Source 2982 × 3974 px, fichier web 1600 × 2132 px ; adaptation responsive et recadrage d’affichage.
+- Lieu : Casablanca, Twin Center. Façades et enseigne comparées au visuel du [Conseil régional du tourisme de Casablanca](https://visitcasablanca.ma/pois/twin-center/).

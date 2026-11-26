@@ -33,11 +33,11 @@ const read = {fr:'Lire le guide',en:'Read the guide',es:'Leer la guía',de:'Guid
 ) : (
   <article class:list={['group card card-hover relative flex h-full overflow-hidden', lg ? 'flex-col md:flex-row' : 'flex-col']}>
     <div class:list={['relative overflow-hidden border-b border-[var(--line)]', lg ? 'md:w-1/2 md:shrink-0 md:border-e md:border-b-0' : '']}>
-      <GuideVisual article={article} large={lg} />
+      <GuideVisual article={article} large={lg} cover />
     </div>
     <div class:list={['flex flex-1 flex-col justify-center', lg ? 'p-6 md:p-9' : 'p-5']}>
       <p class="eyebrow mb-3 text-[var(--accent)]">{CATEGORIES[d.category].label[d.lang]}</p>
-      <H class:list={['leading-snug font-semibold', lg ? 'text-2xl md:text-3xl' : 'text-lg']}>
+      <H class:list={['article-card__title leading-tight font-semibold text-[var(--tpl-forest)] dark:text-[#f6efe3]', lg ? 'text-2xl md:text-3xl' : 'text-lg']}>
         <a href={entryPath(d.lang, d.slug)} class="after:absolute after:inset-0 group-hover:text-terracotta-600 dark:group-hover:text-terracotta-300">{d.title}</a>
       </H>
       <p class="mt-3 line-clamp-3 text-sm leading-relaxed muted">{d.description}</p>
@@ -45,3 +45,7 @@ const read = {fr:'Lire le guide',en:'Read the guide',es:'Leer la guía',de:'Guid
     </div>
   </article>
 )}
+<style>
+  .article-card__title { font-family: var(--font-display); text-wrap: balance; }
+  :global(:lang(ar)) .article-card__title { font-family: var(--font-arabic); }
+</style>

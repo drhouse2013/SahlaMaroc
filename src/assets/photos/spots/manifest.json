@@ -1,4 +1,30 @@
 {
+  "zagora/tissergate": {
+    "file": "zagora-tissergate-2023.jpg",
+    "alt": {
+      "fr": "Toits et murs en terre du ksar Tissergate, près de Zagora",
+      "en": "Earthen rooftops and walls of Ksar Tissergate near Zagora",
+      "es": "Tejados y muros de tierra del ksar Tissergate, cerca de Zagora",
+      "de": "Dächer und Lehmwände des Ksar Tissergate bei Zagora",
+      "ar": "أسطح وجدران ترابية في قصر تيسرغات قرب زاكورة"
+    },
+    "credit": "Lalla-ltcia, CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ksar-tissergate-zagora-maroc.jpg",
+    "focalPoint": [50, 60]
+  },
+  "ifrane/centre-ville": {
+    "file": "ifrane-centre-ville-2023.jpg",
+    "alt": {
+      "fr": "Arbres et bâtiments aux toits pentus dans le centre d’Ifrane",
+      "en": "Trees and buildings with steep roofs in central Ifrane",
+      "es": "Árboles y edificios con tejados inclinados en el centro de Ifrane",
+      "de": "Bäume und Gebäude mit steilen Dächern im Zentrum von Ifrane",
+      "ar": "أشجار ومبانٍ بأسقف مائلة في وسط إفران"
+    },
+    "credit": "Mounir Neddi, CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ifrane_city_center.jpg",
+    "focalPoint": [70, 65]
+  },
   "marrakech/jemaa-el-fna": {
     "file": "marrakech-jemaa-el-fna.jpg",
     "alt": {
@@ -2776,6 +2802,21 @@
       50,
       55
     ]
+  },
+  "casablanca/twin-center": {
+    "file": "casablanca-twin-center-2024.jpg",
+    "alt": {
+      "fr": "Tours du Twin Center au-dessus des toits de Casablanca, août 2024",
+      "en": "Twin Center towers above Casablanca rooftops, August 2024",
+      "es": "Torres del Twin Center sobre los tejados de Casablanca, agosto de 2024",
+      "de": "Twin-Center-Türme über den Dächern Casablancas, August 2024",
+      "ar": "برجا توين سنتر فوق أسطح الدار البيضاء، أغسطس 2024"
+    },
+    "credit": "Zak H, Pexels License",
+    "source": "https://www.pexels.com/photo/panoramic-view-of-casablanca-s-tallest-buildings-36851839/",
+    "focalPoint": [
+      58,
+      25
+    ]
   }
 }
-

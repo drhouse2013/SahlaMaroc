@@ -37,16 +37,16 @@ if (d.translationKey === 'about') jsonLd.push(personJsonLd(Astro.site, url, d.de
 ---
 
 <BaseLayout lang={lang} title={d.title} description={d.description} alternates={alternates} switchTargets={switchTargets} noindex={d.noindex || d.machineTranslated} jsonLd={jsonLd}>
-  <div class="zellige-soft border-b border-[var(--line)]">
+  <div class="zellige-soft interior-content-hero border-b border-[var(--line)]">
     <div class:list={['container-page pt-8 pb-10', tool || isHubTools ? 'max-w-5xl' : 'max-w-3xl']}>
       <Breadcrumbs items={crumbs} lang={lang} />
       {tool && <span class="icon-tile mt-8 size-12"><Icon name={tool.icon} class="size-6" /></span>}
-      <h1 class:list={['text-3xl font-semibold sm:text-[2.6rem]', tool ? 'mt-4' : 'mt-8']}>{d.title}</h1>
+      <h1 class:list={['interior-page-title interior-content-hero__title', tool ? 'mt-4' : 'mt-8']}>{d.title}</h1>
       <p class="mt-4 max-w-2xl text-lg muted">{d.description}</p>
       {d.updatedDate && <p class="mt-4 inline-flex items-center gap-1.5 text-sm muted"><Icon name="calendar" class="size-4" /><time datetime={d.updatedDate.toISOString()}>{t('common.updatedOn', { date: formatDate(d.updatedDate, lang) })}</time></p>}
     </div>
   </div>
-  <div class:list={['container-page pt-8', tool || isHubTools ? 'max-w-5xl' : 'max-w-3xl']}>
+  <div class:list={['container-page interior-content-body pt-8', tool || isHubTools ? 'max-w-5xl' : 'max-w-3xl']}>
     <div class="prose prose-lg max-w-none dark:prose-invert prose-headings:font-semibold prose-a:text-[var(--link)] prose-a:underline-offset-2">
       <slot />
     </div>

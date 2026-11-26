@@ -150,6 +150,8 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-nav__menu--mobile { inset-inline-end: 0; inset-inline-start: auto; top: 44px; width: min(22rem, calc(100vw - 2rem)); max-height: min(70vh, 34rem); overflow: auto; }
 .tpl-nav__mobile-title { margin: 4px 8px 6px; font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #b34723; }
 .tpl-nav__menu--mobile a { display: flex; align-items: center; gap: 8px; }
+.tpl-nav__menu--mobile .tpl-nav__mobile-sub { margin-inline-start: 1rem; padding-block: .45rem; }
+.tpl-header :is(a, button, summary):focus-visible { outline: 2px solid var(--tpl-terracotta); outline-offset: 2px; }
 .tpl-nav__menu--mobile a:is([aria-current="page"], [aria-current="location"]) { background: #f9ebda; font-weight: 700; }
 .tpl-nav__menu--mobile hr { width: 100%; border: 0; border-top: 1px solid #e9ded1; margin: 7px 0; }
 .tpl-nav__mobile-theme { padding: 4px 0 0; }
@@ -681,6 +683,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-menu-theme { padding: 8px 10px; border-top: 1px solid var(--tpl-line); }
 .tpl-controls > .tpl-theme { display: none; }
 @media (min-width: 1081px) {
+  .tpl-brand { flex-shrink: 1; }
   .tpl-header__divider { position: absolute; inset-inline-start: 384px; margin: 0; }
   .tpl-nav { gap: 26px; }
   /* Translated fallback wordmarks are much narrower than the French SVG logo.
@@ -712,6 +715,7 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-header__divider { margin-inline-end: 18px; }
   .tpl-controls { margin-inline-start: 15px; }
   .tpl-nav { gap: 10px; }
+  .tpl-header:has(.tpl-brand__fallback) .tpl-nav { gap: 8px; }
   .tpl-nav__link { font-size: 11.7px; }
   .tpl-features { width: calc(100% - 80px); }
   .tpl-section { width: calc(100% - 92px); }
@@ -736,6 +740,13 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-footer__inner { grid-template-columns: 1.6fr repeat(4, 1fr); gap: 18px; }
   .reading-layout { grid-template-columns: minmax(0, 1fr) 280px; gap: 25px; }
   .listing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 901px) and (max-width: 1080px) {
+  .tpl-nav { display: none; }
+  .tpl-burger-wrap { display: block; position: relative; }
+  .tpl-burger { display: flex; }
+  .tpl-brand { width: auto; }
+  .tpl-controls { margin-inline-start: auto; }
 }
 @media (max-width: 900px) {
   .tpl-nav { display: none; }
@@ -948,3 +959,56 @@ html[lang="ar"] .tpl-guide__tag {
   line-height: 1.5;
 }
 
+
+/* Keep Arabic guide metadata readable at mobile sizes. */
+html[lang="ar"] .tpl-guide__checks span {
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+/* ==========================================================================
+   Styles officiels MorokGo / Sahla Maroc — Refonte des 6 pages racines
+   ========================================================================== */
+.root-page-shell {
+  background-color: var(--tpl-ivory);
+  color: var(--text);
+  min-height: 100vh;
+}
+.dark .root-page-shell {
+  background-color: #08211c;
+  color: #f6efe3;
+}
+.root-page-shell :is(h1, h2) {
+  color: var(--tpl-forest);
+}
+.dark .root-page-shell :is(h1, h2) {
+  color: #f6efe3;
+}
+
+/* Brush-stroke mask for hero images */
+.brush-hero-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+@media (min-width: 1024px) {
+  .brush-hero-media {
+    border-start-start-radius: 22% 50%;
+    border-end-start-radius: 22% 50%;
+  }
+}
+
+/* Floating Polaroid photos */
+.polaroid-card {
+  background: #ffffff;
+  padding: 6px 6px 16px 6px;
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.28), 0 4px 10px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  border: 4px solid #ffffff;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.polaroid-card:hover {
+  transform: scale(1.04) rotate(0deg) !important;
+  z-index: 20;
+}

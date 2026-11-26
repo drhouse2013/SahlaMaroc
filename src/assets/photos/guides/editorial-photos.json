@@ -235,29 +235,29 @@
     }
   },
   "buy-property-abroad": {
-    "file": "villa-majorelle-marrakech-2024.jpg",
-    "credit": "Adrien Casse",
-    "license": "Pexels License",
-    "source": "https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/",
+    "file": "villa-al-maaden-marrakech.jpg",
+    "credit": "Didierlefort",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Al_Maaden_Marrakech_Villa_DL2A.jpg",
     "alt": {
-      "fr": "Villa bleue et cactus du jardin Majorelle à Marrakech, photographiés en 2024",
-      "en": "Blue villa and cacti at Jardin Majorelle in Marrakech, photographed in 2024",
-      "es": "Villa azul y cactus del jardín Majorelle en Marrakech, fotografiados en 2024",
-      "de": "Blaue Villa und Kakteen im Jardin Majorelle in Marrakesch, 2024 fotografiert",
-      "ar": "فيلا زرقاء وصبّار في حديقة ماجوريل بمراكش، صُوّرا سنة 2024"
+      "fr": "Villas élégantes et piscine dans le domaine Al Maaden à Marrakech",
+      "en": "Elegant villas and swimming pool at Al Maaden in Marrakech",
+      "es": "Villas elegantes y piscina en Al Maaden, Marrakech",
+      "de": "Elegante Villen und Pool in Al Maaden, Marrakesch",
+      "ar": "فلل أنيقة ومسبح في المادن بمراكش"
     }
   },
   "import-car-permanent-return": {
-    "file": "customs-border-car-2025.jpg",
-    "credit": "Ishara Kasthuriarachchi",
-    "license": "Pexels License",
-    "source": "https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/",
+    "file": "tanger-med-vehicles-2025.jpg",
+    "credit": "Bertrand Soubeyrand",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:D%C3%A9chargement_poids_lourds_ferry_Tanger_Express_%C3%A0_Tanger_MED-photo_Bertrand_SOUBEYRAND.jpg",
     "alt": {
-      "fr": "Une voiture rouge devant les voies d’un poste douanier arménien",
-      "en": "A red car in front of the inspection lanes at an Armenian customs checkpoint",
-      "es": "Un coche rojo ante los carriles de inspección de una aduana armenia",
-      "de": "Ein rotes Auto vor den Kontrollspuren eines armenischen Zollpostens",
-      "ar": "سيارة حمراء أمام مسارات التفتيش في نقطة جمركية أرمينية"
+      "fr": "Voitures et camions près du ferry Tanger Express au port de Tanger Med en 2025",
+      "en": "Cars and lorries beside the Tanger Express ferry at Tanger Med port in 2025",
+      "es": "Coches y camiones junto al ferry Tanger Express en el puerto Tanger Med en 2025",
+      "de": "Autos und Lastwagen neben der Fähre Tanger Express im Hafen Tanger Med 2025",
+      "ar": "سيارات وشاحنات بجانب عبارة طنجة إكسبريس في ميناء طنجة المتوسط سنة 2025"
     }
   }
 }

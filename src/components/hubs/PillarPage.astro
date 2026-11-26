@@ -3,6 +3,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import ArticleCard from '../ArticleCard.astro';
+import GuideVisual from '../GuideVisual.astro';
 import ToolGrid from '../ToolGrid.astro';
 import CityGrid from '../home/CityGrid.astro';
 import AdSlot from '../AdSlot.astro';
@@ -21,6 +22,7 @@ const label = CATEGORIES[id].label[lang];
 const pillar = PILLARS[id];
 const articles = (await getArticles(lang)).filter((a) => a.data.category === id);
 const start = (await Promise.all(pillar.start.map((k) => getArticleByKey(lang, k)))).filter((a) => a !== null);
+const heroArticle = (id === 'retour' ? start[2] : start[1]) ?? start[0];
 const startIds = new Set(start.map((a) => a.id));
 const rest = articles.filter((a) => !startIds.has(a.id));
 const others = (await getActiveCategories(lang)).filter((c) => c !== id);
@@ -54,6 +56,7 @@ const description = pillar.intro[lang].length <= 160 ? pillar.intro[lang] : pill
       <div class="container-page relative">
         <Breadcrumbs items={crumbs} lang={lang} />
 
+        <div class="pillar-hero__layout">
         <div class="pillar-hero__content">
           <!-- Icône avec anneau lumineux -->
           <div class="pillar-hero__icon-wrap">
@@ -84,6 +87,8 @@ const description = pillar.intro[lang].length <= 160 ? pillar.intro[lang] : pill
               </div>
             )}
           </div>
+        </div>
+        {heroArticle && <div class="pillar-hero__media"><GuideVisual article={heroArticle} large eager cover /></div>}
         </div>
       </div>
     </header>

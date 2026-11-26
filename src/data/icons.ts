@@ -78,5 +78,10 @@ export const ICONS = {
   carFront: '<path d="m5 10 2-6h10l2 6M4 10h16v9H4ZM6 19v2M18 19v2M4 10l-2 1M20 10l2 1M7 15h2M15 15h2"/>',
   clipboardChecks: '<rect x="5" y="4" width="15" height="18" rx="2"/><rect x="9" y="2" width="7" height="4" rx="1"/><path d="m8 12 1 1 2-2M14 12h3M8 17l1 1 2-2M14 17h3"/>',
   zap: '<path d="m13 2-9 12h7l-1 8 10-13h-7Z"/>',
+  trendingUp: "<polyline points=\"23 6 13.5 15.5 8.5 10.5 1 18\" /><polyline points=\"17 6 23 6 23 12\" />",
+  user: "<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\" /><circle cx=\"12\" cy=\"7\" r=\"4\" />",
+  camera: "<path d=\"M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z\" /><circle cx=\"12\" cy=\"13\" r=\"3\" />",
+  coffee: "<path d=\"M10 2v2\" /><path d=\"M14 2v2\" /><path d=\"M18 8h1a4 4 0 0 1 0 8h-1\" /><path d=\"M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z\" /><line x1=\"6\" y1=\"2\" x2=\"6\" y2=\"4\" />",
+  umbrella: "<path d=\"M22 12A10.02 10.02 0 0 0 12 2a10.02 10.02 0 0 0-10 10\" /><path d=\"M12 12v8a2 2 0 0 0 4 0\" /><path d=\"M12 2v1\" />",
 } as const;
 export type IconName = keyof typeof ICONS;

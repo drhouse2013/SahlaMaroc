@@ -1,0 +1,325 @@
+---
+import { redesignContent, redesignContentPath } from "../../utils/redesignContentPath";
+/**
+ * Page officielle « Investir au Maroc »
+ * Reproduction fidèle de la maquette de référence 04 — Investir
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Icon from '../Icon.astro';
+import { useTranslations, type Locale } from '../../i18n';
+import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, categoryPath, getPageUrl } from '../../utils/i18n';
+import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
+import { formatDate, readingTime } from '../../utils/date';
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const copy = {
+  fr: { eyebrow: 'Investir au Maroc', titleStart: 'Investir au', country: 'Maroc', titleEnd: ', des opportunités concrètes.', intro: "Immobilier, création d’entreprise, fiscalité, financement… Tous les guides et outils pour réussir votre projet d’investissement.", search: 'Rechercher un guide, une démarche ou un secteur…', searchButton: 'Rechercher', quick: 'Accès rapide par thématique', quickText: 'Toutes les ressources pour investir, acheter, entreprendre et développer votre projet au Maroc.', calculators: 'Calculateurs', calculatorsText: 'Estimez, comparez et planifiez votre investissement : frais d’achat, crédit et plus-value.', seeCalculators: 'Voir les calculateurs', sectors: 'Secteurs d’opportunités', featured: 'Guides à la une', all: 'Voir tous les guides Investir', cta: 'Vous avez un projet d’investissement ?', ctaText: 'Suivez nos guides, utilisez nos calculateurs et découvrez les secteurs à explorer au Maroc.', start: 'Commencer mon projet' },
+  en: { eyebrow: 'Invest in Morocco', titleStart: 'Invest in', country: 'Morocco', titleEnd: ' with practical guidance.', intro: 'Property, business creation, tax and finance: guides and tools to help plan your investment.', search: 'Search a guide, procedure or sector…', searchButton: 'Search', quick: 'Explore by topic', quickText: 'Resources for buying, starting a business and developing your project in Morocco.', calculators: 'Calculators', calculatorsText: 'Estimate and compare purchase costs, loans and capital gains.', seeCalculators: 'See calculators', sectors: 'Sectors to explore', featured: 'Featured guides', all: 'See investment guides', cta: 'Planning an investment?', ctaText: 'Use our guides and calculators to explore your options in Morocco.', start: 'Plan my project' },
+  es: { eyebrow: 'Invertir en Marruecos', titleStart: 'Invertir en', country: 'Marruecos', titleEnd: ' con información práctica.', intro: 'Inmuebles, creación de empresas, impuestos y financiación: guías y herramientas para planificar tu inversión.', search: 'Buscar una guía, un trámite o un sector…', searchButton: 'Buscar', quick: 'Explorar por tema', quickText: 'Recursos para comprar, emprender y desarrollar tu proyecto en Marruecos.', calculators: 'Calculadoras', calculatorsText: 'Estima y compara gastos de compra, créditos y plusvalías.', seeCalculators: 'Ver calculadoras', sectors: 'Sectores para explorar', featured: 'Guías destacadas', all: 'Ver guías de inversión', cta: '¿Tienes un proyecto de inversión?', ctaText: 'Usa nuestras guías y calculadoras para estudiar tus opciones en Marruecos.', start: 'Planificar mi proyecto' },
+  de: { eyebrow: 'In Marokko investieren', titleStart: 'Investieren in', country: 'Marokko', titleEnd: ' mit klarer Orientierung.', intro: 'Immobilien, Unternehmensgründung, Steuern und Finanzierung: Ratgeber und Werkzeuge für Ihre Planung.', search: 'Ratgeber, Verfahren oder Branche suchen…', searchButton: 'Suchen', quick: 'Nach Thema suchen', quickText: 'Informationen für Kauf, Gründung und Entwicklung Ihres Vorhabens in Marokko.', calculators: 'Rechner', calculatorsText: 'Kaufkosten, Kredite und Veräußerungsgewinne einschätzen und vergleichen.', seeCalculators: 'Rechner ansehen', sectors: 'Branchen im Überblick', featured: 'Ausgewählte Ratgeber', all: 'Investitionsratgeber ansehen', cta: 'Planen Sie eine Investition?', ctaText: 'Nutzen Sie unsere Ratgeber und Rechner, um Ihre Möglichkeiten in Marokko zu prüfen.', start: 'Vorhaben planen' },
+  ar: { eyebrow: 'الاستثمار في المغرب', titleStart: 'استثمر في', country: 'المغرب', titleEnd: ' بخطوات مدروسة.', intro: 'العقار وإنشاء المقاولات والضرائب والتمويل: أدلة وأدوات تساعدك على التخطيط لاستثمارك.', search: 'ابحث عن دليل أو إجراء أو قطاع…', searchButton: 'ابحث', quick: 'تصفح حسب الموضوع', quickText: 'موارد للشراء وإنشاء مشروع وتطوير استثمارك في المغرب.', calculators: 'الحاسبات', calculatorsText: 'قدّر تكاليف الشراء والقروض والأرباح العقارية وقارن بينها.', seeCalculators: 'عرض الحاسبات', sectors: 'قطاعات للاستكشاف', featured: 'أدلة مختارة', all: 'عرض أدلة الاستثمار', cta: 'هل تخطط للاستثمار؟', ctaText: 'استعن بأدلتنا وحاسباتنا لدراسة خياراتك في المغرب.', start: 'ابدأ التخطيط لمشروعي' },
+}[lang];
+const heroAlt = { fr: 'Mosquée Hassan II au coucher du soleil, Casablanca', en: 'Hassan II Mosque at sunset in Casablanca', es: 'Mezquita Hassan II al atardecer en Casablanca', de: 'Hassan-II.-Moschee bei Sonnenuntergang in Casablanca', ar: 'مسجد الحسن الثاني عند غروب الشمس في الدار البيضاء' }[lang];
+const sectorText = {
+  fr: ['Immobilier & construction', 'Tourisme & hôtellerie', 'Énergies renouvelables', 'Agriculture & agroalimentaire', 'Industrie & export', 'Services & numérique'],
+  en: ['Property & construction', 'Tourism & hospitality', 'Renewable energy', 'Agriculture & food', 'Industry & exports', 'Services & digital'],
+  es: ['Inmobiliaria y construcción', 'Turismo y hostelería', 'Energías renovables', 'Agricultura y alimentación', 'Industria y exportación', 'Servicios y digital'],
+  de: ['Immobilien & Bau', 'Tourismus & Hotellerie', 'Erneuerbare Energien', 'Landwirtschaft & Lebensmittel', 'Industrie & Export', 'Dienstleistungen & Digitales'],
+  ar: ['العقار والبناء', 'السياحة والفندقة', 'الطاقات المتجددة', 'الفلاحة والصناعات الغذائية', 'الصناعة والتصدير', 'الخدمات والرقمنة'],
+}[lang];
+const guideTags = {
+  fr: ['Immobilier', 'Entreprise', 'Fiscalité', 'Logement'],
+  en: ['Property', 'Business', 'Tax', 'Housing'],
+  es: ['Inmobiliaria', 'Empresa', 'Impuestos', 'Vivienda'],
+  de: ['Immobilien', 'Unternehmen', 'Steuern', 'Wohnen'],
+  ar: ['العقار', 'المقاولة', 'الضرائب', 'السكن'],
+}[lang];
+
+const self = (l: Locale) => hubPath(l, 'invest');
+const url = absoluteUrl(self(lang), Astro.site);
+const toolUrl = (await getPageUrl(lang, 'calculators')) ?? await redesignContentPath(lang, 'calculators');
+
+const crumbs = [
+  { name: t('breadcrumb.home'), href: homePath(lang) },
+  { name: { fr: 'Investir', en: 'Invest', es: 'Invertir', de: 'Investieren', ar: 'استثمار' }[lang] }
+];
+
+const categories = [
+  { label: { fr: 'Investir au Maroc', en: 'Invest in Morocco', es: 'Invertir en Marruecos', de: 'In Marokko investieren', ar: 'الاستثمار في المغرب' }[lang], icon: 'trendingUp' as const, href: hubPath(lang, 'invest') },
+  { label: { fr: 'Immobilier au Maroc', en: 'Property in Morocco', es: 'Inmobiliaria en Marruecos', de: 'Immobilien in Marokko', ar: 'العقار في المغرب' }[lang], icon: 'home' as const, href: categoryPath(lang, 'immobilier') },
+  { label: { fr: "Création d'entreprise", en: 'Business Creation', es: 'Creación de empresas', de: 'Unternehmensgründung', ar: 'إنشاء المقاولات' }[lang], icon: 'building' as const, href: await redesignContentPath(lang, 'business-auto-entrepreneur-mre') },
+  { label: { fr: 'Fiscalité & réglementation', en: 'Tax & Regulations', es: 'Fiscalidad y normativa', de: 'Steuern & Vorschriften', ar: 'الضرائب والتنظيم' }[lang], icon: 'scale' as const, href: await redesignContentPath(lang, 'calc-capital-gains') },
+  { label: { fr: 'Financement & banques', en: 'Finance & Banking', es: 'Financiación y banca', de: 'Finanzierung & Banken', ar: 'التمويل والأبناك' }[lang], icon: 'coins' as const, href: await redesignContentPath(lang, 'bank-account') },
+  { label: { fr: 'Opportunités & secteurs', en: 'Sectors & Opportunities', es: 'Oportunidades y sectores', de: 'Chancen & Branchen', ar: 'الفرص والقطاعات' }[lang], icon: 'compass' as const, href: `${hubPath(lang, 'invest')}#secteurs` },
+];
+
+const sectors = [
+  { label: 'Immobilier & construction', icon: 'building' as const, href: categoryPath(lang, 'immobilier') },
+  { label: 'Tourisme & hôtellerie', icon: 'bed' as const, href: hubPath(lang, 'visit') },
+  { label: 'Énergies renouvelables', icon: 'sun' as const, href: hubPath(lang, 'invest') },
+  { label: 'Agriculture & agroalimentaire', icon: 'palmtree' as const, href: hubPath(lang, 'invest') },
+  { label: 'Industrie & export', icon: 'ship' as const, href: hubPath(lang, 'invest') },
+  { label: 'Services & numérique', icon: 'globe' as const, href: await redesignContentPath(lang, 'business-auto-entrepreneur-mre') },
+].map((item, index) => ({ ...item, label: sectorText[index] }));
+
+const featuredGuides = await Promise.all([
+  {
+    tag: 'Immobilier',
+    title: 'Acheter un bien immobilier au Maroc : le guide complet',
+    date: 'Mis à jour le 12 nov. 2026',
+    time: '10 min de lecture',
+    image: '/assets/img/guide-immo.jpg',
+    href: await redesignContentPath(lang, 'buy-property-abroad'),
+  },
+  {
+    tag: 'Entreprise',
+    title: 'Créer une entreprise au Maroc : étapes et coûts',
+    date: 'Mis à jour le 9 nov. 2026',
+    time: '8 min de lecture',
+    image: '/assets/photos/banque-casablanca-cfc.jpg',
+    href: await redesignContentPath(lang, 'business-auto-entrepreneur-mre'),
+  },
+  {
+    tag: 'Fiscalité',
+    title: 'Fiscalité au Maroc : ce qu\'il faut savoir',
+    date: 'Mis à jour le 8 nov. 2026',
+    time: '7 min de lecture',
+    image: '/assets/photos/immo-impots-casa-2025.jpg',
+    href: await redesignContentPath(lang, 'calc-capital-gains'),
+  },
+  {
+    tag: 'Logement',
+    title: 'Aide au logement Daam Sakane au Maroc',
+    date: 'Mis à jour le 5 nov. 2026',
+    time: '9 min de lecture',
+    image: '/assets/photos/housing-keys.webp',
+    href: await redesignContentPath(lang, 'daam-sakane'),
+  },
+].map(async (item, index) => {
+  const key = ['buy-property-abroad', 'business-auto-entrepreneur-mre', 'calc-capital-gains', 'daam-sakane'][index];
+  const entry = await redesignContent(lang, key);
+  const updated = entry?.data.updatedDate ?? (entry?.collection === 'articles' ? entry.data.pubDate : undefined);
+  return {
+    ...item,
+    tag: guideTags[index],
+    title: entry?.data.title ?? item.title,
+    date: updated ? t('common.updatedOn', { date: formatDate(updated, lang) }) : '',
+    time: entry?.collection === 'articles' ? t('article.readingTime', { n: readingTime(entry.body) }) : '',
+  };
+}));
+---
+
+<BaseLayout
+  lang={lang}
+  title={{ fr: 'Investir au Maroc : immobilier, entreprise, fiscalité & financement', en: 'Invest in Morocco: Property, Business & Tax Guides', es: 'Invertir en Marruecos: inmobiliaria, empresas y fiscalidad', de: 'In Marokko investieren: Immobilien, Unternehmen & Steuern', ar: 'الاستثمار في المغرب: العقار، المقاولات والضرائب' }[lang]}
+  description={{ fr: 'Tout pour réussir votre investissement au Maroc : achat immobilier, création d\'entreprise, fiscalité MRE, financement bancaire et simulateurs gratuits.', en: 'Guides and calculators to invest in Morocco: property, business setup, taxation and banking.', es: 'Guías y herramientas para invertir en Marruecos: vivienda, creación de empresas e impuestos.', de: 'Ratgeber und Rechner für Investitionen in Marokko: Immobilien, Firmengründung und Steuern.', ar: 'أدلة وحاسبات للاستثمار في المغرب: العقار، إنشاء المقاولات، الضرائب والتمويل.' }[lang]}
+  alternates={allLocalesAlternates(self)}
+  switchTargets={allLocalesTargets(self)}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, url: c.href ? absoluteUrl(c.href, Astro.site) : url })))]}
+>
+  <div class="root-page-shell">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+
+      <div class="mb-4">
+        <Breadcrumbs items={crumbs} lang={lang} />
+      </div>
+
+      <!-- Hero Section -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 pb-12">
+        <div class="lg:col-span-6 z-10">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#c05621]">{copy.eyebrow}</span>
+            <span class="w-8 h-px bg-[#c05621]"></span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#111827] leading-[1.18]">
+            {copy.titleStart} <span class="text-[#c05621]">{copy.country}</span>{copy.titleEnd}
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-[#554e44] leading-relaxed max-w-xl">
+            {copy.intro}
+          </p>
+
+          <form action={hubPath(lang, 'search')} method="get" class="mt-8 flex items-center bg-white border border-[#eae0d2] rounded-full p-1.5 shadow-md max-w-xl">
+            <Icon name="search" class="size-5 ms-3 text-gray-400 shrink-0" />
+            <input
+              type="text"
+              name="q"
+              placeholder={copy.search}
+              class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
+            />
+            <button type="submit" class="bg-[#0d2b24] hover:bg-[#123d33] text-white p-2.5 rounded-full transition-colors shrink-0" aria-label={copy.searchButton}>
+              <Icon name="search" class="size-4" />
+            </button>
+          </form>
+        </div>
+
+        <div class="lg:col-span-6 relative mt-6 lg:mt-0">
+          <div class="brush-hero-media h-[280px] sm:h-[380px] lg:h-[420px] w-full shadow-xl">
+            <img
+              src="/assets/img/dest-casablanca.jpg"
+              alt={heroAlt}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+          <div class="polaroid-card absolute -top-2 end-4 sm:end-8 w-28 sm:w-36 rotate-[4deg] hidden sm:block">
+            <img src="/assets/img/guide-immo.jpg" alt="Immeubles de bureaux à Casablanca" class="w-full h-24 sm:h-28 object-cover rounded" />
+          </div>
+          <div class="polaroid-card absolute -bottom-6 end-8 sm:end-14 w-32 sm:w-44 rotate-[-4deg] hidden sm:block">
+            <img src="/assets/photos/banque-casablanca-cfc.jpg" alt="Entreprise et finance" class="w-full h-24 sm:h-32 object-cover rounded" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 : Accès rapide par thématique -->
+      <section class="mt-8 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.quick}</h2>
+        </div>
+        <p class="text-sm text-[#665e52] mb-6 ms-3.5">{copy.quickText}</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {categories.map((cat) => (
+              <a
+                href={cat.href}
+                class="bg-white border border-[#eae0d2] rounded-2xl p-5 flex items-center justify-between hover:shadow-md hover:border-[#c05621]/50 hover:-translate-y-0.5 transition-all group"
+              >
+                <div class="flex items-center gap-3.5">
+                  <div class="size-11 rounded-xl bg-[#fbf5ec] flex items-center justify-center text-[#0d2b24] group-hover:bg-[#c05621] group-hover:text-white transition-colors shrink-0">
+                    <Icon name={cat.icon} class="size-5" />
+                  </div>
+                  <span class="font-bold text-sm text-[#1b1916] leading-snug">
+                    {cat.label}
+                  </span>
+                </div>
+                <span class="size-7 rounded-full bg-[#fbf5ec] flex items-center justify-center text-[#554e44] group-hover:bg-[#c05621] group-hover:text-white transition-all text-xs shrink-0">
+                  →
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col gap-4">
+            <div class="bg-[#0d2b24] text-white rounded-2xl p-5 shadow-lg">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-lg font-bold font-serif">{copy.calculators}</h3>
+                  <p class="text-xs text-white/80 mt-1 leading-relaxed">
+                    {copy.calculatorsText}
+                  </p>
+                </div>
+                <Icon name="calculator" class="size-8 text-[#d9a441] shrink-0" />
+              </div>
+              <a
+                href={toolUrl}
+                class="mt-4 inline-flex items-center gap-2 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] font-semibold text-xs px-4 py-2 rounded-full transition-colors"
+              >
+                <span>{copy.seeCalculators}</span>
+                <Icon name="arrowRight" class="size-3 rtl:-scale-x-100" />
+              </a>
+            </div>
+
+            <div id="secteurs" class="bg-white border border-[#eae0d2] rounded-2xl p-4 shadow-sm">
+              <div class="flex items-center gap-2 mb-3 pb-2 border-b border-[#eae0d2]/60">
+                <Icon name="trendingUp" class="size-4 text-[#c05621]" />
+                <h3 class="text-sm font-bold text-[#1b1916]">{copy.sectors}</h3>
+              </div>
+              <ul class="flex flex-col gap-2 text-xs">
+                {sectors.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-[#fbf5ec] hover:text-[#c05621] text-gray-700 transition-colors group"
+                    >
+                      <span class="flex items-center gap-2 font-medium">
+                        <Icon name={item.icon} class="size-3.5 text-gray-400 group-hover:text-[#c05621]" />
+                        <span>{item.label}</span>
+                      </span>
+                      <Icon name="arrowRight" class="size-3 opacity-40 group-hover:opacity-100 rtl:-scale-x-100" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 2 : Guides à la une -->
+      <section class="mt-12 pt-8 border-t border-[#eae0d2]/70">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-6 bg-[#c05621] rounded-full inline-block"></span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-[#1a1714]">{copy.featured}</h2>
+          </div>
+          <a href={categoryPath(lang, 'immobilier')} class="text-xs sm:text-sm font-bold text-[#0d2b24] hover:text-[#c05621] inline-flex items-center gap-1">
+            <span>{copy.all}</span>
+            <Icon name="arrowRight" class="size-3.5 rtl:-scale-x-100" />
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {featuredGuides.map((g) => (
+            <a
+              href={g.href}
+              class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
+            >
+              <div class="relative h-40 overflow-hidden">
+                <img src={g.image} alt={g.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                  {g.tag}
+                </span>
+              </div>
+              <div class="p-4 flex flex-col flex-1 justify-between bg-white">
+                <h3 class="font-serif font-bold text-base text-[#1b1916] group-hover:text-[#c05621] transition-colors leading-snug">
+                  {g.title}
+                </h3>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
+                  <div class="flex flex-col">
+                    {g.date && <span>{g.date}</span>}
+                    {g.time && <span>{g.time}</span>}
+                  </div>
+                  <span class="size-7 rounded-full bg-[#fbf5ec] group-hover:bg-[#c05621] group-hover:text-white flex items-center justify-center text-gray-500 text-xs transition-colors">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Bottom CTA Banner -->
+      <section class="mt-14 bg-[#0d2b24] text-white rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('/assets/img/band-legzira.jpg');"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 text-center md:text-start flex-col md:flex-row">
+            <div class="size-14 rounded-2xl border border-white/25 flex items-center justify-center shrink-0 text-[#d9a441]">
+              <Icon name="trendingUp" class="size-7" />
+            </div>
+            <div>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">{copy.cta}</h3>
+              <p class="text-xs sm:text-sm text-white/80 mt-1 max-w-xl">
+                {copy.ctaText}
+              </p>
+            </div>
+          </div>
+          <a
+            href={toolUrl}
+            class="bg-white text-[#0d2b24] hover:bg-[#fcf7ee] px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all shrink-0 inline-flex items-center gap-2"
+          >
+            <span>{copy.start}</span>
+            <Icon name="arrowRight" class="size-4 rtl:-scale-x-100" />
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

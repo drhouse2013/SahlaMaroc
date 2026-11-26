@@ -5,10 +5,16 @@ Sources : Wikimedia Commons (licences vérifiées via l'API), Pexels.
 | Fichier | Auteur | Licence | Source |
 |---|---|---|---|
 | home-hero.jpg | Earth Photart | Pexels License | https://www.pexels.com/photo/sunset-view-of-the-iconic-rabat-skyline-34059520/ |
+| parlement-rabat.jpg | Fernando Pascullo | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Moroccan_Parliament_Building.jpg |
 | home-hero-gate.jpg | Aemazy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kasbah_of_the_Udayas,_Rabat_-_Bab_Oudaia_gate.jpg |
 | taghazout-surf-2026.jpg | Desert Morocco Adventure Tours | Pexels License | https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/ |
 | villa-majorelle-marrakech-2024.jpg | Adrien Casse | Pexels License | https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/ |
-| customs-border-car-2025.jpg | Ishara Kasthuriarachchi | Pexels License | https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/ |
+| tanger-med-vehicles-2025.jpg | Bertrand Soubeyrand | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:D%C3%A9chargement_poids_lourds_ferry_Tanger_Express_%C3%A0_Tanger_MED-photo_Bertrand_SOUBEYRAND.jpg |
+| marrakech-koutoubia-2026.jpg | Valentin Vesa | Pexels License | https://www.pexels.com/photo/sunset-at-koutoubia-mosque-in-marrakesh-36595610/ |
+| fes-bab-bou-jeloud-2024.jpg | Jorge Franganillo | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Fez_Bab_Bou_Jeloud_(54252643270).jpg |
+| chefchaouen-ruelle-2024.jpg | Ines Diaz Cervantes | Pexels License | https://www.pexels.com/photo/vibrant-blue-alley-in-chefchaouen-morocco-28531592/ |
+| agadir-bay-2025.jpg | Abdeaitali | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Beach_of_Agadir_from_Kasbah_of_Agadir_Oufella.jpg |
+| villa-al-maaden-marrakech.jpg | Didierlefort | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Al_Maaden_Marrakech_Villa_DL2A.jpg |
 | merzouga-dunes.jpg | Bjørn Christian Tørrissen | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Merzouga_Dunes_2011.jpg |
 | chefchaouen-ruelle.jpg | Ekaterina Kvelidze | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Chefchaouen_-_blue_city_in_Morocco.jpg |
 | essaouira-remparts.jpg | Ahmed.magdy | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Essaouira_Citadel.jpg |
@@ -495,7 +501,15 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 ## Guides immobilier MRE et dédouanement automobile — 18 novembre 2026
 
 - `villa-majorelle-marrakech-2024.jpg` : Adrien Casse, Pexels License. Photographie prise le 14 décembre 2024, publiée en 2026 ; original 4 000 × 6 000 px. Dérivé 1 600 × 1 200 px, recadré pour la carte ; métadonnées retirées. Source : https://www.pexels.com/photo/majorelle-garden-s-vibrant-blue-villa-in-marrakech-41032693/.
-- `customs-border-car-2025.jpg` : Ishara Kasthuriarachchi, Pexels License. Photographie prise le 10 août 2025 au poste-frontière arménien ; original 3 024 × 4 032 px. Dérivé 1 600 × 1 200 px, recadré pour garder la voiture et les voies de contrôle ; métadonnées retirées. Source : https://www.pexels.com/photo/classic-red-car-at-armenian-border-checkpoint-33652495/.
+- `tanger-med-vehicles-2025.jpg` : Bertrand Soubeyrand, CC BY-SA 4.0. Photographie prise au port de Tanger Med le 24 septembre 2025 ; voitures de particuliers en attente d'embarquement à côté du ferry Tanger Express. Version Wikimedia redimensionnée à 1 800 px. Source : https://commons.wikimedia.org/wiki/File:D%C3%A9chargement_poids_lourds_ferry_Tanger_Express_%C3%A0_Tanger_MED-photo_Bertrand_SOUBEYRAND.jpg.
+
+## Sélection visuelle des destinations — 25 novembre 2026
+
+- Marrakech : Valentin Vesa, Pexels License, Koutoubia et palmiers au coucher du soleil, prise le 8 février 2026. Image Pexels redimensionnée à 2 400 px.
+- Fès : Jorge Franganillo, CC BY 2.0, Bab Bou Jeloud, prise le 27 décembre 2024. Image Wikimedia redimensionnée à 1 920 px ; cadrage responsive.
+- Chefchaouen : Ines Diaz Cervantes, Pexels License, ruelle bleue et décorations, publiée le 20 septembre 2024. Image Pexels redimensionnée à 2 400 px.
+- Agadir : Abdeaitali, CC BY-SA 4.0, baie vue de la kasbah d'Agadir Oufella, prise le 4 avril 2025. Image Wikimedia redimensionnée à 1 920 px.
+- Immobilier Marrakech : Didierlefort, CC BY-SA 3.0, villas et piscine du domaine Al Maaden, prise le 28 avril 2010. Original 944 × 547 px ; rendu réservé à la vignette. Cette photo de villa réelle remplace la maison du jardin Majorelle, mais une vue récente et libre de la même qualité reste à trouver.
 
 
 ## Photo fournie par le propriétaire du site — 18 novembre 2026

@@ -23,7 +23,7 @@ export const L: Record<string, Full<string>> = {
   toolsSub: { en: 'Real numbers before you decide: buying, borrowing, sending money, travelling.', fr: 'Des vrais chiffres avant de décider : acheter, emprunter, envoyer de l’argent, voyager.', es: 'Cifras reales antes de decidir.', de: 'Echte Zahlen, bevor du entscheidest.', ar: 'أرقام حقيقية قبل أن تقرر.' },
   y2030Title: { en: 'Morocco 2030: the countdown has started', fr: 'Maroc 2030 : le compte à rebours a commencé', es: 'Marruecos 2030: empieza la cuenta atrás', de: 'Marokko 2030: Der Countdown läuft', ar: 'المغرب 2030: بدأ العد التنازلي' },
   y2030Text: { en: 'Morocco co-hosts the 2030 football World Cup with Spain and Portugal. Host cities, transport, where to stay, renting out your flat: our guides grow until kick-off.', fr: 'Le Maroc co-organise la Coupe du monde de football 2030 avec l’Espagne et le Portugal. Villes hôtes, transports, logement, louer son appartement : nos guides s’enrichissent jusqu’au coup d’envoi.', es: 'Marruecos coorganiza el Mundial de fútbol 2030 con España y Portugal.', de: 'Marokko ist 2030 mit Spanien und Portugal Gastgeber der Fußball-WM.', ar: 'ينظم المغرب كأس العالم لكرة القدم 2030 مع إسبانيا والبرتغال.' },
-  hostCity: { en: '2030 host city', fr: 'Ville hôte 2030', es: 'Sede 2030', de: 'Spielort 2030', ar: 'مدينة مضيفة 2030' },
+  hostCity: { en: '2030 candidate city', fr: 'Ville candidate 2030', es: 'Ciudad candidata 2030', de: 'Kandidatenstadt 2030', ar: 'مدينة مرشحة 2030' },
   statGuides: { en: 'guides', fr: 'guides', es: 'guías', de: 'Guides', ar: 'دليل' },
   statLangs: { en: 'languages', fr: 'langues', es: 'idiomas', de: 'Sprachen', ar: 'لغات' },
   statUpdated: { en: 'Updated', fr: 'Mis à jour', es: 'Actualizado', de: 'Aktualisiert', ar: 'آخر تحديث' },

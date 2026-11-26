@@ -203,6 +203,8 @@
   "calc.checked": "Valores por defecto comprobados el {date}",
   "calc.guide": "Leer la guía relacionada",
   "calc.disclaimer": "Este resultado es una estimación informativa. No sustituye un presupuesto, una simulación oficial ni el consejo de un profesional (notario, banco, asesor fiscal).",
+  "calc.ferryDisclaimer": "Horarios, duraciones y precios orientativos: confirma la travesía, las condiciones de embarque y la tarifa con la compañía marítima antes de reservar. Consulta los peajes con Autoroutes du Maroc.",
+  "calc.ferryTable": "Rutas de ferri — tabla con desplazamiento horizontal",
   "calc.invalid": "Introduce un número positivo.",
   "calc.invalidDate": "La fecha de salida es anterior a la de entrada.",
   "calc.reset": "Restablecer",
