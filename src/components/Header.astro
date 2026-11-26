@@ -9,7 +9,8 @@ import { redesignContentPath } from "../utils/redesignContentPath";
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import Icon from './Icon.astro';
-import { BRAND_CONFIG, getBrandName } from '../config/brand';
+import Logo from './Logo.astro';
+import { getBrandName } from '../config/brand';
 import { useTranslations, type Locale } from '../i18n';
 import { categoryPath, getPageUrl, homePath, hubPath, getActiveCategories, type Alternates } from '../utils/i18n';
 import type { IconName } from '../data/icons';
@@ -130,109 +131,58 @@ const isItemActive = (id: string, href: string) => {
 const searchHref = hubPath(lang, 'search');
 ---
 
-<header class="sticky top-0 z-50 bg-[#0d2b24] text-white border-b border-white/10 shadow-md">
-  <div class="max-w-[1440px] mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
-
-    <!-- Logo & Marque -->
-    <div class="flex items-center gap-3">
-      <a href={homePath(lang)} class="flex items-center gap-2.5 text-white no-underline group shrink-0" aria-label={`${brand} — ${t('nav.home')}`}>
-        <svg viewBox="0 0 40 40" class="size-7 sm:size-8 shrink-0 text-[#d9a441]" fill="none" stroke="currentColor">
-          <!-- Étoile géométrique octagramme marocaine -->
-          <polygon points="20,2 25,14 38,15 28,24 31,37 20,29 9,37 12,24 2,15 15,14" fill="#c05621" stroke="#d9a441" stroke-width="1.5" />
-          <polygon points="20,7 23,15 32,16 25,22 27,31 20,26 13,31 15,22 8,16 17,15" fill="#0d2b24" stroke="#d9a441" stroke-width="1" />
-          <circle cx="20" cy="20" r="3" fill="#d9a441" />
-        </svg>
-        <span class="text-lg sm:text-xl font-bold tracking-tight text-white font-serif">
-          Sahla<span class="text-[#c05621] ml-1">Maroc</span>
+<header class="tpl-header">
+  <div class="tpl-header__inner">
+    <a href={homePath(lang)} class="tpl-brand" aria-label={`${brand} — ${t('nav.home')}`}>
+      {lang === 'fr' ? (
+        <>
+          <img class="logo-light" src="/assets/logos/logo-horizontal-clair.svg" alt={brand} width="435" height="92" loading="eager" />
+          <img class="logo-dark" src="/assets/logos/logo-horizontal-sombre.svg" alt={brand} width="435" height="92" loading="eager" />
+        </>
+      ) : (
+        <span class="tpl-brand__fallback">
+          <Logo class="h-9 w-8" />
+          <span dir="ltr">Sahla <span class="italic">{brand.split(' ').slice(1).join(' ')}</span></span>
         </span>
-      </a>
-      <span class="h-6 w-px bg-white/20 hidden xl:block mx-2" aria-hidden="true"></span>
-    </div>
+      )}
+    </a>
+    <div class="tpl-header__divider" aria-hidden="true"></div>
 
-    <!-- Navigation Principale (Desktop) -->
-    <nav class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-sm" aria-label={t('nav.main')}>
-      {navItems.map((item) => {
-        const active = isItemActive(item.id, item.href);
-        return item.sub ? (
-          <details class="relative group" data-nav-menu>
-            <summary class:list={[
-              "cursor-pointer list-none flex items-center gap-1.5 py-1.5 px-3 rounded-full transition-all text-xs xl:text-sm font-medium select-none [&::-webkit-details-marker]:hidden",
-              active ? "bg-[#c05621] text-white shadow-sm font-semibold" : "text-white/90 hover:text-white hover:bg-white/10"
-            ]}>
-              <Icon name={item.icon} class="size-4 shrink-0" />
-              <span>{item.label}</span>
-              <Icon name="chevronDown" class="size-3 transition group-open:rotate-180 opacity-70" />
+    <nav class="tpl-nav" aria-label={t('nav.main')}>
+      {navItems.map((item) => (
+        item.sub ? (
+          <details class="tpl-nav__item" data-nav-menu>
+            <summary class="tpl-nav__link" aria-current={isItemActive(item.id, item.href) ? 'page' : item.sub.some((s) => path.replace(/\/$/, '') === s.href.replace(/\/$/, '')) ? 'location' : undefined}>
+              {item.label}
+              <Icon name="chevronDown" class="size-3.5 tpl-nav__chev" />
             </summary>
-            <div class="absolute start-0 top-full mt-2 w-64 rounded-xl bg-white text-gray-900 shadow-2xl border border-[#ede3d5] py-2 z-50 flex flex-col gap-0.5">
-              {item.sub.map((s) => (
-                <a href={s.href} class="px-4 py-2 hover:bg-[#fbf5ec] hover:text-[#c05621] text-xs xl:text-sm font-medium text-gray-800 transition-colors flex items-center justify-between">
-                  <span>{s.label}</span>
-                  <Icon name="arrowRight" class="size-3 opacity-40 rtl:-scale-x-100" />
-                </a>
-              ))}
-            </div>
+            <div class="tpl-nav__menu">{item.sub.map((s) => <a href={s.href}>{s.label}</a>)}{item.href === toolUrl && <div class="tpl-menu-theme"><ThemeToggle lang={lang} /></div>}</div>
           </details>
         ) : (
-          <a href={item.href} class:list={[
-            "flex items-center gap-1.5 py-1.5 px-3 rounded-full transition-all text-xs xl:text-sm font-medium select-none",
-            active ? "bg-[#c05621] text-white shadow-sm font-semibold" : "text-white/90 hover:text-white hover:bg-white/10"
-          ]}>
-            <Icon name={item.icon} class="size-4 shrink-0" />
-            <span>{item.label}</span>
-          </a>
-        );
-      })}
+          <a class="tpl-nav__item tpl-nav__link" href={item.href} aria-current={isItemActive(item.id, item.href) ? 'page' : undefined}>{item.label}</a>
+        )
+      ))}
     </nav>
 
-    <!-- Contrôles droits : Recherche, Langue, Espace, Mobile Burger -->
-    <div class="flex items-center gap-2 sm:gap-3">
-      <!-- Bouton Recherche globale -->
-      <a href={searchHref} data-search-open class="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-colors" aria-label={t('nav.search')}>
-        <Icon name="search" class="size-4 sm:size-5" />
-      </a>
-
-      <!-- Sélecteur de langue -->
-      <div class="text-white">
-        <LanguageSwitcher lang={lang} targets={switchTargets ?? {}} />
-      </div>
-
-      <!-- Bouton Mon espace -->
-      <button type="button" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 bg-white text-[#0d2b24] hover:bg-[#fcf7ee] rounded-full text-xs sm:text-sm font-semibold shadow-sm transition-all" data-notebook-open aria-label={account} title={accountHint}>
-        <Icon name="user" class="size-4 text-[#0d2b24]" />
-        <span class="hidden sm:inline">{account}</span>
+    <div class="tpl-controls">
+      <a href={searchHref} data-search-open class="tpl-iconbtn" aria-label={t('nav.search')}><Icon name="search" class="size-5" /></a>
+      <div class="tpl-lang-wrap"><LanguageSwitcher lang={lang} targets={switchTargets ?? {}} /></div>
+      <button type="button" class="tpl-account" data-notebook-open aria-label={account} title={accountHint}>
+        <Icon name="userRound" class="size-4" /><span>{account}</span>
       </button>
-
-      <!-- Bouton Menu Mobile (Burger) -->
-      <details class="lg:hidden relative" data-nav-menu>
-        <summary class="p-2 text-white/90 hover:text-white rounded-lg cursor-pointer list-none [&::-webkit-details-marker]:hidden" aria-label={t('nav.menu')}>
-          <Icon name="menu" class="size-6" />
-        </summary>
-        <div class="absolute end-0 top-full mt-2 w-72 rounded-xl bg-[#0a251f] border border-white/15 p-4 shadow-2xl text-white z-50 flex flex-col gap-2">
-          <p class="text-xs uppercase tracking-wider text-[#d9a441] font-bold px-2 mb-1">{t('nav.main')}</p>
+      <details class="tpl-burger-wrap" data-nav-menu>
+        <summary class="tpl-burger" aria-label={t('nav.menu')}><Icon name="menu" class="size-6" /></summary>
+        <div class="tpl-nav__menu tpl-nav__menu--mobile">
+          <p class="tpl-nav__mobile-title">{t('nav.main')}</p>
           {navItems.map((item) => (
             <div>
-              <a href={item.href} class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 text-sm font-medium">
-                <Icon name={item.icon} class="size-4 text-[#d9a441]" />
-                <span>{item.label}</span>
-              </a>
-              {item.sub && (
-                <div class="ms-6 border-s border-white/10 ps-2 flex flex-col gap-1 mt-1">
-                  {item.sub.map((s) => (
-                    <a href={s.href} class="px-2 py-1 text-xs text-white/75 hover:text-white hover:underline">
-                      {s.label}
-                    </a>
-                  ))}
-                </div>
-              )}
+              <a href={item.href} aria-current={isItemActive(item.id, item.href) ? 'location' : undefined}>{item.label}</a>
+              {item.sub?.map((link) => <a class="tpl-nav__mobile-sub" href={link.href}>{link.label}</a>)}
             </div>
           ))}
-          <div class="pt-3 border-t border-white/10 mt-2 flex items-center justify-between px-2">
-            <span class="text-xs text-white/70">Mode</span>
-            <ThemeToggle lang={lang} row />
-          </div>
+          <div class="tpl-nav__mobile-theme"><ThemeToggle lang={lang} row /></div>
         </div>
       </details>
-
     </div>
   </div>
 </header>
