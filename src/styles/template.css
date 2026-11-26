@@ -150,6 +150,8 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .tpl-nav__menu--mobile { inset-inline-end: 0; inset-inline-start: auto; top: 44px; width: min(22rem, calc(100vw - 2rem)); max-height: min(70vh, 34rem); overflow: auto; }
 .tpl-nav__mobile-title { margin: 4px 8px 6px; font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #b34723; }
 .tpl-nav__menu--mobile a { display: flex; align-items: center; gap: 8px; }
+.tpl-nav__menu--mobile .tpl-nav__mobile-sub { margin-inline-start: 1rem; padding-block: .45rem; }
+.tpl-header :is(a, button, summary):focus-visible { outline: 2px solid var(--tpl-terracotta); outline-offset: 2px; }
 .tpl-nav__menu--mobile a:is([aria-current="page"], [aria-current="location"]) { background: #f9ebda; font-weight: 700; }
 .tpl-nav__menu--mobile hr { width: 100%; border: 0; border-top: 1px solid #e9ded1; margin: 7px 0; }
 .tpl-nav__mobile-theme { padding: 4px 0 0; }
@@ -969,12 +971,18 @@ html[lang="ar"] .tpl-guide__checks span {
    Styles officiels MorokGo / Sahla Maroc — Refonte des 6 pages racines
    ========================================================================== */
 .root-page-shell {
-  background-color: #fbf5ec;
-  color: #1a1714;
+  background-color: var(--tpl-ivory);
+  color: var(--text);
   min-height: 100vh;
 }
 .dark .root-page-shell {
   background-color: #08211c;
+  color: #f6efe3;
+}
+.root-page-shell :is(h1, h2) {
+  color: var(--tpl-forest);
+}
+.dark .root-page-shell :is(h1, h2) {
   color: #f6efe3;
 }
 
@@ -986,16 +994,8 @@ html[lang="ar"] .tpl-guide__checks span {
 }
 @media (min-width: 1024px) {
   .brush-hero-media {
-    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%, 8% 50%);
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-  }
-  [dir="rtl"] .brush-hero-media {
-    clip-path: polygon(0% 0%, 88% 0%, 92% 50%, 100% 100%, 0% 100%);
-    border-top-left-radius: 0;
-    border-top-right-radius: 40px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 40px;
+    border-start-start-radius: 22% 50%;
+    border-end-start-radius: 22% 50%;
   }
 }
 

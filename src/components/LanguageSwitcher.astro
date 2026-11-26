@@ -19,7 +19,9 @@ const t = useTranslations(lang);
     class="flex cursor-pointer list-none items-center gap-1.5 rounded-full px-2.5 py-1.5 text-xs sm:text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 transition-colors [&::-webkit-details-marker]:hidden"
     aria-label={`${t('lang.switch')} (${LOCALE_META[lang].label})`}
   >
-    <span class="text-sm leading-none" aria-hidden="true">{LOCALE_META[lang].flag}</span>
+    {lang === 'fr'
+      ? <span class="tpl-language-flag" aria-hidden="true"></span>
+      : <span class="text-sm leading-none" aria-hidden="true">{LOCALE_META[lang].flag}</span>}
     <span class="uppercase font-semibold tracking-wide">{lang}</span>
     <Icon name="chevronDown" class="size-3 transition group-open:rotate-180 opacity-70" />
   </summary>
