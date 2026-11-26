@@ -248,7 +248,7 @@ const popularTools = [
               class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
             >
               <div class="relative h-40 overflow-hidden">
-                <img src={tool.image} alt={tool.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={tool.image} alt={tool.title} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow inline-flex items-center gap-1">
                   <Icon name={tool.icon} class="size-3 text-[#c05621]" />
                   {tool.tag}

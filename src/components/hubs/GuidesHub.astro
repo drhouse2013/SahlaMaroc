@@ -128,7 +128,7 @@ const parcoursCards = [
             <PhotoCredit lang={lang} credit="Val Traveler · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg" />
           </div>
           <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-32 sm:w-44 rotate-[4deg] hidden sm:block">
-            <img src="/assets/img/dest-casablanca.jpg" alt="Casablanca" class="w-full h-24 sm:h-28 object-cover rounded" />
+            <img src="/assets/img/dest-casablanca.jpg" alt="Casablanca" loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
           </div>
         </div>
       </section>
@@ -144,7 +144,7 @@ const parcoursCards = [
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {parcoursCards.map((p) => (
             <a href={p.href} class="relative h-56 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all group">
-              <img src={p.image} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src={p.image} alt={p.title} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-[#09201a]/95 via-[#09201a]/50 to-transparent"></div>
               <div class="absolute inset-0 p-5 flex flex-col justify-between text-white">
                 <div>

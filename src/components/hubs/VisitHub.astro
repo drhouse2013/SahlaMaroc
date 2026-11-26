@@ -145,12 +145,12 @@ const itineraries = [
 
           <!-- Polaroid 1 : Chefchaouen -->
           <div class="polaroid-card absolute -bottom-4 start-4 sm:start-8 w-28 sm:w-36 rotate-[-5deg] hidden sm:block">
-            <img src="/assets/img/dest-chefchaouen.jpg" alt="Chefchaouen" class="w-full h-24 sm:h-32 object-cover rounded" />
+            <img src="/assets/img/dest-chefchaouen.jpg" alt="Chefchaouen" loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
           </div>
 
           <!-- Polaroid 2 : Désert Merzouga -->
           <div class="polaroid-card absolute -bottom-6 end-6 sm:end-12 w-32 sm:w-44 rotate-[6deg] hidden sm:block">
-            <img src="/assets/photos/merzouga-dunes.jpg" alt="Désert Merzouga" class="w-full h-28 sm:h-36 object-cover rounded" />
+            <img src="/assets/photos/merzouga-dunes.jpg" alt="Désert Merzouga" loading="lazy" decoding="async" class="w-full h-28 sm:h-36 object-cover rounded" />
           </div>
         </div>
       </section>
@@ -256,7 +256,7 @@ const itineraries = [
               class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
             >
               <div class="relative h-44 overflow-hidden">
-                <img src={itin.image} alt={itin.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={itin.image} alt={itin.title} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow flex items-center gap-1">
                   <Icon name="clock" class="size-3 text-[#c05621]" />
                   {itin.days}

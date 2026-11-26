@@ -164,7 +164,7 @@ const popularGuides = await Promise.all([
             <PhotoCredit lang={lang} credit="Fernando Pascullo · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Moroccan_Parliament_Building.jpg" />
           </div>
           <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-36 sm:w-44 rotate-[4deg] hidden sm:block">
-            <img src="/assets/photos/douane-tanger-med.jpg" alt="Douane Tanger Med" class="w-full h-24 sm:h-32 object-cover rounded" />
+            <img src="/assets/photos/douane-tanger-med.jpg" alt="Douane Tanger Med" loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
           </div>
         </div>
       </section>
@@ -266,7 +266,7 @@ const popularGuides = await Promise.all([
               class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
             >
               <div class="relative h-40 overflow-hidden">
-                <img src={g.image} alt={g.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={g.image} alt={g.title} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
                   {g.tag}
                 </span>
