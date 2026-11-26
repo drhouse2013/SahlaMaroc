@@ -165,10 +165,10 @@ const featuredGuides = await Promise.all([
             />
           </div>
           <div class="polaroid-card absolute -top-2 end-4 sm:end-8 w-28 sm:w-36 rotate-[4deg] hidden sm:block">
-            <img src="/assets/img/guide-immo.jpg" alt="Immeubles de bureaux à Casablanca" class="w-full h-24 sm:h-28 object-cover rounded" />
+            <img src="/assets/img/guide-immo.jpg" alt="Immeubles de bureaux à Casablanca" loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
           </div>
           <div class="polaroid-card absolute -bottom-6 end-8 sm:end-14 w-32 sm:w-44 rotate-[-4deg] hidden sm:block">
-            <img src="/assets/photos/banque-casablanca-cfc.jpg" alt="Entreprise et finance" class="w-full h-24 sm:h-32 object-cover rounded" />
+            <img src="/assets/photos/banque-casablanca-cfc.jpg" alt="Entreprise et finance" loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
           </div>
         </div>
       </section>
@@ -271,7 +271,7 @@ const featuredGuides = await Promise.all([
               class="bg-white border border-[#eae0d2] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
             >
               <div class="relative h-40 overflow-hidden">
-                <img src={g.image} alt={g.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={g.image} alt={g.title} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <span class="absolute top-3 start-3 bg-white/95 backdrop-blur-sm text-[#0d2b24] text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
                   {g.tag}
                 </span>
