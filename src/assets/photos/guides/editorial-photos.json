@@ -3,7 +3,14 @@
     "file": "marhaba-port.jpg",
     "credit": "HrAd",
     "license": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG"
+    "source": "https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG",
+    "alt": {
+      "fr": "Le port de Tanger Med",
+      "en": "The port of Tanger Med",
+      "es": "El puerto de Tánger Med",
+      "de": "Der Hafen Tanger Med",
+      "ar": "ميناء طنجة المتوسط"
+    }
   },
   "car-180-days": {
     "file": "voiture-traversee-mre.jpg",
@@ -22,13 +29,27 @@
     "file": "autoroute-marrakech-agadir.jpg",
     "credit": "Abdeaitali",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Highway_Marrakech_Agadir_2019.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Highway_Marrakech_Agadir_2019.jpg",
+    "alt": {
+      "fr": "Autoroute entre Marrakech et Agadir",
+      "en": "Motorway between Marrakech and Agadir",
+      "es": "Autopista entre Marrakech y Agadir",
+      "de": "Autobahn zwischen Marrakesch und Agadir",
+      "ar": "الطريق السيار بين مراكش وأكادير"
+    }
   },
   "cheap-flights-europe-morocco": {
     "file": "vols-ryanair-rabat.jpg",
     "credit": "CAPTAIN RAJU",
     "license": "CC0",
-    "source": "https://commons.wikimedia.org/wiki/File:Ryanair_(Rabat)_in_2026.02.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Ryanair_(Rabat)_in_2026.02.jpg",
+    "alt": {
+      "fr": "Avion Ryanair à l’aéroport de Rabat",
+      "en": "Ryanair aircraft at Rabat airport",
+      "es": "Avión de Ryanair en el aeropuerto de Rabat",
+      "de": "Ryanair-Flugzeug am Flughafen Rabat",
+      "ar": "طائرة رايان إير في مطار الرباط"
+    }
   },
   "casablanca-airport": {
     "file": "aeroport-casablanca.jpg",
@@ -47,7 +68,14 @@
     "file": "aeroport-marrakech.jpg",
     "credit": "Kevinbeets1995",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Marrakech_Airport.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Marrakech_Airport.jpg",
+    "alt": {
+      "fr": "Aéroport de Marrakech-Ménara",
+      "en": "Marrakech Menara Airport",
+      "es": "Aeropuerto de Marrakech-Menara",
+      "de": "Flughafen Marrakesch-Menara",
+      "ar": "مطار مراكش المنارة"
+    }
   },
   "airports": {
     "file": "aeroport-agadir-2023.jpg",
@@ -59,25 +87,53 @@
     "file": "grand-taxi-inezgane.jpg",
     "credit": "MustaSensei",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Grand_Taxi_Morocco_Inzgane.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_Taxi_Morocco_Inzgane.jpg",
+    "alt": {
+      "fr": "Grand taxi à Inezgane",
+      "en": "Grand taxi in Inezgane",
+      "es": "Gran taxi en Inezgane",
+      "de": "Sammeltaxi in Inezgane",
+      "ar": "سيارة أجرة كبيرة في إنزكان"
+    }
   },
   "cash-atms": {
     "file": "distributeur-cih.jpg",
     "credit": "Hamza Izourane",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Guichet_Automatique_Bancaire_CIH_Bank.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Guichet_Automatique_Bancaire_CIH_Bank.jpg",
+    "alt": {
+      "fr": "Distributeur automatique de CIH Bank",
+      "en": "CIH Bank cash machine",
+      "es": "Cajero automático de CIH Bank",
+      "de": "Geldautomat der CIH Bank",
+      "ar": "صراف آلي لبنك CIH"
+    }
   },
   "toubkal": {
     "file": "toubkal-randonneurs.jpg",
     "credit": "Kurinurm",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Jebel_Toubkal_and_a_group_of_hikers.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Jebel_Toubkal_and_a_group_of_hikers.jpg",
+    "alt": {
+      "fr": "Groupe de randonneurs près du djebel Toubkal",
+      "en": "Group of hikers near Jebel Toubkal",
+      "es": "Grupo de excursionistas cerca del monte Toubkal",
+      "de": "Wandergruppe nahe dem Djebel Toubkal",
+      "ar": "مجموعة من المتنزهين قرب جبل توبقال"
+    }
   },
   "ctm-supratours": {
     "file": "bus-ctm-arret.jpg",
     "credit": "Bisel91",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:CTM_Bus%27_stop.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:CTM_Bus%27_stop.jpg",
+    "alt": {
+      "fr": "Autocar CTM à un arrêt",
+      "en": "CTM coach at a bus stop",
+      "es": "Autocar de CTM en una parada",
+      "de": "CTM-Reisebus an einer Haltestelle",
+      "ar": "حافلة CTM عند محطة توقف"
+    }
   },
   "buy-car-morocco-mre": {
     "file": "voiture-achat-garage-casablanca.jpg",
@@ -89,19 +145,40 @@
     "file": "sante-chu-tanger.jpg",
     "credit": "Flaspec",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:University_Hospital_Center_in_Tangier_(general_view).jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:University_Hospital_Center_in_Tangier_(general_view).jpg",
+    "alt": {
+      "fr": "Vue générale du centre hospitalier universitaire de Tanger",
+      "en": "General view of Tangier University Hospital",
+      "es": "Vista general del hospital universitario de Tánger",
+      "de": "Gesamtansicht des Universitätsklinikums Tanger",
+      "ar": "منظر عام للمركز الاستشفائي الجامعي بطنجة"
+    }
   },
   "travel-insurance-compare-mre": {
     "file": "assurance-voyage-ram.jpg",
     "credit": "Acroterion",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg",
+    "alt": {
+      "fr": "Boeing 787 de Royal Air Maroc",
+      "en": "Royal Air Maroc Boeing 787",
+      "es": "Boeing 787 de Royal Air Maroc",
+      "de": "Boeing 787 von Royal Air Maroc",
+      "ar": "طائرة بوينغ 787 تابعة للخطوط الملكية المغربية"
+    }
   },
   "repatriation-insurance-mre": {
     "file": "assurance-voyage-ram.jpg",
     "credit": "Acroterion",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Royal_Air_Maroc_Boeing_787-8_CN-RGC_MD3.jpg",
+    "alt": {
+      "fr": "Boeing 787 de Royal Air Maroc",
+      "en": "Royal Air Maroc Boeing 787",
+      "es": "Boeing 787 de Royal Air Maroc",
+      "de": "Boeing 787 von Royal Air Maroc",
+      "ar": "طائرة بوينغ 787 تابعة للخطوط الملكية المغربية"
+    }
   },
   "build-house": {
     "file": "construire-chantier-casa.jpg",
@@ -155,7 +232,14 @@
     "file": "sante-chu-tanger.jpg",
     "credit": "Flaspec",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:University_Hospital_Center_in_Tangier_(general_view).jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:University_Hospital_Center_in_Tangier_(general_view).jpg",
+    "alt": {
+      "fr": "Vue générale du centre hospitalier universitaire de Tanger",
+      "en": "General view of Tangier University Hospital",
+      "es": "Vista general del hospital universitario de Tánger",
+      "de": "Gesamtansicht des Universitätsklinikums Tanger",
+      "ar": "منظر عام للمركز الاستشفائي الجامعي بطنجة"
+    }
   },
   "internet-coworking": {
     "file": "fibre-casa-cfc.jpg",
