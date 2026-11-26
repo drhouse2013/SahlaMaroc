@@ -979,6 +979,12 @@ html[lang="ar"] .tpl-guide__checks span {
   background-color: #08211c;
   color: #f6efe3;
 }
+.root-page-shell :is(h1, h2) {
+  color: var(--tpl-forest);
+}
+.dark .root-page-shell :is(h1, h2) {
+  color: #f6efe3;
+}
 
 /* Brush-stroke mask for hero images */
 .brush-hero-media {
