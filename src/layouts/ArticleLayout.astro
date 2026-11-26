@@ -105,14 +105,17 @@ const essentials = {
   <header class="article-header">
     <div class="container-page pt-8 pb-8 md:pb-10">
       <Breadcrumbs items={crumbs} lang={lang} />
-      <div class="mt-6 max-w-4xl">
-        <a href={categoryPath(lang, d.category)} class="badge badge-cat">
-          <Icon name={CATEGORY_ICON[d.category]} class="size-3.5" />{cat.label[lang]}
-        </a>
-        <h1 class="article-title mt-4">{d.title}</h1>
-        <p class="article-lede mt-5">{d.description}</p>
+      <div class="article-hero-grid">
+        <div class="article-hero-copy">
+          <a href={categoryPath(lang, d.category)} class="article-category badge badge-cat">
+            <Icon name={CATEGORY_ICON[d.category]} class="size-3.5" />{cat.label[lang]}
+          </a>
+          <h1 class="article-title mt-4">{d.title}</h1>
+          <p class="article-lede mt-5">{d.description}</p>
+        </div>
+        <div class="article-cover article-cover--photographic no-print"><GuideVisual article={entry} large eager cover /></div>
       </div>
-      <div class="article-meta mt-7 max-w-4xl">
+      <div class="article-meta mt-6">
         <span class="flex items-center gap-2">
           <span class="grid size-8 place-items-center rounded-full bg-navy-700 text-sm font-semibold text-white" aria-hidden="true">{d.author.charAt(0)}</span>
           {aboutUrl ? <a href={aboutUrl} class="font-semibold text-[var(--text)] hover:underline">{d.author}</a> : <strong class="text-[var(--text)]">{d.author}</strong>}
@@ -136,7 +139,6 @@ const essentials = {
           <button type="button" class="btn btn-ghost btn-sm" data-print hidden><Icon name="printer" class="size-4" />{t('article.print')}</button>
         </span>
       </div>
-      <div class="article-cover article-cover--photographic mt-8 overflow-hidden rounded-xl border border-[var(--line)] no-print"><GuideVisual article={entry} large eager cover /></div>
     </div>
   </header>
 

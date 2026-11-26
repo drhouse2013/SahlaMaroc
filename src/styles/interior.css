@@ -129,6 +129,17 @@
 /* Article : titre éditorial, chapô, couverture */
 .article-header { background: linear-gradient(180deg, #fffaf4, #f9efe2); border-bottom: 1px solid #ecdcc6; }
 .dark .article-header { background: linear-gradient(180deg, #10322a, #0c2a23); border-bottom-color: #265045; }
+.article-hero-grid { display: grid; gap: clamp(1.25rem, 3vw, 3rem); align-items: center; margin-block-start: 1.5rem; }
+.article-hero-copy { min-inline-size: 0; overflow-wrap: anywhere; }
+.article-category::after { content: ""; inline-size: 1.75rem; block-size: 1px; background: currentColor; opacity: .6; }
+@media (min-width: 64rem) {
+  .article-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); }
+  .article-hero-grid .article-cover {
+    border-start-start-radius: 22% 50%;
+    border-end-start-radius: 22% 50%;
+  }
+}
+@media print { .article-hero-grid { display: block; } }
 .article-title {
   font-family: var(--font-display);
   font-size: clamp(2.1rem, 4.6vw, 3.7rem);
@@ -157,6 +168,12 @@
 .article-mobile-toc nav a { color: var(--text); }
 .dark .article-mobile-toc { border-color: #265045; background: #12332b; }
 .dark .article-mobile-toc summary { color: #f6efe3; }
+.article-body.prose h2 {
+  border-inline-start: 2px solid var(--tpl-terracotta);
+  padding-inline-start: .7em;
+  color: var(--tpl-forest);
+}
+.dark .article-body.prose h2 { color: #f6efe3; }
 
 /* Corps de texte */
 .prose { --tw-prose-headings: var(--tpl-forest); --tw-prose-links: #a8431f; }
