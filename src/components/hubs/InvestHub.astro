@@ -7,6 +7,9 @@ import { redesignContent, redesignContentPath } from "../../utils/redesignConten
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import Icon from '../Icon.astro';
+import { Image } from 'astro:assets';
+import PhotoCredit from '../PhotoCredit.astro';
+import patioPhoto from '../../assets/photos/marrakech-invest-patio-2024.jpg';
 import { useTranslations, type Locale } from '../../i18n';
 import { allLocalesAlternates, allLocalesTargets, homePath, hubPath, categoryPath, getPageUrl } from '../../utils/i18n';
 import { absoluteUrl, breadcrumbJsonLd } from '../../utils/seo';
@@ -24,6 +27,14 @@ const copy = {
 }[lang];
 const heroAlt = { fr: 'Mosquée Hassan II au coucher du soleil, Casablanca', en: 'Hassan II Mosque at sunset in Casablanca', es: 'Mezquita Hassan II al atardecer en Casablanca', de: 'Hassan-II.-Moschee bei Sonnenuntergang in Casablanca', ar: 'مسجد الحسن الثاني عند غروب الشمس في الدار البيضاء' }[lang];
 const officesAlt = { fr: "Tours de bureaux vues depuis la rue à Casablanca", en: "Office towers seen from street level in Casablanca", es: "Torres de oficinas vistas desde la calle en Casablanca", de: "Bürotürme in Casablanca von der Straße aus gesehen", ar: "أبراج مكاتب في الدار البيضاء كما تبدو من الشارع" }[lang];
+const patioAlt = {
+  fr: 'Patio à Marrakech avec une fontaine, des colonnes en zellige et des voilages blancs',
+  en: 'Marrakech courtyard with a fountain, zellige columns and white drapes',
+  es: 'Patio de Marrakech con fuente, columnas de azulejos y cortinas blancas',
+  de: 'Innenhof in Marrakesch mit Brunnen, Zellige-Säulen und weißen Vorhängen',
+  ar: 'فناء في مراكش فيه نافورة وأعمدة من الزليج وستائر بيضاء',
+}[lang];
+const patioSource = 'https://www.pexels.com/photo/elegant-moroccan-courtyard-in-marrakesh-38891222/';
 const sectorText = {
   fr: ['Immobilier & construction', 'Tourisme & hôtellerie', 'Énergies renouvelables', 'Agriculture & agroalimentaire', 'Industrie & export', 'Services & numérique'],
   en: ['Property & construction', 'Tourism & hospitality', 'Renewable energy', 'Agriculture & food', 'Industry & exports', 'Services & digital'],
@@ -166,7 +177,8 @@ const featuredGuides = await Promise.all([
             />
           </div>
           <div class="polaroid-card absolute -top-2 end-4 sm:end-8 w-28 sm:w-36 rotate-[4deg] hidden sm:block">
-            <img src="/assets/img/guide-immo.jpg" alt={officesAlt} loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
+            <Image src={patioPhoto} alt={patioAlt} width={320} loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
+            <PhotoCredit lang={lang} credit="Philippe Lasry · Pexels License" source={patioSource} />
           </div>
           <div class="polaroid-card absolute -bottom-6 end-8 sm:end-14 w-32 sm:w-44 rotate-[-4deg] hidden sm:block">
             <img src="/assets/photos/banque-casablanca-cfc.jpg" alt={officesAlt} loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
