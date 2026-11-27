@@ -786,7 +786,17 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
   .tpl-hero::after { background: linear-gradient(90deg, rgb(16 29 52 / .6), rgb(12 36 56 / .47), transparent); }
   .tpl-hero__content { width: 100%; padding: 40px 21px 0; }
   .tpl-hero h1 { font-size: clamp(2rem, 10vw, 2.44rem); letter-spacing: -.03em; }
-  .tpl-hero__intro { max-width: 21rem; font-size: 13px; }
+  .tpl-hero__intro { position: relative; isolation: isolate; max-width: 21rem; font-size: 13px; }
+  .tpl-hero__intro::before {
+    content: "";
+    position: absolute;
+    inset: -5px -8px;
+    z-index: -1;
+    background: rgb(10 23 41 / .68);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgb(10 23 41 / .32);
+    pointer-events: none;
+  }
   .tpl-search { width: 100%; height: 48px; margin-block-start: 18px; padding-inline-start: 14px; }
   .tpl-search input { font-size: 11px; margin-inline-start: 8px; }
   .tpl-search button { min-width: 99px; font-size: 11px; padding-inline: 12px; }
