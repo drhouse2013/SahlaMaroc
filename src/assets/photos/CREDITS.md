@@ -224,7 +224,7 @@ Sources : Wikimedia Commons (licences vérifiées via l'API), Pexels.
 | spots/el-jadida-deauville-plage.jpg | Reda benkhadra | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:El_Jadida_Beach.jpg |
 | spots/el-jadida-assumption-church.jpg | Sharon Hahn Darlin | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:El_Jadida,_Morocco_%F0%9F%87%B2%F0%9F%87%A6_-_Church_of_the_Assumption_Oct_2023.jpg |
 | spots/el-jadida-municipal-theatre.jpg | Reda benkhadra | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Th%C3%A9%C3%A2tre_Afifi.jpg |
-| spots/kenitra-kasbah-mahdiyya.jpg | Starssurfer | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:The_Rampart_of_Mehdya_Castle.jpg |
+| spots/kenitra-kasbah-mahdiyya.jpg | Samira hiba | CC BY-SA 4.0 (recadrage) | https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D9%85%D8%B9%D9%85%D8%A7%D8%B1_%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D9%8A_%D8%A7%D9%84%D8%B9%D8%B1%D9%8A%D9%82_%D8%A8%D9%82%D8%B5%D8%A8%D8%A9_%D8%A7%D9%84%D9%85%D9%87%D8%AF%D9%8A%D8%A9_%D8%A8%D8%A7%D9%84%D9%82%D9%86%D9%8A%D8%B7%D8%B1%D8%A9.jpg |
 | spots/kenitra-merja-zerga.jpg | Younes MAHRACH | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Lagune_Bleu_Moulay_Bousselham.jpg |
 | spots/kenitra-mehdia-beach.jpg | Frenchinmorocco | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Plage_de_Mehdia.JPG |
 | spots/kenitra-sidi-boughaba.jpg | Timothy A. Gonsalves | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:NW_Central_Sidi_Boughaba_Lake_Kenitra_Nov25_A7CR_08995.jpg |
