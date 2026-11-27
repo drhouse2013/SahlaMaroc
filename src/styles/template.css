@@ -183,6 +183,10 @@ details[open] > .tpl-nav__chevron svg { transform: rotate(180deg); }
 .dark .home-shell { background: linear-gradient(180deg, #0c2b24 0, #0a2520 45%, #08211c 100%); }
 .dark .home-shell::before,
 .dark .home-shell::after { opacity: .12; }
+@media (max-width: 360px) {
+  .tpl-brand__fallback { gap: 5px; font-size: 1.05rem; }
+  .tpl-brand__fallback svg { width: 24px; height: 28px; }
+}
 @media (max-width: 650px) {
   .home-shell::before { top: 300px; width: 60px; height: 180px; opacity: .3; }
   .home-shell::after { top: 520px; width: 64px; height: 160px; opacity: .22; }
