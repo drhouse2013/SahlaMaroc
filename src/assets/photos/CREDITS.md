@@ -517,3 +517,5 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 - `passport-maroc-user-2026.jpg` : image fournie par le propriétaire du site, sans auteur ni licence revendiqués. Conversion du PNG fourni en JPEG qualité 94, sans recadrage, 681 × 681 px ; métadonnées supprimées. Aucun agrandissement au-delà de la résolution source dans les variantes de la carte.
 
 - tetouan-ensanche-2024.jpg : RACHID BAYA, CC0 1.0. Place Moulay El Mehdi, quartier de l’Ensanche à Tétouan, 18 août 2024. Original 4 080 × 3 060 px conservé. Source : https://commons.wikimedia.org/wiki/File:مدينة_تطوان_1.jpg.
+
+- tiznit-source-bleue-2023.jpg : Rachidourkia, CC0 1.0. Bassin de la Source bleue, Tiznit, 8 novembre 2023. Original 8 000 × 6 000 px. Source : https://commons.wikimedia.org/wiki/File:Palace_de_source_bleue.jpg.
