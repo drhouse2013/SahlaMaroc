@@ -2069,6 +2069,22 @@
     "credit": "Boubloub, CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Morocco_Marshan_Palace_Tanger.jpg"
   },
+  "tetouan/ensanche": {
+    "file": "tetouan-ensanche-2024.jpg",
+    "alt": {
+      "fr": "Palmiers et façades blanches autour de la place Moulay El Mehdi dans l’Ensanche de Tétouan",
+      "en": "Palm trees and white façades around Moulay El Mehdi Square in Tetouan’s Ensanche",
+      "es": "Palmeras y fachadas blancas en la plaza Mulay el Mehdi, en el Ensanche de Tetuán",
+      "de": "Palmen und weiße Fassaden am Moulay-El-Mehdi-Platz im Ensanche von Tétouan",
+      "ar": "نخيل وواجهات بيضاء حول ساحة مولاي المهدي في حي الإنصانش بتطوان"
+    },
+    "credit": "RACHID BAYA, CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:مدينة_تطوان_1.jpg",
+    "focalPoint": [
+      50,
+      65
+    ]
+  },
   "tetouan/tannery": {
     "file": "tetouan-tannery-2026.jpg",
     "alt": {
