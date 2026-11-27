@@ -2,7 +2,7 @@
 
 > Généré par `npm run images:inventory` depuis `src/assets/photos/guides/editorial-photos.json`.
 
-40 références de guides, 35 fichiers distincts ; 0 référence(s) à corriger.
+40 références de guides, 36 fichiers distincts ; 0 référence(s) à corriger.
 
 **Portée.** Présence du fichier, auteur, licence reconnue et URL HTTPS uniquement. Ce contrôle ne prouve ni la date, ni la qualité, ni la correspondance visuelle au sujet. Les huit images génériques de catégorie et les illustrations de la template restent hors de ce manifeste.
 
@@ -46,5 +46,5 @@
 | world-cup-2030-transport | `src/assets/photos/gare-rabat-ville.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Rabat_Gare_Ville.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
 | riad-or-hotel | `src/assets/photos/riad-patio-dar-el-bacha.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Dar_al_Bacha_Marrakesh_DSCF8510.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
 | taghazout-surf | `src/assets/photos/taghazout-surf-2026.jpg` | Photographie éditoriale | <https://www.pexels.com/photo/surfers-riding-waves-in-taghazout-morocco-40679038/> | vérifiée | Pexels License ; métadonnées contrôlées ; date et composition à examiner |
-| buy-property-abroad | `src/assets/photos/immo-acheter.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Immeuble_casablanca.jpg> | vérifiée | CC BY-SA 4.0 ; façade d’immeuble résidentiel ; métadonnées contrôlées |
-| import-car-permanent-return | `src/assets/photos/transport-vehicules-tanger-med.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Déchargement_poids_lourds_ferry_Tanger_Express_à_Tanger_MED-photo_Bertrand_SOUBEYRAND.jpg> | vérifiée | CC BY-SA 4.0 ; véhicules au port de Tanger Med (2025) ; métadonnées contrôlées |
+| buy-property-abroad | `src/assets/photos/villa-al-maaden-marrakech.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:Al_Maaden_Marrakech_Villa_DL2A.jpg> | vérifiée | CC BY-SA 3.0 ; métadonnées contrôlées ; date et composition à examiner |
+| import-car-permanent-return | `src/assets/photos/tanger-med-vehicles-2025.jpg` | Photographie éditoriale | <https://commons.wikimedia.org/wiki/File:D%C3%A9chargement_poids_lourds_ferry_Tanger_Express_%C3%A0_Tanger_MED-photo_Bertrand_SOUBEYRAND.jpg> | vérifiée | CC BY-SA 4.0 ; métadonnées contrôlées ; date et composition à examiner |
