@@ -24,6 +24,7 @@ const copy = {
   ar: { eyebrow: 'الإجراءات الإدارية في المغرب', titleStart: 'إجراءاتك في', country: 'المغرب', titleEnd: '، مشروحة ببساطة.', intro: 'الوثائق والمساطر اللازمة للتحضير لإقامتك أو عودتك أو استقرارك في المغرب.', search: 'ابحث عن إجراء: البطاقة الوطنية، التأشيرة، الجمارك، التقاعد…', searchButton: 'ابحث', quick: 'تصفح حسب الموضوع', quickText: 'اختر الإجراء واطّلع على أدلته ووثائقه وخطواته.', help: 'هل تحتاج إلى مساعدة؟', helpText: 'اعثر على الإجراء المناسب لوضعك.', start: 'ابدأ مساري', official: 'روابط رسمية مفيدة', popular: 'الأدلة الأكثر قراءة', all: 'عرض جميع الإجراءات' },
 }[lang];
 const heroAlt = { fr: 'Façade du Parlement marocain à Rabat', en: 'Moroccan Parliament building in Rabat', es: 'Fachada del Parlamento marroquí en Rabat', de: 'Gebäude des marokkanischen Parlaments in Rabat', ar: 'واجهة البرلمان المغربي في الرباط' }[lang];
+const portAlt = { fr: "Grues et conteneurs au port de Tanger Med", en: "Cranes and containers at Tanger Med port", es: "Grúas y contenedores en el puerto de Tánger Med", de: "Kräne und Container im Hafen Tanger Med", ar: "رافعات وحاويات في ميناء طنجة المتوسط" }[lang];
 const guideTags = {
   fr: ['Documents', 'Visas', 'Douane', 'Santé'],
   en: ['Documents', 'Visas', 'Customs', 'Health'],
@@ -164,7 +165,7 @@ const popularGuides = await Promise.all([
             <PhotoCredit lang={lang} credit="Fernando Pascullo · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Moroccan_Parliament_Building.jpg" />
           </div>
           <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-36 sm:w-44 rotate-[4deg] hidden sm:block">
-            <img src="/assets/photos/douane-tanger-med.jpg" alt="Douane Tanger Med" loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
+            <img src="/assets/photos/douane-tanger-med.jpg" alt={portAlt} loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
           </div>
         </div>
       </section>
