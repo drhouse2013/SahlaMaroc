@@ -24,6 +24,8 @@ const copy = {
   ar: { eyebrow: 'زيارة المغرب', titleStart: 'اكتشف', country: 'المغرب', titleEnd: '، بتنوعه وأصالته.', intro: 'مدن عريقة وشواطئ وجبال وصحراء وثقافة ومطبخ متنوع. خطط لرحلتك واستمتع بكل مرحلة.', search: 'ابحث عن وجهة أو نشاط أو مكان للإقامة…', searchButton: 'ابحث', explore: 'اكتشف المغرب على طريقتك', exploreText: 'كل ما تحتاجه لتنظيم رحلتك والاستمتاع بها.', region: 'اكتشف المغرب حسب الجهة', regionText: 'من ساحل الأطلسي إلى جبال الأطلس، تعرّف على ما يميز كل جهة.', regions: 'عرض الجهات', advice: 'نصائح عملية', itineraries: 'مسارات وأفكار للسفر', allItineraries: 'عرض جميع المسارات', cta: 'هل أنت مستعد لاكتشاف المغرب؟', ctaText: 'ترافقك أدلتنا ومساراتنا ونصائحنا في كل مرحلة من رحلتك.', start: 'ابدأ التخطيط لرحلتي' },
 }[lang];
 const heroAlt = { fr: 'Kasbah de Taourirt et palmeraie à Ouarzazate', en: 'Taourirt Kasbah and palm grove in Ouarzazate', es: 'Kasba de Taourirt y palmeral de Uarzazat', de: 'Kasbah Taourirt und Palmenhain in Ouarzazate', ar: 'قصبة تاوريرت وواحة النخيل في ورزازات' }[lang];
+const chefchaouenAlt = { fr: "Fontaine et façades bleues à Chefchaouen", en: "Fountain and blue façades in Chefchaouen", es: "Fuente y fachadas azules en Chefchaouen", de: "Brunnen und blaue Fassaden in Chefchaouen", ar: "نافورة وواجهات زرقاء في شفشاون" }[lang];
+const dunesAlt = { fr: "Dunes orange de Merzouga", en: "Orange sand dunes in Merzouga", es: "Dunas de arena naranja en Merzouga", de: "Orangefarbene Sanddünen in Merzouga", ar: "كثبان رملية برتقالية في مرزوكة" }[lang];
 
 const self = (l: Locale) => hubPath(l, 'visit');
 const url = absoluteUrl(self(lang), Astro.site);
@@ -145,12 +147,12 @@ const itineraries = [
 
           <!-- Polaroid 1 : Chefchaouen -->
           <div class="polaroid-card absolute -bottom-4 start-4 sm:start-8 w-28 sm:w-36 rotate-[-5deg] hidden sm:block">
-            <img src="/assets/img/dest-chefchaouen.jpg" alt="Chefchaouen" loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
+            <img src="/assets/img/dest-chefchaouen.jpg" alt={chefchaouenAlt} loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
           </div>
 
           <!-- Polaroid 2 : Désert Merzouga -->
           <div class="polaroid-card absolute -bottom-6 end-6 sm:end-12 w-32 sm:w-44 rotate-[6deg] hidden sm:block">
-            <img src="/assets/photos/merzouga-dunes.jpg" alt="Désert Merzouga" loading="lazy" decoding="async" class="w-full h-28 sm:h-36 object-cover rounded" />
+            <img src="/assets/photos/merzouga-dunes.jpg" alt={dunesAlt} loading="lazy" decoding="async" class="w-full h-28 sm:h-36 object-cover rounded" />
           </div>
         </div>
       </section>

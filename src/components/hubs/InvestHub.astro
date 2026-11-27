@@ -23,6 +23,7 @@ const copy = {
   ar: { eyebrow: 'الاستثمار في المغرب', titleStart: 'استثمر في', country: 'المغرب', titleEnd: ' بخطوات مدروسة.', intro: 'العقار وإنشاء المقاولات والضرائب والتمويل: أدلة وأدوات تساعدك على التخطيط لاستثمارك.', search: 'ابحث عن دليل أو إجراء أو قطاع…', searchButton: 'ابحث', quick: 'تصفح حسب الموضوع', quickText: 'موارد للشراء وإنشاء مشروع وتطوير استثمارك في المغرب.', calculators: 'الحاسبات', calculatorsText: 'قدّر تكاليف الشراء والقروض والأرباح العقارية وقارن بينها.', seeCalculators: 'عرض الحاسبات', sectors: 'قطاعات للاستكشاف', featured: 'أدلة مختارة', all: 'عرض أدلة الاستثمار', cta: 'هل تخطط للاستثمار؟', ctaText: 'استعن بأدلتنا وحاسباتنا لدراسة خياراتك في المغرب.', start: 'ابدأ التخطيط لمشروعي' },
 }[lang];
 const heroAlt = { fr: 'Mosquée Hassan II au coucher du soleil, Casablanca', en: 'Hassan II Mosque at sunset in Casablanca', es: 'Mezquita Hassan II al atardecer en Casablanca', de: 'Hassan-II.-Moschee bei Sonnenuntergang in Casablanca', ar: 'مسجد الحسن الثاني عند غروب الشمس في الدار البيضاء' }[lang];
+const officesAlt = { fr: "Tours de bureaux vues depuis la rue à Casablanca", en: "Office towers seen from street level in Casablanca", es: "Torres de oficinas vistas desde la calle en Casablanca", de: "Bürotürme in Casablanca von der Straße aus gesehen", ar: "أبراج مكاتب في الدار البيضاء كما تبدو من الشارع" }[lang];
 const sectorText = {
   fr: ['Immobilier & construction', 'Tourisme & hôtellerie', 'Énergies renouvelables', 'Agriculture & agroalimentaire', 'Industrie & export', 'Services & numérique'],
   en: ['Property & construction', 'Tourism & hospitality', 'Renewable energy', 'Agriculture & food', 'Industry & exports', 'Services & digital'],
@@ -165,10 +166,10 @@ const featuredGuides = await Promise.all([
             />
           </div>
           <div class="polaroid-card absolute -top-2 end-4 sm:end-8 w-28 sm:w-36 rotate-[4deg] hidden sm:block">
-            <img src="/assets/img/guide-immo.jpg" alt="Immeubles de bureaux à Casablanca" loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
+            <img src="/assets/img/guide-immo.jpg" alt={officesAlt} loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
           </div>
           <div class="polaroid-card absolute -bottom-6 end-8 sm:end-14 w-32 sm:w-44 rotate-[-4deg] hidden sm:block">
-            <img src="/assets/photos/banque-casablanca-cfc.jpg" alt="Entreprise et finance" loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
+            <img src="/assets/photos/banque-casablanca-cfc.jpg" alt={officesAlt} loading="lazy" decoding="async" class="w-full h-24 sm:h-32 object-cover rounded" />
           </div>
         </div>
       </section>

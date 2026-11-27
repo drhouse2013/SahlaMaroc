@@ -22,6 +22,7 @@ const copy = {
   ar: { return: 'التحضير لعودتي إلى المغرب', living: 'العيش في المغرب', latest: 'أحدث الأدلة', eyebrow: 'دليلك العملي إلى المغرب', titleStart: 'خطط لمشروعك في', country: 'المغرب', intro: 'تستعد للعودة أو شراء منزل أو السفر؟ اعثر على المعلومات التي تساعدك على اتخاذ الخطوة التالية بثقة.', search: 'ابحث عن دليل: التأشيرة، العبّارة، الضرائب...', start: 'من أين تبدأ؟', paths: 'مسارات إرشادية تناسب كل مشروع.', explore: 'استكشف جميع الأدلة', available: 'دليل متاح' },
 }[lang];
 const heroAlt = { fr: 'Cour du palais Bahia à Marrakech', en: 'Courtyard of Bahia Palace in Marrakech', es: 'Patio del palacio de la Bahía en Marrakech', de: 'Innenhof des Bahia-Palasts in Marrakesch', ar: 'فناء قصر الباهية في مراكش' }[lang];
+const coastAlt = { fr: "Silhouette de la mosquée Hassan II au soleil couchant sur l’Atlantique", en: "Hassan II Mosque silhouetted against the setting sun over the Atlantic", es: "Silueta de la mezquita Hassan II al atardecer sobre el Atlántico", de: "Silhouette der Hassan-II.-Moschee vor der untergehenden Sonne am Atlantik", ar: "صورة ظلية لمسجد الحسن الثاني عند غروب الشمس على المحيط الأطلسي" }[lang];
 const articles = await getArticles(lang);
 const cats = await getActiveCategories(lang);
 const norm = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -128,7 +129,7 @@ const parcoursCards = [
             <PhotoCredit lang={lang} credit="Val Traveler · CC BY-SA 4.0" source="https://commons.wikimedia.org/wiki/File:Bahia_Palace_large_court.jpg" />
           </div>
           <div class="polaroid-card absolute -bottom-5 end-6 sm:end-12 w-32 sm:w-44 rotate-[4deg] hidden sm:block">
-            <img src="/assets/img/dest-casablanca.jpg" alt="Casablanca" loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
+            <img src="/assets/img/dest-casablanca.jpg" alt={coastAlt} loading="lazy" decoding="async" class="w-full h-24 sm:h-28 object-cover rounded" />
           </div>
         </div>
       </section>
