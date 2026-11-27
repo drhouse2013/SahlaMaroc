@@ -2591,6 +2591,22 @@
     "credit": "Rachidourkia, CC0 1.0",
     "source": "https://commons.wikimedia.org/wiki/File:Bab_Ait_jerrar_Tiznit.jpg"
   },
+  "tiznit/blue-spring": {
+    "file": "tiznit-source-bleue-2023.jpg",
+    "alt": {
+      "fr": "Bassin de la Source bleue bordé de pierre et de palmiers dans la médina de Tiznit",
+      "en": "Stone-lined Blue Spring pool and palm trees in the medina of Tiznit",
+      "es": "Estanque de piedra de la Fuente Azul y palmeras en la medina de Tiznit",
+      "de": "Steingefasstes Becken der Blauen Quelle und Palmen in der Medina von Tiznit",
+      "ar": "حوض العين الزرقاء المحاط بالحجارة والنخيل في المدينة العتيقة بتيزنيت"
+    },
+    "credit": "Rachidourkia, CC0 1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palace_de_source_bleue.jpg",
+    "focalPoint": [
+      61,
+      60
+    ]
+  },
   "tiznit/aglou-beach": {
     "file": "tiznit-aglou-beach.jpg",
     "alt": {
