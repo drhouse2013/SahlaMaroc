@@ -208,16 +208,16 @@
     }
   },
   "daam-sakane": {
-    "file": "daam-sakane-logements.jpg",
-    "credit": "Ideophagous",
+    "file": "daam-sakane-sidi-rbat-20251026.jpg",
+    "credit": "Timothy A. Gonsalves",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:El_Azzouzia.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_Sidi_Rabat_Morocco_Oct25_A7CR_08100.jpg",
     "alt": {
-      "fr": "Immeubles dans le quartier El Azzouzia",
-      "en": "Apartment buildings in El Azzouzia",
-      "es": "Edificios de viviendas en El Azzouzia",
-      "de": "Wohnhäuser im Viertel El Azzouzia",
-      "ar": "عمارات سكنية في حي العزوزية"
+      "fr": "Façade ocre d’un bâtiment résidentiel à Sidi R’bat, dans le Souss-Massa",
+      "en": "Ochre façade of a residential building in Sidi R’bat, Souss-Massa",
+      "es": "Fachada ocre de un edificio residencial en Sidi R’bat, Sus-Masa",
+      "de": "Ockerfarbene Fassade eines Wohnhauses in Sidi R’bat, Souss-Massa",
+      "ar": "واجهة مغرة لمبنى سكني في سيدي الرباط بمنطقة سوس ماسة"
     }
   },
   "moroccan-food": {

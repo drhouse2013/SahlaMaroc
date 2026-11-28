@@ -524,3 +524,5 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 
 - `regions/casablanca-settat-oualidia-20260920.jpg` — Bertrand Soubeyrand, CC BY-SA 4.0. Plage d’Oualidia, 20 septembre 2026. Original 4288 × 2848 px réduit à 1680 px de large. Source : https://commons.wikimedia.org/wiki/File:Oualidia_la_plage-photo_Bertrand_SOUBEYRAND.jpg
 - `cities/nador-waterfront-20260906.jpg` — SALHI Kaouthar, CC BY-SA 4.0. Corniche de Nador, 6 septembre 2026. Original 1242 × 2208 px, recadrage 1240 × 930 px. Source : https://commons.wikimedia.org/wiki/File:Corniche_Nador_06-09-2026.jpg
+
+- `guides/daam-sakane-sidi-rbat-20251026.jpg` — Timothy A. Gonsalves, CC BY-SA 4.0. Bâtiment résidentiel à Sidi R’bat (Souss-Massa), 26 octobre 2025. Original 5542 × 3117 px réduit à 1680 px de large. Source : https://commons.wikimedia.org/wiki/File:Building_Sidi_Rabat_Morocco_Oct25_A7CR_08100.jpg
