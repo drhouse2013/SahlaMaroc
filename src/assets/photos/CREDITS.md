@@ -526,3 +526,5 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 - `cities/nador-waterfront-20260906.jpg` — SALHI Kaouthar, CC BY-SA 4.0. Corniche de Nador, 6 septembre 2026. Original 1242 × 2208 px, recadrage 1240 × 930 px. Source : https://commons.wikimedia.org/wiki/File:Corniche_Nador_06-09-2026.jpg
 
 - `daam-sakane-sidi-rbat-20251026.jpg` — Timothy A. Gonsalves, CC BY-SA 4.0. Bâtiment résidentiel à Sidi R’bat (Souss-Massa), 26 octobre 2025. Original 5542 × 3117 px réduit à 1680 px de large. Source : https://commons.wikimedia.org/wiki/File:Building_Sidi_Rabat_Morocco_Oct25_A7CR_08100.jpg
+
+- `spots/errachidia-ouled-chaker-oasis-20241228.jpg` — Jorge Franganillo, CC BY 2.0. Palmeraie d’Ouled Chaker, 28 décembre 2024. Original 5312 × 2988 px réduit à 1680 px de large. Source : https://commons.wikimedia.org/wiki/File:Ziz_Valley_(54243669083).jpg
