@@ -521,3 +521,5 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 - tiznit-source-bleue-2023.jpg : Rachidourkia, CC0 1.0. Bassin de la Source bleue, Tiznit, 8 novembre 2023. Original 8 000 × 6 000 px. Source : https://commons.wikimedia.org/wiki/File:Palace_de_source_bleue.jpg.
 
 - marrakech-invest-patio-2024.jpg : Philippe Lasry, Pexels License. Patio à Marrakech, 10 août 2024. Original 8 405 × 5 603 px. Variante Pexels 960 px utilisée pour la vignette Investir. Source : https://www.pexels.com/photo/elegant-moroccan-courtyard-in-marrakesh-38891222/.
+
+- `regions/casablanca-settat-oualidia-20260920.jpg` — Bertrand Soubeyrand, CC BY-SA 4.0. Plage d’Oualidia, 20 septembre 2026. Original 4288 × 2848 px réduit à 1680 px de large. Source : https://commons.wikimedia.org/wiki/File:Oualidia_la_plage-photo_Bertrand_SOUBEYRAND.jpg
