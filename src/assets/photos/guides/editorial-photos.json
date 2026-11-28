@@ -1,15 +1,15 @@
 {
   "marhaba-guide": {
-    "file": "marhaba-port.jpg",
-    "credit": "HrAd",
-    "license": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Tanger_Med_-_02.JPG",
+    "file": "ferry-quai.jpg",
+    "credit": "Bertrand SOUBEYRAND",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Le_cruise-ferry_Excellent_de_GNV_dans_le_port_de_Tanger_MED_au_Maroc_le_30-10-2023.jpg",
     "alt": {
-      "fr": "Le port de Tanger Med",
-      "en": "The port of Tanger Med",
-      "es": "El puerto de Tánger Med",
-      "de": "Der Hafen Tanger Med",
-      "ar": "ميناء طنجة المتوسط"
+      "fr": "Le ferry Excellent de GNV amarré au port de Tanger Med",
+      "en": "The GNV ferry Excellent moored at Tanger Med port",
+      "es": "El ferry Excellent de GNV amarrado en el puerto de Tánger Med",
+      "de": "Die GNV-Fähre Excellent am Kai im Hafen Tanger Med",
+      "ar": "عبّارة إكسيلنت التابعة لشركة GNV راسية في ميناء طنجة المتوسط"
     }
   },
   "car-180-days": {
