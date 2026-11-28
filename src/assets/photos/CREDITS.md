@@ -522,4 +522,5 @@ spots/zagora-timbuktu-sign-2026.jpg : Cesar.mx22, CC BY-SA 4.0 ; prise le 21 mar
 
 - marrakech-invest-patio-2024.jpg : Philippe Lasry, Pexels License. Patio à Marrakech, 10 août 2024. Original 8 405 × 5 603 px. Variante Pexels 960 px utilisée pour la vignette Investir. Source : https://www.pexels.com/photo/elegant-moroccan-courtyard-in-marrakesh-38891222/.
 
+- `regions/casablanca-settat-oualidia-20260920.jpg` — Bertrand Soubeyrand, CC BY-SA 4.0. Plage d’Oualidia, 20 septembre 2026. Original 4288 × 2848 px réduit à 1680 px de large. Source : https://commons.wikimedia.org/wiki/File:Oualidia_la_plage-photo_Bertrand_SOUBEYRAND.jpg
 - `cities/nador-waterfront-20260906.jpg` — SALHI Kaouthar, CC BY-SA 4.0. Corniche de Nador, 6 septembre 2026. Original 1242 × 2208 px, recadrage 1240 × 930 px. Source : https://commons.wikimedia.org/wiki/File:Corniche_Nador_06-09-2026.jpg
